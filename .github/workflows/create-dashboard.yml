@@ -1,0 +1,63 @@
+name: Create dashboard
+
+on:
+  schedule:
+    - cron: "0 19 * * *" # run at 4 AM JST
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: main
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    container: osrf/ros:foxy-desktop
+    env:
+      ARTIFACTS_DIR: data
+
+    steps:
+    - name: Checkout repository
+      run: git clone https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto.git
+
+    - uses: actions/checkout@v2
+      with:
+        ref: data
+        path: ${{ env.ARTIFACTS_DIR }}
+
+    # https://github.com/osrf/docker_images/issues/535
+    - name: Temporarily fix GPG problem
+      run: |
+        sudo rm /etc/apt/sources.list.d/ros2-latest.list
+        sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+        sudo apt-get -y update
+
+    - name: Clone dependency packages
+      run: |
+        vcs import . < autoware.auto.foxy.repos
+        apt-get -y update
+        rosdep update
+        rosdep install -y --from-paths . --ignore-src --rosdistro foxy
+
+    - id: metrics-reporter
+      uses: tier4/ros-metrics-reporter@main
+      with:
+        artifacts-dir: ${{ env.ARTIFACTS_DIR }}
+        base-url: "https://keisukeshima.github.io/autoware-auto-metrics-dashboard/"
+        title: "AutowareFoundation/Autoware.Auto"
+        CCN: 20
+        nloc: 200
+        arguments: 6
+
+    - name: Check results
+      run: |
+        apt install -y tree
+        tree -L 2 ${GITHUB_WORKSPACE}/public/
+        du -h
+
+    - name: Deploy public to gh-pages (main branch only)
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: public
