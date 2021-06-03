@@ -17,7 +17,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      run: git clone https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto.git
+      run: |
+        git clone https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto.git
+        ls -l
+        pwd
 
     - uses: actions/checkout@v2
       with:
@@ -34,6 +37,7 @@ jobs:
 
     - name: Clone dependency packages
       run: |
+        pwd
         vcs import . < autoware.auto.foxy.repos
         apt-get -y update
         rosdep update
