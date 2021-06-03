@@ -6,7 +6,8 @@ on:
   workflow_dispatch:
   pull_request:
   push:
-    branches: main
+    branches:
+      - main
 
 jobs:
   generate-report:
@@ -54,6 +55,14 @@ jobs:
         apt install -y tree
         tree -L 2 ${GITHUB_WORKSPACE}/public/
         du -h
+
+    - name: Push artifacts
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ${{ env.ARTIFACTS_DIR }}
+        publish_branch: data
 
     - name: Deploy public to gh-pages (main branch only)
       if: github.ref == 'refs/heads/main'
