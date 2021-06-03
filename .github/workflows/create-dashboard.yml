@@ -45,9 +45,9 @@ jobs:
         artifacts-dir: ${{ env.ARTIFACTS_DIR }}
         base-url: "https://keisukeshima.github.io/autoware-auto-metrics-dashboard/"
         title: "AutowareFoundation/Autoware.Auto"
-        CCN: 20
-        nloc: 200
-        arguments: 6
+        CCN: "20"
+        nloc: "200"
+        arguments: "6"
 
     - name: Check results
       run: |
