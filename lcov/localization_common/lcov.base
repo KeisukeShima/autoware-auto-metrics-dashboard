@@ -34,6 +34,9 @@ BRDA:82,0,0,0
 BRDA:82,0,1,0
 DA:101,0
 end_of_record
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/localization_common/test/test_initialization.hpp
+DA:38,0
+end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/localization_common/test/test_initialization.cpp
 FN:29,_ZN44BestEffortInitializationTest_bad_lookup_Test8TestBodyEv
 FNDA:0,_ZN44BestEffortInitializationTest_bad_lookup_Test8TestBodyEv
@@ -558,9 +561,6 @@ DA:185,0
 DA:196,0
 DA:197,0
 DA:198,0
-end_of_record
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/localization_common/test/test_initialization.hpp
-DA:38,0
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/CMakeCXXCompilerId.cpp
