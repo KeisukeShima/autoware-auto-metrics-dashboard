@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">13</td>
-            <td class="headerCovTableEntry">17</td>
-            <td class="headerCovTableEntryMed">76.5 %</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-08 20:23:54</td>
+            <td class="headerValue">2021-06-09 20:15:43</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntryLo">50.0 %</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntryLo">25.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -115,59 +115,56 @@
 <a name="37"><span class="lineNum">      37 </span>                :            : template&lt;typename ScalarT, int size&gt;</a>
 <a name="38"><span class="lineNum">      38 </span>                :<span class="lineCov">          2 : Eigen::Matrix&lt;ScalarT, size, size&gt; create_jacobian(const std::chrono::nanoseconds &amp; dt)</span></a>
 <a name="39"><span class="lineNum">      39 </span>                :            : {</a>
-<a name="40"><span class="lineNum">      40 </span>                :            :   const Eigen::Matrix&lt;ScalarT, 3,</a>
-<a name="41"><span class="lineNum">      41 </span>                :<span class="lineCov">          2 :     3&gt; single_variable_block{create_single_variable_block&lt;ScalarT&gt;(dt)};</span></a>
-<a name="42"><span class="lineNum">      42 </span>                :            :   Eigen::Matrix&lt;ScalarT, size, size&gt; m{Eigen::Matrix&lt;ScalarT, size, size&gt;::Zero()};</a>
-<a name="43"><span class="lineNum">      43 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          7 :   for (int i = 0; i &lt; size; i += 3) {</span></a>
-<a name="44"><span class="lineNum">      44 </span>                :<span class="lineCov">          5 :     m.template block&lt;3, 3&gt;(i, i) = single_variable_block;</span></a>
-<a name="45"><span class="lineNum">      45 </span>                :            :   }</a>
-<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">          2 :   return m;</span></a>
-<a name="47"><span class="lineNum">      47 </span>                :            : }</a>
-<a name="48"><span class="lineNum">      48 </span>                :            : </a>
-<a name="49"><span class="lineNum">      49 </span>                :            : }  // namespace</a>
+<a name="40"><span class="lineNum">      40 </span>                :            :   // For now we just create a new matrix on every call. If this is too slow, we can create a new</a>
+<a name="41"><span class="lineNum">      41 </span>                :            :   // class that caches a certain number of results.</a>
+<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">          2 :   const Eigen::Matrix&lt;ScalarT, 3, 3&gt; single_variable_block{</span></a>
+<a name="43"><span class="lineNum">      43 </span>                :            :     create_single_variable_block&lt;ScalarT&gt;(dt)};</a>
+<a name="44"><span class="lineNum">      44 </span>                :            :   Eigen::Matrix&lt;ScalarT, size, size&gt; m{Eigen::Matrix&lt;ScalarT, size, size&gt;::Zero()};</a>
+<a name="45"><span class="lineNum">      45 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          7 :   for (int i = 0; i &lt; size; i += 3) {</span></a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">          5 :     m.template block&lt;3, 3&gt;(i, i) = single_variable_block;</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :            :   }</a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">          2 :   return m;</span></a>
+<a name="49"><span class="lineNum">      49 </span>                :            : }</a>
 <a name="50"><span class="lineNum">      50 </span>                :            : </a>
-<a name="51"><span class="lineNum">      51 </span>                :            : namespace autoware</a>
-<a name="52"><span class="lineNum">      52 </span>                :            : {</a>
-<a name="53"><span class="lineNum">      53 </span>                :            : namespace common</a>
+<a name="51"><span class="lineNum">      51 </span>                :            : }  // namespace</a>
+<a name="52"><span class="lineNum">      52 </span>                :            : </a>
+<a name="53"><span class="lineNum">      53 </span>                :            : namespace autoware</a>
 <a name="54"><span class="lineNum">      54 </span>                :            : {</a>
-<a name="55"><span class="lineNum">      55 </span>                :            : namespace motion_model</a>
+<a name="55"><span class="lineNum">      55 </span>                :            : namespace common</a>
 <a name="56"><span class="lineNum">      56 </span>                :            : {</a>
-<a name="57"><span class="lineNum">      57 </span>                :            : </a>
-<a name="58"><span class="lineNum">      58 </span>                :            : template&lt;&gt;</a>
-<a name="59"><span class="lineNum">      59 </span>                :            : common::state_vector::ConstAccelerationXYYaw32::Matrix</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">          1 : LinearMotionModel&lt;common::state_vector::ConstAccelerationXYYaw32&gt;::crtp_jacobian(</span></a>
-<a name="61"><span class="lineNum">      61 </span>                :            :   const State &amp;, const std::chrono::nanoseconds &amp; dt) const</a>
-<a name="62"><span class="lineNum">      62 </span>                :            : {</a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">          1 :   return create_jacobian&lt;float32_t, 9&gt;(dt);</span></a>
-<a name="64"><span class="lineNum">      64 </span>                :            : }</a>
-<a name="65"><span class="lineNum">      65 </span>                :            : </a>
-<a name="66"><span class="lineNum">      66 </span>                :            : template&lt;&gt;</a>
-<a name="67"><span class="lineNum">      67 </span>                :            : common::state_vector::ConstAccelerationXYYaw64::Matrix</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineNoCov">          0 : LinearMotionModel&lt;common::state_vector::ConstAccelerationXYYaw64&gt;::crtp_jacobian(</span></a>
-<a name="69"><span class="lineNum">      69 </span>                :            :   const State &amp;, const std::chrono::nanoseconds &amp; dt) const</a>
-<a name="70"><span class="lineNum">      70 </span>                :            : {</a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineNoCov">          0 :   return create_jacobian&lt;float64_t, 9&gt;(dt);</span></a>
-<a name="72"><span class="lineNum">      72 </span>                :            : }</a>
-<a name="73"><span class="lineNum">      73 </span>                :            : </a>
-<a name="74"><span class="lineNum">      74 </span>                :            : template&lt;&gt;</a>
-<a name="75"><span class="lineNum">      75 </span>                :            : common::state_vector::ConstAccelerationXY32::Matrix</a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">          1 : LinearMotionModel&lt;common::state_vector::ConstAccelerationXY32&gt;::crtp_jacobian(</span></a>
-<a name="77"><span class="lineNum">      77 </span>                :            :   const State &amp;, const std::chrono::nanoseconds &amp; dt) const</a>
-<a name="78"><span class="lineNum">      78 </span>                :            : {</a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">          1 :   return create_jacobian&lt;float32_t, 6&gt;(dt);</span></a>
-<a name="80"><span class="lineNum">      80 </span>                :            : }</a>
+<a name="57"><span class="lineNum">      57 </span>                :            : namespace motion_model</a>
+<a name="58"><span class="lineNum">      58 </span>                :            : {</a>
+<a name="59"><span class="lineNum">      59 </span>                :            : </a>
+<a name="60"><span class="lineNum">      60 </span>                :            : template&lt;typename StateT&gt;</a>
+<a name="61"><span class="lineNum">      61 </span>                :            : typename StateT::Matrix</a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">          2 : LinearMotionModel&lt;StateT&gt;::crtp_jacobian(</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :            :   const State &amp;, const std::chrono::nanoseconds &amp; dt) const</a>
+<a name="64"><span class="lineNum">      64 </span>                :            : {</a>
+<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">          2 :   return create_jacobian&lt;typename State::Scalar, State::size()&gt;(dt);</span></a>
+<a name="66"><span class="lineNum">      66 </span>                :            : }</a>
+<a name="67"><span class="lineNum">      67 </span>                :            : </a>
+<a name="68"><span class="lineNum">      68 </span>                :            : /// \cond DO_NOT_DOCUMENT</a>
+<a name="69"><span class="lineNum">      69 </span>                :            : </a>
+<a name="70"><span class="lineNum">      70 </span>                :            : template class MOTION_MODEL_PUBLIC LinearMotionModel&lt;state_vector::ConstAccelerationXY32&gt;;</a>
+<a name="71"><span class="lineNum">      71 </span>                :            : template class MOTION_MODEL_PUBLIC LinearMotionModel&lt;state_vector::ConstAccelerationXY64&gt;;</a>
+<a name="72"><span class="lineNum">      72 </span>                :            : </a>
+<a name="73"><span class="lineNum">      73 </span>                :            : template class MOTION_MODEL_PUBLIC LinearMotionModel&lt;state_vector::ConstAccelerationXYZ32&gt;;</a>
+<a name="74"><span class="lineNum">      74 </span>                :            : template class MOTION_MODEL_PUBLIC LinearMotionModel&lt;state_vector::ConstAccelerationXYZ64&gt;;</a>
+<a name="75"><span class="lineNum">      75 </span>                :            : </a>
+<a name="76"><span class="lineNum">      76 </span>                :            : template class MOTION_MODEL_PUBLIC LinearMotionModel&lt;state_vector::ConstAccelerationXYYaw32&gt;;</a>
+<a name="77"><span class="lineNum">      77 </span>                :            : template class MOTION_MODEL_PUBLIC LinearMotionModel&lt;state_vector::ConstAccelerationXYYaw64&gt;;</a>
+<a name="78"><span class="lineNum">      78 </span>                :            : </a>
+<a name="79"><span class="lineNum">      79 </span>                :            : template class MOTION_MODEL_PUBLIC LinearMotionModel&lt;state_vector::ConstAccelerationXYZYaw32&gt;;</a>
+<a name="80"><span class="lineNum">      80 </span>                :            : template class MOTION_MODEL_PUBLIC LinearMotionModel&lt;state_vector::ConstAccelerationXYZYaw64&gt;;</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : </a>
-<a name="82"><span class="lineNum">      82 </span>                :            : template&lt;&gt;</a>
-<a name="83"><span class="lineNum">      83 </span>                :            : common::state_vector::ConstAccelerationXY64::Matrix</a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineNoCov">          0 : LinearMotionModel&lt;common::state_vector::ConstAccelerationXY64&gt;::crtp_jacobian(</span></a>
-<a name="85"><span class="lineNum">      85 </span>                :            :   const State &amp;, const std::chrono::nanoseconds &amp; dt) const</a>
-<a name="86"><span class="lineNum">      86 </span>                :            : {</a>
-<a name="87"><span class="lineNum">      87 </span>                :<span class="lineNoCov">          0 :   return create_jacobian&lt;float64_t, 6&gt;(dt);</span></a>
-<a name="88"><span class="lineNum">      88 </span>                :            : }</a>
-<a name="89"><span class="lineNum">      89 </span>                :            : </a>
-<a name="90"><span class="lineNum">      90 </span>                :            : }  // namespace motion_model</a>
-<a name="91"><span class="lineNum">      91 </span>                :            : }  // namespace common</a>
-<a name="92"><span class="lineNum">      92 </span>                :            : }  // namespace autoware</a>
+<a name="82"><span class="lineNum">      82 </span>                :            : template class MOTION_MODEL_PUBLIC LinearMotionModel&lt;state_vector::ConstAccelerationXYZRPY32&gt;;</a>
+<a name="83"><span class="lineNum">      83 </span>                :            : template class MOTION_MODEL_PUBLIC LinearMotionModel&lt;state_vector::ConstAccelerationXYZRPY64&gt;;</a>
+<a name="84"><span class="lineNum">      84 </span>                :            : </a>
+<a name="85"><span class="lineNum">      85 </span>                :            : /// \endcond</a>
+<a name="86"><span class="lineNum">      86 </span>                :            : </a>
+<a name="87"><span class="lineNum">      87 </span>                :            : }  // namespace motion_model</a>
+<a name="88"><span class="lineNum">      88 </span>                :            : }  // namespace common</a>
+<a name="89"><span class="lineNum">      89 </span>                :            : }  // namespace autoware</a>
 </pre>
       </td>
     </tr>

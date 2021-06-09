@@ -108,6 +108,10 @@
   </url>
   
   <url>
+    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/fake_test_node/</loc>
+  </url>
+  
+  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/filter_node_base/</loc>
   </url>
   

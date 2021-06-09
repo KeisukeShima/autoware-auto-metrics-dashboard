@@ -24,12 +24,6 @@ DA:667,0
 DA:669,0
 end_of_record
 TN:
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/fusion/hungarian_assigner/test/src/test_hungarian_assigner.cpp
-FN:19,main
-FNDA:0,main
-DA:19,0
-DA:21,0
-end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/fusion/hungarian_assigner/test/include/test_hungarian_assigner.hpp
 FN:31,_Z11set_weightsILt16EEvRN8autoware6fusion18hungarian_assigner20hungarian_assigner_cIXT_EEERKSt6vectorIS6_IfSaIfEESaIS8_EE
 FNDA:0,_Z11set_weightsILt16EEvRN8autoware6fusion18hungarian_assigner20hungarian_assigner_cIXT_EEERKSt6vectorIS6_IfSaIfEESaIS8_EE
@@ -2083,6 +2077,12 @@ BRDA:377,0,11,-
 BRDA:377,0,12,-
 BRDA:377,0,13,-
 DA:378,0
+end_of_record
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/fusion/hungarian_assigner/test/src/test_hungarian_assigner.cpp
+FN:19,main
+FNDA:0,main
+DA:19,0
+DA:21,0
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/fusion/hungarian_assigner/include/hungarian_assigner/hungarian_assigner.hpp

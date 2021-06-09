@@ -27,6 +27,11 @@ DA:667,0
 DA:669,0
 end_of_record
 TN:
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/install/autoware_auto_common/include/helper_functions/message_adapters.hpp
+DA:85,0
+BRDA:85,0,0,-
+BRDA:85,0,1,-
+end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/localization_nodes/test/test_relative_localizer_node.cpp
 FN:35,_ZN28RelativeLocalizationNodeTestC2Ev
 FNDA:0,_ZN28RelativeLocalizationNodeTestC2Ev
@@ -1337,11 +1342,6 @@ BRDA:461,0,1,-
 DA:462,0
 BRDA:462,0,0,-
 BRDA:462,0,1,-
-end_of_record
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/install/autoware_auto_common/include/helper_functions/message_adapters.hpp
-DA:85,0
-BRDA:85,0,0,-
-BRDA:85,0,1,-
 end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/localization_nodes/test/test_relative_localizer_node.hpp
 FN:130,_Z16wait_for_matchedISt10shared_ptrIKN6rclcpp9PublisherIN13geometry_msgs3msg26PoseWithCovarianceStamped_ISaIvEEES6_EEEEvRKT_jNSt6chrono8durationIlSt5ratioILl1ELl1000EEEE
