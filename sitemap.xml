@@ -72,6 +72,10 @@
   </url>
   
   <url>
+    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/can_dbc_parser/</loc>
+  </url>
+  
+  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/categories/</loc>
   </url>
   

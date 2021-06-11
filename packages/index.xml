@@ -186,6 +186,17 @@ Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-met
     </item>
     
     <item>
+      <title>can_dbc_parser</title>
+      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/can_dbc_parser/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/can_dbc_parser/</guid>
+      <description>can_dbc_parser
+ Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/can_dbc_parser/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/can_dbc_parser\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });  You can access more detailed data on code coverage here.
+Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/can_dbc_parser/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/can_dbc_parser\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/can_dbc_parser/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/can_dbc_parser\/loc.json&#39;, fig.</description>
+    </item>
+    
+    <item>
       <title>controller_common</title>
       <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/controller_common/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
