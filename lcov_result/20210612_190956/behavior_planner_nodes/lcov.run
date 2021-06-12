@@ -1,0 +1,9 @@
+TN:
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/behavior_planner_nodes/test/test_behavior_planner_node.cpp
+FN:18,_ZN42test_behavior_planner_node_test_hello_Test8TestBodyEv
+FNDA:1,_ZN42test_behavior_planner_node_test_hello_Test8TestBodyEv
+DA:18,1
+BRDA:18,0,0,1
+BRDA:18,0,1,0
+DA:25,1
+end_of_record
