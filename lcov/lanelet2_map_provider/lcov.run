@@ -1,9 +1,4 @@
 TN:
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/mapping/had_map/lanelet2_map_provider/include/lanelet2_map_provider/lanelet2_map_provider.hpp
-DA:51,1
-BRDA:51,0,0,1
-BRDA:51,0,1,0
-end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/mapping/had_map/lanelet2_map_provider/test/test_lanelet2_map_provider.cpp
 FN:31,_Z14getALaneletMapv
 FNDA:2,_Z14getALaneletMapv
@@ -131,6 +126,11 @@ BRDA:117,0,7,0
 BRDA:117,0,8,0
 BRDA:117,0,9,0
 DA:118,1
+end_of_record
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/mapping/had_map/lanelet2_map_provider/include/lanelet2_map_provider/lanelet2_map_provider.hpp
+DA:51,1
+BRDA:51,0,0,1
+BRDA:51,0,1,0
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/mapping/had_map/lanelet2_map_provider/src/lanelet2_map_provider.cpp
