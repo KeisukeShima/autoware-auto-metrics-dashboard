@@ -112,10 +112,6 @@ DA:71,0
 DA:72,0
 DA:74,0
 end_of_record
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/install/autoware_auto_msgs/include/autoware_auto_msgs/msg/detail/bounding_box_array__struct.hpp
-DA:41,0
-DA:42,0
-end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/install/autoware_auto_msgs/include/autoware_auto_msgs/msg/detail/quaternion32__struct.hpp
 DA:35,0
 DA:37,0
@@ -2256,4 +2252,8 @@ BRDA:321,0,2,-
 BRDA:321,0,3,-
 BRDA:321,0,4,-
 BRDA:321,0,5,-
+end_of_record
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/install/autoware_auto_msgs/include/autoware_auto_msgs/msg/detail/bounding_box_array__struct.hpp
+DA:41,0
+DA:42,0
 end_of_record
