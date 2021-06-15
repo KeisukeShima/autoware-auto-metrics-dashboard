@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">94</td>
-            <td class="headerCovTableEntry">122</td>
-            <td class="headerCovTableEntryMed">77.0 %</td>
+            <td class="headerCovTableEntry">105</td>
+            <td class="headerCovTableEntry">136</td>
+            <td class="headerCovTableEntryMed">77.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-14 19:41:56</td>
+            <td class="headerValue">2021-06-15 19:40:47</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">17</td>
-            <td class="headerCovTableEntry">25</td>
-            <td class="headerCovTableEntryLo">68.0 %</td>
+            <td class="headerCovTableEntry">18</td>
+            <td class="headerCovTableEntry">26</td>
+            <td class="headerCovTableEntryLo">69.2 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -57,8 +57,8 @@
             <td></td>
             <td class="headerItem">Branches:</td>
             <td class="headerCovTableEntry">35</td>
-            <td class="headerCovTableEntry">56</td>
-            <td class="headerCovTableEntryLo">62.5 %</td>
+            <td class="headerCovTableEntry">62</td>
+            <td class="headerCovTableEntryLo">56.5 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -141,12 +141,12 @@
 <a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">         13 : ControllerBase::ControllerBase(const BehaviorConfig &amp; config)</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            : : m_config{config},</a>
 <a name="65"><span class="lineNum">      65 </span>                :            :   m_reference_trajectory{rosidl_runtime_cpp::MessageInitialization::ALL},</a>
-<a name="66"><span class="lineNum">      66 </span>                :            :   m_latest_reference{decltype(m_latest_reference)::min()},</a>
+<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">         13 :   m_latest_reference{decltype(m_latest_reference)::min()},</span></a>
 <a name="67"><span class="lineNum">      67 </span>                :            :   m_reference_spatial_index{},  // zero initialization</a>
-<a name="68"><span class="lineNum">      68 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         13 :   m_reference_temporal_index{}  // zero initialization</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">         13 :   m_reference_temporal_index{}  // zero initialization</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            : {</a>
-<a name="70"><span class="lineNum">      70 </span>                :            :   m_reference_trajectory.points.reserve(100LL);  // TODO(c.ho) +1?</a>
-<a name="71"><span class="lineNum">      71 </span>                :            :   m_reference_trajectory.points.clear();</a>
+<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         13 :   m_reference_trajectory.points.reserve(100LL);  // TODO(c.ho) +1?</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">         13 :   m_reference_trajectory.points.clear();</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">         13 : }</span></a>
 <a name="73"><span class="lineNum">      73 </span>                :            : </a>
 <a name="74"><span class="lineNum">      74 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
@@ -155,7 +155,7 @@
 <a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">          6 :   m_latest_reference = time_utils::from_message(m_reference_trajectory.header.stamp);</span></a>
 <a name="78"><span class="lineNum">      78 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   if (!m_reference_trajectory.points.empty()) {</span></a>
 <a name="79"><span class="lineNum">      79 </span>                :            :     m_latest_reference +=</a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">          6 :       time_utils::from_message(m_reference_trajectory.points.back().time_from_start);</span></a>
+<a name="80"><span class="lineNum">      80 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          6 :       time_utils::from_message(m_reference_trajectory.points.back().time_from_start);</span></a>
 <a name="81"><span class="lineNum">      81 </span>                :            :   }</a>
 <a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">          6 :   m_reference_spatial_index = 0U;</span></a>
 <a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">          6 :   m_reference_temporal_index = 0U;</span></a>
@@ -184,7 +184,7 @@
 <a name="106"><span class="lineNum">     106 </span>                :            : }</a>
 <a name="107"><span class="lineNum">     107 </span>                :            : </a>
 <a name="108"><span class="lineNum">     108 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="109"><span class="lineNum">     109 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 109 times"> + </span>]:<span class="lineCov">        114 : Command ControllerBase::compute_command(const State &amp; state)</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">        114 : Command ControllerBase::compute_command(const State &amp; state)</span></a>
 <a name="110"><span class="lineNum">     110 </span>                :            : {</a>
 <a name="111"><span class="lineNum">     111 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 109 times"> + </span>]:<span class="lineCov">        114 :   if (m_reference_trajectory.points.empty()) {</span></a>
 <a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">          5 :     return compute_stop_command(state);</span></a>
@@ -196,7 +196,7 @@
 <a name="118"><span class="lineNum">     118 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 104 times"> + </span>]:<span class="lineCov">        108 :   if (!is_state_ok(state)) {</span></a>
 <a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">          4 :     return compute_stop_command(state);</span></a>
 <a name="120"><span class="lineNum">     120 </span>                :            :   }</a>
-<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">        104 :   auto ret = compute_command_impl(state);</span></a>
+<a name="121"><span class="lineNum">     121 </span>        [<span class="branchCov" title="Branch 0 was taken 104 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        104 :   auto ret = compute_command_impl(state);</span></a>
 <a name="122"><span class="lineNum">     122 </span>                :            :   // Ensure you're properly populating the stamp</a>
 <a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">        104 :   ret.stamp = state.header.stamp;</span></a>
 <a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">        104 :   return ret;</span></a>
@@ -217,7 +217,7 @@
 <a name="139"><span class="lineNum">     139 </span>                :            : }</a>
 <a name="140"><span class="lineNum">     140 </span>                :            : </a>
 <a name="141"><span class="lineNum">     141 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="142"><span class="lineNum">     142 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 109 times"> + </span>]:<span class="lineCov">        113 : Index ControllerBase::get_current_state_spatial_index() const</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">        113 : Index ControllerBase::get_current_state_spatial_index() const</span></a>
 <a name="143"><span class="lineNum">     143 </span>                :            : {</a>
 <a name="144"><span class="lineNum">     144 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 109 times"> + </span>]:<span class="lineCov">        113 :   if (m_reference_trajectory.points.empty()) {</span></a>
 <a name="145"><span class="lineNum">     145 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     throw std::domain_error{&quot;Cannot get reference state index: no or zero length trajectory&quot;};</span></a>
@@ -226,7 +226,7 @@
 <a name="148"><span class="lineNum">     148 </span>                :            : }</a>
 <a name="149"><span class="lineNum">     149 </span>                :            : </a>
 <a name="150"><span class="lineNum">     150 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="151"><span class="lineNum">     151 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 109 times"> + </span>]:<span class="lineCov">        113 : Index ControllerBase::get_current_state_temporal_index() const</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        113 : Index ControllerBase::get_current_state_temporal_index() const</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            : {</a>
 <a name="153"><span class="lineNum">     153 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 109 times"> + </span>]:<span class="lineCov">        113 :   if (m_reference_trajectory.points.empty()) {</span></a>
 <a name="154"><span class="lineNum">     154 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     throw std::domain_error{&quot;Cannot get reference state index: no or zero length trajectory&quot;};</span></a>
@@ -251,8 +251,8 @@
 <a name="173"><span class="lineNum">     173 </span>                :            : {</a>
 <a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">        108 :   const auto pose_ok = !is_past_trajectory(state);</span></a>
 <a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">        108 :   const auto t = time_utils::from_message(state.header.stamp);</span></a>
-<a name="176"><span class="lineNum">     176 </span>                :            :   const auto time_ok = t &lt; m_latest_reference;</a>
-<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">        108 :   return pose_ok &amp;&amp; time_ok;</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">        108 :   const auto time_ok = t &lt; m_latest_reference;</span></a>
+<a name="177"><span class="lineNum">     177 </span>  [<span class="branchCov" title="Branch 0 was taken 105 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span><span class="branchCov" title="Branch 2 was taken 104 times"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">        108 :   return pose_ok &amp;&amp; time_ok;</span></a>
 <a name="178"><span class="lineNum">     178 </span>                :            : }</a>
 <a name="179"><span class="lineNum">     179 </span>                :            : </a>
 <a name="180"><span class="lineNum">     180 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
@@ -260,8 +260,8 @@
 <a name="182"><span class="lineNum">     182 </span>                :            : {</a>
 <a name="183"><span class="lineNum">     183 </span>                :            :   // Update spatial index</a>
 <a name="184"><span class="lineNum">     184 </span>                :            :   const auto space_f =</a>
-<a name="185"><span class="lineNum">     185 </span>                :            :     [](const State &amp; state, const Point &amp; pt1, const Point &amp; pt2, const Trajectory &amp;) -&gt; bool {</a>
-<a name="186"><span class="lineNum">     186 </span>                :            :       return motion_common::is_past_point(state.state, pt1, pt2);</a>
+<a name="185"><span class="lineNum">     185 </span>                :<span class="lineCov">        352 :     [](const State &amp; state, const Point &amp; pt1, const Point &amp; pt2, const Trajectory &amp;) -&gt; bool {</span></a>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">        352 :       return motion_common::is_past_point(state.state, pt1, pt2);</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :            :     };</a>
 <a name="188"><span class="lineNum">     188 </span>                :            :   using motion_common::update_reference_index;</a>
 <a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">        108 :   m_reference_spatial_index =</span></a>
@@ -273,25 +273,25 @@
 <a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">        352 :       const auto t_s = from_message(state.header.stamp);</span></a>
 <a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">        352 :       const auto t_t = from_message(traj.header.stamp);</span></a>
 <a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">        352 :       const auto dt = from_message(pt.time_from_start);</span></a>
-<a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">        352 :       return t_s &gt;= (t_t + dt);</span></a>
+<a name="198"><span class="lineNum">     198 </span>  [<span class="branchCov" title="Branch 0 was taken 352 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 352 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        352 :       return t_s &gt;= (t_t + dt);</span></a>
 <a name="199"><span class="lineNum">     199 </span>                :            :     };</a>
 <a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">        108 :   m_reference_temporal_index =</span></a>
 <a name="201"><span class="lineNum">     201 </span>                :<span class="lineCov">        108 :     update_reference_index(m_reference_trajectory, new_state, m_reference_temporal_index, time_f);</span></a>
 <a name="202"><span class="lineNum">     202 </span>                :<span class="lineCov">        108 : }</span></a>
 <a name="203"><span class="lineNum">     203 </span>                :            : </a>
 <a name="204"><span class="lineNum">     204 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="205"><span class="lineNum">     205 </span>        [<span class="branchCov" title="Branch 0 was taken 108 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        108 : bool ControllerBase::is_past_trajectory(const State &amp; state) const noexcept</span></a>
+<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">        108 : bool ControllerBase::is_past_trajectory(const State &amp; state) const noexcept</span></a>
 <a name="206"><span class="lineNum">     206 </span>                :            : {</a>
 <a name="207"><span class="lineNum">     207 </span>                :            :   // You are always past an empty trajectory</a>
-<a name="208"><span class="lineNum">     208 </span>        [<span class="branchCov" title="Branch 0 was taken 108 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        108 :   if (m_reference_trajectory.points.empty()) {</span></a>
-<a name="209"><span class="lineNum">     209 </span>                :            :     return true;</a>
+<a name="208"><span class="lineNum">     208 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 108 times"> + </span>]:<span class="lineCov">        108 :   if (m_reference_trajectory.points.empty()) {</span></a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineNoCov">          0 :     return true;</span></a>
 <a name="210"><span class="lineNum">     210 </span>                :            :   }</a>
 <a name="211"><span class="lineNum">     211 </span>                :            :   // If the current reference point is not the last one, then I can't be past the end</a>
-<a name="212"><span class="lineNum">     212 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 104 times"> + </span>]:<span class="lineCov">        108 :   if (m_reference_trajectory.points.size() &gt; (m_reference_spatial_index + 1U)) {</span></a>
-<a name="213"><span class="lineNum">     213 </span>                :            :     return false;</a>
+<a name="212"><span class="lineNum">     212 </span>        [<span class="branchCov" title="Branch 0 was taken 104 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">        108 :   if (m_reference_trajectory.points.size() &gt; (m_reference_spatial_index + 1U)) {</span></a>
+<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">        104 :     return false;</span></a>
 <a name="214"><span class="lineNum">     214 </span>                :            :   }</a>
 <a name="215"><span class="lineNum">     215 </span>                :            :   // Otherwise, check if I'm past the last point</a>
-<a name="216"><span class="lineNum">     216 </span>                :            :   const auto &amp; last_pt = m_reference_trajectory.points.back();</a>
+<a name="216"><span class="lineNum">     216 </span>                :<span class="lineCov">          4 :   const auto &amp; last_pt = m_reference_trajectory.points.back();</span></a>
 <a name="217"><span class="lineNum">     217 </span>                :            :   // ^ back() shouldn't throw because the empty check happens before this function</a>
 <a name="218"><span class="lineNum">     218 </span>                :<span class="lineCov">          4 :   return motion_common::is_past_point(state.state, last_pt);</span></a>
 <a name="219"><span class="lineNum">     219 </span>                :            : }</a>
@@ -299,18 +299,18 @@
 <a name="221"><span class="lineNum">     221 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
 <a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">          9 : Command ControllerBase::compute_stop_command(const State &amp; state) const noexcept</span></a>
 <a name="223"><span class="lineNum">     223 </span>                :            : {</a>
-<a name="224"><span class="lineNum">     224 </span>                :            :   Command ret{rosidl_runtime_cpp::MessageInitialization::ALL};</a>
+<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">          9 :   Command ret{rosidl_runtime_cpp::MessageInitialization::ALL};</span></a>
 <a name="225"><span class="lineNum">     225 </span>                :<span class="lineCov">          9 :   ret.stamp = state.header.stamp;</span></a>
 <a name="226"><span class="lineNum">     226 </span>                :            :   // Steering angle &quot;uses up&quot; stopping power/grip capacity</a>
-<a name="227"><span class="lineNum">     227 </span>                :            :   ret.front_wheel_angle_rad = Real{};  // zero initialization etc.</a>
-<a name="228"><span class="lineNum">     228 </span>                :            :   ret.rear_wheel_angle_rad = Real{};</a>
+<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">          9 :   ret.front_wheel_angle_rad = Real{};  // zero initialization etc.</span></a>
+<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">          9 :   ret.rear_wheel_angle_rad = Real{};</span></a>
 <a name="229"><span class="lineNum">     229 </span>                :            :   // Compute stopping acceleration</a>
 <a name="230"><span class="lineNum">     230 </span>                :            :   // validate input</a>
 <a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">          9 :   const auto velocity = std::fabs(state.state.longitudinal_velocity_mps);</span></a>
 <a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">          9 :   const auto dt = std::chrono::duration_cast&lt;std::chrono::duration&lt;Real&gt;&gt;(m_config.time_step());</span></a>
 <a name="233"><span class="lineNum">     233 </span>                :            :   const auto decel = std::min(</a>
-<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">         18 :     velocity / dt.count(),</span></a>
-<a name="235"><span class="lineNum">     235 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          9 :     m_config.safe_deceleration_rate());   // positive</span></a>
+<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">         27 :     velocity / dt.count(),</span></a>
+<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">          9 :     m_config.safe_deceleration_rate());   // positive</span></a>
 <a name="236"><span class="lineNum">     236 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          9 :   ret.long_accel_mps2 = state.state.longitudinal_velocity_mps &gt;= 0.0F ? -decel : decel;</span></a>
 <a name="237"><span class="lineNum">     237 </span>                :            : </a>
 <a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">          9 :   return ret;</span></a>
@@ -352,7 +352,7 @@
 <a name="274"><span class="lineNum">     274 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
 <a name="275"><span class="lineNum">     275 </span>                :<span class="lineNoCov">          0 : std::string ControllerBase::name() const</span></a>
 <a name="276"><span class="lineNum">     276 </span>                :            : {</a>
-<a name="277"><span class="lineNum">     277 </span>                :<span class="lineNoCov">          0 :   return std::string{&quot;controller_base&quot;, std::allocator&lt;char&gt;{}};</span></a>
+<a name="277"><span class="lineNum">     277 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return std::string{&quot;controller_base&quot;, std::allocator&lt;char&gt;{}};</span></a>
 <a name="278"><span class="lineNum">     278 </span>                :            : }</a>
 <a name="279"><span class="lineNum">     279 </span>                :            : </a>
 <a name="280"><span class="lineNum">     280 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
@@ -368,7 +368,7 @@
 <a name="290"><span class="lineNum">     290 </span>                :            :   bool use_temporal_reference,</a>
 <a name="291"><span class="lineNum">     291 </span>                :            :   Diagnostic &amp; out)</a>
 <a name="292"><span class="lineNum">     292 </span>                :            : {</a>
-<a name="293"><span class="lineNum">     293 </span>                :            :   Index ref_idx = {};</a>
+<a name="293"><span class="lineNum">     293 </span>                :<span class="lineNoCov">          0 :   Index ref_idx = {};</span></a>
 <a name="294"><span class="lineNum">     294 </span>                :            :   try {</a>
 <a name="295"><span class="lineNum">     295 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (use_temporal_reference) {</span></a>
 <a name="296"><span class="lineNum">     296 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       ref_idx = ctrl.get_current_state_temporal_index();</span></a>
@@ -377,7 +377,7 @@
 <a name="299"><span class="lineNum">     299 </span>                :            :     }</a>
 <a name="300"><span class="lineNum">     300 </span>                :<span class="lineNoCov">          0 :   } catch (const std::domain_error &amp;) {</span></a>
 <a name="301"><span class="lineNum">     301 </span>                :            :     // nothing to do: no reference trajectory</a>
-<a name="302"><span class="lineNum">     302 </span>                :            :     return;</a>
+<a name="302"><span class="lineNum">     302 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
 <a name="303"><span class="lineNum">     303 </span>                :            :   }</a>
 <a name="304"><span class="lineNum">     304 </span>                :<span class="lineNoCov">          0 :   out.diag_header.name = ctrl.name();</span></a>
 <a name="305"><span class="lineNum">     305 </span>                :<span class="lineNoCov">          0 :   out.diag_header.data_stamp = state.header.stamp;</span></a>

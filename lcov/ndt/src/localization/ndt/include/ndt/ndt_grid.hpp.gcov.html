@@ -31,17 +31,17 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">19</td>
-            <td class="headerCovTableEntry">22</td>
-            <td class="headerCovTableEntryMed">86.4 %</td>
+            <td class="headerCovTableEntry">43</td>
+            <td class="headerCovTableEntry">47</td>
+            <td class="headerCovTableEntryHi">91.5 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-14 19:56:14</td>
+            <td class="headerValue">2021-06-15 19:56:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">8</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">13</td>
-            <td class="headerCovTableEntry">18</td>
-            <td class="headerCovTableEntryLo">72.2 %</td>
+            <td class="headerCovTableEntry">16</td>
+            <td class="headerCovTableEntry">28</td>
+            <td class="headerCovTableEntryLo">57.1 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -127,7 +127,8 @@
 <a name="49"><span class="lineNum">      49 </span>                :            :   /// Constructor</a>
 <a name="50"><span class="lineNum">      50 </span>                :            :   /// \param voxel_grid_config Voxel grid config to configure the underlying voxel grid.</a>
 <a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">         43 :   explicit NDTGrid(const Config &amp; voxel_grid_config)</span></a>
-<a name="52"><span class="lineNum">      52 </span>  [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         43 :   : m_config(voxel_grid_config), m_map(m_config.get_capacity())</span></a>
+<a name="52"><span class="lineNum">      52 </span>  [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         43 :   : m_config(voxel_grid_config), m_map(m_config.get_capacity())</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
 <a name="53"><span class="lineNum">      53 </span>                :            :   {</a>
 <a name="54"><span class="lineNum">      54 </span>        [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         43 :     m_output_vector.reserve(1U);</span></a>
 <a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">         43 :   }</span></a>
@@ -172,70 +173,70 @@
 <a name="94"><span class="lineNum">      94 </span>                :            :   /// Get size of the map</a>
 <a name="95"><span class="lineNum">      95 </span>                :            :   /// \return Number of voxels in the map. This number includes the voxels that do not have</a>
 <a name="96"><span class="lineNum">      96 </span>                :            :   /// enough numbers to be used yet.</a>
-<a name="97"><span class="lineNum">      97 </span>                :            :   std::size_t size() const noexcept</a>
+<a name="97"><span class="lineNum">      97 </span>                :<span class="lineCov">         39 :   std::size_t size() const noexcept</span></a>
 <a name="98"><span class="lineNum">      98 </span>                :            :   {</a>
-<a name="99"><span class="lineNum">      99 </span>                :            :     return m_map.size();</a>
+<a name="99"><span class="lineNum">      99 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         19 :     return m_map.size();</span></a>
 <a name="100"><span class="lineNum">     100 </span>                :            :   }</a>
 <a name="101"><span class="lineNum">     101 </span>                :            : </a>
 <a name="102"><span class="lineNum">     102 </span>                :            :   /// Get size of the cell.</a>
 <a name="103"><span class="lineNum">     103 </span>                :            :   /// \return A point representing the dimensions of the cell.</a>
-<a name="104"><span class="lineNum">     104 </span>                :            :   const ConfigPoint &amp; cell_size() const noexcept</a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         16 :   const ConfigPoint &amp; cell_size() const noexcept</span></a>
 <a name="105"><span class="lineNum">     105 </span>                :            :   {</a>
 <a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">         16 :     return m_config.get_voxel_size();</span></a>
 <a name="107"><span class="lineNum">     107 </span>                :            :   }</a>
 <a name="108"><span class="lineNum">     108 </span>                :            : </a>
 <a name="109"><span class="lineNum">     109 </span>                :            :   /// \brief Returns an const iterator to the first element of the map</a>
 <a name="110"><span class="lineNum">     110 </span>                :            :   /// \return Iterator</a>
-<a name="111"><span class="lineNum">     111 </span>                :            :   typename Grid::const_iterator begin() const noexcept</a>
+<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">         23 :   typename Grid::const_iterator begin() const noexcept</span></a>
 <a name="112"><span class="lineNum">     112 </span>                :            :   {</a>
-<a name="113"><span class="lineNum">     113 </span>                :            :     return cbegin();</a>
+<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">         23 :     return cbegin();</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            :   }</a>
 <a name="115"><span class="lineNum">     115 </span>                :            : </a>
 <a name="116"><span class="lineNum">     116 </span>                :            :   /// \brief Returns an iterator to the first element of the map</a>
 <a name="117"><span class="lineNum">     117 </span>                :            :   /// \return Iterator</a>
-<a name="118"><span class="lineNum">     118 </span>                :            :   typename Grid::iterator begin() noexcept</a>
+<a name="118"><span class="lineNum">     118 </span>                :<span class="lineCov">         68 :   typename Grid::iterator begin() noexcept</span></a>
 <a name="119"><span class="lineNum">     119 </span>                :            :   {</a>
-<a name="120"><span class="lineNum">     120 </span>                :            :     return m_map.begin();</a>
+<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">         68 :     return m_map.begin();</span></a>
 <a name="121"><span class="lineNum">     121 </span>                :            :   }</a>
 <a name="122"><span class="lineNum">     122 </span>                :            : </a>
 <a name="123"><span class="lineNum">     123 </span>                :            :   /// \brief Returns a const iterator to the first element of the map</a>
 <a name="124"><span class="lineNum">     124 </span>                :            :   /// \return Iterator</a>
-<a name="125"><span class="lineNum">     125 </span>                :            :   typename Grid::const_iterator cbegin() const noexcept</a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         75 :   typename Grid::const_iterator cbegin() const noexcept</span></a>
 <a name="126"><span class="lineNum">     126 </span>                :            :   {</a>
-<a name="127"><span class="lineNum">     127 </span>                :            :     return m_map.cbegin();</a>
+<a name="127"><span class="lineNum">     127 </span>                :<span class="lineCov">         73 :     return m_map.cbegin();</span></a>
 <a name="128"><span class="lineNum">     128 </span>                :            :   }</a>
 <a name="129"><span class="lineNum">     129 </span>                :            : </a>
 <a name="130"><span class="lineNum">     130 </span>                :            :   /// \brief Returns a const iterator to one past the last element of the map</a>
 <a name="131"><span class="lineNum">     131 </span>                :            :   /// \return Iterator</a>
-<a name="132"><span class="lineNum">     132 </span>                :            :   typename Grid::const_iterator end() const noexcept</a>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">         23 :   typename Grid::const_iterator end() const noexcept</span></a>
 <a name="133"><span class="lineNum">     133 </span>                :            :   {</a>
-<a name="134"><span class="lineNum">     134 </span>                :            :     return cend();</a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">         23 :     return cend();</span></a>
 <a name="135"><span class="lineNum">     135 </span>                :            :   }</a>
 <a name="136"><span class="lineNum">     136 </span>                :            : </a>
 <a name="137"><span class="lineNum">     137 </span>                :            :   /// \brief Returns an iterator to one past the last element of the map</a>
 <a name="138"><span class="lineNum">     138 </span>                :            :   /// \return Iterator</a>
-<a name="139"><span class="lineNum">     139 </span>                :            :   typename Grid::iterator end() noexcept</a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         68 :   typename Grid::iterator end() noexcept</span></a>
 <a name="140"><span class="lineNum">     140 </span>                :            :   {</a>
-<a name="141"><span class="lineNum">     141 </span>                :            :     return m_map.end();</a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         68 :     return m_map.end();</span></a>
 <a name="142"><span class="lineNum">     142 </span>                :            :   }</a>
 <a name="143"><span class="lineNum">     143 </span>                :            : </a>
 <a name="144"><span class="lineNum">     144 </span>                :            :   /// \brief Returns a const iterator to one past the last element of the map</a>
 <a name="145"><span class="lineNum">     145 </span>                :            :   /// \return Iterator</a>
-<a name="146"><span class="lineNum">     146 </span>                :            :   typename Grid::const_iterator cend() const noexcept</a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">        125 :   typename Grid::const_iterator cend() const noexcept</span></a>
 <a name="147"><span class="lineNum">     147 </span>                :            :   {</a>
-<a name="148"><span class="lineNum">     148 </span>                :            :     return m_map.cend();</a>
+<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">        123 :     return m_map.cend();</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :            :   }</a>
 <a name="150"><span class="lineNum">     150 </span>                :            : </a>
 <a name="151"><span class="lineNum">     151 </span>                :            :   /// Clear all voxels in the map</a>
-<a name="152"><span class="lineNum">     152 </span>                :            :   void clear() noexcept</a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">          1 :   void clear() noexcept</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            :   {</a>
-<a name="154"><span class="lineNum">     154 </span>                :            :     m_map.clear();</a>
+<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">          1 :     m_map.clear();</span></a>
 <a name="155"><span class="lineNum">     155 </span>                :<span class="lineNoCov">          0 :   }</span></a>
 <a name="156"><span class="lineNum">     156 </span>                :            : </a>
 <a name="157"><span class="lineNum">     157 </span>                :            :   /// Get voxel index given a point.</a>
 <a name="158"><span class="lineNum">     158 </span>                :            :   /// \param pt point</a>
 <a name="159"><span class="lineNum">     159 </span>                :            :   /// \return voxel index</a>
-<a name="160"><span class="lineNum">     160 </span>                :            :   auto index(const Point &amp; pt) const</a>
+<a name="160"><span class="lineNum">     160 </span>                :<span class="lineCov">      15153 :   auto index(const Point &amp; pt) const</span></a>
 <a name="161"><span class="lineNum">     161 </span>                :            :   {</a>
 <a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">       2429 :     return m_config.index(pt);</span></a>
 <a name="163"><span class="lineNum">     163 </span>                :            :   }</a>
@@ -244,9 +245,9 @@
 <a name="166"><span class="lineNum">     166 </span>                :            :   /// \param args Arguments. An index and a voxel is expected</a>
 <a name="167"><span class="lineNum">     167 </span>                :            :   /// \return See the return type of `unordered_map::emplace()`.</a>
 <a name="168"><span class="lineNum">     168 </span>                :            :   template&lt;typename ... Args&gt;</a>
-<a name="169"><span class="lineNum">     169 </span>                :            :   auto emplace_voxel(Args &amp;&amp; ... args)</a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">       2429 :   auto emplace_voxel(Args &amp;&amp; ... args)</span></a>
 <a name="170"><span class="lineNum">     170 </span>                :            :   {</a>
-<a name="171"><span class="lineNum">     171 </span>                :            :     return m_map.emplace(std::forward&lt;Args&gt;(args)...);</a>
+<a name="171"><span class="lineNum">     171 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2429 times"> + </span>]:<span class="lineCov">       2429 :     return m_map.emplace(std::forward&lt;Args&gt;(args)...);</span></a>
 <a name="172"><span class="lineNum">     172 </span>                :            :   }</a>
 <a name="173"><span class="lineNum">     173 </span>                :            : </a>
 <a name="174"><span class="lineNum">     174 </span>                :            :   /// \brief Add a point to its corresponding voxel in the grid.</a>
@@ -258,14 +259,14 @@
 <a name="180"><span class="lineNum">     180 </span>                :            : </a>
 <a name="181"><span class="lineNum">     181 </span>                :            :   /// \brief Set the configuration</a>
 <a name="182"><span class="lineNum">     182 </span>                :            :   /// \param config Config object to be set.</a>
-<a name="183"><span class="lineNum">     183 </span>                :            :   void set_config(const Config &amp; config)</a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineNoCov">          0 :   void set_config(const Config &amp; config)</span></a>
 <a name="184"><span class="lineNum">     184 </span>                :            :   {</a>
 <a name="185"><span class="lineNum">     185 </span>                :<span class="lineNoCov">          0 :     m_config = config;</span></a>
 <a name="186"><span class="lineNum">     186 </span>                :<span class="lineNoCov">          0 :   }</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :            : </a>
 <a name="188"><span class="lineNum">     188 </span>                :            :   /// \brief Get the underlying voxel grid configuration</a>
 <a name="189"><span class="lineNum">     189 </span>                :            :   /// \return Voxel grid configuration</a>
-<a name="190"><span class="lineNum">     190 </span>                :            :   const Config &amp; config() const</a>
+<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">         23 :   const Config &amp; config() const</span></a>
 <a name="191"><span class="lineNum">     191 </span>                :            :   {</a>
 <a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">         23 :     return m_config;</span></a>
 <a name="193"><span class="lineNum">     193 </span>                :            :   }</a>
@@ -289,21 +290,21 @@
 <a name="211"><span class="lineNum">     211 </span>                :            : /// These adapters are necessary for the VoxelGrid to know how to access</a>
 <a name="212"><span class="lineNum">     212 </span>                :            : /// the coordinates from an eigen vector.</a>
 <a name="213"><span class="lineNum">     213 </span>                :            : template&lt;&gt;</a>
-<a name="214"><span class="lineNum">     214 </span>                :            : inline NDT_PUBLIC auto x_(const Eigen::Vector3d &amp; pt)</a>
+<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">      88654 : inline NDT_PUBLIC auto x_(const Eigen::Vector3d &amp; pt)</span></a>
 <a name="215"><span class="lineNum">     215 </span>                :            : {</a>
-<a name="216"><span class="lineNum">     216 </span>        [<span class="branchCov" title="Branch 0 was taken 70803 times"> + </span><span class="branchCov" title="Branch 1 was taken 17851 times"> + </span>]:<span class="lineCov">      88654 :   return static_cast&lt;float32_t&gt;(pt(0));</span></a>
+<a name="216"><span class="lineNum">     216 </span>        [<span class="branchCov" title="Branch 0 was taken 68678 times"> + </span><span class="branchCov" title="Branch 1 was taken 17851 times"> + </span>]:<span class="lineCov">      88654 :   return static_cast&lt;float32_t&gt;(pt(0));</span></a>
 <a name="217"><span class="lineNum">     217 </span>                :            : }</a>
 <a name="218"><span class="lineNum">     218 </span>                :            : </a>
 <a name="219"><span class="lineNum">     219 </span>                :            : template&lt;&gt;</a>
-<a name="220"><span class="lineNum">     220 </span>                :            : inline NDT_PUBLIC auto y_(const Eigen::Vector3d &amp; pt)</a>
+<a name="220"><span class="lineNum">     220 </span>                :<span class="lineCov">      88654 : inline NDT_PUBLIC auto y_(const Eigen::Vector3d &amp; pt)</span></a>
 <a name="221"><span class="lineNum">     221 </span>                :            : {</a>
-<a name="222"><span class="lineNum">     222 </span>        [<span class="branchCov" title="Branch 0 was taken 87463 times"> + </span><span class="branchCov" title="Branch 1 was taken 1191 times"> + </span>]:<span class="lineCov">      88654 :   return static_cast&lt;float32_t&gt;(pt(1));</span></a>
+<a name="222"><span class="lineNum">     222 </span>        [<span class="branchCov" title="Branch 0 was taken 85338 times"> + </span><span class="branchCov" title="Branch 1 was taken 1191 times"> + </span>]:<span class="lineCov">      88654 :   return static_cast&lt;float32_t&gt;(pt(1));</span></a>
 <a name="223"><span class="lineNum">     223 </span>                :            : }</a>
 <a name="224"><span class="lineNum">     224 </span>                :            : </a>
 <a name="225"><span class="lineNum">     225 </span>                :            : template&lt;&gt;</a>
-<a name="226"><span class="lineNum">     226 </span>                :            : inline NDT_PUBLIC auto z_(const Eigen::Vector3d &amp; pt)</a>
+<a name="226"><span class="lineNum">     226 </span>                :<span class="lineCov">      88654 : inline NDT_PUBLIC auto z_(const Eigen::Vector3d &amp; pt)</span></a>
 <a name="227"><span class="lineNum">     227 </span>                :            : {</a>
-<a name="228"><span class="lineNum">     228 </span>        [<span class="branchCov" title="Branch 0 was taken 80578 times"> + </span><span class="branchCov" title="Branch 1 was taken 8076 times"> + </span>]:<span class="lineCov">      88654 :   return static_cast&lt;float32_t&gt;(pt(2));</span></a>
+<a name="228"><span class="lineNum">     228 </span>        [<span class="branchCov" title="Branch 0 was taken 78453 times"> + </span><span class="branchCov" title="Branch 1 was taken 8076 times"> + </span>]:<span class="lineCov">      88654 :   return static_cast&lt;float32_t&gt;(pt(2));</span></a>
 <a name="229"><span class="lineNum">     229 </span>                :            : }</a>
 <a name="230"><span class="lineNum">     230 </span>                :            : </a>
 <a name="231"><span class="lineNum">     231 </span>                :            : template&lt;&gt;</a>

@@ -31,17 +31,17 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">40</td>
-            <td class="headerCovTableEntry">42</td>
-            <td class="headerCovTableEntryHi">95.2 %</td>
+            <td class="headerCovTableEntry">65</td>
+            <td class="headerCovTableEntry">67</td>
+            <td class="headerCovTableEntryHi">97.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-14 19:53:45</td>
+            <td class="headerValue">2021-06-15 19:53:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry">10</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntry">16</td>
-            <td class="headerCovTableEntryLo">62.5 %</td>
+            <td class="headerCovTableEntry">21</td>
+            <td class="headerCovTableEntry">40</td>
+            <td class="headerCovTableEntryLo">52.5 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -76,6 +76,22 @@
       <td width="20%" class="tableHead">Hit count <span class="tableHeadSort"><img src="../../../../../glass.png" width=10 height=14 alt="Sort by hit count" title="Sort by hit count" border=0></span></td>
     </tr>
     <tr>
+              <td class="coverFn"><a href="motion_common.hpp.gcov.html#130">MyQuaternion motion::motion_common::to_quat&lt;MyQuaternion&gt;(autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="motion_common.hpp.gcov.html#130">geometry_msgs::msg::Quaternion_&lt;std::allocator&lt;void&gt; &gt; motion::motion_common::to_quat&lt;geometry_msgs::msg::Quaternion_&lt;std::allocator&lt;void&gt; &gt; &gt;(autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="motion_common.hpp.gcov.html#117">autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt; motion::motion_common::from_quat&lt;MyQuaternion&gt;(MyQuaternion)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="motion_common.hpp.gcov.html#117">autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt; motion::motion_common::from_quat&lt;geometry_msgs::msg::Quaternion_&lt;std::allocator&lt;void&gt; &gt; &gt;(geometry_msgs::msg::Quaternion_&lt;std::allocator&lt;void&gt; &gt;)</a></td>
+              <td class="coverFnHi">1</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="motion_common.hpp.gcov.html#192">void motion::motion_common::sample&lt;autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt; (*)(autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt;, autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt;, float)&gt;(autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt;&amp;, std::chrono::duration&lt;long, std::ratio&lt;1l, 1000000000l&gt; &gt;, autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt; (*)(autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt;, autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt;, float))</a></td>
               <td class="coverFnHi">2</td>
             </tr>
@@ -90,6 +106,10 @@
     <tr>
               <td class="coverFn"><a href="motion_common.hpp.gcov.html#165">autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; motion::motion_common::interpolate&lt;autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt; (*)(autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt;, autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt;, float)&gt;(autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt;, float, autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt; (*)(autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt;, autoware_auto_msgs::msg::Complex32_&lt;std::allocator&lt;void&gt; &gt;, float))</a></td>
               <td class="coverFnHi">147</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="motion_common.hpp.gcov.html#150">float motion::motion_common::interpolate&lt;float, float&gt;(float, float, float)</a></td>
+              <td class="coverFnHi">1540</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="motion_common.hpp.gcov.html#140">float motion::motion_common::clamp&lt;float&gt;(float, float, float)</a></td>

@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">72</td>
-            <td class="headerCovTableEntry">73</td>
-            <td class="headerCovTableEntryHi">98.6 %</td>
+            <td class="headerCovTableEntry">84</td>
+            <td class="headerCovTableEntry">85</td>
+            <td class="headerCovTableEntryHi">98.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-14 19:37:30</td>
+            <td class="headerValue">2021-06-15 19:36:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">10</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntry">30</td>
-            <td class="headerCovTableEntryMed">86.7 %</td>
+            <td class="headerCovTableEntry">33</td>
+            <td class="headerCovTableEntry">46</td>
+            <td class="headerCovTableEntryLo">71.7 %</td>
           </tr>
           <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -136,15 +136,15 @@
 <a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">         16 : Covariance2d covariance_2d(const IT begin, const IT end)</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            : {</a>
 <a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">         16 :   Covariance2d ret{0.0F, 0.0F, 0.0F, 0U};</span></a>
-<a name="61"><span class="lineNum">      61 </span>                :            :   float32_t ux = 0.0F;</a>
-<a name="62"><span class="lineNum">      62 </span>                :            :   float32_t uy = 0.0F;</a>
-<a name="63"><span class="lineNum">      63 </span>                :            :   float32_t num_points = 0.0F;</a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">         16 :   float32_t ux = 0.0F;</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">         16 :   float32_t uy = 0.0F;</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">         16 :   float32_t num_points = 0.0F;</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            :   using point_adapter::x_;</a>
 <a name="65"><span class="lineNum">      65 </span>                :            :   using point_adapter::y_;</a>
 <a name="66"><span class="lineNum">      66 </span>        [<span class="branchCov" title="Branch 0 was taken 152 times"> + </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span>]:<span class="lineCov">        168 :   for (auto it = begin; it != end; ++it) {</span></a>
 <a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">        152 :     ++ret.num_points;</span></a>
 <a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">        152 :     num_points = static_cast&lt;float32_t&gt;(ret.num_points);</span></a>
-<a name="69"><span class="lineNum">      69 </span>                :            :     const auto &amp; pt = *it;</a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">        152 :     const auto &amp; pt = *it;</span></a>
 <a name="70"><span class="lineNum">      70 </span>                :            :     // update mean x</a>
 <a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">        152 :     const float32_t dx = x_(pt) - ux;</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">        152 :     ux = ux + (dx / num_points);</span></a>
@@ -190,7 +190,7 @@
 <a name="112"><span class="lineNum">     112 </span>                :            :   }</a>
 <a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">        132 :   disc = sqrtf(disc);</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            :   // compute eigenvalues</a>
-<a name="115"><span class="lineNum">     115 </span>                :<span class="lineCov">        132 :   const auto ret = std::make_pair(tr_2 + disc, tr_2 - disc);</span></a>
+<a name="115"><span class="lineNum">     115 </span>        [<span class="branchCov" title="Branch 0 was taken 132 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        132 :   const auto ret = std::make_pair(tr_2 + disc, tr_2 - disc);</span></a>
 <a name="116"><span class="lineNum">     116 </span>                :            :   // compute eigenvectors</a>
 <a name="117"><span class="lineNum">     117 </span>                :            :   using point_adapter::xr_;</a>
 <a name="118"><span class="lineNum">     118 </span>                :            :   using point_adapter::yr_;</a>
@@ -238,30 +238,30 @@
 <a name="160"><span class="lineNum">     160 </span>                :            :   Point4&lt;IT&gt; &amp; support)</a>
 <a name="161"><span class="lineNum">     161 </span>                :            : {</a>
 <a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">         16 :   const bool8_t ret = cross_2d(eig1, eig2) &gt;= 0.0F;</span></a>
-<a name="163"><span class="lineNum">     163 </span>                :            :   std::array&lt;float32_t, 4U&gt; metrics{{</a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">         16 :   std::array&lt;float32_t, 4U&gt; metrics{{</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            :     -std::numeric_limits&lt;float32_t&gt;::max(),</a>
 <a name="165"><span class="lineNum">     165 </span>                :            :     -std::numeric_limits&lt;float32_t&gt;::max(),</a>
 <a name="166"><span class="lineNum">     166 </span>                :            :     std::numeric_limits&lt;float32_t&gt;::max(),</a>
 <a name="167"><span class="lineNum">     167 </span>                :            :     std::numeric_limits&lt;float32_t&gt;::max()</a>
 <a name="168"><span class="lineNum">     168 </span>                :            :   }};</a>
 <a name="169"><span class="lineNum">     169 </span>        [<span class="branchCov" title="Branch 0 was taken 152 times"> + </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span>]:<span class="lineCov">        168 :   for (auto it = begin; it != end; ++it) {</span></a>
-<a name="170"><span class="lineNum">     170 </span>                :            :     const PointT &amp; pt = *it;</a>
-<a name="171"><span class="lineNum">     171 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchCov" title="Branch 1 was taken 134 times"> + </span>]:<span class="lineCov">        152 :     float32_t val = dot_2d(ret ? eig1 : eig2, pt);</span></a>
+<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">        152 :     const PointT &amp; pt = *it;</span></a>
+<a name="171"><span class="lineNum">     171 </span>        [<span class="branchCov" title="Branch 0 was taken 134 times"> + </span><span class="branchCov" title="Branch 1 was taken 18 times"> + </span>]:<span class="lineCov">        152 :     float32_t val = dot_2d(ret ? eig1 : eig2, pt);</span></a>
 <a name="172"><span class="lineNum">     172 </span>        [<span class="branchCov" title="Branch 0 was taken 70 times"> + </span><span class="branchCov" title="Branch 1 was taken 82 times"> + </span>]:<span class="lineCov">        152 :     if (val &gt; metrics[0U]) {</span></a>
-<a name="173"><span class="lineNum">     173 </span>                :            :       metrics[0U] = val;</a>
+<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">         70 :       metrics[0U] = val;</span></a>
 <a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">         70 :       support[0U] = it;</span></a>
 <a name="175"><span class="lineNum">     175 </span>                :            :     }</a>
 <a name="176"><span class="lineNum">     176 </span>        [<span class="branchCov" title="Branch 0 was taken 58 times"> + </span><span class="branchCov" title="Branch 1 was taken 94 times"> + </span>]:<span class="lineCov">        152 :     if (val &lt; metrics[2U]) {</span></a>
-<a name="177"><span class="lineNum">     177 </span>                :            :       metrics[2U] = val;</a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">         58 :       metrics[2U] = val;</span></a>
 <a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">         58 :       support[2U] = it;</span></a>
 <a name="179"><span class="lineNum">     179 </span>                :            :     }</a>
-<a name="180"><span class="lineNum">     180 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchCov" title="Branch 1 was taken 134 times"> + </span>]:<span class="lineCov">        152 :     val = dot_2d(ret ? eig2 : eig1, pt);</span></a>
+<a name="180"><span class="lineNum">     180 </span>        [<span class="branchCov" title="Branch 0 was taken 134 times"> + </span><span class="branchCov" title="Branch 1 was taken 18 times"> + </span>]:<span class="lineCov">        152 :     val = dot_2d(ret ? eig2 : eig1, pt);</span></a>
 <a name="181"><span class="lineNum">     181 </span>        [<span class="branchCov" title="Branch 0 was taken 32 times"> + </span><span class="branchCov" title="Branch 1 was taken 120 times"> + </span>]:<span class="lineCov">        152 :     if (val &gt; metrics[1U]) {</span></a>
-<a name="182"><span class="lineNum">     182 </span>                :            :       metrics[1U] = val;</a>
+<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">         32 :       metrics[1U] = val;</span></a>
 <a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         32 :       support[1U] = it;</span></a>
 <a name="184"><span class="lineNum">     184 </span>                :            :     }</a>
 <a name="185"><span class="lineNum">     185 </span>        [<span class="branchCov" title="Branch 0 was taken 64 times"> + </span><span class="branchCov" title="Branch 1 was taken 88 times"> + </span>]:<span class="lineCov">        152 :     if (val &lt; metrics[3U]) {</span></a>
-<a name="186"><span class="lineNum">     186 </span>                :            :       metrics[3U] = val;</a>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">         64 :       metrics[3U] = val;</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :<span class="lineCov">         64 :       support[3U] = it;</span></a>
 <a name="188"><span class="lineNum">     188 </span>                :            :     }</a>
 <a name="189"><span class="lineNum">     189 </span>                :            :   }</a>
@@ -282,15 +282,15 @@
 <a name="204"><span class="lineNum">     204 </span>                :            :   const PointT &amp; ax2,</a>
 <a name="205"><span class="lineNum">     205 </span>                :            :   const Point4&lt;IT&gt; &amp; supports)</a>
 <a name="206"><span class="lineNum">     206 </span>                :            : {</a>
-<a name="207"><span class="lineNum">     207 </span>                :            :   decltype(BoundingBox::corners) corners;</a>
+<a name="207"><span class="lineNum">     207 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineCov">         16 :   decltype(BoundingBox::corners) corners;</span></a>
 <a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">         16 :   const Point4&lt;PointT&gt; directions{{ax1, ax2, minus_2d(ax1), minus_2d(ax2)}};</span></a>
-<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">         16 :   compute_corners(corners, supports, directions);</span></a>
+<a name="209"><span class="lineNum">     209 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :   compute_corners(corners, supports, directions);</span></a>
 <a name="210"><span class="lineNum">     210 </span>                :            : </a>
 <a name="211"><span class="lineNum">     211 </span>                :            :   // build box</a>
-<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">         16 :   BoundingBox bbox;</span></a>
-<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">         16 :   finalize_box(corners, bbox);</span></a>
-<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">         16 :   size_2d(corners, bbox.size);</span></a>
-<a name="215"><span class="lineNum">     215 </span>                :<span class="lineCov">         16 :   return bbox;</span></a>
+<a name="212"><span class="lineNum">     212 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :   BoundingBox bbox;</span></a>
+<a name="213"><span class="lineNum">     213 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :   finalize_box(corners, bbox);</span></a>
+<a name="214"><span class="lineNum">     214 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :   size_2d(corners, bbox.size);</span></a>
+<a name="215"><span class="lineNum">     215 </span>                :<span class="lineCov">         32 :   return bbox;</span></a>
 <a name="216"><span class="lineNum">     216 </span>                :            : }</a>
 <a name="217"><span class="lineNum">     217 </span>                :            : }  // namespace details</a>
 <a name="218"><span class="lineNum">     218 </span>                :            : </a>
@@ -308,21 +308,21 @@
 <a name="230"><span class="lineNum">     230 </span>                :            : </a>
 <a name="231"><span class="lineNum">     231 </span>                :            :   // compute eigenvectors</a>
 <a name="232"><span class="lineNum">     232 </span>                :            :   using PointT = details::base_type&lt;decltype(*begin)&gt;;</a>
-<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">          2 :   PointT eig1;</span></a>
-<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">          2 :   PointT eig2;</span></a>
-<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">          4 :   const auto eigv = details::eig_2d(cov, eig1, eig2);</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">          4 :   PointT eig1;</span></a>
+<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">          4 :   PointT eig2;</span></a>
+<a name="235"><span class="lineNum">     235 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :   const auto eigv = details::eig_2d(cov, eig1, eig2);</span></a>
 <a name="236"><span class="lineNum">     236 </span>                :            : </a>
 <a name="237"><span class="lineNum">     237 </span>                :            :   // find extreme points</a>
 <a name="238"><span class="lineNum">     238 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         12 :   details::Point4&lt;IT&gt; supports;</span></a>
 <a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">          4 :   const bool8_t is_ccw = details::compute_supports(begin, end, eig1, eig2, supports);</span></a>
 <a name="240"><span class="lineNum">     240 </span>                :            :   // build box</a>
 <a name="241"><span class="lineNum">     241 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          4 :   if (is_ccw) {</span></a>
-<a name="242"><span class="lineNum">     242 </span>                :            :     std::swap(eig1, eig2);</a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">          2 :     std::swap(eig1, eig2);</span></a>
 <a name="243"><span class="lineNum">     243 </span>                :            :   }</a>
-<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">          4 :   BoundingBox bbox = details::compute_bounding_box(eig1, eig2, supports);</span></a>
+<a name="244"><span class="lineNum">     244 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :   BoundingBox bbox = details::compute_bounding_box(eig1, eig2, supports);</span></a>
 <a name="245"><span class="lineNum">     245 </span>                :<span class="lineCov">          4 :   bbox.value = eigv.first;</span></a>
 <a name="246"><span class="lineNum">     246 </span>                :            : </a>
-<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">          4 :   return bbox;</span></a>
+<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">          8 :   return bbox;</span></a>
 <a name="248"><span class="lineNum">     248 </span>                :            : }</a>
 <a name="249"><span class="lineNum">     249 </span>                :            : }  // namespace bounding_box</a>
 <a name="250"><span class="lineNum">     250 </span>                :            : }  // namespace geometry</a>

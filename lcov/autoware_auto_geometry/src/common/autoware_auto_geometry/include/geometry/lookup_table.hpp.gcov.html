@@ -31,17 +31,17 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">34</td>
-            <td class="headerCovTableEntry">36</td>
-            <td class="headerCovTableEntryHi">94.4 %</td>
+            <td class="headerCovTableEntry">39</td>
+            <td class="headerCovTableEntry">41</td>
+            <td class="headerCovTableEntryHi">95.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-14 19:37:30</td>
+            <td class="headerValue">2021-06-15 19:36:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">17</td>
-            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry">25</td>
+            <td class="headerCovTableEntry">25</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">39</td>
-            <td class="headerCovTableEntry">86</td>
-            <td class="headerCovTableEntryLo">45.3 %</td>
+            <td class="headerCovTableEntry">25</td>
+            <td class="headerCovTableEntry">38</td>
+            <td class="headerCovTableEntryLo">65.8 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -123,7 +123,7 @@
 <a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">         18 : T interpolate(const T &amp; a, const T &amp; b, U scaling)</span></a>
 <a name="46"><span class="lineNum">      46 </span>                :            : {</a>
 <a name="47"><span class="lineNum">      47 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 13 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         18 :   static const geometry::Interval&lt;U&gt; UNIT_INTERVAL(static_cast&lt;U&gt;(0), static_cast&lt;U&gt;(1));</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
 <a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">         18 :   scaling = geometry::Interval&lt;U&gt;::clamp_to(UNIT_INTERVAL, scaling);</span></a>
 <a name="49"><span class="lineNum">      49 </span>                :            : </a>
 <a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">         18 :   const auto m = (b - a);</span></a>
@@ -135,24 +135,24 @@
 <a name="56"><span class="lineNum">      56 </span>                :            : // Actual lookup logic, assuming all invariants hold:</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : // Throw if value is not finite</a>
 <a name="58"><span class="lineNum">      58 </span>                :            : template&lt;typename T&gt;</a>
-<a name="59"><span class="lineNum">      59 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         16 : T lookup_impl_1d(const std::vector&lt;T&gt; &amp; domain, const std::vector&lt;T&gt; &amp; range, const T value)</span></a>
+<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         16 : T lookup_impl_1d(const std::vector&lt;T&gt; &amp; domain, const std::vector&lt;T&gt; &amp; range, const T value)</span></a>
 <a name="60"><span class="lineNum">      60 </span>                :            : {</a>
-<a name="61"><span class="lineNum">      61 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">          8 :   if (!std::isfinite(value)) {</span></a>
+<a name="61"><span class="lineNum">      61 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span>]:<span class="lineCov">         16 :   if (!std::isfinite(value)) {</span></a>
 <a name="62"><span class="lineNum">      62 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::domain_error{&quot;Query value is not finite (NAN or INF)&quot;};</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            :   }</a>
 <a name="64"><span class="lineNum">      64 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 12 times"> + </span>]:<span class="lineCov">         16 :   if (value &lt;= domain.front()) {</span></a>
 <a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">          4 :     return range.front();</span></a>
-<a name="66"><span class="lineNum">      66 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         12 :   } else if (value &gt;= domain.back()) {</span></a>
+<a name="66"><span class="lineNum">      66 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         12 :   } else if (value &gt;= domain.back()) {</span></a>
 <a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">          4 :     return range.back();</span></a>
 <a name="68"><span class="lineNum">      68 </span>                :            :   } else {</a>
 <a name="69"><span class="lineNum">      69 </span>                :            :     // Fall through to normal case</a>
 <a name="70"><span class="lineNum">      70 </span>                :            :   }</a>
 <a name="71"><span class="lineNum">      71 </span>                :            : </a>
-<a name="72"><span class="lineNum">      72 </span>                :            :   auto second_idx{0U};</a>
+<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">          8 :   auto second_idx{0U};</span></a>
 <a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   for (auto idx = 1U; idx &lt; domain.size(); ++idx) {</span></a>
-<a name="74"><span class="lineNum">      74 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         12 :     if (value &lt; domain[idx]) {</span></a>
-<a name="75"><span class="lineNum">      75 </span>                :            :       second_idx = idx;</a>
-<a name="76"><span class="lineNum">      76 </span>                :            :       break;</a>
+<a name="74"><span class="lineNum">      74 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         12 :     if (value &lt; domain[idx]) {</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">          8 :       second_idx = idx;</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">          8 :       break;</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            :     }</a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   }</a>
 <a name="79"><span class="lineNum">      79 </span>                :            :   // T must be a floating point between 0 and 1</a>
@@ -170,7 +170,7 @@
 <a name="91"><span class="lineNum">      91 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 24 times"> + </span>]:<span class="lineCov">         28 :   if (domain.size() != range.size()) {</span></a>
 <a name="92"><span class="lineNum">      92 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     throw std::domain_error{&quot;Domain's size does not match range's&quot;};</span></a>
 <a name="93"><span class="lineNum">      93 </span>                :            :   }</a>
-<a name="94"><span class="lineNum">      94 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         24 :   if (domain.empty()) {</span></a>
+<a name="94"><span class="lineNum">      94 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         24 :   if (domain.empty()) {</span></a>
 <a name="95"><span class="lineNum">      95 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     throw std::domain_error{&quot;Empty domain or range&quot;};</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :            :   }</a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   // Check if sorted: Can start at 1 because not empty</a>
@@ -195,21 +195,11 @@
 <a name="116"><span class="lineNum">     116 </span>                :            : /// \throw std::domain_error If value is not finite (NAN or INF)</a>
 <a name="117"><span class="lineNum">     117 </span>                :            : /// \tparam T The type of the function, must be interpolatable</a>
 <a name="118"><span class="lineNum">     118 </span>                :            : template&lt;typename T&gt;</a>
-<a name="119"><span class="lineNum">     119 </span>                :            : T lookup_1d(const std::vector&lt;T&gt; &amp; domain, const std::vector&lt;T&gt; &amp; range, const T value)</a>
+<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">         12 : T lookup_1d(const std::vector&lt;T&gt; &amp; domain, const std::vector&lt;T&gt; &amp; range, const T value)</span></a>
 <a name="120"><span class="lineNum">     120 </span>                :            : {</a>
-<a name="121"><span class="lineNum">     121 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span> :<span class="lineCov">         12 :   check_table_lookup_invariants(domain, range);</span></a>
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
-<span class="lineNum">         </span><span class="branchCov" title="Branch 9 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 10 was not taken"> - </span><span class="branchCov" title="Branch 11 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 12 was not taken"> - </span><span class="branchCov" title="Branch 13 was taken 1 time"> + </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchCov" title="Branch 15 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 16 was not taken"> - </span><span class="branchCov" title="Branch 17 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 18 was not taken"> - </span> 
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 19 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 20 was not taken"> - </span><span class="branchCov" title="Branch 21 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 22 was not taken"> - </span> 
-<span class="lineNum">         </span>            <span class="branchCov" title="Branch 23 was taken 1 time"> + </span>]
+<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">         12 :   check_table_lookup_invariants(domain, range);</span></a>
 <a name="122"><span class="lineNum">     122 </span>                :            : </a>
-<a name="123"><span class="lineNum">     123 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   return lookup_impl_1d(domain, range, value);</span></a>
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span><span class="branchNoExec" title="Branch 13 was not executed"> # </span> 
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 14 was not executed"> # </span><span class="branchNoExec" title="Branch 15 was not executed"> # </span><span class="branchNoExec" title="Branch 16 was not executed"> # </span><span class="branchNoExec" title="Branch 17 was not executed"> # </span><span class="branchNoExec" title="Branch 18 was not executed"> # </span> 
-<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 19 was not executed"> # </span><span class="branchNoExec" title="Branch 20 was not executed"> # </span><span class="branchNoExec" title="Branch 21 was not executed"> # </span><span class="branchNoExec" title="Branch 22 was not executed"> # </span> 
-<span class="lineNum">         </span>            <span class="branchNoExec" title="Branch 23 was not executed"> # </span>]
+<a name="123"><span class="lineNum">     123 </span>                :<span class="lineNoCov">          0 :   return lookup_impl_1d(domain, range, value);</span></a>
 <a name="124"><span class="lineNum">     124 </span>                :            : }</a>
 <a name="125"><span class="lineNum">     125 </span>                :            : </a>
 <a name="126"><span class="lineNum">     126 </span>                :            : /// A class wrapping a 1D lookup table. Intended for more frequent lookups. Error checking is pushed</a>
@@ -251,7 +241,7 @@
 <a name="162"><span class="lineNum">     162 </span>                :            :   /// \param[in] value The point in the domain to query, x</a>
 <a name="163"><span class="lineNum">     163 </span>                :            :   /// \return A linearly interpolated value y, corresponding to the query, x</a>
 <a name="164"><span class="lineNum">     164 </span>                :            :   /// \throw std::domain_error If value is not finite</a>
-<a name="165"><span class="lineNum">     165 </span>                :            :   T lookup(const T value) const</a>
+<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">         16 :   T lookup(const T value) const</span></a>
 <a name="166"><span class="lineNum">     166 </span>                :            :   {</a>
 <a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">         16 :     return lookup_impl_1d(m_domain, m_range, value);</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            :   }</a>

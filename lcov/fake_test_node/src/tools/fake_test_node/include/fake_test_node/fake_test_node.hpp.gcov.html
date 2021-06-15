@@ -31,17 +31,17 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">23</td>
             <td class="headerCovTableEntry">27</td>
-            <td class="headerCovTableEntryMed">85.2 %</td>
+            <td class="headerCovTableEntry">33</td>
+            <td class="headerCovTableEntryMed">81.8 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-14 19:44:28</td>
+            <td class="headerValue">2021-06-15 19:43:32</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">7</td>
-            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">8</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">17</td>
-            <td class="headerCovTableEntry">76</td>
-            <td class="headerCovTableEntryLo">22.4 %</td>
+            <td class="headerCovTableEntry">16</td>
+            <td class="headerCovTableEntry">62</td>
+            <td class="headerCovTableEntryLo">25.8 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -173,25 +173,24 @@
 <a name="95"><span class="lineNum">      95 </span>                :            :   /// @return     A publisher pointer;</a>
 <a name="96"><span class="lineNum">      96 </span>                :            :   ///</a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   template&lt;typename MsgT&gt;</a>
-<a name="98"><span class="lineNum">      98 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :   typename rclcpp::Publisher&lt;MsgT&gt;::SharedPtr create_publisher(</span></a>
+<a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">          3 :   typename rclcpp::Publisher&lt;MsgT&gt;::SharedPtr create_publisher(</span></a>
 <a name="99"><span class="lineNum">      99 </span>                :            :     const std::string &amp; topic,</a>
-<a name="100"><span class="lineNum">     100 </span>                :            :     const std::chrono::milliseconds &amp; timeout = std::chrono::seconds{10LL},</a>
+<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">          3 :     const std::chrono::milliseconds &amp; timeout = std::chrono::seconds{10LL},</span></a>
 <a name="101"><span class="lineNum">     101 </span>                :            :     const std::int32_t history_size = 10)</a>
 <a name="102"><span class="lineNum">     102 </span>                :            :   {</a>
 <a name="103"><span class="lineNum">     103 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          3 :     typename rclcpp::Publisher&lt;MsgT&gt;::SharedPtr publisher =</span></a>
-<a name="104"><span class="lineNum">     104 </span>                :            :       m_fake_node-&gt;create_publisher&lt;MsgT&gt;(topic, history_size);</a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">          3 :       m_fake_node-&gt;create_publisher&lt;MsgT&gt;(topic, history_size);</span></a>
 <a name="105"><span class="lineNum">     105 </span>                :            : </a>
 <a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">          3 :     std::chrono::milliseconds spent_time{0LL};</span></a>
 <a name="107"><span class="lineNum">     107 </span>                :<span class="lineCov">          3 :     std::chrono::milliseconds dt{100LL};</span></a>
 <a name="108"><span class="lineNum">     108 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 3 times"> + </span>]:<span class="lineCov">          3 :     while (m_fake_node-&gt;count_subscribers(topic) &lt; 1) {</span></a>
-<a name="109"><span class="lineNum">     109 </span>                :            :       spent_time += dt;</a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineNoCov">          0 :       spent_time += dt;</span></a>
 <a name="110"><span class="lineNum">     110 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :       EXPECT_LT(spent_time, timeout) &lt;&lt; &quot;Nobody is listening to the mock topic we publish.&quot;;</span></a>
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span><span class="branchNoExec" title="Branch 13 was not executed"> # </span> 
-<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 14 was not executed"> # </span><span class="branchNoExec" title="Branch 15 was not executed"> # </span>]
+<span class="lineNum">         </span>      <span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span>]
 <a name="111"><span class="lineNum">     111 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       std::this_thread::sleep_for(dt);</span></a>
 <a name="112"><span class="lineNum">     112 </span>                :            :     }</a>
-<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">          3 :     return publisher;</span></a>
+<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">          6 :     return publisher;</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            :   }</a>
 <a name="115"><span class="lineNum">     115 </span>                :            : </a>
 <a name="116"><span class="lineNum">     116 </span>                :            :   ///</a>
@@ -214,21 +213,20 @@
 <a name="133"><span class="lineNum">     133 </span>                :            :     const std::string &amp; topic,</a>
 <a name="134"><span class="lineNum">     134 </span>                :            :     const NodeT &amp; publishing_node,</a>
 <a name="135"><span class="lineNum">     135 </span>                :            :     std::function&lt;void(const typename MsgT::SharedPtr msg)&gt; callback,</a>
-<a name="136"><span class="lineNum">     136 </span>                :            :     const std::chrono::milliseconds &amp; timeout = std::chrono::seconds{10LL})</a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">          3 :     const std::chrono::milliseconds &amp; timeout = std::chrono::seconds{10LL})</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            :   {</a>
-<a name="138"><span class="lineNum">     138 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          6 :     auto subscription = m_fake_node-&gt;create_subscription&lt;MsgT&gt;(topic, 10, callback);</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
+<a name="138"><span class="lineNum">     138 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          3 :     auto subscription = m_fake_node-&gt;create_subscription&lt;MsgT&gt;(topic, 10, callback);</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
 <a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">          3 :     std::chrono::milliseconds spent_time{0LL};</span></a>
 <a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">          3 :     std::chrono::milliseconds dt{100LL};</span></a>
 <a name="141"><span class="lineNum">     141 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 3 times"> + </span>]:<span class="lineCov">          3 :     while (publishing_node.count_publishers(topic) &lt; 1) {</span></a>
-<a name="142"><span class="lineNum">     142 </span>                :            :       spent_time += dt;</a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineNoCov">          0 :       spent_time += dt;</span></a>
 <a name="143"><span class="lineNum">     143 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :       EXPECT_LT(spent_time, timeout) &lt;&lt; &quot;The node under test is not publishing what we listen to.&quot;;</span></a>
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span><span class="branchNoExec" title="Branch 13 was not executed"> # </span> 
-<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 14 was not executed"> # </span><span class="branchNoExec" title="Branch 15 was not executed"> # </span>]
+<span class="lineNum">         </span>      <span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span>]
 <a name="144"><span class="lineNum">     144 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       std::this_thread::sleep_for(dt);</span></a>
 <a name="145"><span class="lineNum">     145 </span>                :            :     }</a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">          3 :     return subscription;</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">          6 :     return subscription;</span></a>
 <a name="147"><span class="lineNum">     147 </span>                :            :   }</a>
 <a name="148"><span class="lineNum">     148 </span>                :            : </a>
 <a name="149"><span class="lineNum">     149 </span>                :            :   ///</a>
@@ -236,7 +234,7 @@
 <a name="151"><span class="lineNum">     151 </span>                :            :   ///</a>
 <a name="152"><span class="lineNum">     152 </span>                :            :   /// @return     The mock node.</a>
 <a name="153"><span class="lineNum">     153 </span>                :            :   ///</a>
-<a name="154"><span class="lineNum">     154 </span>                :            :   inline rclcpp::Node::SharedPtr get_fake_node() {return m_fake_node;}</a>
+<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">          3 :   inline rclcpp::Node::SharedPtr get_fake_node() {return m_fake_node;}</span></a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
 <a name="156"><span class="lineNum">     156 </span>                :            :   ///</a>
 <a name="157"><span class="lineNum">     157 </span>                :            :   /// @brief      Gets the tf buffer.</a>
@@ -262,8 +260,7 @@
 <a name="177"><span class="lineNum">     177 </span>                :            : {</a>
 <a name="178"><span class="lineNum">     178 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          3 :   if (!info) {throw std::runtime_error(&quot;No test info available.&quot;);}</span></a>
 <a name="179"><span class="lineNum">     179 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          6 :   return std::string{info-&gt;test_case_name()} + &quot;_&quot; + info-&gt;name();</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
-<span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 9 was not taken"> - </span>]
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
 <a name="180"><span class="lineNum">     180 </span>                :            : }</a>
 <a name="181"><span class="lineNum">     181 </span>                :            : </a>
 <a name="182"><span class="lineNum">     182 </span>                :            : </a>

@@ -31,17 +31,17 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">41</td>
-            <td class="headerCovTableEntry">41</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">43</td>
+            <td class="headerCovTableEntry">44</td>
+            <td class="headerCovTableEntryHi">97.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-14 19:38:19</td>
+            <td class="headerValue">2021-06-15 19:36:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntry">7</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">4</td>
-            <td class="headerCovTableEntry">4</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">34</td>
+            <td class="headerCovTableEntryLo">55.9 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -134,10 +134,10 @@
 <a name="56"><span class="lineNum">      56 </span>                :            :   const geometry_msgs::msg::Point32 &amp; t_in, geometry_msgs::msg::Point32 &amp; t_out,</a>
 <a name="57"><span class="lineNum">      57 </span>                :            :   const geometry_msgs::msg::TransformStamped &amp; transform)</a>
 <a name="58"><span class="lineNum">      58 </span>                :            : {</a>
-<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         26 :   const KDL::Vector v_out = gmTransformToKDL(transform) * KDL::Vector(t_in.x, t_in.y, t_in.z);</span></a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">         26 :   t_out.x = static_cast&lt;float&gt;(v_out[0]);</span></a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">         26 :   t_out.y = static_cast&lt;float&gt;(v_out[1]);</span></a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">         26 :   t_out.z = static_cast&lt;float&gt;(v_out[2]);</span></a>
+<a name="59"><span class="lineNum">      59 </span>  [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         26 :   const KDL::Vector v_out = gmTransformToKDL(transform) * KDL::Vector(t_in.x, t_in.y, t_in.z);</span></a>
+<a name="60"><span class="lineNum">      60 </span>        [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         26 :   t_out.x = static_cast&lt;float&gt;(v_out[0]);</span></a>
+<a name="61"><span class="lineNum">      61 </span>        [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         26 :   t_out.y = static_cast&lt;float&gt;(v_out[1]);</span></a>
+<a name="62"><span class="lineNum">      62 </span>        [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         26 :   t_out.z = static_cast&lt;float&gt;(v_out[2]);</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">         26 : }</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            : </a>
 <a name="65"><span class="lineNum">      65 </span>                :            : </a>
@@ -158,15 +158,15 @@
 <a name="80"><span class="lineNum">      80 </span>                :            :   const geometry_msgs::msg::TransformStamped &amp; transform)</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : {</a>
 <a name="82"><span class="lineNum">      82 </span>                :            :   // Don't call the Point32 doTransform to avoid doing this conversion every time</a>
-<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">          1 :   const auto kdl_frame = gmTransformToKDL(transform);</span></a>
+<a name="83"><span class="lineNum">      83 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :   const auto kdl_frame = gmTransformToKDL(transform);</span></a>
 <a name="84"><span class="lineNum">      84 </span>                :            :   // We don't use std::back_inserter to allow aliasing between t_in and t_out</a>
-<a name="85"><span class="lineNum">      85 </span>                :<span class="lineCov">          1 :   t_out.points.resize(t_in.points.size());</span></a>
+<a name="85"><span class="lineNum">      85 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :   t_out.points.resize(t_in.points.size());</span></a>
 <a name="86"><span class="lineNum">      86 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :   for (size_t i = 0; i &lt; t_in.points.size(); ++i) {</span></a>
-<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">          1 :     const KDL::Vector v_out = kdl_frame * KDL::Vector(</span></a>
-<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">          1 :       t_in.points[i].x, t_in.points[i].y, t_in.points[i].z);</span></a>
-<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">          1 :     t_out.points[i].x = static_cast&lt;float&gt;(v_out[0]);</span></a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">          1 :     t_out.points[i].y = static_cast&lt;float&gt;(v_out[1]);</span></a>
-<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">          1 :     t_out.points[i].z = static_cast&lt;float&gt;(v_out[2]);</span></a>
+<a name="87"><span class="lineNum">      87 </span>                :<span class="lineNoCov">          0 :     const KDL::Vector v_out = kdl_frame * KDL::Vector(</span></a>
+<a name="88"><span class="lineNum">      88 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :       t_in.points[i].x, t_in.points[i].y, t_in.points[i].z);</span></a>
+<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     t_out.points[i].x = static_cast&lt;float&gt;(v_out[0]);</span></a>
+<a name="90"><span class="lineNum">      90 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     t_out.points[i].y = static_cast&lt;float&gt;(v_out[1]);</span></a>
+<a name="91"><span class="lineNum">      91 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     t_out.points[i].z = static_cast&lt;float&gt;(v_out[2]);</span></a>
 <a name="92"><span class="lineNum">      92 </span>                :            :   }</a>
 <a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">          1 : }</span></a>
 <a name="94"><span class="lineNum">      94 </span>                :            : </a>
@@ -187,11 +187,11 @@
 <a name="109"><span class="lineNum">     109 </span>                :            :   autoware_auto_msgs::msg::Quaternion32 &amp; t_out,</a>
 <a name="110"><span class="lineNum">     110 </span>                :            :   const geometry_msgs::msg::TransformStamped &amp; transform)</a>
 <a name="111"><span class="lineNum">     111 </span>                :            : {</a>
-<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">          6 :   KDL::Rotation r_in = KDL::Rotation::Quaternion(t_in.x, t_in.y, t_in.z, t_in.w);</span></a>
-<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">          6 :   KDL::Rotation out = gmTransformToKDL(transform).M * r_in;</span></a>
+<a name="112"><span class="lineNum">     112 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   KDL::Rotation r_in = KDL::Rotation::Quaternion(t_in.x, t_in.y, t_in.z, t_in.w);</span></a>
+<a name="113"><span class="lineNum">     113 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          6 :   KDL::Rotation out = gmTransformToKDL(transform).M * r_in;</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            : </a>
 <a name="115"><span class="lineNum">     115 </span>                :            :   double qx, qy, qz, qw;</a>
-<a name="116"><span class="lineNum">     116 </span>                :<span class="lineCov">          6 :   out.GetQuaternion(qx, qy, qz, qw);</span></a>
+<a name="116"><span class="lineNum">     116 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   out.GetQuaternion(qx, qy, qz, qw);</span></a>
 <a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">          6 :   t_out.x = static_cast&lt;float32_t&gt;(qx);</span></a>
 <a name="118"><span class="lineNum">     118 </span>                :<span class="lineCov">          6 :   t_out.y = static_cast&lt;float32_t&gt;(qy);</span></a>
 <a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">          6 :   t_out.z = static_cast&lt;float32_t&gt;(qz);</span></a>
@@ -237,7 +237,7 @@
 <a name="159"><span class="lineNum">     159 </span>                :            :  */</a>
 <a name="160"><span class="lineNum">     160 </span>                :            : template&lt;&gt;</a>
 <a name="161"><span class="lineNum">     161 </span>                :            : inline</a>
-<a name="162"><span class="lineNum">     162 </span>                :            : tf2::TimePoint getTimestamp(const BoundingBoxArray &amp; t)</a>
+<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">          2 : tf2::TimePoint getTimestamp(const BoundingBoxArray &amp; t)</span></a>
 <a name="163"><span class="lineNum">     163 </span>                :            : {</a>
 <a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">          2 :   return tf2_ros::fromMsg(t.header.stamp);</span></a>
 <a name="165"><span class="lineNum">     165 </span>                :            : }</a>
@@ -249,7 +249,7 @@
 <a name="171"><span class="lineNum">     171 </span>                :            :  */</a>
 <a name="172"><span class="lineNum">     172 </span>                :            : template&lt;&gt;</a>
 <a name="173"><span class="lineNum">     173 </span>                :            : inline</a>
-<a name="174"><span class="lineNum">     174 </span>                :            : std::string getFrameId(const BoundingBoxArray &amp; t) {return t.header.frame_id;}</a>
+<a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">          2 : std::string getFrameId(const BoundingBoxArray &amp; t) {return t.header.frame_id;}</span></a>
 <a name="175"><span class="lineNum">     175 </span>                :            : </a>
 <a name="176"><span class="lineNum">     176 </span>                :            : /** \brief Apply a geometry_msgs TransformStamped to an autoware_auto_msgs BoundingBoxArray type.</a>
 <a name="177"><span class="lineNum">     177 </span>                :            :  * This function is a specialization of the doTransform template defined in tf2/convert.h.</a>
@@ -264,7 +264,7 @@
 <a name="186"><span class="lineNum">     186 </span>                :            :   BoundingBoxArray &amp; t_out,</a>
 <a name="187"><span class="lineNum">     187 </span>                :            :   const geometry_msgs::msg::TransformStamped &amp; transform)</a>
 <a name="188"><span class="lineNum">     188 </span>                :            : {</a>
-<a name="189"><span class="lineNum">     189 </span>                :            :   t_out = t_in;</a>
+<a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">          2 :   t_out = t_in;</span></a>
 <a name="190"><span class="lineNum">     190 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          6 :   for (auto idx = 0U; idx &lt; t_in.boxes.size(); idx++) {</span></a>
 <a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">          4 :     doTransform(t_out.boxes[idx], t_out.boxes[idx], transform);</span></a>
 <a name="192"><span class="lineNum">     192 </span>                :            :   }</a>

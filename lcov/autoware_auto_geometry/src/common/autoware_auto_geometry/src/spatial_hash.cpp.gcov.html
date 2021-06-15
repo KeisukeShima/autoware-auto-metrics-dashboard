@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-14 19:37:30</td>
+            <td class="headerValue">2021-06-15 19:36:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">10</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
           </tr>
           <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -131,8 +131,8 @@
 <a name="53"><span class="lineNum">      53 </span>                :            :   const details::Index3 &amp; query,</a>
 <a name="54"><span class="lineNum">      54 </span>                :            :   const float ref_distance2) const</a>
 <a name="55"><span class="lineNum">      55 </span>                :            : {</a>
-<a name="56"><span class="lineNum">      56 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">         19 :   const float dx = idx_distance(ref.x, query.x);</span></a>
-<a name="57"><span class="lineNum">      57 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">         19 :   const float dy = idx_distance(ref.y, query.y);</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">         19 :   const float dx = idx_distance(ref.x, query.x);</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">         19 :   const float dy = idx_distance(ref.y, query.y);</span></a>
 <a name="58"><span class="lineNum">      58 </span>                :            :   // minor algebraic manipulation happening below</a>
 <a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         19 :   return (((dx * dx) + (dy * dy)) * side_length2()) &lt;= ref_distance2;</span></a>
 <a name="60"><span class="lineNum">      60 </span>                :            : }</a>
@@ -171,9 +171,9 @@
 <a name="93"><span class="lineNum">      93 </span>                :            :   const details::Index3 &amp; query,</a>
 <a name="94"><span class="lineNum">      94 </span>                :            :   const float ref_distance2) const</a>
 <a name="95"><span class="lineNum">      95 </span>                :            : {</a>
-<a name="96"><span class="lineNum">      96 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchCov" title="Branch 1 was taken 9 times"> + </span>]:<span class="lineCov">         27 :   const float dx = idx_distance(ref.x, query.x);</span></a>
-<a name="97"><span class="lineNum">      97 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchCov" title="Branch 1 was taken 9 times"> + </span>]:<span class="lineCov">         27 :   const float dy = idx_distance(ref.y, query.y);</span></a>
-<a name="98"><span class="lineNum">      98 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchCov" title="Branch 1 was taken 9 times"> + </span>]:<span class="lineCov">         27 :   const float dz = idx_distance(ref.z, query.z);</span></a>
+<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">         27 :   const float dx = idx_distance(ref.x, query.x);</span></a>
+<a name="97"><span class="lineNum">      97 </span>                :<span class="lineCov">         27 :   const float dy = idx_distance(ref.y, query.y);</span></a>
+<a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">         27 :   const float dz = idx_distance(ref.z, query.z);</span></a>
 <a name="99"><span class="lineNum">      99 </span>                :            :   // minor algebraic manipulation happening below</a>
 <a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">         27 :   return (((dx * dx) + (dy * dy) + (dz * dz)) * side_length2()) &lt;= ref_distance2;</span></a>
 <a name="101"><span class="lineNum">     101 </span>                :            : }</a>

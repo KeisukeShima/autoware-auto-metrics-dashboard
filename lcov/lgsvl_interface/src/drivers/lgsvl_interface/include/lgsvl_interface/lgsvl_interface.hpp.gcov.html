@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-14 19:50:27</td>
+            <td class="headerValue">2021-06-15 19:49:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">1</td>
-            <td class="headerCovTableEntry">2</td>
-            <td class="headerCovTableEntryLo">50.0 %</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntryHi">-</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -181,7 +181,7 @@
 <a name="103"><span class="lineNum">     103 </span>                :            :     bool publish_tf = NO_PUBLISH,</a>
 <a name="104"><span class="lineNum">     104 </span>                :            :     bool publish_pose = PUBLISH);</a>
 <a name="105"><span class="lineNum">     105 </span>                :            : </a>
-<a name="106"><span class="lineNum">     106 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   ~LgsvlInterface() noexcept override = default;</span></a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">          4 :   ~LgsvlInterface() noexcept override = default;</span></a>
 <a name="107"><span class="lineNum">     107 </span>                :            :   /// Receives data from ROS 2 subscriber, and updates output messages.</a>
 <a name="108"><span class="lineNum">     108 </span>                :            :   /// Not yet implemented</a>
 <a name="109"><span class="lineNum">     109 </span>                :            :   bool update(std::chrono::nanoseconds timeout) override;</a>
