@@ -72,6 +72,10 @@
   </url>
   
   <url>
+    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/benchmark_tool_nodes/</loc>
+  </url>
+  
+  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/can_dbc_parser/</loc>
   </url>
   
@@ -377,6 +381,10 @@
   
   <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/signal_filters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/simple_planning_simulator/</loc>
   </url>
   
   <url>

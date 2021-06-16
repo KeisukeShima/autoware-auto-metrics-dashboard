@@ -186,6 +186,17 @@ Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-met
     </item>
     
     <item>
+      <title>benchmark_tool_nodes</title>
+      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/benchmark_tool_nodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/benchmark_tool_nodes/</guid>
+      <description>benchmark_tool_nodes
+ Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/benchmark_tool_nodes/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/benchmark_tool_nodes\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });  You can access more detailed data on code coverage here.
+Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/benchmark_tool_nodes/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/benchmark_tool_nodes\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/benchmark_tool_nodes/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/benchmark_tool_nodes\/loc.json&#39;, fig.</description>
+    </item>
+    
+    <item>
       <title>can_dbc_parser</title>
       <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/can_dbc_parser/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1008,6 +1019,17 @@ Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-met
       <description>signal_filters
  Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/signal_filters/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/signal_filters\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });  You can access more detailed data on code coverage here.
 Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/signal_filters/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/signal_filters\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/signal_filters/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/signal_filters\/loc.json&#39;, fig.</description>
+    </item>
+    
+    <item>
+      <title>simple_planning_simulator</title>
+      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/simple_planning_simulator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/simple_planning_simulator/</guid>
+      <description>simple_planning_simulator
+ Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/simple_planning_simulator/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/simple_planning_simulator\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });  You can access more detailed data on code coverage here.
+Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/simple_planning_simulator/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/simple_planning_simulator\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/simple_planning_simulator/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/simple_planning_simulator\/loc.json&#39;, fig.</description>
     </item>
     
     <item>
