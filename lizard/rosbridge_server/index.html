@@ -55,7 +55,7 @@
 <table>
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/external/rosbridge_suite/rosbridge_server/src/rosbridge_server/udp_handler.py</b></td></tr>
+  Source file: <b>src/external/rosbridge_suite/rosbridge_server/scripts/rosbridge_tcp.py</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -68,7 +68,7 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">startProtocol</td>
+    <td style="background-color:LightSteelBlue">shutdown_hook</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -79,7 +79,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">12</td>
+       <td class="value">10</td>
     
 
     
@@ -87,23 +87,57 @@ Cyclomatic complexity
     
   </tr>
   
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/external/rosbridge_suite/rosbridge_server/scripts/rosbridge_websocket.py</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
   <tr>
-    <td style="background-color:LightSteelBlue">datagramReceived</td>
+    <td style="background-color:LightSteelBlue">start_hook</td>
     <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
     
        <td class="lesser-value">2</td>
     
 
     
-       <td class="lesser-value">10</td>
+       <td class="value">13</td>
     
 
     
-       <td class="value">100</td>
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">shutdown_hook</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">3</td>
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">13</td>
+    
+
+    
+       <td class="lesser-value">0</td>
     
   </tr>
   
@@ -111,35 +145,15 @@ Cyclomatic complexity
     <td style="background-color:LightSteelBlue">__init__</td>
     <td></td>
     
-       <td class="lesser-value">1</td>
+       <td class="greater-value">47</td>
     
 
     
-       <td class="lesser-value">3</td>
+       <td class="lesser-value">173</td>
     
 
     
-       <td class="value">17</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">startProtocol</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">21</td>
-    
-
-    
-       <td class="value">129</td>
+       <td class="value">1445</td>
     
 
     
@@ -148,38 +162,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">datagramReceived</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">21</td>
-    
-
-    
-       <td class="value">161</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">stopProtocol</td>
+    <td style="background-color:LightSteelBlue">main</td>
     <td></td>
     
        <td class="lesser-value">2</td>
     
 
     
-       <td class="lesser-value">7</td>
+       <td class="lesser-value">11</td>
     
 
     
-       <td class="value">47</td>
+       <td class="value">72</td>
     
 
     
@@ -187,28 +181,22 @@ Cyclomatic complexity
     
   </tr>
   
-  <tr>
-    <td style="background-color:LightSteelBlue">send_message</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
 
-    
-       <td class="lesser-value">3</td>
-    
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/external/rosbridge_suite/rosbridge_server/scripts/rosbridge_udp.py</b></td></tr>
 
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
     
-       <td class="value">23</td>
+       Token count
     
+</th><th>Parameter count (6)</th></tr>
 
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">check_origin</td>
+    <td style="background-color:LightSteelBlue">shutdown_hook</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -223,14 +211,9 @@ Cyclomatic complexity
     
 
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">0</td>
     
   </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/external/rosbridge_suite/rosbridge_server/src/rosbridge_server/__init__.py</b></td></tr>
-
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
@@ -676,7 +659,12 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/external/rosbridge_suite/rosbridge_server/scripts/rosbridge_udp.py</b></td></tr>
+  Source file: <b>src/external/rosbridge_suite/rosbridge_server/src/rosbridge_server/__init__.py</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/external/rosbridge_suite/rosbridge_server/src/rosbridge_server/udp_handler.py</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -689,7 +677,147 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">shutdown_hook</td>
+    <td style="background-color:LightSteelBlue">startProtocol</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">datagramReceived</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">10</td>
+    
+
+    
+       <td class="value">100</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">__init__</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="value">17</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">startProtocol</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">21</td>
+    
+
+    
+       <td class="value">129</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">datagramReceived</td>
+    <td></td>
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="lesser-value">21</td>
+    
+
+    
+       <td class="value">161</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">stopProtocol</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">47</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">send_message</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="value">23</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">check_origin</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -704,135 +832,7 @@ Cyclomatic complexity
     
 
     
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/external/rosbridge_suite/rosbridge_server/scripts/rosbridge_websocket.py</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">start_hook</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
        <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">13</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">shutdown_hook</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">13</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">__init__</td>
-    <td></td>
-    
-       <td class="greater-value">47</td>
-    
-
-    
-       <td class="lesser-value">173</td>
-    
-
-    
-       <td class="value">1445</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">main</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">11</td>
-    
-
-    
-       <td class="value">72</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/external/rosbridge_suite/rosbridge_server/scripts/rosbridge_tcp.py</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">shutdown_hook</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">1</td>
     
   </tr>
   
@@ -843,7 +843,7 @@ Cyclomatic complexity
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2021-06-16 20:02
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-06-17 20:01
     </td></tr>
 </table>
  </body>

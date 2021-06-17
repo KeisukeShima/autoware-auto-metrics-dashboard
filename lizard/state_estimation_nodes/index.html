@@ -55,493 +55,6 @@
 <table>
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/state_estimation_nodes/src/state_estimation_node.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">assert_all_entries_positive</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">65</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">validate_publish_frequency</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">21</td>
-    
-
-    
-       <td class="value">126</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">create_state_variances</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">17</td>
-    
-
-    
-       <td class="value">135</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::StateEstimationNode</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">58</td>
-    
-
-    
-       <td class="value">467</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::odom_callback</td>
-    <td></td>
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="lesser-value">22</td>
-    
-
-    
-       <td class="value">157</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::pose_callback</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">22</td>
-    
-
-    
-       <td class="value">147</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::relative_pos_callback</td>
-    <td></td>
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="lesser-value">17</td>
-    
-
-    
-       <td class="value">125</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::twist_callback</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">19</td>
-    
-
-    
-       <td class="value">110</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::predict_and_publish_current_state</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">43</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::publish_current_state</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">22</td>
-    
-
-    
-       <td class="value">185</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::update_latest_orientation_if_needed</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">83</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::create_subscriptions</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">12</td>
-    
-
-    
-       <td class="value">82</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/state_estimation_nodes/src/kalman_filter_wrapper.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">to_ros_time</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">51</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">get_speed</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">51</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::ConstantAccelerationFilterWrapper::get_state</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">37</td>
-    
-
-    
-       <td class="value">480</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/state_estimation_nodes/include/state_estimation_nodes/kalman_filter_wrapper.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::KalmanFilterWrapper</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">23</td>
-    
-
-    
-       <td class="value">136</td>
-    
-
-    
-       <td class="greater-value">7</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::add_reset_event_to_history</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">29</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::add_reset_event_to_history</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">54</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::add_next_temporal_update_to_history</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">46</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::add_observation_to_history</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">37</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::is_initialized</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">23</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::get_state</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">26</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/state_estimation_nodes/include/state_estimation_nodes/visibility_control.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
   Source file: <b>src/common/state_estimation_nodes/include/state_estimation_nodes/history.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
@@ -976,6 +489,45 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/state_estimation_nodes/include/state_estimation_nodes/visibility_control.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/state_estimation_nodes/include/state_estimation_nodes/state_estimation_node.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICStateEstimationNode::buffer</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">8</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
   Source file: <b>src/common/state_estimation_nodes/include/state_estimation_nodes/steady_time_grid.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
@@ -1050,7 +602,12 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/state_estimation_nodes/include/state_estimation_nodes/state_estimation_node.hpp</b></td></tr>
+  Source file: <b>src/common/state_estimation_nodes/include/state_estimation_nodes/filter_typedefs.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/state_estimation_nodes/include/state_estimation_nodes/kalman_filter_wrapper.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -1063,18 +620,138 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICStateEstimationNode::buffer</td>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::KalmanFilterWrapper</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
+       <td class="lesser-value">23</td>
+    
+
+    
+       <td class="value">136</td>
+    
+
+    
+       <td class="greater-value">7</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::add_reset_event_to_history</td>
+    <td></td>
+    
        <td class="lesser-value">1</td>
     
 
     
-       <td class="value">8</td>
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">29</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::add_reset_event_to_history</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">54</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::add_next_temporal_update_to_history</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">46</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::add_observation_to_history</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">37</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::is_initialized</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">23</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::get_state</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">26</td>
     
 
     
@@ -1084,8 +761,331 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/state_estimation_nodes/include/state_estimation_nodes/filter_typedefs.hpp</b></td></tr>
+  Source file: <b>src/common/state_estimation_nodes/src/kalman_filter_wrapper.cpp</b></td></tr>
 
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">to_ros_time</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">51</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">get_speed</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">51</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::ConstantAccelerationFilterWrapper::get_state</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">37</td>
+    
+
+    
+       <td class="value">480</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/state_estimation_nodes/src/state_estimation_node.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">assert_all_entries_positive</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">65</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">validate_publish_frequency</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">21</td>
+    
+
+    
+       <td class="value">126</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">create_state_variances</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">17</td>
+    
+
+    
+       <td class="value">135</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::StateEstimationNode</td>
+    <td></td>
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="lesser-value">58</td>
+    
+
+    
+       <td class="value">467</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::odom_callback</td>
+    <td></td>
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="lesser-value">22</td>
+    
+
+    
+       <td class="value">157</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::pose_callback</td>
+    <td></td>
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="lesser-value">22</td>
+    
+
+    
+       <td class="value">147</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::relative_pos_callback</td>
+    <td></td>
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="lesser-value">17</td>
+    
+
+    
+       <td class="value">125</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::twist_callback</td>
+    <td></td>
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="lesser-value">19</td>
+    
+
+    
+       <td class="value">110</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::predict_and_publish_current_state</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">43</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::publish_current_state</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">22</td>
+    
+
+    
+       <td class="value">185</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::update_latest_orientation_if_needed</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">83</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::create_subscriptions</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="value">82</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
   
 
 </table>
@@ -1094,7 +1094,7 @@ Cyclomatic complexity
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2021-06-16 20:02
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-06-17 20:01
     </td></tr>
 </table>
  </body>

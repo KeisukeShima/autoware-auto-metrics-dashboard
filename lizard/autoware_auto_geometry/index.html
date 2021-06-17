@@ -55,7 +55,7 @@
 <table>
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/src/bounding_box.cpp</b></td></tr>
+  Source file: <b>src/common/autoware_auto_geometry/include/geometry/bounding_box/rotating_calipers.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -68,18 +68,18 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::size_2d</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::update_angles</td>
     <td></td>
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">4</td>
     
 
     
-       <td class="lesser-value">15</td>
+       <td class="lesser-value">24</td>
     
 
     
-       <td class="value">94</td>
+       <td class="value">195</td>
     
 
     
@@ -88,101 +88,107 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::finalize_box</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::init_edges</td>
     <td></td>
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">3</td>
     
 
     
-       <td class="lesser-value">9</td>
+       <td class="lesser-value">13</td>
     
 
     
-       <td class="value">143</td>
+       <td class="value">91</td>
     
 
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">4</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::make_shape</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::init_bbox</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">5</td>
     
 
     
-       <td class="lesser-value">10</td>
+       <td class="lesser-value">29</td>
     
 
     
-       <td class="value">65</td>
+       <td class="value">215</td>
     
 
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">3</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::make_detected_object</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::rotating_calipers_impl</td>
     <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">14</td>
-    
-
-    
-       <td class="value">137</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/src/spatial_hash.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config2d::Config2d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">11</td>
-    
-
-    
-       <td class="value">59</td>
-    
-
     
        <td class="lesser-value">6</td>
     
+
+    
+       <td class="lesser-value">50</td>
+    
+
+    
+       <td class="value">405</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config2d::bin_</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::minimum_area_bounding_box</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">55</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::minimum_perimeter_bounding_box</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">55</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::minimum_area_bounding_box</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -193,36 +199,16 @@ Cyclomatic complexity
     
 
     
-       <td class="value">32</td>
+       <td class="value">34</td>
     
 
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config2d::valid</td>
-    <td></td>
     
        <td class="lesser-value">1</td>
     
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">78</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config2d::index3_</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::minimum_perimeter_bounding_box</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -233,127 +219,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">41</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config2d::index_</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">26</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config3d::Config3d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">12</td>
-    
-
-    
-       <td class="value">57</td>
-    
-
-    
-       <td class="greater-value">8</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config3d::bin_</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">29</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config3d::valid</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">10</td>
-    
-
-    
-       <td class="value">99</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config3d::index3_</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">37</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config3d::index_</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">30</td>
+       <td class="value">34</td>
     
 
     
@@ -725,447 +591,6 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/include/geometry/bounding_box/rotating_calipers.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::update_angles</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">24</td>
-    
-
-    
-       <td class="value">195</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::init_edges</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">13</td>
-    
-
-    
-       <td class="value">91</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::init_bbox</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">29</td>
-    
-
-    
-       <td class="value">215</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::rotating_calipers_impl</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">50</td>
-    
-
-    
-       <td class="value">405</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::minimum_area_bounding_box</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">55</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::minimum_perimeter_bounding_box</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">55</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::minimum_area_bounding_box</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">34</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::minimum_perimeter_bounding_box</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">34</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/include/geometry/hull_pockets.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::hull_pockets</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">40</td>
-    
-
-    
-       <td class="value">253</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/include/geometry/common_3d.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::dot_3d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">64</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/include/geometry/lookup_table.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::interpolate</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">95</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::lookup_impl_1d</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">24</td>
-    
-
-    
-       <td class="value">212</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::check_table_lookup_invariants</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">14</td>
-    
-
-    
-       <td class="value">110</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::lookup_1d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">45</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::LookupTable1D::LookupTable1D</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">41</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::LookupTable1D::LookupTable1D</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">39</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::LookupTable1D::lookup</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">19</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::LookupTable1D::domain</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::LookupTable1D::range</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/include/geometry/visibility_control.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
   Source file: <b>src/common/autoware_auto_geometry/include/geometry/interval.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
@@ -1495,6 +920,1167 @@ Cyclomatic complexity
 
     
        <td class="lesser-value">2</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/autoware_auto_geometry/include/geometry/visibility_control.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/autoware_auto_geometry/include/geometry/spatial_hash_config.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::Config</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">42</td>
+    
+
+    
+       <td class="value">272</td>
+    
+
+    
+       <td class="greater-value">8</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin_range</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">11</td>
+    
+
+    
+       <td class="value">171</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::next_bin</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">17</td>
+    
+
+    
+       <td class="value">107</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::get_capacity</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">9</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::radius2</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">9</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">33</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::is_candidate_bin</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">39</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::index3</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">33</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::index</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">24</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::distance_squared</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">40</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::x_index</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">43</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::y_index</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">43</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::z_index</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">43</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin_impl</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">22</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin_impl</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">31</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin_impl</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">27</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin_impl</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">34</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::idx_distance</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">62</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::side_length2</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">9</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::check_basis_direction</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="value">117</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig2d::distance_squared_</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">11</td>
+    
+
+    
+       <td class="value">66</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig3d::distance_squared_</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">11</td>
+    
+
+    
+       <td class="value">80</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/autoware_auto_geometry/include/geometry/convex_hull.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::details::form_lower_hull</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">23</td>
+    
+
+    
+       <td class="value">172</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::details::form_upper_hull</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">26</td>
+    
+
+    
+       <td class="value">180</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::details::convex_hull_impl</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">23</td>
+    
+
+    
+       <td class="value">213</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::convex_hull</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">37</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/autoware_auto_geometry/include/geometry/common_3d.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::dot_3d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">64</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/autoware_auto_geometry/include/geometry/common_2d.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::x_</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">14</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::y_</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">14</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::z_</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">14</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::xr_</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">13</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::yr_</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">13</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::zr_</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">13</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::details::circular_next</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">42</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::ccw</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">88</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::cross_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">49</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::dot_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">49</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::minus_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">64</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::minus_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">45</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::plus_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">64</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::times_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">63</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::intersection_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">15</td>
+    
+
+    
+       <td class="value">119</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::rotate_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">76</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::rotate_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">49</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::get_normal</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">47</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::norm_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">26</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::closest_segment_point_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">13</td>
+    
+
+    
+       <td class="value">136</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::closest_line_point_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="value">109</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_line_segment_distance_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">43</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::make_unit_vector2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">41</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::check_point_position_to_line_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">37</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::all_ordered</td>
+    <td></td>
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="lesser-value">27</td>
+    
+
+    
+       <td class="value">155</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::area_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">13</td>
+    
+
+    
+       <td class="value">116</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::area_checked_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">40</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::is_point_inside_polygon_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">10</td>
+    
+
+    
+       <td class="lesser-value">39</td>
+    
+
+    
+       <td class="value">251</td>
+    
+
+    
+       <td class="lesser-value">3</td>
     
   </tr>
   
@@ -2074,7 +2660,7 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/include/geometry/spatial_hash_config.hpp</b></td></tr>
+  Source file: <b>src/common/autoware_auto_geometry/include/geometry/hull_pockets.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -2087,187 +2673,41 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::Config</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::hull_pockets</td>
     <td></td>
     
-       <td class="lesser-value">5</td>
+       <td class="lesser-value">6</td>
     
 
     
-       <td class="lesser-value">42</td>
+       <td class="lesser-value">40</td>
     
 
     
-       <td class="value">272</td>
-    
-
-    
-       <td class="greater-value">8</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin_range</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">11</td>
-    
-
-    
-       <td class="value">171</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::next_bin</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">17</td>
-    
-
-    
-       <td class="value">107</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::get_capacity</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
+       <td class="value">253</td>
     
 
     
        <td class="lesser-value">4</td>
     
-
-    
-       <td class="value">9</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
   </tr>
   
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::radius2</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
 
-    
-       <td class="lesser-value">4</td>
-    
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/autoware_auto_geometry/include/geometry/lookup_table.hpp</b></td></tr>
 
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
     
-       <td class="value">9</td>
+       Token count
     
+</th><th>Parameter count (6)</th></tr>
 
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">33</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::is_candidate_bin</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">39</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::index3</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">33</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::index</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">24</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::distance_squared</td>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::interpolate</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -2278,107 +2718,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">40</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::x_index</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">43</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::y_index</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">43</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::z_index</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">43</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin_impl</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">22</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin_impl</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">31</td>
+       <td class="value">95</td>
     
 
     
@@ -2387,38 +2727,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin_impl</td>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::lookup_impl_1d</td>
     <td></td>
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">6</td>
     
 
     
-       <td class="lesser-value">4</td>
+       <td class="lesser-value">24</td>
     
 
     
-       <td class="value">27</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::bin_impl</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">34</td>
+       <td class="value">212</td>
     
 
     
@@ -2427,10 +2747,50 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::idx_distance</td>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::check_table_lookup_invariants</td>
     <td></td>
     
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="value">110</td>
+    
+
+    
        <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::lookup_1d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">45</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::LookupTable1D::LookupTable1D</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
     
 
     
@@ -2438,7 +2798,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">62</td>
+       <td class="value">41</td>
     
 
     
@@ -2447,7 +2807,27 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::side_length2</td>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::LookupTable1D::LookupTable1D</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">39</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::LookupTable1D::lookup</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -2458,7 +2838,27 @@ Cyclomatic complexity
     
 
     
-       <td class="value">9</td>
+       <td class="value">19</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::LookupTable1D::domain</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
     
 
     
@@ -2467,158 +2867,29 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig::check_basis_direction</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">14</td>
-    
-
-    
-       <td class="value">117</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig2d::distance_squared_</td>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::LookupTable1D::range</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">11</td>
-    
-
-    
-       <td class="value">66</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::GEOMETRY_PUBLICConfig3d::distance_squared_</td>
-    <td></td>
-    
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">11</td>
+       <td class="value">10</td>
     
 
     
-       <td class="value">80</td>
-    
-
-    
-       <td class="lesser-value">4</td>
+       <td class="lesser-value">0</td>
     
   </tr>
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/include/geometry/convex_hull.hpp</b></td></tr>
+  Source file: <b>src/common/autoware_auto_geometry/include/geometry/bounding_box_2d.hpp</b></td></tr>
 
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::details::form_lower_hull</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">23</td>
-    
-
-    
-       <td class="value">172</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::details::form_upper_hull</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">26</td>
-    
-
-    
-       <td class="value">180</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::details::convex_hull_impl</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">23</td>
-    
-
-    
-       <td class="value">213</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::convex_hull</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">37</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
@@ -2676,12 +2947,7 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/include/geometry/bounding_box_2d.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/common/autoware_auto_geometry/include/geometry/common_2d.hpp</b></td></tr>
+  Source file: <b>src/common/autoware_auto_geometry/src/spatial_hash.cpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -2694,138 +2960,38 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::x_</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config2d::Config2d</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">4</td>
+       <td class="lesser-value">11</td>
     
 
     
-       <td class="value">14</td>
+       <td class="value">59</td>
     
 
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">6</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::y_</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config2d::bin_</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">4</td>
+       <td class="lesser-value">5</td>
     
 
     
-       <td class="value">14</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::z_</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">14</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::xr_</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">13</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::yr_</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">13</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_adapter::zr_</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">13</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::details::circular_next</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">42</td>
+       <td class="value">32</td>
     
 
     
@@ -2834,67 +3000,7 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::ccw</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">88</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::cross_2d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">49</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::dot_2d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">49</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::minus_2d</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config2d::valid</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -2905,107 +3011,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">64</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::minus_2d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">45</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::plus_2d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">64</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::times_2d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">63</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::intersection_2d</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">15</td>
-    
-
-    
-       <td class="value">119</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::rotate_2d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">76</td>
+       <td class="value">78</td>
     
 
     
@@ -3014,47 +3020,27 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::rotate_2d</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config2d::index3_</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">8</td>
+       <td class="lesser-value">5</td>
     
 
     
-       <td class="value">49</td>
+       <td class="value">41</td>
     
 
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">3</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::get_normal</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">47</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::norm_2d</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config2d::index_</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -3074,18 +3060,38 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::closest_segment_point_2d</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config3d::Config3d</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">13</td>
+       <td class="lesser-value">12</td>
     
 
     
-       <td class="value">136</td>
+       <td class="value">57</td>
+    
+
+    
+       <td class="greater-value">8</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config3d::bin_</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">29</td>
     
 
     
@@ -3094,18 +3100,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::closest_line_point_2d</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config3d::valid</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">14</td>
+       <td class="lesser-value">10</td>
     
 
     
-       <td class="value">109</td>
+       <td class="value">99</td>
     
 
     
@@ -3114,47 +3120,7 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::point_line_segment_distance_2d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">43</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::make_unit_vector2d</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">41</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::check_point_position_to_line_2d</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config3d::index3_</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -3174,18 +3140,52 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::all_ordered</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::spatial_hash::Config3d::index_</td>
     <td></td>
     
-       <td class="lesser-value">7</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">27</td>
+       <td class="lesser-value">4</td>
     
 
     
-       <td class="value">155</td>
+       <td class="value">30</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/common/autoware_auto_geometry/src/bounding_box.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::size_2d</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">15</td>
+    
+
+    
+       <td class="value">94</td>
     
 
     
@@ -3194,18 +3194,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::area_2d</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::finalize_box</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">13</td>
+       <td class="lesser-value">9</td>
     
 
     
-       <td class="value">116</td>
+       <td class="value">143</td>
     
 
     
@@ -3214,42 +3214,42 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::area_checked_2d</td>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::make_shape</td>
     <td></td>
     
        <td class="lesser-value">2</td>
     
 
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">40</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::geometry::is_point_inside_polygon_2d</td>
-    <td></td>
     
        <td class="lesser-value">10</td>
     
 
     
-       <td class="lesser-value">39</td>
+       <td class="value">65</td>
     
 
     
-       <td class="value">251</td>
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::geometry::bounding_box::details::make_detected_object</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">3</td>
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="value">137</td>
+    
+
+    
+       <td class="lesser-value">1</td>
     
   </tr>
   
@@ -3260,7 +3260,7 @@ Cyclomatic complexity
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2021-06-16 20:02
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-06-17 20:01
     </td></tr>
 </table>
  </body>
