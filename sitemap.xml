@@ -56,6 +56,10 @@
   </url>
   
   <url>
+    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/autoware_testing/</loc>
+  </url>
+  
+  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/avp_web_interface/</loc>
   </url>
   
