@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-21 19:35:10</td>
+            <td class="headerValue">2021-06-22 19:32:06</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -136,12 +136,12 @@
 <a name="58"><span class="lineNum">      58 </span>                :            : /// @return     Does not return anything. Capture variables in a lambda to return any values.</a>
 <a name="59"><span class="lineNum">      59 </span>                :            : ///</a>
 <a name="60"><span class="lineNum">      60 </span>                :            : template&lt;std::size_t I = 0UL, typename Callable, typename ... TypesT&gt;</a>
-<a name="61"><span class="lineNum">      61 </span>                :            : COMMON_PUBLIC inline typename std::enable_if_t&lt;I == sizeof...(TypesT)&gt;</a>
-<a name="62"><span class="lineNum">      62 </span>                :            : visit(std::tuple&lt;TypesT...&gt; &amp;, Callable) {}</a>
+<a name="61"><span class="lineNum">      61 </span>                :            : COMMON_PUBLIC inline constexpr typename std::enable_if_t&lt;I == sizeof...(TypesT)&gt;</a>
+<a name="62"><span class="lineNum">      62 </span>                :            : visit(std::tuple&lt;TypesT...&gt; &amp;, Callable) noexcept {}</a>
 <a name="63"><span class="lineNum">      63 </span>                :            : /// @brief      Same as the previous specialization but for const tuple.</a>
 <a name="64"><span class="lineNum">      64 </span>                :            : template&lt;std::size_t I = 0UL, typename Callable, typename ... TypesT&gt;</a>
-<a name="65"><span class="lineNum">      65 </span>                :            : COMMON_PUBLIC inline typename std::enable_if_t&lt;I == sizeof...(TypesT)&gt;</a>
-<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">          2 : visit(const std::tuple&lt;TypesT...&gt; &amp;, Callable) {}</span></a>
+<a name="65"><span class="lineNum">      65 </span>                :            : COMMON_PUBLIC inline constexpr typename std::enable_if_t&lt;I == sizeof...(TypesT)&gt;</a>
+<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">          2 : visit(const std::tuple&lt;TypesT...&gt; &amp;, Callable) noexcept {}</span></a>
 <a name="67"><span class="lineNum">      67 </span>                :            : </a>
 <a name="68"><span class="lineNum">      68 </span>                :            : ///</a>
 <a name="69"><span class="lineNum">      69 </span>                :            : /// @brief      Visit every element in a tuple.</a>
@@ -159,16 +159,16 @@
 <a name="81"><span class="lineNum">      81 </span>                :            : /// @return     Does not return anything. Capture variables in a lambda to return any values.</a>
 <a name="82"><span class="lineNum">      82 </span>                :            : ///</a>
 <a name="83"><span class="lineNum">      83 </span>                :            : template&lt;std::size_t I = 0UL, typename Callable, typename ... TypesT&gt;</a>
-<a name="84"><span class="lineNum">      84 </span>                :            : COMMON_PUBLIC inline typename std::enable_if_t&lt;I != sizeof...(TypesT)&gt;</a>
-<a name="85"><span class="lineNum">      85 </span>                :            : visit(std::tuple&lt;TypesT...&gt; &amp; tuple, Callable callable)</a>
+<a name="84"><span class="lineNum">      84 </span>                :            : COMMON_PUBLIC inline constexpr typename std::enable_if_t&lt;I != sizeof...(TypesT)&gt;</a>
+<a name="85"><span class="lineNum">      85 </span>                :            : visit(std::tuple&lt;TypesT...&gt; &amp; tuple, Callable callable) noexcept</a>
 <a name="86"><span class="lineNum">      86 </span>                :            : {</a>
 <a name="87"><span class="lineNum">      87 </span>                :            :   callable(std::get&lt;I&gt;(tuple));</a>
 <a name="88"><span class="lineNum">      88 </span>                :            :   visit&lt;I + 1UL, Callable, TypesT...&gt;(tuple, callable);</a>
 <a name="89"><span class="lineNum">      89 </span>                :            : }</a>
 <a name="90"><span class="lineNum">      90 </span>                :            : /// @brief      Same as the previous specialization but for const tuple.</a>
 <a name="91"><span class="lineNum">      91 </span>                :            : template&lt;std::size_t I = 0UL, typename Callable, typename ... TypesT&gt;</a>
-<a name="92"><span class="lineNum">      92 </span>                :            : COMMON_PUBLIC inline typename std::enable_if_t&lt;I != sizeof...(TypesT)&gt;</a>
-<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">          5 : visit(const std::tuple&lt;TypesT...&gt; &amp; tuple, Callable callable)</span></a>
+<a name="92"><span class="lineNum">      92 </span>                :            : COMMON_PUBLIC inline constexpr typename std::enable_if_t&lt;I != sizeof...(TypesT)&gt;</a>
+<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">          5 : visit(const std::tuple&lt;TypesT...&gt; &amp; tuple, Callable callable) noexcept</span></a>
 <a name="94"><span class="lineNum">      94 </span>                :            : {</a>
 <a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">          5 :   callable(std::get&lt;I&gt;(tuple));</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">          5 :   visit&lt;I + 1UL, Callable, TypesT...&gt;(tuple, callable);</span></a>
@@ -184,11 +184,86 @@
 <a name="106"><span class="lineNum">     106 </span>                :            : struct COMMON_PUBLIC conjunction&lt;TraitT, TraitsTs...&gt;</a>
 <a name="107"><span class="lineNum">     107 </span>                :            :   : std::conditional_t&lt;static_cast&lt;bool&gt;(TraitT::value), conjunction&lt;TraitsTs...&gt;, TraitT&gt; {};</a>
 <a name="108"><span class="lineNum">     108 </span>                :            : </a>
-<a name="109"><span class="lineNum">     109 </span>                :            : }  // namespace type_traits</a>
-<a name="110"><span class="lineNum">     110 </span>                :            : }  // namespace common</a>
-<a name="111"><span class="lineNum">     111 </span>                :            : }  // namespace autoware</a>
-<a name="112"><span class="lineNum">     112 </span>                :            : </a>
-<a name="113"><span class="lineNum">     113 </span>                :            : #endif  // COMMON__TYPE_TRAITS_HPP_</a>
+<a name="109"><span class="lineNum">     109 </span>                :            : </a>
+<a name="110"><span class="lineNum">     110 </span>                :            : ///</a>
+<a name="111"><span class="lineNum">     111 </span>                :            : /// @brief      A trait to check if a tuple has a type.</a>
+<a name="112"><span class="lineNum">     112 </span>                :            : ///</a>
+<a name="113"><span class="lineNum">     113 </span>                :            : /// @details    Taken from https://stackoverflow.com/a/25958302/678093</a>
+<a name="114"><span class="lineNum">     114 </span>                :            : ///</a>
+<a name="115"><span class="lineNum">     115 </span>                :            : /// @tparam     QueryT  A query type.</a>
+<a name="116"><span class="lineNum">     116 </span>                :            : /// @tparam     TupleT  A tuple to search the type in.</a>
+<a name="117"><span class="lineNum">     117 </span>                :            : ///</a>
+<a name="118"><span class="lineNum">     118 </span>                :            : template&lt;typename QueryT, typename TupleT&gt;</a>
+<a name="119"><span class="lineNum">     119 </span>                :            : struct has_type;</a>
+<a name="120"><span class="lineNum">     120 </span>                :            : </a>
+<a name="121"><span class="lineNum">     121 </span>                :            : ///</a>
+<a name="122"><span class="lineNum">     122 </span>                :            : /// @brief      An overload of the general trait that signifies that nothing can be found in an</a>
+<a name="123"><span class="lineNum">     123 </span>                :            : ///             empty tuple.</a>
+<a name="124"><span class="lineNum">     124 </span>                :            : ///</a>
+<a name="125"><span class="lineNum">     125 </span>                :            : /// @tparam     QueryT     Any type.</a>
+<a name="126"><span class="lineNum">     126 </span>                :            : ///</a>
+<a name="127"><span class="lineNum">     127 </span>                :            : template&lt;typename QueryT&gt;</a>
+<a name="128"><span class="lineNum">     128 </span>                :            : struct has_type&lt;QueryT, std::tuple&lt;&gt;&gt;: std::false_type {};</a>
+<a name="129"><span class="lineNum">     129 </span>                :            : </a>
+<a name="130"><span class="lineNum">     130 </span>                :            : ///</a>
+<a name="131"><span class="lineNum">     131 </span>                :            : /// @brief      Recursive override of the main trait.</a>
+<a name="132"><span class="lineNum">     132 </span>                :            : ///</a>
+<a name="133"><span class="lineNum">     133 </span>                :            : /// @tparam     QueryT  Query type.</a>
+<a name="134"><span class="lineNum">     134 </span>                :            : /// @tparam     HeadT   Head type in the tuple.</a>
+<a name="135"><span class="lineNum">     135 </span>                :            : /// @tparam     TailTs  Rest of the tuple types.</a>
+<a name="136"><span class="lineNum">     136 </span>                :            : ///</a>
+<a name="137"><span class="lineNum">     137 </span>                :            : template&lt;typename QueryT, typename HeadT, typename ... TailTs&gt;</a>
+<a name="138"><span class="lineNum">     138 </span>                :            : struct has_type&lt;QueryT, std::tuple&lt;HeadT, TailTs...&gt;&gt;: has_type&lt;QueryT, std::tuple&lt;TailTs...&gt;&gt; {};</a>
+<a name="139"><span class="lineNum">     139 </span>                :            : </a>
+<a name="140"><span class="lineNum">     140 </span>                :            : ///</a>
+<a name="141"><span class="lineNum">     141 </span>                :            : /// @brief      End of recursion for the main `has_type` trait. Becomes a `true_type` when the first</a>
+<a name="142"><span class="lineNum">     142 </span>                :            : ///             type in the tuple matches the query type.</a>
+<a name="143"><span class="lineNum">     143 </span>                :            : ///</a>
+<a name="144"><span class="lineNum">     144 </span>                :            : /// @tparam     QueryT  Query type.</a>
+<a name="145"><span class="lineNum">     145 </span>                :            : /// @tparam     TailTs  Other types in the tuple.</a>
+<a name="146"><span class="lineNum">     146 </span>                :            : ///</a>
+<a name="147"><span class="lineNum">     147 </span>                :            : template&lt;typename QueryT, typename ... TailTs&gt;</a>
+<a name="148"><span class="lineNum">     148 </span>                :            : struct has_type&lt;QueryT, std::tuple&lt;QueryT, TailTs...&gt;&gt;: std::true_type {};</a>
+<a name="149"><span class="lineNum">     149 </span>                :            : </a>
+<a name="150"><span class="lineNum">     150 </span>                :            : </a>
+<a name="151"><span class="lineNum">     151 </span>                :            : ///</a>
+<a name="152"><span class="lineNum">     152 </span>                :            : /// @brief      A trait used to intersect types stored in tuples at compile time. The resulting</a>
+<a name="153"><span class="lineNum">     153 </span>                :            : ///             typedef `type` will hold a tuple with the intersection of the types provided in the</a>
+<a name="154"><span class="lineNum">     154 </span>                :            : ///             input tuples.</a>
+<a name="155"><span class="lineNum">     155 </span>                :            : ///</a>
+<a name="156"><span class="lineNum">     156 </span>                :            : /// @details    Taken from https://stackoverflow.com/a/41200732/1763680</a>
+<a name="157"><span class="lineNum">     157 </span>                :            : ///</a>
+<a name="158"><span class="lineNum">     158 </span>                :            : /// @tparam     TupleT1  Tuple 1</a>
+<a name="159"><span class="lineNum">     159 </span>                :            : /// @tparam     TupleT2  Tuple 2</a>
+<a name="160"><span class="lineNum">     160 </span>                :            : ///</a>
+<a name="161"><span class="lineNum">     161 </span>                :            : template&lt;typename TupleT1, typename TupleT2&gt;</a>
+<a name="162"><span class="lineNum">     162 </span>                :            : struct intersect</a>
+<a name="163"><span class="lineNum">     163 </span>                :            : {</a>
+<a name="164"><span class="lineNum">     164 </span>                :            :   ///</a>
+<a name="165"><span class="lineNum">     165 </span>                :            :   /// @brief      Intersect the types.</a>
+<a name="166"><span class="lineNum">     166 </span>                :            :   ///</a>
+<a name="167"><span class="lineNum">     167 </span>                :            :   /// @details    This function &quot;iterates&quot; over the types in TupleT1 and checks if those are in</a>
+<a name="168"><span class="lineNum">     168 </span>                :            :   ///             TupleT2. If this is true, these types are concatenated into a new tuple.</a>
+<a name="169"><span class="lineNum">     169 </span>                :            :   ///</a>
+<a name="170"><span class="lineNum">     170 </span>                :            :   template&lt;std::size_t... Indices&gt;</a>
+<a name="171"><span class="lineNum">     171 </span>                :            :   static constexpr auto make_intersection(std::index_sequence&lt;Indices...&gt;)</a>
+<a name="172"><span class="lineNum">     172 </span>                :            :   {</a>
+<a name="173"><span class="lineNum">     173 </span>                :            :     return std::tuple_cat(</a>
+<a name="174"><span class="lineNum">     174 </span>                :            :       std::conditional_t&lt;</a>
+<a name="175"><span class="lineNum">     175 </span>                :            :         has_type&lt;std::tuple_element_t&lt;Indices, TupleT1&gt;, TupleT2&gt;::value,</a>
+<a name="176"><span class="lineNum">     176 </span>                :            :         std::tuple&lt;std::tuple_element_t&lt;Indices, TupleT1&gt;&gt;,</a>
+<a name="177"><span class="lineNum">     177 </span>                :            :         std::tuple&lt;&gt;&gt;{} ...);</a>
+<a name="178"><span class="lineNum">     178 </span>                :            :   }</a>
+<a name="179"><span class="lineNum">     179 </span>                :            :   /// The resulting tuple type.</a>
+<a name="180"><span class="lineNum">     180 </span>                :            :   using type =</a>
+<a name="181"><span class="lineNum">     181 </span>                :            :     decltype(make_intersection(std::make_index_sequence&lt;std::tuple_size&lt;TupleT1&gt;::value&gt; {}));</a>
+<a name="182"><span class="lineNum">     182 </span>                :            : };</a>
+<a name="183"><span class="lineNum">     183 </span>                :            : </a>
+<a name="184"><span class="lineNum">     184 </span>                :            : }  // namespace type_traits</a>
+<a name="185"><span class="lineNum">     185 </span>                :            : }  // namespace common</a>
+<a name="186"><span class="lineNum">     186 </span>                :            : }  // namespace autoware</a>
+<a name="187"><span class="lineNum">     187 </span>                :            : </a>
+<a name="188"><span class="lineNum">     188 </span>                :            : #endif  // COMMON__TYPE_TRAITS_HPP_</a>
 </pre>
       </td>
     </tr>
