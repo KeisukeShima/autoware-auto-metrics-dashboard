@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntry">19</td>
-            <td class="headerCovTableEntryLo">52.6 %</td>
+            <td class="headerCovTableEntry">40</td>
+            <td class="headerCovTableEntry">49</td>
+            <td class="headerCovTableEntryMed">81.6 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-22 19:50:39</td>
+            <td class="headerValue">2021-06-23 20:00:34</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">1</td>
-            <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntryLo">20.0 %</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntryLo">42.9 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">4</td>
-            <td class="headerCovTableEntry">16</td>
-            <td class="headerCovTableEntryLo">25.0 %</td>
+            <td class="headerCovTableEntry">20</td>
+            <td class="headerCovTableEntry">42</td>
+            <td class="headerCovTableEntryLo">47.6 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -101,9 +101,9 @@
 <a name="23"><span class="lineNum">      23 </span>                :            : </a>
 <a name="24"><span class="lineNum">      24 </span>                :            : #include &lt;autoware_auto_msgs/msg/point_clusters.hpp&gt;</a>
 <a name="25"><span class="lineNum">      25 </span>                :            : #include &lt;common/types.hpp&gt;</a>
-<a name="26"><span class="lineNum">      26 </span>                :            : #include &lt;helper_functions/float_comparisons.hpp&gt;</a>
+<a name="26"><span class="lineNum">      26 </span>                :            : #include &lt;geometry/common_3d.hpp&gt;</a>
 <a name="27"><span class="lineNum">      27 </span>                :            : #include &lt;geometry_msgs/msg/transform_stamped.hpp&gt;</a>
-<a name="28"><span class="lineNum">      28 </span>                :            : #include &lt;geometry/common_3d.hpp&gt;</a>
+<a name="28"><span class="lineNum">      28 </span>                :            : #include &lt;helper_functions/float_comparisons.hpp&gt;</a>
 <a name="29"><span class="lineNum">      29 </span>                :            : #include &lt;sensor_msgs/msg/point_cloud2.hpp&gt;</a>
 <a name="30"><span class="lineNum">      30 </span>                :            : #include &lt;sensor_msgs/point_cloud2_iterator.hpp&gt;</a>
 <a name="31"><span class="lineNum">      31 </span>                :            : </a>
@@ -364,37 +364,37 @@
 <a name="285"><span class="lineNum">     285 </span>                :            : </a>
 <a name="286"><span class="lineNum">     286 </span>                :            : template&lt;typename T&gt;</a>
 <a name="287"><span class="lineNum">     287 </span>                :            : LIDAR_UTILS_PUBLIC</a>
-<a name="288"><span class="lineNum">     288 </span>                :            : sensor_msgs::msg::PointCloud2::SharedPtr create_custom_pcl(</a>
+<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">          8 : sensor_msgs::msg::PointCloud2::SharedPtr create_custom_pcl(</span></a>
 <a name="289"><span class="lineNum">     289 </span>                :            :   const std::vector&lt;std::string&gt; &amp; field_names,</a>
 <a name="290"><span class="lineNum">     290 </span>                :            :   const uint32_t cloud_size)</a>
 <a name="291"><span class="lineNum">     291 </span>                :            : {</a>
 <a name="292"><span class="lineNum">     292 </span>                :            :   using sensor_msgs::msg::PointCloud2;</a>
-<a name="293"><span class="lineNum">     293 </span>                :            :   PointCloud2::SharedPtr msg = std::make_shared&lt;PointCloud2&gt;();</a>
-<a name="294"><span class="lineNum">     294 </span>                :            :   const auto field_size = field_names.size();</a>
-<a name="295"><span class="lineNum">     295 </span>                :            :   msg-&gt;height = 1U;</a>
-<a name="296"><span class="lineNum">     296 </span>                :            :   msg-&gt;width = cloud_size;</a>
-<a name="297"><span class="lineNum">     297 </span>                :            :   msg-&gt;fields.resize(field_size);</a>
-<a name="298"><span class="lineNum">     298 </span>                :            :   for (uint32_t i = 0U; i &lt; field_size; i++) {</a>
-<a name="299"><span class="lineNum">     299 </span>                :            :     msg-&gt;fields[i].name = field_names[i];</a>
+<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">          8 :   PointCloud2::SharedPtr msg = std::make_shared&lt;PointCloud2&gt;();</span></a>
+<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">          8 :   const auto field_size = field_names.size();</span></a>
+<a name="295"><span class="lineNum">     295 </span>                :<span class="lineCov">          8 :   msg-&gt;height = 1U;</span></a>
+<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">          8 :   msg-&gt;width = cloud_size;</span></a>
+<a name="297"><span class="lineNum">     297 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :   msg-&gt;fields.resize(field_size);</span></a>
+<a name="298"><span class="lineNum">     298 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         35 :   for (uint32_t i = 0U; i &lt; field_size; i++) {</span></a>
+<a name="299"><span class="lineNum">     299 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         27 :     msg-&gt;fields[i].name = field_names[i];</span></a>
 <a name="300"><span class="lineNum">     300 </span>                :            :   }</a>
-<a name="301"><span class="lineNum">     301 </span>                :            :   msg-&gt;point_step = 0U;</a>
-<a name="302"><span class="lineNum">     302 </span>                :            :   for (uint32_t idx = 0U; idx &lt; field_size; ++idx) {</a>
-<a name="303"><span class="lineNum">     303 </span>                :            :     msg-&gt;fields[idx].offset = static_cast&lt;uint32_t&gt;(idx * sizeof(T));</a>
-<a name="304"><span class="lineNum">     304 </span>                :            :     msg-&gt;fields[idx].datatype = _create_custom_pcl_datatype&lt;T&gt;::DATATYPE;</a>
-<a name="305"><span class="lineNum">     305 </span>                :            :     msg-&gt;fields[idx].count = 1U;</a>
-<a name="306"><span class="lineNum">     306 </span>                :            :     msg-&gt;point_step += static_cast&lt;uint32_t&gt;(sizeof(T));</a>
+<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">          8 :   msg-&gt;point_step = 0U;</span></a>
+<a name="302"><span class="lineNum">     302 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         35 :   for (uint32_t idx = 0U; idx &lt; field_size; ++idx) {</span></a>
+<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">         27 :     msg-&gt;fields[idx].offset = static_cast&lt;uint32_t&gt;(idx * sizeof(T));</span></a>
+<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">         27 :     msg-&gt;fields[idx].datatype = _create_custom_pcl_datatype&lt;T&gt;::DATATYPE;</span></a>
+<a name="305"><span class="lineNum">     305 </span>                :<span class="lineCov">         27 :     msg-&gt;fields[idx].count = 1U;</span></a>
+<a name="306"><span class="lineNum">     306 </span>                :<span class="lineCov">         27 :     msg-&gt;point_step += static_cast&lt;uint32_t&gt;(sizeof(T));</span></a>
 <a name="307"><span class="lineNum">     307 </span>                :            :   }</a>
-<a name="308"><span class="lineNum">     308 </span>                :            :   const std::size_t capacity = msg-&gt;point_step * cloud_size;</a>
-<a name="309"><span class="lineNum">     309 </span>                :            :   msg-&gt;data.clear();</a>
-<a name="310"><span class="lineNum">     310 </span>                :            :   msg-&gt;data.reserve(capacity);</a>
-<a name="311"><span class="lineNum">     311 </span>                :            :   for (std::size_t i = 0; i &lt; capacity; ++i) {</a>
-<a name="312"><span class="lineNum">     312 </span>                :            :     msg-&gt;data.emplace_back(0U);  // initialize all values equal to 0</a>
+<a name="308"><span class="lineNum">     308 </span>                :<span class="lineCov">          8 :   const std::size_t capacity = msg-&gt;point_step * cloud_size;</span></a>
+<a name="309"><span class="lineNum">     309 </span>                :<span class="lineCov">          8 :   msg-&gt;data.clear();</span></a>
+<a name="310"><span class="lineNum">     310 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :   msg-&gt;data.reserve(capacity);</span></a>
+<a name="311"><span class="lineNum">     311 </span>        [<span class="branchCov" title="Branch 0 was taken 1080 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">       1088 :   for (std::size_t i = 0; i &lt; capacity; ++i) {</span></a>
+<a name="312"><span class="lineNum">     312 </span>        [<span class="branchCov" title="Branch 0 was taken 1080 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1080 :     msg-&gt;data.emplace_back(0U);  // initialize all values equal to 0</span></a>
 <a name="313"><span class="lineNum">     313 </span>                :            :   }</a>
-<a name="314"><span class="lineNum">     314 </span>                :            :   msg-&gt;row_step = msg-&gt;point_step * msg-&gt;width;</a>
-<a name="315"><span class="lineNum">     315 </span>                :            :   msg-&gt;is_bigendian = false;</a>
-<a name="316"><span class="lineNum">     316 </span>                :            :   msg-&gt;is_dense = false;</a>
-<a name="317"><span class="lineNum">     317 </span>                :            :   msg-&gt;header.frame_id = &quot;base_link&quot;;</a>
-<a name="318"><span class="lineNum">     318 </span>                :            :   return msg;</a>
+<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">          8 :   msg-&gt;row_step = msg-&gt;point_step * msg-&gt;width;</span></a>
+<a name="315"><span class="lineNum">     315 </span>                :<span class="lineCov">          8 :   msg-&gt;is_bigendian = false;</span></a>
+<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">          8 :   msg-&gt;is_dense = false;</span></a>
+<a name="317"><span class="lineNum">     317 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :   msg-&gt;header.frame_id = &quot;base_link&quot;;</span></a>
+<a name="318"><span class="lineNum">     318 </span>                :<span class="lineCov">          8 :   return msg;</span></a>
 <a name="319"><span class="lineNum">     319 </span>                :            : }</a>
 <a name="320"><span class="lineNum">     320 </span>                :            : </a>
 <a name="321"><span class="lineNum">     321 </span>                :            : /// \brief Filter class to check if a point lies within a range defined by a min and max radius.</a>
@@ -440,7 +440,7 @@
 <a name="361"><span class="lineNum">     361 </span>                :            :   /// \param ref Input point</a>
 <a name="362"><span class="lineNum">     362 </span>                :            :   /// \param out Reference to output point</a>
 <a name="363"><span class="lineNum">     363 </span>                :            :   template&lt;typename T&gt;</a>
-<a name="364"><span class="lineNum">     364 </span>                :            :   void transform(const T &amp; ref, T &amp; out) const //NOLINT (false positive: this is not std::transform)</a>
+<a name="364"><span class="lineNum">     364 </span>                :<span class="lineCov">          1 :   void transform(const T &amp; ref, T &amp; out) const //NOLINT (false positive: this is not std::transform)</span></a>
 <a name="365"><span class="lineNum">     365 </span>                :            :   {</a>
 <a name="366"><span class="lineNum">     366 </span>                :            :     using common::geometry::point_adapter::x_;</a>
 <a name="367"><span class="lineNum">     367 </span>                :            :     using common::geometry::point_adapter::y_;</a>
@@ -448,110 +448,109 @@
 <a name="369"><span class="lineNum">     369 </span>                :            :     using common::geometry::point_adapter::xr_;</a>
 <a name="370"><span class="lineNum">     370 </span>                :            :     using common::geometry::point_adapter::yr_;</a>
 <a name="371"><span class="lineNum">     371 </span>                :            :     using common::geometry::point_adapter::zr_;</a>
-<a name="372"><span class="lineNum">     372 </span>                :            :     Eigen::Matrix&lt;float32_t, 3U, 1U&gt; ref_mat({x_(ref), y_(ref), z_(ref)});</a>
-<a name="373"><span class="lineNum">     373 </span>                :            :     Eigen::Vector3f out_mat = m_tf * ref_mat;</a>
-<a name="374"><span class="lineNum">     374 </span>                :            :     xr_(out) = out_mat(0U, 0U);</a>
-<a name="375"><span class="lineNum">     375 </span>                :            :     yr_(out) = out_mat(1U, 0U);</a>
-<a name="376"><span class="lineNum">     376 </span>                :            :     zr_(out) = out_mat(2U, 0U);</a>
-<a name="377"><span class="lineNum">     377 </span>                :            :   }</a>
-<a name="378"><span class="lineNum">     378 </span>                :            : </a>
-<a name="379"><span class="lineNum">     379 </span>                :            : private:</a>
-<a name="380"><span class="lineNum">     380 </span>                :            :   Eigen::Transform&lt;float32_t, 3U, Eigen::Affine, Eigen::ColMajor&gt; m_tf;</a>
-<a name="381"><span class="lineNum">     381 </span>                :            : };</a>
-<a name="382"><span class="lineNum">     382 </span>                :            : </a>
-<a name="383"><span class="lineNum">     383 </span>                :            : /// \brief Filter class to check if a point's azimuth lies within a range defined by a start and</a>
-<a name="384"><span class="lineNum">     384 </span>                :            : /// end angles. The range is defined from start to the end angles in counter-clock-wise direction.</a>
-<a name="385"><span class="lineNum">     385 </span>                :            : class LIDAR_UTILS_PUBLIC AngleFilter</a>
-<a name="386"><span class="lineNum">     386 </span>                :            : {</a>
-<a name="387"><span class="lineNum">     387 </span>                :            : public:</a>
-<a name="388"><span class="lineNum">     388 </span>                :            :   /// \brief Constructor</a>
-<a name="389"><span class="lineNum">     389 </span>                :            :   /// \param start_angle Minimum angle in radians</a>
-<a name="390"><span class="lineNum">     390 </span>                :            :   /// \param end_angle Maximum angle in radians</a>
-<a name="391"><span class="lineNum">     391 </span>                :            :   AngleFilter(float32_t start_angle, float32_t end_angle);</a>
-<a name="392"><span class="lineNum">     392 </span>                :            : </a>
-<a name="393"><span class="lineNum">     393 </span>                :            :   using VectorT = autoware::common::types::PointXYZIF;</a>
-<a name="394"><span class="lineNum">     394 </span>                :            :   static constexpr float32_t PI = 3.14159265359F;</a>
-<a name="395"><span class="lineNum">     395 </span>                :            :   static constexpr auto FEPS = std::numeric_limits&lt;float32_t&gt;::epsilon() * 1e2F;</a>
-<a name="396"><span class="lineNum">     396 </span>                :            : </a>
-<a name="397"><span class="lineNum">     397 </span>                :            :   /// \brief Check if a point's azimuth lies in the range [start, end] in</a>
-<a name="398"><span class="lineNum">     398 </span>                :            :   /// counter-clock-wise-direction. The point is treated as a 2D vector whose projection on the</a>
-<a name="399"><span class="lineNum">     399 </span>                :            :   /// range normal is compared to a threshold.</a>
-<a name="400"><span class="lineNum">     400 </span>                :            :   /// \tparam T Point type</a>
-<a name="401"><span class="lineNum">     401 </span>                :            :   /// \param pt point to check</a>
-<a name="402"><span class="lineNum">     402 </span>                :            :   /// \return return true if the point is contained within the range.</a>
-<a name="403"><span class="lineNum">     403 </span>                :            :   template&lt;typename T&gt;</a>
-<a name="404"><span class="lineNum">     404 </span>                :            :   bool8_t operator()(const T &amp; pt) const</a>
-<a name="405"><span class="lineNum">     405 </span>                :            :   {</a>
-<a name="406"><span class="lineNum">     406 </span>                :            :     using common::geometry::dot_2d;</a>
-<a name="407"><span class="lineNum">     407 </span>                :            :     bool8_t ret = false;</a>
-<a name="408"><span class="lineNum">     408 </span>                :            : </a>
-<a name="409"><span class="lineNum">     409 </span>                :            :     // Squared magnitude of the vector</a>
-<a name="410"><span class="lineNum">     410 </span>                :            :     const auto pt_len2 = dot_2d(pt, pt);</a>
-<a name="411"><span class="lineNum">     411 </span>                :            :     const auto proj_on_normal = dot_2d(pt, m_range_normal);</a>
-<a name="412"><span class="lineNum">     412 </span>                :            :     const auto proj_on_normal2 = proj_on_normal * proj_on_normal;</a>
-<a name="413"><span class="lineNum">     413 </span>                :            :     const auto is_proj_negative = (proj_on_normal + FEPS) &lt; 0.0F;</a>
-<a name="414"><span class="lineNum">     414 </span>                :            : </a>
-<a name="415"><span class="lineNum">     415 </span>                :            :     // Since the input vector's projection is scaled by the length of itself, the</a>
-<a name="416"><span class="lineNum">     416 </span>                :            :     // threshold is also scaled by the length of the input vector to make the comparison possible.</a>
-<a name="417"><span class="lineNum">     417 </span>                :            : </a>
-<a name="418"><span class="lineNum">     418 </span>                :            :     // To avoid computing the length using sqrt, the expressions are kept in square form, hence</a>
-<a name="419"><span class="lineNum">     419 </span>                :            :     // the following sign checks are made to ensure the correctness of the comparisons in</a>
-<a name="420"><span class="lineNum">     420 </span>                :            :     // squared form.</a>
-<a name="421"><span class="lineNum">     421 </span>                :            :     if ((!m_threshold_negative) &amp;&amp; (!is_proj_negative)) {</a>
-<a name="422"><span class="lineNum">     422 </span>                :            :       ret = (proj_on_normal2) &gt;= (pt_len2 * (m_threshold2 - FEPS));</a>
-<a name="423"><span class="lineNum">     423 </span>                :            :     } else if (m_threshold_negative &amp;&amp; (!is_proj_negative)) {</a>
-<a name="424"><span class="lineNum">     424 </span>                :            :       ret = true;</a>
-<a name="425"><span class="lineNum">     425 </span>                :            :     } else if ((!m_threshold_negative) &amp;&amp; is_proj_negative) {</a>
-<a name="426"><span class="lineNum">     426 </span>                :            :       ret = false;</a>
-<a name="427"><span class="lineNum">     427 </span>                :            :     } else {</a>
-<a name="428"><span class="lineNum">     428 </span>                :            :       ret = (proj_on_normal2) &lt;= (pt_len2 * (m_threshold2 + FEPS));</a>
-<a name="429"><span class="lineNum">     429 </span>                :            :     }</a>
-<a name="430"><span class="lineNum">     430 </span>                :            :     return ret;</a>
-<a name="431"><span class="lineNum">     431 </span>                :            :   }</a>
-<a name="432"><span class="lineNum">     432 </span>                :            : </a>
-<a name="433"><span class="lineNum">     433 </span>                :            : private:</a>
-<a name="434"><span class="lineNum">     434 </span>                :            :   VectorT m_range_normal;</a>
-<a name="435"><span class="lineNum">     435 </span>                :            :   bool8_t m_threshold_negative;</a>
-<a name="436"><span class="lineNum">     436 </span>                :            :   float32_t m_threshold2;</a>
-<a name="437"><span class="lineNum">     437 </span>                :            : };</a>
-<a name="438"><span class="lineNum">     438 </span>                :            : </a>
-<a name="439"><span class="lineNum">     439 </span>                :            : class LIDAR_UTILS_PUBLIC IntensityIteratorWrapper</a>
-<a name="440"><span class="lineNum">     440 </span>                :            : {</a>
-<a name="441"><span class="lineNum">     441 </span>                :            : private:</a>
-<a name="442"><span class="lineNum">     442 </span>                :            :   sensor_msgs::PointCloud2ConstIterator&lt;uint8_t&gt; m_intensity_it_uint8;</a>
-<a name="443"><span class="lineNum">     443 </span>                :            :   sensor_msgs::PointCloud2ConstIterator&lt;float32_t&gt; m_intensity_it_float32;</a>
-<a name="444"><span class="lineNum">     444 </span>                :            :   decltype(sensor_msgs::msg::PointField::datatype) m_intensity_datatype;</a>
-<a name="445"><span class="lineNum">     445 </span>                :            : </a>
-<a name="446"><span class="lineNum">     446 </span>                :            : public:</a>
-<a name="447"><span class="lineNum">     447 </span>                :            :   explicit IntensityIteratorWrapper(const PointCloud2 &amp; msg);</a>
-<a name="448"><span class="lineNum">     448 </span>                :            : </a>
-<a name="449"><span class="lineNum">     449 </span>                :            :   void next();</a>
-<a name="450"><span class="lineNum">     450 </span>                :            : </a>
-<a name="451"><span class="lineNum">     451 </span>                :            :   bool8_t eof();</a>
-<a name="452"><span class="lineNum">     452 </span>                :            : </a>
-<a name="453"><span class="lineNum">     453 </span>                :            :   template&lt;typename PointFieldValueT&gt;</a>
-<a name="454"><span class="lineNum">     454 </span>                :            :   void get_current_value(PointFieldValueT &amp; point_field_value)</a>
-<a name="455"><span class="lineNum">     455 </span>                :            :   {</a>
-<a name="456"><span class="lineNum">     456 </span>                :            :     switch (m_intensity_datatype) {</a>
-<a name="457"><span class="lineNum">     457 </span>                :            :       case sensor_msgs::msg::PointField::UINT8:</a>
-<a name="458"><span class="lineNum">     458 </span>                :            :         point_field_value = *m_intensity_it_uint8;</a>
-<a name="459"><span class="lineNum">     459 </span>                :            :         break;</a>
-<a name="460"><span class="lineNum">     460 </span>                :            :       case sensor_msgs::msg::PointField::FLOAT32:</a>
-<a name="461"><span class="lineNum">     461 </span>                :            :         point_field_value = *m_intensity_it_float32;</a>
-<a name="462"><span class="lineNum">     462 </span>                :            :         break;</a>
-<a name="463"><span class="lineNum">     463 </span>                :            :       default:</a>
-<a name="464"><span class="lineNum">     464 </span>                :            :         throw std::runtime_error(</a>
-<a name="465"><span class="lineNum">     465 </span>                :            :                 &quot;Intensity type not supported: &quot; +</a>
-<a name="466"><span class="lineNum">     466 </span>                :            :                 std::to_string(m_intensity_datatype));</a>
-<a name="467"><span class="lineNum">     467 </span>                :            :     }</a>
-<a name="468"><span class="lineNum">     468 </span>                :            :   }</a>
-<a name="469"><span class="lineNum">     469 </span>                :            : };</a>
-<a name="470"><span class="lineNum">     470 </span>                :            : </a>
-<a name="471"><span class="lineNum">     471 </span>                :            : }  // namespace lidar_utils</a>
-<a name="472"><span class="lineNum">     472 </span>                :            : }  // namespace common</a>
-<a name="473"><span class="lineNum">     473 </span>                :            : }  // namespace autoware</a>
-<a name="474"><span class="lineNum">     474 </span>                :            : </a>
-<a name="475"><span class="lineNum">     475 </span>                :            : #endif  // LIDAR_UTILS__POINT_CLOUD_UTILS_HPP_</a>
+<a name="372"><span class="lineNum">     372 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          1 :     Eigen::Vector3f out_mat = m_tf * Eigen::Vector3f{x_(ref), y_(ref), z_(ref)};</span></a>
+<a name="373"><span class="lineNum">     373 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     xr_(out) = out_mat[0];</span></a>
+<a name="374"><span class="lineNum">     374 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     yr_(out) = out_mat[1];</span></a>
+<a name="375"><span class="lineNum">     375 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     zr_(out) = out_mat[2];</span></a>
+<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">          1 :   }</span></a>
+<a name="377"><span class="lineNum">     377 </span>                :            : </a>
+<a name="378"><span class="lineNum">     378 </span>                :            : private:</a>
+<a name="379"><span class="lineNum">     379 </span>                :            :   Eigen::Affine3f m_tf;</a>
+<a name="380"><span class="lineNum">     380 </span>                :            : };</a>
+<a name="381"><span class="lineNum">     381 </span>                :            : </a>
+<a name="382"><span class="lineNum">     382 </span>                :            : /// \brief Filter class to check if a point's azimuth lies within a range defined by a start and</a>
+<a name="383"><span class="lineNum">     383 </span>                :            : /// end angles. The range is defined from start to the end angles in counter-clock-wise direction.</a>
+<a name="384"><span class="lineNum">     384 </span>                :            : class LIDAR_UTILS_PUBLIC AngleFilter</a>
+<a name="385"><span class="lineNum">     385 </span>                :            : {</a>
+<a name="386"><span class="lineNum">     386 </span>                :            : public:</a>
+<a name="387"><span class="lineNum">     387 </span>                :            :   /// \brief Constructor</a>
+<a name="388"><span class="lineNum">     388 </span>                :            :   /// \param start_angle Minimum angle in radians</a>
+<a name="389"><span class="lineNum">     389 </span>                :            :   /// \param end_angle Maximum angle in radians</a>
+<a name="390"><span class="lineNum">     390 </span>                :            :   AngleFilter(float32_t start_angle, float32_t end_angle);</a>
+<a name="391"><span class="lineNum">     391 </span>                :            : </a>
+<a name="392"><span class="lineNum">     392 </span>                :            :   using VectorT = autoware::common::types::PointXYZIF;</a>
+<a name="393"><span class="lineNum">     393 </span>                :            :   static constexpr float32_t PI = 3.14159265359F;</a>
+<a name="394"><span class="lineNum">     394 </span>                :            :   static constexpr auto FEPS = std::numeric_limits&lt;float32_t&gt;::epsilon() * 1e2F;</a>
+<a name="395"><span class="lineNum">     395 </span>                :            : </a>
+<a name="396"><span class="lineNum">     396 </span>                :            :   /// \brief Check if a point's azimuth lies in the range [start, end] in</a>
+<a name="397"><span class="lineNum">     397 </span>                :            :   /// counter-clock-wise-direction. The point is treated as a 2D vector whose projection on the</a>
+<a name="398"><span class="lineNum">     398 </span>                :            :   /// range normal is compared to a threshold.</a>
+<a name="399"><span class="lineNum">     399 </span>                :            :   /// \tparam T Point type</a>
+<a name="400"><span class="lineNum">     400 </span>                :            :   /// \param pt point to check</a>
+<a name="401"><span class="lineNum">     401 </span>                :            :   /// \return return true if the point is contained within the range.</a>
+<a name="402"><span class="lineNum">     402 </span>                :            :   template&lt;typename T&gt;</a>
+<a name="403"><span class="lineNum">     403 </span>                :            :   bool8_t operator()(const T &amp; pt) const</a>
+<a name="404"><span class="lineNum">     404 </span>                :            :   {</a>
+<a name="405"><span class="lineNum">     405 </span>                :            :     using common::geometry::dot_2d;</a>
+<a name="406"><span class="lineNum">     406 </span>                :            :     bool8_t ret = false;</a>
+<a name="407"><span class="lineNum">     407 </span>                :            : </a>
+<a name="408"><span class="lineNum">     408 </span>                :            :     // Squared magnitude of the vector</a>
+<a name="409"><span class="lineNum">     409 </span>                :            :     const auto pt_len2 = dot_2d(pt, pt);</a>
+<a name="410"><span class="lineNum">     410 </span>                :            :     const auto proj_on_normal = dot_2d(pt, m_range_normal);</a>
+<a name="411"><span class="lineNum">     411 </span>                :            :     const auto proj_on_normal2 = proj_on_normal * proj_on_normal;</a>
+<a name="412"><span class="lineNum">     412 </span>                :            :     const auto is_proj_negative = (proj_on_normal + FEPS) &lt; 0.0F;</a>
+<a name="413"><span class="lineNum">     413 </span>                :            : </a>
+<a name="414"><span class="lineNum">     414 </span>                :            :     // Since the input vector's projection is scaled by the length of itself, the</a>
+<a name="415"><span class="lineNum">     415 </span>                :            :     // threshold is also scaled by the length of the input vector to make the comparison possible.</a>
+<a name="416"><span class="lineNum">     416 </span>                :            : </a>
+<a name="417"><span class="lineNum">     417 </span>                :            :     // To avoid computing the length using sqrt, the expressions are kept in square form, hence</a>
+<a name="418"><span class="lineNum">     418 </span>                :            :     // the following sign checks are made to ensure the correctness of the comparisons in</a>
+<a name="419"><span class="lineNum">     419 </span>                :            :     // squared form.</a>
+<a name="420"><span class="lineNum">     420 </span>                :            :     if ((!m_threshold_negative) &amp;&amp; (!is_proj_negative)) {</a>
+<a name="421"><span class="lineNum">     421 </span>                :            :       ret = (proj_on_normal2) &gt;= (pt_len2 * (m_threshold2 - FEPS));</a>
+<a name="422"><span class="lineNum">     422 </span>                :            :     } else if (m_threshold_negative &amp;&amp; (!is_proj_negative)) {</a>
+<a name="423"><span class="lineNum">     423 </span>                :            :       ret = true;</a>
+<a name="424"><span class="lineNum">     424 </span>                :            :     } else if ((!m_threshold_negative) &amp;&amp; is_proj_negative) {</a>
+<a name="425"><span class="lineNum">     425 </span>                :            :       ret = false;</a>
+<a name="426"><span class="lineNum">     426 </span>                :            :     } else {</a>
+<a name="427"><span class="lineNum">     427 </span>                :            :       ret = (proj_on_normal2) &lt;= (pt_len2 * (m_threshold2 + FEPS));</a>
+<a name="428"><span class="lineNum">     428 </span>                :            :     }</a>
+<a name="429"><span class="lineNum">     429 </span>                :            :     return ret;</a>
+<a name="430"><span class="lineNum">     430 </span>                :            :   }</a>
+<a name="431"><span class="lineNum">     431 </span>                :            : </a>
+<a name="432"><span class="lineNum">     432 </span>                :            : private:</a>
+<a name="433"><span class="lineNum">     433 </span>                :            :   VectorT m_range_normal;</a>
+<a name="434"><span class="lineNum">     434 </span>                :            :   bool8_t m_threshold_negative;</a>
+<a name="435"><span class="lineNum">     435 </span>                :            :   float32_t m_threshold2;</a>
+<a name="436"><span class="lineNum">     436 </span>                :            : };</a>
+<a name="437"><span class="lineNum">     437 </span>                :            : </a>
+<a name="438"><span class="lineNum">     438 </span>                :            : class LIDAR_UTILS_PUBLIC IntensityIteratorWrapper</a>
+<a name="439"><span class="lineNum">     439 </span>                :            : {</a>
+<a name="440"><span class="lineNum">     440 </span>                :            : private:</a>
+<a name="441"><span class="lineNum">     441 </span>                :            :   sensor_msgs::PointCloud2ConstIterator&lt;uint8_t&gt; m_intensity_it_uint8;</a>
+<a name="442"><span class="lineNum">     442 </span>                :            :   sensor_msgs::PointCloud2ConstIterator&lt;float32_t&gt; m_intensity_it_float32;</a>
+<a name="443"><span class="lineNum">     443 </span>                :            :   decltype(sensor_msgs::msg::PointField::datatype) m_intensity_datatype;</a>
+<a name="444"><span class="lineNum">     444 </span>                :            : </a>
+<a name="445"><span class="lineNum">     445 </span>                :            : public:</a>
+<a name="446"><span class="lineNum">     446 </span>                :            :   explicit IntensityIteratorWrapper(const PointCloud2 &amp; msg);</a>
+<a name="447"><span class="lineNum">     447 </span>                :            : </a>
+<a name="448"><span class="lineNum">     448 </span>                :            :   void next();</a>
+<a name="449"><span class="lineNum">     449 </span>                :            : </a>
+<a name="450"><span class="lineNum">     450 </span>                :            :   bool8_t eof();</a>
+<a name="451"><span class="lineNum">     451 </span>                :            : </a>
+<a name="452"><span class="lineNum">     452 </span>                :            :   template&lt;typename PointFieldValueT&gt;</a>
+<a name="453"><span class="lineNum">     453 </span>                :            :   void get_current_value(PointFieldValueT &amp; point_field_value)</a>
+<a name="454"><span class="lineNum">     454 </span>                :            :   {</a>
+<a name="455"><span class="lineNum">     455 </span>                :            :     switch (m_intensity_datatype) {</a>
+<a name="456"><span class="lineNum">     456 </span>                :            :       case sensor_msgs::msg::PointField::UINT8:</a>
+<a name="457"><span class="lineNum">     457 </span>                :            :         point_field_value = *m_intensity_it_uint8;</a>
+<a name="458"><span class="lineNum">     458 </span>                :            :         break;</a>
+<a name="459"><span class="lineNum">     459 </span>                :            :       case sensor_msgs::msg::PointField::FLOAT32:</a>
+<a name="460"><span class="lineNum">     460 </span>                :            :         point_field_value = *m_intensity_it_float32;</a>
+<a name="461"><span class="lineNum">     461 </span>                :            :         break;</a>
+<a name="462"><span class="lineNum">     462 </span>                :            :       default:</a>
+<a name="463"><span class="lineNum">     463 </span>                :            :         throw std::runtime_error(</a>
+<a name="464"><span class="lineNum">     464 </span>                :            :                 &quot;Intensity type not supported: &quot; +</a>
+<a name="465"><span class="lineNum">     465 </span>                :            :                 std::to_string(m_intensity_datatype));</a>
+<a name="466"><span class="lineNum">     466 </span>                :            :     }</a>
+<a name="467"><span class="lineNum">     467 </span>                :            :   }</a>
+<a name="468"><span class="lineNum">     468 </span>                :            : };</a>
+<a name="469"><span class="lineNum">     469 </span>                :            : </a>
+<a name="470"><span class="lineNum">     470 </span>                :            : }  // namespace lidar_utils</a>
+<a name="471"><span class="lineNum">     471 </span>                :            : }  // namespace common</a>
+<a name="472"><span class="lineNum">     472 </span>                :            : }  // namespace autoware</a>
+<a name="473"><span class="lineNum">     473 </span>                :            : </a>
+<a name="474"><span class="lineNum">     474 </span>                :            : #endif  // LIDAR_UTILS__POINT_CLOUD_UTILS_HPP_</a>
 </pre>
       </td>
     </tr>
