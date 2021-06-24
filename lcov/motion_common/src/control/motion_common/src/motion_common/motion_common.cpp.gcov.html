@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-06-23 20:04:10</td>
+            <td class="headerValue">2021-06-24 20:00:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -113,29 +113,29 @@
 <a name="35"><span class="lineNum">      35 </span>                :            : }</a>
 <a name="36"><span class="lineNum">      36 </span>                :            : </a>
 <a name="37"><span class="lineNum">      37 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="38"><span class="lineNum">      38 </span>                :<span class="lineCov">        409 : bool is_past_point(</span></a>
+<a name="38"><span class="lineNum">      38 </span>                :<span class="lineCov">        406 : bool is_past_point(</span></a>
 <a name="39"><span class="lineNum">      39 </span>                :            :   const Point &amp; state,</a>
 <a name="40"><span class="lineNum">      40 </span>                :            :   const Point &amp; current_pt,</a>
 <a name="41"><span class="lineNum">      41 </span>                :            :   const Point &amp; next_pt) noexcept</a>
 <a name="42"><span class="lineNum">      42 </span>                :            : {</a>
-<a name="43"><span class="lineNum">      43 </span>                :<span class="lineCov">        409 :   const auto nx = next_pt.x - current_pt.x;</span></a>
-<a name="44"><span class="lineNum">      44 </span>                :<span class="lineCov">        409 :   const auto ny = next_pt.y - current_pt.y;</span></a>
+<a name="43"><span class="lineNum">      43 </span>                :<span class="lineCov">        406 :   const auto nx = next_pt.x - current_pt.x;</span></a>
+<a name="44"><span class="lineNum">      44 </span>                :<span class="lineCov">        406 :   const auto ny = next_pt.y - current_pt.y;</span></a>
 <a name="45"><span class="lineNum">      45 </span>                :            : </a>
-<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">        409 :   return is_past_point(state, next_pt, nx, ny);</span></a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">        406 :   return is_past_point(state, next_pt, nx, ny);</span></a>
 <a name="47"><span class="lineNum">      47 </span>                :            : }</a>
 <a name="48"><span class="lineNum">      48 </span>                :            : </a>
 <a name="49"><span class="lineNum">      49 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">        413 : bool is_past_point(</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">        410 : bool is_past_point(</span></a>
 <a name="51"><span class="lineNum">      51 </span>                :            :   const Point &amp; state,</a>
 <a name="52"><span class="lineNum">      52 </span>                :            :   const Point &amp; pt,</a>
 <a name="53"><span class="lineNum">      53 </span>                :            :   const Real nx,</a>
 <a name="54"><span class="lineNum">      54 </span>                :            :   const Real ny) noexcept</a>
 <a name="55"><span class="lineNum">      55 </span>                :            : {</a>
-<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">        413 :   const auto dx = (state.x - pt.x);</span></a>
-<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">        413 :   const auto dy = (state.y - pt.y);</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">        410 :   const auto dx = (state.x - pt.x);</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">        410 :   const auto dy = (state.y - pt.y);</span></a>
 <a name="58"><span class="lineNum">      58 </span>                :            : </a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   // Check if state is past last_pt when projected onto the ray defined by heading</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">        413 :   return ((nx * dx) + (ny * dy)) &gt;= -std::numeric_limits&lt;Real&gt;::epsilon();</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">        410 :   return ((nx * dx) + (ny * dy)) &gt;= -std::numeric_limits&lt;Real&gt;::epsilon();</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            : }</a>
 <a name="62"><span class="lineNum">      62 </span>                :            : </a>
 <a name="63"><span class="lineNum">      63 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
