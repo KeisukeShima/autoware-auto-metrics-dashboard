@@ -65,7 +65,7 @@
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/lidar_integration/lidar_launch_description.py</b></td></tr>
+  Source file: <b>src/tools/lidar_integration/lidar_integration/lidar_checker.py</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -78,122 +78,62 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">get_lidar_launch_description</td>
+    <td style="background-color:LightSteelBlue">make_lidar_checker</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">6</td>
+       <td class="lesser-value">8</td>
     
 
     
-       <td class="value">22</td>
+       <td class="value">29</td>
     
 
     
-       <td class="lesser-value">6</td>
+       <td class="greater-value">8</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">make_active_tests.test_checker_exits</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="value">26</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">make_active_tests</td>
+    <td style="background-color:LightSteelBlue">make_pcl_checker</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">16</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">make_post_shutdown_tests.test_checker_outputs_success</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="value">26</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">make_post_shutdown_tests.test_checker_exit_code_ok</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">15</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">make_post_shutdown_tests</td>
-    <td></td>
     
        <td class="lesser-value">7</td>
     
 
     
-       <td class="lesser-value">19</td>
+       <td class="value">27</td>
     
 
     
-       <td class="value">140</td>
+       <td class="greater-value">7</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">make_box_checker</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">0</td>
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">27</td>
+    
+
+    
+       <td class="greater-value">7</td>
     
   </tr>
   
@@ -268,80 +208,6 @@ Cyclomatic complexity
 
     
        <td class="lesser-value">1</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/lidar_integration/lidar_checker.py</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">make_lidar_checker</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">29</td>
-    
-
-    
-       <td class="greater-value">8</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">make_pcl_checker</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">27</td>
-    
-
-    
-       <td class="greater-value">7</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">make_box_checker</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">27</td>
-    
-
-    
-       <td class="greater-value">7</td>
     
   </tr>
   
@@ -541,7 +407,156 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/lidar_integration/lidar_launch_description.py</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">get_lidar_launch_description</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">22</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">make_active_tests.test_checker_exits</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="value">26</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">make_active_tests</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">16</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">make_post_shutdown_tests.test_checker_outputs_success</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="value">26</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">make_post_shutdown_tests.test_checker_exit_code_ok</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">15</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">make_post_shutdown_tests</td>
+    <td></td>
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="lesser-value">19</td>
+    
+
+    
+       <td class="value">140</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
   Source file: <b>src/tools/lidar_integration/include/lidar_integration/lidar_integration.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/include/lidar_integration/lidar_integration_listener.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/include/lidar_integration/point_cloud_mutation_spoofer.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/include/lidar_integration/visibility_control.hpp</b></td></tr>
 
   
 
@@ -580,17 +595,7 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/include/lidar_integration/point_cloud_mutation_spoofer.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
   Source file: <b>src/tools/lidar_integration/include/lidar_integration/lidar_integration_common.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/include/lidar_integration/visibility_control.hpp</b></td></tr>
 
   
 
@@ -684,743 +689,6 @@ Cyclomatic complexity
 
     
        <td class="lesser-value">0</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/include/lidar_integration/lidar_integration_listener.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/src/vlp16_integration_spoofer.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::Vlp16IntegrationSpoofer</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">36</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::~Vlp16IntegrationSpoofer</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">11</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::start</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">20</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::stop</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">20</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::SpoofTask</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">20</td>
-    
-
-    
-       <td class="value">138</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::task_function</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">28</td>
-    
-
-    
-       <td class="value">159</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::uint16_to_bytes</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">48</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::bytes_to_uint16</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">36</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::update_packet_azimuth</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">10</td>
-    
-
-    
-       <td class="value">78</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::init_packet</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">22</td>
-    
-
-    
-       <td class="value">197</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::initialize_packets</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">51</td>
-    
-
-    
-       <td class="value">260</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/src/point_cloud_mutation_spoofer_main.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">main</td>
-    <td></td>
-    
-       <td class="lesser-value">12</td>
-    
-
-    
-       <td class="lesser-value">93</td>
-    
-
-    
-       <td class="value">695</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/src/lidar_lc_integration_listener.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::Lcm</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="value">16</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::~Lcm</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">28</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::start</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">29</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::init</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">13</td>
-    
-
-    
-       <td class="value">89</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::get_state</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">15</td>
-    
-
-    
-       <td class="value">109</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::change_state</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">15</td>
-    
-
-    
-       <td class="value">108</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::publish_actions</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">17</td>
-    
-
-    
-       <td class="value">121</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::task_function</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">20</td>
-    
-
-    
-       <td class="value">116</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/src/lidar_integration.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::lidar_integration_test</td>
-    <td></td>
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="lesser-value">41</td>
-    
-
-    
-       <td class="value">298</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/src/udp_sender.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">UdpSenderBase::UdpSenderBase</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">27</td>
-    
-
-    
-       <td class="value">201</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">UdpSenderBase::send</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">29</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/src/point_cloud_mutation_spoofer.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::PointCloudMutationSpooferNode</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">34</td>
-    
-
-    
-       <td class="value">277</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::init</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">26</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::wait_for_matched</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">14</td>
-    
-
-    
-       <td class="value">84</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::start</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">31</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::stop</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">30</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::task_function</td>
-    <td></td>
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="lesser-value">35</td>
-    
-
-    
-       <td class="value">269</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/src/vlp16_integration_spoofer_main.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">main</td>
-    <td></td>
-    
-       <td class="greater-value">25</td>
-    
-
-    
-       <td class="lesser-value">147</td>
-    
-
-    
-       <td class="value">1081</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/tools/lidar_integration/src/lidar_integration_listener_main.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">main</td>
-    <td></td>
-    
-       <td class="greater-value">22</td>
-    
-
-    
-       <td class="lesser-value">150</td>
-    
-
-    
-       <td class="value">998</td>
-    
-
-    
-       <td class="lesser-value">2</td>
     
   </tr>
   
@@ -1679,13 +947,745 @@ Cyclomatic complexity
   </tr>
   
 
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/src/vlp16_integration_spoofer.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::Vlp16IntegrationSpoofer</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">36</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::~Vlp16IntegrationSpoofer</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">11</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::start</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">20</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::stop</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">20</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::SpoofTask</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">20</td>
+    
+
+    
+       <td class="value">138</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::task_function</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">28</td>
+    
+
+    
+       <td class="value">159</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::uint16_to_bytes</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">48</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::bytes_to_uint16</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">36</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::update_packet_azimuth</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">10</td>
+    
+
+    
+       <td class="value">78</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::init_packet</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">22</td>
+    
+
+    
+       <td class="value">197</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Vlp16IntegrationSpoofer::SpoofTask::initialize_packets</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">51</td>
+    
+
+    
+       <td class="value">260</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/src/point_cloud_mutation_spoofer.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::PointCloudMutationSpooferNode</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">34</td>
+    
+
+    
+       <td class="value">277</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::init</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">26</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::wait_for_matched</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="value">84</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::start</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">31</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::stop</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">30</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::PointCloudMutationSpooferNode::task_function</td>
+    <td></td>
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="lesser-value">35</td>
+    
+
+    
+       <td class="value">269</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/src/udp_sender.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">UdpSenderBase::UdpSenderBase</td>
+    <td></td>
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="lesser-value">27</td>
+    
+
+    
+       <td class="value">201</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">UdpSenderBase::send</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">29</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/src/lidar_integration.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::lidar_integration_test</td>
+    <td></td>
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="lesser-value">41</td>
+    
+
+    
+       <td class="value">298</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/src/point_cloud_mutation_spoofer_main.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">main</td>
+    <td></td>
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="lesser-value">93</td>
+    
+
+    
+       <td class="value">695</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/src/lidar_lc_integration_listener.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::Lcm</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="value">16</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::~Lcm</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">28</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::start</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">29</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::init</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">13</td>
+    
+
+    
+       <td class="value">89</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::get_state</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">15</td>
+    
+
+    
+       <td class="value">109</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::change_state</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">15</td>
+    
+
+    
+       <td class="value">108</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::publish_actions</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">17</td>
+    
+
+    
+       <td class="value">121</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">lidar_integration::Lcm::task_function</td>
+    <td></td>
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="lesser-value">20</td>
+    
+
+    
+       <td class="value">116</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/src/vlp16_integration_spoofer_main.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">main</td>
+    <td></td>
+    
+       <td class="greater-value">25</td>
+    
+
+    
+       <td class="lesser-value">147</td>
+    
+
+    
+       <td class="value">1081</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>src/tools/lidar_integration/src/lidar_integration_listener_main.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">main</td>
+    <td></td>
+    
+       <td class="greater-value">22</td>
+    
+
+    
+       <td class="lesser-value">150</td>
+    
+
+    
+       <td class="value">998</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+
 </table>
 <center>
 
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2021-06-24 20:08
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-06-25 19:47
     </td></tr>
 </table>
  </body>
