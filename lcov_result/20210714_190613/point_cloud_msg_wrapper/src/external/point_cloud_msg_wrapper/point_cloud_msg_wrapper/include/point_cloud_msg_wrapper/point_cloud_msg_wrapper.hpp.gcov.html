@@ -1,0 +1,654 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.total.filtered - src/external/point_cloud_msg_wrapper/point_cloud_msg_wrapper/include/point_cloud_msg_wrapper/point_cloud_msg_wrapper.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../../../index.html">top level</a> - <a href="index.html">src/external/point_cloud_msg_wrapper/point_cloud_msg_wrapper/include/point_cloud_msg_wrapper</a> - point_cloud_msg_wrapper.hpp<span style="font-size: 80%;"> (source / <a href="point_cloud_msg_wrapper.hpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.total.filtered</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">126</td>
+            <td class="headerCovTableEntry">137</td>
+            <td class="headerCovTableEntryHi">92.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2021-07-14 20:15:45</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">254</td>
+            <td class="headerCovTableEntry">258</td>
+            <td class="headerCovTableEntryHi">98.4 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+            | Branches:
+            <span class="coverLegendCov">+</span> taken
+            <span class="coverLegendNoCov">-</span> not taken
+            <span class="coverLegendNoCov">#</span> not executed
+</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">184</td>
+            <td class="headerCovTableEntry">368</td>
+            <td class="headerCovTableEntryLo">50.0 %</td>
+          </tr>
+          <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : // Copyright 2021 Apex.AI, Inc.</a>
+<a name="2"><span class="lineNum">       2 </span>                :            : //</a>
+<a name="3"><span class="lineNum">       3 </span>                :            : // Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</a>
+<a name="4"><span class="lineNum">       4 </span>                :            : // you may not use this file except in compliance with the License.</a>
+<a name="5"><span class="lineNum">       5 </span>                :            : // You may obtain a copy of the License at</a>
+<a name="6"><span class="lineNum">       6 </span>                :            : //</a>
+<a name="7"><span class="lineNum">       7 </span>                :            : //     http://www.apache.org/licenses/LICENSE-2.0</a>
+<a name="8"><span class="lineNum">       8 </span>                :            : //</a>
+<a name="9"><span class="lineNum">       9 </span>                :            : // Unless required by applicable law or agreed to in writing, software</a>
+<a name="10"><span class="lineNum">      10 </span>                :            : // distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</a>
+<a name="11"><span class="lineNum">      11 </span>                :            : // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</a>
+<a name="12"><span class="lineNum">      12 </span>                :            : // See the License for the specific language governing permissions and</a>
+<a name="13"><span class="lineNum">      13 </span>                :            : // limitations under the License.</a>
+<a name="14"><span class="lineNum">      14 </span>                :            : </a>
+<a name="15"><span class="lineNum">      15 </span>                :            : /// \copyright Copyright 2021 Apex.AI, Inc.</a>
+<a name="16"><span class="lineNum">      16 </span>                :            : /// All rights reserved.</a>
+<a name="17"><span class="lineNum">      17 </span>                :            : </a>
+<a name="18"><span class="lineNum">      18 </span>                :            : </a>
+<a name="19"><span class="lineNum">      19 </span>                :            : #ifndef POINT_CLOUD_MSG_WRAPPER__POINT_CLOUD_MSG_WRAPPER_HPP_</a>
+<a name="20"><span class="lineNum">      20 </span>                :            : #define POINT_CLOUD_MSG_WRAPPER__POINT_CLOUD_MSG_WRAPPER_HPP_</a>
+<a name="21"><span class="lineNum">      21 </span>                :            : </a>
+<a name="22"><span class="lineNum">      22 </span>                :            : #include &lt;point_cloud_msg_wrapper/default_field_generators.hpp&gt;</a>
+<a name="23"><span class="lineNum">      23 </span>                :            : #include &lt;point_cloud_msg_wrapper/field_generators.hpp&gt;</a>
+<a name="24"><span class="lineNum">      24 </span>                :            : #include &lt;point_cloud_msg_wrapper/type_traits.hpp&gt;</a>
+<a name="25"><span class="lineNum">      25 </span>                :            : #include &lt;sensor_msgs/msg/point_cloud2.hpp&gt;</a>
+<a name="26"><span class="lineNum">      26 </span>                :            : </a>
+<a name="27"><span class="lineNum">      27 </span>                :            : #include &lt;experimental/optional&gt;</a>
+<a name="28"><span class="lineNum">      28 </span>                :            : #include &lt;string&gt;</a>
+<a name="29"><span class="lineNum">      29 </span>                :            : </a>
+<a name="30"><span class="lineNum">      30 </span>                :            : #include &lt;limits&gt;</a>
+<a name="31"><span class="lineNum">      31 </span>                :            : #include &lt;memory&gt;</a>
+<a name="32"><span class="lineNum">      32 </span>                :            : #include &lt;tuple&gt;</a>
+<a name="33"><span class="lineNum">      33 </span>                :            : #include &lt;utility&gt;</a>
+<a name="34"><span class="lineNum">      34 </span>                :            : </a>
+<a name="35"><span class="lineNum">      35 </span>                :            : ///</a>
+<a name="36"><span class="lineNum">      36 </span>                :            : /// @brief      A help macro to simplify conditional compilation based on mutability.</a>
+<a name="37"><span class="lineNum">      37 </span>                :            : ///</a>
+<a name="38"><span class="lineNum">      38 </span>                :            : ///             This macro just wraps the SFINAE paradigm and enables compilation only if the</a>
+<a name="39"><span class="lineNum">      39 </span>                :            : ///             QUERY_TYPE is mutable. This macro is replaced by RETURN_TYPE in this case. If</a>
+<a name="40"><span class="lineNum">      40 </span>                :            : ///             QUERY_TYPE is const, the code following this macro invocation will not be compiled.</a>
+<a name="41"><span class="lineNum">      41 </span>                :            : ///</a>
+<a name="42"><span class="lineNum">      42 </span>                :            : /// @param      QUERY_TYPE   The query type to be checked for mutability.</a>
+<a name="43"><span class="lineNum">      43 </span>                :            : /// @param      RETURN_TYPE  The return type generated if compilation succeeds.</a>
+<a name="44"><span class="lineNum">      44 </span>                :            : ///</a>
+<a name="45"><span class="lineNum">      45 </span>                :            : #define COMPILE_IF_MUTABLE(QUERY_TYPE, RETURN_TYPE) \</a>
+<a name="46"><span class="lineNum">      46 </span>                :            :   template&lt;typename DummyCloudMsgT = QUERY_TYPE&gt; \</a>
+<a name="47"><span class="lineNum">      47 </span>                :            :   std::enable_if_t&lt;!std::is_const&lt;DummyCloudMsgT&gt;::value, RETURN_TYPE&gt; \</a>
+<a name="48"><span class="lineNum">      48 </span>                :            : </a>
+<a name="49"><span class="lineNum">      49 </span>                :            : namespace point_cloud_msg_wrapper</a>
+<a name="50"><span class="lineNum">      50 </span>                :            : {</a>
+<a name="51"><span class="lineNum">      51 </span>                :            : </a>
+<a name="52"><span class="lineNum">      52 </span>                :            : namespace detail</a>
+<a name="53"><span class="lineNum">      53 </span>                :            : {</a>
+<a name="54"><span class="lineNum">      54 </span>                :            : using DefaultFieldGenerators = std::tuple&lt;</a>
+<a name="55"><span class="lineNum">      55 </span>                :            :   field_x_generator,</a>
+<a name="56"><span class="lineNum">      56 </span>                :            :   field_y_generator,</a>
+<a name="57"><span class="lineNum">      57 </span>                :            :   field_z_generator,</a>
+<a name="58"><span class="lineNum">      58 </span>                :            :   field_id_generator,</a>
+<a name="59"><span class="lineNum">      59 </span>                :            :   field_ring_generator,</a>
+<a name="60"><span class="lineNum">      60 </span>                :            :   field_intensity_generator,</a>
+<a name="61"><span class="lineNum">      61 </span>                :            :   field_timestamp_generator&gt;;</a>
+<a name="62"><span class="lineNum">      62 </span>                :            : }  // namespace detail</a>
+<a name="63"><span class="lineNum">      63 </span>                :            : </a>
+<a name="64"><span class="lineNum">      64 </span>                :            : ///</a>
+<a name="65"><span class="lineNum">      65 </span>                :            : /// @brief      This class implements a point cloud message wrapper. Unless otherwise required, use</a>
+<a name="66"><span class="lineNum">      66 </span>                :            : ///             the typedefs of this class: PointCloud2View and PointCloud2Modifier. Only use this</a>
+<a name="67"><span class="lineNum">      67 </span>                :            : ///             class directly if those typedefs do not provide enough flexibility.</a>
+<a name="68"><span class="lineNum">      68 </span>                :            : ///</a>
+<a name="69"><span class="lineNum">      69 </span>                :            : /// @details    This class is designed to simplify working with point cloud messages. The idea is</a>
+<a name="70"><span class="lineNum">      70 </span>                :            : ///             that it wraps a point cloud message reference allowing for simple access and</a>
+<a name="71"><span class="lineNum">      71 </span>                :            : ///             modification. Upon creation, the wrapper checks if the fields of the message</a>
+<a name="72"><span class="lineNum">      72 </span>                :            : ///             correspond to the fields generated from the point type provided by the user. If this</a>
+<a name="73"><span class="lineNum">      73 </span>                :            : ///             check has passed, then the fields are identical (including the offsets of the</a>
+<a name="74"><span class="lineNum">      74 </span>                :            : ///             members) and it is safe to reinterpret the point cloud message as an array of PointT</a>
+<a name="75"><span class="lineNum">      75 </span>                :            : ///             points. Note that due to these checks it is relatively expensive (the complexity of</a>
+<a name="76"><span class="lineNum">      76 </span>                :            : ///             the checks is around O(n^2) where n is the number of field generators) to create</a>
+<a name="77"><span class="lineNum">      77 </span>                :            : ///             this wrapper, thus it should be avoided in very tight scopes. This operation is not</a>
+<a name="78"><span class="lineNum">      78 </span>                :            : ///             slow, but is significantly slower than a single element access. It is better to</a>
+<a name="79"><span class="lineNum">      79 </span>                :            : ///             create the wrapper once per message in a function scope and batch all the read/write</a>
+<a name="80"><span class="lineNum">      80 </span>                :            : ///             operations afterwards.</a>
+<a name="81"><span class="lineNum">      81 </span>                :            : ///</a>
+<a name="82"><span class="lineNum">      82 </span>                :            : ///             For convenience, there are two typedefs: PointCloud2View and PointCloud2Modifier.</a>
+<a name="83"><span class="lineNum">      83 </span>                :            : ///             - PointCloudView&lt;PointT&gt;{msg} wraps a constant point cloud and allows read-only</a>
+<a name="84"><span class="lineNum">      84 </span>                :            : ///               access. Modification through this view is impossible.</a>
+<a name="85"><span class="lineNum">      85 </span>                :            : ///             - PointCloud2Modifier&lt;PointT&gt;{msg} wraps a mutable message and allows read-write</a>
+<a name="86"><span class="lineNum">      86 </span>                :            : ///               access to the underlying data.</a>
+<a name="87"><span class="lineNum">      87 </span>                :            : ///             - PointCloud2Modifier&lt;PointT&gt;{msg, new_frame_id} initializes an empty mutable</a>
+<a name="88"><span class="lineNum">      88 </span>                :            : ///               message. This constructor is to be used solely to initialize a new message and</a>
+<a name="89"><span class="lineNum">      89 </span>                :            : ///               will throw if the point cloud message is already initialized (i.e., has non-zero</a>
+<a name="90"><span class="lineNum">      90 </span>                :            : ///               number of fields).</a>
+<a name="91"><span class="lineNum">      91 </span>                :            : ///</a>
+<a name="92"><span class="lineNum">      92 </span>                :            : /// @warning    This class wraps a raw reference, so the user is responsible to use it in such a way</a>
+<a name="93"><span class="lineNum">      93 </span>                :            : ///             that the underlying point cloud message is not deleted before the wrapper.</a>
+<a name="94"><span class="lineNum">      94 </span>                :            : ///</a>
+<a name="95"><span class="lineNum">      95 </span>                :            : /// @tparam     PointT           Type of point to use for message reading/writing.</a>
+<a name="96"><span class="lineNum">      96 </span>                :            : /// @tparam     PointCloudMsgT   Type of point cloud message.</a>
+<a name="97"><span class="lineNum">      97 </span>                :            : /// @tparam     FieldGenerators  A tuple of all field generators that allow generating Field structs</a>
+<a name="98"><span class="lineNum">      98 </span>                :            : ///                              from members of a PointT struct. See</a>
+<a name="99"><span class="lineNum">      99 </span>                :            : ///                              LIDAR_UTILS__DEFINE_FIELD_GENERATOR_FOR_MEMBER for more details.</a>
+<a name="100"><span class="lineNum">     100 </span>                :            : ///                              The class provides a sane default value here, but a custom tuple</a>
+<a name="101"><span class="lineNum">     101 </span>                :            : ///                              can be generated by the user by using</a>
+<a name="102"><span class="lineNum">     102 </span>                :            : ///                              LIDAR_UTILS__DEFINE_FIELD_GENERATOR_FOR_MEMBER if needed.</a>
+<a name="103"><span class="lineNum">     103 </span>                :            : /// @tparam     kIsMutable       Define if the point cloud message is mutable. Used to conditionally</a>
+<a name="104"><span class="lineNum">     104 </span>                :            : ///                              compile certain functions.</a>
+<a name="105"><span class="lineNum">     105 </span>                :            : /// @tparam     AllocatorT       The message allocator type. This allocator type must be rebindable</a>
+<a name="106"><span class="lineNum">     106 </span>                :            : ///                              to the PointT allocator through the use of</a>
+<a name="107"><span class="lineNum">     107 </span>                :            : ///                              `std::allocator_traits&lt;AllocatorT&gt;::rebind_alloc&lt;PointT&gt;`.</a>
+<a name="108"><span class="lineNum">     108 </span>                :            : ///</a>
+<a name="109"><span class="lineNum">     109 </span>                :            : template&lt;</a>
+<a name="110"><span class="lineNum">     110 </span>                :            :   typename PointT,</a>
+<a name="111"><span class="lineNum">     111 </span>                :            :   template&lt;typename AllocatorT&gt; class PointCloudMsgT,</a>
+<a name="112"><span class="lineNum">     112 </span>                :            :   typename FieldGenerators,</a>
+<a name="113"><span class="lineNum">     113 </span>                :            :   const bool kIsMutable,</a>
+<a name="114"><span class="lineNum">     114 </span>                :            :   typename AllocatorT&gt;</a>
+<a name="115"><span class="lineNum">     115 </span>                :            : class PointCloudMsgWrapper</a>
+<a name="116"><span class="lineNum">     116 </span>                :            : {</a>
+<a name="117"><span class="lineNum">     117 </span>                :            :   /// Depending on the provided kIsMutable boolean use the const or a mutable point cloud msg type.</a>
+<a name="118"><span class="lineNum">     118 </span>                :            :   using CloudMsgT =</a>
+<a name="119"><span class="lineNum">     119 </span>                :            :     std::conditional_t&lt;kIsMutable, PointCloudMsgT&lt;AllocatorT&gt;, const PointCloudMsgT&lt;AllocatorT&gt;&gt;;</a>
+<a name="120"><span class="lineNum">     120 </span>                :            : </a>
+<a name="121"><span class="lineNum">     121 </span>                :            :   static_assert(</a>
+<a name="122"><span class="lineNum">     122 </span>                :            :     std::is_default_constructible&lt;PointT&gt;::value,</a>
+<a name="123"><span class="lineNum">     123 </span>                :            :     &quot;\n\nThe point type must satisfy is_default_constructible trait.\n\n&quot;);</a>
+<a name="124"><span class="lineNum">     124 </span>                :            : </a>
+<a name="125"><span class="lineNum">     125 </span>                :            :   static_assert(</a>
+<a name="126"><span class="lineNum">     126 </span>                :            :     detail::is_specialization&lt;FieldGenerators, std::tuple&gt;::value,</a>
+<a name="127"><span class="lineNum">     127 </span>                :            :     &quot;\n\nFieldGenerators must be an std::tuple.\n\n&quot;);</a>
+<a name="128"><span class="lineNum">     128 </span>                :            : </a>
+<a name="129"><span class="lineNum">     129 </span>                :            :   static_assert(</a>
+<a name="130"><span class="lineNum">     130 </span>                :            :     std::is_same&lt;std::decay_t&lt;CloudMsgT&gt;, sensor_msgs::msg::PointCloud2_&lt;AllocatorT&gt;&gt;::value,</a>
+<a name="131"><span class="lineNum">     131 </span>                :            :     &quot;\n\nThis class is designed to work with PointCloud2 messages only for now.\n\n&quot;);</a>
+<a name="132"><span class="lineNum">     132 </span>                :            : </a>
+<a name="133"><span class="lineNum">     133 </span>                :            :   /// Type of the fields entry</a>
+<a name="134"><span class="lineNum">     134 </span>                :            :   using FieldNameT = typename sensor_msgs::msg::PointField_&lt;AllocatorT&gt;::_name_type;</a>
+<a name="135"><span class="lineNum">     135 </span>                :            :   /// Type of the data entry</a>
+<a name="136"><span class="lineNum">     136 </span>                :            :   using DataVectorT = typename sensor_msgs::msg::PointCloud2_&lt;AllocatorT&gt;::_data_type;</a>
+<a name="137"><span class="lineNum">     137 </span>                :            : </a>
+<a name="138"><span class="lineNum">     138 </span>                :            :   /// Get the type of the allocator to use with points.</a>
+<a name="139"><span class="lineNum">     139 </span>                :            :   using PointAllocatorT = typename std::allocator_traits&lt;AllocatorT&gt;::template rebind_alloc&lt;PointT&gt;;</a>
+<a name="140"><span class="lineNum">     140 </span>                :            : </a>
+<a name="141"><span class="lineNum">     141 </span>                :            :   /// Derive a point vector type (usually std::vector&lt;PointT&gt;). Needed in case a different (e.g.</a>
+<a name="142"><span class="lineNum">     142 </span>                :            :   /// bounded vector) type used instead and use it for the Point type with the msg Allocator.</a>
+<a name="143"><span class="lineNum">     143 </span>                :            :   using PointVectorType =</a>
+<a name="144"><span class="lineNum">     144 </span>                :            :     typename detail::derived_point_vector&lt;DataVectorT, PointT&gt;::template type&lt;PointAllocatorT&gt;;</a>
+<a name="145"><span class="lineNum">     145 </span>                :            : </a>
+<a name="146"><span class="lineNum">     146 </span>                :            :   /// Size of the point.</a>
+<a name="147"><span class="lineNum">     147 </span>                :            :   using kSizeofPoint =</a>
+<a name="148"><span class="lineNum">     148 </span>                :            :     std::integral_constant&lt;std::uint32_t, static_cast&lt;std::uint32_t&gt;(sizeof(PointT))&gt;;</a>
+<a name="149"><span class="lineNum">     149 </span>                :            : </a>
+<a name="150"><span class="lineNum">     150 </span>                :            : public:</a>
+<a name="151"><span class="lineNum">     151 </span>                :            :   using value_type = PointT;</a>
+<a name="152"><span class="lineNum">     152 </span>                :            :   using iterator = typename PointVectorType::iterator;</a>
+<a name="153"><span class="lineNum">     153 </span>                :            :   using const_iterator = typename PointVectorType::const_iterator;</a>
+<a name="154"><span class="lineNum">     154 </span>                :            :   using reverse_iterator = typename PointVectorType::reverse_iterator;</a>
+<a name="155"><span class="lineNum">     155 </span>                :            :   using const_reverse_iterator = typename PointVectorType::const_reverse_iterator;</a>
+<a name="156"><span class="lineNum">     156 </span>                :            : </a>
+<a name="157"><span class="lineNum">     157 </span>                :            :   ///</a>
+<a name="158"><span class="lineNum">     158 </span>                :            :   /// @brief      Constructor that wraps a point cloud message. Checks if the message fields</a>
+<a name="159"><span class="lineNum">     159 </span>                :            :   ///             correspond to the ones generated from the PointT type and throws in case of a</a>
+<a name="160"><span class="lineNum">     160 </span>                :            :   ///             mismatch.</a>
+<a name="161"><span class="lineNum">     161 </span>                :            :   ///</a>
+<a name="162"><span class="lineNum">     162 </span>                :            :   /// @param      cloud_ref  A reference to the wrapped cloud.</a>
+<a name="163"><span class="lineNum">     163 </span>                :            :   ///</a>
+<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">         45 :   explicit PointCloudMsgWrapper(CloudMsgT &amp; cloud_ref)</span></a>
+<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">         45 :   : m_cloud_ref{cloud_ref}</span></a>
+<a name="166"><span class="lineNum">     166 </span>                :            :   {</a>
+<a name="167"><span class="lineNum">     167 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchCov" title="Branch 1 was taken 31 times"> + </span>]:<span class="lineCov">         45 :     if (m_cloud_ref.fields.empty()) {</span></a>
+<a name="168"><span class="lineNum">     168 </span>                :            :       throw std::runtime_error(</a>
+<a name="169"><span class="lineNum">     169 </span>                :            :               &quot;Trying to wrap a message with no fields. Reset this message with&quot;</a>
+<a name="170"><span class="lineNum">     170 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :               &quot;'create_wrapper_from_empty_msg' function instead!&quot;);</span></a>
+<a name="171"><span class="lineNum">     171 </span>                :            :     }</a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">         62 :     std::string error_msg{};</span></a>
+<a name="173"><span class="lineNum">     173 </span>  [<span class="branchCov" title="Branch 0 was taken 31 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 12 times"> + </span><span class="branchCov" title="Branch 3 was taken 19 times"> + </span>]:<span class="lineCov">         31 :     if (!can_be_created_from(cloud_ref, &amp;error_msg)) {</span></a>
+<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :       throw std::runtime_error(error_msg);</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :            :     }</a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">         19 :   }</span></a>
+<a name="177"><span class="lineNum">     177 </span>                :            : </a>
+<a name="178"><span class="lineNum">     178 </span>                :            :   ///</a>
+<a name="179"><span class="lineNum">     179 </span>                :            :   /// A constructor that initializes the message and sets a new frame_id. Note that this only</a>
+<a name="180"><span class="lineNum">     180 </span>                :            :   /// compiles for a mutable cloud. It also throws if the message is already initialized.</a>
+<a name="181"><span class="lineNum">     181 </span>                :            :   ///</a>
+<a name="182"><span class="lineNum">     182 </span>                :            :   /// @param      cloud_ref  A reference to the wrapped cloud</a>
+<a name="183"><span class="lineNum">     183 </span>                :            :   /// @param[in]  frame_id   A frame id to be set to the message.</a>
+<a name="184"><span class="lineNum">     184 </span>                :            :   ///</a>
+<a name="185"><span class="lineNum">     185 </span>                :<span class="lineCov">         20 :   explicit PointCloudMsgWrapper(CloudMsgT &amp; cloud_ref, const FieldNameT &amp; frame_id)</span></a>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">         20 :   : m_cloud_ref{cloud_ref}</span></a>
+<a name="187"><span class="lineNum">     187 </span>                :            :   {</a>
+<a name="188"><span class="lineNum">     188 </span>                :            :     static_assert(</a>
+<a name="189"><span class="lineNum">     189 </span>                :            :       !std::is_const&lt;CloudMsgT&gt;::value,</a>
+<a name="190"><span class="lineNum">     190 </span>                :            :       &quot;\n\nWe must be able to modify this point cloud.\n\n&quot;);</a>
+<a name="191"><span class="lineNum">     191 </span>                :            :     static_assert(</a>
+<a name="192"><span class="lineNum">     192 </span>                :            :       detail::has_operator_equals&lt;PointT&gt;::value,</a>
+<a name="193"><span class="lineNum">     193 </span>                :            :       &quot;\n\nTo guarantee that all struct members are present in the fields of the message, &quot;</a>
+<a name="194"><span class="lineNum">     194 </span>                :            :       &quot;the point struct needs an equality operator defined.\n\n&quot;);</a>
+<a name="195"><span class="lineNum">     195 </span>                :            :     static_assert(</a>
+<a name="196"><span class="lineNum">     196 </span>                :            :       sizeof(PointT) &lt; static_cast&lt;std::size_t&gt;(UINT32_MAX),</a>
+<a name="197"><span class="lineNum">     197 </span>                :            :       &quot;\n\nOnly points with sizeof that fits in uint32_t are supported\n\n&quot;);</a>
+<a name="198"><span class="lineNum">     198 </span>                :            : </a>
+<a name="199"><span class="lineNum">     199 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         20 :     if (!m_cloud_ref.fields.empty()) {</span></a>
+<a name="200"><span class="lineNum">     200 </span>                :            :       throw std::runtime_error(</a>
+<a name="201"><span class="lineNum">     201 </span>                :            :               &quot;Trying to reset a non-empty point cloud message.&quot;</a>
+<a name="202"><span class="lineNum">     202 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :               &quot; Use reset_msg with the correct wrapper instead.&quot;);</span></a>
+<a name="203"><span class="lineNum">     203 </span>                :            :     }</a>
+<a name="204"><span class="lineNum">     204 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         28 :     const auto generated_fields = generate_fields_from_point&lt;PointT, FieldGenerators&gt;();</span></a>
+<a name="205"><span class="lineNum">     205 </span>  [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 13 times"> + </span>]:<span class="lineCov">         14 :     if (!check_that_generated_fields_cover_all_point_members(generated_fields)) {</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :            :       throw std::runtime_error(</a>
+<a name="207"><span class="lineNum">     207 </span>                :            :               &quot;Generated fields don't match the members of the point struct. &quot;</a>
+<a name="208"><span class="lineNum">     208 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :               &quot;Make sure you have correct generators tuple passed into this class.&quot;);</span></a>
+<a name="209"><span class="lineNum">     209 </span>                :            :     }</a>
+<a name="210"><span class="lineNum">     210 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         13 :     reset_msg(frame_id, generated_fields);</span></a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">         13 :   }</span></a>
+<a name="212"><span class="lineNum">     212 </span>                :            : </a>
+<a name="213"><span class="lineNum">     213 </span>                :            : </a>
+<a name="214"><span class="lineNum">     214 </span>                :            :   ///</a>
+<a name="215"><span class="lineNum">     215 </span>                :            :   /// @brief      Determines ability to be created from a given cloud.</a>
+<a name="216"><span class="lineNum">     216 </span>                :            :   ///</a>
+<a name="217"><span class="lineNum">     217 </span>                :            :   /// @param[in]  cloud_msg  The cloud message</a>
+<a name="218"><span class="lineNum">     218 </span>                :            :   /// @param      error_msg  Optional error message</a>
+<a name="219"><span class="lineNum">     219 </span>                :            :   ///</a>
+<a name="220"><span class="lineNum">     220 </span>                :            :   /// @return     True if able to be created for the provided cloud, False otherwise.</a>
+<a name="221"><span class="lineNum">     221 </span>                :            :   ///</a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">         37 :   static bool can_be_created_from(const CloudMsgT &amp; cloud_msg, std::string * error_msg = nullptr)</span></a>
+<a name="223"><span class="lineNum">     223 </span>                :            :   {</a>
+<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">         62 :     const auto find_missing_field = [](</span></a>
+<a name="225"><span class="lineNum">     225 </span>                :            :       const auto &amp; query_fields,</a>
+<a name="226"><span class="lineNum">     226 </span>                :            :       const auto &amp; source_fields) -&gt; std::experimental::optional&lt;FieldNameT&gt; {</a>
+<a name="227"><span class="lineNum">     227 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchCov" title="Branch 3 was taken 4 times"> + </span> :<span class="lineCov">        204 :         for (const auto &amp; query_field : query_fields) {</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchCov" title="Branch 5 was taken 4 times"> + </span><span class="branchCov" title="Branch 6 was taken 20 times"> + </span><span class="branchCov" title="Branch 7 was taken 4 times"> + </span><span class="branchCov" title="Branch 8 was taken 12 times"> + </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 9 was taken 4 times"> + </span><span class="branchCov" title="Branch 10 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 14 was taken 8 times"> + </span><span class="branchCov" title="Branch 15 was taken 4 times"> + </span><span class="branchCov" title="Branch 16 was taken 20 times"> + </span><span class="branchCov" title="Branch 17 was taken 4 times"> + </span><span class="branchCov" title="Branch 18 was taken 4 times"> + </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 19 was taken 4 times"> + </span><span class="branchCov" title="Branch 20 was taken 8 times"> + </span><span class="branchCov" title="Branch 21 was taken 4 times"> + </span><span class="branchCov" title="Branch 22 was taken 16 times"> + </span><span class="branchCov" title="Branch 23 was taken 4 times"> + </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 12 times"> + </span><span class="branchCov" title="Branch 25 was taken 4 times"> + </span><span class="branchCov" title="Branch 26 was taken 8 times"> + </span><span class="branchCov" title="Branch 27 was taken 4 times"> + </span><span class="branchCov" title="Branch 28 was taken 6 times"> + </span> 
+<span class="lineNum">         </span>      <span class="branchCov" title="Branch 29 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 30 was not taken"> - </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span>]
+<a name="228"><span class="lineNum">     228 </span>                :            :           // Note that we use find on a vector here. This is intended. The number of fields is</a>
+<a name="229"><span class="lineNum">     229 </span>                :            :           // usually very limited, so the O(n^2) complexity is ok here. This operation also only</a>
+<a name="230"><span class="lineNum">     230 </span>                :            :           // takes place roughly once per message. The subsequent read/write operations are then</a>
+<a name="231"><span class="lineNum">     231 </span>                :            :           // appropriately fast.</a>
+<a name="232"><span class="lineNum">     232 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        154 :           const auto corresponding_field_iter = std::find_if(</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 12 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 14 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchCov" title="Branch 16 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 4 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span><span class="branchCov" title="Branch 26 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 6 times"> + </span> 
+<span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 29 was not taken"> - </span><span class="branchNoCov" title="Branch 30 was not taken"> - </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span>]
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">        800 :             source_fields.begin(), source_fields.end(), [&amp;query_field](const auto &amp; field) {</span></a>
+<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">        350 :               const bool equal{</span></a>
+<a name="235"><span class="lineNum">     235 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        504 :                 (field.name == query_field.name) &amp;&amp; (field.count == query_field.count) &amp;&amp;</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 12 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 14 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchCov" title="Branch 16 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 4 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span><span class="branchCov" title="Branch 26 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 6 times"> + </span> 
+<span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 29 was not taken"> - </span><span class="branchNoCov" title="Branch 30 was not taken"> - </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span>]
+<a name="236"><span class="lineNum">     236 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        504 :                 (field.datatype == query_field.datatype) &amp;&amp; (field.offset == query_field.offset)};</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 16 times"> + </span><span class="branchCov" title="Branch 7 was taken 24 times"> + </span><span class="branchCov" title="Branch 8 was taken 16 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 8 times"> + </span><span class="branchCov" title="Branch 13 was taken 4 times"> + </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 14 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchCov" title="Branch 16 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 20 times"> + </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 19 was taken 40 times"> + </span><span class="branchCov" title="Branch 20 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 12 times"> + </span><span class="branchCov" title="Branch 25 was taken 12 times"> + </span><span class="branchCov" title="Branch 26 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 12 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 29 was not taken"> - </span><span class="branchCov" title="Branch 30 was taken 6 times"> + </span><span class="branchCov" title="Branch 31 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 32 was not taken"> - </span><span class="branchCov" title="Branch 33 was taken 6 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 34 was not taken"> - </span><span class="branchNoCov" title="Branch 35 was not taken"> - </span><span class="branchCov" title="Branch 36 was taken 6 times"> + </span><span class="branchCov" title="Branch 37 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 38 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 39 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 40 was not taken"> - </span><span class="branchNoCov" title="Branch 41 was not taken"> - </span><span class="branchCov" title="Branch 42 was taken 8 times"> + </span><span class="branchCov" title="Branch 43 was taken 4 times"> + </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 44 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 45 was not taken"> - </span><span class="branchCov" title="Branch 46 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 47 was not taken"> - </span><span class="branchCov" title="Branch 48 was taken 20 times"> + </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 49 was taken 40 times"> + </span><span class="branchCov" title="Branch 50 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 51 was not taken"> - </span><span class="branchCov" title="Branch 52 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 53 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 54 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 55 was not taken"> - </span><span class="branchCov" title="Branch 56 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 57 was not taken"> - </span><span class="branchCov" title="Branch 58 was taken 4 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 59 was not taken"> - </span><span class="branchCov" title="Branch 60 was taken 8 times"> + </span><span class="branchCov" title="Branch 61 was taken 4 times"> + </span><span class="branchCov" title="Branch 62 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 63 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 64 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 65 was not taken"> - </span><span class="branchCov" title="Branch 66 was taken 16 times"> + </span><span class="branchCov" title="Branch 67 was taken 24 times"> + </span><span class="branchCov" title="Branch 68 was taken 16 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 69 was not taken"> - </span><span class="branchCov" title="Branch 70 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 71 was not taken"> - </span><span class="branchCov" title="Branch 72 was taken 12 times"> + </span><span class="branchCov" title="Branch 73 was taken 12 times"> + </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 74 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 75 was not taken"> - </span><span class="branchCov" title="Branch 76 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 77 was not taken"> - </span><span class="branchCov" title="Branch 78 was taken 8 times"> + </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 79 was taken 4 times"> + </span><span class="branchCov" title="Branch 80 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 81 was not taken"> - </span><span class="branchCov" title="Branch 82 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 83 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 84 was taken 6 times"> + </span><span class="branchCov" title="Branch 85 was taken 6 times"> + </span><span class="branchCov" title="Branch 86 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 87 was not taken"> - </span><span class="branchCov" title="Branch 88 was taken 6 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 89 was not taken"> - </span><span class="branchNoCov" title="Branch 90 was not taken"> - </span><span class="branchNoCov" title="Branch 91 was not taken"> - </span><span class="branchNoCov" title="Branch 92 was not taken"> - </span><span class="branchNoCov" title="Branch 93 was not taken"> - </span> 
+<span class="lineNum">         </span>         <span class="branchNoCov" title="Branch 94 was not taken"> - </span><span class="branchNoCov" title="Branch 95 was not taken"> - </span>]
+<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">        350 :               return equal;</span></a>
+<a name="238"><span class="lineNum">     238 </span>                :            :             });</a>
+<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">        154 :           const auto found_corresponding_field = (corresponding_field_iter != source_fields.end());</span></a>
+<a name="240"><span class="lineNum">     240 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        154 :           if (!found_corresponding_field) {return query_field.name;}</span></a>
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 9 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 10 was not taken"> - </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchNoCov" title="Branch 12 was not taken"> - </span><span class="branchCov" title="Branch 13 was taken 20 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchNoCov" title="Branch 16 was not taken"> - </span><span class="branchCov" title="Branch 17 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 18 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span><span class="branchCov" title="Branch 26 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchNoCov" title="Branch 28 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 29 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 30 was not taken"> - </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span><span class="branchNoCov" title="Branch 32 was not taken"> - </span><span class="branchCov" title="Branch 33 was taken 20 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 34 was not taken"> - </span><span class="branchNoCov" title="Branch 35 was not taken"> - </span><span class="branchNoCov" title="Branch 36 was not taken"> - </span><span class="branchCov" title="Branch 37 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 38 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 39 was not taken"> - </span><span class="branchNoCov" title="Branch 40 was not taken"> - </span><span class="branchCov" title="Branch 41 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 42 was not taken"> - </span><span class="branchNoCov" title="Branch 43 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 44 was not taken"> - </span><span class="branchCov" title="Branch 45 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 46 was not taken"> - </span><span class="branchNoCov" title="Branch 47 was not taken"> - </span><span class="branchNoCov" title="Branch 48 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 49 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 50 was not taken"> - </span><span class="branchNoCov" title="Branch 51 was not taken"> - </span><span class="branchNoCov" title="Branch 52 was not taken"> - </span><span class="branchCov" title="Branch 53 was taken 8 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 54 was not taken"> - </span><span class="branchNoCov" title="Branch 55 was not taken"> - </span><span class="branchNoCov" title="Branch 56 was not taken"> - </span><span class="branchCov" title="Branch 57 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 58 was not taken"> - </span> 
+<span class="lineNum">         </span>   <span class="branchNoCov" title="Branch 59 was not taken"> - </span><span class="branchNoCov" title="Branch 60 was not taken"> - </span><span class="branchNoCov" title="Branch 61 was not taken"> - </span><span class="branchNoCov" title="Branch 62 was not taken"> - </span> 
+<span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 63 was not taken"> - </span>]
+<a name="241"><span class="lineNum">     241 </span>                :            :         }</a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">         50 :         return {};</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :            :       };</a>
+<a name="244"><span class="lineNum">     244 </span>                :            : </a>
+<a name="245"><span class="lineNum">     245 </span>        [<span class="branchCov" title="Branch 0 was taken 37 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         74 :     const auto struct_fields = generate_fields_from_point&lt;PointT, FieldGenerators&gt;();</span></a>
+<a name="246"><span class="lineNum">     246 </span>        [<span class="branchCov" title="Branch 0 was taken 37 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         74 :     const auto missing_field_in_cloud = find_missing_field(struct_fields, cloud_msg.fields);</span></a>
+<a name="247"><span class="lineNum">     247 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         37 :     if (missing_field_in_cloud) {</span></a>
+<a name="248"><span class="lineNum">     248 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :       if (error_msg) {</span></a>
+<a name="249"><span class="lineNum">     249 </span>  [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         12 :         *error_msg = &quot;Point struct has a field that the cloud does not! Field: &quot; +</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :            :           missing_field_in_cloud.value();</a>
+<a name="251"><span class="lineNum">     251 </span>                :            :       }</a>
+<a name="252"><span class="lineNum">     252 </span>                :<span class="lineCov">         12 :       return false;</span></a>
+<a name="253"><span class="lineNum">     253 </span>                :            :     }</a>
+<a name="254"><span class="lineNum">     254 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         50 :     const auto missing_field_in_struct = find_missing_field(cloud_msg.fields, struct_fields);</span></a>
+<a name="255"><span class="lineNum">     255 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :     if (missing_field_in_struct) {</span></a>
+<a name="256"><span class="lineNum">     256 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (error_msg) {</span></a>
+<a name="257"><span class="lineNum">     257 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :         *error_msg = &quot;Cloud has a field that the point struct does not! Field: &quot; +</span></a>
+<a name="258"><span class="lineNum">     258 </span>                :            :           missing_field_in_struct.value();</a>
+<a name="259"><span class="lineNum">     259 </span>                :            :       }</a>
+<a name="260"><span class="lineNum">     260 </span>                :<span class="lineNoCov">          0 :       return false;</span></a>
+<a name="261"><span class="lineNum">     261 </span>                :            :     }</a>
+<a name="262"><span class="lineNum">     262 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :     if (cloud_msg.point_step != kSizeofPoint::value) {</span></a>
+<a name="263"><span class="lineNum">     263 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (error_msg) {</span></a>
+<a name="264"><span class="lineNum">     264 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :         *error_msg =</span></a>
+<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
+<a name="265"><span class="lineNum">     265 </span>                :            :           &quot;Point cloud was created with a point of different sizeof. &quot;</a>
+<a name="266"><span class="lineNum">     266 </span>                :            :           &quot;Are the point members in the same order? Cloud point step = &quot; + std::to_string(</a>
+<a name="267"><span class="lineNum">     267 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           cloud_msg.point_step) + &quot; while sizeof(PointT) = &quot; + std::to_string(sizeof(PointT));</span></a>
+<a name="268"><span class="lineNum">     268 </span>                :            :       }</a>
+<a name="269"><span class="lineNum">     269 </span>                :<span class="lineNoCov">          0 :       return false;</span></a>
+<a name="270"><span class="lineNum">     270 </span>                :            :     }</a>
+<a name="271"><span class="lineNum">     271 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 25 times"> + </span>]:<span class="lineCov">         25 :     if (sizeof(PointT) * cloud_msg.width != cloud_msg.data.size()) {</span></a>
+<a name="272"><span class="lineNum">     272 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (error_msg) {</span></a>
+<a name="273"><span class="lineNum">     273 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :         *error_msg =</span></a>
+<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
+<a name="274"><span class="lineNum">     274 </span>                :            :           &quot;Point cloud data size &quot; + std::to_string(cloud_msg.data.size()) +</a>
+<a name="275"><span class="lineNum">     275 </span>                :            :           &quot; does not match the data size derived from the point size of count, which is &quot; +</a>
+<a name="276"><span class="lineNum">     276 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           std::to_string(sizeof(PointT) * cloud_msg.width);</span></a>
+<a name="277"><span class="lineNum">     277 </span>                :            :       }</a>
+<a name="278"><span class="lineNum">     278 </span>                :<span class="lineNoCov">          0 :       return false;</span></a>
+<a name="279"><span class="lineNum">     279 </span>                :            :     }</a>
+<a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">         25 :     return true;</span></a>
+<a name="281"><span class="lineNum">     281 </span>                :            :   }</a>
+<a name="282"><span class="lineNum">     282 </span>                :            : </a>
+<a name="283"><span class="lineNum">     283 </span>                :            :   /// @brief      Push a new point into the message.</a>
+<a name="284"><span class="lineNum">     284 </span>                :<span class="lineCov">         13 :   COMPILE_IF_MUTABLE(CloudMsgT, void) push_back(const PointT &amp; point)</span></a>
+<a name="285"><span class="lineNum">     285 </span>                :            :   {</a>
+<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">         15 :     PointT point_copy{point};</span></a>
+<a name="287"><span class="lineNum">     287 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         13 :     extend_data_by(sizeof(PointT));</span></a>
+<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">         13 :     m_cloud_ref.row_step += kSizeofPoint::value;</span></a>
+<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">         13 :     m_cloud_ref.width++;</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">         13 :     this-&gt;operator[](m_cloud_ref.width - 1U) = point_copy;</span></a>
+<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">         13 :   }</span></a>
+<a name="292"><span class="lineNum">     292 </span>                :            : </a>
+<a name="293"><span class="lineNum">     293 </span>                :            :   /// @brief      Push a new point into the message.</a>
+<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">         13 :   COMPILE_IF_MUTABLE(CloudMsgT, void) push_back(PointT &amp;&amp; point)</span></a>
+<a name="295"><span class="lineNum">     295 </span>                :            :   {</a>
+<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">         13 :     extend_data_by(sizeof(PointT));</span></a>
+<a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">         13 :     m_cloud_ref.row_step += kSizeofPoint::value;</span></a>
+<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">         13 :     m_cloud_ref.width++;</span></a>
+<a name="299"><span class="lineNum">     299 </span>                :<span class="lineCov">         13 :     this-&gt;operator[](m_cloud_ref.width - 1U) = std::move(point);</span></a>
+<a name="300"><span class="lineNum">     300 </span>                :<span class="lineCov">         13 :   }</span></a>
+<a name="301"><span class="lineNum">     301 </span>                :            : </a>
+<a name="302"><span class="lineNum">     302 </span>                :            :   /// Get the number of points in the message.</a>
+<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">         61 :   std::size_t size() const noexcept {return m_cloud_ref.width;}</span></a>
+<a name="304"><span class="lineNum">     304 </span>                :            : </a>
+<a name="305"><span class="lineNum">     305 </span>                :            :   /// Check if the point cloud message stores no points.</a>
+<a name="306"><span class="lineNum">     306 </span>                :<span class="lineCov">         13 :   bool empty() const noexcept {return m_cloud_ref.width == 0U;}</span></a>
+<a name="307"><span class="lineNum">     307 </span>                :            : </a>
+<a name="308"><span class="lineNum">     308 </span>                :            :   /// Get the first point.</a>
+<a name="309"><span class="lineNum">     309 </span>                :<span class="lineCov">          6 :   COMPILE_IF_MUTABLE(CloudMsgT, PointT &amp;) front() noexcept {return *begin();}</span></a>
+<a name="310"><span class="lineNum">     310 </span>                :            :   /// Get the first point.</a>
+<a name="311"><span class="lineNum">     311 </span>                :            :   const PointT &amp; front() const noexcept {return *begin();}</a>
+<a name="312"><span class="lineNum">     312 </span>                :            :   /// Get the last point.</a>
+<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">          6 :   COMPILE_IF_MUTABLE(CloudMsgT, PointT &amp;) back() noexcept {return *rbegin();}</span></a>
+<a name="314"><span class="lineNum">     314 </span>                :            :   /// Get the last point.</a>
+<a name="315"><span class="lineNum">     315 </span>                :            :   const PointT &amp; back() const noexcept {return *rbegin();}</a>
+<a name="316"><span class="lineNum">     316 </span>                :            : </a>
+<a name="317"><span class="lineNum">     317 </span>                :            :   /// Get a point reference at the specified index.</a>
+<a name="318"><span class="lineNum">     318 </span>                :            :   /// @throws std::runtime_error if the index is out of bounds.</a>
+<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">         22 :   const PointT &amp; at(const std::size_t index) const</span></a>
+<a name="320"><span class="lineNum">     320 </span>                :            :   {</a>
+<a name="321"><span class="lineNum">     321 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 21 times"> + </span>]:<span class="lineCov">         22 :     if (index &gt;= size()) {</span></a>
+<a name="322"><span class="lineNum">     322 </span>                :            :       throw std::out_of_range(</a>
+<a name="323"><span class="lineNum">     323 </span>                :            :               &quot;Index is out of bounds, &quot; +</a>
+<a name="324"><span class="lineNum">     324 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          1 :               std::to_string(index) + &quot; &gt;= &quot; + std::to_string(size()));</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 1 time"> + </span> 
+<span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
+<a name="325"><span class="lineNum">     325 </span>                :            :     }</a>
+<a name="326"><span class="lineNum">     326 </span>                :            :     return reinterpret_cast&lt;const PointT &amp;&gt;(</a>
+<a name="327"><span class="lineNum">     327 </span>                :<span class="lineCov">         21 :       *(m_cloud_ref.data.data() + index * sizeof(PointT)));</span></a>
+<a name="328"><span class="lineNum">     328 </span>                :            :   }</a>
+<a name="329"><span class="lineNum">     329 </span>                :            :   /// Get a point reference at the specified index. Only compiled if message is not const.</a>
+<a name="330"><span class="lineNum">     330 </span>                :            :   /// @throws std::runtime_error if the index is out of bounds.</a>
+<a name="331"><span class="lineNum">     331 </span>                :            :   COMPILE_IF_MUTABLE(CloudMsgT, PointT &amp;) at(const std::size_t index)</a>
+<a name="332"><span class="lineNum">     332 </span>                :            :   {</a>
+<a name="333"><span class="lineNum">     333 </span>                :            :     if (index &gt;= size()) {</a>
+<a name="334"><span class="lineNum">     334 </span>                :            :       throw std::out_of_range(</a>
+<a name="335"><span class="lineNum">     335 </span>                :            :               &quot;Index is out of bounds, &quot; +</a>
+<a name="336"><span class="lineNum">     336 </span>                :            :               std::to_string(index) + &quot; &gt;= &quot; + std::to_string(size()));</a>
+<a name="337"><span class="lineNum">     337 </span>                :            :     }</a>
+<a name="338"><span class="lineNum">     338 </span>                :            :     return reinterpret_cast&lt;PointT &amp;&gt;(*(m_cloud_ref.data.data() + index * sizeof(PointT)));</a>
+<a name="339"><span class="lineNum">     339 </span>                :            :   }</a>
+<a name="340"><span class="lineNum">     340 </span>                :            : </a>
+<a name="341"><span class="lineNum">     341 </span>                :            :   /// Get a point reference at the specified index.</a>
+<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">         28 :   const PointT &amp; operator[](const std::size_t index) const noexcept</span></a>
+<a name="343"><span class="lineNum">     343 </span>                :            :   {</a>
+<a name="344"><span class="lineNum">     344 </span>                :            :     return *reinterpret_cast&lt;const PointT * const&gt;(</a>
+<a name="345"><span class="lineNum">     345 </span>                :<span class="lineCov">         28 :       m_cloud_ref.data.data() + index * sizeof(PointT));</span></a>
+<a name="346"><span class="lineNum">     346 </span>                :            :   }</a>
+<a name="347"><span class="lineNum">     347 </span>                :            :   /// Get a point reference as a specified index.  Only compiled if message type is not const.</a>
+<a name="348"><span class="lineNum">     348 </span>                :<span class="lineCov">         62 :   COMPILE_IF_MUTABLE(CloudMsgT, PointT &amp;) operator[](const std::size_t index) noexcept</span></a>
+<a name="349"><span class="lineNum">     349 </span>                :            :   {</a>
+<a name="350"><span class="lineNum">     350 </span>                :<span class="lineCov">         62 :     return *reinterpret_cast&lt;PointT *&gt;(m_cloud_ref.data.data() + index * sizeof(PointT));</span></a>
+<a name="351"><span class="lineNum">     351 </span>                :            :   }</a>
+<a name="352"><span class="lineNum">     352 </span>                :            : </a>
+<a name="353"><span class="lineNum">     353 </span>                :            :   /// @brief      Reset the message fields to match the members of the PointT struct. The point</a>
+<a name="354"><span class="lineNum">     354 </span>                :            :   ///             cloud message is ready for modification after this operation.</a>
+<a name="355"><span class="lineNum">     355 </span>                :<span class="lineCov">         12 :   COMPILE_IF_MUTABLE(CloudMsgT, void) reset_msg(const FieldNameT &amp; frame_id)</span></a>
+<a name="356"><span class="lineNum">     356 </span>                :            :   {</a>
+<a name="357"><span class="lineNum">     357 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :     reset_msg(frame_id, generate_fields_from_point&lt;PointT, FieldGenerators&gt;());</span></a>
+<a name="358"><span class="lineNum">     358 </span>                :<span class="lineCov">         12 :   }</span></a>
+<a name="359"><span class="lineNum">     359 </span>                :            : </a>
+<a name="360"><span class="lineNum">     360 </span>                :            :   /// @brief      Clear the message.</a>
+<a name="361"><span class="lineNum">     361 </span>                :<span class="lineCov">          6 :   COMPILE_IF_MUTABLE(CloudMsgT, void) clear() {</span></a>
+<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">          6 :     reset_msg(m_cloud_ref.header.frame_id);</span></a>
+<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">          6 :   }</span></a>
+<a name="364"><span class="lineNum">     364 </span>                :            : </a>
+<a name="365"><span class="lineNum">     365 </span>                :            :   /// @brief      Allocate memory to hold a specified number of points.</a>
+<a name="366"><span class="lineNum">     366 </span>                :            :   COMPILE_IF_MUTABLE(CloudMsgT, void) reserve(const size_t expected_number_of_points) {</a>
+<a name="367"><span class="lineNum">     367 </span>                :            :     m_cloud_ref.data.reserve(sizeof(PointT) * expected_number_of_points);</a>
+<a name="368"><span class="lineNum">     368 </span>                :            :   }</a>
+<a name="369"><span class="lineNum">     369 </span>                :            : </a>
+<a name="370"><span class="lineNum">     370 </span>                :            :   /// @brief      Resize the container to hold a given number of points.</a>
+<a name="371"><span class="lineNum">     371 </span>                :<span class="lineCov">          6 :   COMPILE_IF_MUTABLE(CloudMsgT, void) resize(const std::uint32_t new_number_of_points) {</span></a>
+<a name="372"><span class="lineNum">     372 </span>                :<span class="lineCov">          6 :     m_cloud_ref.width = new_number_of_points;</span></a>
+<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">          6 :     m_cloud_ref.row_step = m_cloud_ref.width * kSizeofPoint::value;</span></a>
+<a name="374"><span class="lineNum">     374 </span>                :<span class="lineCov">          6 :     m_cloud_ref.data.resize(m_cloud_ref.row_step);</span></a>
+<a name="375"><span class="lineNum">     375 </span>                :<span class="lineCov">          6 :   }</span></a>
+<a name="376"><span class="lineNum">     376 </span>                :            : </a>
+<a name="377"><span class="lineNum">     377 </span>                :            :   /// An iterator to the beginning of data.  Only compiled if point cloud message type is not const.</a>
+<a name="378"><span class="lineNum">     378 </span>                :<span class="lineCov">         30 :   COMPILE_IF_MUTABLE(CloudMsgT, iterator) begin() noexcept {</span></a>
+<a name="379"><span class="lineNum">     379 </span>                :<span class="lineCov">         30 :     return iterator{reinterpret_cast&lt;PointT *&gt;(&amp;m_cloud_ref.data[0U])};</span></a>
+<a name="380"><span class="lineNum">     380 </span>                :            :   }</a>
+<a name="381"><span class="lineNum">     381 </span>                :            :   /// An iterator to the end of data. Only compiled if point cloud message type is not const.</a>
+<a name="382"><span class="lineNum">     382 </span>                :<span class="lineCov">         30 :   COMPILE_IF_MUTABLE(CloudMsgT, iterator) end() noexcept {</span></a>
+<a name="383"><span class="lineNum">     383 </span>                :<span class="lineCov">         30 :     return iterator{reinterpret_cast&lt;PointT *&gt;(&amp;m_cloud_ref.data[m_cloud_ref.data.size()])};</span></a>
+<a name="384"><span class="lineNum">     384 </span>                :            :   }</a>
+<a name="385"><span class="lineNum">     385 </span>                :            :   /// A reverse iterator staring position.  Only compiled if point cloud message type is not const.</a>
+<a name="386"><span class="lineNum">     386 </span>                :<span class="lineCov">          6 :   COMPILE_IF_MUTABLE(CloudMsgT, reverse_iterator) rbegin() noexcept {</span></a>
+<a name="387"><span class="lineNum">     387 </span>                :<span class="lineCov">          6 :     return std::make_reverse_iterator(end());</span></a>
+<a name="388"><span class="lineNum">     388 </span>                :            :   }</a>
+<a name="389"><span class="lineNum">     389 </span>                :            :   /// A reverse iterator end position.  Only compiled if point cloud message type is not const.</a>
+<a name="390"><span class="lineNum">     390 </span>                :            :   COMPILE_IF_MUTABLE(CloudMsgT, reverse_iterator) rend() noexcept {</a>
+<a name="391"><span class="lineNum">     391 </span>                :            :     return std::make_reverse_iterator(begin());</a>
+<a name="392"><span class="lineNum">     392 </span>                :            :   }</a>
+<a name="393"><span class="lineNum">     393 </span>                :            :   /// A constant iterator to the beginning of data.</a>
+<a name="394"><span class="lineNum">     394 </span>                :<span class="lineCov">          6 :   const_iterator begin() const noexcept {return cbegin();}</span></a>
+<a name="395"><span class="lineNum">     395 </span>                :            :   /// A constant iterator to the end of data.</a>
+<a name="396"><span class="lineNum">     396 </span>                :<span class="lineCov">          6 :   const_iterator end() const noexcept {return cend();}</span></a>
+<a name="397"><span class="lineNum">     397 </span>                :            :   /// A constant reverse iterator to the beginning of the reversed data.</a>
+<a name="398"><span class="lineNum">     398 </span>                :<span class="lineCov">          6 :   const_reverse_iterator rbegin() const noexcept {return crbegin();}</span></a>
+<a name="399"><span class="lineNum">     399 </span>                :            :   /// A constant reverse iterator to the end of reversed data.</a>
+<a name="400"><span class="lineNum">     400 </span>                :<span class="lineCov">         18 :   const_reverse_iterator rend() const noexcept {return crend();}</span></a>
+<a name="401"><span class="lineNum">     401 </span>                :            :   /// A constant iterator to the beginning of data.</a>
+<a name="402"><span class="lineNum">     402 </span>                :<span class="lineCov">         24 :   const_iterator cbegin() const noexcept</span></a>
+<a name="403"><span class="lineNum">     403 </span>                :            :   {</a>
+<a name="404"><span class="lineNum">     404 </span>                :<span class="lineCov">         24 :     return const_iterator{reinterpret_cast&lt;const PointT * const&gt;(&amp;m_cloud_ref.data[0U])};</span></a>
+<a name="405"><span class="lineNum">     405 </span>                :            :   }</a>
+<a name="406"><span class="lineNum">     406 </span>                :            :   /// A constant iterator to the end of data.</a>
+<a name="407"><span class="lineNum">     407 </span>                :<span class="lineCov">         12 :   const_iterator cend() const noexcept</span></a>
+<a name="408"><span class="lineNum">     408 </span>                :            :   {</a>
+<a name="409"><span class="lineNum">     409 </span>                :            :     return const_iterator{</a>
+<a name="410"><span class="lineNum">     410 </span>                :<span class="lineCov">         12 :       reinterpret_cast&lt;const PointT * const&gt;(&amp;m_cloud_ref.data[m_cloud_ref.data.size()])};</span></a>
+<a name="411"><span class="lineNum">     411 </span>                :            :   }</a>
+<a name="412"><span class="lineNum">     412 </span>                :            :   /// A constant reverse iterator to the reverse beginning of data.</a>
+<a name="413"><span class="lineNum">     413 </span>                :<span class="lineCov">          6 :   const_reverse_iterator crbegin() const noexcept {return std::make_reverse_iterator(cend());}</span></a>
+<a name="414"><span class="lineNum">     414 </span>                :            :   /// A constant reverse iterator to the reverse end of data.</a>
+<a name="415"><span class="lineNum">     415 </span>                :<span class="lineCov">         18 :   const_reverse_iterator crend() const noexcept {return std::make_reverse_iterator(cbegin());}</span></a>
+<a name="416"><span class="lineNum">     416 </span>                :            : </a>
+<a name="417"><span class="lineNum">     417 </span>                :            : private:</a>
+<a name="418"><span class="lineNum">     418 </span>                :            :   /// Allocate additional memory in the end of data field of the message.</a>
+<a name="419"><span class="lineNum">     419 </span>                :<span class="lineCov">         26 :   COMPILE_IF_MUTABLE(CloudMsgT, void) extend_data_by(const std::size_t bytes_to_allocate)</span></a>
+<a name="420"><span class="lineNum">     420 </span>                :            :   {</a>
+<a name="421"><span class="lineNum">     421 </span>                :<span class="lineCov">         26 :     const auto new_size = m_cloud_ref.data.size() + bytes_to_allocate;</span></a>
+<a name="422"><span class="lineNum">     422 </span>                :<span class="lineCov">         26 :     m_cloud_ref.data.resize(new_size);</span></a>
+<a name="423"><span class="lineNum">     423 </span>                :<span class="lineCov">         26 :   }</span></a>
+<a name="424"><span class="lineNum">     424 </span>                :            : </a>
+<a name="425"><span class="lineNum">     425 </span>                :            :   /// @brief      Reset the message fields to match the members of the PointT struct. The point</a>
+<a name="426"><span class="lineNum">     426 </span>                :            :   ///             cloud message is ready for modification after this operation.</a>
+<a name="427"><span class="lineNum">     427 </span>                :<span class="lineCov">         25 :   COMPILE_IF_MUTABLE(CloudMsgT, void) reset_msg(</span></a>
+<a name="428"><span class="lineNum">     428 </span>                :            :     const FieldNameT &amp; frame_id,</a>
+<a name="429"><span class="lineNum">     429 </span>                :            :     const sensor_msgs::msg::PointCloud2::_fields_type &amp; generated_fields)</a>
+<a name="430"><span class="lineNum">     430 </span>                :            :   {</a>
+<a name="431"><span class="lineNum">     431 </span>                :            :     // TODO(igor): All these settings can also be specified through some input struct if needed in</a>
+<a name="432"><span class="lineNum">     432 </span>                :            :     // the future. This is omitted for now.</a>
+<a name="433"><span class="lineNum">     433 </span>                :<span class="lineCov">         25 :     m_cloud_ref.fields = generated_fields;</span></a>
+<a name="434"><span class="lineNum">     434 </span>                :<span class="lineCov">         25 :     m_cloud_ref.height = 1;</span></a>
+<a name="435"><span class="lineNum">     435 </span>                :<span class="lineCov">         25 :     m_cloud_ref.is_bigendian = false;</span></a>
+<a name="436"><span class="lineNum">     436 </span>                :<span class="lineCov">         25 :     m_cloud_ref.is_dense = false;</span></a>
+<a name="437"><span class="lineNum">     437 </span>                :<span class="lineCov">         25 :     m_cloud_ref.header.frame_id = frame_id;</span></a>
+<a name="438"><span class="lineNum">     438 </span>                :<span class="lineCov">         25 :     m_cloud_ref.point_step = kSizeofPoint::value;</span></a>
+<a name="439"><span class="lineNum">     439 </span>                :<span class="lineCov">         25 :     m_cloud_ref.data.clear();</span></a>
+<a name="440"><span class="lineNum">     440 </span>                :<span class="lineCov">         25 :     m_cloud_ref.width = 0U;</span></a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">         25 :     m_cloud_ref.row_step = 0U;</span></a>
+<a name="442"><span class="lineNum">     442 </span>                :<span class="lineCov">         25 :   }</span></a>
+<a name="443"><span class="lineNum">     443 </span>                :            : </a>
+<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">         14 :   bool check_that_generated_fields_cover_all_point_members(</span></a>
+<a name="445"><span class="lineNum">     445 </span>                :            :     const sensor_msgs::msg::PointCloud2::_fields_type &amp; generated_fields)</a>
+<a name="446"><span class="lineNum">     446 </span>                :            :   {</a>
+<a name="447"><span class="lineNum">     447 </span>                :<span class="lineCov">         14 :     std::uint32_t sum_of_all_fields_sizes{};</span></a>
+<a name="448"><span class="lineNum">     448 </span>        [<span class="branchCov" title="Branch 0 was taken 39 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         53 :     for (const auto &amp; field : generated_fields) {</span></a>
+<a name="449"><span class="lineNum">     449 </span>        [<span class="branchCov" title="Branch 0 was taken 39 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         39 :       sum_of_all_fields_sizes += field.count * sizeof_field(field.datatype);</span></a>
+<a name="450"><span class="lineNum">     450 </span>                :            :     }</a>
+<a name="451"><span class="lineNum">     451 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         14 :     if (sum_of_all_fields_sizes == kSizeofPoint::value) {</span></a>
+<a name="452"><span class="lineNum">     452 </span>                :            :       // The generated fields cover all members of the struct without gaps.</a>
+<a name="453"><span class="lineNum">     453 </span>                :<span class="lineCov">          6 :       return true;</span></a>
+<a name="454"><span class="lineNum">     454 </span>                :            :     }</a>
+<a name="455"><span class="lineNum">     455 </span>                :            :     // The idea is the following:</a>
+<a name="456"><span class="lineNum">     456 </span>                :            :     // 1. Allocate storage as big as a point.</a>
+<a name="457"><span class="lineNum">     457 </span>                :            :     // 2. Fill the storage with zeros.</a>
+<a name="458"><span class="lineNum">     458 </span>                :            :     // 3. Iterate through all fields and set the appropriate memory to ones.</a>
+<a name="459"><span class="lineNum">     459 </span>                :            :     // 4. Flip all bits - now, if all fields are present, only the padding is non-zero.</a>
+<a name="460"><span class="lineNum">     460 </span>                :            :     // 5. Reinterpret this memory as a point.</a>
+<a name="461"><span class="lineNum">     461 </span>                :            :     // 6. Compare this point to a value initialized one.</a>
+<a name="462"><span class="lineNum">     462 </span>                :            :     // If these points are equal - we have all fields. Otherwise, we are missing a field.</a>
+<a name="463"><span class="lineNum">     463 </span>                :            :     alignas(PointT) std::uint8_t buffer[sizeof(PointT)];</a>
+<a name="464"><span class="lineNum">     464 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :     std::fill(buffer, buffer + sizeof(PointT), 0U);</span></a>
+<a name="465"><span class="lineNum">     465 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         35 :     for (const auto &amp; field : generated_fields) {</span></a>
+<a name="466"><span class="lineNum">     466 </span>                :<span class="lineCov">         27 :       const auto field_first_byte = field.offset;</span></a>
+<a name="467"><span class="lineNum">     467 </span>                :<span class="lineCov">         27 :       const auto field_last_byte =</span></a>
+<a name="468"><span class="lineNum">     468 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         27 :         field.offset + field.count * static_cast&lt;std::size_t&gt;(sizeof_field(field.datatype));</span></a>
+<a name="469"><span class="lineNum">     469 </span>                :<span class="lineCov">         27 :       std::fill(</span></a>
+<a name="470"><span class="lineNum">     470 </span>                :            :         &amp;buffer[field_first_byte],</a>
+<a name="471"><span class="lineNum">     471 </span>                :            :         &amp;buffer[field_last_byte],</a>
+<a name="472"><span class="lineNum">     472 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         27 :         std::numeric_limits&lt;std::uint8_t&gt;::max());</span></a>
+<a name="473"><span class="lineNum">     473 </span>                :            :     }</a>
+<a name="474"><span class="lineNum">     474 </span>        [<span class="branchCov" title="Branch 0 was taken 192 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">        200 :     for (auto i = 0U; i &lt; sizeof(PointT); ++i) {</span></a>
+<a name="475"><span class="lineNum">     475 </span>        [<span class="branchCov" title="Branch 0 was taken 68 times"> + </span><span class="branchCov" title="Branch 1 was taken 124 times"> + </span>]:<span class="lineCov">        192 :       buffer[i] = buffer[i] &gt; 0 ? 0 : std::numeric_limits&lt;std::uint8_t&gt;::max();  // Flip all bits.</span></a>
+<a name="476"><span class="lineNum">     476 </span>                :            :     }</a>
+<a name="477"><span class="lineNum">     477 </span>                :<span class="lineCov">          8 :     const PointT * const point_from_flipped_memory{reinterpret_cast&lt;PointT *&gt;(buffer)};</span></a>
+<a name="478"><span class="lineNum">     478 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          8 :     if (PointT{} == *point_from_flipped_memory) {</span></a>
+<a name="479"><span class="lineNum">     479 </span>                :<span class="lineCov">          7 :       return true;</span></a>
+<a name="480"><span class="lineNum">     480 </span>                :            :     }</a>
+<a name="481"><span class="lineNum">     481 </span>                :<span class="lineCov">          1 :     return false;</span></a>
+<a name="482"><span class="lineNum">     482 </span>                :            :   }</a>
+<a name="483"><span class="lineNum">     483 </span>                :            : </a>
+<a name="484"><span class="lineNum">     484 </span>                :            :   /// A reference to the cloud message.</a>
+<a name="485"><span class="lineNum">     485 </span>                :            :   CloudMsgT &amp; m_cloud_ref;</a>
+<a name="486"><span class="lineNum">     486 </span>                :            : };</a>
+<a name="487"><span class="lineNum">     487 </span>                :            : </a>
+<a name="488"><span class="lineNum">     488 </span>                :            : /// A typedef for the PointCloudMsgWrapper to represent a view that wraps a const cloud message.</a>
+<a name="489"><span class="lineNum">     489 </span>                :            : template&lt;</a>
+<a name="490"><span class="lineNum">     490 </span>                :            :   typename PointT,</a>
+<a name="491"><span class="lineNum">     491 </span>                :            :   typename FieldGeneratorsT = detail::DefaultFieldGenerators,</a>
+<a name="492"><span class="lineNum">     492 </span>                :            :   typename AllocatorT = std::allocator&lt;void&gt;&gt;</a>
+<a name="493"><span class="lineNum">     493 </span>                :            : using PointCloud2View = PointCloudMsgWrapper&lt;</a>
+<a name="494"><span class="lineNum">     494 </span>                :            :   PointT, sensor_msgs::msg::PointCloud2_, FieldGeneratorsT, false, AllocatorT&gt;;</a>
+<a name="495"><span class="lineNum">     495 </span>                :            : </a>
+<a name="496"><span class="lineNum">     496 </span>                :            : /// A typedef for the PointCloudMsgWrapper to represent a view that wraps a mutable cloud message.</a>
+<a name="497"><span class="lineNum">     497 </span>                :            : template&lt;</a>
+<a name="498"><span class="lineNum">     498 </span>                :            :   typename PointT,</a>
+<a name="499"><span class="lineNum">     499 </span>                :            :   typename FieldGeneratorsT = detail::DefaultFieldGenerators,</a>
+<a name="500"><span class="lineNum">     500 </span>                :            :   typename AllocatorT = std::allocator&lt;void&gt;&gt;</a>
+<a name="501"><span class="lineNum">     501 </span>                :            : using PointCloud2Modifier = PointCloudMsgWrapper&lt;</a>
+<a name="502"><span class="lineNum">     502 </span>                :            :   PointT, sensor_msgs::msg::PointCloud2_, FieldGeneratorsT, true, AllocatorT&gt;;</a>
+<a name="503"><span class="lineNum">     503 </span>                :            : </a>
+<a name="504"><span class="lineNum">     504 </span>                :            : }  // namespace point_cloud_msg_wrapper</a>
+<a name="505"><span class="lineNum">     505 </span>                :            : </a>
+<a name="506"><span class="lineNum">     506 </span>                :            : #undef COMPILE_IF_MUTABLE</a>
+<a name="507"><span class="lineNum">     507 </span>                :            : </a>
+<a name="508"><span class="lineNum">     508 </span>                :            : #endif  // POINT_CLOUD_MSG_WRAPPER__POINT_CLOUD_MSG_WRAPPER_HPP_</a>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.14</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
