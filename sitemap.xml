@@ -40,10 +40,6 @@
   </url>
   
   <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/autoware_auto_msgs/</loc>
-  </url>
-  
-  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/autoware_auto_tf2/</loc>
   </url>
   
@@ -129,6 +125,10 @@
   
   <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/gnss_conversion_nodes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/ground_truth_detections/</loc>
   </url>
   
   <url>
@@ -272,6 +272,10 @@
   </url>
   
   <url>
+    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/outlier_filter/</loc>
+  </url>
+  
+  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/parking_planner/</loc>
   </url>
   
@@ -320,10 +324,6 @@
   </url>
   
   <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_can_dbc_parser/</loc>
-  </url>
-  
-  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_dbw_can/</loc>
   </url>
   
@@ -332,15 +332,7 @@
   </url>
   
   <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_dbw_msgs/</loc>
-  </url>
-  
-  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_pdu/</loc>
-  </url>
-  
-  <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_pdu_msgs/</loc>
   </url>
   
   <url>
@@ -369,10 +361,6 @@
   
   <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/rosbridge_library/</loc>
-  </url>
-  
-  <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/rosbridge_msgs/</loc>
   </url>
   
   <url>

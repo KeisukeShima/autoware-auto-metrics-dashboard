@@ -55,7 +55,7 @@
 <table>
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/include/parking_planner/nlp_adapters.hpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/src/astar_path_planner.cpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -68,18 +68,38 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::NLPCostWeights</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::expand_state_longitudinal_with_heading</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">10</td>
+       <td class="lesser-value">35</td>
     
 
     
-       <td class="value">25</td>
+       <td class="value">329</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::check_collision_bounding_box_vs_obstacles</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">16</td>
+    
+
+    
+       <td class="value">105</td>
     
 
     
@@ -88,18 +108,72 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::serialize</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::map_state_on_discretized_grid</td>
     <td></td>
     
        <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">21</td>
+    
+
+    
+       <td class="value">172</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::AstarPathPlanner::plan_astar</td>
+    <td></td>
+    
+       <td class="lesser-value">11</td>
+    
+
+    
+       <td class="lesser-value">80</td>
+    
+
+    
+       <td class="value">638</td>
     
 
     
        <td class="lesser-value">4</td>
     
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/src/generate_nlp_planner_solver.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">make_single_stage_variable</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
 
     
-       <td class="value">24</td>
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">44</td>
     
 
     
@@ -108,270 +182,10 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::deserialize</td>
+    <td style="background-color:LightSteelBlue">make_named_variable</td>
     <td></td>
     
        <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">73</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::get_serialized_length</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">9</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::get_steering_weight</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::get_throttle_weight</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::get_goal_weight</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::NLPObstacleStageVariables</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">28</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::serialize</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">75</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::get_lambda_length</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">9</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::get_mu_length</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">9</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::get_serialized_length</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">11</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::deserialize</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">14</td>
-    
-
-    
-       <td class="value">127</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::get_lambda</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::get_mu</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::NLPObstacle</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
     
 
     
@@ -379,7 +193,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">35</td>
+       <td class="value">70</td>
     
 
     
@@ -388,18 +202,38 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::serialize_variables</td>
+    <td style="background-color:LightSteelBlue">indexed_name</td>
     <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">40</td>
+    
+
     
        <td class="lesser-value">2</td>
     
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">convert_to_mx</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
 
     
-       <td class="lesser-value">10</td>
+       <td class="lesser-value">4</td>
     
 
     
-       <td class="value">84</td>
+       <td class="value">20</td>
     
 
     
@@ -408,10 +242,10 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::serialize_parameters</td>
+    <td style="background-color:LightSteelBlue">matrix_from_vec_of_vec</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">3</td>
     
 
     
@@ -419,7 +253,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">64</td>
+       <td class="value">90</td>
     
 
     
@@ -428,107 +262,167 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::get_halfplanes</td>
+    <td style="background-color:LightSteelBlue">make_trajectory_variables</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="value">99</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">make_halfplane_variables</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">15</td>
+    
+
+    
+       <td class="value">116</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">make_obstacle_stage_variables</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">16</td>
+    
+
+    
+       <td class="value">113</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">create_abstract_obstacle</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">11</td>
     
 
     
-       <td class="value">10</td>
+       <td class="value">56</td>
     
 
     
-       <td class="lesser-value">0</td>
+       <td class="lesser-value">3</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::get_stage_variables</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::build_A</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">73</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::build_b</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">48</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::assemble_variable_vector_and_bounds</td>
+    <td style="background-color:LightSteelBlue">casadi_dynamics_wrapper</td>
     <td></td>
     
        <td class="lesser-value">4</td>
     
 
     
-       <td class="lesser-value">51</td>
+       <td class="lesser-value">23</td>
     
 
     
-       <td class="value">400</td>
+       <td class="value">212</td>
     
 
     
-       <td class="lesser-value">6</td>
+       <td class="lesser-value">3</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::disassemble_variable_vector</td>
+    <td style="background-color:LightSteelBlue">create_dynamics_constraints</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">40</td>
+    
+
+    
+       <td class="value">356</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">create_terminal_state_constraint</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="value">90</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">create_single_stage_obstacle_constraints</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">28</td>
+    
+
+    
+       <td class="value">342</td>
+    
+
+    
+       <td class="greater-value">8</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">create_obstacle_constraints.create_cost_function</td>
     <td></td>
     
        <td class="lesser-value">2</td>
@@ -539,37 +433,57 @@ Cyclomatic complexity
     
 
     
-       <td class="value">171</td>
+       <td class="value">167</td>
     
 
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">3</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::assemble_parameter_vector</td>
+    <td style="background-color:LightSteelBlue">create_obstacle_constraints.generate_info_header</td>
     <td></td>
     
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">23</td>
+    
+
+    
+       <td class="value">144</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">create_obstacle_constraints.main</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">58</td>
+    
+
+    
+       <td class="value">433</td>
+    
+
+    
        <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">31</td>
-    
-
-    
-       <td class="value">246</td>
-    
-
-    
-       <td class="lesser-value">5</td>
     
   </tr>
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/include/parking_planner/rungekutta.hpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/src/parking_planner.cpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -582,18 +496,38 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::operator +</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::PlanningResult::PlanningResult</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">1</td>
     
 
+    
+       <td class="lesser-value">11</td>
+    
+
+    
+       <td class="value">43</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::resize_state_vector</td>
+    <td></td>
     
        <td class="lesser-value">9</td>
     
 
     
-       <td class="value">87</td>
+       <td class="lesser-value">38</td>
+    
+
+    
+       <td class="value">285</td>
     
 
     
@@ -602,47 +536,7 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::operator *</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">79</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::RK4</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">13</td>
-    
-
-    
-       <td class="value">189</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::RK4</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::lanelet_point_to_point</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -653,7 +547,361 @@ Cyclomatic complexity
     
 
     
-       <td class="value">97</td>
+       <td class="value">49</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::are_points_equal</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">36</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::get_pocket_hulls</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">22</td>
+    
+
+    
+       <td class="value">140</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::get_outer_boxes</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">31</td>
+    
+
+    
+       <td class="value">255</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::convert_drivable_area_to_obstacles</td>
+    <td></td>
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="lesser-value">55</td>
+    
+
+    
+       <td class="value">490</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::convert_parking_planner_to_autoware_trajectory</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">29</td>
+    
+
+    
+       <td class="value">284</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::ParkingPlanner::create_trajectory_from_states</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="value">85</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::ParkingPlanner::ParkingPlanner</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">13</td>
+    
+
+    
+       <td class="value">78</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::ParkingPlanner::plan</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">46</td>
+    
+
+    
+       <td class="value">363</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/src/nlp_path_planner.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::make_nlpobstacle_stage_variables</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">20</td>
+    
+
+    
+       <td class="value">148</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::create_nlpobstacle</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">18</td>
+    
+
+    
+       <td class="value">144</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::create_dummy_nlpobstacle</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">15</td>
+    
+
+    
+       <td class="value">149</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::create_constraint_bounds</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">16</td>
+    
+
+    
+       <td class="value">123</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::create_obstacles_from_polyhedra</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">20</td>
+    
+
+    
+       <td class="value">154</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPPathPlanner::NLPPathPlanner</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="value">67</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::are_vectors_close</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">73</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPPathPlanner::check_trajectory</td>
+    <td></td>
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="lesser-value">79</td>
+    
+
+    
+       <td class="value">565</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPPathPlanner::plan_nlp</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">40</td>
+    
+
+    
+       <td class="value">319</td>
     
 
     
@@ -663,17 +911,12 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/include/parking_planner/configuration.hpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/include/parking_planner/visibility_control.hpp</b></td></tr>
 
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/include/parking_planner/visibility_control.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/include/parking_planner/parking_planner.hpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/include/parking_planner/parking_planner.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -787,985 +1030,7 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/include/parking_planner/nlp_path_planner.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/include/parking_planner/astar_path_planner.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/include/parking_planner/bicycle_model.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::BicycleModelParameters</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">10</td>
-    
-
-    
-       <td class="value">40</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::serialize</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">26</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::deserialize</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">12</td>
-    
-
-    
-       <td class="value">72</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_length_front</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_length_rear</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_vehicle_width</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_front_overhang</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_rear_overhang</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::set_length_front</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::set_length_rear</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::set_vehicle_width</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::set_front_overhang</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::set_rear_overhang</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_serialized_length</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">9</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModel::BicycleModel</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">15</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModel::dynamics</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">13</td>
-    
-
-    
-       <td class="value">131</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModel::integrated_dynamics</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">16</td>
-    
-
-    
-       <td class="value">129</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModel::dynamics_serialized</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">51</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModel::compute_bounding_box</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">16</td>
-    
-
-    
-       <td class="value">189</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/include/parking_planner/parking_planner_types.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::VehicleState</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">24</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::VehicleState</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">40</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::serialize</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">26</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::deserialize</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">12</td>
-    
-
-    
-       <td class="value">72</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_x</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_y</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_velocity</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_heading</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_steering</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::set_x</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::set_y</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::set_velocity</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::set_heading</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::set_steering</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_serialized_length</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">9</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::operator ==</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">66</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::VehicleCommand</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">15</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::VehicleCommand</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">19</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::serialize</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">20</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::deserialize</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">57</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::get_steering_rate</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::get_throttle</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::set_steering_rate</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::set_throttle</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::get_serialized_length</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">9</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::TrajectoryStep::TrajectoryStep</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">27</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::TrajectoryStep::get_state</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::TrajectoryStep::get_command</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/include/parking_planner/geometry.hpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/include/parking_planner/geometry.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -2399,7 +1664,7 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/src/parking_planner.cpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/include/parking_planner/rungekutta.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -2412,38 +1677,18 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::PlanningResult::PlanningResult</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::operator +</td>
     <td></td>
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">2</td>
     
 
-    
-       <td class="lesser-value">11</td>
-    
-
-    
-       <td class="value">43</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::resize_state_vector</td>
-    <td></td>
     
        <td class="lesser-value">9</td>
     
 
     
-       <td class="lesser-value">38</td>
-    
-
-    
-       <td class="value">285</td>
+       <td class="value">87</td>
     
 
     
@@ -2452,7 +1697,47 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::lanelet_point_to_point</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::operator *</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">79</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::RK4</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">13</td>
+    
+
+    
+       <td class="value">189</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::RK4</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -2463,87 +1748,66 @@ Cyclomatic complexity
     
 
     
-       <td class="value">49</td>
+       <td class="value">97</td>
     
 
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">5</td>
     
   </tr>
   
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/include/parking_planner/configuration.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/include/parking_planner/bicycle_model.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::are_points_equal</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::BicycleModelParameters</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">4</td>
+       <td class="lesser-value">10</td>
     
 
     
-       <td class="value">36</td>
+       <td class="value">40</td>
     
 
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">5</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::get_pocket_hulls</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::serialize</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">1</td>
     
 
-    
-       <td class="lesser-value">22</td>
-    
-
-    
-       <td class="value">140</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::get_outer_boxes</td>
-    <td></td>
     
        <td class="lesser-value">5</td>
     
 
     
-       <td class="lesser-value">31</td>
-    
-
-    
-       <td class="value">255</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::convert_drivable_area_to_obstacles</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">55</td>
-    
-
-    
-       <td class="value">490</td>
+       <td class="value">26</td>
     
 
     
@@ -2552,27 +1816,7 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::convert_parking_planner_to_autoware_trajectory</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">29</td>
-    
-
-    
-       <td class="value">284</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::ParkingPlanner::create_trajectory_from_states</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::deserialize</td>
     <td></td>
     
        <td class="lesser-value">2</td>
@@ -2583,16 +1827,256 @@ Cyclomatic complexity
     
 
     
-       <td class="value">85</td>
+       <td class="value">72</td>
     
 
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">1</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::ParkingPlanner::ParkingPlanner</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_length_front</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_length_rear</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_vehicle_width</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_front_overhang</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_rear_overhang</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::set_length_front</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::set_length_rear</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::set_vehicle_width</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::set_front_overhang</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::set_rear_overhang</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModelParameters::get_serialized_length</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">9</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModel::BicycleModel</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">15</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModel::dynamics</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -2603,101 +2087,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">78</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::ParkingPlanner::plan</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">46</td>
-    
-
-    
-       <td class="value">363</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/src/astar_path_planner.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::expand_state_longitudinal_with_heading</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">35</td>
-    
-
-    
-       <td class="value">329</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::check_collision_bounding_box_vs_obstacles</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">16</td>
-    
-
-    
-       <td class="value">105</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::map_state_on_discretized_grid</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">21</td>
-    
-
-    
-       <td class="value">172</td>
+       <td class="value">131</td>
     
 
     
@@ -2706,18 +2096,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::AstarPathPlanner::plan_astar</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModel::integrated_dynamics</td>
     <td></td>
     
-       <td class="lesser-value">11</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">80</td>
+       <td class="lesser-value">16</td>
     
 
     
-       <td class="value">638</td>
+       <td class="value">129</td>
     
 
     
@@ -2725,9 +2115,49 @@ Cyclomatic complexity
     
   </tr>
   
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModel::dynamics_serialized</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">51</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::BicycleModel::compute_bounding_box</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">16</td>
+    
+
+    
+       <td class="value">189</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/src/generate_nlp_planner_solver.cpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/include/parking_planner/nlp_adapters.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -2740,7 +2170,861 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">make_single_stage_variable</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::NLPCostWeights</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">10</td>
+    
+
+    
+       <td class="value">25</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::serialize</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">24</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::deserialize</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">73</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::get_serialized_length</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">9</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::get_steering_weight</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::get_throttle_weight</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPCostWeights::get_goal_weight</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::NLPObstacleStageVariables</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">28</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::serialize</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">75</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::get_lambda_length</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">9</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::get_mu_length</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">9</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::get_serialized_length</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">11</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::deserialize</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="value">127</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::get_lambda</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacleStageVariables::get_mu</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::NLPObstacle</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">35</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::serialize_variables</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">10</td>
+    
+
+    
+       <td class="value">84</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::serialize_parameters</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">11</td>
+    
+
+    
+       <td class="value">64</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::get_halfplanes</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::get_stage_variables</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::build_A</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">73</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPObstacle::build_b</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">48</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::assemble_variable_vector_and_bounds</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">51</td>
+    
+
+    
+       <td class="value">400</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::disassemble_variable_vector</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">20</td>
+    
+
+    
+       <td class="value">171</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::assemble_parameter_vector</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">31</td>
+    
+
+    
+       <td class="value">246</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/include/parking_planner/parking_planner_types.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::VehicleState</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">24</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::VehicleState</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">40</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::serialize</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">26</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::deserialize</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="value">72</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_x</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_y</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_velocity</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_heading</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_steering</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::set_x</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::set_y</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::set_velocity</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::set_heading</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::set_steering</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::get_serialized_length</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">9</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleState::operator ==</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">66</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::VehicleCommand</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">15</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::VehicleCommand</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -2751,27 +3035,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">44</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">make_named_variable</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">70</td>
+       <td class="value">19</td>
     
 
     
@@ -2780,34 +3044,14 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">indexed_name</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::serialize</td>
     <td></td>
     
        <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">40</td>
     
 
     
        <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">convert_to_mx</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
     
 
     
@@ -2820,18 +3064,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">matrix_from_vec_of_vec</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::deserialize</td>
     <td></td>
     
-       <td class="lesser-value">3</td>
+       <td class="lesser-value">2</td>
     
 
     
-       <td class="lesser-value">11</td>
+       <td class="lesser-value">9</td>
     
 
     
-       <td class="value">90</td>
+       <td class="value">57</td>
     
 
     
@@ -2840,312 +3084,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">make_trajectory_variables</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">12</td>
-    
-
-    
-       <td class="value">99</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">make_halfplane_variables</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">15</td>
-    
-
-    
-       <td class="value">116</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">make_obstacle_stage_variables</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">16</td>
-    
-
-    
-       <td class="value">113</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">create_abstract_obstacle</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::get_steering_rate</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">11</td>
-    
-
-    
-       <td class="value">56</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">casadi_dynamics_wrapper</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">23</td>
-    
-
-    
-       <td class="value">212</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">create_dynamics_constraints</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">40</td>
-    
-
-    
-       <td class="value">356</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">create_terminal_state_constraint</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">12</td>
-    
-
-    
-       <td class="value">90</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">create_single_stage_obstacle_constraints</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">28</td>
-    
-
-    
-       <td class="value">342</td>
-    
-
-    
-       <td class="greater-value">8</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">create_obstacle_constraints.create_cost_function</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">20</td>
-    
-
-    
-       <td class="value">167</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">create_obstacle_constraints.generate_info_header</td>
-    <td></td>
-    
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">23</td>
-    
-
-    
-       <td class="value">144</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">create_obstacle_constraints.main</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">58</td>
-    
-
-    
-       <td class="value">433</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>src/planning/parking_planner/src/nlp_path_planner.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::make_nlpobstacle_stage_variables</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">20</td>
-    
-
-    
-       <td class="value">148</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::create_nlpobstacle</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">18</td>
-    
-
-    
-       <td class="value">144</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::create_dummy_nlpobstacle</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">15</td>
-    
-
-    
-       <td class="value">149</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::create_constraint_bounds</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">16</td>
-    
-
-    
-       <td class="value">123</td>
+       <td class="value">10</td>
     
 
     
@@ -3154,104 +3104,154 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::create_obstacles_from_polyhedra</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">20</td>
-    
-
-    
-       <td class="value">154</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPPathPlanner::NLPPathPlanner</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::get_throttle</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">14</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="value">67</td>
+       <td class="value">10</td>
     
 
     
-       <td class="lesser-value">5</td>
+       <td class="lesser-value">0</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::are_vectors_close</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::set_steering_rate</td>
     <td></td>
     
-       <td class="lesser-value">3</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">9</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="value">73</td>
+       <td class="value">12</td>
     
 
     
-       <td class="lesser-value">3</td>
+       <td class="lesser-value">1</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPPathPlanner::check_trajectory</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::set_throttle</td>
     <td></td>
     
-       <td class="lesser-value">14</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">79</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="value">565</td>
+       <td class="value">12</td>
     
 
     
-       <td class="lesser-value">6</td>
+       <td class="lesser-value">1</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::NLPPathPlanner::plan_nlp</td>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::VehicleCommand::get_serialized_length</td>
     <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
     
        <td class="lesser-value">2</td>
     
 
     
-       <td class="lesser-value">40</td>
+       <td class="value">9</td>
     
 
     
-       <td class="value">319</td>
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::TrajectoryStep::TrajectoryStep</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
     
 
     
        <td class="lesser-value">5</td>
     
+
+    
+       <td class="value">27</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
   </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::TrajectoryStep::get_state</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::planning::parking_planner::TrajectoryStep::get_command</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/include/parking_planner/nlp_path_planner.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/parking_planner/include/parking_planner/astar_path_planner.hpp</b></td></tr>
+
   
 
 </table>
@@ -3260,7 +3260,7 @@ Cyclomatic complexity
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2021-06-28 20:09
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-07-14 20:44
     </td></tr>
 </table>
  </body>
