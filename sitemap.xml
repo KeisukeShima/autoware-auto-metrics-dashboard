@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/autoware_auto_algorithm/</loc>
   </url>
   
@@ -85,6 +80,10 @@
   
   <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/</loc>
+  </url>
+  
+  <url>
+    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/</loc>
   </url>
   
   <url>
