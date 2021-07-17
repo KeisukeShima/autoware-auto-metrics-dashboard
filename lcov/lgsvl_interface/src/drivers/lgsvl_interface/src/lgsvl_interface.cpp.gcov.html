@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-16 20:11:27</td>
+            <td class="headerValue">2021-07-17 20:12:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -340,27 +340,27 @@
 <a name="238"><span class="lineNum">     238 </span>                :            : }</a>
 <a name="239"><span class="lineNum">     239 </span>                :            : </a>
 <a name="240"><span class="lineNum">     240 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">          5 : bool8_t LgsvlInterface::send_state_command(const autoware_auto_msgs::msg::VehicleStateCommand &amp; msg)</span></a>
+<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">          6 : bool8_t LgsvlInterface::send_state_command(const autoware_auto_msgs::msg::VehicleStateCommand &amp; msg)</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :            : {</a>
-<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">          5 :   auto msg_corrected = msg;</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">          6 :   auto msg_corrected = msg;</span></a>
 <a name="244"><span class="lineNum">     244 </span>                :            : </a>
 <a name="245"><span class="lineNum">     245 </span>                :            :   // Correcting blinker and headlights, they are shifted down by one,</a>
 <a name="246"><span class="lineNum">     246 </span>                :            :   // as the first value [BLINKER/HEADLIGHT]_NO_COMMAND does not exisit in LGSVL</a>
-<a name="247"><span class="lineNum">     247 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   if (msg.blinker == VSC::BLINKER_NO_COMMAND) {</span></a>
-<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">          5 :     msg_corrected.blinker = get_state_report().blinker;</span></a>
+<a name="247"><span class="lineNum">     247 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   if (msg.blinker == VSC::BLINKER_NO_COMMAND) {</span></a>
+<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">          6 :     msg_corrected.blinker = get_state_report().blinker;</span></a>
 <a name="249"><span class="lineNum">     249 </span>                :            :   }</a>
-<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">          5 :   msg_corrected.blinker--;</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">          6 :   msg_corrected.blinker--;</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            : </a>
-<a name="252"><span class="lineNum">     252 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   if (msg.headlight == VSC::HEADLIGHT_NO_COMMAND) {</span></a>
-<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">          5 :     msg_corrected.headlight = get_state_report().headlight;</span></a>
+<a name="252"><span class="lineNum">     252 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   if (msg.headlight == VSC::HEADLIGHT_NO_COMMAND) {</span></a>
+<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">          6 :     msg_corrected.headlight = get_state_report().headlight;</span></a>
 <a name="254"><span class="lineNum">     254 </span>                :            :   }</a>
-<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">          5 :   msg_corrected.headlight--;</span></a>
+<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">          6 :   msg_corrected.headlight--;</span></a>
 <a name="256"><span class="lineNum">     256 </span>                :            : </a>
 <a name="257"><span class="lineNum">     257 </span>                :            :   // Correcting gears</a>
-<a name="258"><span class="lineNum">     258 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   auto const gear_iter = autoware_to_lgsvl_gear.find(msg.gear);</span></a>
+<a name="258"><span class="lineNum">     258 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   auto const gear_iter = autoware_to_lgsvl_gear.find(msg.gear);</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            : </a>
-<a name="260"><span class="lineNum">     260 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          5 :   if (gear_iter != autoware_to_lgsvl_gear.end()) {</span></a>
-<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">          3 :     msg_corrected.gear = gear_iter-&gt;second;</span></a>
+<a name="260"><span class="lineNum">     260 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          6 :   if (gear_iter != autoware_to_lgsvl_gear.end()) {</span></a>
+<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">          4 :     msg_corrected.gear = gear_iter-&gt;second;</span></a>
 <a name="262"><span class="lineNum">     262 </span>                :            :   } else {</a>
 <a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">          2 :     msg_corrected.gear = static_cast&lt;uint8_t&gt;(VSD::GEAR_DRIVE);</span></a>
 <a name="264"><span class="lineNum">     264 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          2 :     RCLCPP_WARN(m_logger, &quot;Unsupported gear value in state command, defaulting to Drive&quot;);</span></a>
@@ -373,10 +373,10 @@
 <a name="265"><span class="lineNum">     265 </span>                :            :   }</a>
 <a name="266"><span class="lineNum">     266 </span>                :            : </a>
 <a name="267"><span class="lineNum">     267 </span>                :            :   // Correcting wipers</a>
-<a name="268"><span class="lineNum">     268 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   auto const wiper_iter = autoware_to_lgsvl_wiper.find(msg.wiper);</span></a>
+<a name="268"><span class="lineNum">     268 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   auto const wiper_iter = autoware_to_lgsvl_wiper.find(msg.wiper);</span></a>
 <a name="269"><span class="lineNum">     269 </span>                :            : </a>
-<a name="270"><span class="lineNum">     270 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   if (wiper_iter != autoware_to_lgsvl_wiper.end()) {</span></a>
-<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">          5 :     msg_corrected.wiper = wiper_iter-&gt;second;</span></a>
+<a name="270"><span class="lineNum">     270 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   if (wiper_iter != autoware_to_lgsvl_wiper.end()) {</span></a>
+<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">          6 :     msg_corrected.wiper = wiper_iter-&gt;second;</span></a>
 <a name="272"><span class="lineNum">     272 </span>                :            :   } else {</a>
 <a name="273"><span class="lineNum">     273 </span>                :<span class="lineNoCov">          0 :     msg_corrected.wiper = static_cast&lt;uint8_t&gt;(VSD::WIPERS_OFF);</span></a>
 <a name="274"><span class="lineNum">     274 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     RCLCPP_WARN(m_logger, &quot;Unsupported wiper value in state command, defaulting to OFF&quot;);</span></a>
@@ -389,10 +389,10 @@
 <a name="275"><span class="lineNum">     275 </span>                :            :   }</a>
 <a name="276"><span class="lineNum">     276 </span>                :            : </a>
 <a name="277"><span class="lineNum">     277 </span>                :            :   // Correcting mode</a>
-<a name="278"><span class="lineNum">     278 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   auto const mode_iter = autoware_to_lgsvl_mode.find(msg.mode);</span></a>
+<a name="278"><span class="lineNum">     278 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   auto const mode_iter = autoware_to_lgsvl_mode.find(msg.mode);</span></a>
 <a name="279"><span class="lineNum">     279 </span>                :            : </a>
-<a name="280"><span class="lineNum">     280 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   if (mode_iter != autoware_to_lgsvl_mode.end()) {</span></a>
-<a name="281"><span class="lineNum">     281 </span>                :<span class="lineCov">          5 :     msg_corrected.mode = mode_iter-&gt;second;</span></a>
+<a name="280"><span class="lineNum">     280 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   if (mode_iter != autoware_to_lgsvl_mode.end()) {</span></a>
+<a name="281"><span class="lineNum">     281 </span>                :<span class="lineCov">          6 :     msg_corrected.mode = mode_iter-&gt;second;</span></a>
 <a name="282"><span class="lineNum">     282 </span>                :            :   } else {</a>
 <a name="283"><span class="lineNum">     283 </span>                :<span class="lineNoCov">          0 :     msg_corrected.mode = static_cast&lt;uint8_t&gt;(VSD::VEHICLE_MODE_COMPLETE_MANUAL);</span></a>
 <a name="284"><span class="lineNum">     284 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     RCLCPP_WARN(m_logger, &quot;Unsupported mode value in state command, defaulting to COMPLETE MANUAL&quot;);</span></a>
@@ -404,21 +404,21 @@
 <span class="lineNum">         </span>            <span class="branchNoExec" title="Branch 29 was not executed"> # </span>]
 <a name="285"><span class="lineNum">     285 </span>                :            :   }</a>
 <a name="286"><span class="lineNum">     286 </span>                :            : </a>
-<a name="287"><span class="lineNum">     287 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   lgsvl_msgs::msg::VehicleStateData state_data;</span></a>
-<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">          5 :   state_data.header.set__stamp(msg_corrected.stamp);</span></a>
-<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">          5 :   state_data.set__blinker_state(msg_corrected.blinker);</span></a>
-<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">          5 :   state_data.set__headlight_state(msg_corrected.headlight);</span></a>
-<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">          5 :   state_data.set__wiper_state(msg_corrected.wiper);</span></a>
-<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">          5 :   state_data.set__current_gear(msg_corrected.gear);</span></a>
-<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">          5 :   state_data.set__vehicle_mode(msg_corrected.mode);</span></a>
-<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">          5 :   state_data.set__hand_brake_active(msg_corrected.hand_brake);</span></a>
-<a name="295"><span class="lineNum">     295 </span>                :<span class="lineCov">          5 :   state_data.set__horn_active(msg_corrected.horn);</span></a>
+<a name="287"><span class="lineNum">     287 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   lgsvl_msgs::msg::VehicleStateData state_data;</span></a>
+<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">          6 :   state_data.header.set__stamp(msg_corrected.stamp);</span></a>
+<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">          6 :   state_data.set__blinker_state(msg_corrected.blinker);</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">          6 :   state_data.set__headlight_state(msg_corrected.headlight);</span></a>
+<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">          6 :   state_data.set__wiper_state(msg_corrected.wiper);</span></a>
+<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">          6 :   state_data.set__current_gear(msg_corrected.gear);</span></a>
+<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">          6 :   state_data.set__vehicle_mode(msg_corrected.mode);</span></a>
+<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">          6 :   state_data.set__hand_brake_active(msg_corrected.hand_brake);</span></a>
+<a name="295"><span class="lineNum">     295 </span>                :<span class="lineCov">          6 :   state_data.set__horn_active(msg_corrected.horn);</span></a>
 <a name="296"><span class="lineNum">     296 </span>                :            :   state_data.set__autonomous_mode_active(</a>
-<a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">          5 :     msg_corrected.mode ==</span></a>
-<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">          5 :     VSD::VEHICLE_MODE_COMPLETE_AUTO_DRIVE ? true : false);</span></a>
+<a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">          6 :     msg_corrected.mode ==</span></a>
+<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">          6 :     VSD::VEHICLE_MODE_COMPLETE_AUTO_DRIVE ? true : false);</span></a>
 <a name="299"><span class="lineNum">     299 </span>                :            : </a>
-<a name="300"><span class="lineNum">     300 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   m_state_pub-&gt;publish(state_data);</span></a>
-<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">         10 :   return true;</span></a>
+<a name="300"><span class="lineNum">     300 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   m_state_pub-&gt;publish(state_data);</span></a>
+<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">         12 :   return true;</span></a>
 <a name="302"><span class="lineNum">     302 </span>                :            : }</a>
 <a name="303"><span class="lineNum">     303 </span>                :            : </a>
 <a name="304"><span class="lineNum">     304 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
