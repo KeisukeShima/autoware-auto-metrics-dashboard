@@ -650,6 +650,16 @@
     </item>
     
     <item>
+      <title>osqp_interface</title>
+      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/osqp_interface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/osqp_interface/</guid>
+      <description>osqp_interface
+ Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/osqp_interface/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/osqp_interface\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/osqp_interface/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/osqp_interface\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/osqp_interface/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
+    </item>
+    
+    <item>
       <title>outlier_filter</title>
       <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/outlier_filter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
