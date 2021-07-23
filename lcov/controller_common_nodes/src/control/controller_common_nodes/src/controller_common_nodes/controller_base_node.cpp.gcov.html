@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-22 19:51:08</td>
+            <td class="headerValue">2021-07-23 19:45:37</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">16</td>
@@ -183,7 +183,7 @@
 <a name="93"><span class="lineNum">      93 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          6 :   const QoS static_tf_qos = QoS{10}.transient_local();</span></a>
 <a name="94"><span class="lineNum">      94 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         18 :   m_state_sub = create_subscription&lt;State&gt;(</span></a>
 <a name="95"><span class="lineNum">      95 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :     state_topic, QoS{10},</span></a>
-<a name="96"><span class="lineNum">      96 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        549 :     [this](const State::SharedPtr msg) {on_state(msg);}, SubAllocT{});</span></a>
+<a name="96"><span class="lineNum">      96 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        550 :     [this](const State::SharedPtr msg) {on_state(msg);}, SubAllocT{});</span></a>
 <a name="97"><span class="lineNum">      97 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         18 :   m_trajectory_sub = create_subscription&lt;Trajectory&gt;(</span></a>
 <a name="98"><span class="lineNum">      98 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :     trajectory_topic, QoS{10},</span></a>
 <a name="99"><span class="lineNum">      99 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        528 :     [this](const Trajectory::SharedPtr msg) {on_trajectory(msg);}, SubAllocT{});</span></a>
@@ -264,16 +264,16 @@
 <a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        510 : }</span></a>
 <a name="159"><span class="lineNum">     159 </span>                :            : </a>
 <a name="160"><span class="lineNum">     160 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">        531 : void ControllerBaseNode::on_state(const State::SharedPtr &amp; msg)</span></a>
+<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">        532 : void ControllerBaseNode::on_state(const State::SharedPtr &amp; msg)</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            : {</a>
-<a name="163"><span class="lineNum">     163 </span>        [<span class="branchCov" title="Branch 0 was taken 502 times"> + </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">        531 :   if (!try_compute(*msg)) {</span></a>
-<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">        502 :     m_uncomputed_states.push_back(*msg);</span></a>
+<a name="163"><span class="lineNum">     163 </span>        [<span class="branchCov" title="Branch 0 was taken 503 times"> + </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">        532 :   if (!try_compute(*msg)) {</span></a>
+<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">        503 :     m_uncomputed_states.push_back(*msg);</span></a>
 <a name="165"><span class="lineNum">     165 </span>                :            :   }</a>
-<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">        531 : }</span></a>
+<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">        532 : }</span></a>
 <a name="167"><span class="lineNum">     167 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">        785 : bool ControllerBaseNode::try_compute(const State &amp; state)</span></a>
+<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">        786 : bool ControllerBaseNode::try_compute(const State &amp; state)</span></a>
 <a name="169"><span class="lineNum">     169 </span>                :            : {</a>
-<a name="170"><span class="lineNum">     170 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 784 times"> + </span>]:<span class="lineCov">        785 :   if (state.header.frame_id.empty()) {</span></a>
+<a name="170"><span class="lineNum">     170 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 785 times"> + </span>]:<span class="lineCov">        786 :   if (state.header.frame_id.empty()) {</span></a>
 <a name="171"><span class="lineNum">     171 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          1 :     RCLCPP_WARN(get_logger(), &quot;try_compute: empty state frame, ignoring&quot;);</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchNoCov" title="Branch 10 was not taken"> - </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchNoCov" title="Branch 12 was not taken"> - </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
@@ -284,12 +284,12 @@
 <span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 33 was not taken"> - </span>]
 <a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">          1 :     return true;</span></a>
 <a name="173"><span class="lineNum">     173 </span>                :            :   }</a>
-<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 753 times"> + </span><span class="branchCov" title="Branch 1 was taken 31 times"> + </span>]:<span class="lineCov">        784 :   if (m_controller-&gt;get_reference_trajectory().header.frame_id.empty()) {</span></a>
+<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 754 times"> + </span><span class="branchCov" title="Branch 1 was taken 31 times"> + </span>]:<span class="lineCov">        785 :   if (m_controller-&gt;get_reference_trajectory().header.frame_id.empty()) {</span></a>
 <a name="175"><span class="lineNum">     175 </span>                :            :     // TODO(Takamasa Horibe): Enable with RCLCPP_WARN_THROTTLE after Foxy</a>
 <a name="176"><span class="lineNum">     176 </span>                :            :     // RCLCPP_WARN(</a>
 <a name="177"><span class="lineNum">     177 </span>                :            :     //   get_logger(),</a>
 <a name="178"><span class="lineNum">     178 </span>                :            :     //   &quot;try_compute: empty trajectory frame, possibly uninitialized, deferring&quot;);</a>
-<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">        753 :     return false;</span></a>
+<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">        754 :     return false;</span></a>
 <a name="180"><span class="lineNum">     180 </span>                :            :   }</a>
 <a name="181"><span class="lineNum">     181 </span>                :            :   // TODO(c.ho) these should honestly be two functions</a>
 <a name="182"><span class="lineNum">     182 </span>                :            :   // Transform state into same frame as trajectory</a>
