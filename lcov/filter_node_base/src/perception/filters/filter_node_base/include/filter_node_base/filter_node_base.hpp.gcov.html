@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">1</td>
-            <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntryLo">16.7 %</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntryLo">64.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-26 19:53:15</td>
+            <td class="headerValue">2021-07-27 19:52:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">1</td>
-            <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntryLo">33.3 %</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntryLo">71.4 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">0</td>
-            <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">32</td>
+            <td class="headerCovTableEntryLo">12.5 %</td>
           </tr>
           <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -127,17 +127,17 @@
 <a name="49"><span class="lineNum">      49 </span>                :            :  * \return bool8_t Return true if the parameter is found, else false</a>
 <a name="50"><span class="lineNum">      50 </span>                :            :  */</a>
 <a name="51"><span class="lineNum">      51 </span>                :            : template&lt;typename T&gt;</a>
-<a name="52"><span class="lineNum">      52 </span>                :            : bool get_param(const std::vector&lt;rclcpp::Parameter&gt; &amp; p, const std::string &amp; name, T &amp; value)</a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">          6 : bool get_param(const std::vector&lt;rclcpp::Parameter&gt; &amp; p, const std::string &amp; name, T &amp; value)</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :            : {</a>
-<a name="54"><span class="lineNum">      54 </span>                :            :   auto it = std::find_if(</a>
-<a name="55"><span class="lineNum">      55 </span>                :            :     p.cbegin(), p.cend(), [&amp;name](const rclcpp::Parameter &amp; parameter) {</a>
-<a name="56"><span class="lineNum">      56 </span>                :            :       return parameter.get_name() == name;</a>
+<a name="54"><span class="lineNum">      54 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   auto it = std::find_if(</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">          6 :     p.cbegin(), p.cend(), [&amp;name](const rclcpp::Parameter &amp; parameter) {</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">          6 :       return parameter.get_name() == name;</span></a>
 <a name="57"><span class="lineNum">      57 </span>                :            :     });</a>
-<a name="58"><span class="lineNum">      58 </span>                :            :   if (it != p.cend()) {</a>
-<a name="59"><span class="lineNum">      59 </span>                :            :     value = it-&gt;template get_value&lt;T&gt;();</a>
-<a name="60"><span class="lineNum">      60 </span>                :            :     return true;</a>
+<a name="58"><span class="lineNum">      58 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          6 :   if (it != p.cend()) {</span></a>
+<a name="59"><span class="lineNum">      59 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     value = it-&gt;template get_value&lt;T&gt;();</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">          2 :     return true;</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            :   }</a>
-<a name="62"><span class="lineNum">      62 </span>                :            :   return false;</a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">          4 :   return false;</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            : }</a>
 <a name="64"><span class="lineNum">      64 </span>                :            : </a>
 <a name="65"><span class="lineNum">      65 </span>                :            : /// \class FilterNodeBase</a>
@@ -220,33 +220,41 @@
 <a name="137"><span class="lineNum">     137 </span>                :<span class="lineNoCov">          0 :     return true;</span></a>
 <a name="138"><span class="lineNum">     138 </span>                :            :   }</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : </a>
-<a name="140"><span class="lineNum">     140 </span>                :            : private:</a>
-<a name="141"><span class="lineNum">     141 </span>                :            :   /** \brief Callback handler for parameter services */</a>
-<a name="142"><span class="lineNum">     142 </span>                :            :   OnSetParametersCallbackHandle::SharedPtr set_param_res_filter_;</a>
-<a name="143"><span class="lineNum">     143 </span>                :            : </a>
-<a name="144"><span class="lineNum">     144 </span>                :            :   /** \brief Parameter service callback</a>
-<a name="145"><span class="lineNum">     145 </span>                :            :    * \param p Vector of rclcpp::Parameters belonging to the node</a>
-<a name="146"><span class="lineNum">     146 </span>                :            :    * \return rcl_interfaces::msg::SetParametersResult Return type for the parameter service call</a>
-<a name="147"><span class="lineNum">     147 </span>                :            :    */</a>
-<a name="148"><span class="lineNum">     148 </span>                :            :   FILTER_NODE_BASE_LOCAL rcl_interfaces::msg::SetParametersResult param_callback(</a>
-<a name="149"><span class="lineNum">     149 </span>                :            :     const std::vector&lt;rclcpp::Parameter&gt; &amp; p);</a>
-<a name="150"><span class="lineNum">     150 </span>                :            : </a>
-<a name="151"><span class="lineNum">     151 </span>                :            :   /** \brief Callback used to receive point cloud data.</a>
-<a name="152"><span class="lineNum">     152 </span>                :            :    *</a>
-<a name="153"><span class="lineNum">     153 </span>                :            :    * After checking the validity of the received point cloud message, call the filter method and</a>
-<a name="154"><span class="lineNum">     154 </span>                :            :    * publish the filtered point cloud on a new topic.</a>
-<a name="155"><span class="lineNum">     155 </span>                :            :    *</a>
-<a name="156"><span class="lineNum">     156 </span>                :            :    * \param msg Input point cloud message to be processed by the filter</a>
-<a name="157"><span class="lineNum">     157 </span>                :            :    */</a>
-<a name="158"><span class="lineNum">     158 </span>                :            :   FILTER_NODE_BASE_LOCAL void pointcloud_callback(</a>
-<a name="159"><span class="lineNum">     159 </span>                :            :     const sensor_msgs::msg::PointCloud2::SharedPtr msg);</a>
-<a name="160"><span class="lineNum">     160 </span>                :            : };</a>
-<a name="161"><span class="lineNum">     161 </span>                :            : }  // namespace filter_node_base</a>
-<a name="162"><span class="lineNum">     162 </span>                :            : }  // namespace filters</a>
-<a name="163"><span class="lineNum">     163 </span>                :            : }  // namespace perception</a>
-<a name="164"><span class="lineNum">     164 </span>                :            : }  // namespace autoware</a>
-<a name="165"><span class="lineNum">     165 </span>                :            : </a>
-<a name="166"><span class="lineNum">     166 </span>                :            : #endif  // FILTER_NODE_BASE__FILTER_NODE_BASE_HPP_</a>
+<a name="140"><span class="lineNum">     140 </span>                :            :   /** \brief Binds the param_callback to the OnSetParametersCallbackHandle object</a>
+<a name="141"><span class="lineNum">     141 </span>                :            :    *</a>
+<a name="142"><span class="lineNum">     142 </span>                :            :    * Due to the nature of the OnSetParametersCallbackHandle, this needs to be called after all</a>
+<a name="143"><span class="lineNum">     143 </span>                :            :    * parameters used by this node have been declared. Therefore this method needs to be called at</a>
+<a name="144"><span class="lineNum">     144 </span>                :            :    * the end of the constructor in child classes inheriting from FilterNodeBase.</a>
+<a name="145"><span class="lineNum">     145 </span>                :            :    */</a>
+<a name="146"><span class="lineNum">     146 </span>                :            :   FILTER_NODE_BASE_PUBLIC void set_param_callback();</a>
+<a name="147"><span class="lineNum">     147 </span>                :            : </a>
+<a name="148"><span class="lineNum">     148 </span>                :            : private:</a>
+<a name="149"><span class="lineNum">     149 </span>                :            :   /** \brief Callback handler for parameter services */</a>
+<a name="150"><span class="lineNum">     150 </span>                :            :   OnSetParametersCallbackHandle::SharedPtr set_param_res_filter_;</a>
+<a name="151"><span class="lineNum">     151 </span>                :            : </a>
+<a name="152"><span class="lineNum">     152 </span>                :            :   /** \brief Parameter service callback</a>
+<a name="153"><span class="lineNum">     153 </span>                :            :    * \param p Vector of rclcpp::Parameters belonging to the node</a>
+<a name="154"><span class="lineNum">     154 </span>                :            :    * \return rcl_interfaces::msg::SetParametersResult Return type for the parameter service call</a>
+<a name="155"><span class="lineNum">     155 </span>                :            :    */</a>
+<a name="156"><span class="lineNum">     156 </span>                :            :   FILTER_NODE_BASE_LOCAL rcl_interfaces::msg::SetParametersResult param_callback(</a>
+<a name="157"><span class="lineNum">     157 </span>                :            :     const std::vector&lt;rclcpp::Parameter&gt; &amp; p);</a>
+<a name="158"><span class="lineNum">     158 </span>                :            : </a>
+<a name="159"><span class="lineNum">     159 </span>                :            :   /** \brief Callback used to receive point cloud data.</a>
+<a name="160"><span class="lineNum">     160 </span>                :            :    *</a>
+<a name="161"><span class="lineNum">     161 </span>                :            :    * After checking the validity of the received point cloud message, call the filter method and</a>
+<a name="162"><span class="lineNum">     162 </span>                :            :    * publish the filtered point cloud on a new topic.</a>
+<a name="163"><span class="lineNum">     163 </span>                :            :    *</a>
+<a name="164"><span class="lineNum">     164 </span>                :            :    * \param msg Input point cloud message to be processed by the filter</a>
+<a name="165"><span class="lineNum">     165 </span>                :            :    */</a>
+<a name="166"><span class="lineNum">     166 </span>                :            :   FILTER_NODE_BASE_LOCAL void pointcloud_callback(</a>
+<a name="167"><span class="lineNum">     167 </span>                :            :     const sensor_msgs::msg::PointCloud2::SharedPtr msg);</a>
+<a name="168"><span class="lineNum">     168 </span>                :            : };</a>
+<a name="169"><span class="lineNum">     169 </span>                :            : }  // namespace filter_node_base</a>
+<a name="170"><span class="lineNum">     170 </span>                :            : }  // namespace filters</a>
+<a name="171"><span class="lineNum">     171 </span>                :            : }  // namespace perception</a>
+<a name="172"><span class="lineNum">     172 </span>                :            : }  // namespace autoware</a>
+<a name="173"><span class="lineNum">     173 </span>                :            : </a>
+<a name="174"><span class="lineNum">     174 </span>                :            : #endif  // FILTER_NODE_BASE__FILTER_NODE_BASE_HPP_</a>
 </pre>
       </td>
     </tr>
