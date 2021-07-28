@@ -7,10 +7,6 @@
   </url>
   
   <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/autoware_auto_avp_demo/</loc>
-  </url>
-  
-  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/autoware_auto_cmake/</loc>
   </url>
   
@@ -172,10 +168,6 @@
   
   <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/lgsvl_interface/</loc>
-  </url>
-  
-  <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/lgsvl_launch/</loc>
   </url>
   
   <url>

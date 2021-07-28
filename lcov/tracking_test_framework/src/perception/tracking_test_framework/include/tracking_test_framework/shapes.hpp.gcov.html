@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-27 21:02:48</td>
+            <td class="headerValue">2021-07-28 21:04:00</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">9</td>
@@ -134,7 +134,7 @@
 <a name="56"><span class="lineNum">      56 </span>                :            :     const Line &amp; line, const autoware::common::types::bool8_t closest_point_only) const = 0;</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
 <a name="58"><span class="lineNum">      58 </span>                :            :   /// \brief Virtual destructor</a>
-<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         69 :   virtual ~Shape() = default;</span></a>
+<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">       3986 :   virtual ~Shape() = default;</span></a>
 <a name="60"><span class="lineNum">      60 </span>                :            : };</a>
 <a name="61"><span class="lineNum">      61 </span>                :            : </a>
 <a name="62"><span class="lineNum">      62 </span>                :            : /// \brief This is the class which represents the line and defines the function</a>
@@ -144,9 +144,9 @@
 <a name="66"><span class="lineNum">      66 </span>                :            : public:</a>
 <a name="67"><span class="lineNum">      67 </span>                :<span class="lineNoCov">          0 :   EIGEN_MAKE_ALIGNED_OPERATOR_NEW</span></a>
 <a name="68"><span class="lineNum">      68 </span>                :            :   /// \brief default constructor</a>
-<a name="69"><span class="lineNum">      69 </span>  [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          8 :   Line() = default;</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 8 times"> + </span> 
-<span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
+<a name="69"><span class="lineNum">      69 </span>  [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         12 :   Line() = default;</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 12 times"> + </span> 
+<span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
 <a name="70"><span class="lineNum">      70 </span>                :            : </a>
 <a name="71"><span class="lineNum">      71 </span>                :            :   /// \brief constructor</a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   Line(const Eigen::Vector2f &amp; start, const Eigen::Vector2f &amp; end);</a>
@@ -170,9 +170,9 @@
 <a name="90"><span class="lineNum">      90 </span>                :            : </a>
 <a name="91"><span class="lineNum">      91 </span>                :            :   /// \brief gets the starting point of the line</a>
 <a name="92"><span class="lineNum">      92 </span>                :            :   /// \return returns the starting point</a>
-<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">         12 :   inline const Eigen::Vector2f &amp; starting_point() const</span></a>
+<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">         20 :   inline const Eigen::Vector2f &amp; starting_point() const</span></a>
 <a name="94"><span class="lineNum">      94 </span>                :            :   {</a>
-<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">         12 :     return m_start;</span></a>
+<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">         20 :     return m_start;</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :            :   }</a>
 <a name="97"><span class="lineNum">      97 </span>                :            : </a>
 <a name="98"><span class="lineNum">      98 </span>                :            :   /// \brief gets the end point of the line</a>
@@ -212,7 +212,7 @@
 <a name="132"><span class="lineNum">     132 </span>                :            : class TRACKING_TEST_FRAMEWORK_PUBLIC Rectangle : public Shape</a>
 <a name="133"><span class="lineNum">     133 </span>                :            : {</a>
 <a name="134"><span class="lineNum">     134 </span>                :            : public:</a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">          2 :   EIGEN_MAKE_ALIGNED_OPERATOR_NEW</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">          4 :   EIGEN_MAKE_ALIGNED_OPERATOR_NEW</span></a>
 <a name="136"><span class="lineNum">     136 </span>                :            :   /// \brief constructor</a>
 <a name="137"><span class="lineNum">     137 </span>                :            :   Rectangle(</a>
 <a name="138"><span class="lineNum">     138 </span>                :            :     const Eigen::Vector2f &amp; center, const Eigen::Vector2f &amp; size,</a>

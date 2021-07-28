@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-27 21:02:48</td>
+            <td class="headerValue">2021-07-28 21:04:00</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -109,11 +109,11 @@
 <a name="31"><span class="lineNum">      31 </span>                :            : /// \brief Method to convert angle in degrees to radians</a>
 <a name="32"><span class="lineNum">      32 </span>                :            : /// \param[in] orientation_deg in degrees</a>
 <a name="33"><span class="lineNum">      33 </span>                :            : /// \return returns the angle converted to radians</a>
-<a name="34"><span class="lineNum">      34 </span>                :<span class="lineCov">         10 : inline autoware::common::types::float32_t to_radians(</span></a>
+<a name="34"><span class="lineNum">      34 </span>                :<span class="lineCov">         13 : inline autoware::common::types::float32_t to_radians(</span></a>
 <a name="35"><span class="lineNum">      35 </span>                :            :   const autoware::common::types::float32_t orientation_deg)</a>
 <a name="36"><span class="lineNum">      36 </span>                :            : {</a>
-<a name="37"><span class="lineNum">      37 </span>                :<span class="lineCov">         10 :   constexpr auto deg_in_PI = 180.0F;</span></a>
-<a name="38"><span class="lineNum">      38 </span>                :<span class="lineCov">         10 :   return orientation_deg * (autoware::common::types::PI / deg_in_PI);</span></a>
+<a name="37"><span class="lineNum">      37 </span>                :<span class="lineCov">         13 :   constexpr auto deg_in_PI = 180.0F;</span></a>
+<a name="38"><span class="lineNum">      38 </span>                :<span class="lineCov">         13 :   return orientation_deg * (autoware::common::types::PI / deg_in_PI);</span></a>
 <a name="39"><span class="lineNum">      39 </span>                :            : }</a>
 <a name="40"><span class="lineNum">      40 </span>                :            : /// \brief Method to convert angle in radians to degrees</a>
 <a name="41"><span class="lineNum">      41 </span>                :            : /// \param[in] orientation_rad in radians</a>
@@ -128,10 +128,10 @@
 <a name="50"><span class="lineNum">      50 </span>                :            : /// \param[in] vec1 first 2D Eigen::Vector2f</a>
 <a name="51"><span class="lineNum">      51 </span>                :            : /// \param[in] vec2 second 2D Eigen::Vector2f</a>
 <a name="52"><span class="lineNum">      52 </span>                :            : /// \return returns the cross product</a>
-<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">         84 : inline autoware::common::types::float32_t cross_2d(</span></a>
+<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">       8716 : inline autoware::common::types::float32_t cross_2d(</span></a>
 <a name="54"><span class="lineNum">      54 </span>                :            :   const Eigen::Vector2f &amp; vec1, const Eigen::Vector2f &amp; vec2)</a>
 <a name="55"><span class="lineNum">      55 </span>                :            : {</a>
-<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">         84 :   return (vec1.x() * vec2.y()) - (vec1.y() * vec2.x());</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">       8716 :   return (vec1.x() * vec2.y()) - (vec1.y() * vec2.x());</span></a>
 <a name="57"><span class="lineNum">      57 </span>                :            : }</a>
 <a name="58"><span class="lineNum">      58 </span>                :            : /// \brief Method to compute linearly spaced intervals between a given range</a>
 <a name="59"><span class="lineNum">      59 </span>                :            : /// \param[in] start start number of the range</a>
@@ -139,24 +139,24 @@
 <a name="61"><span class="lineNum">      61 </span>                :            : /// \param[in] num number of intervals needed</a>
 <a name="62"><span class="lineNum">      62 </span>                :            : /// \return returns the std::vector&lt;T&gt; of linearly spaced intervals including start and end numbers</a>
 <a name="63"><span class="lineNum">      63 </span>                :            : template&lt;typename T&gt;</a>
-<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">          2 : std::vector&lt;T&gt; linspace(const T start, const T end, const size_t num)</span></a>
+<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">          3 : std::vector&lt;T&gt; linspace(const T start, const T end, const size_t num)</span></a>
 <a name="65"><span class="lineNum">      65 </span>                :            : {</a>
-<a name="66"><span class="lineNum">      66 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   if (num == 0) {</span></a>
+<a name="66"><span class="lineNum">      66 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          3 :   if (num == 0) {</span></a>
 <a name="67"><span class="lineNum">      67 </span>                :<span class="lineNoCov">          0 :     return std::vector&lt;T&gt;{};</span></a>
-<a name="68"><span class="lineNum">      68 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :   } else if (num == 1) {</span></a>
+<a name="68"><span class="lineNum">      68 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          3 :   } else if (num == 1) {</span></a>
 <a name="69"><span class="lineNum">      69 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     return std::vector&lt;T&gt;{start};</span></a>
 <a name="70"><span class="lineNum">      70 </span>                :            :   }</a>
-<a name="71"><span class="lineNum">      71 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   std::vector&lt;T&gt; linspaced(num);</span></a>
-<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">          1 :   size_t i = 0;</span></a>
-<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">          1 :   T delta = (end - start) / static_cast&lt;T&gt;(num - 1);</span></a>
-<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">          1 :   std::generate(</span></a>
-<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">          4 :     linspaced.begin(), linspaced.end(), [&amp;]() {</span></a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">          4 :       T result{};</span></a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">          4 :       result = start + delta * static_cast&lt;T&gt;(i);</span></a>
-<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">          4 :       i++;</span></a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">          4 :       return result;</span></a>
+<a name="71"><span class="lineNum">      71 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :   std::vector&lt;T&gt; linspaced(num);</span></a>
+<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">          2 :   size_t i = 0;</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">          2 :   T delta = (end - start) / static_cast&lt;T&gt;(num - 1);</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">          2 :   std::generate(</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">        724 :     linspaced.begin(), linspaced.end(), [&amp;]() {</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">        724 :       T result{};</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">        724 :       result = start + delta * static_cast&lt;T&gt;(i);</span></a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">        724 :       i++;</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">        724 :       return result;</span></a>
 <a name="80"><span class="lineNum">      80 </span>                :            :     });</a>
-<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">          1 :   return linspaced;</span></a>
+<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">          2 :   return linspaced;</span></a>
 <a name="82"><span class="lineNum">      82 </span>                :            : }</a>
 <a name="83"><span class="lineNum">      83 </span>                :            : </a>
 <a name="84"><span class="lineNum">      84 </span>                :            : /// \brief Method to wrap angle between 0 to 2*PI</a>
@@ -176,12 +176,12 @@
 <a name="98"><span class="lineNum">      98 </span>                :            : /// \brief Method to convert point in Eigen::Vector2f to autoware::common::types::PointXYZIF</a>
 <a name="99"><span class="lineNum">      99 </span>                :            : /// \param[in] v point(x,y) in Eigen::Vector2f format</a>
 <a name="100"><span class="lineNum">     100 </span>                :            : /// \return returns the autoware::common::types::PointXYZIF representation of point(x,y)</a>
-<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">          9 : inline autoware::common::types::PointXYZIF get_point_from_vector_2d(const Eigen::Vector2f &amp; v)</span></a>
+<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">         12 : inline autoware::common::types::PointXYZIF get_point_from_vector_2d(const Eigen::Vector2f &amp; v)</span></a>
 <a name="102"><span class="lineNum">     102 </span>                :            : {</a>
-<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">          9 :   autoware::common::types::PointXYZIF point{};</span></a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">          9 :   point.x = static_cast&lt;autoware::common::types::float32_t&gt;(v(0));</span></a>
-<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">          9 :   point.y = static_cast&lt;autoware::common::types::float32_t&gt;(v(1));</span></a>
-<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">          9 :   return point;</span></a>
+<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">         12 :   autoware::common::types::PointXYZIF point{};</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         12 :   point.x = static_cast&lt;autoware::common::types::float32_t&gt;(v(0));</span></a>
+<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">         12 :   point.y = static_cast&lt;autoware::common::types::float32_t&gt;(v(1));</span></a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">         12 :   return point;</span></a>
 <a name="107"><span class="lineNum">     107 </span>                :            : }</a>
 <a name="108"><span class="lineNum">     108 </span>                :            : </a>
 <a name="109"><span class="lineNum">     109 </span>                :            : }  // namespace utils</a>

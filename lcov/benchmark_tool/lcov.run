@@ -38,7 +38,7 @@ TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/tools/benchmark_tool/benchmark_tool/kittiobjdetsdk/src/kittiobjevalmodule.cpp
 FN:29,_ZL17kittiobjeval_evalP7_objectS0_
 FNDA:0,_ZL17kittiobjeval_evalP7_objectS0_
-FN:83,PyInit_kittiobjeval
+FN:81,PyInit_kittiobjeval
 FNDA:0,PyInit_kittiobjeval
 DA:29,0
 DA:37,0
@@ -64,8 +64,8 @@ BRDA:51,0,1,-
 DA:57,0
 BRDA:57,0,0,-
 BRDA:57,0,1,-
+DA:81,0
 DA:83,0
-DA:85,0
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/install/autoware_auto_common/include/common/filesystem.hpp

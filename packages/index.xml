@@ -20,16 +20,6 @@
     </item>
     
     <item>
-      <title>autoware_auto_avp_demo</title>
-      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/autoware_auto_avp_demo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/autoware_auto_avp_demo/</guid>
-      <description>autoware_auto_avp_demo
- Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/autoware_auto_avp_demo/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/autoware_auto_avp_demo\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/autoware_auto_avp_demo/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/autoware_auto_avp_demo\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/autoware_auto_avp_demo/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
-    </item>
-    
-    <item>
       <title>autoware_auto_cmake</title>
       <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/autoware_auto_cmake/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -407,16 +397,6 @@
       <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/lgsvl_interface/</guid>
       <description>lgsvl_interface
  Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/lgsvl_interface/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/lgsvl_interface\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/lgsvl_interface/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/lgsvl_interface\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/lgsvl_interface/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
-    </item>
-    
-    <item>
-      <title>lgsvl_launch</title>
-      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/lgsvl_launch/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/lgsvl_launch/</guid>
-      <description>lgsvl_launch
- Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/lgsvl_launch/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/lgsvl_launch\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/lgsvl_launch/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/lgsvl_launch\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/lgsvl_launch/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
     </item>
     
     <item>
