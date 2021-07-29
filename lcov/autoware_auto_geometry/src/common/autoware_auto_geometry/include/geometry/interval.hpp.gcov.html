@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-28 19:33:10</td>
+            <td class="headerValue">2021-07-29 19:40:17</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">23</td>
-            <td class="headerCovTableEntry">25</td>
-            <td class="headerCovTableEntryHi">92.0 %</td>
+            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">26</td>
+            <td class="headerCovTableEntryHi">92.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -212,10 +212,10 @@
 <a name="131"><span class="lineNum">     131 </span>                :            :   static bool abs_eq(const Interval &amp; i1, const Interval &amp; i2, const T &amp; eps);</a>
 <a name="132"><span class="lineNum">     132 </span>                :            : </a>
 <a name="133"><span class="lineNum">     133 </span>                :            :   /** @brief The minimum bound of the interval. */</a>
-<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">        281 :   static T min(const Interval &amp; i) {return i.min_;}</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">        650 :   static T min(const Interval &amp; i) {return i.min_;}</span></a>
 <a name="135"><span class="lineNum">     135 </span>                :            : </a>
 <a name="136"><span class="lineNum">     136 </span>                :            :   /** @brief The maximum bound of the interval. */</a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">        169 :   static T max(const Interval &amp; i) {return i.max_;}</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">        384 :   static T max(const Interval &amp; i) {return i.max_;}</span></a>
 <a name="138"><span class="lineNum">     138 </span>                :            : </a>
 <a name="139"><span class="lineNum">     139 </span>                :            :   /**</a>
 <a name="140"><span class="lineNum">     140 </span>                :            :    * @brief Return the measure (length) of the interval.</a>
@@ -320,15 +320,15 @@
 <a name="239"><span class="lineNum">     239 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="240"><span class="lineNum">     240 </span>                :            : </a>
 <a name="241"><span class="lineNum">     241 </span>                :            : template&lt;typename T&gt;</a>
-<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">         47 : Interval&lt;T&gt;::Interval(const T &amp; min, const T &amp; max)</span></a>
-<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">         47 : : min_(min), max_(max)</span></a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">        179 : Interval&lt;T&gt;::Interval(const T &amp; min, const T &amp; max)</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">        179 : : min_(min), max_(max)</span></a>
 <a name="244"><span class="lineNum">     244 </span>                :            : {</a>
-<a name="245"><span class="lineNum">     245 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 45 times"> + </span>]:<span class="lineCov">         47 :   if (!Interval::bounds_valid(*this)) {</span></a>
+<a name="245"><span class="lineNum">     245 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 177 times"> + </span>]:<span class="lineCov">        179 :   if (!Interval::bounds_valid(*this)) {</span></a>
 <a name="246"><span class="lineNum">     246 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     std::stringstream ss;</span></a>
 <a name="247"><span class="lineNum">     247 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :     ss &lt;&lt; &quot;Attempted to construct an invalid interval: &quot; &lt;&lt; *this;</span></a>
 <a name="248"><span class="lineNum">     248 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :     throw std::runtime_error(ss.str());</span></a>
 <a name="249"><span class="lineNum">     249 </span>                :            :   }</a>
-<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">         45 : }</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">        177 : }</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            : </a>
 <a name="252"><span class="lineNum">     252 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="253"><span class="lineNum">     253 </span>                :            : </a>
@@ -361,20 +361,20 @@
 <a name="279"><span class="lineNum">     279 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="280"><span class="lineNum">     280 </span>                :            : </a>
 <a name="281"><span class="lineNum">     281 </span>                :            : template&lt;typename T&gt;</a>
-<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">        127 : bool Interval&lt;T&gt;::empty(const Interval &amp; i)</span></a>
+<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">        259 : bool Interval&lt;T&gt;::empty(const Interval &amp; i)</span></a>
 <a name="283"><span class="lineNum">     283 </span>                :            : {</a>
-<a name="284"><span class="lineNum">     284 </span>  [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 111 times"> + </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        127 :   return std::isnan(Interval::min(i)) &amp;&amp; std::isnan(Interval::max(i));</span></a>
+<a name="284"><span class="lineNum">     284 </span>  [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 243 times"> + </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        259 :   return std::isnan(Interval::min(i)) &amp;&amp; std::isnan(Interval::max(i));</span></a>
 <a name="285"><span class="lineNum">     285 </span>                :            : }</a>
 <a name="286"><span class="lineNum">     286 </span>                :            : </a>
 <a name="287"><span class="lineNum">     287 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="288"><span class="lineNum">     288 </span>                :            : </a>
 <a name="289"><span class="lineNum">     289 </span>                :            : template&lt;typename T&gt;</a>
-<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">         47 : bool Interval&lt;T&gt;::bounds_valid(const Interval &amp; i)</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">        179 : bool Interval&lt;T&gt;::bounds_valid(const Interval &amp; i)</span></a>
 <a name="291"><span class="lineNum">     291 </span>                :            : {</a>
-<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">         47 :   const auto is_ordered = (Interval::min(i) &lt;= Interval::max(i));</span></a>
+<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">        179 :   const auto is_ordered = (Interval::min(i) &lt;= Interval::max(i));</span></a>
 <a name="293"><span class="lineNum">     293 </span>                :            : </a>
 <a name="294"><span class="lineNum">     294 </span>                :            :   // Check for emptiness expicitly because it requires both bounds to be NaN</a>
-<a name="295"><span class="lineNum">     295 </span>  [<span class="branchCov" title="Branch 0 was taken 47 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 45 times"> + </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">         47 :   return Interval::empty(i) || is_ordered;</span></a>
+<a name="295"><span class="lineNum">     295 </span>  [<span class="branchCov" title="Branch 0 was taken 179 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 177 times"> + </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">        179 :   return Interval::empty(i) || is_ordered;</span></a>
 <a name="296"><span class="lineNum">     296 </span>                :            : }</a>
 <a name="297"><span class="lineNum">     297 </span>                :            : </a>
 <a name="298"><span class="lineNum">     298 </span>                :            : //------------------------------------------------------------------------------</a>
@@ -390,9 +390,9 @@
 <a name="308"><span class="lineNum">     308 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="309"><span class="lineNum">     309 </span>                :            : </a>
 <a name="310"><span class="lineNum">     310 </span>                :            : template&lt;typename T&gt;</a>
-<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">          3 : bool Interval&lt;T&gt;::contains(const Interval &amp; i, const T &amp; value)</span></a>
+<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">        108 : bool Interval&lt;T&gt;::contains(const Interval &amp; i, const T &amp; value)</span></a>
 <a name="312"><span class="lineNum">     312 </span>                :            : {</a>
-<a name="313"><span class="lineNum">     313 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">          3 :   return (value &gt;= Interval::min(i)) &amp;&amp; (value &lt;= Interval::max(i));</span></a>
+<a name="313"><span class="lineNum">     313 </span>  [<span class="branchCov" title="Branch 0 was taken 85 times"> + </span><span class="branchCov" title="Branch 1 was taken 23 times"> + </span><span class="branchCov" title="Branch 2 was taken 64 times"> + </span><span class="branchCov" title="Branch 3 was taken 21 times"> + </span>]:<span class="lineCov">        108 :   return (value &gt;= Interval::min(i)) &amp;&amp; (value &lt;= Interval::max(i));</span></a>
 <a name="314"><span class="lineNum">     314 </span>                :            : }</a>
 <a name="315"><span class="lineNum">     315 </span>                :            : </a>
 <a name="316"><span class="lineNum">     316 </span>                :            : //------------------------------------------------------------------------------</a>

@@ -55,11 +55,6 @@
 <table>
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/common/visibility_control.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
   Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/common/types.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
@@ -5542,12 +5537,12 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/helper_functions/template_utils.hpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/common/visibility_control.hpp</b></td></tr>
 
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/helper_functions/type_name.hpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/helper_functions/mahalanobis_distance.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -5560,96 +5555,42 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::helper_functions::get_type_name</td>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::calculate_squared_mahalanobis_distance</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">5</td>
+       <td class="lesser-value">10</td>
     
 
     
-       <td class="value">36</td>
+       <td class="value">92</td>
     
 
     
-       <td class="lesser-value">0</td>
+       <td class="lesser-value">3</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::helper_functions::get_type_name</td>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::calculate_mahalanobis_distance</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">4</td>
+       <td class="lesser-value">8</td>
     
 
     
-       <td class="value">16</td>
+       <td class="value">59</td>
     
 
     
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/helper_functions/crtp.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::crtp::impl</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">18</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::crtp::impl</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">16</td>
-    
-
-    
-       <td class="lesser-value">0</td>
+       <td class="lesser-value">3</td>
     
   </tr>
   
@@ -5823,7 +5764,7 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/helper_functions/mahalanobis_distance.hpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/helper_functions/crtp.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -5836,42 +5777,81 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::calculate_squared_mahalanobis_distance</td>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::crtp::impl</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">10</td>
+       <td class="lesser-value">4</td>
     
 
     
-       <td class="value">92</td>
+       <td class="value">18</td>
     
 
     
-       <td class="lesser-value">3</td>
+       <td class="lesser-value">0</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::calculate_mahalanobis_distance</td>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::crtp::impl</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">8</td>
+       <td class="lesser-value">4</td>
     
 
     
-       <td class="value">59</td>
+       <td class="value">16</td>
     
 
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/helper_functions/template_utils.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/helper_functions/angle_utils.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::wrap_angle</td>
+    <td></td>
     
        <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">67</td>
+    
+
+    
+       <td class="lesser-value">1</td>
     
   </tr>
   
@@ -5906,6 +5886,60 @@ Cyclomatic complexity
 
     
        <td class="lesser-value">2</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/helper_functions/type_name.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::helper_functions::get_type_name</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">36</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::helper_functions::get_type_name</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">16</td>
+    
+
+    
+       <td class="lesser-value">1</td>
     
   </tr>
   
@@ -6084,47 +6118,13 @@ Cyclomatic complexity
   </tr>
   
 
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/common/autoware_auto_common/include/helper_functions/angle_utils.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::helper_functions::wrap_angle</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">67</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-
 </table>
 <center>
 
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2021-07-28 21:17
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-07-29 21:46
     </td></tr>
 </table>
  </body>
