@@ -1,6 +1,4 @@
 TN:
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/point_cloud_fusion_nodes/include/point_cloud_fusion_nodes/point_cloud_fusion_node.hpp
-end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/point_cloud_fusion_nodes/src/point_cloud_fusion_node.cpp
 FN:39,_ZN8autoware10perception7filters24point_cloud_fusion_nodes20PointCloudFusionNodeC2ERKN6rclcpp11NodeOptionsE
 FNDA:1,_ZN8autoware10perception7filters24point_cloud_fusion_nodes20PointCloudFusionNodeC2ERKN6rclcpp11NodeOptionsE
@@ -335,6 +333,8 @@ BRDA:156,0,6,1
 BRDA:156,0,7,0
 BRDA:156,0,8,1
 BRDA:156,0,9,0
+end_of_record
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/point_cloud_fusion_nodes/include/point_cloud_fusion_nodes/point_cloud_fusion_node.hpp
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/point_cloud_fusion_nodes/test/test_point_cloud_fusion_nodes.hpp
