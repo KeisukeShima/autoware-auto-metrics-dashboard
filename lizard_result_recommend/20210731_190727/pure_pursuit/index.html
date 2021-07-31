@@ -1,0 +1,511 @@
+<!DOCTYPE HTML PUBLIC
+"-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Code complexity report</title>
+  <style>
+    h2
+    {
+          text-align: center;
+    }
+        td.footer
+        {
+          text-align: center;
+          padding-top: 3px;
+          font-family: sans-serif;
+        }
+    td.greater-value
+        {
+          padding-top: 2px;
+          text-align: center;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-family: sans-serif;
+          white-space: nowrap;
+      background-color: LightPink;
+        }
+    td.lesser-value
+        {
+          padding-top: 2px;
+          text-align: center;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-family: sans-serif;
+          white-space: nowrap;
+      background-color: LightGreen;
+        }
+    td.value
+        {
+          padding-top: 2px;
+          text-align: center;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-family: sans-serif;
+          white-space: nowrap;
+        }
+  </style>
+ </head>
+ <body>
+<h2>Code Complexity Report</h2>
+
+<center>
+
+<table>
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/control/pure_pursuit/src/pure_pursuit.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(5)
+</th><th>LOC (1000)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (50)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::PurePursuit</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="value">73</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::compute_command_impl</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">21</td>
+    
+
+    
+       <td class="value">133</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::compute_errors</td>
+    <td></td>
+    
+       <td class="greater-value">6</td>
+    
+
+    
+       <td class="lesser-value">50</td>
+    
+
+    
+       <td class="value">362</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::compute_lookahead_distance</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">51</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::in_traveling_direction</td>
+    <td></td>
+    
+       <td class="greater-value">7</td>
+    
+
+    
+       <td class="lesser-value">19</td>
+    
+
+    
+       <td class="value">122</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::compute_interpolate_target_point</td>
+    <td></td>
+    
+       <td class="greater-value">7</td>
+    
+
+    
+       <td class="lesser-value">54</td>
+    
+
+    
+       <td class="value">493</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::compute_target_point</td>
+    <td></td>
+    
+       <td class="greater-value">7</td>
+    
+
+    
+       <td class="lesser-value">33</td>
+    
+
+    
+       <td class="value">182</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::compute_points_distance_squared</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">53</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::compute_relative_xy_offset</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="value">145</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::compute_steering_rad</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">87</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::PurePursuit::compute_command_accel_mps</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">24</td>
+    
+
+    
+       <td class="value">141</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/control/pure_pursuit/src/config.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(5)
+</th><th>LOC (1000)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (50)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::Config::Config</td>
+    <td></td>
+    
+       <td class="greater-value">7</td>
+    
+
+    
+       <td class="lesser-value">39</td>
+    
+
+    
+       <td class="value">186</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::Config::get_minimum_lookahead_distance</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::Config::get_maximum_lookahead_distance</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::Config::get_speed_to_lookahead_ratio</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::Config::get_is_interpolate_lookahead_point</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::Config::get_is_delay_compensation</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::Config::get_emergency_stop_distance</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::Config::get_speed_thres_traveling_direction</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::motion::control::pure_pursuit::Config::get_distance_front_rear_wheel</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/control/pure_pursuit/include/pure_pursuit/config.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/control/pure_pursuit/include/pure_pursuit/visibility_control.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/control/pure_pursuit/include/pure_pursuit/pure_pursuit.hpp</b></td></tr>
+
+  
+
+</table>
+<center>
+
+<br>
+<table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="footer">Generated by
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-07-31 22:44
+    </td></tr>
+</table>
+ </body>
+</html>
+
