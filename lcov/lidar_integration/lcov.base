@@ -2822,6 +2822,13 @@ BRDA:187,0,37,0
 DA:190,0
 end_of_record
 TN:
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/install/autoware_auto_msgs/include/autoware_auto_msgs/msg/detail/bounding_box_array__struct.hpp
+FN:41,_ZN18autoware_auto_msgs3msg17BoundingBoxArray_ISaIvEEC2EN18rosidl_runtime_cpp21MessageInitializationE
+FNDA:0,_ZN18autoware_auto_msgs3msg17BoundingBoxArray_ISaIvEEC2EN18rosidl_runtime_cpp21MessageInitializationE
+DA:41,0
+DA:42,0
+DA:45,0
+end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/tools/lidar_integration/include/lidar_integration/lidar_integration_listener.hpp
 end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/tools/lidar_integration/src/lidar_integration_listener.cpp
@@ -3586,13 +3593,6 @@ BRDA:238,0,35,-
 DA:239,0
 DA:240,0
 DA:242,0
-end_of_record
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/install/autoware_auto_msgs/include/autoware_auto_msgs/msg/detail/bounding_box_array__struct.hpp
-FN:41,_ZN18autoware_auto_msgs3msg17BoundingBoxArray_ISaIvEEC2EN18rosidl_runtime_cpp21MessageInitializationE
-FNDA:0,_ZN18autoware_auto_msgs3msg17BoundingBoxArray_ISaIvEEC2EN18rosidl_runtime_cpp21MessageInitializationE
-DA:41,0
-DA:42,0
-DA:45,0
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/CMakeCCompilerId.c
