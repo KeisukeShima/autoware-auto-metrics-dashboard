@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 20:19:17</td>
+            <td class="headerValue">2021-08-10 11:04:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -167,7 +167,7 @@
 <a name="89"><span class="lineNum">      89 </span>                :            :   /// \param pose_initializer Pose initializer.</a>
 <a name="90"><span class="lineNum">      90 </span>                :            :   /// \param publish_tf Whether to publish to the `tf` topic. This can be used to publish transform</a>
 <a name="91"><span class="lineNum">      91 </span>                :            :   /// messages when the relative localizer is the only source of localization.</a>
-<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">          2 :   RelativeLocalizerNode(</span></a>
+<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">          4 :   RelativeLocalizerNode(</span></a>
 <a name="93"><span class="lineNum">      93 </span>                :            :     const std::string &amp; node_name, const std::string &amp; name_space,</a>
 <a name="94"><span class="lineNum">      94 </span>                :            :     const TopicQoS &amp; observation_sub_config,</a>
 <a name="95"><span class="lineNum">      95 </span>                :            :     const TopicQoS &amp; map_sub_config,</a>
@@ -177,35 +177,35 @@
 <a name="99"><span class="lineNum">      99 </span>                :            :     LocalizerPublishMode publish_tf = LocalizerPublishMode::NO_PUBLISH_TF)</a>
 <a name="100"><span class="lineNum">     100 </span>                :            :   : Node(node_name, name_space),</a>
 <a name="101"><span class="lineNum">     101 </span>                :            :     m_pose_initializer(pose_initializer),</a>
-<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">          2 :     m_tf_listener(m_tf_buffer, USE_DEDICATED_TF_THREAD),</span></a>
+<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">          4 :     m_tf_listener(m_tf_buffer, USE_DEDICATED_TF_THREAD),</span></a>
 <a name="103"><span class="lineNum">     103 </span>                :            :     m_observation_sub(create_subscription&lt;ObservationMsgT&gt;(</a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">          2 :         observation_sub_config.topic,</span></a>
-<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">          2 :         observation_sub_config.qos,</span></a>
-<a name="106"><span class="lineNum">     106 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :         [this](typename ObservationMsgT::ConstSharedPtr msg) {observation_callback(msg);})),</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">          4 :         observation_sub_config.topic,</span></a>
+<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">          4 :         observation_sub_config.qos,</span></a>
+<a name="106"><span class="lineNum">     106 </span>        [<span class="branchCov" title="Branch 0 was taken 24 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         24 :         [this](typename ObservationMsgT::ConstSharedPtr msg) {observation_callback(msg);})),</span></a>
 <a name="107"><span class="lineNum">     107 </span>                :            :     m_map_sub(</a>
 <a name="108"><span class="lineNum">     108 </span>                :            :       create_subscription&lt;MapMsgT&gt;(</a>
-<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">          2 :         map_sub_config.topic, map_sub_config.qos,</span></a>
-<a name="110"><span class="lineNum">     110 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :         [this](typename MapMsgT::ConstSharedPtr msg) {map_callback(msg);})),</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">          4 :         map_sub_config.topic, map_sub_config.qos,</span></a>
+<a name="110"><span class="lineNum">     110 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :         [this](typename MapMsgT::ConstSharedPtr msg) {map_callback(msg);})),</span></a>
 <a name="111"><span class="lineNum">     111 </span>                :            :     m_pose_publisher(</a>
 <a name="112"><span class="lineNum">     112 </span>                :            :       create_publisher&lt;PoseWithCovarianceStamped&gt;(</a>
-<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">          2 :         pose_pub_config.topic,</span></a>
-<a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">          2 :         pose_pub_config.qos)),</span></a>
+<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">          4 :         pose_pub_config.topic,</span></a>
+<a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">          4 :         pose_pub_config.qos)),</span></a>
 <a name="115"><span class="lineNum">     115 </span>                :            :     m_initial_pose_sub(</a>
 <a name="116"><span class="lineNum">     116 </span>                :            :       create_subscription&lt;PoseWithCovarianceStamped&gt;(</a>
-<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">          2 :         initial_pose_sub_config.topic, initial_pose_sub_config.qos,</span></a>
+<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">          4 :         initial_pose_sub_config.topic, initial_pose_sub_config.qos,</span></a>
 <a name="118"><span class="lineNum">     118 </span>                :<span class="lineNoCov">          0 :         [this](const typename PoseWithCovarianceStamped::ConstSharedPtr msg) {</span></a>
 <a name="119"><span class="lineNum">     119 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           initial_pose_callback(msg);</span></a>
-<a name="120"><span class="lineNum">     120 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          2 :         })) {</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 2 times"> + </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
-<span class="lineNum">         </span><span class="branchCov" title="Branch 14 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchCov" title="Branch 16 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 2 times"> + </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
-<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span><span class="branchCov" title="Branch 26 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 2 times"> + </span> 
-<span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 29 was not taken"> - </span><span class="branchCov" title="Branch 30 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span>]
-<a name="121"><span class="lineNum">     121 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     if (publish_tf == LocalizerPublishMode::PUBLISH_TF) {</span></a>
+<a name="120"><span class="lineNum">     120 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          4 :         })) {</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 4 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 14 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchCov" title="Branch 16 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 4 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span><span class="branchCov" title="Branch 26 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 4 times"> + </span> 
+<span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 29 was not taken"> - </span><span class="branchCov" title="Branch 30 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span>]
+<a name="121"><span class="lineNum">     121 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          4 :     if (publish_tf == LocalizerPublishMode::PUBLISH_TF) {</span></a>
 <a name="122"><span class="lineNum">     122 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       m_tf_publisher = create_publisher&lt;tf2_msgs::msg::TFMessage&gt;(&quot;/tf&quot;, pose_pub_config.qos);</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            :     }</a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">          2 :   }</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">          4 :   }</span></a>
 <a name="125"><span class="lineNum">     125 </span>                :            : </a>
 <a name="126"><span class="lineNum">     126 </span>                :            :   // Constructor for ros2 components</a>
 <a name="127"><span class="lineNum">     127 </span>                :            :   // TODO(yunus.caliskan): refactor constructors together reduce the repeated code.</a>
@@ -287,23 +287,23 @@
 <a name="203"><span class="lineNum">     203 </span>                :            :   }</a>
 <a name="204"><span class="lineNum">     204 </span>                :            : </a>
 <a name="205"><span class="lineNum">     205 </span>                :            :   /// Get a const pointer of the output publisher. Can be used for matching against subscriptions.</a>
-<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">          1 :   const typename rclcpp::Publisher&lt;PoseWithCovarianceStamped&gt;::ConstSharedPtr get_publisher()</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">          2 :   const typename rclcpp::Publisher&lt;PoseWithCovarianceStamped&gt;::ConstSharedPtr get_publisher()</span></a>
 <a name="207"><span class="lineNum">     207 </span>                :            :   {</a>
-<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">          1 :     return m_pose_publisher;</span></a>
+<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">          2 :     return m_pose_publisher;</span></a>
 <a name="209"><span class="lineNum">     209 </span>                :            :   }</a>
 <a name="210"><span class="lineNum">     210 </span>                :            : </a>
 <a name="211"><span class="lineNum">     211 </span>                :            : protected:</a>
 <a name="212"><span class="lineNum">     212 </span>                :            :   /// Set the localizer.</a>
 <a name="213"><span class="lineNum">     213 </span>                :            :   /// \param localizer_ptr rvalue to the localizer to set.</a>
-<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">          2 :   void set_localizer(std::unique_ptr&lt;LocalizerT&gt; &amp;&amp; localizer_ptr)</span></a>
+<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">          4 :   void set_localizer(std::unique_ptr&lt;LocalizerT&gt; &amp;&amp; localizer_ptr)</span></a>
 <a name="215"><span class="lineNum">     215 </span>                :            :   {</a>
-<a name="216"><span class="lineNum">     216 </span>                :<span class="lineCov">          2 :     m_localizer_ptr = std::forward&lt;std::unique_ptr&lt;LocalizerT&gt;&gt;(localizer_ptr);</span></a>
-<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">          2 :   }</span></a>
+<a name="216"><span class="lineNum">     216 </span>                :<span class="lineCov">          4 :     m_localizer_ptr = std::forward&lt;std::unique_ptr&lt;LocalizerT&gt;&gt;(localizer_ptr);</span></a>
+<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">          4 :   }</span></a>
 <a name="218"><span class="lineNum">     218 </span>                :            : </a>
-<a name="219"><span class="lineNum">     219 </span>                :<span class="lineCov">          2 :   void set_map(std::unique_ptr&lt;MapT&gt; &amp;&amp; map_ptr)</span></a>
+<a name="219"><span class="lineNum">     219 </span>                :<span class="lineCov">          4 :   void set_map(std::unique_ptr&lt;MapT&gt; &amp;&amp; map_ptr)</span></a>
 <a name="220"><span class="lineNum">     220 </span>                :            :   {</a>
-<a name="221"><span class="lineNum">     221 </span>                :<span class="lineCov">          2 :     m_map_ptr = std::forward&lt;std::unique_ptr&lt;MapT&gt;&gt;(map_ptr);</span></a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">          2 :   }</span></a>
+<a name="221"><span class="lineNum">     221 </span>                :<span class="lineCov">          4 :     m_map_ptr = std::forward&lt;std::unique_ptr&lt;MapT&gt;&gt;(map_ptr);</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">          4 :   }</span></a>
 <a name="223"><span class="lineNum">     223 </span>                :            : </a>
 <a name="224"><span class="lineNum">     224 </span>                :            :   /// Handle the exceptions during registration.</a>
 <a name="225"><span class="lineNum">     225 </span>                :<span class="lineNoCov">          0 :   virtual void on_bad_registration(std::exception_ptr eptr) // NOLINT</span></a>
@@ -375,26 +375,26 @@
 <a name="271"><span class="lineNum">     271 </span>                :            :   /// \param pose Pose estimate.</a>
 <a name="272"><span class="lineNum">     272 </span>                :            :   /// \param guess Initial guess.</a>
 <a name="273"><span class="lineNum">     273 </span>                :            :   /// \return True if the estimate is valid and can be published.</a>
-<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">         10 :   virtual bool validate_output(</span></a>
+<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">         20 :   virtual bool validate_output(</span></a>
 <a name="275"><span class="lineNum">     275 </span>                :            :     const RegistrationSummary &amp; summary,</a>
 <a name="276"><span class="lineNum">     276 </span>                :            :     const PoseWithCovarianceStamped &amp; pose, const TransformStamped &amp; guess)</a>
 <a name="277"><span class="lineNum">     277 </span>                :            :   {</a>
 <a name="278"><span class="lineNum">     278 </span>                :            :     (void) summary;</a>
 <a name="279"><span class="lineNum">     279 </span>                :            :     (void) pose;</a>
 <a name="280"><span class="lineNum">     280 </span>                :            :     (void) guess;</a>
-<a name="281"><span class="lineNum">     281 </span>                :<span class="lineCov">         10 :     return true;</span></a>
+<a name="281"><span class="lineNum">     281 </span>                :<span class="lineCov">         20 :     return true;</span></a>
 <a name="282"><span class="lineNum">     282 </span>                :            :   }</a>
 <a name="283"><span class="lineNum">     283 </span>                :            : </a>
 <a name="284"><span class="lineNum">     284 </span>                :            : private:</a>
 <a name="285"><span class="lineNum">     285 </span>                :            :   /// Check the pointer and throw if null.</a>
 <a name="286"><span class="lineNum">     286 </span>                :            :   template&lt;typename PtrT&gt;</a>
-<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">         28 :   void assert_ptr_not_null(const PtrT &amp; ptr, const std::string &amp; name) const</span></a>
+<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">         56 :   void assert_ptr_not_null(const PtrT &amp; ptr, const std::string &amp; name) const</span></a>
 <a name="288"><span class="lineNum">     288 </span>                :            :   {</a>
-<a name="289"><span class="lineNum">     289 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 28 times"> + </span>]:<span class="lineCov">         28 :     if (!ptr) {</span></a>
+<a name="289"><span class="lineNum">     289 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 56 times"> + </span>]:<span class="lineCov">         56 :     if (!ptr) {</span></a>
 <a name="290"><span class="lineNum">     290 </span>                :            :       throw std::runtime_error(</a>
 <a name="291"><span class="lineNum">     291 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :               name + &quot; pointer is null. Make sure it is properly initialized before using.&quot;);</span></a>
 <a name="292"><span class="lineNum">     292 </span>                :            :     }</a>
-<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">         28 :   }</span></a>
+<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">         56 :   }</span></a>
 <a name="294"><span class="lineNum">     294 </span>                :            : </a>
 <a name="295"><span class="lineNum">     295 </span>                :            :   void init()</a>
 <a name="296"><span class="lineNum">     296 </span>                :            :   {</a>
@@ -426,36 +426,36 @@
 <a name="322"><span class="lineNum">     322 </span>                :            : </a>
 <a name="323"><span class="lineNum">     323 </span>                :            : </a>
 <a name="324"><span class="lineNum">     324 </span>                :            : /// Process the registration summary. By default does nothing.</a>
-<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">         10 :   virtual void handle_registration_summary(const RegistrationSummary &amp;) {}</span></a>
+<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">         20 :   virtual void handle_registration_summary(const RegistrationSummary &amp;) {}</span></a>
 <a name="326"><span class="lineNum">     326 </span>                :            : </a>
 <a name="327"><span class="lineNum">     327 </span>                :            :   /// Callback that registers each received observation and outputs the result.</a>
 <a name="328"><span class="lineNum">     328 </span>                :            :   /// \param msg_ptr Pointer to the observation message.</a>
-<a name="329"><span class="lineNum">     329 </span>                :<span class="lineCov">         12 :   void observation_callback(typename ObservationMsgT::ConstSharedPtr msg_ptr)</span></a>
+<a name="329"><span class="lineNum">     329 </span>                :<span class="lineCov">         24 :   void observation_callback(typename ObservationMsgT::ConstSharedPtr msg_ptr)</span></a>
 <a name="330"><span class="lineNum">     330 </span>                :            :   {</a>
 <a name="331"><span class="lineNum">     331 </span>                :            :     // Check to ensure the pointers are initialized.</a>
-<a name="332"><span class="lineNum">     332 </span>  [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         12 :     assert_ptr_not_null(m_localizer_ptr, &quot;localizer&quot;);</span></a>
-<a name="333"><span class="lineNum">     333 </span>  [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         12 :     assert_ptr_not_null(m_map_ptr, &quot;map&quot;);</span></a>
+<a name="332"><span class="lineNum">     332 </span>  [<span class="branchCov" title="Branch 0 was taken 24 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 24 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         24 :     assert_ptr_not_null(m_localizer_ptr, &quot;localizer&quot;);</span></a>
+<a name="333"><span class="lineNum">     333 </span>  [<span class="branchCov" title="Branch 0 was taken 24 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 24 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         24 :     assert_ptr_not_null(m_map_ptr, &quot;map&quot;);</span></a>
 <a name="334"><span class="lineNum">     334 </span>                :            : </a>
-<a name="335"><span class="lineNum">     335 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         12 :     if (!m_map_ptr-&gt;valid()) {</span></a>
-<a name="336"><span class="lineNum">     336 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :       on_observation_with_invalid_map(msg_ptr);</span></a>
-<a name="337"><span class="lineNum">     337 </span>                :<span class="lineCov">          1 :       return;</span></a>
+<a name="335"><span class="lineNum">     335 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 22 times"> + </span>]:<span class="lineCov">         24 :     if (!m_map_ptr-&gt;valid()) {</span></a>
+<a name="336"><span class="lineNum">     336 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :       on_observation_with_invalid_map(msg_ptr);</span></a>
+<a name="337"><span class="lineNum">     337 </span>                :<span class="lineCov">          2 :       return;</span></a>
 <a name="338"><span class="lineNum">     338 </span>                :            :     }</a>
 <a name="339"><span class="lineNum">     339 </span>                :            : </a>
-<a name="340"><span class="lineNum">     340 </span>                :<span class="lineCov">         11 :     const auto observation_time = ::time_utils::from_message(get_stamp(*msg_ptr));</span></a>
-<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">         11 :     const auto &amp; observation_frame = get_frame_id(*msg_ptr);</span></a>
-<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">         11 :     const auto &amp; map_frame = m_map_ptr-&gt;frame_id();</span></a>
+<a name="340"><span class="lineNum">     340 </span>                :<span class="lineCov">         22 :     const auto observation_time = ::time_utils::from_message(get_stamp(*msg_ptr));</span></a>
+<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">         22 :     const auto &amp; observation_frame = get_frame_id(*msg_ptr);</span></a>
+<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">         22 :     const auto &amp; map_frame = m_map_ptr-&gt;frame_id();</span></a>
 <a name="343"><span class="lineNum">     343 </span>                :            : </a>
 <a name="344"><span class="lineNum">     344 </span>                :            :     try {</a>
-<a name="345"><span class="lineNum">     345 </span>                :<span class="lineCov">         11 :       geometry_msgs::msg::TransformStamped initial_guess = m_pose_initializer.guess(</span></a>
-<a name="346"><span class="lineNum">     346 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :         m_tf_buffer, observation_time, map_frame, observation_frame);</span></a>
-<a name="347"><span class="lineNum">     347 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :       RegistrationSummary summary{};</span></a>
-<a name="348"><span class="lineNum">     348 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">         32 :       const auto pose_out =</span></a>
-<a name="349"><span class="lineNum">     349 </span>                :<span class="lineCov">         11 :         m_localizer_ptr-&gt;register_measurement(*msg_ptr, initial_guess, *m_map_ptr, &amp;summary);</span></a>
-<a name="350"><span class="lineNum">     350 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         10 :       if (validate_output(summary, pose_out, initial_guess)) {</span></a>
-<a name="351"><span class="lineNum">     351 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :         m_pose_publisher-&gt;publish(pose_out);</span></a>
+<a name="345"><span class="lineNum">     345 </span>                :<span class="lineCov">         22 :       geometry_msgs::msg::TransformStamped initial_guess = m_pose_initializer.guess(</span></a>
+<a name="346"><span class="lineNum">     346 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :         m_tf_buffer, observation_time, map_frame, observation_frame);</span></a>
+<a name="347"><span class="lineNum">     347 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :       RegistrationSummary summary{};</span></a>
+<a name="348"><span class="lineNum">     348 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">         64 :       const auto pose_out =</span></a>
+<a name="349"><span class="lineNum">     349 </span>                :<span class="lineCov">         22 :         m_localizer_ptr-&gt;register_measurement(*msg_ptr, initial_guess, *m_map_ptr, &amp;summary);</span></a>
+<a name="350"><span class="lineNum">     350 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         20 :       if (validate_output(summary, pose_out, initial_guess)) {</span></a>
+<a name="351"><span class="lineNum">     351 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :         m_pose_publisher-&gt;publish(pose_out);</span></a>
 <a name="352"><span class="lineNum">     352 </span>                :            :         // This is to be used when no state estimator or alternative source of</a>
 <a name="353"><span class="lineNum">     353 </span>                :            :         // localization is available.</a>
-<a name="354"><span class="lineNum">     354 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :         if (m_tf_publisher) {</span></a>
+<a name="354"><span class="lineNum">     354 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :         if (m_tf_publisher) {</span></a>
 <a name="355"><span class="lineNum">     355 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           publish_tf(pose_out);</span></a>
 <a name="356"><span class="lineNum">     356 </span>                :            :           // republish point cloud so visualization has no issues with the timestamp</a>
 <a name="357"><span class="lineNum">     357 </span>                :            :           // being too new (no transform yet). Reset the timestamp to zero so visualization</a>
@@ -466,26 +466,26 @@
 <a name="362"><span class="lineNum">     362 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           m_obs_republisher-&gt;publish(msg);</span></a>
 <a name="363"><span class="lineNum">     363 </span>                :            :         }</a>
 <a name="364"><span class="lineNum">     364 </span>                :            : </a>
-<a name="365"><span class="lineNum">     365 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :         handle_registration_summary(summary);</span></a>
+<a name="365"><span class="lineNum">     365 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :         handle_registration_summary(summary);</span></a>
 <a name="366"><span class="lineNum">     366 </span>                :            :       } else {</a>
 <a name="367"><span class="lineNum">     367 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         on_invalid_output(pose_out);</span></a>
 <a name="368"><span class="lineNum">     368 </span>                :            :       }</a>
-<a name="369"><span class="lineNum">     369 </span>                :<span class="lineCov">          1 :     } catch (...) {</span></a>
-<a name="370"><span class="lineNum">     370 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          1 :       on_bad_registration(std::current_exception());</span></a>
+<a name="369"><span class="lineNum">     369 </span>                :<span class="lineCov">          2 :     } catch (...) {</span></a>
+<a name="370"><span class="lineNum">     370 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :       on_bad_registration(std::current_exception());</span></a>
 <a name="371"><span class="lineNum">     371 </span>                :            :     }</a>
 <a name="372"><span class="lineNum">     372 </span>                :            :   }</a>
 <a name="373"><span class="lineNum">     373 </span>                :            : </a>
 <a name="374"><span class="lineNum">     374 </span>                :            :   /// Callback that updates the map.</a>
 <a name="375"><span class="lineNum">     375 </span>                :            :   /// \param msg_ptr Pointer to the map message.</a>
-<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">          4 :   void map_callback(typename MapMsgT::ConstSharedPtr msg_ptr)</span></a>
+<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">          8 :   void map_callback(typename MapMsgT::ConstSharedPtr msg_ptr)</span></a>
 <a name="377"><span class="lineNum">     377 </span>                :            :   {</a>
-<a name="378"><span class="lineNum">     378 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          4 :     assert_ptr_not_null(m_map_ptr, &quot;map&quot;);</span></a>
+<a name="378"><span class="lineNum">     378 </span>  [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          8 :     assert_ptr_not_null(m_map_ptr, &quot;map&quot;);</span></a>
 <a name="379"><span class="lineNum">     379 </span>                :            :     try {</a>
-<a name="380"><span class="lineNum">     380 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          4 :       m_map_ptr-&gt;set(*msg_ptr);</span></a>
-<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">          1 :     } catch (...) {</span></a>
-<a name="382"><span class="lineNum">     382 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :       on_bad_map(std::current_exception());</span></a>
+<a name="380"><span class="lineNum">     380 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          8 :       m_map_ptr-&gt;set(*msg_ptr);</span></a>
+<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">          2 :     } catch (...) {</span></a>
+<a name="382"><span class="lineNum">     382 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :       on_bad_map(std::current_exception());</span></a>
 <a name="383"><span class="lineNum">     383 </span>                :            :     }</a>
-<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">          4 :   }</span></a>
+<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">          8 :   }</span></a>
 <a name="385"><span class="lineNum">     385 </span>                :            : </a>
 <a name="386"><span class="lineNum">     386 </span>                :            :   /// Publish the pose message as a transform.</a>
 <a name="387"><span class="lineNum">     387 </span>                :<span class="lineNoCov">          0 :   void publish_tf(const PoseWithCovarianceStamped &amp; pose_msg)</span></a>

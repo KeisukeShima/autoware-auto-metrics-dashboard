@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 21:37:46</td>
+            <td class="headerValue">2021-08-10 12:07:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -161,7 +161,7 @@
 <a name="82"><span class="lineNum">      82 </span>                :            :   /// \brief Parameter file constructor</a>
 <a name="83"><span class="lineNum">      83 </span>                :            :   /// \param[in] node_name Name of this node</a>
 <a name="84"><span class="lineNum">      84 </span>                :            :   /// \param[in] node_namespace Namespace for this node</a>
-<a name="85"><span class="lineNum">      85 </span>                :<span class="lineCov">          2 :   XsensCommonNode(</span></a>
+<a name="85"><span class="lineNum">      85 </span>                :<span class="lineCov">          4 :   XsensCommonNode(</span></a>
 <a name="86"><span class="lineNum">      86 </span>                :            :     const std::string &amp; node_name,</a>
 <a name="87"><span class="lineNum">      87 </span>                :            :     const std::string &amp; node_namespace = &quot;&quot;)</a>
 <a name="88"><span class="lineNum">      88 </span>                :            : </a>
@@ -173,7 +173,7 @@
 <a name="94"><span class="lineNum">      94 </span>                :            :     m_translator(</a>
 <a name="95"><span class="lineNum">      95 </span>                :            :         {</a>
 <a name="96"><span class="lineNum">      96 </span>                :            :         }),</a>
-<a name="97"><span class="lineNum">      97 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          2 :     m_frame_id(this-&gt;declare_parameter(&quot;frame_id&quot;).template get&lt;std::string&gt;().c_str())</span></a>
+<a name="97"><span class="lineNum">      97 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          4 :     m_frame_id(this-&gt;declare_parameter(&quot;frame_id&quot;).template get&lt;std::string&gt;().c_str())</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchNoCov" title="Branch 10 was not taken"> - </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchNoCov" title="Branch 12 was not taken"> - </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
 <span class="lineNum">         </span>         <span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span>]

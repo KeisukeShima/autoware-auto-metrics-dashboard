@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 21:11:04</td>
+            <td class="headerValue">2021-08-10 11:44:07</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">19</td>
@@ -117,7 +117,7 @@
 <a name="39"><span class="lineNum">      39 </span>                :            : /// Fake clock to denote that the duration API is supposed to be used</a>
 <a name="40"><span class="lineNum">      40 </span>                :            : struct DummyClock</a>
 <a name="41"><span class="lineNum">      41 </span>                :            : {</a>
-<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">          4 :   static auto now() {return std::chrono::steady_clock::now();}  // Just for test convenience</span></a>
+<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">          8 :   static auto now() {return std::chrono::steady_clock::now();}  // Just for test convenience</span></a>
 <a name="43"><span class="lineNum">      43 </span>                :            :   using time_point = std::chrono::steady_clock::time_point;  // Just for test convenience</a>
 <a name="44"><span class="lineNum">      44 </span>                :            : };</a>
 <a name="45"><span class="lineNum">      45 </span>                :            : </a>
@@ -137,7 +137,7 @@
 <a name="59"><span class="lineNum">      59 </span>                :            :   using signal_type = T;</a>
 <a name="60"><span class="lineNum">      60 </span>                :            : </a>
 <a name="61"><span class="lineNum">      61 </span>                :            :   /// Destructor</a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">         24 :   virtual ~FilterBase() = default;</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">         48 :   virtual ~FilterBase() = default;</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            :   /// Primary API: receives a value and outputs the result of the filter</a>
 <a name="64"><span class="lineNum">      64 </span>                :            :   /// \param[in] value An observation on the signal</a>
 <a name="65"><span class="lineNum">      65 </span>                :            :   /// \param[in] time_stamp The time of the current observation</a>
@@ -146,12 +146,12 @@
 <a name="68"><span class="lineNum">      68 </span>                :            :   /// \throw std::domain_error If value is not normal</a>
 <a name="69"><span class="lineNum">      69 </span>                :            :   /// \tparam DummyT Dummy type to get SFINAE to work</a>
 <a name="70"><span class="lineNum">      70 </span>                :            :   template&lt;typename DummyT = T, typename = std::enable_if_t&lt;use_time_point_api, DummyT&gt;&gt;</a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">        832 :   T filter(T value, typename clock_type::time_point time_stamp)</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">       1664 :   T filter(T value, typename clock_type::time_point time_stamp)</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   {</a>
-<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">        832 :     const auto dt = time_stamp - m_last_observation_stamp;</span></a>
-<a name="74"><span class="lineNum">      74 </span>        [<span class="branchCov" title="Branch 0 was taken 804 times"> + </span><span class="branchCov" title="Branch 1 was taken 28 times"> + </span>]:<span class="lineCov">        832 :     const auto ret = filter_impl_checked(value, dt);</span></a>
-<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">        804 :     m_last_observation_stamp = time_stamp;  // Goes after just in case there's an exception</span></a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">        804 :     return ret;</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">       1664 :     const auto dt = time_stamp - m_last_observation_stamp;</span></a>
+<a name="74"><span class="lineNum">      74 </span>        [<span class="branchCov" title="Branch 0 was taken 1608 times"> + </span><span class="branchCov" title="Branch 1 was taken 56 times"> + </span>]:<span class="lineCov">       1664 :     const auto ret = filter_impl_checked(value, dt);</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">       1608 :     m_last_observation_stamp = time_stamp;  // Goes after just in case there's an exception</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">       1608 :     return ret;</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            :   }</a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   /// Primary API: receives a value and outputs the result of the filter</a>
 <a name="79"><span class="lineNum">      79 </span>                :            :   /// \param[in] value An observation on the signal</a>
@@ -161,22 +161,22 @@
 <a name="83"><span class="lineNum">      83 </span>                :            :   /// \throw std::domain_error If value is not normal</a>
 <a name="84"><span class="lineNum">      84 </span>                :            :   /// \tparam DummyT Dummy type to get SFINAE to work</a>
 <a name="85"><span class="lineNum">      85 </span>                :            :   template&lt;typename DummyT = T, typename = std::enable_if_t&lt;!use_time_point_api, DummyT&gt;&gt;</a>
-<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">        416 :   T filter(T value, std::chrono::nanoseconds duration)</span></a>
+<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">        832 :   T filter(T value, std::chrono::nanoseconds duration)</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            :   {</a>
-<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">        416 :     return filter_impl_checked(value, duration);</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">        832 :     return filter_impl_checked(value, duration);</span></a>
 <a name="89"><span class="lineNum">      89 </span>                :            :   }</a>
 <a name="90"><span class="lineNum">      90 </span>                :            : </a>
 <a name="91"><span class="lineNum">      91 </span>                :            : protected:</a>
 <a name="92"><span class="lineNum">      92 </span>                :            :   /// Underlying implementation, with error checking</a>
-<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">       1248 :   T filter_impl_checked(T value, std::chrono::nanoseconds duration)</span></a>
+<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">       2496 :   T filter_impl_checked(T value, std::chrono::nanoseconds duration)</span></a>
 <a name="94"><span class="lineNum">      94 </span>                :            :   {</a>
-<a name="95"><span class="lineNum">      95 </span>  [<span class="branchCov" title="Branch 0 was taken 1248 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6 times"> + </span><span class="branchCov" title="Branch 3 was taken 1242 times"> + </span>]:<span class="lineCov">       1248 :     if (decltype(duration)::zero() &gt;= duration) {</span></a>
-<a name="96"><span class="lineNum">      96 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :       throw std::domain_error{&quot;Duration is negative&quot;};</span></a>
+<a name="95"><span class="lineNum">      95 </span>  [<span class="branchCov" title="Branch 0 was taken 2496 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 12 times"> + </span><span class="branchCov" title="Branch 3 was taken 2484 times"> + </span>]:<span class="lineCov">       2496 :     if (decltype(duration)::zero() &gt;= duration) {</span></a>
+<a name="96"><span class="lineNum">      96 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :       throw std::domain_error{&quot;Duration is negative&quot;};</span></a>
 <a name="97"><span class="lineNum">      97 </span>                :            :     }</a>
-<a name="98"><span class="lineNum">      98 </span>        [<span class="branchCov" title="Branch 0 was taken 36 times"> + </span><span class="branchCov" title="Branch 1 was taken 1206 times"> + </span>]:<span class="lineCov">       1242 :     if (!std::isfinite(value)) {</span></a>
-<a name="99"><span class="lineNum">      99 </span>        [<span class="branchCov" title="Branch 0 was taken 36 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         36 :       throw std::domain_error{&quot;Value is not finite&quot;};</span></a>
+<a name="98"><span class="lineNum">      98 </span>        [<span class="branchCov" title="Branch 0 was taken 72 times"> + </span><span class="branchCov" title="Branch 1 was taken 2412 times"> + </span>]:<span class="lineCov">       2484 :     if (!std::isfinite(value)) {</span></a>
+<a name="99"><span class="lineNum">      99 </span>        [<span class="branchCov" title="Branch 0 was taken 72 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         72 :       throw std::domain_error{&quot;Value is not finite&quot;};</span></a>
 <a name="100"><span class="lineNum">     100 </span>                :            :     }</a>
-<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">       1206 :     return filter_impl(value, duration);</span></a>
+<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">       2412 :     return filter_impl(value, duration);</span></a>
 <a name="102"><span class="lineNum">     102 </span>                :            :   }</a>
 <a name="103"><span class="lineNum">     103 </span>                :            :   /// Actual implementation, error checking already done, can assume duration is positive</a>
 <a name="104"><span class="lineNum">     104 </span>                :            :   virtual T filter_impl(T value, std::chrono::nanoseconds duration) = 0;</a>

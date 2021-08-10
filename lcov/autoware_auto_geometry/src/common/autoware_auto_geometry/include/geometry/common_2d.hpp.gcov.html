@@ -31,17 +31,17 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">136</td>
+            <td class="headerCovTableEntry">137</td>
             <td class="headerCovTableEntry">138</td>
-            <td class="headerCovTableEntryHi">98.6 %</td>
+            <td class="headerCovTableEntryHi">99.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 19:40:33</td>
+            <td class="headerValue">2021-08-10 10:33:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">70</td>
-            <td class="headerCovTableEntry">70</td>
+            <td class="headerCovTableEntry">74</td>
+            <td class="headerCovTableEntry">74</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">58</td>
+            <td class="headerCovTableEntry">59</td>
             <td class="headerCovTableEntry">74</td>
-            <td class="headerCovTableEntryMed">78.4 %</td>
+            <td class="headerCovTableEntryMed">79.7 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -124,45 +124,45 @@
 <a name="46"><span class="lineNum">      46 </span>                :            : /// \param[in] pt The point</a>
 <a name="47"><span class="lineNum">      47 </span>                :            : /// \tparam PointT The point type</a>
 <a name="48"><span class="lineNum">      48 </span>                :            : template&lt;typename PointT&gt;</a>
-<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">     279670 : inline auto x_(const PointT &amp; pt)</span></a>
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">     597799 : inline auto x_(const PointT &amp; pt)</span></a>
 <a name="50"><span class="lineNum">      50 </span>                :            : {</a>
-<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">     279670 :   return pt.x;</span></a>
+<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">     597799 :   return pt.x;</span></a>
 <a name="52"><span class="lineNum">      52 </span>                :            : }</a>
 <a name="53"><span class="lineNum">      53 </span>                :            : /// \brief Gets the y value for a point</a>
 <a name="54"><span class="lineNum">      54 </span>                :            : /// \return The y value of the point</a>
 <a name="55"><span class="lineNum">      55 </span>                :            : /// \param[in] pt The point</a>
 <a name="56"><span class="lineNum">      56 </span>                :            : /// \tparam PointT The point type</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : template&lt;typename PointT&gt;</a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">     212907 : inline auto y_(const PointT &amp; pt)</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">     464683 : inline auto y_(const PointT &amp; pt)</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            : {</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">     212907 :   return pt.y;</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">     464683 :   return pt.y;</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            : }</a>
 <a name="62"><span class="lineNum">      62 </span>                :            : /// \brief Gets the z value for a point</a>
 <a name="63"><span class="lineNum">      63 </span>                :            : /// \return The z value of the point</a>
 <a name="64"><span class="lineNum">      64 </span>                :            : /// \param[in] pt The point</a>
 <a name="65"><span class="lineNum">      65 </span>                :            : /// \tparam PointT The point type</a>
 <a name="66"><span class="lineNum">      66 </span>                :            : template&lt;typename PointT&gt;</a>
-<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">        343 : inline auto z_(const PointT &amp; pt)</span></a>
+<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">        686 : inline auto z_(const PointT &amp; pt)</span></a>
 <a name="68"><span class="lineNum">      68 </span>                :            : {</a>
-<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">        343 :   return pt.z;</span></a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">        686 :   return pt.z;</span></a>
 <a name="70"><span class="lineNum">      70 </span>                :            : }</a>
 <a name="71"><span class="lineNum">      71 </span>                :            : /// \brief Gets a reference to the x value for a point</a>
 <a name="72"><span class="lineNum">      72 </span>                :            : /// \return A reference to the x value of the point</a>
 <a name="73"><span class="lineNum">      73 </span>                :            : /// \param[in] pt The point</a>
 <a name="74"><span class="lineNum">      74 </span>                :            : /// \tparam PointT The point type</a>
 <a name="75"><span class="lineNum">      75 </span>                :            : template&lt;typename PointT&gt;</a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">      55195 : inline auto &amp; xr_(PointT &amp; pt)</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">     120912 : inline auto &amp; xr_(PointT &amp; pt)</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            : {</a>
-<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">      55195 :   return pt.x;</span></a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">     120912 :   return pt.x;</span></a>
 <a name="79"><span class="lineNum">      79 </span>                :            : }</a>
 <a name="80"><span class="lineNum">      80 </span>                :            : /// \brief Gets a reference to the y value for a point</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : /// \return A reference to The y value of the point</a>
 <a name="82"><span class="lineNum">      82 </span>                :            : /// \param[in] pt The point</a>
 <a name="83"><span class="lineNum">      83 </span>                :            : /// \tparam PointT The point type</a>
 <a name="84"><span class="lineNum">      84 </span>                :            : template&lt;typename PointT&gt;</a>
-<a name="85"><span class="lineNum">      85 </span>                :<span class="lineCov">      55195 : inline auto &amp; yr_(PointT &amp; pt)</span></a>
+<a name="85"><span class="lineNum">      85 </span>                :<span class="lineCov">     120912 : inline auto &amp; yr_(PointT &amp; pt)</span></a>
 <a name="86"><span class="lineNum">      86 </span>                :            : {</a>
-<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">      55195 :   return pt.y;</span></a>
+<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">     120912 :   return pt.y;</span></a>
 <a name="88"><span class="lineNum">      88 </span>                :            : }</a>
 <a name="89"><span class="lineNum">      89 </span>                :            : /// \brief Gets a reference to the z value for a point</a>
 <a name="90"><span class="lineNum">      90 </span>                :            : /// \return A reference to the z value of the point</a>
@@ -179,13 +179,13 @@
 <a name="101"><span class="lineNum">     101 </span>                :            : {</a>
 <a name="102"><span class="lineNum">     102 </span>                :            : // Return the next iterator, cycling back to the beginning of the list if you hit the end</a>
 <a name="103"><span class="lineNum">     103 </span>                :            : template&lt;typename IT&gt;</a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">        158 : IT circular_next(const IT begin, const IT end, const IT current) noexcept</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">        372 : IT circular_next(const IT begin, const IT end, const IT current) noexcept</span></a>
 <a name="105"><span class="lineNum">     105 </span>                :            : {</a>
-<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">        158 :   auto next = std::next(current);</span></a>
-<a name="107"><span class="lineNum">     107 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchCov" title="Branch 1 was taken 124 times"> + </span>]:<span class="lineCov">        158 :   if (end == next) {</span></a>
-<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">         34 :     next = begin;</span></a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">        372 :   auto next = std::next(current);</span></a>
+<a name="107"><span class="lineNum">     107 </span>        [<span class="branchCov" title="Branch 0 was taken 82 times"> + </span><span class="branchCov" title="Branch 1 was taken 290 times"> + </span>]:<span class="lineCov">        372 :   if (end == next) {</span></a>
+<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">         82 :     next = begin;</span></a>
 <a name="109"><span class="lineNum">     109 </span>                :            :   }</a>
-<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">        158 :   return next;</span></a>
+<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">        372 :   return next;</span></a>
 <a name="111"><span class="lineNum">     111 </span>                :            : }</a>
 <a name="112"><span class="lineNum">     112 </span>                :            : </a>
 <a name="113"><span class="lineNum">     113 </span>                :            : }  // namespace details</a>
@@ -198,11 +198,11 @@
 <a name="120"><span class="lineNum">     120 </span>                :            : /// \param[in] q reference point</a>
 <a name="121"><span class="lineNum">     121 </span>                :            : /// \return whether angle formed is ccw. Three collinear points is considered ccw</a>
 <a name="122"><span class="lineNum">     122 </span>                :            : template&lt;typename T1, typename T2, typename T3&gt;</a>
-<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">       4873 : inline auto ccw(const T1 &amp; pt, const T2 &amp; q, const T3 &amp; r)</span></a>
+<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">       9818 : inline auto ccw(const T1 &amp; pt, const T2 &amp; q, const T3 &amp; r)</span></a>
 <a name="124"><span class="lineNum">     124 </span>                :            : {</a>
 <a name="125"><span class="lineNum">     125 </span>                :            :   using point_adapter::x_;</a>
 <a name="126"><span class="lineNum">     126 </span>                :            :   using point_adapter::y_;</a>
-<a name="127"><span class="lineNum">     127 </span>                :<span class="lineCov">       4873 :   return (((x_(q) - x_(pt)) * (y_(r) - y_(pt))) - ((y_(q) - y_(pt)) * (x_(r) - x_(pt)))) &lt;= 0.0F;</span></a>
+<a name="127"><span class="lineNum">     127 </span>                :<span class="lineCov">       9818 :   return (((x_(q) - x_(pt)) * (y_(r) - y_(pt))) - ((y_(q) - y_(pt)) * (x_(r) - x_(pt)))) &lt;= 0.0F;</span></a>
 <a name="128"><span class="lineNum">     128 </span>                :            : }</a>
 <a name="129"><span class="lineNum">     129 </span>                :            : </a>
 <a name="130"><span class="lineNum">     130 </span>                :            : /// \tparam T1, T2 point type. Must have point adapters defined or have float members x and y</a>
@@ -211,11 +211,11 @@
 <a name="133"><span class="lineNum">     133 </span>                :            : /// \param[in] q second point</a>
 <a name="134"><span class="lineNum">     134 </span>                :            : /// \return 2d cross product</a>
 <a name="135"><span class="lineNum">     135 </span>                :            : template&lt;typename T1, typename T2&gt;</a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">      22516 : inline auto cross_2d(const T1 &amp; pt, const T2 &amp; q)</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">      45328 : inline auto cross_2d(const T1 &amp; pt, const T2 &amp; q)</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            : {</a>
 <a name="138"><span class="lineNum">     138 </span>                :            :   using point_adapter::x_;</a>
 <a name="139"><span class="lineNum">     139 </span>                :            :   using point_adapter::y_;</a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">      22516 :   return (x_(pt) * y_(q)) - (y_(pt) * x_(q));</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">      45328 :   return (x_(pt) * y_(q)) - (y_(pt) * x_(q));</span></a>
 <a name="141"><span class="lineNum">     141 </span>                :            : }</a>
 <a name="142"><span class="lineNum">     142 </span>                :            : </a>
 <a name="143"><span class="lineNum">     143 </span>                :            : /// \tparam T1, T2 point type. Must have point adapters defined or have float members x and y</a>
@@ -224,11 +224,11 @@
 <a name="146"><span class="lineNum">     146 </span>                :            : /// \param[in] q second point</a>
 <a name="147"><span class="lineNum">     147 </span>                :            : /// \return 2d scalar dot product</a>
 <a name="148"><span class="lineNum">     148 </span>                :            : template&lt;typename T1, typename T2&gt;</a>
-<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">      33250 : inline auto dot_2d(const T1 &amp; pt, const T2 &amp; q)</span></a>
+<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">      74704 : inline auto dot_2d(const T1 &amp; pt, const T2 &amp; q)</span></a>
 <a name="150"><span class="lineNum">     150 </span>                :            : {</a>
 <a name="151"><span class="lineNum">     151 </span>                :            :   using point_adapter::x_;</a>
 <a name="152"><span class="lineNum">     152 </span>                :            :   using point_adapter::y_;</a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">      33250 :   return (x_(pt) * x_(q)) + (y_(pt) * y_(q));</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">      74704 :   return (x_(pt) * x_(q)) + (y_(pt) * y_(q));</span></a>
 <a name="154"><span class="lineNum">     154 </span>                :            : }</a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
 <a name="156"><span class="lineNum">     156 </span>                :            : /// \tparam T point type. Must have point adapters defined or have float members x and y</a>
@@ -238,14 +238,14 @@
 <a name="160"><span class="lineNum">     160 </span>                :            : /// \return A point with the difference in the x and y fields, all other fields are default</a>
 <a name="161"><span class="lineNum">     161 </span>                :            : ///         initialized</a>
 <a name="162"><span class="lineNum">     162 </span>                :            : template&lt;typename T&gt;</a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">      16402 : T minus_2d(const T &amp; p, const T &amp; q)</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">      41488 : T minus_2d(const T &amp; p, const T &amp; q)</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            : {</a>
-<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">      16100 :   T r;</span></a>
+<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">      40404 :   T r;</span></a>
 <a name="166"><span class="lineNum">     166 </span>                :            :   using point_adapter::x_;</a>
 <a name="167"><span class="lineNum">     167 </span>                :            :   using point_adapter::y_;</a>
-<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">      16402 :   point_adapter::xr_(r) = x_(p) - x_(q);</span></a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">      16402 :   point_adapter::yr_(r) = y_(p) - y_(q);</span></a>
-<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">      16402 :   return r;</span></a>
+<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">      41488 :   point_adapter::xr_(r) = x_(p) - x_(q);</span></a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">      41488 :   point_adapter::yr_(r) = y_(p) - y_(q);</span></a>
+<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">      41488 :   return r;</span></a>
 <a name="171"><span class="lineNum">     171 </span>                :            : }</a>
 <a name="172"><span class="lineNum">     172 </span>                :            : </a>
 <a name="173"><span class="lineNum">     173 </span>                :            : /// \tparam T point type. Must have point adapters defined or have float members x and y</a>
@@ -254,12 +254,12 @@
 <a name="176"><span class="lineNum">     176 </span>                :            : /// \return A point with the negation in the x and y fields, all other fields are default</a>
 <a name="177"><span class="lineNum">     177 </span>                :            : ///         initialized</a>
 <a name="178"><span class="lineNum">     178 </span>                :            : template&lt;typename T&gt;</a>
-<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">        108 : T minus_2d(const T &amp; p)</span></a>
+<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">        216 : T minus_2d(const T &amp; p)</span></a>
 <a name="180"><span class="lineNum">     180 </span>                :            : {</a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">        108 :   T r;</span></a>
-<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">        108 :   point_adapter::xr_(r) = -point_adapter::x_(p);</span></a>
-<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">        108 :   point_adapter::yr_(r) = -point_adapter::y_(p);</span></a>
-<a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">        108 :   return r;</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">        216 :   T r;</span></a>
+<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">        216 :   point_adapter::xr_(r) = -point_adapter::x_(p);</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">        216 :   point_adapter::yr_(r) = -point_adapter::y_(p);</span></a>
+<a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">        216 :   return r;</span></a>
 <a name="185"><span class="lineNum">     185 </span>                :            : }</a>
 <a name="186"><span class="lineNum">     186 </span>                :            : /// \tparam T point type. Must have point adapters defined or have float members x and y</a>
 <a name="187"><span class="lineNum">     187 </span>                :            : /// \brief The 2d addition operation, p + q</a>
@@ -268,14 +268,14 @@
 <a name="190"><span class="lineNum">     190 </span>                :            : /// \return A point with the sum in the x and y fields, all other fields are default</a>
 <a name="191"><span class="lineNum">     191 </span>                :            : ///         initialized</a>
 <a name="192"><span class="lineNum">     192 </span>                :            : template&lt;typename T&gt;</a>
-<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">       9048 : T plus_2d(const T &amp; p, const T &amp; q)</span></a>
+<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">      19015 : T plus_2d(const T &amp; p, const T &amp; q)</span></a>
 <a name="194"><span class="lineNum">     194 </span>                :            : {</a>
-<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">       9002 :   T r;</span></a>
+<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">      18833 :   T r;</span></a>
 <a name="196"><span class="lineNum">     196 </span>                :            :   using point_adapter::x_;</a>
 <a name="197"><span class="lineNum">     197 </span>                :            :   using point_adapter::y_;</a>
-<a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">       9048 :   point_adapter::xr_(r) = x_(p) + x_(q);</span></a>
-<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">       9048 :   point_adapter::yr_(r) = y_(p) + y_(q);</span></a>
-<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">       9048 :   return r;</span></a>
+<a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">      19015 :   point_adapter::xr_(r) = x_(p) + x_(q);</span></a>
+<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">      19015 :   point_adapter::yr_(r) = y_(p) + y_(q);</span></a>
+<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">      19015 :   return r;</span></a>
 <a name="201"><span class="lineNum">     201 </span>                :            : }</a>
 <a name="202"><span class="lineNum">     202 </span>                :            : </a>
 <a name="203"><span class="lineNum">     203 </span>                :            : /// \tparam T point type. Must have point adapters defined or have float members x and y</a>
@@ -285,12 +285,12 @@
 <a name="207"><span class="lineNum">     207 </span>                :            : /// \return A point with the scaled x and y fields, all other fields are default</a>
 <a name="208"><span class="lineNum">     208 </span>                :            : ///         initialized</a>
 <a name="209"><span class="lineNum">     209 </span>                :            : template&lt;typename T&gt;</a>
-<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">       9060 : T times_2d(const T &amp; p, const float32_t a)</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">      19039 : T times_2d(const T &amp; p, const float32_t a)</span></a>
 <a name="211"><span class="lineNum">     211 </span>                :            : {</a>
-<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">       9014 :   T r;</span></a>
-<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">       9060 :   point_adapter::xr_(r) = static_cast&lt;float32_t&gt;(point_adapter::x_(p)) * a;</span></a>
-<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">       9060 :   point_adapter::yr_(r) = static_cast&lt;float32_t&gt;(point_adapter::y_(p)) * a;</span></a>
-<a name="215"><span class="lineNum">     215 </span>                :<span class="lineCov">       9060 :   return r;</span></a>
+<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">      18857 :   T r;</span></a>
+<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">      19039 :   point_adapter::xr_(r) = static_cast&lt;float32_t&gt;(point_adapter::x_(p)) * a;</span></a>
+<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">      19039 :   point_adapter::yr_(r) = static_cast&lt;float32_t&gt;(point_adapter::y_(p)) * a;</span></a>
+<a name="215"><span class="lineNum">     215 </span>                :<span class="lineCov">      19039 :   return r;</span></a>
 <a name="216"><span class="lineNum">     216 </span>                :            : }</a>
 <a name="217"><span class="lineNum">     217 </span>                :            : </a>
 <a name="218"><span class="lineNum">     218 </span>                :            : /// \tparam T point type. Must have point adapters defined or have float members x and y</a>
@@ -304,22 +304,22 @@
 <a name="226"><span class="lineNum">     226 </span>                :            : /// \return intersection point</a>
 <a name="227"><span class="lineNum">     227 </span>                :            : /// \throw std::runtime_error if lines are (nearly) collinear or parallel</a>
 <a name="228"><span class="lineNum">     228 </span>                :            : template&lt;typename T&gt;</a>
-<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">       9008 : inline T intersection_2d(const T &amp; pt, const T &amp; u, const T &amp; q, const T &amp; v)</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">      18128 : inline T intersection_2d(const T &amp; pt, const T &amp; u, const T &amp; q, const T &amp; v)</span></a>
 <a name="230"><span class="lineNum">     230 </span>                :            : {</a>
-<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">       9008 :   const float32_t num = cross_2d(minus_2d(pt, q), u);</span></a>
-<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">       9008 :   float32_t den = cross_2d(v, u);</span></a>
-<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">       9008 :   constexpr auto FEPS = std::numeric_limits&lt;float32_t&gt;::epsilon();</span></a>
-<a name="234"><span class="lineNum">     234 </span>        [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchCov" title="Branch 1 was taken 8982 times"> + </span>]:<span class="lineCov">       9008 :   if (fabsf(den) &lt; FEPS) {</span></a>
-<a name="235"><span class="lineNum">     235 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 26 times"> + </span>]:<span class="lineCov">         26 :     if (fabsf(num) &lt; FEPS) {</span></a>
+<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">      18128 :   const float32_t num = cross_2d(minus_2d(pt, q), u);</span></a>
+<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">      18128 :   float32_t den = cross_2d(v, u);</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">      18128 :   constexpr auto FEPS = std::numeric_limits&lt;float32_t&gt;::epsilon();</span></a>
+<a name="234"><span class="lineNum">     234 </span>        [<span class="branchCov" title="Branch 0 was taken 76 times"> + </span><span class="branchCov" title="Branch 1 was taken 18052 times"> + </span>]:<span class="lineCov">      18128 :   if (fabsf(den) &lt; FEPS) {</span></a>
+<a name="235"><span class="lineNum">     235 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 74 times"> + </span>]:<span class="lineCov">         76 :     if (fabsf(num) &lt; FEPS) {</span></a>
 <a name="236"><span class="lineNum">     236 </span>                :            :       // collinear case, anything is ok</a>
-<a name="237"><span class="lineNum">     237 </span>                :<span class="lineNoCov">          0 :       den = 1.0F;</span></a>
+<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">          2 :       den = 1.0F;</span></a>
 <a name="238"><span class="lineNum">     238 </span>                :            :     } else {</a>
 <a name="239"><span class="lineNum">     239 </span>                :            :       // parallel case, no valid output</a>
 <a name="240"><span class="lineNum">     240 </span>                :            :       throw std::runtime_error(</a>
-<a name="241"><span class="lineNum">     241 </span>        [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         26 :               &quot;intersection_2d: no unique solution (either collinear or parallel)&quot;);</span></a>
+<a name="241"><span class="lineNum">     241 </span>        [<span class="branchCov" title="Branch 0 was taken 74 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         74 :               &quot;intersection_2d: no unique solution (either collinear or parallel)&quot;);</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :            :     }</a>
 <a name="243"><span class="lineNum">     243 </span>                :            :   }</a>
-<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">       8982 :   return plus_2d(q, times_2d(v, num / den));</span></a>
+<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">      18054 :   return plus_2d(q, times_2d(v, num / den));</span></a>
 <a name="245"><span class="lineNum">     245 </span>                :            : }</a>
 <a name="246"><span class="lineNum">     246 </span>                :            : </a>
 <a name="247"><span class="lineNum">     247 </span>                :            : </a>
@@ -329,13 +329,13 @@
 <a name="251"><span class="lineNum">     251 </span>                :            : /// \param[in] cos_th precomputed cosine value</a>
 <a name="252"><span class="lineNum">     252 </span>                :            : /// \param[in] sin_th precompined sine value</a>
 <a name="253"><span class="lineNum">     253 </span>                :            : template&lt;typename T&gt;</a>
-<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">       8720 : inline void rotate_2d(T &amp; pt, const float32_t cos_th, const float32_t sin_th)</span></a>
+<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">      17440 : inline void rotate_2d(T &amp; pt, const float32_t cos_th, const float32_t sin_th)</span></a>
 <a name="255"><span class="lineNum">     255 </span>                :            : {</a>
-<a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">       8720 :   const float32_t x = point_adapter::x_(pt);</span></a>
-<a name="257"><span class="lineNum">     257 </span>                :<span class="lineCov">       8720 :   const float32_t y = point_adapter::y_(pt);</span></a>
-<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">       8720 :   point_adapter::xr_(pt) = (cos_th * x) - (sin_th * y);</span></a>
-<a name="259"><span class="lineNum">     259 </span>                :<span class="lineCov">       8720 :   point_adapter::yr_(pt) = (sin_th * x) + (cos_th * y);</span></a>
-<a name="260"><span class="lineNum">     260 </span>                :<span class="lineCov">       8720 : }</span></a>
+<a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">      17440 :   const float32_t x = point_adapter::x_(pt);</span></a>
+<a name="257"><span class="lineNum">     257 </span>                :<span class="lineCov">      17440 :   const float32_t y = point_adapter::y_(pt);</span></a>
+<a name="258"><span class="lineNum">     258 </span>                :<span class="lineCov">      17440 :   point_adapter::xr_(pt) = (cos_th * x) - (sin_th * y);</span></a>
+<a name="259"><span class="lineNum">     259 </span>                :<span class="lineCov">      17440 :   point_adapter::yr_(pt) = (sin_th * x) + (cos_th * y);</span></a>
+<a name="260"><span class="lineNum">     260 </span>                :<span class="lineCov">      17440 : }</span></a>
 <a name="261"><span class="lineNum">     261 </span>                :            : </a>
 <a name="262"><span class="lineNum">     262 </span>                :            : /// \tparam T point type. Must have point adapters defined or have float members x and y</a>
 <a name="263"><span class="lineNum">     263 </span>                :            : /// \brief rotate by radian angle th in z direction with ccw positive</a>
@@ -358,12 +358,12 @@
 <a name="280"><span class="lineNum">     280 </span>                :            : /// \param[in] pt point to get normal point of</a>
 <a name="281"><span class="lineNum">     281 </span>                :            : /// \return point normal to p (unnormalized)</a>
 <a name="282"><span class="lineNum">     282 </span>                :            : template&lt;typename T&gt;</a>
-<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">         50 : inline T get_normal(const T &amp; pt)</span></a>
+<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">        100 : inline T get_normal(const T &amp; pt)</span></a>
 <a name="284"><span class="lineNum">     284 </span>                :            : {</a>
-<a name="285"><span class="lineNum">     285 </span>                :<span class="lineCov">         50 :   T q(pt);</span></a>
-<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">         50 :   point_adapter::xr_(q) = -point_adapter::y_(pt);</span></a>
-<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">         50 :   point_adapter::yr_(q) = point_adapter::x_(pt);</span></a>
-<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">         50 :   return q;</span></a>
+<a name="285"><span class="lineNum">     285 </span>                :<span class="lineCov">        100 :   T q(pt);</span></a>
+<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">        100 :   point_adapter::xr_(q) = -point_adapter::y_(pt);</span></a>
+<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">        100 :   point_adapter::yr_(q) = point_adapter::x_(pt);</span></a>
+<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">        100 :   return q;</span></a>
 <a name="289"><span class="lineNum">     289 </span>                :            : }</a>
 <a name="290"><span class="lineNum">     290 </span>                :            : </a>
 <a name="291"><span class="lineNum">     291 </span>                :            : /// \tparam T point type. Must have point adapters defined or have float members x and y</a>
@@ -371,9 +371,9 @@
 <a name="293"><span class="lineNum">     293 </span>                :            : /// \param[in] pt point to get magnitude of</a>
 <a name="294"><span class="lineNum">     294 </span>                :            : /// \return magitude of x and y components together</a>
 <a name="295"><span class="lineNum">     295 </span>                :            : template&lt;typename T&gt;</a>
-<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">      22016 : inline auto norm_2d(const T &amp; pt)</span></a>
+<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">      52236 : inline auto norm_2d(const T &amp; pt)</span></a>
 <a name="297"><span class="lineNum">     297 </span>                :            : {</a>
-<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">      22016 :   return sqrtf(static_cast&lt;float32_t&gt;(dot_2d(pt, pt)));</span></a>
+<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">      52236 :   return sqrtf(static_cast&lt;float32_t&gt;(dot_2d(pt, pt)));</span></a>
 <a name="299"><span class="lineNum">     299 </span>                :            : }</a>
 <a name="300"><span class="lineNum">     300 </span>                :            : </a>
 <a name="301"><span class="lineNum">     301 </span>                :            : /// \tparam T point type. Must have point adapters defined or have float members x and y</a>
@@ -385,18 +385,18 @@
 <a name="307"><span class="lineNum">     307 </span>                :            : /// \param[in] r Reference point to find the closest point to</a>
 <a name="308"><span class="lineNum">     308 </span>                :            : /// \return Closest point on line segment p-q to point r</a>
 <a name="309"><span class="lineNum">     309 </span>                :            : template&lt;typename T&gt;</a>
-<a name="310"><span class="lineNum">     310 </span>                :<span class="lineCov">         12 : inline T closest_segment_point_2d(const T &amp; p, const T &amp; q, const T &amp; r)</span></a>
+<a name="310"><span class="lineNum">     310 </span>                :<span class="lineCov">         24 : inline T closest_segment_point_2d(const T &amp; p, const T &amp; q, const T &amp; r)</span></a>
 <a name="311"><span class="lineNum">     311 </span>                :            : {</a>
-<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">         12 :   const T qp = minus_2d(q, p);</span></a>
-<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">         12 :   const float32_t len2 = static_cast&lt;float32_t&gt;(dot_2d(qp, qp));</span></a>
-<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">         12 :   T ret = p;</span></a>
-<a name="315"><span class="lineNum">     315 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         12 :   if (len2 &gt; std::numeric_limits&lt;float32_t&gt;::epsilon()) {</span></a>
-<a name="316"><span class="lineNum">     316 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :     const Interval_f unit_interval(0.0f, 1.0f);</span></a>
-<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">          8 :     const float32_t val = static_cast&lt;float32_t&gt;(dot_2d(minus_2d(r, p), qp)) / len2;</span></a>
-<a name="318"><span class="lineNum">     318 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :     const float32_t t = Interval_f::clamp_to(unit_interval, val);</span></a>
-<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">          8 :     ret = plus_2d(p, times_2d(qp, t));</span></a>
+<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">         24 :   const T qp = minus_2d(q, p);</span></a>
+<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">         24 :   const float32_t len2 = static_cast&lt;float32_t&gt;(dot_2d(qp, qp));</span></a>
+<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">         24 :   T ret = p;</span></a>
+<a name="315"><span class="lineNum">     315 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         24 :   if (len2 &gt; std::numeric_limits&lt;float32_t&gt;::epsilon()) {</span></a>
+<a name="316"><span class="lineNum">     316 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :     const Interval_f unit_interval(0.0f, 1.0f);</span></a>
+<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">         16 :     const float32_t val = static_cast&lt;float32_t&gt;(dot_2d(minus_2d(r, p), qp)) / len2;</span></a>
+<a name="318"><span class="lineNum">     318 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :     const float32_t t = Interval_f::clamp_to(unit_interval, val);</span></a>
+<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">         16 :     ret = plus_2d(p, times_2d(qp, t));</span></a>
 <a name="320"><span class="lineNum">     320 </span>                :            :   }</a>
-<a name="321"><span class="lineNum">     321 </span>                :<span class="lineCov">         18 :   return ret;</span></a>
+<a name="321"><span class="lineNum">     321 </span>                :<span class="lineCov">         36 :   return ret;</span></a>
 <a name="322"><span class="lineNum">     322 </span>                :            : }</a>
 <a name="323"><span class="lineNum">     323 </span>                :            : //</a>
 <a name="324"><span class="lineNum">     324 </span>                :            : /// \tparam T point type. Must have point adapters defined or have float members x and y</a>
@@ -409,19 +409,19 @@
 <a name="331"><span class="lineNum">     331 </span>                :            : /// \throw std::runtime_error if the two points coincide and hence don't uniquely</a>
 <a name="332"><span class="lineNum">     332 </span>                :            : //         define a line</a>
 <a name="333"><span class="lineNum">     333 </span>                :            : template&lt;typename T&gt;</a>
-<a name="334"><span class="lineNum">     334 </span>                :<span class="lineCov">          6 : inline T closest_line_point_2d(const T &amp; p, const T &amp; q, const T &amp; r)</span></a>
+<a name="334"><span class="lineNum">     334 </span>                :<span class="lineCov">         12 : inline T closest_line_point_2d(const T &amp; p, const T &amp; q, const T &amp; r)</span></a>
 <a name="335"><span class="lineNum">     335 </span>                :            : {</a>
-<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">          6 :   const T qp = minus_2d(q, p);</span></a>
-<a name="337"><span class="lineNum">     337 </span>                :<span class="lineCov">          6 :   const float32_t len2 = dot_2d(qp, qp);</span></a>
-<a name="338"><span class="lineNum">     338 </span>                :<span class="lineCov">          6 :   T ret = p;</span></a>
-<a name="339"><span class="lineNum">     339 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          6 :   if (len2 &gt; std::numeric_limits&lt;float32_t&gt;::epsilon()) {</span></a>
-<a name="340"><span class="lineNum">     340 </span>                :<span class="lineCov">          4 :     const float32_t t = dot_2d(minus_2d(r, p), qp) / len2;</span></a>
-<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">          4 :     ret = plus_2d(p, times_2d(qp, t));</span></a>
+<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">         12 :   const T qp = minus_2d(q, p);</span></a>
+<a name="337"><span class="lineNum">     337 </span>                :<span class="lineCov">         12 :   const float32_t len2 = dot_2d(qp, qp);</span></a>
+<a name="338"><span class="lineNum">     338 </span>                :<span class="lineCov">         12 :   T ret = p;</span></a>
+<a name="339"><span class="lineNum">     339 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         12 :   if (len2 &gt; std::numeric_limits&lt;float32_t&gt;::epsilon()) {</span></a>
+<a name="340"><span class="lineNum">     340 </span>                :<span class="lineCov">          8 :     const float32_t t = dot_2d(minus_2d(r, p), qp) / len2;</span></a>
+<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">          8 :     ret = plus_2d(p, times_2d(qp, t));</span></a>
 <a name="342"><span class="lineNum">     342 </span>                :            :   } else {</a>
 <a name="343"><span class="lineNum">     343 </span>                :            :     throw std::runtime_error(</a>
-<a name="344"><span class="lineNum">     344 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :             &quot;closet_line_point_2d: line ill-defined because given points coincide&quot;);</span></a>
+<a name="344"><span class="lineNum">     344 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :             &quot;closet_line_point_2d: line ill-defined because given points coincide&quot;);</span></a>
 <a name="345"><span class="lineNum">     345 </span>                :            :   }</a>
-<a name="346"><span class="lineNum">     346 </span>                :<span class="lineCov">          6 :   return ret;</span></a>
+<a name="346"><span class="lineNum">     346 </span>                :<span class="lineCov">         12 :   return ret;</span></a>
 <a name="347"><span class="lineNum">     347 </span>                :            : }</a>
 <a name="348"><span class="lineNum">     348 </span>                :            : </a>
 <a name="349"><span class="lineNum">     349 </span>                :            : /// \tparam T point type. Must have point adapters defined or have float members x and y</a>
@@ -431,10 +431,10 @@
 <a name="353"><span class="lineNum">     353 </span>                :            : /// \param[in] r Reference point to find the distance from the line segment to</a>
 <a name="354"><span class="lineNum">     354 </span>                :            : /// \return Distance from point r to line segment p-q</a>
 <a name="355"><span class="lineNum">     355 </span>                :            : template&lt;typename T&gt;</a>
-<a name="356"><span class="lineNum">     356 </span>                :<span class="lineCov">          6 : inline auto point_line_segment_distance_2d(const T &amp; p, const T &amp; q, const T &amp; r)</span></a>
+<a name="356"><span class="lineNum">     356 </span>                :<span class="lineCov">         12 : inline auto point_line_segment_distance_2d(const T &amp; p, const T &amp; q, const T &amp; r)</span></a>
 <a name="357"><span class="lineNum">     357 </span>                :            : {</a>
-<a name="358"><span class="lineNum">     358 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   const T pq_r = minus_2d(closest_segment_point_2d(p, q, r), r);</span></a>
-<a name="359"><span class="lineNum">     359 </span>                :<span class="lineCov">         12 :   return norm_2d(pq_r);</span></a>
+<a name="358"><span class="lineNum">     358 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   const T pq_r = minus_2d(closest_segment_point_2d(p, q, r), r);</span></a>
+<a name="359"><span class="lineNum">     359 </span>                :<span class="lineCov">         24 :   return norm_2d(pq_r);</span></a>
 <a name="360"><span class="lineNum">     360 </span>                :            : }</a>
 <a name="361"><span class="lineNum">     361 </span>                :            : </a>
 <a name="362"><span class="lineNum">     362 </span>                :            : /// \brief Make a 2D unit vector given an angle.</a>
@@ -450,158 +450,186 @@
 <a name="372"><span class="lineNum">     372 </span>                :            :   return r;</a>
 <a name="373"><span class="lineNum">     373 </span>                :            : }</a>
 <a name="374"><span class="lineNum">     374 </span>                :            : </a>
-<a name="375"><span class="lineNum">     375 </span>                :            : /// \brief Check the given point's position relative the infinite line passing</a>
-<a name="376"><span class="lineNum">     376 </span>                :            : /// from p1 to p2. Logic based on http://geomalgorithms.com/a01-_area.html#isLeft()</a>
-<a name="377"><span class="lineNum">     377 </span>                :            : /// \tparam T  T  point type. Must have point adapters defined or have float members x and y</a>
-<a name="378"><span class="lineNum">     378 </span>                :            : /// \param p1 point 1 laying on the infinite line</a>
-<a name="379"><span class="lineNum">     379 </span>                :            : /// \param p2 point 2 laying on the infinite line</a>
-<a name="380"><span class="lineNum">     380 </span>                :            : /// \param q point to be checked against the line</a>
-<a name="381"><span class="lineNum">     381 </span>                :            : /// \return &gt; 0 for point q left of the line through p1 to p2</a>
-<a name="382"><span class="lineNum">     382 </span>                :            : ///         = 0 for point q on the line through p1 to p2</a>
-<a name="383"><span class="lineNum">     383 </span>                :            : ///         &lt; 0 for point q right of the line through p1 to p2</a>
-<a name="384"><span class="lineNum">     384 </span>                :            : template&lt;typename T&gt;</a>
-<a name="385"><span class="lineNum">     385 </span>                :<span class="lineCov">        124 : inline auto check_point_position_to_line_2d(const T &amp; p1, const T &amp; p2, const T &amp; q)</span></a>
-<a name="386"><span class="lineNum">     386 </span>                :            : {</a>
-<a name="387"><span class="lineNum">     387 </span>                :<span class="lineCov">        124 :   return cross_2d(minus_2d(p2, p1), minus_2d(q, p1));</span></a>
+<a name="375"><span class="lineNum">     375 </span>                :            : /// \brief Compute squared euclidean distance between two points</a>
+<a name="376"><span class="lineNum">     376 </span>                :            : /// \tparam OUT return type. Type of the returned distance.</a>
+<a name="377"><span class="lineNum">     377 </span>                :            : /// \tparam T1 point type. Must have point adapters defined or have float members x and y</a>
+<a name="378"><span class="lineNum">     378 </span>                :            : /// \tparam T2 point type. Must have point adapters defined or have float members x and y</a>
+<a name="379"><span class="lineNum">     379 </span>                :            : /// \param a point 1</a>
+<a name="380"><span class="lineNum">     380 </span>                :            : /// \param b point 2</a>
+<a name="381"><span class="lineNum">     381 </span>                :            : /// \return squared euclidean distance</a>
+<a name="382"><span class="lineNum">     382 </span>                :            : template&lt;typename OUT = float32_t, typename T1, typename T2&gt;</a>
+<a name="383"><span class="lineNum">     383 </span>                :            : inline OUT squared_distance_2d(const T1 &amp; a, const T2 &amp; b)</a>
+<a name="384"><span class="lineNum">     384 </span>                :            : {</a>
+<a name="385"><span class="lineNum">     385 </span>                :            :   const auto x = static_cast&lt;OUT&gt;(point_adapter::x_(a)) - static_cast&lt;OUT&gt;(point_adapter::x_(b));</a>
+<a name="386"><span class="lineNum">     386 </span>                :            :   const auto y = static_cast&lt;OUT&gt;(point_adapter::y_(a)) - static_cast&lt;OUT&gt;(point_adapter::y_(b));</a>
+<a name="387"><span class="lineNum">     387 </span>                :            :   return (x * x) + (y * y);</a>
 <a name="388"><span class="lineNum">     388 </span>                :            : }</a>
 <a name="389"><span class="lineNum">     389 </span>                :            : </a>
-<a name="390"><span class="lineNum">     390 </span>                :            : /// Check if all points are ordered in x-y plane (in either clockwise or counter-clockwise</a>
-<a name="391"><span class="lineNum">     391 </span>                :            : /// direction): This function does not check for convexity</a>
-<a name="392"><span class="lineNum">     392 </span>                :            : /// \tparam IT Iterator type pointing to a point containing float x and float y</a>
-<a name="393"><span class="lineNum">     393 </span>                :            : /// \param[in] begin Beginning of point sequence</a>
-<a name="394"><span class="lineNum">     394 </span>                :            : /// \param[in] end One past the last of the point sequence</a>
-<a name="395"><span class="lineNum">     395 </span>                :            : /// \return Whether or not all point triples p_i, p_{i+1}, p_{i+2} are in a particular order.</a>
-<a name="396"><span class="lineNum">     396 </span>                :            : ///         Returns true for collinear points as well</a>
-<a name="397"><span class="lineNum">     397 </span>                :            : template&lt;typename IT&gt;</a>
-<a name="398"><span class="lineNum">     398 </span>                :<span class="lineCov">         21 : bool all_ordered(const IT begin, const IT end) noexcept</span></a>
+<a name="390"><span class="lineNum">     390 </span>                :            : /// \brief Compute euclidean distance between two points</a>
+<a name="391"><span class="lineNum">     391 </span>                :            : /// \tparam OUT return type. Type of the returned distance.</a>
+<a name="392"><span class="lineNum">     392 </span>                :            : /// \tparam T1 point type. Must have point adapters defined or have float members x and y</a>
+<a name="393"><span class="lineNum">     393 </span>                :            : /// \tparam T2 point type. Must have point adapters defined or have float members x and y</a>
+<a name="394"><span class="lineNum">     394 </span>                :            : /// \param a point 1</a>
+<a name="395"><span class="lineNum">     395 </span>                :            : /// \param b point 2</a>
+<a name="396"><span class="lineNum">     396 </span>                :            : /// \return euclidean distance</a>
+<a name="397"><span class="lineNum">     397 </span>                :            : template&lt;typename OUT = float32_t, typename T1, typename T2&gt;</a>
+<a name="398"><span class="lineNum">     398 </span>                :            : inline OUT distance_2d(const T1 &amp; a, const T2 &amp; b)</a>
 <a name="399"><span class="lineNum">     399 </span>                :            : {</a>
-<a name="400"><span class="lineNum">     400 </span>                :            :   // Short circuit: a line or point is always CCW or otherwise ill-defined</a>
-<a name="401"><span class="lineNum">     401 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         21 :   if (std::distance(begin, end) &lt;= 2U) {</span></a>
-<a name="402"><span class="lineNum">     402 </span>                :<span class="lineCov">          6 :     return true;</span></a>
-<a name="403"><span class="lineNum">     403 </span>                :            :   }</a>
-<a name="404"><span class="lineNum">     404 </span>                :<span class="lineCov">         15 :   bool is_first_point_cw = false;</span></a>
-<a name="405"><span class="lineNum">     405 </span>                :            :   // Can't use std::all_of because that works directly on the values</a>
-<a name="406"><span class="lineNum">     406 </span>        [<span class="branchCov" title="Branch 0 was taken 57 times"> + </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         68 :   for (auto line_start = begin; line_start != end; ++line_start) {</span></a>
-<a name="407"><span class="lineNum">     407 </span>                :<span class="lineCov">         57 :     const auto line_end = details::circular_next(begin, end, line_start);</span></a>
-<a name="408"><span class="lineNum">     408 </span>                :<span class="lineCov">         57 :     const auto query_point = details::circular_next(begin, end, line_end);</span></a>
-<a name="409"><span class="lineNum">     409 </span>                :            :     // Check if 3 points starting from current point are in clockwise direction</a>
-<a name="410"><span class="lineNum">     410 </span>                :<span class="lineCov">        114 :     const bool is_cw = comparison::abs_lte(</span></a>
-<a name="411"><span class="lineNum">     411 </span>                :<span class="lineCov">         57 :       check_point_position_to_line_2d(*line_start, *line_end, *query_point),</span></a>
-<a name="412"><span class="lineNum">     412 </span>                :<span class="lineCov">         57 :       0.0F, 1e-3F</span></a>
-<a name="413"><span class="lineNum">     413 </span>                :            :     );</a>
-<a name="414"><span class="lineNum">     414 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchCov" title="Branch 1 was taken 46 times"> + </span>]:<span class="lineCov">         57 :     if (is_cw) {</span></a>
-<a name="415"><span class="lineNum">     415 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">         11 :       if (line_start == begin) {</span></a>
-<a name="416"><span class="lineNum">     416 </span>                :<span class="lineCov">          5 :         is_first_point_cw = true;</span></a>
-<a name="417"><span class="lineNum">     417 </span>                :            :       } else {</a>
-<a name="418"><span class="lineNum">     418 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          6 :         if (!is_first_point_cw) {</span></a>
-<a name="419"><span class="lineNum">     419 </span>                :<span class="lineCov">          4 :           return false;</span></a>
-<a name="420"><span class="lineNum">     420 </span>                :            :         }</a>
-<a name="421"><span class="lineNum">     421 </span>                :            :       }</a>
-<a name="422"><span class="lineNum">     422 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 43 times"> + </span>]:<span class="lineCov">         46 :     } else if (is_first_point_cw) {</span></a>
-<a name="423"><span class="lineNum">     423 </span>                :<span class="lineCov">          3 :       return false;</span></a>
-<a name="424"><span class="lineNum">     424 </span>                :            :     }</a>
-<a name="425"><span class="lineNum">     425 </span>                :            :   }</a>
-<a name="426"><span class="lineNum">     426 </span>                :<span class="lineCov">         11 :   return true;</span></a>
-<a name="427"><span class="lineNum">     427 </span>                :            : }</a>
-<a name="428"><span class="lineNum">     428 </span>                :            : </a>
-<a name="429"><span class="lineNum">     429 </span>                :            : /// Compute the area of a convex hull, points are assumed to be ordered (in either CW or CCW)</a>
-<a name="430"><span class="lineNum">     430 </span>                :            : /// \tparam IT Iterator type pointing to a point containing float x and float y</a>
-<a name="431"><span class="lineNum">     431 </span>                :            : /// \param[in] begin Iterator pointing to the beginning of the polygon points</a>
-<a name="432"><span class="lineNum">     432 </span>                :            : /// \param[in] end Iterator pointing to one past the last of the polygon points</a>
-<a name="433"><span class="lineNum">     433 </span>                :            : /// \return The area of the polygon, in squared of whatever units your points are in</a>
-<a name="434"><span class="lineNum">     434 </span>                :            : template&lt;typename IT&gt;</a>
-<a name="435"><span class="lineNum">     435 </span>                :<span class="lineCov">         14 : auto area_2d(const IT begin, const IT end) noexcept</span></a>
-<a name="436"><span class="lineNum">     436 </span>                :            : {</a>
-<a name="437"><span class="lineNum">     437 </span>                :            :   using point_adapter::x_;</a>
-<a name="438"><span class="lineNum">     438 </span>                :            :   using point_adapter::y_;</a>
-<a name="439"><span class="lineNum">     439 </span>                :            :   using T = decltype(x_(*begin));</a>
-<a name="440"><span class="lineNum">     440 </span>                :<span class="lineCov">         14 :   auto area = T{};  // zero initialization</span></a>
-<a name="441"><span class="lineNum">     441 </span>                :            :   // use the approach of https://www.mathwords.com/a/area_convex_polygon.htm</a>
-<a name="442"><span class="lineNum">     442 </span>        [<span class="branchCov" title="Branch 0 was taken 44 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         58 :   for (auto it = begin; it != end; ++it) {</span></a>
-<a name="443"><span class="lineNum">     443 </span>                :<span class="lineCov">         44 :     const auto next = details::circular_next(begin, end, it);</span></a>
-<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">         44 :     area += x_(*it) * y_(*next);</span></a>
-<a name="445"><span class="lineNum">     445 </span>                :<span class="lineCov">         44 :     area -= x_(*next) * y_(*it);</span></a>
-<a name="446"><span class="lineNum">     446 </span>                :            :   }</a>
-<a name="447"><span class="lineNum">     447 </span>                :<span class="lineCov">         14 :   return std::abs(T{0.5} *area);</span></a>
-<a name="448"><span class="lineNum">     448 </span>                :            : }</a>
-<a name="449"><span class="lineNum">     449 </span>                :            : </a>
-<a name="450"><span class="lineNum">     450 </span>                :            : /// Compute area of convex hull, throw if points are not ordered (convexity check is not</a>
-<a name="451"><span class="lineNum">     451 </span>                :            : /// implemented)</a>
-<a name="452"><span class="lineNum">     452 </span>                :            : /// \throw std::domain_error if points are not ordered either CW or CCW</a>
-<a name="453"><span class="lineNum">     453 </span>                :            : /// \tparam IT Iterator type pointing to a point containing float x and float y</a>
-<a name="454"><span class="lineNum">     454 </span>                :            : /// \param[in] begin Iterator pointing to the beginning of the polygon points</a>
-<a name="455"><span class="lineNum">     455 </span>                :            : /// \param[in] end Iterator pointing to one past the last of the polygon points</a>
-<a name="456"><span class="lineNum">     456 </span>                :            : /// \return The area of the polygon, in squared of whatever units your points are in</a>
-<a name="457"><span class="lineNum">     457 </span>                :            : template&lt;typename IT&gt;</a>
-<a name="458"><span class="lineNum">     458 </span>                :<span class="lineCov">         16 : auto area_checked_2d(const IT begin, const IT end)</span></a>
-<a name="459"><span class="lineNum">     459 </span>                :            : {</a>
-<a name="460"><span class="lineNum">     460 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         16 :   if (!all_ordered(begin, end)) {</span></a>
-<a name="461"><span class="lineNum">     461 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     throw std::domain_error{&quot;Cannot compute area: points are not ordered&quot;};</span></a>
-<a name="462"><span class="lineNum">     462 </span>                :            :   }</a>
-<a name="463"><span class="lineNum">     463 </span>                :<span class="lineCov">         14 :   return area_2d(begin, end);</span></a>
-<a name="464"><span class="lineNum">     464 </span>                :            : }</a>
-<a name="465"><span class="lineNum">     465 </span>                :            : </a>
-<a name="466"><span class="lineNum">     466 </span>                :            : /// \brief Check if the given point is inside or on the edge of the given polygon</a>
-<a name="467"><span class="lineNum">     467 </span>                :            : /// \tparam IteratorType iterator type. The value pointed to by this must have point adapters</a>
-<a name="468"><span class="lineNum">     468 </span>                :            : ///                         defined or have float members x and y</a>
-<a name="469"><span class="lineNum">     469 </span>                :            : /// \tparam PointType point type. Must have point adapters defined or have float members x and y</a>
-<a name="470"><span class="lineNum">     470 </span>                :            : /// \param start_it iterator pointing to the first vertex of the polygon</a>
-<a name="471"><span class="lineNum">     471 </span>                :            : /// \param end_it iterator pointing to the last vertex of the polygon. The vertices should be in</a>
-<a name="472"><span class="lineNum">     472 </span>                :            : ///               order.</a>
-<a name="473"><span class="lineNum">     473 </span>                :            : /// \param p point to be searched</a>
-<a name="474"><span class="lineNum">     474 </span>                :            : /// \return True if the point is inside or on the edge of the polygon. False otherwise</a>
-<a name="475"><span class="lineNum">     475 </span>                :            : template&lt;typename IteratorType, typename PointType&gt;</a>
-<a name="476"><span class="lineNum">     476 </span>                :<span class="lineCov">         46 : bool is_point_inside_polygon_2d(</span></a>
-<a name="477"><span class="lineNum">     477 </span>                :            :   const IteratorType &amp; start_it, const IteratorType &amp; end_it, const PointType &amp; p)</a>
-<a name="478"><span class="lineNum">     478 </span>                :            : {</a>
-<a name="479"><span class="lineNum">     479 </span>                :<span class="lineCov">         46 :   std::int32_t winding_num = 0;</span></a>
-<a name="480"><span class="lineNum">     480 </span>                :            : </a>
-<a name="481"><span class="lineNum">     481 </span>        [<span class="branchCov" title="Branch 0 was taken 170 times"> + </span><span class="branchCov" title="Branch 1 was taken 44 times"> + </span>]:<span class="lineCov">        214 :   for (IteratorType it = start_it; it != end_it; ++it) {</span></a>
-<a name="482"><span class="lineNum">     482 </span>        [<span class="branchCov" title="Branch 0 was taken 170 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        170 :     auto next_it = std::next(it);</span></a>
-<a name="483"><span class="lineNum">     483 </span>        [<span class="branchCov" title="Branch 0 was taken 44 times"> + </span><span class="branchCov" title="Branch 1 was taken 126 times"> + </span>]:<span class="lineCov">        170 :     if (next_it == end_it) {</span></a>
-<a name="484"><span class="lineNum">     484 </span>                :<span class="lineCov">         44 :       next_it = start_it;</span></a>
-<a name="485"><span class="lineNum">     485 </span>                :            :     }</a>
-<a name="486"><span class="lineNum">     486 </span>        [<span class="branchCov" title="Branch 0 was taken 88 times"> + </span><span class="branchCov" title="Branch 1 was taken 82 times"> + </span>]:<span class="lineCov">        170 :     if (point_adapter::y_(*it) &lt;= point_adapter::y_(p)) {</span></a>
-<a name="487"><span class="lineNum">     487 </span>                :            :       // Upward crossing edge</a>
-<a name="488"><span class="lineNum">     488 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 68 times"> + </span>]:<span class="lineCov">         88 :       if (point_adapter::y_(*next_it) &gt;= point_adapter::y_(p)) {</span></a>
-<a name="489"><span class="lineNum">     489 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         20 :         if (comparison::abs_gt(check_point_position_to_line_2d(*it, *next_it, p), 0.0F, 1e-3F)) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 14 times"> + </span><span class="branchCov" title="Branch 5 was taken 6 times"> + </span>]
-<a name="490"><span class="lineNum">     490 </span>                :<span class="lineCov">         14 :           ++winding_num;</span></a>
-<a name="491"><span class="lineNum">     491 </span>                :            :         } else {</a>
-<a name="492"><span class="lineNum">     492 </span>                :<span class="lineCov">         12 :           if (comparison::abs_eq_zero(</span></a>
-<a name="493"><span class="lineNum">     493 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          6 :               check_point_position_to_line_2d(*it, *next_it, p),</span></a>
-<a name="494"><span class="lineNum">     494 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         12 :               1e-3F))</span></a>
-<a name="495"><span class="lineNum">     495 </span>                :            :           {</a>
-<a name="496"><span class="lineNum">     496 </span>                :<span class="lineCov">          2 :             return true;</span></a>
-<a name="497"><span class="lineNum">     497 </span>                :            :           }</a>
-<a name="498"><span class="lineNum">     498 </span>                :            :         }</a>
-<a name="499"><span class="lineNum">     499 </span>                :            :       }</a>
-<a name="500"><span class="lineNum">     500 </span>                :            :     } else {</a>
-<a name="501"><span class="lineNum">     501 </span>                :            :       // Downward crossing edge</a>
-<a name="502"><span class="lineNum">     502 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchCov" title="Branch 1 was taken 64 times"> + </span>]:<span class="lineCov">         82 :       if (point_adapter::y_(*next_it) &lt;= point_adapter::y_(p)) {</span></a>
-<a name="503"><span class="lineNum">     503 </span>  [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 14 times"> + </span><span class="branchCov" title="Branch 3 was taken 4 times"> + </span> :<span class="lineCov">         18 :         if (comparison::abs_lt(check_point_position_to_line_2d(*it, *next_it, p), 0.0F, 1e-3F)) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchCov" title="Branch 5 was taken 13 times"> + </span>]
-<a name="504"><span class="lineNum">     504 </span>                :<span class="lineCov">          1 :           --winding_num;</span></a>
-<a name="505"><span class="lineNum">     505 </span>                :            :         } else {</a>
-<a name="506"><span class="lineNum">     506 </span>                :<span class="lineCov">         34 :           if (comparison::abs_eq_zero(</span></a>
-<a name="507"><span class="lineNum">     507 </span>  [<span class="branchCov" title="Branch 0 was taken 17 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 13 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         17 :               check_point_position_to_line_2d(*it, *next_it, p),</span></a>
-<a name="508"><span class="lineNum">     508 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 17 times"> + </span>]:<span class="lineCov">         34 :               1e-3F))</span></a>
-<a name="509"><span class="lineNum">     509 </span>                :            :           {</a>
-<a name="510"><span class="lineNum">     510 </span>                :<span class="lineNoCov">          0 :             return true;</span></a>
-<a name="511"><span class="lineNum">     511 </span>                :            :           }</a>
-<a name="512"><span class="lineNum">     512 </span>                :            :         }</a>
-<a name="513"><span class="lineNum">     513 </span>                :            :       }</a>
-<a name="514"><span class="lineNum">     514 </span>                :            :     }</a>
-<a name="515"><span class="lineNum">     515 </span>                :            :   }</a>
-<a name="516"><span class="lineNum">     516 </span>                :<span class="lineCov">         44 :   return winding_num != 0;</span></a>
-<a name="517"><span class="lineNum">     517 </span>                :            : }</a>
-<a name="518"><span class="lineNum">     518 </span>                :            : </a>
-<a name="519"><span class="lineNum">     519 </span>                :            : </a>
-<a name="520"><span class="lineNum">     520 </span>                :            : }  // namespace geometry</a>
-<a name="521"><span class="lineNum">     521 </span>                :            : }  // namespace common</a>
-<a name="522"><span class="lineNum">     522 </span>                :            : }  // namespace autoware</a>
-<a name="523"><span class="lineNum">     523 </span>                :            : </a>
-<a name="524"><span class="lineNum">     524 </span>                :            : #endif  // GEOMETRY__COMMON_2D_HPP_</a>
+<a name="400"><span class="lineNum">     400 </span>                :            :   return std::sqrt(squared_distance_2d&lt;OUT&gt;(a, b));</a>
+<a name="401"><span class="lineNum">     401 </span>                :            : }</a>
+<a name="402"><span class="lineNum">     402 </span>                :            : </a>
+<a name="403"><span class="lineNum">     403 </span>                :            : /// \brief Check the given point's position relative the infinite line passing</a>
+<a name="404"><span class="lineNum">     404 </span>                :            : /// from p1 to p2. Logic based on http://geomalgorithms.com/a01-_area.html#isLeft()</a>
+<a name="405"><span class="lineNum">     405 </span>                :            : /// \tparam T  T  point type. Must have point adapters defined or have float members x and y</a>
+<a name="406"><span class="lineNum">     406 </span>                :            : /// \param p1 point 1 laying on the infinite line</a>
+<a name="407"><span class="lineNum">     407 </span>                :            : /// \param p2 point 2 laying on the infinite line</a>
+<a name="408"><span class="lineNum">     408 </span>                :            : /// \param q point to be checked against the line</a>
+<a name="409"><span class="lineNum">     409 </span>                :            : /// \return &gt; 0 for point q left of the line through p1 to p2</a>
+<a name="410"><span class="lineNum">     410 </span>                :            : ///         = 0 for point q on the line through p1 to p2</a>
+<a name="411"><span class="lineNum">     411 </span>                :            : ///         &lt; 0 for point q right of the line through p1 to p2</a>
+<a name="412"><span class="lineNum">     412 </span>                :            : template&lt;typename T&gt;</a>
+<a name="413"><span class="lineNum">     413 </span>                :<span class="lineCov">        320 : inline auto check_point_position_to_line_2d(const T &amp; p1, const T &amp; p2, const T &amp; q)</span></a>
+<a name="414"><span class="lineNum">     414 </span>                :            : {</a>
+<a name="415"><span class="lineNum">     415 </span>                :<span class="lineCov">        320 :   return cross_2d(minus_2d(p2, p1), minus_2d(q, p1));</span></a>
+<a name="416"><span class="lineNum">     416 </span>                :            : }</a>
+<a name="417"><span class="lineNum">     417 </span>                :            : </a>
+<a name="418"><span class="lineNum">     418 </span>                :            : /// Check if all points are ordered in x-y plane (in either clockwise or counter-clockwise</a>
+<a name="419"><span class="lineNum">     419 </span>                :            : /// direction): This function does not check for convexity</a>
+<a name="420"><span class="lineNum">     420 </span>                :            : /// \tparam IT Iterator type pointing to a point containing float x and float y</a>
+<a name="421"><span class="lineNum">     421 </span>                :            : /// \param[in] begin Beginning of point sequence</a>
+<a name="422"><span class="lineNum">     422 </span>                :            : /// \param[in] end One past the last of the point sequence</a>
+<a name="423"><span class="lineNum">     423 </span>                :            : /// \return Whether or not all point triples p_i, p_{i+1}, p_{i+2} are in a particular order.</a>
+<a name="424"><span class="lineNum">     424 </span>                :            : ///         Returns true for collinear points as well</a>
+<a name="425"><span class="lineNum">     425 </span>                :            : template&lt;typename IT&gt;</a>
+<a name="426"><span class="lineNum">     426 </span>                :<span class="lineCov">         42 : bool all_ordered(const IT begin, const IT end) noexcept</span></a>
+<a name="427"><span class="lineNum">     427 </span>                :            : {</a>
+<a name="428"><span class="lineNum">     428 </span>                :            :   // Short circuit: a line or point is always CCW or otherwise ill-defined</a>
+<a name="429"><span class="lineNum">     429 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         42 :   if (std::distance(begin, end) &lt;= 2U) {</span></a>
+<a name="430"><span class="lineNum">     430 </span>                :<span class="lineCov">         12 :     return true;</span></a>
+<a name="431"><span class="lineNum">     431 </span>                :            :   }</a>
+<a name="432"><span class="lineNum">     432 </span>                :<span class="lineCov">         30 :   bool is_first_point_cw = false;</span></a>
+<a name="433"><span class="lineNum">     433 </span>                :            :   // Can't use std::all_of because that works directly on the values</a>
+<a name="434"><span class="lineNum">     434 </span>        [<span class="branchCov" title="Branch 0 was taken 114 times"> + </span><span class="branchCov" title="Branch 1 was taken 22 times"> + </span>]:<span class="lineCov">        136 :   for (auto line_start = begin; line_start != end; ++line_start) {</span></a>
+<a name="435"><span class="lineNum">     435 </span>                :<span class="lineCov">        114 :     const auto line_end = details::circular_next(begin, end, line_start);</span></a>
+<a name="436"><span class="lineNum">     436 </span>                :<span class="lineCov">        114 :     const auto query_point = details::circular_next(begin, end, line_end);</span></a>
+<a name="437"><span class="lineNum">     437 </span>                :            :     // Check if 3 points starting from current point are in clockwise direction</a>
+<a name="438"><span class="lineNum">     438 </span>                :<span class="lineCov">        228 :     const bool is_cw = comparison::abs_lte(</span></a>
+<a name="439"><span class="lineNum">     439 </span>                :<span class="lineCov">        114 :       check_point_position_to_line_2d(*line_start, *line_end, *query_point),</span></a>
+<a name="440"><span class="lineNum">     440 </span>                :<span class="lineCov">        114 :       0.0F, 1e-3F</span></a>
+<a name="441"><span class="lineNum">     441 </span>                :            :     );</a>
+<a name="442"><span class="lineNum">     442 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchCov" title="Branch 1 was taken 92 times"> + </span>]:<span class="lineCov">        114 :     if (is_cw) {</span></a>
+<a name="443"><span class="lineNum">     443 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 12 times"> + </span>]:<span class="lineCov">         22 :       if (line_start == begin) {</span></a>
+<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">         10 :         is_first_point_cw = true;</span></a>
+<a name="445"><span class="lineNum">     445 </span>                :            :       } else {</a>
+<a name="446"><span class="lineNum">     446 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         12 :         if (!is_first_point_cw) {</span></a>
+<a name="447"><span class="lineNum">     447 </span>                :<span class="lineCov">          8 :           return false;</span></a>
+<a name="448"><span class="lineNum">     448 </span>                :            :         }</a>
+<a name="449"><span class="lineNum">     449 </span>                :            :       }</a>
+<a name="450"><span class="lineNum">     450 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 86 times"> + </span>]:<span class="lineCov">         92 :     } else if (is_first_point_cw) {</span></a>
+<a name="451"><span class="lineNum">     451 </span>                :<span class="lineCov">          6 :       return false;</span></a>
+<a name="452"><span class="lineNum">     452 </span>                :            :     }</a>
+<a name="453"><span class="lineNum">     453 </span>                :            :   }</a>
+<a name="454"><span class="lineNum">     454 </span>                :<span class="lineCov">         22 :   return true;</span></a>
+<a name="455"><span class="lineNum">     455 </span>                :            : }</a>
+<a name="456"><span class="lineNum">     456 </span>                :            : </a>
+<a name="457"><span class="lineNum">     457 </span>                :            : /// Compute the area of a convex hull, points are assumed to be ordered (in either CW or CCW)</a>
+<a name="458"><span class="lineNum">     458 </span>                :            : /// \tparam IT Iterator type pointing to a point containing float x and float y</a>
+<a name="459"><span class="lineNum">     459 </span>                :            : /// \param[in] begin Iterator pointing to the beginning of the polygon points</a>
+<a name="460"><span class="lineNum">     460 </span>                :            : /// \param[in] end Iterator pointing to one past the last of the polygon points</a>
+<a name="461"><span class="lineNum">     461 </span>                :            : /// \return The area of the polygon, in squared of whatever units your points are in</a>
+<a name="462"><span class="lineNum">     462 </span>                :            : template&lt;typename IT&gt;</a>
+<a name="463"><span class="lineNum">     463 </span>                :<span class="lineCov">         42 : auto area_2d(const IT begin, const IT end) noexcept</span></a>
+<a name="464"><span class="lineNum">     464 </span>                :            : {</a>
+<a name="465"><span class="lineNum">     465 </span>                :            :   using point_adapter::x_;</a>
+<a name="466"><span class="lineNum">     466 </span>                :            :   using point_adapter::y_;</a>
+<a name="467"><span class="lineNum">     467 </span>                :            :   using T = decltype(x_(*begin));</a>
+<a name="468"><span class="lineNum">     468 </span>                :<span class="lineCov">         42 :   auto area = T{};  // zero initialization</span></a>
+<a name="469"><span class="lineNum">     469 </span>                :            :   // use the approach of https://www.mathwords.com/a/area_convex_polygon.htm</a>
+<a name="470"><span class="lineNum">     470 </span>        [<span class="branchCov" title="Branch 0 was taken 144 times"> + </span><span class="branchCov" title="Branch 1 was taken 42 times"> + </span>]:<span class="lineCov">        186 :   for (auto it = begin; it != end; ++it) {</span></a>
+<a name="471"><span class="lineNum">     471 </span>                :<span class="lineCov">        144 :     const auto next = details::circular_next(begin, end, it);</span></a>
+<a name="472"><span class="lineNum">     472 </span>                :<span class="lineCov">        144 :     area += x_(*it) * y_(*next);</span></a>
+<a name="473"><span class="lineNum">     473 </span>                :<span class="lineCov">        144 :     area -= x_(*next) * y_(*it);</span></a>
+<a name="474"><span class="lineNum">     474 </span>                :            :   }</a>
+<a name="475"><span class="lineNum">     475 </span>                :<span class="lineCov">         42 :   return std::abs(T{0.5} *area);</span></a>
+<a name="476"><span class="lineNum">     476 </span>                :            : }</a>
+<a name="477"><span class="lineNum">     477 </span>                :            : </a>
+<a name="478"><span class="lineNum">     478 </span>                :            : /// Compute area of convex hull, throw if points are not ordered (convexity check is not</a>
+<a name="479"><span class="lineNum">     479 </span>                :            : /// implemented)</a>
+<a name="480"><span class="lineNum">     480 </span>                :            : /// \throw std::domain_error if points are not ordered either CW or CCW</a>
+<a name="481"><span class="lineNum">     481 </span>                :            : /// \tparam IT Iterator type pointing to a point containing float x and float y</a>
+<a name="482"><span class="lineNum">     482 </span>                :            : /// \param[in] begin Iterator pointing to the beginning of the polygon points</a>
+<a name="483"><span class="lineNum">     483 </span>                :            : /// \param[in] end Iterator pointing to one past the last of the polygon points</a>
+<a name="484"><span class="lineNum">     484 </span>                :            : /// \return The area of the polygon, in squared of whatever units your points are in</a>
+<a name="485"><span class="lineNum">     485 </span>                :            : template&lt;typename IT&gt;</a>
+<a name="486"><span class="lineNum">     486 </span>                :<span class="lineCov">         32 : auto area_checked_2d(const IT begin, const IT end)</span></a>
+<a name="487"><span class="lineNum">     487 </span>                :            : {</a>
+<a name="488"><span class="lineNum">     488 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 28 times"> + </span>]:<span class="lineCov">         32 :   if (!all_ordered(begin, end)) {</span></a>
+<a name="489"><span class="lineNum">     489 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     throw std::domain_error{&quot;Cannot compute area: points are not ordered&quot;};</span></a>
+<a name="490"><span class="lineNum">     490 </span>                :            :   }</a>
+<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">         28 :   return area_2d(begin, end);</span></a>
+<a name="492"><span class="lineNum">     492 </span>                :            : }</a>
+<a name="493"><span class="lineNum">     493 </span>                :            : </a>
+<a name="494"><span class="lineNum">     494 </span>                :            : /// \brief Check if the given point is inside or on the edge of the given polygon</a>
+<a name="495"><span class="lineNum">     495 </span>                :            : /// \tparam IteratorType iterator type. The value pointed to by this must have point adapters</a>
+<a name="496"><span class="lineNum">     496 </span>                :            : ///                         defined or have float members x and y</a>
+<a name="497"><span class="lineNum">     497 </span>                :            : /// \tparam PointType point type. Must have point adapters defined or have float members x and y</a>
+<a name="498"><span class="lineNum">     498 </span>                :            : /// \param start_it iterator pointing to the first vertex of the polygon</a>
+<a name="499"><span class="lineNum">     499 </span>                :            : /// \param end_it iterator pointing to the last vertex of the polygon. The vertices should be in</a>
+<a name="500"><span class="lineNum">     500 </span>                :            : ///               order.</a>
+<a name="501"><span class="lineNum">     501 </span>                :            : /// \param p point to be searched</a>
+<a name="502"><span class="lineNum">     502 </span>                :            : /// \return True if the point is inside or on the edge of the polygon. False otherwise</a>
+<a name="503"><span class="lineNum">     503 </span>                :            : template&lt;typename IteratorType, typename PointType&gt;</a>
+<a name="504"><span class="lineNum">     504 </span>                :<span class="lineCov">        144 : bool is_point_inside_polygon_2d(</span></a>
+<a name="505"><span class="lineNum">     505 </span>                :            :   const IteratorType &amp; start_it, const IteratorType &amp; end_it, const PointType &amp; p)</a>
+<a name="506"><span class="lineNum">     506 </span>                :            : {</a>
+<a name="507"><span class="lineNum">     507 </span>                :<span class="lineCov">        144 :   std::int32_t winding_num = 0;</span></a>
+<a name="508"><span class="lineNum">     508 </span>                :            : </a>
+<a name="509"><span class="lineNum">     509 </span>        [<span class="branchCov" title="Branch 0 was taken 532 times"> + </span><span class="branchCov" title="Branch 1 was taken 128 times"> + </span>]:<span class="lineCov">        660 :   for (IteratorType it = start_it; it != end_it; ++it) {</span></a>
+<a name="510"><span class="lineNum">     510 </span>        [<span class="branchCov" title="Branch 0 was taken 532 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        532 :     auto next_it = std::next(it);</span></a>
+<a name="511"><span class="lineNum">     511 </span>        [<span class="branchCov" title="Branch 0 was taken 128 times"> + </span><span class="branchCov" title="Branch 1 was taken 404 times"> + </span>]:<span class="lineCov">        532 :     if (next_it == end_it) {</span></a>
+<a name="512"><span class="lineNum">     512 </span>                :<span class="lineCov">        128 :       next_it = start_it;</span></a>
+<a name="513"><span class="lineNum">     513 </span>                :            :     }</a>
+<a name="514"><span class="lineNum">     514 </span>        [<span class="branchCov" title="Branch 0 was taken 288 times"> + </span><span class="branchCov" title="Branch 1 was taken 244 times"> + </span>]:<span class="lineCov">        532 :     if (point_adapter::y_(*it) &lt;= point_adapter::y_(p)) {</span></a>
+<a name="515"><span class="lineNum">     515 </span>                :            :       // Upward crossing edge</a>
+<a name="516"><span class="lineNum">     516 </span>        [<span class="branchCov" title="Branch 0 was taken 68 times"> + </span><span class="branchCov" title="Branch 1 was taken 220 times"> + </span>]:<span class="lineCov">        288 :       if (point_adapter::y_(*next_it) &gt;= point_adapter::y_(p)) {</span></a>
+<a name="517"><span class="lineNum">     517 </span>  [<span class="branchCov" title="Branch 0 was taken 68 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 68 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         68 :         if (comparison::abs_gt(check_point_position_to_line_2d(*it, *next_it, p), 0.0F, 1e-3F)) {</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 44 times"> + </span><span class="branchCov" title="Branch 5 was taken 24 times"> + </span>]
+<a name="518"><span class="lineNum">     518 </span>                :<span class="lineCov">         44 :           ++winding_num;</span></a>
+<a name="519"><span class="lineNum">     519 </span>                :            :         } else {</a>
+<a name="520"><span class="lineNum">     520 </span>                :<span class="lineCov">         48 :           if (comparison::abs_eq_zero(</span></a>
+<a name="521"><span class="lineNum">     521 </span>  [<span class="branchCov" title="Branch 0 was taken 24 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         24 :               check_point_position_to_line_2d(*it, *next_it, p),</span></a>
+<a name="522"><span class="lineNum">     522 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         48 :               1e-3F))</span></a>
+<a name="523"><span class="lineNum">     523 </span>                :            :           {</a>
+<a name="524"><span class="lineNum">     524 </span>                :<span class="lineCov">         16 :             return true;</span></a>
+<a name="525"><span class="lineNum">     525 </span>                :            :           }</a>
+<a name="526"><span class="lineNum">     526 </span>                :            :         }</a>
+<a name="527"><span class="lineNum">     527 </span>                :            :       }</a>
+<a name="528"><span class="lineNum">     528 </span>                :            :     } else {</a>
+<a name="529"><span class="lineNum">     529 </span>                :            :       // Downward crossing edge</a>
+<a name="530"><span class="lineNum">     530 </span>        [<span class="branchCov" title="Branch 0 was taken 56 times"> + </span><span class="branchCov" title="Branch 1 was taken 188 times"> + </span>]:<span class="lineCov">        244 :       if (point_adapter::y_(*next_it) &lt;= point_adapter::y_(p)) {</span></a>
+<a name="531"><span class="lineNum">     531 </span>  [<span class="branchCov" title="Branch 0 was taken 56 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 48 times"> + </span><span class="branchCov" title="Branch 3 was taken 8 times"> + </span> :<span class="lineCov">         56 :         if (comparison::abs_lt(check_point_position_to_line_2d(*it, *next_it, p), 0.0F, 1e-3F)) {</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 10 times"> + </span><span class="branchCov" title="Branch 5 was taken 38 times"> + </span>]
+<a name="532"><span class="lineNum">     532 </span>                :<span class="lineCov">         10 :           --winding_num;</span></a>
+<a name="533"><span class="lineNum">     533 </span>                :            :         } else {</a>
+<a name="534"><span class="lineNum">     534 </span>                :<span class="lineCov">         92 :           if (comparison::abs_eq_zero(</span></a>
+<a name="535"><span class="lineNum">     535 </span>  [<span class="branchCov" title="Branch 0 was taken 46 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 38 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         46 :               check_point_position_to_line_2d(*it, *next_it, p),</span></a>
+<a name="536"><span class="lineNum">     536 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 46 times"> + </span>]:<span class="lineCov">         92 :               1e-3F))</span></a>
+<a name="537"><span class="lineNum">     537 </span>                :            :           {</a>
+<a name="538"><span class="lineNum">     538 </span>                :<span class="lineNoCov">          0 :             return true;</span></a>
+<a name="539"><span class="lineNum">     539 </span>                :            :           }</a>
+<a name="540"><span class="lineNum">     540 </span>                :            :         }</a>
+<a name="541"><span class="lineNum">     541 </span>                :            :       }</a>
+<a name="542"><span class="lineNum">     542 </span>                :            :     }</a>
+<a name="543"><span class="lineNum">     543 </span>                :            :   }</a>
+<a name="544"><span class="lineNum">     544 </span>                :<span class="lineCov">        128 :   return winding_num != 0;</span></a>
+<a name="545"><span class="lineNum">     545 </span>                :            : }</a>
+<a name="546"><span class="lineNum">     546 </span>                :            : </a>
+<a name="547"><span class="lineNum">     547 </span>                :            : </a>
+<a name="548"><span class="lineNum">     548 </span>                :            : }  // namespace geometry</a>
+<a name="549"><span class="lineNum">     549 </span>                :            : }  // namespace common</a>
+<a name="550"><span class="lineNum">     550 </span>                :            : }  // namespace autoware</a>
+<a name="551"><span class="lineNum">     551 </span>                :            : </a>
+<a name="552"><span class="lineNum">     552 </span>                :            : #endif  // GEOMETRY__COMMON_2D_HPP_</a>
 </pre>
       </td>
     </tr>

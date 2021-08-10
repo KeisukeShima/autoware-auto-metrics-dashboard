@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 20:30:18</td>
+            <td class="headerValue">2021-08-10 11:14:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -121,24 +121,24 @@
 <a name="43"><span class="lineNum">      43 </span>                :            : public:</a>
 <a name="44"><span class="lineNum">      44 </span>                :            :   using Point = Eigen::Vector3d;</a>
 <a name="45"><span class="lineNum">      45 </span>                :            :   using Cov = Eigen::Matrix3d;</a>
-<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">      70929 :   explicit VoxelViewBase(const VoxelT &amp; vx)</span></a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">      70929 :   : m_data_ref{vx} {}</span></a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">     142108 :   explicit VoxelViewBase(const VoxelT &amp; vx)</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">     142108 :   : m_data_ref{vx} {}</span></a>
 <a name="48"><span class="lineNum">      48 </span>                :            : </a>
-<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">      70929 :   const Point &amp; centroid() const</span></a>
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">     141858 :   const Point &amp; centroid() const</span></a>
 <a name="50"><span class="lineNum">      50 </span>                :            :   {</a>
-<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">      70929 :     return this-&gt;impl().centroid_();</span></a>
+<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">     141858 :     return this-&gt;impl().centroid_();</span></a>
 <a name="52"><span class="lineNum">      52 </span>                :            :   }</a>
-<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">      70704 :   const Cov &amp; inverse_covariance() const</span></a>
+<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">     141408 :   const Cov &amp; inverse_covariance() const</span></a>
 <a name="54"><span class="lineNum">      54 </span>                :            :   {</a>
-<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">      70704 :     return this-&gt;impl().inverse_covariance_();</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">     141408 :     return this-&gt;impl().inverse_covariance_();</span></a>
 <a name="56"><span class="lineNum">      56 </span>                :            :   }</a>
-<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">      70704 :   bool8_t usable() const noexcept</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">     141408 :   bool8_t usable() const noexcept</span></a>
 <a name="58"><span class="lineNum">      58 </span>                :            :   {</a>
-<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">      70704 :     return this-&gt;impl().usable_();</span></a>
+<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">     141408 :     return this-&gt;impl().usable_();</span></a>
 <a name="60"><span class="lineNum">      60 </span>                :            :   }</a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">     140058 :   const VoxelT &amp; get() const noexcept</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">     280491 :   const VoxelT &amp; get() const noexcept</span></a>
 <a name="62"><span class="lineNum">      62 </span>                :            :   {</a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">     140058 :     return m_data_ref;</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">     280491 :     return m_data_ref;</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            :   }</a>
 <a name="65"><span class="lineNum">      65 </span>                :            : </a>
 <a name="66"><span class="lineNum">      66 </span>                :            : private:</a>

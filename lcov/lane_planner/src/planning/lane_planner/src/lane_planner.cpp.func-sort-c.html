@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 20:09:48</td>
+            <td class="headerValue">2021-08-10 10:56:00</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">76</td>
+            <td class="headerCovTableEntry">77</td>
             <td class="headerCovTableEntry">124</td>
-            <td class="headerCovTableEntryLo">61.3 %</td>
+            <td class="headerCovTableEntryLo">62.1 %</td>
           </tr>
           <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -77,55 +77,55 @@
     </tr>
     <tr>
               <td class="coverFn"><a href="lane_planner.cpp.gcov.html#50">autoware::lane_planner::get_closest_lanelet(std::vector&lt;lanelet::ConstLanelet, std::allocator&lt;lanelet::ConstLanelet&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">1</td>
+              <td class="coverFnHi">3</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="lane_planner.cpp.gcov.html#116">autoware::lane_planner::LanePlanner::modify_velocity(autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt;*)</a></td>
-              <td class="coverFnHi">2</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#95">autoware::lane_planner::LanePlanner::plan_trajectory(autoware_auto_msgs::msg::HADMapRoute_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::shared_ptr&lt;lanelet::LaneletMap const&gt; const&amp;)</a></td>
-              <td class="coverFnHi">2</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#235">autoware::lane_planner::LanePlanner::set_steering_angle(std::vector&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; &gt; &gt;*)</a></td>
-              <td class="coverFnHi">2</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#253">autoware::lane_planner::LanePlanner::set_time_from_start(std::vector&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; &gt; &gt;*)</a></td>
-              <td class="coverFnHi">2</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#131">autoware::lane_planner::LanePlanner::generate_base_trajectory(autoware_auto_msgs::msg::HADMapRoute_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::shared_ptr&lt;lanelet::LaneletMap const&gt; const&amp;)</a></td>
-              <td class="coverFnHi">2</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#276">autoware::lane_planner::LanePlanner::create_trajectory_message(std_msgs::msg::Header_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::vector&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; &gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">2</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#213">autoware::lane_planner::LanePlanner::set_angle(std::vector&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; &gt; &gt;*)</a></td>
-              <td class="coverFnHi">2</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#68">autoware::lane_planner::LanePlanner::LanePlanner(motion::motion_common::VehicleConfig const&amp;, motion::planning::trajectory_smoother::TrajectorySmootherConfig const&amp;, autoware::lane_planner::LanePlannerConfig const&amp;)</a></td>
-              <td class="coverFnHi">2</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#89">autoware::lane_planner::convertToLaneletPoint(autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">2</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#78">autoware::lane_planner::convertToTrajectoryPoint(lanelet::ConstPoint3d const&amp;, float)</a></td>
-              <td class="coverFnHi">2</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#35">autoware::lane_planner::calculate_curvature(autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
               <td class="coverFnHi">5</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#95">autoware::lane_planner::LanePlanner::plan_trajectory(autoware_auto_msgs::msg::HADMapRoute_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::shared_ptr&lt;lanelet::LaneletMap const&gt; const&amp;)</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#235">autoware::lane_planner::LanePlanner::set_steering_angle(std::vector&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; &gt; &gt;*)</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#253">autoware::lane_planner::LanePlanner::set_time_from_start(std::vector&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; &gt; &gt;*)</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#131">autoware::lane_planner::LanePlanner::generate_base_trajectory(autoware_auto_msgs::msg::HADMapRoute_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::shared_ptr&lt;lanelet::LaneletMap const&gt; const&amp;)</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#276">autoware::lane_planner::LanePlanner::create_trajectory_message(std_msgs::msg::Header_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::vector&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; &gt; &gt; const&amp;)</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#213">autoware::lane_planner::LanePlanner::set_angle(std::vector&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt;, std::allocator&lt;autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; &gt; &gt;*)</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#68">autoware::lane_planner::LanePlanner::LanePlanner(motion::motion_common::VehicleConfig const&amp;, motion::planning::trajectory_smoother::TrajectorySmootherConfig const&amp;, autoware::lane_planner::LanePlannerConfig const&amp;)</a></td>
+              <td class="coverFnHi">5</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#89">autoware::lane_planner::convertToLaneletPoint(autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
+              <td class="coverFnHi">6</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#78">autoware::lane_planner::convertToTrajectoryPoint(lanelet::ConstPoint3d const&amp;, float)</a></td>
+              <td class="coverFnHi">9</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="lane_planner.cpp.gcov.html#35">autoware::lane_planner::calculate_curvature(autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
+              <td class="coverFnHi">15</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="lane_planner.cpp.gcov.html#28">autoware::lane_planner::distance2d(autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">18</td>
+              <td class="coverFnHi">51</td>
             </tr>
   </table>
   <br>

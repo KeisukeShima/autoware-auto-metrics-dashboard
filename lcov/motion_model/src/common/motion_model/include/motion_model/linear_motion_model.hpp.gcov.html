@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 20:23:29</td>
+            <td class="headerValue">2021-08-10 11:08:16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -135,12 +135,12 @@
 <a name="57"><span class="lineNum">      57 </span>                :            :   ///</a>
 <a name="58"><span class="lineNum">      58 </span>                :            :   /// @return     New state after prediction.</a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   ///</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">          2 :   inline State crtp_predict(</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">          4 :   inline State crtp_predict(</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            :     const State &amp; state,</a>
 <a name="62"><span class="lineNum">      62 </span>                :            :     const std::chrono::nanoseconds &amp; dt) const</a>
 <a name="63"><span class="lineNum">      63 </span>                :            :   {</a>
-<a name="64"><span class="lineNum">      64 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          2 :     return State{crtp_jacobian(state, dt) * state.vector()};</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="64"><span class="lineNum">      64 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          4 :     return State{crtp_jacobian(state, dt) * state.vector()};</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
 <a name="65"><span class="lineNum">      65 </span>                :            :   }</a>
 <a name="66"><span class="lineNum">      66 </span>                :            : </a>
 <a name="67"><span class="lineNum">      67 </span>                :            :   ///</a>

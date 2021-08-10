@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 20:30:18</td>
+            <td class="headerValue">2021-08-10 11:14:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">20</td>
@@ -105,12 +105,12 @@
 <a name="27"><span class="lineNum">      27 </span>                :            : {</a>
 <a name="28"><span class="lineNum">      28 </span>                :            : namespace ndt</a>
 <a name="29"><span class="lineNum">      29 </span>                :            : {</a>
-<a name="30"><span class="lineNum">      30 </span>                :<span class="lineCov">         19 : DynamicNDTMap::DynamicNDTMap(const Config &amp; voxel_grid_config)</span></a>
-<a name="31"><span class="lineNum">      31 </span>                :<span class="lineCov">         19 : : m_grid{voxel_grid_config} {}</span></a>
+<a name="30"><span class="lineNum">      30 </span>                :<span class="lineCov">         42 : DynamicNDTMap::DynamicNDTMap(const Config &amp; voxel_grid_config)</span></a>
+<a name="31"><span class="lineNum">      31 </span>                :<span class="lineCov">         42 : : m_grid{voxel_grid_config} {}</span></a>
 <a name="32"><span class="lineNum">      32 </span>                :            : </a>
-<a name="33"><span class="lineNum">      33 </span>                :<span class="lineCov">         23 : const std::string &amp; DynamicNDTMap::frame_id() const noexcept</span></a>
+<a name="33"><span class="lineNum">      33 </span>                :<span class="lineCov">         48 : const std::string &amp; DynamicNDTMap::frame_id() const noexcept</span></a>
 <a name="34"><span class="lineNum">      34 </span>                :            : {</a>
-<a name="35"><span class="lineNum">      35 </span>                :<span class="lineCov">         23 :   return m_frame_id;</span></a>
+<a name="35"><span class="lineNum">      35 </span>                :<span class="lineCov">         48 :   return m_frame_id;</span></a>
 <a name="36"><span class="lineNum">      36 </span>                :            : }</a>
 <a name="37"><span class="lineNum">      37 </span>                :            : </a>
 <a name="38"><span class="lineNum">      38 </span>                :<span class="lineNoCov">          0 : DynamicNDTMap::TimePoint DynamicNDTMap::stamp() const noexcept</span></a>
@@ -134,103 +134,103 @@
 <a name="56"><span class="lineNum">      56 </span>                :<span class="lineNoCov">          0 :   insert(msg);</span></a>
 <a name="57"><span class="lineNum">      57 </span>                :<span class="lineNoCov">          0 : }</span></a>
 <a name="58"><span class="lineNum">      58 </span>                :            : </a>
-<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">         68 : void DynamicNDTMap::insert(const sensor_msgs::msg::PointCloud2 &amp; msg)</span></a>
+<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">        139 : void DynamicNDTMap::insert(const sensor_msgs::msg::PointCloud2 &amp; msg)</span></a>
 <a name="60"><span class="lineNum">      60 </span>                :            : {</a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">         68 :   using PointXYZI = autoware::common::types::PointXYZI;</span></a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">         68 :   point_cloud_msg_wrapper::PointCloud2View&lt;PointXYZI&gt; msg_view{msg};</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">        139 :   using PointXYZI = autoware::common::types::PointXYZI;</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">        139 :   point_cloud_msg_wrapper::PointCloud2View&lt;PointXYZI&gt; msg_view{msg};</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            : </a>
-<a name="64"><span class="lineNum">      64 </span>        [<span class="branchCov" title="Branch 0 was taken 12724 times"> + </span><span class="branchCov" title="Branch 1 was taken 68 times"> + </span>]:<span class="lineCov">      12792 :   for (const auto &amp; point : msg_view) {</span></a>
-<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">      12724 :     m_grid.add_observation({point.x, point.y, point.z});</span></a>
+<a name="64"><span class="lineNum">      64 </span>        [<span class="branchCov" title="Branch 0 was taken 28073 times"> + </span><span class="branchCov" title="Branch 1 was taken 139 times"> + </span>]:<span class="lineCov">      28212 :   for (const auto &amp; point : msg_view) {</span></a>
+<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">      28073 :     m_grid.add_observation({point.x, point.y, point.z});</span></a>
 <a name="66"><span class="lineNum">      66 </span>                :            :   }</a>
 <a name="67"><span class="lineNum">      67 </span>                :            : </a>
 <a name="68"><span class="lineNum">      68 </span>                :            :   // try to stabilizie the covariance after inserting all the points</a>
-<a name="69"><span class="lineNum">      69 </span>        [<span class="branchCov" title="Branch 0 was taken 3029 times"> + </span><span class="branchCov" title="Branch 1 was taken 68 times"> + </span>]:<span class="lineCov">       3097 :   for (auto &amp; vx_it : m_grid) {</span></a>
-<a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">       3029 :     auto &amp; vx = vx_it.second;</span></a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">       3029 :     (void) vx.try_stabilize();</span></a>
+<a name="69"><span class="lineNum">      69 </span>        [<span class="branchCov" title="Branch 0 was taken 6433 times"> + </span><span class="branchCov" title="Branch 1 was taken 139 times"> + </span>]:<span class="lineCov">       6572 :   for (auto &amp; vx_it : m_grid) {</span></a>
+<a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">       6433 :     auto &amp; vx = vx_it.second;</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">       6433 :     (void) vx.try_stabilize();</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   }</a>
-<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">         68 :   m_stamp = ::time_utils::from_message(msg.header.stamp);</span></a>
-<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">         68 :   m_frame_id = msg.header.frame_id;</span></a>
-<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">         68 : }</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">        139 :   m_stamp = ::time_utils::from_message(msg.header.stamp);</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">        139 :   m_frame_id = msg.header.frame_id;</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">        139 : }</span></a>
 <a name="76"><span class="lineNum">      76 </span>                :            : </a>
 <a name="77"><span class="lineNum">      77 </span>                :            : /// The resulting point cloud has the following fields: x, y, z, cov_xx, cov_xy, cov_xz, cov_yy,</a>
 <a name="78"><span class="lineNum">      78 </span>                :            : /// cov_yz, cov_zz, cell_id.</a>
 <a name="79"><span class="lineNum">      79 </span>                :            : /// \param msg_out Reference to the pointcloud message that will store</a>
 <a name="80"><span class="lineNum">      80 </span>                :            : /// the serialized map data. The message will be initialized before use.</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : template&lt;&gt;</a>
-<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">         23 : void DynamicNDTMap::serialize_as&lt;StaticNDTMap&gt;(sensor_msgs::msg::PointCloud2 &amp; msg_out) const</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">         48 : void DynamicNDTMap::serialize_as&lt;StaticNDTMap&gt;(sensor_msgs::msg::PointCloud2 &amp; msg_out) const</span></a>
 <a name="83"><span class="lineNum">      83 </span>                :            : {</a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">         23 :   ndt::NdtMapCloudModifier msg_modifier{msg_out, frame_id()};</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">         48 :   ndt::NdtMapCloudModifier msg_modifier{msg_out, frame_id()};</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            : </a>
-<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">         23 :   msg_out.header.stamp = time_utils::to_message(m_stamp);</span></a>
+<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">         48 :   msg_out.header.stamp = time_utils::to_message(m_stamp);</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            : </a>
-<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">         23 :   const auto min_point = m_grid.config().get_min_point();</span></a>
-<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">         23 :   const auto max_point = m_grid.config().get_max_point();</span></a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">         23 :   const auto size = m_grid.config().get_voxel_size();</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">         48 :   const auto min_point = m_grid.config().get_min_point();</span></a>
+<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">         48 :   const auto max_point = m_grid.config().get_max_point();</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">         48 :   const auto size = m_grid.config().get_voxel_size();</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            : </a>
 <a name="92"><span class="lineNum">      92 </span>                :            :   // Serialize the configuration to be reconstructed. First 3 fields are used to store the</a>
 <a name="93"><span class="lineNum">      93 </span>                :            :   // configuration and the remaining 6 fields are left unused so they are set to 0.0</a>
-<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">         23 :   msg_modifier.push_back(</span></a>
-<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">         23 :     PointWithCovariances{min_point.x, min_point.y, min_point.z,</span></a>
+<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">         48 :   msg_modifier.push_back(</span></a>
+<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">         48 :     PointWithCovariances{min_point.x, min_point.y, min_point.z,</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :            :       0.0, 0.0, 0.0, 0.0, 0.0, 0.0});</a>
-<a name="97"><span class="lineNum">      97 </span>                :<span class="lineCov">         23 :   msg_modifier.push_back(</span></a>
-<a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">         23 :     PointWithCovariances{max_point.x, max_point.y, max_point.z,</span></a>
+<a name="97"><span class="lineNum">      97 </span>                :<span class="lineCov">         48 :   msg_modifier.push_back(</span></a>
+<a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">         48 :     PointWithCovariances{max_point.x, max_point.y, max_point.z,</span></a>
 <a name="99"><span class="lineNum">      99 </span>                :            :       0.0, 0.0, 0.0, 0.0, 0.0, 0.0});</a>
-<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">         23 :   msg_modifier.push_back(</span></a>
-<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">         23 :     PointWithCovariances{size.x, size.y, size.z,</span></a>
+<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">         48 :   msg_modifier.push_back(</span></a>
+<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">         48 :     PointWithCovariances{size.x, size.y, size.z,</span></a>
 <a name="102"><span class="lineNum">     102 </span>                :            :       0.0, 0.0, 0.0, 0.0, 0.0, 0.0});</a>
 <a name="103"><span class="lineNum">     103 </span>                :            : </a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         23 :   auto num_used_cells = 0U;</span></a>
-<a name="105"><span class="lineNum">     105 </span>        [<span class="branchCov" title="Branch 0 was taken 2379 times"> + </span><span class="branchCov" title="Branch 1 was taken 23 times"> + </span>]:<span class="lineCov">       2402 :   for (const auto &amp; vx_it : m_grid) {</span></a>
-<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">       2379 :     const auto &amp; vx = vx_it.second;</span></a>
-<a name="107"><span class="lineNum">     107 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2379 times"> + </span>]:<span class="lineCov">       2379 :     if (!vx.usable()) {</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         48 :   auto num_used_cells = 0U;</span></a>
+<a name="105"><span class="lineNum">     105 </span>        [<span class="branchCov" title="Branch 0 was taken 5008 times"> + </span><span class="branchCov" title="Branch 1 was taken 48 times"> + </span>]:<span class="lineCov">       5056 :   for (const auto &amp; vx_it : m_grid) {</span></a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">       5008 :     const auto &amp; vx = vx_it.second;</span></a>
+<a name="107"><span class="lineNum">     107 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5008 times"> + </span>]:<span class="lineCov">       5008 :     if (!vx.usable()) {</span></a>
 <a name="108"><span class="lineNum">     108 </span>                :            :       // Voxel doesn't have enough points to be used in NDT</a>
 <a name="109"><span class="lineNum">     109 </span>                :<span class="lineNoCov">          0 :       continue;</span></a>
 <a name="110"><span class="lineNum">     110 </span>                :            :     }</a>
 <a name="111"><span class="lineNum">     111 </span>                :            : </a>
-<a name="112"><span class="lineNum">     112 </span>        [<span class="branchCov" title="Branch 0 was taken 2379 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2379 :     const auto inv_covariance_opt = vx.inverse_covariance();</span></a>
-<a name="113"><span class="lineNum">     113 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2379 times"> + </span>]:<span class="lineCov">       2379 :     if (!inv_covariance_opt) {</span></a>
+<a name="112"><span class="lineNum">     112 </span>        [<span class="branchCov" title="Branch 0 was taken 5008 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5008 :     const auto inv_covariance_opt = vx.inverse_covariance();</span></a>
+<a name="113"><span class="lineNum">     113 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5008 times"> + </span>]:<span class="lineCov">       5008 :     if (!inv_covariance_opt) {</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            :       // Voxel covariance is not invertible</a>
 <a name="115"><span class="lineNum">     115 </span>                :<span class="lineNoCov">          0 :       continue;</span></a>
 <a name="116"><span class="lineNum">     116 </span>                :            :     }</a>
 <a name="117"><span class="lineNum">     117 </span>                :            : </a>
-<a name="118"><span class="lineNum">     118 </span>        [<span class="branchCov" title="Branch 0 was taken 2379 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2379 :     const auto &amp; centroid = vx.centroid();</span></a>
-<a name="119"><span class="lineNum">     119 </span>        [<span class="branchCov" title="Branch 0 was taken 2379 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2379 :     const auto &amp; inv_covariance = inv_covariance_opt.value();</span></a>
-<a name="120"><span class="lineNum">     120 </span>        [<span class="branchCov" title="Branch 0 was taken 2379 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2379 :     msg_modifier.push_back(</span></a>
+<a name="118"><span class="lineNum">     118 </span>        [<span class="branchCov" title="Branch 0 was taken 5008 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5008 :     const auto &amp; centroid = vx.centroid();</span></a>
+<a name="119"><span class="lineNum">     119 </span>        [<span class="branchCov" title="Branch 0 was taken 5008 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5008 :     const auto &amp; inv_covariance = inv_covariance_opt.value();</span></a>
+<a name="120"><span class="lineNum">     120 </span>        [<span class="branchCov" title="Branch 0 was taken 5008 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5008 :     msg_modifier.push_back(</span></a>
 <a name="121"><span class="lineNum">     121 </span>                :            :           {</a>
-<a name="122"><span class="lineNum">     122 </span>        [<span class="branchCov" title="Branch 0 was taken 2379 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2379 :             centroid(0U), centroid(1U), centroid(2U),</span></a>
-<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">       2379 :             inv_covariance(0U, 0U), inv_covariance(0U, 1U), inv_covariance(0U, 2U),</span></a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">       2379 :             inv_covariance(1U, 1U), inv_covariance(1U, 2U),</span></a>
-<a name="125"><span class="lineNum">     125 </span>        [<span class="branchCov" title="Branch 0 was taken 2379 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2379 :             inv_covariance(2U, 2U)</span></a>
+<a name="122"><span class="lineNum">     122 </span>        [<span class="branchCov" title="Branch 0 was taken 5008 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5008 :             centroid(0U), centroid(1U), centroid(2U),</span></a>
+<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">       5008 :             inv_covariance(0U, 0U), inv_covariance(0U, 1U), inv_covariance(0U, 2U),</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">       5008 :             inv_covariance(1U, 1U), inv_covariance(1U, 2U),</span></a>
+<a name="125"><span class="lineNum">     125 </span>        [<span class="branchCov" title="Branch 0 was taken 5008 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5008 :             inv_covariance(2U, 2U)</span></a>
 <a name="126"><span class="lineNum">     126 </span>                :            :           });</a>
 <a name="127"><span class="lineNum">     127 </span>                :            : </a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">       2379 :     ++num_used_cells;</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">       5008 :     ++num_used_cells;</span></a>
 <a name="129"><span class="lineNum">     129 </span>                :            :   }</a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         23 : }</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         48 : }</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            : </a>
-<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">       1801 : const DynamicNDTMap::VoxelViewVector &amp; DynamicNDTMap::cell(const Point &amp; pt) const</span></a>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">       3727 : const DynamicNDTMap::VoxelViewVector &amp; DynamicNDTMap::cell(const Point &amp; pt) const</span></a>
 <a name="133"><span class="lineNum">     133 </span>                :            : {</a>
-<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">       1801 :   return m_grid.cell(pt);</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">       3727 :   return m_grid.cell(pt);</span></a>
 <a name="135"><span class="lineNum">     135 </span>                :            : }</a>
 <a name="136"><span class="lineNum">     136 </span>                :            : </a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">        126 : const DynamicNDTMap::VoxelViewVector &amp; DynamicNDTMap::cell(float32_t x, float32_t y, float32_t z)</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">        252 : const DynamicNDTMap::VoxelViewVector &amp; DynamicNDTMap::cell(float32_t x, float32_t y, float32_t z)</span></a>
 <a name="138"><span class="lineNum">     138 </span>                :            : const</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : {</a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">        126 :   return cell(Point({x, y, z}));</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">        252 :   return cell(Point({x, y, z}));</span></a>
 <a name="141"><span class="lineNum">     141 </span>                :            : }</a>
 <a name="142"><span class="lineNum">     142 </span>                :            : </a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         20 : std::size_t DynamicNDTMap::size() const noexcept</span></a>
+<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         42 : std::size_t DynamicNDTMap::size() const noexcept</span></a>
 <a name="144"><span class="lineNum">     144 </span>                :            : {</a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">         20 :   return m_grid.size();</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">         42 :   return m_grid.size();</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            : }</a>
 <a name="147"><span class="lineNum">     147 </span>                :            : </a>
-<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">          2 : typename DynamicNDTMap::VoxelGrid::const_iterator DynamicNDTMap::begin() const noexcept</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">          4 : typename DynamicNDTMap::VoxelGrid::const_iterator DynamicNDTMap::begin() const noexcept</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :            : {</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">          2 :   return m_grid.cbegin();</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">          4 :   return m_grid.cbegin();</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            : }</a>
 <a name="152"><span class="lineNum">     152 </span>                :            : </a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">          2 : typename DynamicNDTMap::VoxelGrid::const_iterator DynamicNDTMap::end() const noexcept</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">          4 : typename DynamicNDTMap::VoxelGrid::const_iterator DynamicNDTMap::end() const noexcept</span></a>
 <a name="154"><span class="lineNum">     154 </span>                :            : {</a>
-<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">          2 :   return m_grid.cend();</span></a>
+<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">          4 :   return m_grid.cend();</span></a>
 <a name="156"><span class="lineNum">     156 </span>                :            : }</a>
 <a name="157"><span class="lineNum">     157 </span>                :            : </a>
 <a name="158"><span class="lineNum">     158 </span>                :<span class="lineNoCov">          0 : void DynamicNDTMap::clear() noexcept</span></a>
@@ -238,14 +238,14 @@
 <a name="160"><span class="lineNum">     160 </span>                :<span class="lineNoCov">          0 :   m_grid.clear();</span></a>
 <a name="161"><span class="lineNum">     161 </span>                :<span class="lineNoCov">          0 : }</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            : </a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">          9 : const std::string &amp; StaticNDTMap::frame_id() const noexcept</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">         18 : const std::string &amp; StaticNDTMap::frame_id() const noexcept</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            : {</a>
-<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">          9 :   return m_frame_id;</span></a>
+<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">         18 :   return m_frame_id;</span></a>
 <a name="166"><span class="lineNum">     166 </span>                :            : }</a>
 <a name="167"><span class="lineNum">     167 </span>                :            : </a>
-<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">         12 : StaticNDTMap::TimePoint StaticNDTMap::stamp() const noexcept</span></a>
+<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">         24 : StaticNDTMap::TimePoint StaticNDTMap::stamp() const noexcept</span></a>
 <a name="169"><span class="lineNum">     169 </span>                :            : {</a>
-<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">         12 :   return m_stamp;</span></a>
+<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">         24 :   return m_stamp;</span></a>
 <a name="171"><span class="lineNum">     171 </span>                :            : }</a>
 <a name="172"><span class="lineNum">     172 </span>                :            : </a>
 <a name="173"><span class="lineNum">     173 </span>                :<span class="lineNoCov">          0 : bool StaticNDTMap::valid() const noexcept</span></a>
@@ -254,118 +254,118 @@
 <span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
 <a name="176"><span class="lineNum">     176 </span>                :            : }</a>
 <a name="177"><span class="lineNum">     177 </span>                :            : </a>
-<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">         16 : const StaticNDTMap::ConfigPoint &amp; StaticNDTMap::cell_size() const</span></a>
+<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">         32 : const StaticNDTMap::ConfigPoint &amp; StaticNDTMap::cell_size() const</span></a>
 <a name="179"><span class="lineNum">     179 </span>                :            : {</a>
-<a name="180"><span class="lineNum">     180 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span>]:<span class="lineCov">         16 :   if (!m_grid) {</span></a>
+<a name="180"><span class="lineNum">     180 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 32 times"> + </span>]:<span class="lineCov">         32 :   if (!m_grid) {</span></a>
 <a name="181"><span class="lineNum">     181 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::runtime_error(&quot;Static ndt map was attempted to be used before a map was set.&quot;);</span></a>
 <a name="182"><span class="lineNum">     182 </span>                :            :   }</a>
-<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         16 :   return m_grid-&gt;cell_size();</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         32 :   return m_grid-&gt;cell_size();</span></a>
 <a name="184"><span class="lineNum">     184 </span>                :            : }</a>
 <a name="185"><span class="lineNum">     185 </span>                :            : </a>
-<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">         26 : void StaticNDTMap::set(const sensor_msgs::msg::PointCloud2 &amp; msg)</span></a>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">         53 : void StaticNDTMap::set(const sensor_msgs::msg::PointCloud2 &amp; msg)</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :            : {</a>
-<a name="188"><span class="lineNum">     188 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 26 times"> + </span>]:<span class="lineCov">         26 :   if (m_grid) {</span></a>
+<a name="188"><span class="lineNum">     188 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 53 times"> + </span>]:<span class="lineCov">         53 :   if (m_grid) {</span></a>
 <a name="189"><span class="lineNum">     189 </span>                :<span class="lineNoCov">          0 :     m_grid-&gt;clear();</span></a>
 <a name="190"><span class="lineNum">     190 </span>                :            :   }</a>
-<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">         26 :   deserialize_from(msg);</span></a>
-<a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">         24 :   m_stamp = ::time_utils::from_message(msg.header.stamp);</span></a>
-<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">         24 :   m_frame_id = msg.header.frame_id;</span></a>
-<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">         24 : }</span></a>
+<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">         53 :   deserialize_from(msg);</span></a>
+<a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">         49 :   m_stamp = ::time_utils::from_message(msg.header.stamp);</span></a>
+<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">         49 :   m_frame_id = msg.header.frame_id;</span></a>
+<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">         49 : }</span></a>
 <a name="195"><span class="lineNum">     195 </span>                :            : </a>
-<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">         26 : void StaticNDTMap::deserialize_from(const sensor_msgs::msg::PointCloud2 &amp; msg)</span></a>
+<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">         53 : void StaticNDTMap::deserialize_from(const sensor_msgs::msg::PointCloud2 &amp; msg)</span></a>
 <a name="197"><span class="lineNum">     197 </span>                :            : {</a>
-<a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">         26 :   using PointXYZ = geometry_msgs::msg::Point32;</span></a>
-<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">         26 :   constexpr auto num_config_fields = 3U;</span></a>
-<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">         26 :   NdtMapCloudView msg_view{msg};</span></a>
-<a name="201"><span class="lineNum">     201 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 24 times"> + </span>]:<span class="lineCov">         25 :   if (msg_view.size() &lt; num_config_fields) {</span></a>
-<a name="202"><span class="lineNum">     202 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     throw std::runtime_error(&quot;StaticNDTMap: Point cloud representing the ndt map is empty.&quot;);</span></a>
+<a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">         53 :   using PointXYZ = geometry_msgs::msg::Point32;</span></a>
+<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">         53 :   constexpr auto num_config_fields = 3U;</span></a>
+<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">         53 :   NdtMapCloudView msg_view{msg};</span></a>
+<a name="201"><span class="lineNum">     201 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 49 times"> + </span>]:<span class="lineCov">         51 :   if (msg_view.size() &lt; num_config_fields) {</span></a>
+<a name="202"><span class="lineNum">     202 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     throw std::runtime_error(&quot;StaticNDTMap: Point cloud representing the ndt map is empty.&quot;);</span></a>
 <a name="203"><span class="lineNum">     203 </span>                :            :   }</a>
 <a name="204"><span class="lineNum">     204 </span>                :            : </a>
-<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">         24 :   const auto map_size = msg_view.size() - num_config_fields;</span></a>
-<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">         24 :   const auto &amp; min_point = msg_view[0U];</span></a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">         24 :   const auto &amp; max_point = msg_view[1U];</span></a>
-<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">         24 :   const auto &amp; voxel_size = msg_view[2U];</span></a>
+<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">         49 :   const auto map_size = msg_view.size() - num_config_fields;</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">         49 :   const auto &amp; min_point = msg_view[0U];</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">         49 :   const auto &amp; max_point = msg_view[1U];</span></a>
+<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">         49 :   const auto &amp; voxel_size = msg_view[2U];</span></a>
 <a name="209"><span class="lineNum">     209 </span>                :            : </a>
-<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">         24 :   const Config config{</span></a>
-<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">         24 :     PointXYZ{}.set__x(static_cast&lt;float&gt;(min_point.x)).set__y(static_cast&lt;float&gt;(min_point.y)).</span></a>
-<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">         24 :     set__z(static_cast&lt;float&gt;(min_point.z)),</span></a>
-<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">         48 :     PointXYZ{}.set__x(static_cast&lt;float&gt;(max_point.x)).set__y(static_cast&lt;float&gt;(max_point.y)).</span></a>
-<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">         24 :     set__z(static_cast&lt;float&gt;(max_point.z)),</span></a>
-<a name="215"><span class="lineNum">     215 </span>                :<span class="lineCov">         48 :     PointXYZ{}.set__x(static_cast&lt;float&gt;(voxel_size.x)).set__y(static_cast&lt;float&gt;(voxel_size.y)).</span></a>
-<a name="216"><span class="lineNum">     216 </span>                :<span class="lineCov">         24 :     set__z(static_cast&lt;float&gt;(voxel_size.z)),</span></a>
-<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">         24 :     map_size};</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">         49 :   const Config config{</span></a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">         49 :     PointXYZ{}.set__x(static_cast&lt;float&gt;(min_point.x)).set__y(static_cast&lt;float&gt;(min_point.y)).</span></a>
+<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">         49 :     set__z(static_cast&lt;float&gt;(min_point.z)),</span></a>
+<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">         98 :     PointXYZ{}.set__x(static_cast&lt;float&gt;(max_point.x)).set__y(static_cast&lt;float&gt;(max_point.y)).</span></a>
+<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">         49 :     set__z(static_cast&lt;float&gt;(max_point.z)),</span></a>
+<a name="215"><span class="lineNum">     215 </span>                :<span class="lineCov">         98 :     PointXYZ{}.set__x(static_cast&lt;float&gt;(voxel_size.x)).set__y(static_cast&lt;float&gt;(voxel_size.y)).</span></a>
+<a name="216"><span class="lineNum">     216 </span>                :<span class="lineCov">         49 :     set__z(static_cast&lt;float&gt;(voxel_size.z)),</span></a>
+<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">         49 :     map_size};</span></a>
 <a name="218"><span class="lineNum">     218 </span>                :            : </a>
 <a name="219"><span class="lineNum">     219 </span>                :            :   // Either update the map config or initialize the map.</a>
-<a name="220"><span class="lineNum">     220 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 24 times"> + </span>]:<span class="lineCov">         24 :   if (m_grid) {</span></a>
+<a name="220"><span class="lineNum">     220 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 49 times"> + </span>]:<span class="lineCov">         49 :   if (m_grid) {</span></a>
 <a name="221"><span class="lineNum">     221 </span>                :<span class="lineNoCov">          0 :     m_grid-&gt;set_config(config);</span></a>
 <a name="222"><span class="lineNum">     222 </span>                :            :   } else {</a>
-<a name="223"><span class="lineNum">     223 </span>                :<span class="lineCov">         24 :     m_grid.emplace(config);</span></a>
+<a name="223"><span class="lineNum">     223 </span>                :<span class="lineCov">         49 :     m_grid.emplace(config);</span></a>
 <a name="224"><span class="lineNum">     224 </span>                :            :   }</a>
 <a name="225"><span class="lineNum">     225 </span>                :            : </a>
-<a name="226"><span class="lineNum">     226 </span>        [<span class="branchCov" title="Branch 0 was taken 2429 times"> + </span><span class="branchCov" title="Branch 1 was taken 24 times"> + </span>]:<span class="lineCov">       2453 :   for (auto it = std::next(msg_view.begin(), num_config_fields); it != msg_view.end(); ++it) {</span></a>
-<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">       2429 :     const auto &amp; voxel_point = *it;</span></a>
-<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">       2429 :     const Point centroid{voxel_point.x, voxel_point.y, voxel_point.z};</span></a>
-<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">       2429 :     const auto voxel_idx = m_grid-&gt;index(centroid);</span></a>
+<a name="226"><span class="lineNum">     226 </span>        [<span class="branchCov" title="Branch 0 was taken 4983 times"> + </span><span class="branchCov" title="Branch 1 was taken 49 times"> + </span>]:<span class="lineCov">       5032 :   for (auto it = std::next(msg_view.begin(), num_config_fields); it != msg_view.end(); ++it) {</span></a>
+<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">       4983 :     const auto &amp; voxel_point = *it;</span></a>
+<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">       4983 :     const Point centroid{voxel_point.x, voxel_point.y, voxel_point.z};</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">       4983 :     const auto voxel_idx = m_grid-&gt;index(centroid);</span></a>
 <a name="230"><span class="lineNum">     230 </span>                :            : </a>
-<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">       2429 :     Eigen::Matrix3d inv_covariance;</span></a>
-<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">       4858 :     inv_covariance &lt;&lt;</span></a>
-<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">       2429 :       voxel_point.icov_xx, voxel_point.icov_xy, voxel_point.icov_xz,</span></a>
-<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">       2429 :       voxel_point.icov_xy, voxel_point.icov_yy, voxel_point.icov_yz,</span></a>
-<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">       4858 :       voxel_point.icov_xz, voxel_point.icov_yz, voxel_point.icov_zz;</span></a>
-<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">       2429 :     const Voxel vx{centroid, inv_covariance};</span></a>
+<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">       4983 :     Eigen::Matrix3d inv_covariance;</span></a>
+<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">       9966 :     inv_covariance &lt;&lt;</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">       4983 :       voxel_point.icov_xx, voxel_point.icov_xy, voxel_point.icov_xz,</span></a>
+<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">       4983 :       voxel_point.icov_xy, voxel_point.icov_yy, voxel_point.icov_yz,</span></a>
+<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">       9966 :       voxel_point.icov_xz, voxel_point.icov_yz, voxel_point.icov_zz;</span></a>
+<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">       4983 :     const Voxel vx{centroid, inv_covariance};</span></a>
 <a name="237"><span class="lineNum">     237 </span>                :            : </a>
-<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">       2429 :     const auto insert_res = m_grid-&gt;emplace_voxel(voxel_idx, Voxel{centroid, inv_covariance});</span></a>
-<a name="239"><span class="lineNum">     239 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2429 times"> + </span>]:<span class="lineCov">       2429 :     if (!insert_res.second) {</span></a>
+<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">       4983 :     const auto insert_res = m_grid-&gt;emplace_voxel(voxel_idx, Voxel{centroid, inv_covariance});</span></a>
+<a name="239"><span class="lineNum">     239 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4983 times"> + </span>]:<span class="lineCov">       4983 :     if (!insert_res.second) {</span></a>
 <a name="240"><span class="lineNum">     240 </span>                :            :       // if a voxel already exist at this point, replace.</a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">       2429 :       insert_res.first-&gt;second = vx;</span></a>
+<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">       4983 :       insert_res.first-&gt;second = vx;</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :            :     }</a>
 <a name="243"><span class="lineNum">     243 </span>                :            :   }</a>
-<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">         24 : }</span></a>
-<a name="245"><span class="lineNum">     245 </span>                :<span class="lineCov">      69576 : const StaticNDTMap::VoxelViewVector &amp; StaticNDTMap::cell(const Point &amp; pt) const</span></a>
+<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">         49 : }</span></a>
+<a name="245"><span class="lineNum">     245 </span>                :<span class="lineCov">     139277 : const StaticNDTMap::VoxelViewVector &amp; StaticNDTMap::cell(const Point &amp; pt) const</span></a>
 <a name="246"><span class="lineNum">     246 </span>                :            : {</a>
-<a name="247"><span class="lineNum">     247 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 69575 times"> + </span>]:<span class="lineCov">      69576 :   if (!m_grid) {</span></a>
-<a name="248"><span class="lineNum">     248 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     throw std::runtime_error(&quot;Static ndt map was attempted to be used before a map was set.&quot;);</span></a>
+<a name="247"><span class="lineNum">     247 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 139275 times"> + </span>]:<span class="lineCov">     139277 :   if (!m_grid) {</span></a>
+<a name="248"><span class="lineNum">     248 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     throw std::runtime_error(&quot;Static ndt map was attempted to be used before a map was set.&quot;);</span></a>
 <a name="249"><span class="lineNum">     249 </span>                :            :   }</a>
-<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">      69575 :   return m_grid-&gt;cell(pt);</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">     139275 :   return m_grid-&gt;cell(pt);</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            : }</a>
 <a name="252"><span class="lineNum">     252 </span>                :            : </a>
-<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">         51 : const StaticNDTMap::VoxelViewVector &amp; StaticNDTMap::cell(float32_t x, float32_t y, float32_t z)</span></a>
+<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">        102 : const StaticNDTMap::VoxelViewVector &amp; StaticNDTMap::cell(float32_t x, float32_t y, float32_t z)</span></a>
 <a name="254"><span class="lineNum">     254 </span>                :            : const</a>
 <a name="255"><span class="lineNum">     255 </span>                :            : {</a>
-<a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">         51 :   return cell(Point({x, y, z}));</span></a>
+<a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">        102 :   return cell(Point({x, y, z}));</span></a>
 <a name="257"><span class="lineNum">     257 </span>                :            : }</a>
 <a name="258"><span class="lineNum">     258 </span>                :            : </a>
-<a name="259"><span class="lineNum">     259 </span>                :<span class="lineCov">         19 : std::size_t StaticNDTMap::size() const</span></a>
+<a name="259"><span class="lineNum">     259 </span>                :<span class="lineCov">         39 : std::size_t StaticNDTMap::size() const</span></a>
 <a name="260"><span class="lineNum">     260 </span>                :            : {</a>
-<a name="261"><span class="lineNum">     261 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 19 times"> + </span>]:<span class="lineCov">         19 :   if (!m_grid) {</span></a>
+<a name="261"><span class="lineNum">     261 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 39 times"> + </span>]:<span class="lineCov">         39 :   if (!m_grid) {</span></a>
 <a name="262"><span class="lineNum">     262 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::runtime_error(&quot;Static ndt map was attempted to be used before a map was set.&quot;);</span></a>
 <a name="263"><span class="lineNum">     263 </span>                :            :   }</a>
-<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">         19 :   return m_grid-&gt;size();</span></a>
+<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">         39 :   return m_grid-&gt;size();</span></a>
 <a name="265"><span class="lineNum">     265 </span>                :            : }</a>
 <a name="266"><span class="lineNum">     266 </span>                :            : </a>
-<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">         50 : typename StaticNDTMap::VoxelGrid::const_iterator StaticNDTMap::begin() const</span></a>
+<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">        100 : typename StaticNDTMap::VoxelGrid::const_iterator StaticNDTMap::begin() const</span></a>
 <a name="268"><span class="lineNum">     268 </span>                :            : {</a>
-<a name="269"><span class="lineNum">     269 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 50 times"> + </span>]:<span class="lineCov">         50 :   if (!m_grid) {</span></a>
+<a name="269"><span class="lineNum">     269 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 100 times"> + </span>]:<span class="lineCov">        100 :   if (!m_grid) {</span></a>
 <a name="270"><span class="lineNum">     270 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::runtime_error(&quot;Static ndt map was attempted to be used before a map was set.&quot;);</span></a>
 <a name="271"><span class="lineNum">     271 </span>                :            :   }</a>
-<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">         50 :   return m_grid-&gt;cbegin();</span></a>
+<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">        100 :   return m_grid-&gt;cbegin();</span></a>
 <a name="273"><span class="lineNum">     273 </span>                :            : }</a>
 <a name="274"><span class="lineNum">     274 </span>                :            : </a>
-<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">        100 : typename StaticNDTMap::VoxelGrid::const_iterator StaticNDTMap::end() const</span></a>
+<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">        200 : typename StaticNDTMap::VoxelGrid::const_iterator StaticNDTMap::end() const</span></a>
 <a name="276"><span class="lineNum">     276 </span>                :            : {</a>
-<a name="277"><span class="lineNum">     277 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 100 times"> + </span>]:<span class="lineCov">        100 :   if (!m_grid) {</span></a>
+<a name="277"><span class="lineNum">     277 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 200 times"> + </span>]:<span class="lineCov">        200 :   if (!m_grid) {</span></a>
 <a name="278"><span class="lineNum">     278 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::runtime_error(&quot;Static ndt map was attempted to be used before a map was set.&quot;);</span></a>
 <a name="279"><span class="lineNum">     279 </span>                :            :   }</a>
-<a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">        100 :   return m_grid-&gt;cend();</span></a>
+<a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">        200 :   return m_grid-&gt;cend();</span></a>
 <a name="281"><span class="lineNum">     281 </span>                :            : }</a>
 <a name="282"><span class="lineNum">     282 </span>                :            : </a>
-<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">          1 : void StaticNDTMap::clear()</span></a>
+<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">          2 : void StaticNDTMap::clear()</span></a>
 <a name="284"><span class="lineNum">     284 </span>                :            : {</a>
-<a name="285"><span class="lineNum">     285 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :   if (!m_grid) {</span></a>
+<a name="285"><span class="lineNum">     285 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   if (!m_grid) {</span></a>
 <a name="286"><span class="lineNum">     286 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::runtime_error(&quot;Static ndt map was attempted to be used before a map was set.&quot;);</span></a>
 <a name="287"><span class="lineNum">     287 </span>                :            :   }</a>
-<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">          1 :   m_grid-&gt;clear();</span></a>
-<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">          1 : }</span></a>
+<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">          2 :   m_grid-&gt;clear();</span></a>
+<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">          2 : }</span></a>
 <a name="290"><span class="lineNum">     290 </span>                :            : }  // namespace ndt</a>
 <a name="291"><span class="lineNum">     291 </span>                :            : }  // namespace localization</a>
 <a name="292"><span class="lineNum">     292 </span>                :            : }  // namespace autoware</a>

@@ -67,10 +67,6 @@
   </url>
   
   <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/can_dbc_parser/</loc>
-  </url>
-  
-  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/categories/</loc>
   </url>
   
@@ -271,6 +267,10 @@
   </url>
   
   <url>
+    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/outlier_filter_nodes/</loc>
+  </url>
+  
+  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/parking_planner/</loc>
   </url>
   
@@ -295,10 +295,6 @@
   </url>
   
   <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/point_cloud_msg_wrapper/</loc>
-  </url>
-  
-  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/point_type_adapter/</loc>
   </url>
   
@@ -316,18 +312,6 @@
   
   <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/pure_pursuit_nodes/</loc>
-  </url>
-  
-  <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_dbw_can/</loc>
-  </url>
-  
-  <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_dbw_joystick/</loc>
-  </url>
-  
-  <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_pdu/</loc>
   </url>
   
   <url>
@@ -423,6 +407,10 @@
   </url>
   
   <url>
+    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/trajectory_follower/</loc>
+  </url>
+  
+  <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/trajectory_follower_nodes/</loc>
   </url>
   
@@ -440,10 +428,6 @@
   
   <url>
     <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/tvm_utility/</loc>
-  </url>
-  
-  <url>
-    <loc>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/tvm_vendor/</loc>
   </url>
   
   <url>

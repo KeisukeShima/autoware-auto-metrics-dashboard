@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">5</td>
             <td class="headerCovTableEntry">164</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntryLo">3.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 20:45:51</td>
+            <td class="headerValue">2021-08-10 11:26:29</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">1</td>
             <td class="headerCovTableEntry">12</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntryLo">8.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -431,19 +431,19 @@
 <a name="352"><span class="lineNum">     352 </span>                :            : </a>
 <a name="353"><span class="lineNum">     353 </span>                :            : </a>
 <a name="354"><span class="lineNum">     354 </span>                :            : // ---- Main parking planner interface ------------------------------------------------------</a>
-<a name="355"><span class="lineNum">     355 </span>                :<span class="lineNoCov">          0 : ParkingPlanner::ParkingPlanner(</span></a>
+<a name="355"><span class="lineNum">     355 </span>                :<span class="lineCov">          1 : ParkingPlanner::ParkingPlanner(</span></a>
 <a name="356"><span class="lineNum">     356 </span>                :            :   const BicycleModelParameters&lt;float64_t&gt; &amp; parameters,</a>
 <a name="357"><span class="lineNum">     357 </span>                :            :   const NLPCostWeights&lt;float64_t&gt; &amp; nlp_weights,</a>
 <a name="358"><span class="lineNum">     358 </span>                :            :   const VehicleState&lt;float64_t&gt; &amp; lower_state_bounds,</a>
 <a name="359"><span class="lineNum">     359 </span>                :            :   const VehicleState&lt;float64_t&gt; &amp; upper_state_bounds,</a>
 <a name="360"><span class="lineNum">     360 </span>                :            :   const VehicleCommand&lt;float64_t&gt; &amp; lower_command_bounds,</a>
 <a name="361"><span class="lineNum">     361 </span>                :            :   const VehicleCommand&lt;float64_t&gt; &amp; upper_command_bounds</a>
-<a name="362"><span class="lineNum">     362 </span>                :<span class="lineNoCov">          0 : )</span></a>
+<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">          1 : )</span></a>
 <a name="363"><span class="lineNum">     363 </span>                :            : : m_nlp_planner(nlp_weights, lower_state_bounds, upper_state_bounds,</a>
-<a name="364"><span class="lineNum">     364 </span>                :<span class="lineNoCov">          0 :     lower_command_bounds, upper_command_bounds), m_model_parameters(parameters)</span></a>
+<a name="364"><span class="lineNum">     364 </span>                :<span class="lineCov">          1 :     lower_command_bounds, upper_command_bounds), m_model_parameters(parameters)</span></a>
 <a name="365"><span class="lineNum">     365 </span>                :            : {</a>
-<a name="366"><span class="lineNum">     366 </span>                :<span class="lineNoCov">          0 :   m_astar_planner = AstarPathPlanner();</span></a>
-<a name="367"><span class="lineNum">     367 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="366"><span class="lineNum">     366 </span>                :<span class="lineCov">          1 :   m_astar_planner = AstarPathPlanner();</span></a>
+<a name="367"><span class="lineNum">     367 </span>                :<span class="lineCov">          1 : }</span></a>
 <a name="368"><span class="lineNum">     368 </span>                :            : </a>
 <a name="369"><span class="lineNum">     369 </span>                :            : </a>
 <a name="370"><span class="lineNum">     370 </span>                :<span class="lineNoCov">          0 : PlanningResult ParkingPlanner::plan(</span></a>

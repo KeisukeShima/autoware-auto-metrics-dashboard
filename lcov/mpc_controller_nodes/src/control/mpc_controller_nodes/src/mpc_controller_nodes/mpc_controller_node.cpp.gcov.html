@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 20:29:07</td>
+            <td class="headerValue">2021-08-10 11:13:26</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -330,7 +330,7 @@
 <a name="170"><span class="lineNum">     170 </span>                :<span class="lineNoCov">          0 : }</span></a>
 <a name="171"><span class="lineNum">     171 </span>                :            : </a>
 <a name="172"><span class="lineNum">     172 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">          1 : MpcControllerNode::MpcControllerNode(</span></a>
+<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">          2 : MpcControllerNode::MpcControllerNode(</span></a>
 <a name="174"><span class="lineNum">     174 </span>                :            :   const std::string &amp; name,</a>
 <a name="175"><span class="lineNum">     175 </span>                :            :   const std::string &amp; ns,</a>
 <a name="176"><span class="lineNum">     176 </span>                :            :   const std::string &amp; command_topic,</a>
@@ -339,7 +339,7 @@
 <a name="179"><span class="lineNum">     179 </span>                :            :   const std::string &amp; trajectory_topic,</a>
 <a name="180"><span class="lineNum">     180 </span>                :            :   const std::string &amp; diagnostic_topic,</a>
 <a name="181"><span class="lineNum">     181 </span>                :            :   const std::string &amp; static_tf_topic,</a>
-<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">          1 :   const mpc_controller::Config &amp; config)</span></a>
+<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">          2 :   const mpc_controller::Config &amp; config)</span></a>
 <a name="183"><span class="lineNum">     183 </span>                :            : : ControllerBaseNode{</a>
 <a name="184"><span class="lineNum">     184 </span>                :            :     name,</a>
 <a name="185"><span class="lineNum">     185 </span>                :            :     ns,</a>
@@ -348,10 +348,10 @@
 <a name="188"><span class="lineNum">     188 </span>                :            :     tf_topic,</a>
 <a name="189"><span class="lineNum">     189 </span>                :            :     trajectory_topic,</a>
 <a name="190"><span class="lineNum">     190 </span>                :            :     diagnostic_topic,</a>
-<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">          1 :     static_tf_topic}</span></a>
+<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">          2 :     static_tf_topic}</span></a>
 <a name="192"><span class="lineNum">     192 </span>                :            : {</a>
-<a name="193"><span class="lineNum">     193 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :   set_controller(std::make_unique&lt;mpc_controller::MpcController&gt;(config));</span></a>
-<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">          1 : }</span></a>
+<a name="193"><span class="lineNum">     193 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   set_controller(std::make_unique&lt;mpc_controller::MpcController&gt;(config));</span></a>
+<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">          2 : }</span></a>
 <a name="195"><span class="lineNum">     195 </span>                :            : }  // namespace mpc_controller_nodes</a>
 <a name="196"><span class="lineNum">     196 </span>                :            : }  // namespace control</a>
 <a name="197"><span class="lineNum">     197 </span>                :            : }  // namespace motion</a>

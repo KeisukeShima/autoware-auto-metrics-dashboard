@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 20:41:08</td>
+            <td class="headerValue">2021-08-10 11:21:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">19</td>
@@ -136,26 +136,26 @@
 <a name="58"><span class="lineNum">      58 </span>                :            :   /// Get the result of an expression for a given parameter value.</a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   /// \param x Parameter value</a>
 <a name="60"><span class="lineNum">      60 </span>                :            :   /// \return Evaluated score</a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">        438 :   Value operator()(const DomainValue &amp; x)</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">        876 :   Value operator()(const DomainValue &amp; x)</span></a>
 <a name="62"><span class="lineNum">      62 </span>                :            :   {</a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">        438 :     return this-&gt;impl().score_(x);</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">        876 :     return this-&gt;impl().score_(x);</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            :   }</a>
 <a name="65"><span class="lineNum">      65 </span>                :            : </a>
 <a name="66"><span class="lineNum">      66 </span>                :            :   /// Get the jacobian at a given parameter value.</a>
 <a name="67"><span class="lineNum">      67 </span>                :            :   /// \param x Parameter value.</a>
 <a name="68"><span class="lineNum">      68 </span>                :            :   /// \param out Evaluated jacobian matrix.</a>
-<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">        452 :   void jacobian(const DomainValue &amp; x, JacobianRef out)</span></a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">        904 :   void jacobian(const DomainValue &amp; x, JacobianRef out)</span></a>
 <a name="70"><span class="lineNum">      70 </span>                :            :   {</a>
-<a name="71"><span class="lineNum">      71 </span>        [<span class="branchCov" title="Branch 0 was taken 452 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        452 :     this-&gt;impl().jacobian_(x, out);</span></a>
-<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">        452 :   }</span></a>
+<a name="71"><span class="lineNum">      71 </span>        [<span class="branchCov" title="Branch 0 was taken 904 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        904 :     this-&gt;impl().jacobian_(x, out);</span></a>
+<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">        904 :   }</span></a>
 <a name="73"><span class="lineNum">      73 </span>                :            : </a>
 <a name="74"><span class="lineNum">      74 </span>                :            :   /// Get the hessian at a given parameter value.</a>
 <a name="75"><span class="lineNum">      75 </span>                :            :   /// \param x Parameter value.{</a>
 <a name="76"><span class="lineNum">      76 </span>                :            :   /// \param out Evaluated hessian matrix.</a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">        250 :   void hessian(const DomainValue &amp; x, HessianRef out)</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">        500 :   void hessian(const DomainValue &amp; x, HessianRef out)</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   {</a>
-<a name="79"><span class="lineNum">      79 </span>        [<span class="branchCov" title="Branch 0 was taken 250 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        250 :     this-&gt;impl().hessian_(x, out);</span></a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">        250 :   }</span></a>
+<a name="79"><span class="lineNum">      79 </span>        [<span class="branchCov" title="Branch 0 was taken 500 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        500 :     this-&gt;impl().hessian_(x, out);</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">        500 :   }</span></a>
 <a name="81"><span class="lineNum">      81 </span>                :            : </a>
 <a name="82"><span class="lineNum">      82 </span>                :            :   /// Pre-compute and cache the score/jacobian/hessian values. Which terms are to be computed is</a>
 <a name="83"><span class="lineNum">      83 </span>                :            :   /// specified with the `ComputeMode` argument. By default, this function does nothing. You can</a>
@@ -165,11 +165,11 @@
 <a name="87"><span class="lineNum">      87 </span>                :            :   /// \param x Parameter value.</a>
 <a name="88"><span class="lineNum">      88 </span>                :            :   /// \param mode Computation mode. Which terms (score, jacobian, hessian) are to be computed</a>
 <a name="89"><span class="lineNum">      89 </span>                :            :   /// can be set within this element.</a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">        327 :   void evaluate(const DomainValue &amp; x, const ComputeMode &amp; mode)</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">        654 :   void evaluate(const DomainValue &amp; x, const ComputeMode &amp; mode)</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            :   {</a>
 <a name="92"><span class="lineNum">      92 </span>                :            :     (void)x;</a>
 <a name="93"><span class="lineNum">      93 </span>                :            :     (void)mode;</a>
-<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">        327 :   }</span></a>
+<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">        654 :   }</span></a>
 <a name="95"><span class="lineNum">      95 </span>                :            : };</a>
 <a name="96"><span class="lineNum">      96 </span>                :            : </a>
 <a name="97"><span class="lineNum">      97 </span>                :            : /// Expression class for cases when pre-evaluating elements or computing elements together</a>
@@ -316,17 +316,17 @@
 <a name="238"><span class="lineNum">     238 </span>                :            : </a>
 <a name="239"><span class="lineNum">     239 </span>                :            :   template&lt;typename ... Args, typename Dummy = void, typename = std::enable_if_t&lt;</a>
 <a name="240"><span class="lineNum">     240 </span>                :            :       is_unconstrained, Dummy&gt;&gt;</a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">         17 :   OptimizationProblem(</span></a>
+<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">         34 :   OptimizationProblem(</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :            :     Args &amp;&amp; ... args</a>
 <a name="243"><span class="lineNum">     243 </span>                :            :   )</a>
-<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">         17 :   : m_objective(std::forward&lt;Args&gt;(args)...)</span></a>
+<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">         34 :   : m_objective(std::forward&lt;Args&gt;(args)...)</span></a>
 <a name="245"><span class="lineNum">     245 </span>                :            :   {</a>
-<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">         17 :   }</span></a>
+<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">         34 :   }</span></a>
 <a name="247"><span class="lineNum">     247 </span>                :            : </a>
 <a name="248"><span class="lineNum">     248 </span>                :            :   template&lt;bool8_t enabled = is_unconstrained&gt;</a>
-<a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">        125 :   typename std::enable_if_t&lt;enabled, Value&gt; score_(const DomainValueT &amp; x)</span></a>
+<a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">        250 :   typename std::enable_if_t&lt;enabled, Value&gt; score_(const DomainValueT &amp; x)</span></a>
 <a name="250"><span class="lineNum">     250 </span>                :            :   {</a>
-<a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">        125 :     return m_objective(x);</span></a>
+<a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">        250 :     return m_objective(x);</span></a>
 <a name="252"><span class="lineNum">     252 </span>                :            :   }</a>
 <a name="253"><span class="lineNum">     253 </span>                :            : </a>
 <a name="254"><span class="lineNum">     254 </span>                :            :   template&lt;bool8_t enabled = is_unconstrained&gt;</a>
@@ -336,10 +336,10 @@
 <a name="258"><span class="lineNum">     258 </span>                :            :   }</a>
 <a name="259"><span class="lineNum">     259 </span>                :            : </a>
 <a name="260"><span class="lineNum">     260 </span>                :            :   template&lt;bool8_t enabled = is_unconstrained&gt;</a>
-<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">        125 :   typename std::enable_if_t&lt;enabled, void&gt; jacobian_(const DomainValueT &amp; x, JacobianRef out)</span></a>
+<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">        250 :   typename std::enable_if_t&lt;enabled, void&gt; jacobian_(const DomainValueT &amp; x, JacobianRef out)</span></a>
 <a name="262"><span class="lineNum">     262 </span>                :            :   {</a>
-<a name="263"><span class="lineNum">     263 </span>        [<span class="branchCov" title="Branch 0 was taken 125 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        125 :     m_objective.jacobian(x, out);</span></a>
-<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">        125 :   }</span></a>
+<a name="263"><span class="lineNum">     263 </span>        [<span class="branchCov" title="Branch 0 was taken 250 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        250 :     m_objective.jacobian(x, out);</span></a>
+<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">        250 :   }</span></a>
 <a name="265"><span class="lineNum">     265 </span>                :            : </a>
 <a name="266"><span class="lineNum">     266 </span>                :            :   template&lt;bool8_t enabled = is_unconstrained&gt;</a>
 <a name="267"><span class="lineNum">     267 </span>                :            :   typename std::enable_if_t&lt;!enabled, void&gt; jacobian_(const DomainValueT &amp; x, JacobianRef out)</a>
@@ -348,10 +348,10 @@
 <a name="270"><span class="lineNum">     270 </span>                :            :   }</a>
 <a name="271"><span class="lineNum">     271 </span>                :            : </a>
 <a name="272"><span class="lineNum">     272 </span>                :            :   template&lt;bool8_t enabled = is_unconstrained&gt;</a>
-<a name="273"><span class="lineNum">     273 </span>                :<span class="lineCov">        125 :   typename std::enable_if_t&lt;enabled, void&gt; hessian_(const DomainValueT &amp; x, HessianRef out)</span></a>
+<a name="273"><span class="lineNum">     273 </span>                :<span class="lineCov">        250 :   typename std::enable_if_t&lt;enabled, void&gt; hessian_(const DomainValueT &amp; x, HessianRef out)</span></a>
 <a name="274"><span class="lineNum">     274 </span>                :            :   {</a>
-<a name="275"><span class="lineNum">     275 </span>        [<span class="branchCov" title="Branch 0 was taken 125 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        125 :     m_objective.hessian(x, out);</span></a>
-<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">        125 :   }</span></a>
+<a name="275"><span class="lineNum">     275 </span>        [<span class="branchCov" title="Branch 0 was taken 250 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        250 :     m_objective.hessian(x, out);</span></a>
+<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">        250 :   }</span></a>
 <a name="277"><span class="lineNum">     277 </span>                :            : </a>
 <a name="278"><span class="lineNum">     278 </span>                :            :   template&lt;bool8_t enabled = is_unconstrained&gt;</a>
 <a name="279"><span class="lineNum">     279 </span>                :            :   typename std::enable_if_t&lt;!enabled, void&gt; hessian_(const DomainValueT &amp; x, HessianRef out)</a>
@@ -360,12 +360,12 @@
 <a name="282"><span class="lineNum">     282 </span>                :            :   }</a>
 <a name="283"><span class="lineNum">     283 </span>                :            : </a>
 <a name="284"><span class="lineNum">     284 </span>                :            :   template&lt;bool8_t enabled = is_unconstrained&gt;</a>
-<a name="285"><span class="lineNum">     285 </span>                :<span class="lineCov">        125 :   typename std::enable_if_t&lt;enabled, void&gt; evaluate(</span></a>
+<a name="285"><span class="lineNum">     285 </span>                :<span class="lineCov">        250 :   typename std::enable_if_t&lt;enabled, void&gt; evaluate(</span></a>
 <a name="286"><span class="lineNum">     286 </span>                :            :     const DomainValueT &amp; x,</a>
 <a name="287"><span class="lineNum">     287 </span>                :            :     const ComputeMode &amp; mode)</a>
 <a name="288"><span class="lineNum">     288 </span>                :            :   {</a>
-<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">        125 :     m_objective.evaluate(x, mode);</span></a>
-<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">        125 :   }</span></a>
+<a name="289"><span class="lineNum">     289 </span>                :<span class="lineCov">        250 :     m_objective.evaluate(x, mode);</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">        250 :   }</span></a>
 <a name="291"><span class="lineNum">     291 </span>                :            : </a>
 <a name="292"><span class="lineNum">     292 </span>                :            :   template&lt;bool8_t enabled = is_unconstrained&gt;</a>
 <a name="293"><span class="lineNum">     293 </span>                :            :   typename std::enable_if_t&lt;!enabled, void&gt; evaluate(</a>
@@ -376,9 +376,9 @@
 <a name="298"><span class="lineNum">     298 </span>                :            :   }</a>
 <a name="299"><span class="lineNum">     299 </span>                :            : </a>
 <a name="300"><span class="lineNum">     300 </span>                :            : protected:</a>
-<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">         16 :   ObjectiveT &amp; objective()</span></a>
+<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">         32 :   ObjectiveT &amp; objective()</span></a>
 <a name="302"><span class="lineNum">     302 </span>                :            :   {</a>
-<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">         16 :     return m_objective;</span></a>
+<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">         32 :     return m_objective;</span></a>
 <a name="304"><span class="lineNum">     304 </span>                :            :   }</a>
 <a name="305"><span class="lineNum">     305 </span>                :            : </a>
 <a name="306"><span class="lineNum">     306 </span>                :            :   EqualityConstraintsT &amp; equality_constraints()</a>

@@ -170,16 +170,6 @@
     </item>
     
     <item>
-      <title>can_dbc_parser</title>
-      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/can_dbc_parser/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/can_dbc_parser/</guid>
-      <description>can_dbc_parser
- Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/can_dbc_parser/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/can_dbc_parser\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/can_dbc_parser/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/can_dbc_parser\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/can_dbc_parser/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
-    </item>
-    
-    <item>
       <title>controller_common</title>
       <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/controller_common/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -650,6 +640,16 @@
     </item>
     
     <item>
+      <title>outlier_filter_nodes</title>
+      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/outlier_filter_nodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/outlier_filter_nodes/</guid>
+      <description>outlier_filter_nodes
+ Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/outlier_filter_nodes/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/outlier_filter_nodes\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/outlier_filter_nodes/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/outlier_filter_nodes\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/outlier_filter_nodes/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
+    </item>
+    
+    <item>
       <title>parking_planner</title>
       <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/parking_planner/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -710,16 +710,6 @@
     </item>
     
     <item>
-      <title>point_cloud_msg_wrapper</title>
-      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/point_cloud_msg_wrapper/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/point_cloud_msg_wrapper/</guid>
-      <description>point_cloud_msg_wrapper
- Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/point_cloud_msg_wrapper/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/point_cloud_msg_wrapper\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/point_cloud_msg_wrapper/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/point_cloud_msg_wrapper\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/point_cloud_msg_wrapper/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
-    </item>
-    
-    <item>
       <title>point_type_adapter</title>
       <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/point_type_adapter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -767,36 +757,6 @@
       <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/pure_pursuit_nodes/</guid>
       <description>pure_pursuit_nodes
  Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/pure_pursuit_nodes/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/pure_pursuit_nodes\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/pure_pursuit_nodes/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/pure_pursuit_nodes\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/pure_pursuit_nodes/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
-    </item>
-    
-    <item>
-      <title>raptor_dbw_can</title>
-      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_dbw_can/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_dbw_can/</guid>
-      <description>raptor_dbw_can
- Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/raptor_dbw_can/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/raptor_dbw_can\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/raptor_dbw_can/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/raptor_dbw_can\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/raptor_dbw_can/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
-    </item>
-    
-    <item>
-      <title>raptor_dbw_joystick</title>
-      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_dbw_joystick/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_dbw_joystick/</guid>
-      <description>raptor_dbw_joystick
- Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/raptor_dbw_joystick/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/raptor_dbw_joystick\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/raptor_dbw_joystick/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/raptor_dbw_joystick\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/raptor_dbw_joystick/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
-    </item>
-    
-    <item>
-      <title>raptor_pdu</title>
-      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_pdu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/raptor_pdu/</guid>
-      <description>raptor_pdu
- Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/raptor_pdu/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/raptor_pdu\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/raptor_pdu/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/raptor_pdu\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/raptor_pdu/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
     </item>
     
     <item>
@@ -1020,6 +980,16 @@
     </item>
     
     <item>
+      <title>trajectory_follower</title>
+      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/trajectory_follower/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/trajectory_follower/</guid>
+      <description>trajectory_follower
+ Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/trajectory_follower/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/trajectory_follower\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/trajectory_follower/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/trajectory_follower\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/trajectory_follower/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
+    </item>
+    
+    <item>
       <title>trajectory_follower_nodes</title>
       <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/trajectory_follower_nodes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1067,16 +1037,6 @@
       <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/tvm_utility/</guid>
       <description>tvm_utility
  Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/tvm_utility/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/tvm_utility\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/tvm_utility/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/tvm_utility\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/tvm_utility/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
-    </item>
-    
-    <item>
-      <title>tvm_vendor</title>
-      <link>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/tvm_vendor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://keisukeshima.github.io/autoware-auto-metrics-dashboard/packages/tvm_vendor/</guid>
-      <description>tvm_vendor
- Test result Code coverage     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/tvm_vendor/coverage.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/tvm_vendor\/coverage.json&#39;, fig.data, fig.layout, {responsive: true}); });   You can access more detailed data on code coverage here.  Code metrics    json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/tvm_vendor/ccn.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.plot(&#39;plotly\/tvm_vendor\/ccn.json&#39;, fig.data, fig.layout, {responsive: true}); });     json_url = &#34;https://keisukeshima.github.io/autoware-auto-metrics-dashboard/&#34; + &#34;plotly/tvm_vendor/loc.json&#34; Plotly.d3.json(json_url, function(err, fig) { Plotly.</description>
     </item>
     
     <item>

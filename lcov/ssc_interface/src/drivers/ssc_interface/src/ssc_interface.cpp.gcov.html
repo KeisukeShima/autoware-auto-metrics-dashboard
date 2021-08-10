@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 21:15:53</td>
+            <td class="headerValue">2021-08-10 11:48:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -453,16 +453,16 @@
 <a name="330"><span class="lineNum">     330 </span>                :            : </a>
 <a name="331"><span class="lineNum">     331 </span>                :            : // Update x, y, heading, and heading_rate from the other variables</a>
 <a name="332"><span class="lineNum">     332 </span>                :            : // TODO(nikolai.morin): Clean up and implement as a motion model</a>
-<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">       1050 : void SscInterface::kinematic_bicycle_model(</span></a>
+<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">       2100 : void SscInterface::kinematic_bicycle_model(</span></a>
 <a name="334"><span class="lineNum">     334 </span>                :            :   float32_t dt, float32_t l_r, float32_t l_f, VehicleKinematicState * vks)</a>
 <a name="335"><span class="lineNum">     335 </span>                :            : {</a>
 <a name="336"><span class="lineNum">     336 </span>                :            :   // convert to yaw – copied from trajectory_spoofer.cpp</a>
 <a name="337"><span class="lineNum">     337 </span>                :            :   // The below formula could probably be simplified if it would be derived directly for heading</a>
-<a name="338"><span class="lineNum">     338 </span>                :<span class="lineCov">       1050 :   const float32_t sin_y = 2.0F * vks-&gt;state.heading.real * vks-&gt;state.heading.imag;</span></a>
-<a name="339"><span class="lineNum">     339 </span>                :<span class="lineCov">       1050 :   const float32_t cos_y = 1.0F - 2.0F * vks-&gt;state.heading.imag * vks-&gt;state.heading.imag;</span></a>
-<a name="340"><span class="lineNum">     340 </span>                :<span class="lineCov">       1050 :   float32_t yaw = std::atan2(sin_y, cos_y);</span></a>
-<a name="341"><span class="lineNum">     341 </span>        [<span class="branchCov" title="Branch 0 was taken 503 times"> + </span><span class="branchCov" title="Branch 1 was taken 547 times"> + </span>]:<span class="lineCov">       1050 :   if (yaw &lt; 0) {</span></a>
-<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">        503 :     yaw += TAU;</span></a>
+<a name="338"><span class="lineNum">     338 </span>                :<span class="lineCov">       2100 :   const float32_t sin_y = 2.0F * vks-&gt;state.heading.real * vks-&gt;state.heading.imag;</span></a>
+<a name="339"><span class="lineNum">     339 </span>                :<span class="lineCov">       2100 :   const float32_t cos_y = 1.0F - 2.0F * vks-&gt;state.heading.imag * vks-&gt;state.heading.imag;</span></a>
+<a name="340"><span class="lineNum">     340 </span>                :<span class="lineCov">       2100 :   float32_t yaw = std::atan2(sin_y, cos_y);</span></a>
+<a name="341"><span class="lineNum">     341 </span>        [<span class="branchCov" title="Branch 0 was taken 1006 times"> + </span><span class="branchCov" title="Branch 1 was taken 1094 times"> + </span>]:<span class="lineCov">       2100 :   if (yaw &lt; 0) {</span></a>
+<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">       1006 :     yaw += TAU;</span></a>
 <a name="343"><span class="lineNum">     343 </span>                :            :   }</a>
 <a name="344"><span class="lineNum">     344 </span>                :            :   // δ: tire angle (relative to car's main axis)</a>
 <a name="345"><span class="lineNum">     345 </span>                :            :   // φ: heading/yaw</a>
@@ -479,44 +479,44 @@
 <a name="356"><span class="lineNum">     356 </span>                :            :   // TODO(nikolai.morin): Decouple from VehicleKinematicState, use only v0 as</a>
 <a name="357"><span class="lineNum">     357 </span>                :            :   // input. Currently v0_lat + v0_lon are redundant with beta/delta via</a>
 <a name="358"><span class="lineNum">     358 </span>                :            :   // beta = atan2(v_lat, v_lon).</a>
-<a name="359"><span class="lineNum">     359 </span>                :<span class="lineCov">       1050 :   float32_t v0_lat = vks-&gt;state.lateral_velocity_mps;</span></a>
-<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">       1050 :   float32_t v0_lon = vks-&gt;state.longitudinal_velocity_mps;</span></a>
-<a name="361"><span class="lineNum">     361 </span>                :<span class="lineCov">       1050 :   float32_t v0 = std::sqrt(v0_lat * v0_lat + v0_lon * v0_lon);</span></a>
-<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">       1050 :   float32_t delta = vks-&gt;state.front_wheel_angle_rad;</span></a>
-<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">       1050 :   float32_t a = vks-&gt;state.acceleration_mps2;</span></a>
-<a name="364"><span class="lineNum">     364 </span>                :<span class="lineCov">       1050 :   float32_t beta = std::atan2(l_r * std::tan(delta), l_r + l_f);</span></a>
+<a name="359"><span class="lineNum">     359 </span>                :<span class="lineCov">       2100 :   float32_t v0_lat = vks-&gt;state.lateral_velocity_mps;</span></a>
+<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">       2100 :   float32_t v0_lon = vks-&gt;state.longitudinal_velocity_mps;</span></a>
+<a name="361"><span class="lineNum">     361 </span>                :<span class="lineCov">       2100 :   float32_t v0 = std::sqrt(v0_lat * v0_lat + v0_lon * v0_lon);</span></a>
+<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">       2100 :   float32_t delta = vks-&gt;state.front_wheel_angle_rad;</span></a>
+<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">       2100 :   float32_t a = vks-&gt;state.acceleration_mps2;</span></a>
+<a name="364"><span class="lineNum">     364 </span>                :<span class="lineCov">       2100 :   float32_t beta = std::atan2(l_r * std::tan(delta), l_r + l_f);</span></a>
 <a name="365"><span class="lineNum">     365 </span>                :            :   // This is the direction in which the POI is moving at the beginning of the</a>
 <a name="366"><span class="lineNum">     366 </span>                :            :   // integration step. &quot;Course&quot; may not be super accurate, but it's to</a>
 <a name="367"><span class="lineNum">     367 </span>                :            :   // emphasize that the POI doesn't travel in the heading direction.</a>
-<a name="368"><span class="lineNum">     368 </span>                :<span class="lineCov">       1050 :   const float32_t course = yaw + beta;</span></a>
+<a name="368"><span class="lineNum">     368 </span>                :<span class="lineCov">       2100 :   const float32_t course = yaw + beta;</span></a>
 <a name="369"><span class="lineNum">     369 </span>                :            :   // How much the yaw changes per meter traveled (at the reference point)</a>
 <a name="370"><span class="lineNum">     370 </span>                :            :   const float32_t yaw_change =</a>
-<a name="371"><span class="lineNum">     371 </span>                :<span class="lineCov">       1050 :     std::cos(beta) * std::tan(delta) / (l_r + l_f);</span></a>
+<a name="371"><span class="lineNum">     371 </span>                :<span class="lineCov">       2100 :     std::cos(beta) * std::tan(delta) / (l_r + l_f);</span></a>
 <a name="372"><span class="lineNum">     372 </span>                :            :   // How much the yaw rate</a>
-<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">       1050 :   const float32_t yaw_rate = yaw_change * v0;</span></a>
+<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">       2100 :   const float32_t yaw_rate = yaw_change * v0;</span></a>
 <a name="374"><span class="lineNum">     374 </span>                :            :   // Threshold chosen so as to not result in division by 0</a>
-<a name="375"><span class="lineNum">     375 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchCov" title="Branch 1 was taken 1000 times"> + </span>]:<span class="lineCov">       1050 :   if (std::abs(yaw_rate) &lt; 1e-18f) {</span></a>
-<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">         50 :     vks-&gt;state.x += std::cos(course) * (v0 * dt + 0.5f * a * dt * dt);</span></a>
-<a name="377"><span class="lineNum">     377 </span>                :<span class="lineCov">         50 :     vks-&gt;state.y += std::sin(course) * (v0 * dt + 0.5f * a * dt * dt);</span></a>
+<a name="375"><span class="lineNum">     375 </span>        [<span class="branchCov" title="Branch 0 was taken 100 times"> + </span><span class="branchCov" title="Branch 1 was taken 2000 times"> + </span>]:<span class="lineCov">       2100 :   if (std::abs(yaw_rate) &lt; 1e-18f) {</span></a>
+<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">        100 :     vks-&gt;state.x += std::cos(course) * (v0 * dt + 0.5f * a * dt * dt);</span></a>
+<a name="377"><span class="lineNum">     377 </span>                :<span class="lineCov">        100 :     vks-&gt;state.y += std::sin(course) * (v0 * dt + 0.5f * a * dt * dt);</span></a>
 <a name="378"><span class="lineNum">     378 </span>                :            :   } else {</a>
-<a name="379"><span class="lineNum">     379 </span>                :<span class="lineCov">       1000 :     vks-&gt;state.x +=</span></a>
-<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">       1000 :       (v0 + a * dt) / yaw_rate * std::sin(course + yaw_rate * dt) -</span></a>
-<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">       1000 :       v0 / yaw_rate * std::sin(course) +</span></a>
-<a name="382"><span class="lineNum">     382 </span>                :<span class="lineCov">       1000 :       a / (yaw_rate * yaw_rate) * std::cos(course + yaw_rate * dt) -</span></a>
-<a name="383"><span class="lineNum">     383 </span>                :<span class="lineCov">       1000 :       a / (yaw_rate * yaw_rate) * std::cos(course);</span></a>
-<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">       1000 :     vks-&gt;state.y +=</span></a>
-<a name="385"><span class="lineNum">     385 </span>                :<span class="lineCov">       1000 :       -(v0 + a * dt) / yaw_rate * std::cos(course + yaw_rate * dt) +</span></a>
-<a name="386"><span class="lineNum">     386 </span>                :<span class="lineCov">       1000 :       v0 / yaw_rate * std::cos(course) +</span></a>
-<a name="387"><span class="lineNum">     387 </span>                :<span class="lineCov">       1000 :       a / (yaw_rate * yaw_rate) * std::sin(course + yaw_rate * dt) -</span></a>
-<a name="388"><span class="lineNum">     388 </span>                :<span class="lineCov">       1000 :       a / (yaw_rate * yaw_rate) * std::sin(course);</span></a>
+<a name="379"><span class="lineNum">     379 </span>                :<span class="lineCov">       2000 :     vks-&gt;state.x +=</span></a>
+<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">       2000 :       (v0 + a * dt) / yaw_rate * std::sin(course + yaw_rate * dt) -</span></a>
+<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">       2000 :       v0 / yaw_rate * std::sin(course) +</span></a>
+<a name="382"><span class="lineNum">     382 </span>                :<span class="lineCov">       2000 :       a / (yaw_rate * yaw_rate) * std::cos(course + yaw_rate * dt) -</span></a>
+<a name="383"><span class="lineNum">     383 </span>                :<span class="lineCov">       2000 :       a / (yaw_rate * yaw_rate) * std::cos(course);</span></a>
+<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">       2000 :     vks-&gt;state.y +=</span></a>
+<a name="385"><span class="lineNum">     385 </span>                :<span class="lineCov">       2000 :       -(v0 + a * dt) / yaw_rate * std::cos(course + yaw_rate * dt) +</span></a>
+<a name="386"><span class="lineNum">     386 </span>                :<span class="lineCov">       2000 :       v0 / yaw_rate * std::cos(course) +</span></a>
+<a name="387"><span class="lineNum">     387 </span>                :<span class="lineCov">       2000 :       a / (yaw_rate * yaw_rate) * std::sin(course + yaw_rate * dt) -</span></a>
+<a name="388"><span class="lineNum">     388 </span>                :<span class="lineCov">       2000 :       a / (yaw_rate * yaw_rate) * std::sin(course);</span></a>
 <a name="389"><span class="lineNum">     389 </span>                :            :   }</a>
-<a name="390"><span class="lineNum">     390 </span>                :<span class="lineCov">       1050 :   yaw += std::cos(beta) * std::tan(delta) / (l_r + l_f) * (v0 * dt + 0.5f * a * dt * dt);</span></a>
-<a name="391"><span class="lineNum">     391 </span>                :<span class="lineCov">       1050 :   vks-&gt;state.heading.real = std::cos(yaw / 2.0f);</span></a>
-<a name="392"><span class="lineNum">     392 </span>                :<span class="lineCov">       1050 :   vks-&gt;state.heading.imag = std::sin(yaw / 2.0f);</span></a>
+<a name="390"><span class="lineNum">     390 </span>                :<span class="lineCov">       2100 :   yaw += std::cos(beta) * std::tan(delta) / (l_r + l_f) * (v0 * dt + 0.5f * a * dt * dt);</span></a>
+<a name="391"><span class="lineNum">     391 </span>                :<span class="lineCov">       2100 :   vks-&gt;state.heading.real = std::cos(yaw / 2.0f);</span></a>
+<a name="392"><span class="lineNum">     392 </span>                :<span class="lineCov">       2100 :   vks-&gt;state.heading.imag = std::sin(yaw / 2.0f);</span></a>
 <a name="393"><span class="lineNum">     393 </span>                :            : </a>
 <a name="394"><span class="lineNum">     394 </span>                :            :   // Rotations per second or rad per second?</a>
-<a name="395"><span class="lineNum">     395 </span>                :<span class="lineCov">       1050 :   vks-&gt;state.heading_rate_rps = yaw_rate;</span></a>
-<a name="396"><span class="lineNum">     396 </span>                :<span class="lineCov">       1050 : }</span></a>
+<a name="395"><span class="lineNum">     395 </span>                :<span class="lineCov">       2100 :   vks-&gt;state.heading_rate_rps = yaw_rate;</span></a>
+<a name="396"><span class="lineNum">     396 </span>                :<span class="lineCov">       2100 : }</span></a>
 <a name="397"><span class="lineNum">     397 </span>                :            : </a>
 <a name="398"><span class="lineNum">     398 </span>                :            : }  // namespace ssc_interface</a>
 </pre>

@@ -36,7 +36,7 @@ FN:162,_ZZN6motion7control20mpc_controller_nodes17MpcControllerNodeC4ERKNSt7__cx
 FN:173,_ZN6motion7control20mpc_controller_nodes17MpcControllerNodeC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESA_SA_SA_SA_SA_SA_SA_RKNS0_14mpc_controller6ConfigE
 FNDA:0,_ZZN6motion7control20mpc_controller_nodes17MpcControllerNodeC4ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESA_ENKUlvE_clEv
 FNDA:0,_ZN6motion7control20mpc_controller_nodes17MpcControllerNodeC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESA_
-FNDA:1,_ZN6motion7control20mpc_controller_nodes17MpcControllerNodeC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESA_SA_SA_SA_SA_SA_SA_RKNS0_14mpc_controller6ConfigE
+FNDA:2,_ZN6motion7control20mpc_controller_nodes17MpcControllerNodeC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESA_SA_SA_SA_SA_SA_SA_RKNS0_14mpc_controller6ConfigE
 FNF:3
 FNH:1
 BRDA:36,0,0,-
@@ -583,7 +583,7 @@ BRDA:165,0,0,-
 BRDA:165,0,1,-
 BRDA:167,0,0,-
 BRDA:167,0,1,-
-BRDA:193,0,0,1
+BRDA:193,0,0,2
 BRDA:193,0,1,0
 BRF:546
 BRH:1
@@ -661,11 +661,11 @@ DA:165,0
 DA:166,0
 DA:167,0
 DA:170,0
-DA:173,1
-DA:182,1
-DA:191,1
-DA:193,1
-DA:194,1
+DA:173,2
+DA:182,2
+DA:191,2
+DA:193,2
+DA:194,2
 LF:79
 LH:5
 end_of_record

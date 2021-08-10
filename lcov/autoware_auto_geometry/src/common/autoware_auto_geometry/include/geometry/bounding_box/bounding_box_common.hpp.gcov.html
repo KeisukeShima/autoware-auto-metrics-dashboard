@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 19:40:33</td>
+            <td class="headerValue">2021-08-10 10:33:14</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -215,20 +215,20 @@
 <a name="137"><span class="lineNum">     137 </span>                :            : ///                     e.g. bounding box is touching these points</a>
 <a name="138"><span class="lineNum">     138 </span>                :            : /// \param[in] directions Directions of each edge of the bounding box from each support point</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : template&lt;typename IT, typename PointT&gt;</a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">       2234 : void compute_corners(</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">       4468 : void compute_corners(</span></a>
 <a name="141"><span class="lineNum">     141 </span>                :            :   decltype(BoundingBox::corners) &amp; corners,</a>
 <a name="142"><span class="lineNum">     142 </span>                :            :   const Point4&lt;IT&gt; &amp; supports,</a>
 <a name="143"><span class="lineNum">     143 </span>                :            :   const Point4&lt;PointT&gt; &amp; directions)</a>
 <a name="144"><span class="lineNum">     144 </span>                :            : {</a>
-<a name="145"><span class="lineNum">     145 </span>        [<span class="branchCov" title="Branch 0 was taken 8936 times"> + </span><span class="branchCov" title="Branch 1 was taken 2234 times"> + </span>]:<span class="lineCov">      11170 :   for (uint32_t idx = 0U; idx &lt; corners.size(); ++idx) {</span></a>
-<a name="146"><span class="lineNum">     146 </span>        [<span class="branchCov" title="Branch 0 was taken 6702 times"> + </span><span class="branchCov" title="Branch 1 was taken 2234 times"> + </span>]:<span class="lineCov">       8936 :     const uint32_t jdx = (idx != 3U) ? (idx + 1U) : 0U;</span></a>
+<a name="145"><span class="lineNum">     145 </span>        [<span class="branchCov" title="Branch 0 was taken 17872 times"> + </span><span class="branchCov" title="Branch 1 was taken 4468 times"> + </span>]:<span class="lineCov">      22340 :   for (uint32_t idx = 0U; idx &lt; corners.size(); ++idx) {</span></a>
+<a name="146"><span class="lineNum">     146 </span>        [<span class="branchCov" title="Branch 0 was taken 13404 times"> + </span><span class="branchCov" title="Branch 1 was taken 4468 times"> + </span>]:<span class="lineCov">      17872 :     const uint32_t jdx = (idx != 3U) ? (idx + 1U) : 0U;</span></a>
 <a name="147"><span class="lineNum">     147 </span>                :            :     const auto pt =</a>
-<a name="148"><span class="lineNum">     148 </span>        [<span class="branchCov" title="Branch 0 was taken 8936 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       8936 :       intersection_2d(*supports[idx], directions[idx], *supports[jdx], directions[jdx]);</span></a>
+<a name="148"><span class="lineNum">     148 </span>        [<span class="branchCov" title="Branch 0 was taken 17872 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">      17872 :       intersection_2d(*supports[idx], directions[idx], *supports[jdx], directions[jdx]);</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :            :     // TODO(c.ho) handle error</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">       8936 :     point_adapter::xr_(corners[idx]) = point_adapter::x_(pt);</span></a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">       8936 :     point_adapter::yr_(corners[idx]) = point_adapter::y_(pt);</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">      17872 :     point_adapter::xr_(corners[idx]) = point_adapter::x_(pt);</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">      17872 :     point_adapter::yr_(corners[idx]) = point_adapter::y_(pt);</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            :   }</a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">       2234 : }</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">       4468 : }</span></a>
 <a name="154"><span class="lineNum">     154 </span>                :            : // TODO(c.ho) type trait enum base</a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
 <a name="156"><span class="lineNum">     156 </span>                :            : /// \brief Copy vertices of the given box into a Shape type</a>

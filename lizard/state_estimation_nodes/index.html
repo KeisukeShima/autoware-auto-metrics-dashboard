@@ -111,15 +111,15 @@ Cyclomatic complexity
     <td style="background-color:LightSteelBlue">create_state_variances</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">3</td>
     
 
     
-       <td class="lesser-value">17</td>
+       <td class="lesser-value">16</td>
     
 
     
-       <td class="value">135</td>
+       <td class="value">147</td>
     
 
     
@@ -131,35 +131,15 @@ Cyclomatic complexity
     <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::StateEstimationNode</td>
     <td></td>
     
-       <td class="lesser-value">6</td>
+       <td class="lesser-value">5</td>
     
 
     
-       <td class="lesser-value">58</td>
+       <td class="lesser-value">50</td>
     
 
     
-       <td class="value">467</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::odom_callback</td>
-    <td></td>
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="lesser-value">22</td>
-    
-
-    
-       <td class="value">157</td>
+       <td class="value">399</td>
     
 
     
@@ -175,11 +155,11 @@ Cyclomatic complexity
     
 
     
-       <td class="lesser-value">22</td>
+       <td class="lesser-value">18</td>
     
 
     
-       <td class="value">147</td>
+       <td class="value">113</td>
     
 
     
@@ -199,27 +179,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">125</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::twist_callback</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">19</td>
-    
-
-    
-       <td class="value">110</td>
+       <td class="value">123</td>
     
 
     
@@ -251,39 +211,19 @@ Cyclomatic complexity
     <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::publish_current_state</td>
     <td></td>
     
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">22</td>
-    
-
-    
-       <td class="value">185</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::StateEstimationNode::update_latest_orientation_if_needed</td>
-    <td></td>
-    
        <td class="lesser-value">4</td>
     
 
     
-       <td class="lesser-value">9</td>
+       <td class="lesser-value">19</td>
     
 
     
-       <td class="value">83</td>
+       <td class="value">157</td>
     
 
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">0</td>
     
   </tr>
   
@@ -342,18 +282,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">get_speed</td>
+    <td style="background-color:LightSteelBlue">OdometryFiller::fill_odom_msg</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">7</td>
+       <td class="lesser-value">46</td>
     
 
     
-       <td class="value">51</td>
+       <td class="value">541</td>
     
 
     
@@ -362,18 +302,38 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::ConstantAccelerationFilterWrapper::get_state</td>
+    <td style="background-color:LightSteelBlue">OdometryFiller::fill_odom_msg</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">44</td>
+    
+
+    
+       <td class="value">526</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::KalmanFilterWrapper<FilterT>::get_state</td>
     <td></td>
     
        <td class="lesser-value">2</td>
     
 
     
-       <td class="lesser-value">37</td>
+       <td class="lesser-value">14</td>
     
 
     
-       <td class="value">480</td>
+       <td class="value">114</td>
     
 
     
@@ -542,26 +502,6 @@ Cyclomatic complexity
 
     
        <td class="value">23</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::STATE_ESTIMATION_NODES_PUBLICKalmanFilterWrapper::get_state</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">26</td>
     
 
     
@@ -903,7 +843,7 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::History::update_stored_covariance_factor</td>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::History::update_stored_covariance</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -923,7 +863,7 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::History::stored_covariance_factor</td>
+    <td style="background-color:LightSteelBlue">autoware::common::state_estimation::History::stored_covariance</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -1094,7 +1034,7 @@ Cyclomatic complexity
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2021-08-03 21:39
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-08-10 12:09
     </td></tr>
 </table>
  </body>

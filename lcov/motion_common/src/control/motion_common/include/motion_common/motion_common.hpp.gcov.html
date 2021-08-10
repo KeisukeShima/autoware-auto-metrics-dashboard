@@ -37,11 +37,11 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-03 20:22:38</td>
+            <td class="headerValue">2021-08-10 11:07:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">11</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">21</td>
-            <td class="headerCovTableEntry">40</td>
-            <td class="headerCovTableEntryLo">52.5 %</td>
+            <td class="headerCovTableEntry">16</td>
+            <td class="headerCovTableEntry">30</td>
+            <td class="headerCovTableEntryLo">53.3 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -180,13 +180,13 @@
 <a name="102"><span class="lineNum">     102 </span>                :            : </a>
 <a name="103"><span class="lineNum">     103 </span>                :            : /// Basic conversion</a>
 <a name="104"><span class="lineNum">     104 </span>                :            : template&lt;typename RealT&gt;</a>
-<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">         28 : Heading from_angle(RealT angle) noexcept</span></a>
+<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">         66 : Heading from_angle(RealT angle) noexcept</span></a>
 <a name="106"><span class="lineNum">     106 </span>                :            : {</a>
 <a name="107"><span class="lineNum">     107 </span>                :            :   static_assert(std::is_floating_point&lt;RealT&gt;::value, &quot;angle must be floating point&quot;);</a>
-<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">         28 :   Heading ret{};</span></a>
-<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">         28 :   ret.real = static_cast&lt;decltype(ret.real)&gt;(std::cos(angle * RealT{0.5}));</span></a>
-<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">         28 :   ret.imag = static_cast&lt;decltype(ret.imag)&gt;(std::sin(angle * RealT{0.5}));</span></a>
-<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">         28 :   return ret;</span></a>
+<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">         66 :   Heading ret{};</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">         66 :   ret.real = static_cast&lt;decltype(ret.real)&gt;(std::cos(angle * RealT{0.5}));</span></a>
+<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">         66 :   ret.imag = static_cast&lt;decltype(ret.imag)&gt;(std::sin(angle * RealT{0.5}));</span></a>
+<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">         66 :   return ret;</span></a>
 <a name="112"><span class="lineNum">     112 </span>                :            : }</a>
 <a name="113"><span class="lineNum">     113 </span>                :            : </a>
 <a name="114"><span class="lineNum">     114 </span>                :            : /// \brief Converts a quaternion-like object to a simple heading representation</a>
@@ -194,12 +194,12 @@
 <a name="116"><span class="lineNum">     116 </span>                :            : /// \param[in] quat A quaternion-like object to be converted to a heading object</a>
 <a name="117"><span class="lineNum">     117 </span>                :            : /// \returns A converted heading object</a>
 <a name="118"><span class="lineNum">     118 </span>                :            : template&lt;typename QuatT&gt;</a>
-<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">          2 : Heading from_quat(QuatT quat) noexcept</span></a>
+<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">          4 : Heading from_quat(QuatT quat) noexcept</span></a>
 <a name="120"><span class="lineNum">     120 </span>                :            : {</a>
-<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">          2 :   Heading ret{};</span></a>
-<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">          2 :   ret.real = static_cast&lt;decltype(ret.real)&gt;(quat.w);</span></a>
-<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">          2 :   ret.imag = static_cast&lt;decltype(ret.imag)&gt;(quat.z);</span></a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">          2 :   return ret;</span></a>
+<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">          4 :   Heading ret{};</span></a>
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">          4 :   ret.real = static_cast&lt;decltype(ret.real)&gt;(quat.w);</span></a>
+<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">          4 :   ret.imag = static_cast&lt;decltype(ret.imag)&gt;(quat.z);</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">          4 :   return ret;</span></a>
 <a name="125"><span class="lineNum">     125 </span>                :            : }</a>
 <a name="126"><span class="lineNum">     126 </span>                :            : </a>
 <a name="127"><span class="lineNum">     127 </span>                :            : /// \brief Converts a simple heading representation into a quaternion-like object</a>
@@ -207,32 +207,32 @@
 <a name="129"><span class="lineNum">     129 </span>                :            : /// \param[in] heading A heading object to be converted to a quaternion-like object</a>
 <a name="130"><span class="lineNum">     130 </span>                :            : /// \returns A converted quaternion-like object</a>
 <a name="131"><span class="lineNum">     131 </span>                :            : template&lt;typename QuatT&gt;</a>
-<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">          2 : QuatT to_quat(Heading heading) noexcept</span></a>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">          4 : QuatT to_quat(Heading heading) noexcept</span></a>
 <a name="133"><span class="lineNum">     133 </span>                :            : {</a>
-<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">          2 :   QuatT quat{};</span></a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">          2 :   quat.w = static_cast&lt;decltype(quat.w)&gt;(heading.real);</span></a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">          2 :   quat.z = static_cast&lt;decltype(quat.z)&gt;(heading.imag);</span></a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">          2 :   return quat;</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">          4 :   QuatT quat{};</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">          4 :   quat.w = static_cast&lt;decltype(quat.w)&gt;(heading.real);</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">          4 :   quat.z = static_cast&lt;decltype(quat.z)&gt;(heading.imag);</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">          4 :   return quat;</span></a>
 <a name="138"><span class="lineNum">     138 </span>                :            : }</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : </a>
 <a name="140"><span class="lineNum">     140 </span>                :            : /// Standard clamp implementation</a>
 <a name="141"><span class="lineNum">     141 </span>                :            : template&lt;typename T&gt;</a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">       1594 : T clamp(T val, T min, T max)</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">      29238 : T clamp(T val, T min, T max)</span></a>
 <a name="143"><span class="lineNum">     143 </span>                :            : {</a>
-<a name="144"><span class="lineNum">     144 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1594 times"> + </span>]:<span class="lineCov">       1594 :   if (max &lt; min) {</span></a>
+<a name="144"><span class="lineNum">     144 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 29238 times"> + </span>]:<span class="lineCov">      29238 :   if (max &lt; min) {</span></a>
 <a name="145"><span class="lineNum">     145 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::domain_error{&quot;max &lt; min&quot;};</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            :   }</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">       1594 :   return std::min(max, std::max(min, val));</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">      29238 :   return std::min(max, std::max(min, val));</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            : }</a>
 <a name="149"><span class="lineNum">     149 </span>                :            : </a>
 <a name="150"><span class="lineNum">     150 </span>                :            : /// Standard linear interpolation</a>
 <a name="151"><span class="lineNum">     151 </span>                :            : template&lt;typename T, typename RealT = double&gt;</a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">       1540 : T interpolate(T a, T b, RealT t)</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">      29130 : T interpolate(T a, T b, RealT t)</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            : {</a>
 <a name="154"><span class="lineNum">     154 </span>                :            :   static_assert(std::is_floating_point&lt;RealT&gt;::value, &quot;t must be floating point&quot;);</a>
-<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">       1540 :   t = clamp(t, RealT{0.0}, RealT{1.0});</span></a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">       1540 :   const auto del = b - a;</span></a>
-<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">       1540 :   return static_cast&lt;T&gt;(t * static_cast&lt;RealT&gt;(del)) + a;</span></a>
+<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">      29130 :   t = clamp(t, RealT{0.0}, RealT{1.0});</span></a>
+<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">      29130 :   const auto del = b - a;</span></a>
+<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">      29130 :   return static_cast&lt;T&gt;(t * static_cast&lt;RealT&gt;(del)) + a;</span></a>
 <a name="158"><span class="lineNum">     158 </span>                :            : }</a>
 <a name="159"><span class="lineNum">     159 </span>                :            : </a>
 <a name="160"><span class="lineNum">     160 </span>                :            : /// 2D nlerp (linear approximation of slerp):</a>
@@ -242,27 +242,26 @@
 <a name="164"><span class="lineNum">     164 </span>                :            : </a>
 <a name="165"><span class="lineNum">     165 </span>                :            : /// Trajectory point interpolation</a>
 <a name="166"><span class="lineNum">     166 </span>                :            : template&lt;typename SlerpF&gt;</a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        147 : Point interpolate(Point a, Point b, Real t, SlerpF slerp_fn)</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">       2899 : Point interpolate(Point a, Point b, Real t, SlerpF slerp_fn)</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            : {</a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">        147 :   Point ret{rosidl_runtime_cpp::MessageInitialization::ALL};</span></a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">       2899 :   Point ret{rosidl_runtime_cpp::MessageInitialization::ALL};</span></a>
 <a name="170"><span class="lineNum">     170 </span>                :            :   {</a>
-<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">        147 :     const auto dt0 = time_utils::from_message(a.time_from_start);</span></a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">        147 :     const auto dt1 = time_utils::from_message(b.time_from_start);</span></a>
-<a name="173"><span class="lineNum">     173 </span>  [<span class="branchCov" title="Branch 0 was taken 147 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 147 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        147 :     ret.time_from_start = time_utils::to_message(time_utils::interpolate(dt0, dt1, t));</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 147 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">       2899 :     const auto dt0 = time_utils::from_message(a.time_from_start);</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">       2899 :     const auto dt1 = time_utils::from_message(b.time_from_start);</span></a>
+<a name="173"><span class="lineNum">     173 </span>        [<span class="branchCov" title="Branch 0 was taken 2899 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2899 :     ret.time_from_start = time_utils::to_message(time_utils::interpolate(dt0, dt1, t));</span></a>
 <a name="174"><span class="lineNum">     174 </span>                :            :   }</a>
-<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">        147 :   ret.x = interpolate(a.x, b.x, t);</span></a>
-<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">        147 :   ret.y = interpolate(a.y, b.y, t);</span></a>
-<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">        147 :   ret.heading = slerp_fn(a.heading, b.heading, t);</span></a>
-<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">        147 :   ret.longitudinal_velocity_mps =</span></a>
-<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">        147 :     interpolate(a.longitudinal_velocity_mps, b.longitudinal_velocity_mps, t);</span></a>
-<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">        147 :   ret.lateral_velocity_mps = interpolate(a.lateral_velocity_mps, b.lateral_velocity_mps, t);</span></a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">        147 :   ret.acceleration_mps2 = interpolate(a.acceleration_mps2, b.acceleration_mps2, t);</span></a>
-<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">        147 :   ret.heading_rate_rps = interpolate(a.heading_rate_rps, b.heading_rate_rps, t);</span></a>
-<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">        147 :   ret.front_wheel_angle_rad = interpolate(a.front_wheel_angle_rad, b.front_wheel_angle_rad, t);</span></a>
-<a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">        147 :   ret.rear_wheel_angle_rad = interpolate(a.rear_wheel_angle_rad, b.rear_wheel_angle_rad, t);</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">       2899 :   ret.x = interpolate(a.x, b.x, t);</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">       2899 :   ret.y = interpolate(a.y, b.y, t);</span></a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">       2899 :   ret.heading = slerp_fn(a.heading, b.heading, t);</span></a>
+<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">       2899 :   ret.longitudinal_velocity_mps =</span></a>
+<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">       2899 :     interpolate(a.longitudinal_velocity_mps, b.longitudinal_velocity_mps, t);</span></a>
+<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">       2899 :   ret.lateral_velocity_mps = interpolate(a.lateral_velocity_mps, b.lateral_velocity_mps, t);</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">       2899 :   ret.acceleration_mps2 = interpolate(a.acceleration_mps2, b.acceleration_mps2, t);</span></a>
+<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">       2899 :   ret.heading_rate_rps = interpolate(a.heading_rate_rps, b.heading_rate_rps, t);</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">       2899 :   ret.front_wheel_angle_rad = interpolate(a.front_wheel_angle_rad, b.front_wheel_angle_rad, t);</span></a>
+<a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">       2899 :   ret.rear_wheel_angle_rad = interpolate(a.rear_wheel_angle_rad, b.rear_wheel_angle_rad, t);</span></a>
 <a name="185"><span class="lineNum">     185 </span>                :            : </a>
-<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">        147 :   return ret;</span></a>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">       2899 :   return ret;</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :            : }</a>
 <a name="188"><span class="lineNum">     188 </span>                :            : </a>
 <a name="189"><span class="lineNum">     189 </span>                :            : /// Default point interpolation, currently uses nlerp</a>
@@ -270,52 +269,52 @@
 <a name="191"><span class="lineNum">     191 </span>                :            : </a>
 <a name="192"><span class="lineNum">     192 </span>                :            : /// Sample a trajectory using interpolation; does not extrapolate</a>
 <a name="193"><span class="lineNum">     193 </span>                :            : template&lt;typename SlerpF&gt;</a>
-<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">          2 : void sample(</span></a>
+<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">         46 : void sample(</span></a>
 <a name="195"><span class="lineNum">     195 </span>                :            :   const Trajectory &amp; in,</a>
 <a name="196"><span class="lineNum">     196 </span>                :            :   Trajectory &amp; out,</a>
 <a name="197"><span class="lineNum">     197 </span>                :            :   std::chrono::nanoseconds period,</a>
 <a name="198"><span class="lineNum">     198 </span>                :            :   SlerpF slerp_fn)</a>
 <a name="199"><span class="lineNum">     199 </span>                :            : {</a>
-<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">          2 :   out.points.clear();</span></a>
-<a name="201"><span class="lineNum">     201 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   out.header = in.header;</span></a>
-<a name="202"><span class="lineNum">     202 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   if (in.points.empty()) {</span></a>
+<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">         46 :   out.points.clear();</span></a>
+<a name="201"><span class="lineNum">     201 </span>        [<span class="branchCov" title="Branch 0 was taken 46 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         46 :   out.header = in.header;</span></a>
+<a name="202"><span class="lineNum">     202 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 46 times"> + </span>]:<span class="lineCov">         46 :   if (in.points.empty()) {</span></a>
 <a name="203"><span class="lineNum">     203 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
 <a name="204"><span class="lineNum">     204 </span>                :            :   }</a>
 <a name="205"><span class="lineNum">     205 </span>                :            :   // Determine number of points</a>
 <a name="206"><span class="lineNum">     206 </span>                :            :   using time_utils::from_message;</a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">          2 :   const auto last_time = from_message(in.points.back().time_from_start);</span></a>
-<a name="208"><span class="lineNum">     208 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   auto count_ = last_time / period;</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">         46 :   const auto last_time = from_message(in.points.back().time_from_start);</span></a>
+<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">         46 :   auto count_ = last_time / period;</span></a>
 <a name="209"><span class="lineNum">     209 </span>                :            :   // should round down</a>
 <a name="210"><span class="lineNum">     210 </span>                :            :   using SizeT = typename decltype(in.points)::size_type;</a>
-<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">          2 :   const auto count =</span></a>
-<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">          2 :     static_cast&lt;SizeT&gt;(std::min(count_, static_cast&lt;decltype(count_)&gt;(in.CAPACITY)));</span></a>
-<a name="213"><span class="lineNum">     213 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   out.points.reserve(count);</span></a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">         46 :   const auto count =</span></a>
+<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">         46 :     static_cast&lt;SizeT&gt;(std::min(count_, static_cast&lt;decltype(count_)&gt;(in.CAPACITY)));</span></a>
+<a name="213"><span class="lineNum">     213 </span>        [<span class="branchCov" title="Branch 0 was taken 46 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         46 :   out.points.reserve(count);</span></a>
 <a name="214"><span class="lineNum">     214 </span>                :            :   // Insert first point</a>
-<a name="215"><span class="lineNum">     215 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   out.points.push_back(in.points.front());</span></a>
+<a name="215"><span class="lineNum">     215 </span>        [<span class="branchCov" title="Branch 0 was taken 46 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         46 :   out.points.push_back(in.points.front());</span></a>
 <a name="216"><span class="lineNum">     216 </span>                :            :   // Add remaining points</a>
-<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">          2 :   auto ref_duration = period;</span></a>
-<a name="218"><span class="lineNum">     218 </span>                :<span class="lineCov">          2 :   auto after_current_ref_idx = SizeT{1};</span></a>
-<a name="219"><span class="lineNum">     219 </span>        [<span class="branchCov" title="Branch 0 was taken 147 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">        149 :   for (auto idx = SizeT{1}; idx &lt; count; ++idx) {</span></a>
+<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">         46 :   auto ref_duration = period;</span></a>
+<a name="218"><span class="lineNum">     218 </span>                :<span class="lineCov">         46 :   auto after_current_ref_idx = SizeT{1};</span></a>
+<a name="219"><span class="lineNum">     219 </span>        [<span class="branchCov" title="Branch 0 was taken 2862 times"> + </span><span class="branchCov" title="Branch 1 was taken 46 times"> + </span>]:<span class="lineCov">       2908 :   for (auto idx = SizeT{1}; idx &lt; count; ++idx) {</span></a>
 <a name="220"><span class="lineNum">     220 </span>                :            :     // Determine next reference index</a>
-<a name="221"><span class="lineNum">     221 </span>        [<span class="branchCov" title="Branch 0 was taken 292 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        292 :     for (auto jdx = after_current_ref_idx; jdx &lt; in.points.size(); ++jdx) {</span></a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">        292 :       const auto &amp; pt = in.points[jdx];</span></a>
-<a name="223"><span class="lineNum">     223 </span>  [<span class="branchCov" title="Branch 0 was taken 292 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 147 times"> + </span><span class="branchCov" title="Branch 3 was taken 145 times"> + </span>]:<span class="lineCov">        292 :       if (from_message(pt.time_from_start) &gt; ref_duration) {</span></a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">        147 :         after_current_ref_idx = jdx;</span></a>
-<a name="225"><span class="lineNum">     225 </span>                :<span class="lineCov">        147 :         break;</span></a>
+<a name="221"><span class="lineNum">     221 </span>        [<span class="branchCov" title="Branch 0 was taken 5720 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5720 :     for (auto jdx = after_current_ref_idx; jdx &lt; in.points.size(); ++jdx) {</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">       5720 :       const auto &amp; pt = in.points[jdx];</span></a>
+<a name="223"><span class="lineNum">     223 </span>  [<span class="branchCov" title="Branch 0 was taken 5720 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2862 times"> + </span><span class="branchCov" title="Branch 3 was taken 2858 times"> + </span>]:<span class="lineCov">       5720 :       if (from_message(pt.time_from_start) &gt; ref_duration) {</span></a>
+<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">       2862 :         after_current_ref_idx = jdx;</span></a>
+<a name="225"><span class="lineNum">     225 </span>                :<span class="lineCov">       2862 :         break;</span></a>
 <a name="226"><span class="lineNum">     226 </span>                :            :       }</a>
 <a name="227"><span class="lineNum">     227 </span>                :            :     }</a>
 <a name="228"><span class="lineNum">     228 </span>                :            :     // Interpolate</a>
 <a name="229"><span class="lineNum">     229 </span>                :            :     {</a>
-<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">        147 :       const auto &amp; curr_pt = in.points[after_current_ref_idx - 1U];</span></a>
-<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">        147 :       const auto &amp; next_pt = in.points[after_current_ref_idx];</span></a>
-<a name="232"><span class="lineNum">     232 </span>        [<span class="branchCov" title="Branch 0 was taken 147 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        147 :       const auto dt = std::chrono::duration_cast&lt;std::chrono::duration&lt;Real&gt;&gt;(</span></a>
-<a name="233"><span class="lineNum">     233 </span>        [<span class="branchCov" title="Branch 0 was taken 147 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        147 :         from_message(next_pt.time_from_start) - from_message(curr_pt.time_from_start));</span></a>
-<a name="234"><span class="lineNum">     234 </span>        [<span class="branchCov" title="Branch 0 was taken 147 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        147 :       const auto dt_ = std::chrono::duration_cast&lt;std::chrono::duration&lt;Real&gt;&gt;(</span></a>
-<a name="235"><span class="lineNum">     235 </span>        [<span class="branchCov" title="Branch 0 was taken 147 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        147 :         ref_duration - from_message(curr_pt.time_from_start));</span></a>
-<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">        147 :       const auto t = dt_.count() / dt.count();</span></a>
-<a name="237"><span class="lineNum">     237 </span>  [<span class="branchCov" title="Branch 0 was taken 147 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 147 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        147 :       out.points.push_back(interpolate(curr_pt, next_pt, t, slerp_fn));</span></a>
+<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">       2862 :       const auto &amp; curr_pt = in.points[after_current_ref_idx - 1U];</span></a>
+<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">       2862 :       const auto &amp; next_pt = in.points[after_current_ref_idx];</span></a>
+<a name="232"><span class="lineNum">     232 </span>        [<span class="branchCov" title="Branch 0 was taken 2862 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2862 :       const auto dt = std::chrono::duration_cast&lt;std::chrono::duration&lt;Real&gt;&gt;(</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">       2862 :         from_message(next_pt.time_from_start) - from_message(curr_pt.time_from_start));</span></a>
+<a name="234"><span class="lineNum">     234 </span>        [<span class="branchCov" title="Branch 0 was taken 2862 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2862 :       const auto dt_ = std::chrono::duration_cast&lt;std::chrono::duration&lt;Real&gt;&gt;(</span></a>
+<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">       2862 :         ref_duration - from_message(curr_pt.time_from_start));</span></a>
+<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">       2862 :       const auto t = dt_.count() / dt.count();</span></a>
+<a name="237"><span class="lineNum">     237 </span>  [<span class="branchCov" title="Branch 0 was taken 2862 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2862 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       2862 :       out.points.push_back(interpolate(curr_pt, next_pt, t, slerp_fn));</span></a>
 <a name="238"><span class="lineNum">     238 </span>                :            :     }</a>
-<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">        147 :     ref_duration += period;</span></a>
+<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">       2862 :     ref_duration += period;</span></a>
 <a name="240"><span class="lineNum">     240 </span>                :            :   }</a>
 <a name="241"><span class="lineNum">     241 </span>                :            : }</a>
 <a name="242"><span class="lineNum">     242 </span>                :            : </a>
