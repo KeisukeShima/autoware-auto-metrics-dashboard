@@ -32,12 +32,12 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">28</td>
-            <td class="headerCovTableEntry">30</td>
-            <td class="headerCovTableEntryHi">93.3 %</td>
+            <td class="headerCovTableEntry">31</td>
+            <td class="headerCovTableEntryHi">90.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-10 11:55:55</td>
+            <td class="headerValue">2021-08-11 22:28:51</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -91,7 +91,7 @@
 <a name="13"><span class="lineNum">      13 </span>                :            : // limitations under the License.</a>
 <a name="14"><span class="lineNum">      14 </span>                :            : </a>
 <a name="15"><span class="lineNum">      15 </span>                :            : #include &quot;trajectory_follower/vehicle_model/vehicle_model_bicycle_kinematics.hpp&quot;</a>
-<a name="16"><span class="lineNum">      16 </span>                :            : #include &lt;iostream&gt;</a>
+<a name="16"><span class="lineNum">      16 </span>                :            : #include &lt;cmath&gt;</a>
 <a name="17"><span class="lineNum">      17 </span>                :            : </a>
 <a name="18"><span class="lineNum">      18 </span>                :            : namespace autoware</a>
 <a name="19"><span class="lineNum">      19 </span>                :            : {</a>
@@ -118,45 +118,47 @@
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
 <a name="41"><span class="lineNum">      41 </span>                :            :   /* Linearize delta around delta_r (reference delta) */</a>
 <a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">        924 :   float64_t delta_r = atan(m_wheelbase * m_curvature);</span></a>
-<a name="43"><span class="lineNum">      43 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 924 times"> + </span>]:<span class="lineCov">        924 :   if (abs(delta_r) &gt;= m_steer_lim) {delta_r = m_steer_lim * static_cast&lt;float64_t&gt;(sign(delta_r));}</span></a>
-<a name="44"><span class="lineNum">      44 </span>                :<span class="lineCov">        924 :   float64_t cos_delta_r_squared_inv = 1 / (cos(delta_r) * cos(delta_r));</span></a>
-<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">        924 :   float64_t velocity = m_velocity;</span></a>
-<a name="46"><span class="lineNum">      46 </span>  [<span class="branchCov" title="Branch 0 was taken 224 times"> + </span><span class="branchCov" title="Branch 1 was taken 700 times"> + </span><span class="branchCov" title="Branch 2 was taken 224 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        924 :   if (abs(m_velocity) &lt; 1e-04) {velocity = 1e-04 * (m_velocity &gt;= 0 ? 1 : -1);}</span></a>
-<a name="47"><span class="lineNum">      47 </span>                :            : </a>
-<a name="48"><span class="lineNum">      48 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1848 :   a_d &lt;&lt; 0.0, velocity, 0.0, 0.0, 0.0, velocity / m_wheelbase * cos_delta_r_squared_inv, 0.0, 0.0,</span></a>
+<a name="43"><span class="lineNum">      43 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 924 times"> + </span>]:<span class="lineCov">        924 :   if (std::abs(delta_r) &gt;= m_steer_lim) {</span></a>
+<a name="44"><span class="lineNum">      44 </span>                :<span class="lineNoCov">          0 :     delta_r = m_steer_lim * static_cast&lt;float64_t&gt;(sign(delta_r));</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :            :   }</a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">        924 :   float64_t cos_delta_r_squared_inv = 1 / (cos(delta_r) * cos(delta_r));</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">        924 :   float64_t velocity = m_velocity;</span></a>
+<a name="48"><span class="lineNum">      48 </span>  [<span class="branchCov" title="Branch 0 was taken 224 times"> + </span><span class="branchCov" title="Branch 1 was taken 700 times"> + </span><span class="branchCov" title="Branch 2 was taken 224 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        924 :   if (std::abs(m_velocity) &lt; 1e-04) {velocity = 1e-04 * (m_velocity &gt;= 0 ? 1 : -1);}</span></a>
+<a name="49"><span class="lineNum">      49 </span>                :            : </a>
+<a name="50"><span class="lineNum">      50 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1848 :   a_d &lt;&lt; 0.0, velocity, 0.0, 0.0, 0.0, velocity / m_wheelbase * cos_delta_r_squared_inv, 0.0, 0.0,</span></a>
 <span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 924 times"> + </span> 
 <span class="lineNum">         </span>   <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 924 times"> + </span> 
 <span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 13 was not taken"> - </span>]
-<a name="49"><span class="lineNum">      49 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1848 :     -1.0 / m_steer_tau;</span></a>
-<a name="50"><span class="lineNum">      50 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1848 :   Eigen::MatrixXd I = Eigen::MatrixXd::Identity(m_dim_x, m_dim_x);</span></a>
-<a name="51"><span class="lineNum">      51 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        924 :   a_d = (I - dt * 0.5 * a_d).inverse() * (I + dt * 0.5 * a_d);  // bilinear discretization</span></a>
+<a name="51"><span class="lineNum">      51 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1848 :     -1.0 / m_steer_tau;</span></a>
+<a name="52"><span class="lineNum">      52 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1848 :   Eigen::MatrixXd I = Eigen::MatrixXd::Identity(m_dim_x, m_dim_x);</span></a>
+<a name="53"><span class="lineNum">      53 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        924 :   a_d = (I - dt * 0.5 * a_d).inverse() * (I + dt * 0.5 * a_d);  // bilinear discretization</span></a>
 <span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 924 times"> + </span> 
 <span class="lineNum">         </span>   <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 924 times"> + </span> 
 <span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 13 was not taken"> - </span>]
-<a name="52"><span class="lineNum">      52 </span>                :            : </a>
-<a name="53"><span class="lineNum">      53 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        924 :   b_d &lt;&lt; 0.0, 0.0, 1.0 / m_steer_tau;</span></a>
+<a name="54"><span class="lineNum">      54 </span>                :            : </a>
+<a name="55"><span class="lineNum">      55 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        924 :   b_d &lt;&lt; 0.0, 0.0, 1.0 / m_steer_tau;</span></a>
 <span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="54"><span class="lineNum">      54 </span>        [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        924 :   b_d *= dt;</span></a>
-<a name="55"><span class="lineNum">      55 </span>                :            : </a>
-<a name="56"><span class="lineNum">      56 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        924 :   c_d &lt;&lt; 1.0, 0.0, 0.0, 0.0, 1.0, 0.0;</span></a>
+<a name="56"><span class="lineNum">      56 </span>        [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        924 :   b_d *= dt;</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :            : </a>
+<a name="58"><span class="lineNum">      58 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        924 :   c_d &lt;&lt; 1.0, 0.0, 0.0, 0.0, 1.0, 0.0;</span></a>
 <span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 924 times"> + </span> 
 <span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
-<a name="57"><span class="lineNum">      57 </span>                :            : </a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">        924 :   w_d &lt;&lt; 0.0,</span></a>
-<a name="59"><span class="lineNum">      59 </span>                :<span class="lineNoCov">          0 :     -velocity * m_curvature +</span></a>
-<a name="60"><span class="lineNum">      60 </span>        [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        924 :     velocity / m_wheelbase * (tan(delta_r) - delta_r * cos_delta_r_squared_inv),</span></a>
-<a name="61"><span class="lineNum">      61 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1848 :     0.0;</span></a>
-<a name="62"><span class="lineNum">      62 </span>        [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        924 :   w_d *= dt;</span></a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">        924 : }</span></a>
-<a name="64"><span class="lineNum">      64 </span>                :            : </a>
-<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">        900 : void KinematicsBicycleModel::calculateReferenceInput(Eigen::MatrixXd &amp; u_ref)</span></a>
-<a name="66"><span class="lineNum">      66 </span>                :            : {</a>
-<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">        900 :   u_ref(0, 0) = std::atan(m_wheelbase * m_curvature);</span></a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">        900 : }</span></a>
-<a name="69"><span class="lineNum">      69 </span>                :            : }  // namespace trajectory_follower</a>
-<a name="70"><span class="lineNum">      70 </span>                :            : }  // namespace control</a>
-<a name="71"><span class="lineNum">      71 </span>                :            : }  // namespace motion</a>
-<a name="72"><span class="lineNum">      72 </span>                :            : }  // namespace autoware</a>
+<a name="59"><span class="lineNum">      59 </span>                :            : </a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">        924 :   w_d &lt;&lt; 0.0,</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineNoCov">          0 :     -velocity * m_curvature +</span></a>
+<a name="62"><span class="lineNum">      62 </span>        [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        924 :     velocity / m_wheelbase * (tan(delta_r) - delta_r * cos_delta_r_squared_inv),</span></a>
+<a name="63"><span class="lineNum">      63 </span>  [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1848 :     0.0;</span></a>
+<a name="64"><span class="lineNum">      64 </span>        [<span class="branchCov" title="Branch 0 was taken 924 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        924 :   w_d *= dt;</span></a>
+<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">        924 : }</span></a>
+<a name="66"><span class="lineNum">      66 </span>                :            : </a>
+<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">        900 : void KinematicsBicycleModel::calculateReferenceInput(Eigen::MatrixXd &amp; u_ref)</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :            : {</a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">        900 :   u_ref(0, 0) = std::atan(m_wheelbase * m_curvature);</span></a>
+<a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">        900 : }</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :            : }  // namespace trajectory_follower</a>
+<a name="72"><span class="lineNum">      72 </span>                :            : }  // namespace control</a>
+<a name="73"><span class="lineNum">      73 </span>                :            : }  // namespace motion</a>
+<a name="74"><span class="lineNum">      74 </span>                :            : }  // namespace autoware</a>
 </pre>
       </td>
     </tr>
