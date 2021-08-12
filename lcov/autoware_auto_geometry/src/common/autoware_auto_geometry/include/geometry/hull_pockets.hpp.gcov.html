@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 20:12:24</td>
+            <td class="headerValue">2021-08-12 07:43:07</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -138,43 +138,43 @@
 <a name="60"><span class="lineNum">      60 </span>                :            : /// \tparam Iter1 Iterator to a point type</a>
 <a name="61"><span class="lineNum">      61 </span>                :            : /// \tparam Iter2 Iterator to a point type (can be the same as Iter1, but does not need to be)</a>
 <a name="62"><span class="lineNum">      62 </span>                :            : template&lt;typename Iter1, typename Iter2&gt;</a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">         10 : typename std::vector&lt;std::vector&lt;typename std::iterator_traits&lt;Iter1&gt;::value_type&gt;&gt; hull_pockets(</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">          5 : typename std::vector&lt;std::vector&lt;typename std::iterator_traits&lt;Iter1&gt;::value_type&gt;&gt; hull_pockets(</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            :   const Iter1 polygon_start,</a>
 <a name="65"><span class="lineNum">      65 </span>                :            :   const Iter1 polygon_end,</a>
 <a name="66"><span class="lineNum">      66 </span>                :            :   const Iter2 convex_hull_start,</a>
 <a name="67"><span class="lineNum">      67 </span>                :            :   const Iter2 convex_hull_end</a>
 <a name="68"><span class="lineNum">      68 </span>                :            : )</a>
 <a name="69"><span class="lineNum">      69 </span>                :            : {</a>
-<a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">         10 :   auto pockets = std::vector&lt;std::vector&lt;typename std::iterator_traits&lt;Iter1&gt;::value_type&gt;&gt;{};</span></a>
-<a name="71"><span class="lineNum">      71 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchCov" title="Branch 3 was taken 8 times"> + </span>]:<span class="lineCov">         10 :   if (std::distance(polygon_start, polygon_end) &lt;= 3) {</span></a>
-<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">          2 :     return pockets;</span></a>
+<a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">          5 :   auto pockets = std::vector&lt;std::vector&lt;typename std::iterator_traits&lt;Iter1&gt;::value_type&gt;&gt;{};</span></a>
+<a name="71"><span class="lineNum">      71 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 4 times"> + </span>]:<span class="lineCov">          5 :   if (std::distance(polygon_start, polygon_end) &lt;= 3) {</span></a>
+<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">          1 :     return pockets;</span></a>
 <a name="73"><span class="lineNum">      73 </span>                :            :   }</a>
 <a name="74"><span class="lineNum">      74 </span>                :            : </a>
 <a name="75"><span class="lineNum">      75 </span>                :            :   // Function to check whether a point is in the convex hull.</a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">         58 :   const auto in_convex_hull = [convex_hull_start, convex_hull_end](Iter1 p) {</span></a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         50 :       return std::any_of(</span></a>
-<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">        180 :         convex_hull_start, convex_hull_end, [p](auto hull_entry)</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">         29 :   const auto in_convex_hull = [convex_hull_start, convex_hull_end](Iter1 p) {</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         25 :       return std::any_of(</span></a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">         90 :         convex_hull_start, convex_hull_end, [p](auto hull_entry)</span></a>
 <a name="79"><span class="lineNum">      79 </span>                :            :         {</a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">        180 :           return norm_2d(</span></a>
-<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">        180 :             minus_2d(</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">         90 :           return norm_2d(</span></a>
+<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">         90 :             minus_2d(</span></a>
 <a name="82"><span class="lineNum">      82 </span>                :            :               hull_entry,</a>
-<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">        180 :               *p)) &lt; std::numeric_limits&lt;float32_t&gt;::epsilon();</span></a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">         50 :         });</span></a>
+<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">         90 :               *p)) &lt; std::numeric_limits&lt;float32_t&gt;::epsilon();</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">         25 :         });</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            :     };</a>
 <a name="86"><span class="lineNum">      86 </span>                :            : </a>
 <a name="87"><span class="lineNum">      87 </span>                :            :   // We go through the points of the polygon only once, adding pockets to the list of pockets</a>
 <a name="88"><span class="lineNum">      88 </span>                :            :   // as we detect them.</a>
-<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">         16 :   std::vector&lt;typename std::iterator_traits&lt;Iter1&gt;::value_type&gt; current_pocket{};</span></a>
-<a name="90"><span class="lineNum">      90 </span>  [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span><span class="branchCov" title="Branch 2 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         58 :   for (auto it = polygon_start; it != polygon_end; it = std::next(it)) {</span></a>
-<a name="91"><span class="lineNum">      91 </span>  [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 40 times"> + </span><span class="branchCov" title="Branch 3 was taken 10 times"> + </span>]:<span class="lineCov">         50 :     if (in_convex_hull(it)) {</span></a>
-<a name="92"><span class="lineNum">      92 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 34 times"> + </span>]:<span class="lineCov">         40 :       if (current_pocket.size() &gt; 1) {</span></a>
-<a name="93"><span class="lineNum">      93 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :         current_pocket.emplace_back(*it);</span></a>
-<a name="94"><span class="lineNum">      94 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :         pockets.push_back(current_pocket);</span></a>
+<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">          8 :   std::vector&lt;typename std::iterator_traits&lt;Iter1&gt;::value_type&gt; current_pocket{};</span></a>
+<a name="90"><span class="lineNum">      90 </span>  [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span><span class="branchCov" title="Branch 2 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         29 :   for (auto it = polygon_start; it != polygon_end; it = std::next(it)) {</span></a>
+<a name="91"><span class="lineNum">      91 </span>  [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchCov" title="Branch 3 was taken 5 times"> + </span>]:<span class="lineCov">         25 :     if (in_convex_hull(it)) {</span></a>
+<a name="92"><span class="lineNum">      92 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 17 times"> + </span>]:<span class="lineCov">         20 :       if (current_pocket.size() &gt; 1) {</span></a>
+<a name="93"><span class="lineNum">      93 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :         current_pocket.emplace_back(*it);</span></a>
+<a name="94"><span class="lineNum">      94 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :         pockets.push_back(current_pocket);</span></a>
 <a name="95"><span class="lineNum">      95 </span>                :            :       }</a>
-<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">         40 :       current_pocket.clear();</span></a>
-<a name="97"><span class="lineNum">      97 </span>        [<span class="branchCov" title="Branch 0 was taken 40 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         40 :       current_pocket.emplace_back(*it);</span></a>
+<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">         20 :       current_pocket.clear();</span></a>
+<a name="97"><span class="lineNum">      97 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :       current_pocket.emplace_back(*it);</span></a>
 <a name="98"><span class="lineNum">      98 </span>                :            :     } else {</a>
-<a name="99"><span class="lineNum">      99 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :       current_pocket.emplace_back(*it);</span></a>
+<a name="99"><span class="lineNum">      99 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :       current_pocket.emplace_back(*it);</span></a>
 <a name="100"><span class="lineNum">     100 </span>                :            :     }</a>
 <a name="101"><span class="lineNum">     101 </span>                :            :   }</a>
 <a name="102"><span class="lineNum">     102 </span>                :            : </a>
@@ -182,12 +182,12 @@
 <a name="104"><span class="lineNum">     104 </span>                :            :   // of the final point back to the first. In case the first point is part of a pocket as well, we</a>
 <a name="105"><span class="lineNum">     105 </span>                :            :   // have some points left in current_pocket, and we add one final pocket that is made up by those</a>
 <a name="106"><span class="lineNum">     106 </span>                :            :   // points plus the first point in the collection.</a>
-<a name="107"><span class="lineNum">     107 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">          8 :   if (current_pocket.size() &gt; 1) {</span></a>
-<a name="108"><span class="lineNum">     108 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     current_pocket.push_back(*polygon_start);</span></a>
-<a name="109"><span class="lineNum">     109 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     pockets.push_back(current_pocket);</span></a>
+<a name="107"><span class="lineNum">     107 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          4 :   if (current_pocket.size() &gt; 1) {</span></a>
+<a name="108"><span class="lineNum">     108 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     current_pocket.push_back(*polygon_start);</span></a>
+<a name="109"><span class="lineNum">     109 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     pockets.push_back(current_pocket);</span></a>
 <a name="110"><span class="lineNum">     110 </span>                :            :   }</a>
 <a name="111"><span class="lineNum">     111 </span>                :            : </a>
-<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">          8 :   return pockets;</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">          4 :   return pockets;</span></a>
 <a name="113"><span class="lineNum">     113 </span>                :            : }</a>
 <a name="114"><span class="lineNum">     114 </span>                :            : }  // namespace geometry</a>
 <a name="115"><span class="lineNum">     115 </span>                :            : }  // namespace common</a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 21:10:59</td>
+            <td class="headerValue">2021-08-12 07:43:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -128,12 +128,12 @@
 <a name="50"><span class="lineNum">      50 </span>                :            :   /// @return     Predicted state after the time has passed.</a>
 <a name="51"><span class="lineNum">      51 </span>                :            :   ///</a>
 <a name="52"><span class="lineNum">      52 </span>                :            :   template&lt;typename StateT&gt;</a>
-<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">         40 :   inline auto predict(const StateT &amp; state, const std::chrono::nanoseconds &amp; dt) const</span></a>
+<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">         20 :   inline auto predict(const StateT &amp; state, const std::chrono::nanoseconds &amp; dt) const</span></a>
 <a name="54"><span class="lineNum">      54 </span>                :            :   {</a>
 <a name="55"><span class="lineNum">      55 </span>                :            :     static_assert(</a>
 <a name="56"><span class="lineNum">      56 </span>                :            :       common::state_vector::is_state&lt;StateT&gt;::value,</a>
 <a name="57"><span class="lineNum">      57 </span>                :            :       &quot;\n\nStateT must be a GenericState\n\n&quot;);</a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">         40 :     return this-&gt;impl().crtp_predict(state, dt);</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">         20 :     return this-&gt;impl().crtp_predict(state, dt);</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   }</a>
 <a name="60"><span class="lineNum">      60 </span>                :            :   ///</a>
 <a name="61"><span class="lineNum">      61 </span>                :            :   /// @brief      Get the Jacobian of this motion model.</a>
@@ -146,12 +146,12 @@
 <a name="68"><span class="lineNum">      68 </span>                :            :   /// @return     A Jacobian of the motion model. In the linear case - a transition matrix.</a>
 <a name="69"><span class="lineNum">      69 </span>                :            :   ///</a>
 <a name="70"><span class="lineNum">      70 </span>                :            :   template&lt;typename StateT&gt;</a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">         10 :   inline auto jacobian(const StateT &amp; state, const std::chrono::nanoseconds &amp; dt) const</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">          5 :   inline auto jacobian(const StateT &amp; state, const std::chrono::nanoseconds &amp; dt) const</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   {</a>
 <a name="73"><span class="lineNum">      73 </span>                :            :     static_assert(</a>
 <a name="74"><span class="lineNum">      74 </span>                :            :       common::state_vector::is_state&lt;StateT&gt;::value,</a>
 <a name="75"><span class="lineNum">      75 </span>                :            :       &quot;\n\nStateT must be a GenericState\n\n&quot;);</a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">         10 :     return this-&gt;impl().crtp_jacobian(state, dt);</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">          5 :     return this-&gt;impl().crtp_jacobian(state, dt);</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            :   }</a>
 <a name="78"><span class="lineNum">      78 </span>                :            : };</a>
 <a name="79"><span class="lineNum">      79 </span>                :            : </a>

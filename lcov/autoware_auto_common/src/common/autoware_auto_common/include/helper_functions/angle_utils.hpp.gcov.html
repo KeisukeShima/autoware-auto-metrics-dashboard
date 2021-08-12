@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 20:08:21</td>
+            <td class="headerValue">2021-08-12 07:43:05</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -125,12 +125,12 @@
 <a name="47"><span class="lineNum">      47 </span>                :            : /// @return     Angle wrapped to the chosen range.</a>
 <a name="48"><span class="lineNum">      48 </span>                :            : ///</a>
 <a name="49"><span class="lineNum">      49 </span>                :            : template&lt;typename T&gt;</a>
-<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">         10 : constexpr T wrap_angle(T angle) noexcept</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">          5 : constexpr T wrap_angle(T angle) noexcept</span></a>
 <a name="51"><span class="lineNum">      51 </span>                :            : {</a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">         10 :   auto help_angle = angle + T(M_PI);</span></a>
-<a name="53"><span class="lineNum">      53 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         12 :   while (help_angle &lt; T{}) {help_angle += T(detail::kDoublePi);}</span></a>
-<a name="54"><span class="lineNum">      54 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         14 :   while (help_angle &gt;= T(detail::kDoublePi)) {help_angle -= T(detail::kDoublePi);}</span></a>
-<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">         10 :   return help_angle - T(M_PI);</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">          5 :   auto help_angle = angle + T(M_PI);</span></a>
+<a name="53"><span class="lineNum">      53 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          6 :   while (help_angle &lt; T{}) {help_angle += T(detail::kDoublePi);}</span></a>
+<a name="54"><span class="lineNum">      54 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          7 :   while (help_angle &gt;= T(detail::kDoublePi)) {help_angle -= T(detail::kDoublePi);}</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">          5 :   return help_angle - T(M_PI);</span></a>
 <a name="56"><span class="lineNum">      56 </span>                :            : }</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : </a>
 <a name="58"><span class="lineNum">      58 </span>                :            : }  // namespace helper_functions</a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 22:11:45</td>
+            <td class="headerValue">2021-08-12 07:44:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -127,7 +127,7 @@
 <a name="49"><span class="lineNum">      49 </span>                :            :   /**</a>
 <a name="50"><span class="lineNum">      50 </span>                :            :    * @brief destructor</a>
 <a name="51"><span class="lineNum">      51 </span>                :            :    */</a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">         10 :   ~SimModelInterface() = default;</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">          5 :   ~SimModelInterface() = default;</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :            : </a>
 <a name="54"><span class="lineNum">      54 </span>                :            :   /**</a>
 <a name="55"><span class="lineNum">      55 </span>                :            :    * @brief get state vector of model</a>
@@ -222,12 +222,12 @@
 <a name="144"><span class="lineNum">     144 </span>                :            :   /**</a>
 <a name="145"><span class="lineNum">     145 </span>                :            :    * @brief get state vector dimension</a>
 <a name="146"><span class="lineNum">     146 </span>                :            :    */</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">        357 :   inline int getDimX() {return dim_x_;}</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">        193 :   inline int getDimX() {return dim_x_;}</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            : </a>
 <a name="149"><span class="lineNum">     149 </span>                :            :   /**</a>
 <a name="150"><span class="lineNum">     150 </span>                :            :    * @brief get input vector demension</a>
 <a name="151"><span class="lineNum">     151 </span>                :            :    */</a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">       4294 :   inline int getDimU() {return dim_u_;}</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">       2287 :   inline int getDimU() {return dim_u_;}</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            : </a>
 <a name="154"><span class="lineNum">     154 </span>                :            :   /**</a>
 <a name="155"><span class="lineNum">     155 </span>                :            :    * @brief calculate derivative of states with vehicle model</a>

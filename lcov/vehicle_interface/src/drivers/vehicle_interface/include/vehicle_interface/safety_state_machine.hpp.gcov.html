@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 22:37:32</td>
+            <td class="headerValue">2021-08-12 07:45:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -127,15 +127,15 @@
 <a name="49"><span class="lineNum">      49 </span>                :            : {</a>
 <a name="50"><span class="lineNum">      50 </span>                :            : public:</a>
 <a name="51"><span class="lineNum">      51 </span>                :            :   /// Constructor</a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">        554 :   Command(</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">        277 :   Command(</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :            :     const BasicControlCommand &amp; control = BasicControlCommand{},</a>
 <a name="54"><span class="lineNum">      54 </span>                :            :     const MaybeStateCommand &amp; state = MaybeStateCommand{})</a>
-<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">        554 :   : m_control{control}, m_state{state} {}</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">        277 :   : m_control{control}, m_state{state} {}</span></a>
 <a name="56"><span class="lineNum">      56 </span>                :            : </a>
 <a name="57"><span class="lineNum">      57 </span>                :            :   /// Getter</a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">        646 :   const BasicControlCommand &amp; control() const noexcept {return m_control;}</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">        323 :   const BasicControlCommand &amp; control() const noexcept {return m_control;}</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   /// Getter</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">       1564 :   const MaybeStateCommand &amp; state() const noexcept {return m_state;}</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">        782 :   const MaybeStateCommand &amp; state() const noexcept {return m_state;}</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            : </a>
 <a name="62"><span class="lineNum">      62 </span>                :            : private:</a>
 <a name="63"><span class="lineNum">      63 </span>                :            :   BasicControlCommand m_control;</a>
@@ -166,23 +166,23 @@
 <a name="88"><span class="lineNum">      88 </span>                :            : public:</a>
 <a name="89"><span class="lineNum">      89 </span>                :            :   /// Constructor</a>
 <a name="90"><span class="lineNum">      90 </span>                :            :   /// \throw std::domain_error if min &gt;= max</a>
-<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">        552 :   Limits(T min, T max, T threshold)</span></a>
-<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">        552 :   : m_min{min}, m_max{max}, m_threshold{threshold}</span></a>
+<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">        276 :   Limits(T min, T max, T threshold)</span></a>
+<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">        276 :   : m_min{min}, m_max{max}, m_threshold{threshold}</span></a>
 <a name="93"><span class="lineNum">      93 </span>                :            :   {</a>
-<a name="94"><span class="lineNum">      94 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 552 times"> + </span>]:<span class="lineCov">        552 :     if (min &gt;= max) {</span></a>
+<a name="94"><span class="lineNum">      94 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 276 times"> + </span>]:<span class="lineCov">        276 :     if (min &gt;= max) {</span></a>
 <a name="95"><span class="lineNum">      95 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       throw std::domain_error{&quot;min &gt;= max&quot;};</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :            :     }</a>
-<a name="97"><span class="lineNum">      97 </span>                :<span class="lineCov">        552 :   }</span></a>
+<a name="97"><span class="lineNum">      97 </span>                :<span class="lineCov">        276 :   }</span></a>
 <a name="98"><span class="lineNum">      98 </span>                :            : </a>
-<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">        276 :   T min() const noexcept {return m_min;}</span></a>
-<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">        276 :   T max() const noexcept {return m_max;}</span></a>
+<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">        138 :   T min() const noexcept {return m_min;}</span></a>
+<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">        138 :   T max() const noexcept {return m_max;}</span></a>
 <a name="101"><span class="lineNum">     101 </span>                :            :   T threshold() const noexcept {return m_threshold;}</a>
 <a name="102"><span class="lineNum">     102 </span>                :            :   ///  Clamps value to max/min range; return true if value is threshold past limits</a>
-<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">        554 :   bool8_t clamp_warn(T &amp; value) const noexcept</span></a>
+<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">        277 :   bool8_t clamp_warn(T &amp; value) const noexcept</span></a>
 <a name="104"><span class="lineNum">     104 </span>                :            :   {</a>
-<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">        554 :     const auto value_raw = value;</span></a>
-<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">        554 :     value = std::min(std::max(m_min, value_raw), m_max);</span></a>
-<a name="107"><span class="lineNum">     107 </span>                :<span class="lineCov">        554 :     return std::abs(value - value_raw) &gt;= m_threshold;</span></a>
+<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">        277 :     const auto value_raw = value;</span></a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">        277 :     value = std::min(std::max(m_min, value_raw), m_max);</span></a>
+<a name="107"><span class="lineNum">     107 </span>                :<span class="lineCov">        277 :     return std::abs(value - value_raw) &gt;= m_threshold;</span></a>
 <a name="108"><span class="lineNum">     108 </span>                :            :   }</a>
 <a name="109"><span class="lineNum">     109 </span>                :            : </a>
 <a name="110"><span class="lineNum">     110 </span>                :            : private:</a>

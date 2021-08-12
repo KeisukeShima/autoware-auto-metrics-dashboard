@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 20:05:44</td>
+            <td class="headerValue">2021-08-12 07:43:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -120,14 +120,14 @@
 <a name="42"><span class="lineNum">      42 </span>                :            :   QuickSorter &amp; operator=(QuickSorter &amp;&amp;) = default;</a>
 <a name="43"><span class="lineNum">      43 </span>                :            : </a>
 <a name="44"><span class="lineNum">      44 </span>                :            :   /// \brief Default constructor, do not reserve capacity for stack</a>
-<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">          2 :   QuickSorter() = default;</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">          1 :   QuickSorter() = default;</span></a>
 <a name="46"><span class="lineNum">      46 </span>                :            : </a>
 <a name="47"><span class="lineNum">      47 </span>                :            :   /// \brief Construct and reserve capacity for stack</a>
 <a name="48"><span class="lineNum">      48 </span>                :            :   /// \param[in] capacity - The maximum capacity of the container to be sorted</a>
-<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">         16 :   explicit QuickSorter(::std::size_t capacity)</span></a>
-<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">         16 :   {</span></a>
-<a name="51"><span class="lineNum">      51 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :     reserve(capacity);</span></a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">         16 :   }</span></a>
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">          8 :   explicit QuickSorter(::std::size_t capacity)</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">          8 :   {</span></a>
+<a name="51"><span class="lineNum">      51 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :     reserve(capacity);</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">          8 :   }</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :            : </a>
 <a name="54"><span class="lineNum">      54 </span>                :            :   /// \brief Iterative quick sort implementation using a stack, sorts</a>
 <a name="55"><span class="lineNum">      55 </span>                :            :   /// range [first, last) using the given comparison function</a>
@@ -135,37 +135,37 @@
 <a name="57"><span class="lineNum">      57 </span>                :            :   /// \param[in] last End of the range to sort (not included)</a>
 <a name="58"><span class="lineNum">      58 </span>                :            :   /// \param[in] comp The comparison function to base the sorting on</a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   template&lt;typename Compare&gt;</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">         18 :   void sort(RandomIt first, RandomIt last, Compare comp) const</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">          9 :   void sort(RandomIt first, RandomIt last, Compare comp) const</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            :   {</a>
-<a name="62"><span class="lineNum">      62 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         18 :     if (::std::distance(first, last) &lt; 2) {</span></a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">          4 :       return;</span></a>
+<a name="62"><span class="lineNum">      62 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">          9 :     if (::std::distance(first, last) &lt; 2) {</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">          2 :       return;</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            :     }</a>
 <a name="65"><span class="lineNum">      65 </span>                :            : </a>
 <a name="66"><span class="lineNum">      66 </span>                :            :     // Make sure we do not accidently have an already partially filled stack,</a>
 <a name="67"><span class="lineNum">      67 </span>                :            :     // capacity does not change</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">         14 :     m_stack.clear();</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">          7 :     m_stack.clear();</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            : </a>
 <a name="70"><span class="lineNum">      70 </span>                :            :     // Add first interval to the stack for sorting, from here on last is really</a>
 <a name="71"><span class="lineNum">      71 </span>                :            :     // the last element and not the element after, i.e. not end</a>
-<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">         14 :     m_stack.push_back(first);</span></a>
-<a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :     m_stack.push_back(last - 1);</span></a>
+<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">          7 :     m_stack.push_back(first);</span></a>
+<a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          7 :     m_stack.push_back(last - 1);</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :            : </a>
-<a name="75"><span class="lineNum">      75 </span>        [<span class="branchCov" title="Branch 0 was taken 40 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         54 :     while (!m_stack.empty()) {</span></a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">         40 :       last = m_stack.back();</span></a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         40 :       m_stack.pop_back();</span></a>
-<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">         40 :       first = m_stack.back();</span></a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         40 :       m_stack.pop_back();</span></a>
+<a name="75"><span class="lineNum">      75 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">         27 :     while (!m_stack.empty()) {</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">         20 :       last = m_stack.back();</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">         20 :       m_stack.pop_back();</span></a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">         20 :       first = m_stack.back();</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">         20 :       m_stack.pop_back();</span></a>
 <a name="80"><span class="lineNum">      80 </span>                :            : </a>
-<a name="81"><span class="lineNum">      81 </span>        [<span class="branchCov" title="Branch 0 was taken 40 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         40 :       auto part = QuickSorter::partition(first, last, comp);</span></a>
+<a name="81"><span class="lineNum">      81 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :       auto part = QuickSorter::partition(first, last, comp);</span></a>
 <a name="82"><span class="lineNum">      82 </span>                :            : </a>
-<a name="83"><span class="lineNum">      83 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 24 times"> + </span>]:<span class="lineCov">         40 :       if (part &gt; first + 1) {</span></a>
-<a name="84"><span class="lineNum">      84 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :         m_stack.push_back(first);</span></a>
-<a name="85"><span class="lineNum">      85 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :         m_stack.push_back(part - 1);</span></a>
+<a name="83"><span class="lineNum">      83 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 12 times"> + </span>]:<span class="lineCov">         20 :       if (part &gt; first + 1) {</span></a>
+<a name="84"><span class="lineNum">      84 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :         m_stack.push_back(first);</span></a>
+<a name="85"><span class="lineNum">      85 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :         m_stack.push_back(part - 1);</span></a>
 <a name="86"><span class="lineNum">      86 </span>                :            :       }</a>
 <a name="87"><span class="lineNum">      87 </span>                :            : </a>
-<a name="88"><span class="lineNum">      88 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 30 times"> + </span>]:<span class="lineCov">         40 :       if (part &lt; last - 1) {</span></a>
-<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :         m_stack.push_back(part + 1);</span></a>
-<a name="90"><span class="lineNum">      90 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :         m_stack.push_back(last);</span></a>
+<a name="88"><span class="lineNum">      88 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         20 :       if (part &lt; last - 1) {</span></a>
+<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :         m_stack.push_back(part + 1);</span></a>
+<a name="90"><span class="lineNum">      90 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :         m_stack.push_back(last);</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            :       }</a>
 <a name="92"><span class="lineNum">      92 </span>                :            :     }</a>
 <a name="93"><span class="lineNum">      93 </span>                :            :   }</a>
@@ -174,32 +174,32 @@
 <a name="96"><span class="lineNum">      96 </span>                :            :   /// range [first, last) using the default less operation</a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   /// \param[in] first Start of the range to sort</a>
 <a name="98"><span class="lineNum">      98 </span>                :            :   /// \param[in] last End of the range to sort (not included)</a>
-<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">         18 :   void sort(RandomIt first, RandomIt last) const</span></a>
+<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">          9 :   void sort(RandomIt first, RandomIt last) const</span></a>
 <a name="100"><span class="lineNum">     100 </span>                :            :   {</a>
-<a name="101"><span class="lineNum">     101 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         18 :     sort(first, last, ::std::less&lt;const decltype(*first)&gt;());</span></a>
-<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">         18 :   }</span></a>
+<a name="101"><span class="lineNum">     101 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          9 :     sort(first, last, ::std::less&lt;const decltype(*first)&gt;());</span></a>
+<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">          9 :   }</span></a>
 <a name="103"><span class="lineNum">     103 </span>                :            : </a>
 <a name="104"><span class="lineNum">     104 </span>                :            :   /// \brief Reserves helper stack capacity for the iterative quick sort</a>
 <a name="105"><span class="lineNum">     105 </span>                :            :   /// algorithm based on the capacity of the container to be sorted such that</a>
 <a name="106"><span class="lineNum">     106 </span>                :            :   /// no heap allocation is done during the algorithm.</a>
 <a name="107"><span class="lineNum">     107 </span>                :            :   /// \param[in] capacity - The maximum capacity of the container to be sorted</a>
-<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">         16 :   void reserve(::std::size_t capacity)</span></a>
+<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">          8 :   void reserve(::std::size_t capacity)</span></a>
 <a name="109"><span class="lineNum">     109 </span>                :            :   {</a>
 <a name="110"><span class="lineNum">     110 </span>                :            :     // The maximum partition depth is n/2 + 1, which means we need a maximum</a>
 <a name="111"><span class="lineNum">     111 </span>                :            :     // capacity of n + 2 to hold store the iterators in the stack.</a>
-<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">         16 :     m_stack.reserve(capacity + 2);</span></a>
-<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">         16 :   }</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">          8 :     m_stack.reserve(capacity + 2);</span></a>
+<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">          8 :   }</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            : </a>
 <a name="115"><span class="lineNum">     115 </span>                :            :   /// \brief Returns the maximum capacity that is allowed for a container to be</a>
 <a name="116"><span class="lineNum">     116 </span>                :            :   /// sorted.</a>
 <a name="117"><span class="lineNum">     117 </span>                :            :   /// \return The maximum capacity that a container may have if it is to be sorted</a>
 <a name="118"><span class="lineNum">     118 </span>                :            :   /// using this sorter.</a>
-<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">         34 :   ::std::size_t capacity() const</span></a>
+<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">         17 :   ::std::size_t capacity() const</span></a>
 <a name="120"><span class="lineNum">     120 </span>                :            :   {</a>
-<a name="121"><span class="lineNum">     121 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 32 times"> + </span>]:<span class="lineCov">         34 :     if (m_stack.capacity() &lt; 2) {</span></a>
-<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">          2 :       return 0;</span></a>
+<a name="121"><span class="lineNum">     121 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span>]:<span class="lineCov">         17 :     if (m_stack.capacity() &lt; 2) {</span></a>
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">          1 :       return 0;</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            :     }</a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         32 :     return m_stack.capacity() - 2;</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         16 :     return m_stack.capacity() - 2;</span></a>
 <a name="125"><span class="lineNum">     125 </span>                :            :   }</a>
 <a name="126"><span class="lineNum">     126 </span>                :            : </a>
 <a name="127"><span class="lineNum">     127 </span>                :            : private:</a>
@@ -211,22 +211,22 @@
 <a name="133"><span class="lineNum">     133 </span>                :            :   /// \param[in] comp Element comparison function</a>
 <a name="134"><span class="lineNum">     134 </span>                :            :   /// \return Iterator to the pivot element in the range</a>
 <a name="135"><span class="lineNum">     135 </span>                :            :   template&lt;typename Compare&gt;</a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         40 :   static RandomIt partition(RandomIt first, RandomIt last, Compare comp)</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         20 :   static RandomIt partition(RandomIt first, RandomIt last, Compare comp)</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            :   {</a>
-<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         40 :     auto prev = first;</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         20 :     auto prev = first;</span></a>
 <a name="139"><span class="lineNum">     139 </span>                :            : </a>
 <a name="140"><span class="lineNum">     140 </span>                :            :     // Iterate over range and swap whenever element is smaller than the pivot</a>
 <a name="141"><span class="lineNum">     141 </span>                :            :     // element.</a>
-<a name="142"><span class="lineNum">     142 </span>        [<span class="branchCov" title="Branch 0 was taken 102 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">        142 :     for (auto it = first; it &lt; last; it++) {</span></a>
-<a name="143"><span class="lineNum">     143 </span>        [<span class="branchCov" title="Branch 0 was taken 62 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span>]:<span class="lineCov">        102 :       if (comp(*it, *last)) {</span></a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         62 :         ::std::iter_swap(it, prev);</span></a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">         62 :         prev++;</span></a>
+<a name="142"><span class="lineNum">     142 </span>        [<span class="branchCov" title="Branch 0 was taken 51 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         71 :     for (auto it = first; it &lt; last; it++) {</span></a>
+<a name="143"><span class="lineNum">     143 </span>        [<span class="branchCov" title="Branch 0 was taken 31 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         51 :       if (comp(*it, *last)) {</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         31 :         ::std::iter_swap(it, prev);</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">         31 :         prev++;</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            :       }</a>
 <a name="147"><span class="lineNum">     147 </span>                :            :     }</a>
 <a name="148"><span class="lineNum">     148 </span>                :            : </a>
 <a name="149"><span class="lineNum">     149 </span>                :            :     // Swap the pivot element into place</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         40 :     ::std::iter_swap(prev, last);</span></a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         40 :     return prev;</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         20 :     ::std::iter_swap(prev, last);</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         20 :     return prev;</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            :   }</a>
 <a name="153"><span class="lineNum">     153 </span>                :            : </a>
 <a name="154"><span class="lineNum">     154 </span>                :            : private:</a>

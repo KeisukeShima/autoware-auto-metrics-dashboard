@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 20:40:29</td>
+            <td class="headerValue">2021-08-12 07:43:25</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -127,17 +127,17 @@
 <a name="49"><span class="lineNum">      49 </span>                :            :  * \return bool8_t Return true if the parameter is found, else false</a>
 <a name="50"><span class="lineNum">      50 </span>                :            :  */</a>
 <a name="51"><span class="lineNum">      51 </span>                :            : template&lt;typename T&gt;</a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">         12 : bool get_param(const std::vector&lt;rclcpp::Parameter&gt; &amp; p, const std::string &amp; name, T &amp; value)</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">          6 : bool get_param(const std::vector&lt;rclcpp::Parameter&gt; &amp; p, const std::string &amp; name, T &amp; value)</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :            : {</a>
-<a name="54"><span class="lineNum">      54 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   auto it = std::find_if(</span></a>
-<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">         12 :     p.cbegin(), p.cend(), [&amp;name](const rclcpp::Parameter &amp; parameter) {</span></a>
-<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">         12 :       return parameter.get_name() == name;</span></a>
+<a name="54"><span class="lineNum">      54 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   auto it = std::find_if(</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">          6 :     p.cbegin(), p.cend(), [&amp;name](const rclcpp::Parameter &amp; parameter) {</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">          6 :       return parameter.get_name() == name;</span></a>
 <a name="57"><span class="lineNum">      57 </span>                :            :     });</a>
-<a name="58"><span class="lineNum">      58 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         12 :   if (it != p.cend()) {</span></a>
-<a name="59"><span class="lineNum">      59 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     value = it-&gt;template get_value&lt;T&gt;();</span></a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">          4 :     return true;</span></a>
+<a name="58"><span class="lineNum">      58 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          6 :   if (it != p.cend()) {</span></a>
+<a name="59"><span class="lineNum">      59 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     value = it-&gt;template get_value&lt;T&gt;();</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">          2 :     return true;</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            :   }</a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">          8 :   return false;</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">          4 :   return false;</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            : }</a>
 <a name="64"><span class="lineNum">      64 </span>                :            : </a>
 <a name="65"><span class="lineNum">      65 </span>                :            : /// \class FilterNodeBase</a>
@@ -153,7 +153,7 @@
 <a name="75"><span class="lineNum">      75 </span>                :            :     const std::string &amp; filter_name = &quot;filter_node_base&quot;,</a>
 <a name="76"><span class="lineNum">      76 </span>                :            :     const rclcpp::NodeOptions &amp; options = rclcpp::NodeOptions());</a>
 <a name="77"><span class="lineNum">      77 </span>                :            : </a>
-<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">          4 :   virtual ~FilterNodeBase() {}</span></a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">          2 :   virtual ~FilterNodeBase() {}</span></a>
 <a name="79"><span class="lineNum">      79 </span>                :            : </a>
 <a name="80"><span class="lineNum">      80 </span>                :            : protected:</a>
 <a name="81"><span class="lineNum">      81 </span>                :            :   /** \brief The input PointCloud2 subscriber */</a>

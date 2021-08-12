@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 20:12:24</td>
+            <td class="headerValue">2021-08-12 07:43:07</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -164,76 +164,76 @@
 <a name="86"><span class="lineNum">      86 </span>                :            : /// \brief Append points of the polygon `internal` that are contained in the polygon `exernal`.</a>
 <a name="87"><span class="lineNum">      87 </span>                :            : template&lt;template&lt;typename ...&gt; class Iterable1T, template&lt;typename ...&gt; class Iterable2T,</a>
 <a name="88"><span class="lineNum">      88 </span>                :            :   typename Point1T, typename Point2T, typename ResultPointT&gt;</a>
-<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">         36 : void append_contained_points(</span></a>
+<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">         18 : void append_contained_points(</span></a>
 <a name="90"><span class="lineNum">      90 </span>                :            :   const Iterable1T&lt;Point1T&gt; &amp; external,</a>
 <a name="91"><span class="lineNum">      91 </span>                :            :   const Iterable2T&lt;Point2T&gt; &amp; internal,</a>
 <a name="92"><span class="lineNum">      92 </span>                :            :   std::list&lt;ResultPointT&gt; &amp; result)</a>
 <a name="93"><span class="lineNum">      93 </span>                :            : {</a>
-<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">         36 :   std::copy_if(</span></a>
+<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">         18 :   std::copy_if(</span></a>
 <a name="95"><span class="lineNum">      95 </span>                :            :     internal.begin(), internal.end(), std::back_inserter(result),</a>
-<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">        256 :     [&amp;external](const auto &amp; pt) {</span></a>
-<a name="97"><span class="lineNum">      97 </span>        [<span class="branchCov" title="Branch 0 was taken 128 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        128 :       return common::geometry::is_point_inside_polygon_2d(external.begin(), external.end(), pt);</span></a>
+<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">        128 :     [&amp;external](const auto &amp; pt) {</span></a>
+<a name="97"><span class="lineNum">      97 </span>        [<span class="branchCov" title="Branch 0 was taken 64 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         64 :       return common::geometry::is_point_inside_polygon_2d(external.begin(), external.end(), pt);</span></a>
 <a name="98"><span class="lineNum">      98 </span>                :            :     });</a>
-<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">         36 : }</span></a>
+<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">         18 : }</span></a>
 <a name="100"><span class="lineNum">     100 </span>                :            : </a>
 <a name="101"><span class="lineNum">     101 </span>                :            : /// \brief Append the intersecting points between two polygons into the output list.</a>
 <a name="102"><span class="lineNum">     102 </span>                :            : template&lt;template&lt;typename ...&gt; class Iterable1T, template&lt;typename ...&gt; class Iterable2T,</a>
 <a name="103"><span class="lineNum">     103 </span>                :            :   typename Point1T, typename Point2T, typename ResultPointT&gt;</a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         18 : void append_intersection_points(</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">          9 : void append_intersection_points(</span></a>
 <a name="105"><span class="lineNum">     105 </span>                :            :   const Iterable1T&lt;Point1T&gt; &amp; polygon1,</a>
 <a name="106"><span class="lineNum">     106 </span>                :            :   const Iterable2T&lt;Point2T&gt; &amp; polygon2,</a>
 <a name="107"><span class="lineNum">     107 </span>                :            :   std::list&lt;ResultPointT&gt; &amp; result)</a>
 <a name="108"><span class="lineNum">     108 </span>                :            : {</a>
-<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">        324 :   auto get_edge = [](const auto &amp; list, const auto &amp; iterator) {</span></a>
-<a name="110"><span class="lineNum">     110 </span>        [<span class="branchCov" title="Branch 0 was taken 324 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        324 :       const auto next_it = std::next(iterator);</span></a>
-<a name="111"><span class="lineNum">     111 </span>        [<span class="branchCov" title="Branch 0 was taken 240 times"> + </span><span class="branchCov" title="Branch 1 was taken 84 times"> + </span>]:<span class="lineCov">        324 :       const auto &amp; next_pt = (next_it != list.end()) ? *next_it : list.front();</span></a>
-<a name="112"><span class="lineNum">     112 </span>        [<span class="branchCov" title="Branch 0 was taken 324 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        648 :       return std::make_pair(*iterator, next_pt);</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">        162 :   auto get_edge = [](const auto &amp; list, const auto &amp; iterator) {</span></a>
+<a name="110"><span class="lineNum">     110 </span>        [<span class="branchCov" title="Branch 0 was taken 162 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        162 :       const auto next_it = std::next(iterator);</span></a>
+<a name="111"><span class="lineNum">     111 </span>        [<span class="branchCov" title="Branch 0 was taken 120 times"> + </span><span class="branchCov" title="Branch 1 was taken 42 times"> + </span>]:<span class="lineCov">        162 :       const auto &amp; next_pt = (next_it != list.end()) ? *next_it : list.front();</span></a>
+<a name="112"><span class="lineNum">     112 </span>        [<span class="branchCov" title="Branch 0 was taken 162 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        324 :       return std::make_pair(*iterator, next_pt);</span></a>
 <a name="113"><span class="lineNum">     113 </span>                :            :     };</a>
 <a name="114"><span class="lineNum">     114 </span>                :            :   using Interval = common::geometry::Interval&lt;float32_t&gt;;</a>
 <a name="115"><span class="lineNum">     115 </span>                :            :   // Compare each edge from polygon1 to each edge from polygon2</a>
-<a name="116"><span class="lineNum">     116 </span>        [<span class="branchCov" title="Branch 0 was taken 68 times"> + </span><span class="branchCov" title="Branch 1 was taken 18 times"> + </span>]:<span class="lineCov">         86 :   for (auto corner1_it = polygon1.begin(); corner1_it != polygon1.end(); ++corner1_it) {</span></a>
-<a name="117"><span class="lineNum">     117 </span>        [<span class="branchCov" title="Branch 0 was taken 68 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         68 :     const auto &amp; edge1 = get_edge(polygon1, corner1_it);</span></a>
+<a name="116"><span class="lineNum">     116 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchCov" title="Branch 1 was taken 9 times"> + </span>]:<span class="lineCov">         43 :   for (auto corner1_it = polygon1.begin(); corner1_it != polygon1.end(); ++corner1_it) {</span></a>
+<a name="117"><span class="lineNum">     117 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         34 :     const auto &amp; edge1 = get_edge(polygon1, corner1_it);</span></a>
 <a name="118"><span class="lineNum">     118 </span>                :            : </a>
-<a name="119"><span class="lineNum">     119 </span>        [<span class="branchCov" title="Branch 0 was taken 68 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         68 :     Interval edge1_x_interval{</span></a>
-<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">         68 :       std::min(point_adapter::x_(edge1.first), point_adapter::x_(edge1.second)),</span></a>
-<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">         68 :       std::max(point_adapter::x_(edge1.first), point_adapter::x_(edge1.second))};</span></a>
+<a name="119"><span class="lineNum">     119 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         34 :     Interval edge1_x_interval{</span></a>
+<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">         34 :       std::min(point_adapter::x_(edge1.first), point_adapter::x_(edge1.second)),</span></a>
+<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">         34 :       std::max(point_adapter::x_(edge1.first), point_adapter::x_(edge1.second))};</span></a>
 <a name="122"><span class="lineNum">     122 </span>                :            : </a>
-<a name="123"><span class="lineNum">     123 </span>        [<span class="branchCov" title="Branch 0 was taken 68 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         68 :     Interval edge1_y_interval{</span></a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         68 :       std::min(point_adapter::y_(edge1.first), point_adapter::y_(edge1.second)),</span></a>
-<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         68 :       std::max(point_adapter::y_(edge1.first), point_adapter::y_(edge1.second))};</span></a>
+<a name="123"><span class="lineNum">     123 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         34 :     Interval edge1_y_interval{</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         34 :       std::min(point_adapter::y_(edge1.first), point_adapter::y_(edge1.second)),</span></a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         34 :       std::max(point_adapter::y_(edge1.first), point_adapter::y_(edge1.second))};</span></a>
 <a name="126"><span class="lineNum">     126 </span>                :            : </a>
-<a name="127"><span class="lineNum">     127 </span>        [<span class="branchCov" title="Branch 0 was taken 256 times"> + </span><span class="branchCov" title="Branch 1 was taken 68 times"> + </span>]:<span class="lineCov">        324 :     for (auto corner2_it = polygon2.begin(); corner2_it != polygon2.end(); ++corner2_it) {</span></a>
+<a name="127"><span class="lineNum">     127 </span>        [<span class="branchCov" title="Branch 0 was taken 128 times"> + </span><span class="branchCov" title="Branch 1 was taken 34 times"> + </span>]:<span class="lineCov">        162 :     for (auto corner2_it = polygon2.begin(); corner2_it != polygon2.end(); ++corner2_it) {</span></a>
 <a name="128"><span class="lineNum">     128 </span>                :            :       try {</a>
-<a name="129"><span class="lineNum">     129 </span>        [<span class="branchCov" title="Branch 0 was taken 256 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        256 :         const auto &amp; edge2 = get_edge(polygon2, corner2_it);</span></a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">        182 :         const auto &amp; intersection =</span></a>
-<a name="131"><span class="lineNum">     131 </span>                :<span class="lineCov">        256 :           common::geometry::intersection_2d(</span></a>
-<a name="132"><span class="lineNum">     132 </span>        [<span class="branchCov" title="Branch 0 was taken 182 times"> + </span><span class="branchCov" title="Branch 1 was taken 74 times"> + </span>]:<span class="lineCov">        256 :           edge1.first, minus_2d(edge1.second, edge1.first),</span></a>
-<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">        330 :           edge2.first, minus_2d(edge2.second, edge2.first));</span></a>
+<a name="129"><span class="lineNum">     129 </span>        [<span class="branchCov" title="Branch 0 was taken 128 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        128 :         const auto &amp; edge2 = get_edge(polygon2, corner2_it);</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         91 :         const auto &amp; intersection =</span></a>
+<a name="131"><span class="lineNum">     131 </span>                :<span class="lineCov">        128 :           common::geometry::intersection_2d(</span></a>
+<a name="132"><span class="lineNum">     132 </span>        [<span class="branchCov" title="Branch 0 was taken 91 times"> + </span><span class="branchCov" title="Branch 1 was taken 37 times"> + </span>]:<span class="lineCov">        128 :           edge1.first, minus_2d(edge1.second, edge1.first),</span></a>
+<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">        165 :           edge2.first, minus_2d(edge2.second, edge2.first));</span></a>
 <a name="134"><span class="lineNum">     134 </span>                :            : </a>
-<a name="135"><span class="lineNum">     135 </span>        [<span class="branchCov" title="Branch 0 was taken 182 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        182 :         Interval edge2_x_interval{</span></a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">        182 :           std::min(point_adapter::x_(edge2.first), point_adapter::x_(edge2.second)),</span></a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">        182 :           std::max(point_adapter::x_(edge2.first), point_adapter::x_(edge2.second))};</span></a>
+<a name="135"><span class="lineNum">     135 </span>        [<span class="branchCov" title="Branch 0 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         91 :         Interval edge2_x_interval{</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">         91 :           std::min(point_adapter::x_(edge2.first), point_adapter::x_(edge2.second)),</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">         91 :           std::max(point_adapter::x_(edge2.first), point_adapter::x_(edge2.second))};</span></a>
 <a name="138"><span class="lineNum">     138 </span>                :            : </a>
-<a name="139"><span class="lineNum">     139 </span>        [<span class="branchCov" title="Branch 0 was taken 182 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        182 :         Interval edge2_y_interval{</span></a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">        182 :           std::min(point_adapter::y_(edge2.first), point_adapter::y_(edge2.second)),</span></a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">        182 :           std::max(point_adapter::y_(edge2.first), point_adapter::y_(edge2.second))};</span></a>
+<a name="139"><span class="lineNum">     139 </span>        [<span class="branchCov" title="Branch 0 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         91 :         Interval edge2_y_interval{</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         91 :           std::min(point_adapter::y_(edge2.first), point_adapter::y_(edge2.second)),</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         91 :           std::max(point_adapter::y_(edge2.first), point_adapter::y_(edge2.second))};</span></a>
 <a name="142"><span class="lineNum">     142 </span>                :            :         // Only accept intersections that lie on both of the line segments (edges)</a>
-<a name="143"><span class="lineNum">     143 </span>        [<span class="branchCov" title="Branch 0 was taken 182 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        182 :         if (Interval::contains(edge1_x_interval, point_adapter::x_(intersection)) &amp;&amp;</span></a>
-<a name="144"><span class="lineNum">     144 </span>  [<span class="branchCov" title="Branch 0 was taken 108 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 48 times"> + </span><span class="branchCov" title="Branch 3 was taken 60 times"> + </span>]:<span class="lineCov">        108 :           Interval::contains(edge2_x_interval, point_adapter::x_(intersection)) &amp;&amp;</span></a>
-<a name="145"><span class="lineNum">     145 </span>  [<span class="branchCov" title="Branch 0 was taken 108 times"> + </span><span class="branchCov" title="Branch 1 was taken 74 times"> + </span><span class="branchCov" title="Branch 2 was taken 48 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        336 :           Interval::contains(edge1_y_interval, point_adapter::y_(intersection)) &amp;&amp;</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 46 times"> + </span><span class="branchCov" title="Branch 5 was taken 2 times"> + </span>]
-<a name="146"><span class="lineNum">     146 </span>  [<span class="branchCov" title="Branch 0 was taken 46 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchCov" title="Branch 3 was taken 26 times"> + </span> :<span class="lineCov">        228 :           Interval::contains(edge2_y_interval, point_adapter::y_(intersection)))</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 20 times"> + </span><span class="branchCov" title="Branch 5 was taken 162 times"> + </span>]
+<a name="143"><span class="lineNum">     143 </span>        [<span class="branchCov" title="Branch 0 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         91 :         if (Interval::contains(edge1_x_interval, point_adapter::x_(intersection)) &amp;&amp;</span></a>
+<a name="144"><span class="lineNum">     144 </span>  [<span class="branchCov" title="Branch 0 was taken 54 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 24 times"> + </span><span class="branchCov" title="Branch 3 was taken 30 times"> + </span>]:<span class="lineCov">         54 :           Interval::contains(edge2_x_interval, point_adapter::x_(intersection)) &amp;&amp;</span></a>
+<a name="145"><span class="lineNum">     145 </span>  [<span class="branchCov" title="Branch 0 was taken 54 times"> + </span><span class="branchCov" title="Branch 1 was taken 37 times"> + </span><span class="branchCov" title="Branch 2 was taken 24 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        168 :           Interval::contains(edge1_y_interval, point_adapter::y_(intersection)) &amp;&amp;</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 23 times"> + </span><span class="branchCov" title="Branch 5 was taken 1 time"> + </span>]
+<a name="146"><span class="lineNum">     146 </span>  [<span class="branchCov" title="Branch 0 was taken 23 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchCov" title="Branch 3 was taken 13 times"> + </span> :<span class="lineCov">        114 :           Interval::contains(edge2_y_interval, point_adapter::y_(intersection)))</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 10 times"> + </span><span class="branchCov" title="Branch 5 was taken 81 times"> + </span>]
 <a name="147"><span class="lineNum">     147 </span>                :            :         {</a>
-<a name="148"><span class="lineNum">     148 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :           result.push_back(intersection);</span></a>
+<a name="148"><span class="lineNum">     148 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         10 :           result.push_back(intersection);</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :            :         }</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">        148 :       } catch (const std::runtime_error &amp;) {</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         74 :       } catch (const std::runtime_error &amp;) {</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            :         // Parallel lines. TODO(yunus.caliskan): #1229</a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">         74 :         continue;</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">         37 :         continue;</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            :       }</a>
 <a name="154"><span class="lineNum">     154 </span>                :            :     }</a>
 <a name="155"><span class="lineNum">     155 </span>                :            :   }</a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">         18 : }</span></a>
+<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">          9 : }</span></a>
 <a name="157"><span class="lineNum">     157 </span>                :            : </a>
 <a name="158"><span class="lineNum">     158 </span>                :            : </a>
 <a name="159"><span class="lineNum">     159 </span>                :            : }  // namespace details</a>
@@ -324,17 +324,17 @@
 <a name="244"><span class="lineNum">     244 </span>                :            : /// \return The resulting conv</a>
 <a name="245"><span class="lineNum">     245 </span>                :            : template&lt;template&lt;typename ...&gt; class Iterable1T, template&lt;typename ...&gt; class Iterable2T,</a>
 <a name="246"><span class="lineNum">     246 </span>                :            :   typename Point1T, typename Point2T, typename ResultPointT = Point1T&gt;</a>
-<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">         18 : std::list&lt;ResultPointT&gt; convex_polygon_intersection2d(</span></a>
+<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">          9 : std::list&lt;ResultPointT&gt; convex_polygon_intersection2d(</span></a>
 <a name="248"><span class="lineNum">     248 </span>                :            :   const Iterable1T&lt;Point1T&gt; &amp; polygon1,</a>
 <a name="249"><span class="lineNum">     249 </span>                :            :   const Iterable2T&lt;Point2T&gt; &amp; polygon2)</a>
 <a name="250"><span class="lineNum">     250 </span>                :            : {</a>
-<a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">         18 :   std::list&lt;ResultPointT&gt; result;</span></a>
-<a name="252"><span class="lineNum">     252 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         18 :   details::append_contained_points(polygon1, polygon2, result);</span></a>
-<a name="253"><span class="lineNum">     253 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         18 :   details::append_contained_points(polygon2, polygon1, result);</span></a>
-<a name="254"><span class="lineNum">     254 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         18 :   details::append_intersection_points(polygon1, polygon2, result);</span></a>
-<a name="255"><span class="lineNum">     255 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         18 :   const auto end_it = common::geometry::convex_hull(result);</span></a>
-<a name="256"><span class="lineNum">     256 </span>  [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 18 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         18 :   result.resize(static_cast&lt;uint32_t&gt;(std::distance(result.cbegin(), end_it)));</span></a>
-<a name="257"><span class="lineNum">     257 </span>                :<span class="lineCov">         36 :   return result;</span></a>
+<a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">          9 :   std::list&lt;ResultPointT&gt; result;</span></a>
+<a name="252"><span class="lineNum">     252 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          9 :   details::append_contained_points(polygon1, polygon2, result);</span></a>
+<a name="253"><span class="lineNum">     253 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          9 :   details::append_contained_points(polygon2, polygon1, result);</span></a>
+<a name="254"><span class="lineNum">     254 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          9 :   details::append_intersection_points(polygon1, polygon2, result);</span></a>
+<a name="255"><span class="lineNum">     255 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          9 :   const auto end_it = common::geometry::convex_hull(result);</span></a>
+<a name="256"><span class="lineNum">     256 </span>  [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          9 :   result.resize(static_cast&lt;uint32_t&gt;(std::distance(result.cbegin(), end_it)));</span></a>
+<a name="257"><span class="lineNum">     257 </span>                :<span class="lineCov">         18 :   return result;</span></a>
 <a name="258"><span class="lineNum">     258 </span>                :            : }</a>
 <a name="259"><span class="lineNum">     259 </span>                :            : </a>
 <a name="260"><span class="lineNum">     260 </span>                :            : </a>
@@ -351,32 +351,32 @@
 <a name="271"><span class="lineNum">     271 </span>                :            : /// computation.</a>
 <a name="272"><span class="lineNum">     272 </span>                :            : template&lt;template&lt;typename ...&gt; class Iterable1T, template&lt;typename ...&gt; class Iterable2T,</a>
 <a name="273"><span class="lineNum">     273 </span>                :            :   typename Point1T, typename Point2T&gt;</a>
-<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">          4 : common::types::float32_t convex_intersection_over_union_2d(</span></a>
+<a name="274"><span class="lineNum">     274 </span>                :<span class="lineCov">          2 : common::types::float32_t convex_intersection_over_union_2d(</span></a>
 <a name="275"><span class="lineNum">     275 </span>                :            :   const Iterable1T&lt;Point1T&gt; &amp; polygon1,</a>
 <a name="276"><span class="lineNum">     276 </span>                :            :   const Iterable2T&lt;Point2T&gt; &amp; polygon2</a>
 <a name="277"><span class="lineNum">     277 </span>                :            : )</a>
 <a name="278"><span class="lineNum">     278 </span>                :            : {</a>
-<a name="279"><span class="lineNum">     279 </span>                :<span class="lineCov">          4 :   constexpr auto eps = std::numeric_limits&lt;float32_t&gt;::epsilon();</span></a>
-<a name="280"><span class="lineNum">     280 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :   const auto intersection = convex_polygon_intersection2d(polygon1, polygon2);</span></a>
+<a name="279"><span class="lineNum">     279 </span>                :<span class="lineCov">          2 :   constexpr auto eps = std::numeric_limits&lt;float32_t&gt;::epsilon();</span></a>
+<a name="280"><span class="lineNum">     280 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :   const auto intersection = convex_polygon_intersection2d(polygon1, polygon2);</span></a>
 <a name="281"><span class="lineNum">     281 </span>                :            : </a>
 <a name="282"><span class="lineNum">     282 </span>                :            :   const auto intersection_area =</a>
-<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">          4 :     common::geometry::area_2d(intersection.begin(), intersection.end());</span></a>
+<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">          2 :     common::geometry::area_2d(intersection.begin(), intersection.end());</span></a>
 <a name="284"><span class="lineNum">     284 </span>                :            : </a>
-<a name="285"><span class="lineNum">     285 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          4 :   if (intersection_area &lt; eps) {</span></a>
-<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">          2 :     return 0.0F;  // There's either no intersection or the points are collinear</span></a>
+<a name="285"><span class="lineNum">     285 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :   if (intersection_area &lt; eps) {</span></a>
+<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">          1 :     return 0.0F;  // There's either no intersection or the points are collinear</span></a>
 <a name="287"><span class="lineNum">     287 </span>                :            :   }</a>
 <a name="288"><span class="lineNum">     288 </span>                :            : </a>
 <a name="289"><span class="lineNum">     289 </span>                :            :   const auto polygon1_area =</a>
-<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">          2 :     common::geometry::area_2d(polygon1.begin(), polygon1.end());</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">          1 :     common::geometry::area_2d(polygon1.begin(), polygon1.end());</span></a>
 <a name="291"><span class="lineNum">     291 </span>                :            :   const auto polygon2_area =</a>
-<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">          2 :     common::geometry::area_2d(polygon2.begin(), polygon2.end());</span></a>
+<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">          1 :     common::geometry::area_2d(polygon2.begin(), polygon2.end());</span></a>
 <a name="293"><span class="lineNum">     293 </span>                :            : </a>
-<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">          2 :   const auto union_area = polygon1_area + polygon2_area - intersection_area;</span></a>
-<a name="295"><span class="lineNum">     295 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   if (union_area &lt; eps) {</span></a>
+<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">          1 :   const auto union_area = polygon1_area + polygon2_area - intersection_area;</span></a>
+<a name="295"><span class="lineNum">     295 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :   if (union_area &lt; eps) {</span></a>
 <a name="296"><span class="lineNum">     296 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::domain_error(&quot;IoU is undefined for polygons with a zero union area&quot;);</span></a>
 <a name="297"><span class="lineNum">     297 </span>                :            :   }</a>
 <a name="298"><span class="lineNum">     298 </span>                :            : </a>
-<a name="299"><span class="lineNum">     299 </span>                :<span class="lineCov">          2 :   return intersection_area / union_area;</span></a>
+<a name="299"><span class="lineNum">     299 </span>                :<span class="lineCov">          1 :   return intersection_area / union_area;</span></a>
 <a name="300"><span class="lineNum">     300 </span>                :            : }</a>
 <a name="301"><span class="lineNum">     301 </span>                :            : </a>
 <a name="302"><span class="lineNum">     302 </span>                :            : }  // namespace geometry</a>

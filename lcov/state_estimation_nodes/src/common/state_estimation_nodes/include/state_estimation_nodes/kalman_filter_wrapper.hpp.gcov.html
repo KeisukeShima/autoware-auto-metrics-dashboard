@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 22:18:55</td>
+            <td class="headerValue">2021-08-12 07:45:06</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -142,7 +142,7 @@
 <a name="64"><span class="lineNum">      64 </span>                :            :     PoseMeasurementXYZRPY32&gt;;</a>
 <a name="65"><span class="lineNum">      65 </span>                :            : </a>
 <a name="66"><span class="lineNum">      66 </span>                :            : public:</a>
-<a name="67"><span class="lineNum">      67 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineCov">         20 :   EIGEN_MAKE_ALIGNED_OPERATOR_NEW</span></a>
+<a name="67"><span class="lineNum">      67 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineCov">         10 :   EIGEN_MAKE_ALIGNED_OPERATOR_NEW</span></a>
 <a name="68"><span class="lineNum">      68 </span>                :            :   using State = typename FilterT::State;</a>
 <a name="69"><span class="lineNum">      69 </span>                :            : </a>
 <a name="70"><span class="lineNum">      70 </span>                :            :   ///</a>
@@ -159,13 +159,13 @@
 <a name="81"><span class="lineNum">      81 </span>                :            :   /// @param[in]  mahalanobis_threshold     The threshold on the Mahalanobis distance for outlier</a>
 <a name="82"><span class="lineNum">      82 </span>                :            :   ///                                       rejection.</a>
 <a name="83"><span class="lineNum">      83 </span>                :            :   ///</a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">         26 :   KalmanFilterWrapper(</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">         13 :   KalmanFilterWrapper(</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            :     const typename FilterT::MotionModel motion_model,</a>
 <a name="86"><span class="lineNum">      86 </span>                :            :     const typename FilterT::NoiseModel noise_model,</a>
 <a name="87"><span class="lineNum">      87 </span>                :            :     const typename FilterT::State::Matrix initial_state_covariance,</a>
 <a name="88"><span class="lineNum">      88 </span>                :            :     const std::chrono::nanoseconds &amp; expected_dt,</a>
 <a name="89"><span class="lineNum">      89 </span>                :            :     const std::string &amp; frame_id,</a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">         14 :     const std::chrono::nanoseconds &amp; history_duration = std::chrono::milliseconds{5000},</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">          7 :     const std::chrono::nanoseconds &amp; history_duration = std::chrono::milliseconds{5000},</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            :     common::types::float32_t mahalanobis_threshold =</a>
 <a name="92"><span class="lineNum">      92 </span>                :            :     std::numeric_limits&lt;common::types::float32_t&gt;::max())</a>
 <a name="93"><span class="lineNum">      93 </span>                :            :   : m_initial_covariance{initial_state_covariance},</a>
@@ -179,10 +179,10 @@
 <a name="101"><span class="lineNum">     101 </span>                :            :       initial_state_covariance,</a>
 <a name="102"><span class="lineNum">     102 </span>                :            :     },</a>
 <a name="103"><span class="lineNum">     103 </span>                :            :     m_history{</a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         26 :       m_filter,</span></a>
-<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">         26 :       static_cast&lt;std::size_t&gt;(history_duration / expected_dt),</span></a>
-<a name="106"><span class="lineNum">     106 </span>  [<span class="branchCov" title="Branch 0 was taken 90 times"> + </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span><span class="branchCov" title="Branch 2 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        106 :       m_mahalanobis_threshold} {}</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         13 :       m_filter,</span></a>
+<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">         13 :       static_cast&lt;std::size_t&gt;(history_duration / expected_dt),</span></a>
+<a name="106"><span class="lineNum">     106 </span>  [<span class="branchCov" title="Branch 0 was taken 45 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span><span class="branchCov" title="Branch 2 was taken 13 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         53 :       m_mahalanobis_threshold} {}</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
 <a name="107"><span class="lineNum">     107 </span>                :            : </a>
 <a name="108"><span class="lineNum">     108 </span>                :            :   ///</a>
 <a name="109"><span class="lineNum">     109 </span>                :            :   /// Reset the filter state using the default covariance and state derived from the measurement.</a>
@@ -192,14 +192,14 @@
 <a name="113"><span class="lineNum">     113 </span>                :            :   /// @tparam     MeasurementT  Type of measurement.</a>
 <a name="114"><span class="lineNum">     114 </span>                :            :   ///</a>
 <a name="115"><span class="lineNum">     115 </span>                :            :   template&lt;typename MeasurementT&gt;</a>
-<a name="116"><span class="lineNum">     116 </span>                :<span class="lineCov">         18 :   inline void add_reset_event_to_history(const MeasurementT &amp; measurement)</span></a>
+<a name="116"><span class="lineNum">     116 </span>                :<span class="lineCov">          9 :   inline void add_reset_event_to_history(const MeasurementT &amp; measurement)</span></a>
 <a name="117"><span class="lineNum">     117 </span>                :            :   {</a>
-<a name="118"><span class="lineNum">     118 </span>  [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span><span class="branchCov" title="Branch 2 was taken 18 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         58 :     add_reset_event_to_history(</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">         18 :       measurement.measurement.map_into(State{}),</span></a>
-<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">         18 :       m_initial_covariance,</span></a>
-<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">         18 :       measurement.timestamp);</span></a>
-<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">         18 :   }</span></a>
+<a name="118"><span class="lineNum">     118 </span>  [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span><span class="branchCov" title="Branch 2 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         29 :     add_reset_event_to_history(</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">          9 :       measurement.measurement.map_into(State{}),</span></a>
+<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">          9 :       m_initial_covariance,</span></a>
+<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">          9 :       measurement.timestamp);</span></a>
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">          9 :   }</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            : </a>
 <a name="124"><span class="lineNum">     124 </span>                :            :   ///</a>
 <a name="125"><span class="lineNum">     125 </span>                :            :   /// Reset the filter state. This must be called at least once to start / tracking.</a>
@@ -209,14 +209,14 @@
 <a name="129"><span class="lineNum">     129 </span>                :            :   /// @param[in]  event_timestamp     The event timestamp. Ideally this should be in the same clock</a>
 <a name="130"><span class="lineNum">     130 </span>                :            :   ///                                 as the one that timestamps the messages.</a>
 <a name="131"><span class="lineNum">     131 </span>                :            :   ///</a>
-<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">         22 :   inline void add_reset_event_to_history(</span></a>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">         11 :   inline void add_reset_event_to_history(</span></a>
 <a name="133"><span class="lineNum">     133 </span>                :            :     const State &amp; state,</a>
 <a name="134"><span class="lineNum">     134 </span>                :            :     const typename State::Matrix &amp; initial_covariance,</a>
 <a name="135"><span class="lineNum">     135 </span>                :            :     const std::chrono::system_clock::time_point &amp; event_timestamp)</a>
 <a name="136"><span class="lineNum">     136 </span>                :            :   {</a>
-<a name="137"><span class="lineNum">     137 </span>  [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         22 :     m_history.emplace_event(event_timestamp, ResetEvent&lt;FilterT&gt;{state, initial_covariance});</span></a>
-<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         22 :     m_time_grid = SteadyTimeGrid{event_timestamp, m_expected_prediction_period};</span></a>
-<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         22 :   }</span></a>
+<a name="137"><span class="lineNum">     137 </span>  [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         11 :     m_history.emplace_event(event_timestamp, ResetEvent&lt;FilterT&gt;{state, initial_covariance});</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         11 :     m_time_grid = SteadyTimeGrid{event_timestamp, m_expected_prediction_period};</span></a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         11 :   }</span></a>
 <a name="140"><span class="lineNum">     140 </span>                :            : </a>
 <a name="141"><span class="lineNum">     141 </span>                :            :   ///</a>
 <a name="142"><span class="lineNum">     142 </span>                :            :   /// Predict state of filter at the next timestep defined by the period of this node.</a>
@@ -224,13 +224,13 @@
 <a name="144"><span class="lineNum">     144 </span>                :            :   /// @return     true if the update was successful and false otherwise. In case false is returned,</a>
 <a name="145"><span class="lineNum">     145 </span>                :            :   ///             this update had no effect on the state of the filter.</a>
 <a name="146"><span class="lineNum">     146 </span>                :            :   ///</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">         16 :   inline common::types::bool8_t add_next_temporal_update_to_history()</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">          8 :   inline common::types::bool8_t add_next_temporal_update_to_history()</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            :   {</a>
-<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         16 :     if (!is_initialized()) {return false;}</span></a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         14 :     const auto next_prediction_timestamp =</span></a>
+<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">          8 :     if (!is_initialized()) {return false;}</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">          7 :     const auto next_prediction_timestamp =</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            :       m_time_grid.get_next_timestamp_after(m_history.get_last_timestamp());</a>
-<a name="152"><span class="lineNum">     152 </span>  [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         14 :     m_history.emplace_event(next_prediction_timestamp, PredictionEvent{});</span></a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         14 :     return true;</span></a>
+<a name="152"><span class="lineNum">     152 </span>  [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          7 :     m_history.emplace_event(next_prediction_timestamp, PredictionEvent{});</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">          7 :     return true;</span></a>
 <a name="154"><span class="lineNum">     154 </span>                :            :   }</a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
 <a name="156"><span class="lineNum">     156 </span>                :            :   ///</a>
@@ -246,17 +246,17 @@
 <a name="166"><span class="lineNum">     166 </span>                :            :   ///             unsuccessful update, the state of the underlying filter has not been changed.</a>
 <a name="167"><span class="lineNum">     167 </span>                :            :   ///</a>
 <a name="168"><span class="lineNum">     168 </span>                :            :   template&lt;typename MeasurementT&gt;</a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">        160 :   common::types::bool8_t add_observation_to_history(const MeasurementT &amp; measurement)</span></a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">         79 :   common::types::bool8_t add_observation_to_history(const MeasurementT &amp; measurement)</span></a>
 <a name="170"><span class="lineNum">     170 </span>                :            :   {</a>
-<a name="171"><span class="lineNum">     171 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 156 times"> + </span>]:<span class="lineCov">        160 :     if (!is_initialized()) {return false;}</span></a>
-<a name="172"><span class="lineNum">     172 </span>        [<span class="branchCov" title="Branch 0 was taken 156 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        156 :     m_history.emplace_event(measurement.timestamp, measurement.measurement);</span></a>
-<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">        156 :     return true;</span></a>
+<a name="171"><span class="lineNum">     171 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 77 times"> + </span>]:<span class="lineCov">         79 :     if (!is_initialized()) {return false;}</span></a>
+<a name="172"><span class="lineNum">     172 </span>        [<span class="branchCov" title="Branch 0 was taken 77 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         77 :     m_history.emplace_event(measurement.timestamp, measurement.measurement);</span></a>
+<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">         77 :     return true;</span></a>
 <a name="174"><span class="lineNum">     174 </span>                :            :   }</a>
 <a name="175"><span class="lineNum">     175 </span>                :            : </a>
 <a name="176"><span class="lineNum">     176 </span>                :            :   /// Check if the filter is is_initialized with a state.</a>
-<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">        655 :   inline common::types::bool8_t is_initialized() const noexcept</span></a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">        323 :   inline common::types::bool8_t is_initialized() const noexcept</span></a>
 <a name="178"><span class="lineNum">     178 </span>                :            :   {</a>
-<a name="179"><span class="lineNum">     179 </span>  [<span class="branchCov" title="Branch 0 was taken 618 times"> + </span><span class="branchCov" title="Branch 1 was taken 37 times"> + </span><span class="branchCov" title="Branch 2 was taken 618 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        655 :     return (!m_history.empty()) &amp;&amp; m_time_grid.is_initialized();</span></a>
+<a name="179"><span class="lineNum">     179 </span>  [<span class="branchCov" title="Branch 0 was taken 304 times"> + </span><span class="branchCov" title="Branch 1 was taken 19 times"> + </span><span class="branchCov" title="Branch 2 was taken 304 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        323 :     return (!m_history.empty()) &amp;&amp; m_time_grid.is_initialized();</span></a>
 <a name="180"><span class="lineNum">     180 </span>                :            :   }</a>
 <a name="181"><span class="lineNum">     181 </span>                :            : </a>
 <a name="182"><span class="lineNum">     182 </span>                :            :   /// Get the current state of the system as an odometry message.</a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 21:10:59</td>
+            <td class="headerValue">2021-08-12 07:43:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -131,11 +131,11 @@
 <a name="53"><span class="lineNum">      53 </span>                :            :   ///</a>
 <a name="54"><span class="lineNum">      54 </span>                :            :   /// @return     A const reference to the unchanged input state.</a>
 <a name="55"><span class="lineNum">      55 </span>                :            :   ///</a>
-<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">          4 :   inline const State &amp; crtp_predict(</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">          2 :   inline const State &amp; crtp_predict(</span></a>
 <a name="57"><span class="lineNum">      57 </span>                :            :     const State &amp; state,</a>
 <a name="58"><span class="lineNum">      58 </span>                :            :     const std::chrono::nanoseconds &amp;) const</a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   {</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">          4 :     return state;</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">          2 :     return state;</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            :   }</a>
 <a name="62"><span class="lineNum">      62 </span>                :            : </a>
 <a name="63"><span class="lineNum">      63 </span>                :            :   ///</a>
@@ -143,9 +143,9 @@
 <a name="65"><span class="lineNum">      65 </span>                :            :   ///</a>
 <a name="66"><span class="lineNum">      66 </span>                :            :   /// @return     An identity matrix.</a>
 <a name="67"><span class="lineNum">      67 </span>                :            :   ///</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">          2 :   typename State::Matrix crtp_jacobian(const State &amp;, const std::chrono::nanoseconds &amp;) const</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">          1 :   typename State::Matrix crtp_jacobian(const State &amp;, const std::chrono::nanoseconds &amp;) const</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            :   {</a>
-<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     return Eigen::Matrix&lt;typename State::Scalar, State::size(), State::size()&gt;::Identity();</span></a>
+<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     return Eigen::Matrix&lt;typename State::Scalar, State::size(), State::size()&gt;::Identity();</span></a>
 <a name="71"><span class="lineNum">      71 </span>                :            :   }</a>
 <a name="72"><span class="lineNum">      72 </span>                :            : };</a>
 <a name="73"><span class="lineNum">      73 </span>                :            : </a>

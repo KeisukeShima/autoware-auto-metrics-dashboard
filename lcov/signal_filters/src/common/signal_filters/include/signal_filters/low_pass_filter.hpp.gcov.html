@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-11 22:09:39</td>
+            <td class="headerValue">2021-08-12 07:44:52</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -114,26 +114,26 @@
 <a name="36"><span class="lineNum">      36 </span>                :            : class SIGNAL_FILTERS_PUBLIC LowPassFilter : public FilterBase&lt;T, ClockT&gt;</a>
 <a name="37"><span class="lineNum">      37 </span>                :            : {</a>
 <a name="38"><span class="lineNum">      38 </span>                :            : public:</a>
-<a name="39"><span class="lineNum">      39 </span>                :<span class="lineCov">         48 :   explicit LowPassFilter(T cutoff_frequency_hz)</span></a>
-<a name="40"><span class="lineNum">      40 </span>                :<span class="lineCov">         60 :   : FilterBase&lt;T, ClockT&gt;{}</span></a>
+<a name="39"><span class="lineNum">      39 </span>                :<span class="lineCov">         24 :   explicit LowPassFilter(T cutoff_frequency_hz)</span></a>
+<a name="40"><span class="lineNum">      40 </span>                :<span class="lineCov">         30 :   : FilterBase&lt;T, ClockT&gt;{}</span></a>
 <a name="41"><span class="lineNum">      41 </span>                :            :   {</a>
-<a name="42"><span class="lineNum">      42 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchCov" title="Branch 1 was taken 36 times"> + </span>]:<span class="lineCov">         48 :     if (T{} &gt;= cutoff_frequency_hz) {</span></a>
-<a name="43"><span class="lineNum">      43 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :       throw std::domain_error{&quot;Cutoff frequency is non-positve&quot;};</span></a>
+<a name="42"><span class="lineNum">      42 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 18 times"> + </span>]:<span class="lineCov">         24 :     if (T{} &gt;= cutoff_frequency_hz) {</span></a>
+<a name="43"><span class="lineNum">      43 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :       throw std::domain_error{&quot;Cutoff frequency is non-positve&quot;};</span></a>
 <a name="44"><span class="lineNum">      44 </span>                :            :     }</a>
-<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">         36 :     constexpr T TAU{static_cast&lt;T&gt;(2.0 * 3.14159)};</span></a>
-<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">         36 :     m_rc_inv = TAU * cutoff_frequency_hz;</span></a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">         36 :   }</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">         18 :     constexpr T TAU{static_cast&lt;T&gt;(2.0 * 3.14159)};</span></a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">         18 :     m_rc_inv = TAU * cutoff_frequency_hz;</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">         18 :   }</span></a>
 <a name="48"><span class="lineNum">      48 </span>                :            :   /// Destructor</a>
-<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">         72 :   virtual ~LowPassFilter() = default;</span></a>
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">         36 :   virtual ~LowPassFilter() = default;</span></a>
 <a name="50"><span class="lineNum">      50 </span>                :            : </a>
 <a name="51"><span class="lineNum">      51 </span>                :            : protected:</a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">       2412 :   T filter_impl(T value, std::chrono::nanoseconds duration) override</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">       1206 :   T filter_impl(T value, std::chrono::nanoseconds duration) override</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :            :   {</a>
-<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">       2412 :     const auto dt = std::chrono::duration_cast&lt;std::chrono::duration&lt;T&gt;&gt;(duration).count();</span></a>
+<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">       1206 :     const auto dt = std::chrono::duration_cast&lt;std::chrono::duration&lt;T&gt;&gt;(duration).count();</span></a>
 <a name="55"><span class="lineNum">      55 </span>                :            :     // From https://stackoverflow.com/a/1027808</a>
-<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">       2412 :     const auto alpha = T{1.0} - std::exp(-dt * m_rc_inv);</span></a>
-<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">       2412 :     m_signal += alpha * (value - m_signal);</span></a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">       2412 :     return m_signal;</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">       1206 :     const auto alpha = T{1.0} - std::exp(-dt * m_rc_inv);</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">       1206 :     m_signal += alpha * (value - m_signal);</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">       1206 :     return m_signal;</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   }</a>
 <a name="60"><span class="lineNum">      60 </span>                :            : </a>
 <a name="61"><span class="lineNum">      61 </span>                :            : private:</a>

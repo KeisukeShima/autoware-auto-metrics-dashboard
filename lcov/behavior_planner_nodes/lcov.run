@@ -1,10 +1,10 @@
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/planning/behavior_planner_nodes/test/test_behavior_planner_node.cpp
 FN:18,_ZN42test_behavior_planner_node_test_hello_Test8TestBodyEv
-FNDA:2,_ZN42test_behavior_planner_node_test_hello_Test8TestBodyEv
+FNDA:1,_ZN42test_behavior_planner_node_test_hello_Test8TestBodyEv
 FN:18,_ZN42test_behavior_planner_node_test_hello_TestC2Ev
-FNDA:2,_ZN42test_behavior_planner_node_test_hello_TestC2Ev
-DA:18,2
-DA:25,2
-DA:18,2
+FNDA:1,_ZN42test_behavior_planner_node_test_hello_TestC2Ev
+DA:18,1
+DA:25,1
+DA:18,1
 end_of_record
