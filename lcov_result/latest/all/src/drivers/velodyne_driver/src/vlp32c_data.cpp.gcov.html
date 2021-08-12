@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.total.filtered - src/drivers/velodyne_driver/src/vlp32c_data.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../index.html">top level</a> - <a href="index.html">src/drivers/velodyne_driver/src</a> - vlp32c_data.cpp<span style="font-size: 80%;"> (source / <a href="vlp32c_data.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.total.filtered</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">35</td>
+            <td class="headerCovTableEntry">39</td>
+            <td class="headerCovTableEntryMed">89.7 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2021-08-12 07:42:59</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">6</td>
+            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntryMed">75.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+            | Branches:
+            <span class="coverLegendCov">+</span> taken
+            <span class="coverLegendNoCov">-</span> not taken
+            <span class="coverLegendNoCov">#</span> not executed
+</td>
+            <td></td>
+            <td class="headerItem">Branches:</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntryHi">92.9 %</td>
+          </tr>
+          <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">           Branch data     Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>                :            : // Copyright 2020 the Autoware Foundation</a>
+<a name="2"><span class="lineNum">       2 </span>                :            : //</a>
+<a name="3"><span class="lineNum">       3 </span>                :            : // Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</a>
+<a name="4"><span class="lineNum">       4 </span>                :            : // you may not use this file except in compliance with the License.</a>
+<a name="5"><span class="lineNum">       5 </span>                :            : // You may obtain a copy of the License at</a>
+<a name="6"><span class="lineNum">       6 </span>                :            : //</a>
+<a name="7"><span class="lineNum">       7 </span>                :            : //     http://www.apache.org/licenses/LICENSE-2.0</a>
+<a name="8"><span class="lineNum">       8 </span>                :            : //</a>
+<a name="9"><span class="lineNum">       9 </span>                :            : // Unless required by applicable law or agreed to in writing, software</a>
+<a name="10"><span class="lineNum">      10 </span>                :            : // distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</a>
+<a name="11"><span class="lineNum">      11 </span>                :            : // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</a>
+<a name="12"><span class="lineNum">      12 </span>                :            : // See the License for the specific language governing permissions and</a>
+<a name="13"><span class="lineNum">      13 </span>                :            : // limitations under the License.</a>
+<a name="14"><span class="lineNum">      14 </span>                :            : //</a>
+<a name="15"><span class="lineNum">      15 </span>                :            : // Co-developed by Tier IV, Inc. and Apex.AI, Inc.</a>
+<a name="16"><span class="lineNum">      16 </span>                :            : </a>
+<a name="17"><span class="lineNum">      17 </span>                :            : #include &lt;velodyne_driver/vlp32c_data.hpp&gt;</a>
+<a name="18"><span class="lineNum">      18 </span>                :            : #include &lt;utility&gt;</a>
+<a name="19"><span class="lineNum">      19 </span>                :            : #include &lt;limits&gt;</a>
+<a name="20"><span class="lineNum">      20 </span>                :            : </a>
+<a name="21"><span class="lineNum">      21 </span>                :            : namespace autoware</a>
+<a name="22"><span class="lineNum">      22 </span>                :            : {</a>
+<a name="23"><span class="lineNum">      23 </span>                :            : namespace drivers</a>
+<a name="24"><span class="lineNum">      24 </span>                :            : {</a>
+<a name="25"><span class="lineNum">      25 </span>                :            : namespace velodyne_driver</a>
+<a name="26"><span class="lineNum">      26 </span>                :            : {</a>
+<a name="27"><span class="lineNum">      27 </span>                :            : </a>
+<a name="28"><span class="lineNum">      28 </span>                :<span class="lineCov">          3 : VLP32CData::VLP32CData(const float32_t rpm)</span></a>
+<a name="29"><span class="lineNum">      29 </span>                :            : {</a>
+<a name="30"><span class="lineNum">      30 </span>                :<span class="lineCov">          3 :   init_azimuth_table(rpm);</span></a>
+<a name="31"><span class="lineNum">      31 </span>                :<span class="lineCov">          3 :   init_altitude_table();</span></a>
+<a name="32"><span class="lineNum">      32 </span>                :            :   // (60E6 us/min * x min/rev = us/rev) * (seq/us * block/seq) = block / rev</a>
+<a name="33"><span class="lineNum">      33 </span>                :<span class="lineCov">          3 :   m_num_blocks_per_revolution =</span></a>
+<a name="34"><span class="lineNum">      34 </span>                :<span class="lineCov">          6 :     static_cast&lt;uint16_t&gt;(std::floor(</span></a>
+<a name="35"><span class="lineNum">      35 </span>                :            :       60.0E6F /</a>
+<a name="36"><span class="lineNum">      36 </span>                :<span class="lineCov">          3 :       (rpm * FIRE_SEQ_OFFSET_US * NUM_SEQUENCES_PER_BLOCK)));</span></a>
+<a name="37"><span class="lineNum">      37 </span>                :<span class="lineCov">          3 : }</span></a>
+<a name="38"><span class="lineNum">      38 </span>                :            : </a>
+<a name="39"><span class="lineNum">      39 </span>                :<span class="lineCov">         32 : uint32_t VLP32CData::azimuth_offset(uint16_t, uint32_t, uint32_t pt_id) const</span></a>
+<a name="40"><span class="lineNum">      40 </span>                :            : {</a>
+<a name="41"><span class="lineNum">      41 </span>                :<span class="lineCov">         32 :   return m_azimuth_ind[pt_id];</span></a>
+<a name="42"><span class="lineNum">      42 </span>                :            : }</a>
+<a name="43"><span class="lineNum">      43 </span>                :            : </a>
+<a name="44"><span class="lineNum">      44 </span>                :<span class="lineNoCov">          0 : uint32_t VLP32CData::altitude(uint16_t, uint32_t, uint32_t pt_id) const</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :            : {</a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineNoCov">          0 :   return m_altitude_ind[pt_id];</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :            : }</a>
+<a name="48"><span class="lineNum">      48 </span>                :            : </a>
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">          4 : uint16_t VLP32CData::seq_id(uint16_t num_blocks, uint32_t) const noexcept</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :            : {</a>
+<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">          4 :   return num_blocks;</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :            : }</a>
+<a name="53"><span class="lineNum">      53 </span>                :            : </a>
+<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">          3 : void VLP32CData::init_azimuth_table(const float32_t rpm)</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :            : {</a>
+<a name="56"><span class="lineNum">      56 </span>                :            :   // Table 9-2</a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">          3 :   constexpr std::array&lt;float32_t, NUM_LASERS&gt; azimuth_offsets{</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :            :     1.4F, -4.2F, 1.4F, -1.4F, 1.4F, -1.4F, 4.2F, -1.4F,</a>
+<a name="59"><span class="lineNum">      59 </span>                :            :     1.4F, -4.2F, 1.4F, -1.4F, 4.2F, -1.4F, 4.2F, -1.4F,</a>
+<a name="60"><span class="lineNum">      60 </span>                :            :     1.4F, -4.2F, 1.4F, -4.2F, 4.2F, -1.4F, 1.4F, -1.4F,</a>
+<a name="61"><span class="lineNum">      61 </span>                :            :     1.4F, -1.4F, 1.4F, -4.2F, 4.2F, -1.4F, 1.4F, -1.4F</a>
+<a name="62"><span class="lineNum">      62 </span>                :            :   };</a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">          3 :   constexpr auto eps = std::numeric_limits&lt;float32_t&gt;::epsilon();</span></a>
+<a name="64"><span class="lineNum">      64 </span>                :            : </a>
+<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">          3 :   const float32_t US_TO_DEG = (rpm * 360.0F) / (60.0F * 1.0E6F);</span></a>
+<a name="66"><span class="lineNum">      66 </span>        [<span class="branchCov" title="Branch 0 was taken 96 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">         99 :   for (uint32_t pt_id = 0U; pt_id &lt; NUM_LASERS; ++pt_id) {</span></a>
+<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">         96 :     const uint32_t group_id = pt_id / GROUP_SIZE;</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :            : </a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">         96 :     const auto raw_idx = std::roundf(</span></a>
+<a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">         96 :       DEG2IDX * (US_TO_DEG *</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">         96 :       (static_cast&lt;float32_t&gt;(group_id) * FIRE_DURATION_US) + azimuth_offsets[pt_id]));</span></a>
+<a name="72"><span class="lineNum">      72 </span>        [<span class="branchCov" title="Branch 0 was taken 48 times"> + </span><span class="branchCov" title="Branch 1 was taken 48 times"> + </span>]:<span class="lineCov">         96 :     const auto normalized_idx = raw_idx &lt; -eps ?</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :            :       (raw_idx + AZIMUTH_ROTATION_RESOLUTION) : raw_idx;</a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">         96 :     m_azimuth_ind[pt_id] = static_cast&lt;uint32_t&gt;(normalized_idx);</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :            :   }</a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">          3 : }</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :            : </a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineNoCov">          0 : uint16_t VLP32CData::num_blocks_per_revolution() const noexcept</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :            : {</a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineNoCov">          0 :   return m_num_blocks_per_revolution;</span></a>
+<a name="81"><span class="lineNum">      81 </span>                :            : }</a>
+<a name="82"><span class="lineNum">      82 </span>                :            : </a>
+<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">          6 : std::pair&lt;bool8_t, uint16_t&gt; VLP32CData::check_flag(const BlockFlag &amp; flag)</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :            : {</a>
+<a name="85"><span class="lineNum">      85 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">         11 :   const auto valid = (flag[0U] == static_cast&lt;uint8_t&gt;(0xFF)) &amp;&amp;</span></a>
+<a name="86"><span class="lineNum">      86 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          5 :     (flag[1U] == static_cast&lt;uint8_t&gt;(0xEE));</span></a>
+<a name="87"><span class="lineNum">      87 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   return std::make_pair(valid, 0U);</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :            : }</a>
+<a name="89"><span class="lineNum">      89 </span>                :            : </a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">          3 : void VLP32CData::init_altitude_table()</span></a>
+<a name="91"><span class="lineNum">      91 </span>                :            : {</a>
+<a name="92"><span class="lineNum">      92 </span>                :            :   // altitude angles in degrees: from spec sheet(Table 9-2)</a>
+<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">          3 :   constexpr std::array&lt;float32_t, NUM_LASERS&gt; altitude_deg{</span></a>
+<a name="94"><span class="lineNum">      94 </span>                :            :     25.0F, -1.0F, -1.667F, -15.639F, -11.31F, 0.0F, -0.667F, -8.843F,</a>
+<a name="95"><span class="lineNum">      95 </span>                :            :     -7.254F, 0.333F, -0.333F, -6.148F, -5.333F, 1.333F, 0.667F, -4.0F,</a>
+<a name="96"><span class="lineNum">      96 </span>                :            :     -4.667F, 1.667F, 1.0F, -3.667F, -3.333F, 3.333F, 2.333F, -2.667F,</a>
+<a name="97"><span class="lineNum">      97 </span>                :            :     -3.0F, 7.0F, 4.667F, -2.333F, -2.0F, 15.0F, 10.333F, -1.333F</a>
+<a name="98"><span class="lineNum">      98 </span>                :            :   };</a>
+<a name="99"><span class="lineNum">      99 </span>                :            : </a>
+<a name="100"><span class="lineNum">     100 </span>                :            :   // convert to idx in lookup table</a>
+<a name="101"><span class="lineNum">     101 </span>        [<span class="branchCov" title="Branch 0 was taken 96 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">         99 :   for (uint16_t idx = 0U; idx &lt; NUM_LASERS; ++idx) {</span></a>
+<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">         96 :     int32_t deg_idx = static_cast&lt;int32_t&gt;(altitude_deg[idx] * DEG2IDX);</span></a>
+<a name="103"><span class="lineNum">     103 </span>        [<span class="branchCov" title="Branch 0 was taken 57 times"> + </span><span class="branchCov" title="Branch 1 was taken 39 times"> + </span>]:<span class="lineCov">         96 :     if (deg_idx &lt; 0) {</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         57 :       deg_idx += static_cast&lt;int32_t&gt;(AZIMUTH_ROTATION_RESOLUTION);</span></a>
+<a name="105"><span class="lineNum">     105 </span>                :            :     }</a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">         96 :     m_altitude_ind[idx] = static_cast&lt;uint32_t&gt;(deg_idx);</span></a>
+<a name="107"><span class="lineNum">     107 </span>                :            :   }</a>
+<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">          3 : }</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :            : }  // namespace velodyne_driver</a>
+<a name="110"><span class="lineNum">     110 </span>                :            : }  // namespace drivers</a>
+<a name="111"><span class="lineNum">     111 </span>                :            : }  // namespace autoware</a>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.14</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
