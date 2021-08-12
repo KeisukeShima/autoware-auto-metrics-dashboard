@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">69</td>
+            <td class="headerCovTableEntry">73</td>
             <td class="headerCovTableEntry">99</td>
-            <td class="headerCovTableEntryLo">69.7 %</td>
+            <td class="headerCovTableEntryLo">73.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-12 07:42:59</td>
+            <td class="headerValue">2021-08-12 20:05:41</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">43</td>
-            <td class="headerCovTableEntry">128</td>
-            <td class="headerCovTableEntryLo">33.6 %</td>
+            <td class="headerCovTableEntry">48</td>
+            <td class="headerCovTableEntry">134</td>
+            <td class="headerCovTableEntryLo">35.8 %</td>
           </tr>
           <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -153,183 +153,187 @@
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
 <a name="76"><span class="lineNum">      76 </span>                :            : </a>
 <a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">          3 : MultiObjectTracker::MultiObjectTracker(MultiObjectTrackerOptions options)</span></a>
-<a name="78"><span class="lineNum">      78 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          3 : : m_options(options), m_associator(options.association_config) {}</span></a>
-<a name="79"><span class="lineNum">      79 </span>                :            : </a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">          4 : TrackerUpdateResult MultiObjectTracker::update(</span></a>
-<a name="81"><span class="lineNum">      81 </span>                :            :   DetectedObjectsMsg detections,</a>
-<a name="82"><span class="lineNum">      82 </span>                :            :   const nav_msgs::msg::Odometry &amp; detection_frame_odometry)</a>
-<a name="83"><span class="lineNum">      83 </span>                :            : {</a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">          4 :   TrackerUpdateResult result;</span></a>
-<a name="85"><span class="lineNum">      85 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :   result.status = this-&gt;validate(detections, detection_frame_odometry);</span></a>
-<a name="86"><span class="lineNum">      86 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          4 :   if (result.status != TrackerUpdateStatus::Ok) {</span></a>
-<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">          2 :     return result;</span></a>
-<a name="88"><span class="lineNum">      88 </span>                :            :   }</a>
-<a name="89"><span class="lineNum">      89 </span>                :            : </a>
-<a name="90"><span class="lineNum">      90 </span>                :            :   // ==================================</a>
-<a name="91"><span class="lineNum">      91 </span>                :            :   // Transform detections</a>
-<a name="92"><span class="lineNum">      92 </span>                :            :   // ==================================</a>
-<a name="93"><span class="lineNum">      93 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   this-&gt;transform(detections, detection_frame_odometry);</span></a>
-<a name="94"><span class="lineNum">      94 </span>                :            : </a>
-<a name="95"><span class="lineNum">      95 </span>                :            :   // ==================================</a>
-<a name="96"><span class="lineNum">      96 </span>                :            :   // Predict tracks forward</a>
-<a name="97"><span class="lineNum">      97 </span>                :            :   // ==================================</a>
-<a name="98"><span class="lineNum">      98 </span>                :            :   // TODO(nikolai.morin): Simplify after #1002</a>
-<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">          2 :   const auto target_time = time_utils::from_message(detections.header.stamp);</span></a>
-<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">          2 :   const auto dt = target_time - m_last_update;</span></a>
-<a name="101"><span class="lineNum">     101 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   for (auto &amp; object : m_objects) {</span></a>
-<a name="102"><span class="lineNum">     102 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     object.predict(dt);</span></a>
-<a name="103"><span class="lineNum">     103 </span>                :            :   }</a>
-<a name="104"><span class="lineNum">     104 </span>                :            : </a>
-<a name="105"><span class="lineNum">     105 </span>                :            :   // ==================================</a>
-<a name="106"><span class="lineNum">     106 </span>                :            :   // Associate observations with tracks</a>
-<a name="107"><span class="lineNum">     107 </span>                :            :   // ==================================</a>
-<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">          4 :   AssociatorResult association;</span></a>
-<a name="109"><span class="lineNum">     109 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   association = m_associator.assign(detections, this-&gt;m_objects);</span></a>
-<a name="110"><span class="lineNum">     110 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   if (association.had_errors) {</span></a>
-<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">          2 :     result.status = TrackerUpdateStatus::InvalidShape;</span></a>
-<a name="112"><span class="lineNum">     112 </span>                :            :   }</a>
-<a name="113"><span class="lineNum">     113 </span>                :            : </a>
-<a name="114"><span class="lineNum">     114 </span>                :            :   // ==================================</a>
-<a name="115"><span class="lineNum">     115 </span>                :            :   // Update tracks with observations</a>
-<a name="116"><span class="lineNum">     116 </span>                :            :   // ==================================</a>
-<a name="117"><span class="lineNum">     117 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   for (size_t track_idx = 0; track_idx &lt; m_objects.size(); ++track_idx) {</span></a>
-<a name="118"><span class="lineNum">     118 </span>                :<span class="lineNoCov">          0 :     size_t detection_idx = association.track_assignments[track_idx];</span></a>
-<a name="119"><span class="lineNum">     119 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (detection_idx == AssociatorResult::UNASSIGNED) {</span></a>
-<a name="120"><span class="lineNum">     120 </span>                :<span class="lineNoCov">          0 :       continue;</span></a>
-<a name="121"><span class="lineNum">     121 </span>                :            :     }</a>
-<a name="122"><span class="lineNum">     122 </span>                :<span class="lineNoCov">          0 :     const auto &amp; detection = detections.objects[detection_idx];</span></a>
-<a name="123"><span class="lineNum">     123 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_objects[track_idx].update(detection);</span></a>
-<a name="124"><span class="lineNum">     124 </span>                :            :   }</a>
-<a name="125"><span class="lineNum">     125 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   for (const size_t track_idx : association.unassigned_track_indices) {</span></a>
-<a name="126"><span class="lineNum">     126 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_objects[track_idx].no_update();</span></a>
-<a name="127"><span class="lineNum">     127 </span>                :            :   }</a>
-<a name="128"><span class="lineNum">     128 </span>                :            : </a>
-<a name="129"><span class="lineNum">     129 </span>                :            :   // ==================================</a>
-<a name="130"><span class="lineNum">     130 </span>                :            :   // Initialize new tracks</a>
-<a name="131"><span class="lineNum">     131 </span>                :            :   // ==================================</a>
-<a name="132"><span class="lineNum">     132 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   for (size_t new_detection_idx : association.unassigned_detection_indices) {</span></a>
-<a name="133"><span class="lineNum">     133 </span>                :<span class="lineNoCov">          0 :     const auto &amp; detection = detections.objects[new_detection_idx];</span></a>
-<a name="134"><span class="lineNum">     134 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_objects.push_back(</span></a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineNoCov">          0 :       TrackedObject(</span></a>
-<a name="136"><span class="lineNum">     136 </span>                :            :         detection,</a>
-<a name="137"><span class="lineNum">     137 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         m_options.default_variance, m_options.noise_variance));</span></a>
-<a name="138"><span class="lineNum">     138 </span>                :            :   }</a>
-<a name="139"><span class="lineNum">     139 </span>                :            : </a>
-<a name="140"><span class="lineNum">     140 </span>                :            :   // ==================================</a>
-<a name="141"><span class="lineNum">     141 </span>                :            :   // Prune tracks</a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">          3 : : m_options(options), m_associator(options.association_config),</span></a>
+<a name="79"><span class="lineNum">      79 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          3 :   m_track_creator(options.track_creator_config) {}</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="80"><span class="lineNum">      80 </span>                :            : </a>
+<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">          4 : TrackerUpdateResult MultiObjectTracker::update(</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :            :   DetectedObjectsMsg detections,</a>
+<a name="83"><span class="lineNum">      83 </span>                :            :   const nav_msgs::msg::Odometry &amp; detection_frame_odometry)</a>
+<a name="84"><span class="lineNum">      84 </span>                :            : {</a>
+<a name="85"><span class="lineNum">      85 </span>                :<span class="lineCov">          4 :   TrackerUpdateResult result;</span></a>
+<a name="86"><span class="lineNum">      86 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :   result.status = this-&gt;validate(detections, detection_frame_odometry);</span></a>
+<a name="87"><span class="lineNum">      87 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          4 :   if (result.status != TrackerUpdateStatus::Ok) {</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">          2 :     return result;</span></a>
+<a name="89"><span class="lineNum">      89 </span>                :            :   }</a>
+<a name="90"><span class="lineNum">      90 </span>                :            : </a>
+<a name="91"><span class="lineNum">      91 </span>                :            :   // ==================================</a>
+<a name="92"><span class="lineNum">      92 </span>                :            :   // Transform detections</a>
+<a name="93"><span class="lineNum">      93 </span>                :            :   // ==================================</a>
+<a name="94"><span class="lineNum">      94 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   this-&gt;transform(detections, detection_frame_odometry);</span></a>
+<a name="95"><span class="lineNum">      95 </span>                :            : </a>
+<a name="96"><span class="lineNum">      96 </span>                :            :   // ==================================</a>
+<a name="97"><span class="lineNum">      97 </span>                :            :   // Predict tracks forward</a>
+<a name="98"><span class="lineNum">      98 </span>                :            :   // ==================================</a>
+<a name="99"><span class="lineNum">      99 </span>                :            :   // TODO(nikolai.morin): Simplify after #1002</a>
+<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">          2 :   const auto target_time = time_utils::from_message(detections.header.stamp);</span></a>
+<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">          2 :   const auto dt = target_time - m_last_update;</span></a>
+<a name="102"><span class="lineNum">     102 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   for (auto &amp; object : m_objects) {</span></a>
+<a name="103"><span class="lineNum">     103 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     object.predict(dt);</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :            :   }</a>
+<a name="105"><span class="lineNum">     105 </span>                :            : </a>
+<a name="106"><span class="lineNum">     106 </span>                :            :   // ==================================</a>
+<a name="107"><span class="lineNum">     107 </span>                :            :   // Associate observations with tracks</a>
+<a name="108"><span class="lineNum">     108 </span>                :            :   // ==================================</a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">          4 :   AssociatorResult association;</span></a>
+<a name="110"><span class="lineNum">     110 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   association = m_associator.assign(detections, this-&gt;m_objects);</span></a>
+<a name="111"><span class="lineNum">     111 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   if (association.had_errors) {</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">          2 :     result.status = TrackerUpdateStatus::InvalidShape;</span></a>
+<a name="113"><span class="lineNum">     113 </span>                :            :   }</a>
+<a name="114"><span class="lineNum">     114 </span>                :            : </a>
+<a name="115"><span class="lineNum">     115 </span>                :            :   // ==================================</a>
+<a name="116"><span class="lineNum">     116 </span>                :            :   // Update tracks with observations</a>
+<a name="117"><span class="lineNum">     117 </span>                :            :   // ==================================</a>
+<a name="118"><span class="lineNum">     118 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   for (size_t track_idx = 0; track_idx &lt; m_objects.size(); ++track_idx) {</span></a>
+<a name="119"><span class="lineNum">     119 </span>                :<span class="lineNoCov">          0 :     size_t detection_idx = association.track_assignments[track_idx];</span></a>
+<a name="120"><span class="lineNum">     120 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (detection_idx == AssociatorResult::UNASSIGNED) {</span></a>
+<a name="121"><span class="lineNum">     121 </span>                :<span class="lineNoCov">          0 :       continue;</span></a>
+<a name="122"><span class="lineNum">     122 </span>                :            :     }</a>
+<a name="123"><span class="lineNum">     123 </span>                :<span class="lineNoCov">          0 :     const auto &amp; detection = detections.objects[detection_idx];</span></a>
+<a name="124"><span class="lineNum">     124 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_objects[track_idx].update(detection);</span></a>
+<a name="125"><span class="lineNum">     125 </span>                :            :   }</a>
+<a name="126"><span class="lineNum">     126 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   for (const size_t track_idx : association.unassigned_track_indices) {</span></a>
+<a name="127"><span class="lineNum">     127 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_objects[track_idx].no_update();</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :            :   }</a>
+<a name="129"><span class="lineNum">     129 </span>                :            : </a>
+<a name="130"><span class="lineNum">     130 </span>                :            :   // ==================================</a>
+<a name="131"><span class="lineNum">     131 </span>                :            :   // Initialize new tracks</a>
+<a name="132"><span class="lineNum">     132 </span>                :            :   // ==================================</a>
+<a name="133"><span class="lineNum">     133 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   m_track_creator.add_unassigned_lidar_clusters(detections, association);</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :            :   {</a>
+<a name="135"><span class="lineNum">     135 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     auto &amp;&amp; new_tracks = m_track_creator.create_tracks();</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :            :     m_objects.insert(</a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">          2 :       m_objects.end(),</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :            :       std::make_move_iterator(new_tracks.begin()),</a>
+<a name="139"><span class="lineNum">     139 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          4 :       std::make_move_iterator(new_tracks.end()));</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="140"><span class="lineNum">     140 </span>                :            :   }</a>
+<a name="141"><span class="lineNum">     141 </span>                :            : </a>
 <a name="142"><span class="lineNum">     142 </span>                :            :   // ==================================</a>
-<a name="143"><span class="lineNum">     143 </span>                :            :   const auto last = std::remove_if(</a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineNoCov">          0 :     m_objects.begin(), m_objects.end(), [this](const auto &amp; object) {</span></a>
-<a name="145"><span class="lineNum">     145 </span>                :            :       return object.should_be_removed(</a>
-<a name="146"><span class="lineNum">     146 </span>                :            :         this-&gt;m_options.pruning_time_threshold,</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineNoCov">          0 :         this-&gt;m_options.pruning_ticks_threshold);</span></a>
-<a name="148"><span class="lineNum">     148 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     });</span></a>
-<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   m_objects.erase(last, m_objects.end());</span></a>
-<a name="150"><span class="lineNum">     150 </span>                :            : </a>
-<a name="151"><span class="lineNum">     151 </span>                :            :   // ==================================</a>
-<a name="152"><span class="lineNum">     152 </span>                :            :   // Build result</a>
+<a name="143"><span class="lineNum">     143 </span>                :            :   // Prune tracks</a>
+<a name="144"><span class="lineNum">     144 </span>                :            :   // ==================================</a>
+<a name="145"><span class="lineNum">     145 </span>                :            :   const auto last = std::remove_if(</a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineNoCov">          0 :     m_objects.begin(), m_objects.end(), [this](const auto &amp; object) {</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :            :       return object.should_be_removed(</a>
+<a name="148"><span class="lineNum">     148 </span>                :            :         this-&gt;m_options.pruning_time_threshold,</a>
+<a name="149"><span class="lineNum">     149 </span>                :<span class="lineNoCov">          0 :         this-&gt;m_options.pruning_ticks_threshold);</span></a>
+<a name="150"><span class="lineNum">     150 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     });</span></a>
+<a name="151"><span class="lineNum">     151 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   m_objects.erase(last, m_objects.end());</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :            : </a>
 <a name="153"><span class="lineNum">     153 </span>                :            :   // ==================================</a>
-<a name="154"><span class="lineNum">     154 </span>                :            :   result.objects =</a>
-<a name="155"><span class="lineNum">     155 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :     std::make_unique&lt;TrackedObjectsMsg&gt;(this-&gt;convert_to_msg(detections.header.stamp));</span></a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">          2 :   result.status = TrackerUpdateStatus::Ok;</span></a>
-<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">          2 :   m_last_update = target_time;</span></a>
-<a name="158"><span class="lineNum">     158 </span>                :            : </a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">          2 :   return result;</span></a>
-<a name="160"><span class="lineNum">     160 </span>                :            : }</a>
-<a name="161"><span class="lineNum">     161 </span>                :            : </a>
-<a name="162"><span class="lineNum">     162 </span>                :            : </a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">          4 : TrackerUpdateStatus MultiObjectTracker::validate(</span></a>
-<a name="164"><span class="lineNum">     164 </span>                :            :   const DetectedObjectsMsg &amp; detections,</a>
-<a name="165"><span class="lineNum">     165 </span>                :            :   const nav_msgs::msg::Odometry &amp; detection_frame_odometry)</a>
-<a name="166"><span class="lineNum">     166 </span>                :            : {</a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">          4 :   const auto target_time = time_utils::from_message(detections.header.stamp);</span></a>
-<a name="168"><span class="lineNum">     168 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 3 times"> + </span>]:<span class="lineCov">          4 :   if (target_time &lt; m_last_update) {</span></a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">          1 :     return TrackerUpdateStatus::WentBackInTime;</span></a>
-<a name="170"><span class="lineNum">     170 </span>                :            :   }</a>
-<a name="171"><span class="lineNum">     171 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          3 :   if (detections.header.frame_id != detection_frame_odometry.child_frame_id) {</span></a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineNoCov">          0 :     return TrackerUpdateStatus::DetectionFrameMismatch;</span></a>
-<a name="173"><span class="lineNum">     173 </span>                :            :   }</a>
-<a name="174"><span class="lineNum">     174 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          3 :   if (detection_frame_odometry.header.frame_id != m_options.frame) {</span></a>
-<a name="175"><span class="lineNum">     175 </span>                :<span class="lineNoCov">          0 :     return TrackerUpdateStatus::TrackerFrameMismatch;</span></a>
-<a name="176"><span class="lineNum">     176 </span>                :            :   }</a>
-<a name="177"><span class="lineNum">     177 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          3 :   if (!is_gravity_aligned(detection_frame_odometry.pose.pose.orientation)) {</span></a>
-<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">          1 :     return TrackerUpdateStatus::FrameNotGravityAligned;</span></a>
-<a name="179"><span class="lineNum">     179 </span>                :            :   }</a>
-<a name="180"><span class="lineNum">     180 </span>                :            :   // Could also validate</a>
-<a name="181"><span class="lineNum">     181 </span>                :            :   // * classes</a>
-<a name="182"><span class="lineNum">     182 </span>                :            :   // * object shapes</a>
-<a name="183"><span class="lineNum">     183 </span>                :            :   // * detection poses are gravity aligned</a>
-<a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">          2 :   return TrackerUpdateStatus::Ok;</span></a>
-<a name="185"><span class="lineNum">     185 </span>                :            : }</a>
-<a name="186"><span class="lineNum">     186 </span>                :            : </a>
-<a name="187"><span class="lineNum">     187 </span>                :<span class="lineCov">          2 : void MultiObjectTracker::transform(</span></a>
-<a name="188"><span class="lineNum">     188 </span>                :            :   DetectedObjectsMsg &amp; detections,</a>
-<a name="189"><span class="lineNum">     189 </span>                :            :   const nav_msgs::msg::Odometry &amp; detection_frame_odometry)</a>
-<a name="190"><span class="lineNum">     190 </span>                :            : {</a>
-<a name="191"><span class="lineNum">     191 </span>                :            :   // Convert the odometry to Eigen objects.</a>
-<a name="192"><span class="lineNum">     192 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   Eigen::Isometry3d tf__tracking__detection = Eigen::Isometry3d::Identity();</span></a>
-<a name="193"><span class="lineNum">     193 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   tf2::fromMsg(detection_frame_odometry.pose.pose, tf__tracking__detection);</span></a>
-<a name="194"><span class="lineNum">     194 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :   const Eigen::Matrix3d rot_d = tf__tracking__detection.linear();</span></a>
-<a name="195"><span class="lineNum">     195 </span>                :            :   // Convert the odometry to TransformStamped for use with tf2::doTransform.</a>
-<a name="196"><span class="lineNum">     196 </span>                :            :   const geometry_msgs::msg::TransformStamped tf_msg__tracking__detection = to_transform(</a>
-<a name="197"><span class="lineNum">     197 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     detection_frame_odometry);</span></a>
-<a name="198"><span class="lineNum">     198 </span>                :            :   // Hoisted outside the loop</a>
-<a name="199"><span class="lineNum">     199 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :   Eigen::Vector3d centroid_detection = Eigen::Vector3d::Zero();</span></a>
-<a name="200"><span class="lineNum">     200 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :   Eigen::Vector3d centroid_tracking = Eigen::Vector3d::Zero();</span></a>
-<a name="201"><span class="lineNum">     201 </span>                :            : </a>
-<a name="202"><span class="lineNum">     202 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   detections.header.frame_id = m_options.frame;</span></a>
-<a name="203"><span class="lineNum">     203 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   for (auto &amp; detection : detections.objects) {</span></a>
-<a name="204"><span class="lineNum">     204 </span>                :            :     // Transform the shape. If needed, this can potentially be made more efficient by not using</a>
-<a name="205"><span class="lineNum">     205 </span>                :            :     // tf2::doTransform, which converts the TransformStamped message to a different representation</a>
-<a name="206"><span class="lineNum">     206 </span>                :            :     // in each call.</a>
-<a name="207"><span class="lineNum">     207 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     tf2::doTransform(detection.shape.polygon, detection.shape.polygon, tf_msg__tracking__detection);</span></a>
-<a name="208"><span class="lineNum">     208 </span>                :            :     // Transform the pose.</a>
-<a name="209"><span class="lineNum">     209 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     tf2::fromMsg(detection.kinematics.centroid_position, centroid_detection);</span></a>
-<a name="210"><span class="lineNum">     210 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     centroid_tracking = tf__tracking__detection * centroid_detection;</span></a>
-<a name="211"><span class="lineNum">     211 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     detection.kinematics.centroid_position = tf2::toMsg(centroid_tracking);</span></a>
-<a name="212"><span class="lineNum">     212 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (detection.kinematics.has_position_covariance) {</span></a>
-<a name="213"><span class="lineNum">     213 </span>                :            :       // Doing this properly is difficult. We'll ignore the rotational part. This is a practical</a>
-<a name="214"><span class="lineNum">     214 </span>                :            :       // solution since only the yaw covariance is relevant, and the yaw covariance is</a>
-<a name="215"><span class="lineNum">     215 </span>                :            :       // unaffected by the transformation, which preserves the z axis.</a>
-<a name="216"><span class="lineNum">     216 </span>                :            :       // An even more accurate implementation could additionally include the odometry covariance.</a>
-<a name="217"><span class="lineNum">     217 </span>                :            :       Eigen::Map&lt;Eigen::Matrix&lt;double, 3, 3, Eigen::RowMajor&gt;&gt; cov(</a>
-<a name="218"><span class="lineNum">     218 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :         detection.kinematics.position_covariance.data());</span></a>
-<a name="219"><span class="lineNum">     219 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :       cov = rot_d * cov * rot_d.transpose();</span></a>
+<a name="154"><span class="lineNum">     154 </span>                :            :   // Build result</a>
+<a name="155"><span class="lineNum">     155 </span>                :            :   // ==================================</a>
+<a name="156"><span class="lineNum">     156 </span>                :            :   result.objects =</a>
+<a name="157"><span class="lineNum">     157 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :     std::make_unique&lt;TrackedObjectsMsg&gt;(this-&gt;convert_to_msg(detections.header.stamp));</span></a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">          2 :   result.status = TrackerUpdateStatus::Ok;</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">          2 :   m_last_update = target_time;</span></a>
+<a name="160"><span class="lineNum">     160 </span>                :            : </a>
+<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">          2 :   return result;</span></a>
+<a name="162"><span class="lineNum">     162 </span>                :            : }</a>
+<a name="163"><span class="lineNum">     163 </span>                :            : </a>
+<a name="164"><span class="lineNum">     164 </span>                :            : </a>
+<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">          4 : TrackerUpdateStatus MultiObjectTracker::validate(</span></a>
+<a name="166"><span class="lineNum">     166 </span>                :            :   const DetectedObjectsMsg &amp; detections,</a>
+<a name="167"><span class="lineNum">     167 </span>                :            :   const nav_msgs::msg::Odometry &amp; detection_frame_odometry)</a>
+<a name="168"><span class="lineNum">     168 </span>                :            : {</a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">          4 :   const auto target_time = time_utils::from_message(detections.header.stamp);</span></a>
+<a name="170"><span class="lineNum">     170 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 3 times"> + </span>]:<span class="lineCov">          4 :   if (target_time &lt; m_last_update) {</span></a>
+<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">          1 :     return TrackerUpdateStatus::WentBackInTime;</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :            :   }</a>
+<a name="173"><span class="lineNum">     173 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          3 :   if (detections.header.frame_id != detection_frame_odometry.child_frame_id) {</span></a>
+<a name="174"><span class="lineNum">     174 </span>                :<span class="lineNoCov">          0 :     return TrackerUpdateStatus::DetectionFrameMismatch;</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :            :   }</a>
+<a name="176"><span class="lineNum">     176 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          3 :   if (detection_frame_odometry.header.frame_id != m_options.frame) {</span></a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineNoCov">          0 :     return TrackerUpdateStatus::TrackerFrameMismatch;</span></a>
+<a name="178"><span class="lineNum">     178 </span>                :            :   }</a>
+<a name="179"><span class="lineNum">     179 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          3 :   if (!is_gravity_aligned(detection_frame_odometry.pose.pose.orientation)) {</span></a>
+<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">          1 :     return TrackerUpdateStatus::FrameNotGravityAligned;</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :            :   }</a>
+<a name="182"><span class="lineNum">     182 </span>                :            :   // Could also validate</a>
+<a name="183"><span class="lineNum">     183 </span>                :            :   // * classes</a>
+<a name="184"><span class="lineNum">     184 </span>                :            :   // * object shapes</a>
+<a name="185"><span class="lineNum">     185 </span>                :            :   // * detection poses are gravity aligned</a>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">          2 :   return TrackerUpdateStatus::Ok;</span></a>
+<a name="187"><span class="lineNum">     187 </span>                :            : }</a>
+<a name="188"><span class="lineNum">     188 </span>                :            : </a>
+<a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">          2 : void MultiObjectTracker::transform(</span></a>
+<a name="190"><span class="lineNum">     190 </span>                :            :   DetectedObjectsMsg &amp; detections,</a>
+<a name="191"><span class="lineNum">     191 </span>                :            :   const nav_msgs::msg::Odometry &amp; detection_frame_odometry)</a>
+<a name="192"><span class="lineNum">     192 </span>                :            : {</a>
+<a name="193"><span class="lineNum">     193 </span>                :            :   // Convert the odometry to Eigen objects.</a>
+<a name="194"><span class="lineNum">     194 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   Eigen::Isometry3d tf__tracking__detection = Eigen::Isometry3d::Identity();</span></a>
+<a name="195"><span class="lineNum">     195 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   tf2::fromMsg(detection_frame_odometry.pose.pose, tf__tracking__detection);</span></a>
+<a name="196"><span class="lineNum">     196 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :   const Eigen::Matrix3d rot_d = tf__tracking__detection.linear();</span></a>
+<a name="197"><span class="lineNum">     197 </span>                :            :   // Convert the odometry to TransformStamped for use with tf2::doTransform.</a>
+<a name="198"><span class="lineNum">     198 </span>                :            :   const geometry_msgs::msg::TransformStamped tf_msg__tracking__detection = to_transform(</a>
+<a name="199"><span class="lineNum">     199 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     detection_frame_odometry);</span></a>
+<a name="200"><span class="lineNum">     200 </span>                :            :   // Hoisted outside the loop</a>
+<a name="201"><span class="lineNum">     201 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :   Eigen::Vector3d centroid_detection = Eigen::Vector3d::Zero();</span></a>
+<a name="202"><span class="lineNum">     202 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :   Eigen::Vector3d centroid_tracking = Eigen::Vector3d::Zero();</span></a>
+<a name="203"><span class="lineNum">     203 </span>                :            : </a>
+<a name="204"><span class="lineNum">     204 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   detections.header.frame_id = m_options.frame;</span></a>
+<a name="205"><span class="lineNum">     205 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   for (auto &amp; detection : detections.objects) {</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :            :     // Transform the shape. If needed, this can potentially be made more efficient by not using</a>
+<a name="207"><span class="lineNum">     207 </span>                :            :     // tf2::doTransform, which converts the TransformStamped message to a different representation</a>
+<a name="208"><span class="lineNum">     208 </span>                :            :     // in each call.</a>
+<a name="209"><span class="lineNum">     209 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     tf2::doTransform(detection.shape.polygon, detection.shape.polygon, tf_msg__tracking__detection);</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :            :     // Transform the pose.</a>
+<a name="211"><span class="lineNum">     211 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     tf2::fromMsg(detection.kinematics.centroid_position, centroid_detection);</span></a>
+<a name="212"><span class="lineNum">     212 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     centroid_tracking = tf__tracking__detection * centroid_detection;</span></a>
+<a name="213"><span class="lineNum">     213 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     detection.kinematics.centroid_position = tf2::toMsg(centroid_tracking);</span></a>
+<a name="214"><span class="lineNum">     214 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (detection.kinematics.has_position_covariance) {</span></a>
+<a name="215"><span class="lineNum">     215 </span>                :            :       // Doing this properly is difficult. We'll ignore the rotational part. This is a practical</a>
+<a name="216"><span class="lineNum">     216 </span>                :            :       // solution since only the yaw covariance is relevant, and the yaw covariance is</a>
+<a name="217"><span class="lineNum">     217 </span>                :            :       // unaffected by the transformation, which preserves the z axis.</a>
+<a name="218"><span class="lineNum">     218 </span>                :            :       // An even more accurate implementation could additionally include the odometry covariance.</a>
+<a name="219"><span class="lineNum">     219 </span>                :            :       Eigen::Map&lt;Eigen::Matrix&lt;double, 3, 3, Eigen::RowMajor&gt;&gt; cov(</a>
+<a name="220"><span class="lineNum">     220 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :         detection.kinematics.position_covariance.data());</span></a>
+<a name="221"><span class="lineNum">     221 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :       cov = rot_d * cov * rot_d.transpose();</span></a>
 <span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
-<a name="220"><span class="lineNum">     220 </span>                :            :     }</a>
-<a name="221"><span class="lineNum">     221 </span>                :            :     // Transform the twist.</a>
-<a name="222"><span class="lineNum">     222 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (detection.kinematics.has_twist) {</span></a>
-<a name="223"><span class="lineNum">     223 </span>                :<span class="lineNoCov">          0 :       auto &amp; linear = detection.kinematics.twist.twist.linear;</span></a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineNoCov">          0 :       const auto &amp; frame_linear = detection_frame_odometry.twist.twist.linear;</span></a>
-<a name="225"><span class="lineNum">     225 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       const Eigen::Vector3d eigen_linear{linear.x, linear.y, linear.z};</span></a>
-<a name="226"><span class="lineNum">     226 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       const Eigen::Vector3d eigen_linear_transformed = rot_d * eigen_linear;</span></a>
-<a name="227"><span class="lineNum">     227 </span>                :            :       // This assumes the detection frame has no angular velocity wrt the tracking frame.</a>
-<a name="228"><span class="lineNum">     228 </span>                :            :       // TODO(nikolai.morin): Implement the full formula, to be found in</a>
-<a name="229"><span class="lineNum">     229 </span>                :            :       // Craig's &quot;Introduction to robotics&quot; book, third edition, formula 5.13</a>
-<a name="230"><span class="lineNum">     230 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       linear.x = frame_linear.x + eigen_linear_transformed.x();</span></a>
-<a name="231"><span class="lineNum">     231 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       linear.y = frame_linear.y + eigen_linear_transformed.y();</span></a>
-<a name="232"><span class="lineNum">     232 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       linear.z = frame_linear.z + eigen_linear_transformed.z();</span></a>
-<a name="233"><span class="lineNum">     233 </span>                :            :     }</a>
-<a name="234"><span class="lineNum">     234 </span>                :            :   }</a>
-<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">          2 : }</span></a>
-<a name="236"><span class="lineNum">     236 </span>                :            : </a>
-<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">          2 : MultiObjectTracker::TrackedObjectsMsg MultiObjectTracker::convert_to_msg(</span></a>
-<a name="238"><span class="lineNum">     238 </span>                :            :   const builtin_interfaces::msg::Time &amp; stamp) const</a>
-<a name="239"><span class="lineNum">     239 </span>                :            : {</a>
-<a name="240"><span class="lineNum">     240 </span>                :<span class="lineCov">          2 :   TrackedObjectsMsg array;</span></a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">          2 :   array.header.stamp = stamp;</span></a>
-<a name="242"><span class="lineNum">     242 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   array.header.frame_id = m_options.frame;</span></a>
-<a name="243"><span class="lineNum">     243 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   array.objects.reserve(m_objects.size());</span></a>
-<a name="244"><span class="lineNum">     244 </span>                :            :   std::transform(</a>
-<a name="245"><span class="lineNum">     245 </span>                :<span class="lineCov">          2 :     m_objects.begin(), m_objects.end(), std::back_inserter(array.objects), [](</span></a>
-<a name="246"><span class="lineNum">     246 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :       TrackedObject o) {return o.msg();});</span></a>
-<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">          2 :   return array;</span></a>
-<a name="248"><span class="lineNum">     248 </span>                :            : }</a>
-<a name="249"><span class="lineNum">     249 </span>                :            : </a>
-<a name="250"><span class="lineNum">     250 </span>                :            : </a>
-<a name="251"><span class="lineNum">     251 </span>                :            : }  // namespace tracking</a>
-<a name="252"><span class="lineNum">     252 </span>                :            : }  // namespace perception</a>
-<a name="253"><span class="lineNum">     253 </span>                :            : }  // namespace autoware</a>
+<a name="222"><span class="lineNum">     222 </span>                :            :     }</a>
+<a name="223"><span class="lineNum">     223 </span>                :            :     // Transform the twist.</a>
+<a name="224"><span class="lineNum">     224 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (detection.kinematics.has_twist) {</span></a>
+<a name="225"><span class="lineNum">     225 </span>                :<span class="lineNoCov">          0 :       auto &amp; linear = detection.kinematics.twist.twist.linear;</span></a>
+<a name="226"><span class="lineNum">     226 </span>                :<span class="lineNoCov">          0 :       const auto &amp; frame_linear = detection_frame_odometry.twist.twist.linear;</span></a>
+<a name="227"><span class="lineNum">     227 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       const Eigen::Vector3d eigen_linear{linear.x, linear.y, linear.z};</span></a>
+<a name="228"><span class="lineNum">     228 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       const Eigen::Vector3d eigen_linear_transformed = rot_d * eigen_linear;</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :            :       // This assumes the detection frame has no angular velocity wrt the tracking frame.</a>
+<a name="230"><span class="lineNum">     230 </span>                :            :       // TODO(nikolai.morin): Implement the full formula, to be found in</a>
+<a name="231"><span class="lineNum">     231 </span>                :            :       // Craig's &quot;Introduction to robotics&quot; book, third edition, formula 5.13</a>
+<a name="232"><span class="lineNum">     232 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       linear.x = frame_linear.x + eigen_linear_transformed.x();</span></a>
+<a name="233"><span class="lineNum">     233 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       linear.y = frame_linear.y + eigen_linear_transformed.y();</span></a>
+<a name="234"><span class="lineNum">     234 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       linear.z = frame_linear.z + eigen_linear_transformed.z();</span></a>
+<a name="235"><span class="lineNum">     235 </span>                :            :     }</a>
+<a name="236"><span class="lineNum">     236 </span>                :            :   }</a>
+<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">          2 : }</span></a>
+<a name="238"><span class="lineNum">     238 </span>                :            : </a>
+<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">          2 : MultiObjectTracker::TrackedObjectsMsg MultiObjectTracker::convert_to_msg(</span></a>
+<a name="240"><span class="lineNum">     240 </span>                :            :   const builtin_interfaces::msg::Time &amp; stamp) const</a>
+<a name="241"><span class="lineNum">     241 </span>                :            : {</a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">          2 :   TrackedObjectsMsg array;</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">          2 :   array.header.stamp = stamp;</span></a>
+<a name="244"><span class="lineNum">     244 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   array.header.frame_id = m_options.frame;</span></a>
+<a name="245"><span class="lineNum">     245 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   array.objects.reserve(m_objects.size());</span></a>
+<a name="246"><span class="lineNum">     246 </span>                :            :   std::transform(</a>
+<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">          2 :     m_objects.begin(), m_objects.end(), std::back_inserter(array.objects), [](</span></a>
+<a name="248"><span class="lineNum">     248 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :       TrackedObject o) {return o.msg();});</span></a>
+<a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">          2 :   return array;</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :            : }</a>
+<a name="251"><span class="lineNum">     251 </span>                :            : </a>
+<a name="252"><span class="lineNum">     252 </span>                :            : </a>
+<a name="253"><span class="lineNum">     253 </span>                :            : }  // namespace tracking</a>
+<a name="254"><span class="lineNum">     254 </span>                :            : }  // namespace perception</a>
+<a name="255"><span class="lineNum">     255 </span>                :            : }  // namespace autoware</a>
 </pre>
       </td>
     </tr>

@@ -268,8 +268,6 @@ BRDA:113,0,7,-
 BRDA:113,0,8,-
 BRDA:113,0,9,-
 end_of_record
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/outlier_filter/include/outlier_filter/voxel_grid_outlier_filter.hpp
-end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/outlier_filter/test/test_voxel_grid_outlier_filter.cpp
 FN:36,_ZN59VoxelGridOutlierFilterTest_test_four_equispaced_points_Test8TestBodyEv
 FNDA:0,_ZN59VoxelGridOutlierFilterTest_test_four_equispaced_points_Test8TestBodyEv
@@ -393,6 +391,8 @@ BRDA:123,0,2,-
 BRDA:123,0,3,-
 DA:124,0
 DA:97,0
+end_of_record
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/outlier_filter/include/outlier_filter/voxel_grid_outlier_filter.hpp
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/outlier_filter/test/outlier_filter_test_utils.hpp
