@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-13 20:03:01</td>
+            <td class="headerValue">2021-08-14 20:14:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">11</td>
@@ -129,11 +129,11 @@
 <a name="51"><span class="lineNum">      51 </span>                :            :   /// @param[in]  stride         The stride of the data, i.e., step to the next row or column.</a>
 <a name="52"><span class="lineNum">      52 </span>                :            :   /// @param[in]  storage_order  How the data should be stored in memory.</a>
 <a name="53"><span class="lineNum">      53 </span>                :            :   ///</a>
-<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">         99 :   Index(</span></a>
+<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">        101 :   Index(</span></a>
 <a name="55"><span class="lineNum">      55 </span>                :            :     const std::int32_t start_index,</a>
 <a name="56"><span class="lineNum">      56 </span>                :            :     const std::int32_t stride,</a>
 <a name="57"><span class="lineNum">      57 </span>                :            :     const DataStorageOrder storage_order)</a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">         99 :   : m_start_index{start_index}, m_stride{stride}, m_storage_order{storage_order} {}</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">        101 :   : m_start_index{start_index}, m_stride{stride}, m_storage_order{storage_order} {}</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            : </a>
 <a name="60"><span class="lineNum">      60 </span>                :            :   ///</a>
 <a name="61"><span class="lineNum">      61 </span>                :            :   /// @brief      Compute an index using the stored starting index, stride and storage order.</a>
@@ -143,11 +143,11 @@
 <a name="65"><span class="lineNum">      65 </span>                :            :   ///</a>
 <a name="66"><span class="lineNum">      66 </span>                :            :   /// @return     A 1D index in the underlying data array</a>
 <a name="67"><span class="lineNum">      67 </span>                :            :   ///</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">        878 :   std::size_t operator()(const Eigen::Index row, const Eigen::Index col) const</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">        898 :   std::size_t operator()(const Eigen::Index row, const Eigen::Index col) const</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            :   {</a>
-<a name="70"><span class="lineNum">      70 </span>     [<span class="branchCov" title="Branch 0 was taken 852 times"> + </span><span class="branchCov" title="Branch 1 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">        878 :     switch (m_storage_order) {</span></a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">        852 :       case DataStorageOrder::kRowMajor:</span></a>
-<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">        852 :         return static_cast&lt;std::size_t&gt;(m_start_index + row * m_stride + col);</span></a>
+<a name="70"><span class="lineNum">      70 </span>     [<span class="branchCov" title="Branch 0 was taken 872 times"> + </span><span class="branchCov" title="Branch 1 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">        898 :     switch (m_storage_order) {</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">        872 :       case DataStorageOrder::kRowMajor:</span></a>
+<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">        872 :         return static_cast&lt;std::size_t&gt;(m_start_index + row * m_stride + col);</span></a>
 <a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">         26 :       case DataStorageOrder::kColumnMajor:</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">         26 :         return static_cast&lt;std::size_t&gt;(m_start_index + col * m_stride + row);</span></a>
 <a name="75"><span class="lineNum">      75 </span>                :            :     }</a>
@@ -217,18 +217,18 @@
 <a name="137"><span class="lineNum">     137 </span>                :            : /// @return     An Eigen matrix that stores the requested data.</a>
 <a name="138"><span class="lineNum">     138 </span>                :            : ///</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : template&lt;std::int32_t kRows, std::int32_t kCols, typename ScalarT, std::size_t kSize&gt;</a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         91 : Eigen::Matrix&lt;ScalarT, kRows, kCols&gt; array_to_matrix(</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         93 : Eigen::Matrix&lt;ScalarT, kRows, kCols&gt; array_to_matrix(</span></a>
 <a name="141"><span class="lineNum">     141 </span>                :            :   const std::array&lt;ScalarT, kSize&gt; &amp; array,</a>
 <a name="142"><span class="lineNum">     142 </span>                :            :   const std::int32_t start_index,</a>
 <a name="143"><span class="lineNum">     143 </span>                :            :   const std::int32_t stride,</a>
 <a name="144"><span class="lineNum">     144 </span>                :            :   const DataStorageOrder storage_order)</a>
 <a name="145"><span class="lineNum">     145 </span>                :            : {</a>
 <a name="146"><span class="lineNum">     146 </span>                :            :   using Mat = Eigen::Matrix&lt;ScalarT, kRows, kCols&gt;;</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">         91 :   const detail::Index index{start_index, stride, storage_order};</span></a>
-<a name="148"><span class="lineNum">     148 </span>  [<span class="branchCov" title="Branch 0 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         91 :   Mat res{Mat::Zero()};</span></a>
-<a name="149"><span class="lineNum">     149 </span>  [<span class="branchCov" title="Branch 0 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         91 :   const auto max_index = index(res.rows() - 1, res.cols() - 1);</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 91 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="150"><span class="lineNum">     150 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 87 times"> + </span>]:<span class="lineCov">         91 :   if (max_index &gt;= array.size()) {</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">         93 :   const detail::Index index{start_index, stride, storage_order};</span></a>
+<a name="148"><span class="lineNum">     148 </span>  [<span class="branchCov" title="Branch 0 was taken 93 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 93 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         93 :   Mat res{Mat::Zero()};</span></a>
+<a name="149"><span class="lineNum">     149 </span>  [<span class="branchCov" title="Branch 0 was taken 93 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 93 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         93 :   const auto max_index = index(res.rows() - 1, res.cols() - 1);</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 93 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="150"><span class="lineNum">     150 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 89 times"> + </span>]:<span class="lineCov">         93 :   if (max_index &gt;= array.size()) {</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            :     throw std::runtime_error(</a>
 <a name="152"><span class="lineNum">     152 </span>                :            :             &quot;Trying to access out of bound memory at index &quot; +</a>
 <a name="153"><span class="lineNum">     153 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          4 :             std::to_string(max_index) + &quot; of an array with size: &quot; + std::to_string(array.size()));</span></a>
@@ -236,12 +236,12 @@
 <span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
 <a name="154"><span class="lineNum">     154 </span>                :            :   }</a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
-<a name="156"><span class="lineNum">     156 </span>        [<span class="branchCov" title="Branch 0 was taken 257 times"> + </span><span class="branchCov" title="Branch 1 was taken 87 times"> + </span>]:<span class="lineCov">        344 :   for (auto col = 0; col &lt; kCols; ++col) {</span></a>
-<a name="157"><span class="lineNum">     157 </span>        [<span class="branchCov" title="Branch 0 was taken 763 times"> + </span><span class="branchCov" title="Branch 1 was taken 257 times"> + </span>]:<span class="lineCov">       1020 :     for (auto row = 0; row &lt; kRows; ++row) {</span></a>
-<a name="158"><span class="lineNum">     158 </span>  [<span class="branchCov" title="Branch 0 was taken 763 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 763 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        763 :       res(row, col) = array[index(row, col)];</span></a>
+<a name="156"><span class="lineNum">     156 </span>        [<span class="branchCov" title="Branch 0 was taken 263 times"> + </span><span class="branchCov" title="Branch 1 was taken 89 times"> + </span>]:<span class="lineCov">        352 :   for (auto col = 0; col &lt; kCols; ++col) {</span></a>
+<a name="157"><span class="lineNum">     157 </span>        [<span class="branchCov" title="Branch 0 was taken 781 times"> + </span><span class="branchCov" title="Branch 1 was taken 263 times"> + </span>]:<span class="lineCov">       1044 :     for (auto row = 0; row &lt; kRows; ++row) {</span></a>
+<a name="158"><span class="lineNum">     158 </span>  [<span class="branchCov" title="Branch 0 was taken 781 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 781 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        781 :       res(row, col) = array[index(row, col)];</span></a>
 <a name="159"><span class="lineNum">     159 </span>                :            :     }</a>
 <a name="160"><span class="lineNum">     160 </span>                :            :   }</a>
-<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">        174 :   return res;</span></a>
+<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">        178 :   return res;</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            : }</a>
 <a name="163"><span class="lineNum">     163 </span>                :            : </a>
 <a name="164"><span class="lineNum">     164 </span>                :            : ///</a>
