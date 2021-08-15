@@ -261,8 +261,6 @@ DA:121,0
 DA:122,0
 DA:123,0
 end_of_record
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/polygon_remover/include/polygon_remover/polygon_remover.hpp
-end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/polygon_remover/test/test_polygon_remover.cpp
 FN:28,_Z14make_point_geofff
 FNDA:0,_Z14make_point_geofff
@@ -594,6 +592,8 @@ BRDA:181,0,8,-
 BRDA:181,0,9,-
 DA:182,0
 DA:130,0
+end_of_record
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/polygon_remover/include/polygon_remover/polygon_remover.hpp
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/CMakeCCompilerId.c
