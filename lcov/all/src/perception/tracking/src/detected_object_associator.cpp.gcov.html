@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - lcov.total.filtered - src/perception/tracking/src/data_association.cpp</title>
+  <title>LCOV - lcov.total.filtered - src/perception/tracking/src/detected_object_associator.cpp</title>
   <link rel="stylesheet" type="text/css" href="../../../../gcov.css">
 </head>
 
@@ -19,7 +19,7 @@
         <table cellpadding=1 border=0 width="100%">
           <tr>
             <td width="10%" class="headerItem">Current view:</td>
-            <td width="35%" class="headerValue"><a href="../../../../index.html">top level</a> - <a href="index.html">src/perception/tracking/src</a> - data_association.cpp<span style="font-size: 80%;"> (source / <a href="data_association.cpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="35%" class="headerValue"><a href="../../../../index.html">top level</a> - <a href="index.html">src/perception/tracking/src</a> - detected_object_associator.cpp<span style="font-size: 80%;"> (source / <a href="detected_object_associator.cpp.func-sort-c.html">functions</a>)</span></td>
             <td width="5%"></td>
             <td width="15%"></td>
             <td width="10%" class="headerCovTableHead">Hit</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-15 20:09:44</td>
+            <td class="headerValue">2021-08-16 20:16:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">10</td>
@@ -92,7 +92,7 @@
 <a name="14"><span class="lineNum">      14 </span>                :            : //</a>
 <a name="15"><span class="lineNum">      15 </span>                :            : // Co-developed by Tier IV, Inc. and Apex.AI, Inc.</a>
 <a name="16"><span class="lineNum">      16 </span>                :            : </a>
-<a name="17"><span class="lineNum">      17 </span>                :            : #include &lt;tracking/data_association.hpp&gt;</a>
+<a name="17"><span class="lineNum">      17 </span>                :            : #include &lt;tracking/detected_object_associator.hpp&gt;</a>
 <a name="18"><span class="lineNum">      18 </span>                :            : </a>
 <a name="19"><span class="lineNum">      19 </span>                :            : #include &lt;common/types.hpp&gt;</a>
 <a name="20"><span class="lineNum">      20 </span>                :            : #include &lt;geometry/common_2d.hpp&gt;</a>
@@ -123,10 +123,10 @@
 <a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">          6 :   m_max_area_ratio(max_area_ratio), m_max_area_ratio_inv(1.F / max_area_ratio),</span></a>
 <a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">          6 :   m_consider_edge_for_big_detections(consider_edge_for_big_detections) {}</span></a>
 <a name="47"><span class="lineNum">      47 </span>                :            : </a>
-<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">          6 : Associator::Associator(const DataAssociationConfig &amp; association_cfg)</span></a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">          6 : DetectedObjectAssociator::DetectedObjectAssociator(const DataAssociationConfig &amp; association_cfg)</span></a>
 <a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">          6 : : m_association_cfg(association_cfg) {}</span></a>
 <a name="50"><span class="lineNum">      50 </span>                :            : </a>
-<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">          5 : AssociatorResult Associator::assign(</span></a>
+<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">          5 : AssociatorResult DetectedObjectAssociator::assign(</span></a>
 <a name="52"><span class="lineNum">      52 </span>                :            :   const autoware_auto_msgs::msg::DetectedObjects &amp; detections,</a>
 <a name="53"><span class="lineNum">      53 </span>                :            :   const std::vector&lt;TrackedObject&gt; &amp; tracks)</a>
 <a name="54"><span class="lineNum">      54 </span>                :            : {</a>
@@ -151,7 +151,7 @@
 <a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">          5 :   return extract_result();</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :            : }</a>
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">          5 : void Associator::reset()</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">          5 : void DetectedObjectAssociator::reset()</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            : {</a>
 <a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">          5 :   m_assigner.reset();</span></a>
 <a name="79"><span class="lineNum">      79 </span>                :            : </a>
@@ -161,7 +161,7 @@
 <a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">          5 :   m_had_errors = false;</span></a>
 <a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">          5 : }</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            : </a>
-<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">          5 : void Associator::compute_weights(</span></a>
+<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">          5 : void DetectedObjectAssociator::compute_weights(</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            :   const autoware_auto_msgs::msg::DetectedObjects &amp; detections,</a>
 <a name="88"><span class="lineNum">      88 </span>                :            :   const std::vector&lt;TrackedObject&gt; &amp; tracks)</a>
 <a name="89"><span class="lineNum">      89 </span>                :            : {</a>
@@ -198,7 +198,7 @@
 <a name="118"><span class="lineNum">     118 </span>                :            :   }</a>
 <a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">          5 : }</span></a>
 <a name="120"><span class="lineNum">     120 </span>                :            : </a>
-<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">         77 : bool Associator::consider_associating(</span></a>
+<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">         77 : bool DetectedObjectAssociator::consider_associating(</span></a>
 <a name="122"><span class="lineNum">     122 </span>                :            :   const autoware_auto_msgs::msg::DetectedObject &amp; detection,</a>
 <a name="123"><span class="lineNum">     123 </span>                :            :   const TrackedObject &amp; track) const</a>
 <a name="124"><span class="lineNum">     124 </span>                :            : {</a>
@@ -260,71 +260,73 @@
 <a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">         13 :   return false;</span></a>
 <a name="180"><span class="lineNum">     180 </span>                :            : }</a>
 <a name="181"><span class="lineNum">     181 </span>                :            : </a>
-<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">         41 : void Associator::set_weight(const float32_t weight, const size_t det_idx, const size_t track_idx)</span></a>
-<a name="183"><span class="lineNum">     183 </span>                :            : {</a>
-<a name="184"><span class="lineNum">     184 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">         41 :   if (m_are_tracks_rows) {</span></a>
-<a name="185"><span class="lineNum">     185 </span>                :<span class="lineCov">         12 :     m_assigner.set_weight(</span></a>
-<a name="186"><span class="lineNum">     186 </span>                :            :       weight, static_cast&lt;assigner_idx_t&gt;(track_idx),</a>
-<a name="187"><span class="lineNum">     187 </span>                :            :       static_cast&lt;assigner_idx_t&gt;(det_idx));</a>
-<a name="188"><span class="lineNum">     188 </span>                :            :   } else {</a>
-<a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">         29 :     m_assigner.set_weight(</span></a>
-<a name="190"><span class="lineNum">     190 </span>                :            :       weight, static_cast&lt;assigner_idx_t&gt;(det_idx),</a>
-<a name="191"><span class="lineNum">     191 </span>                :            :       static_cast&lt;assigner_idx_t&gt;(track_idx));</a>
-<a name="192"><span class="lineNum">     192 </span>                :            :   }</a>
-<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">         41 : }</span></a>
-<a name="194"><span class="lineNum">     194 </span>                :            : </a>
-<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">          5 : AssociatorResult Associator::extract_result() const</span></a>
-<a name="196"><span class="lineNum">     196 </span>                :            : {</a>
-<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">          5 :   AssociatorResult ret;</span></a>
-<a name="198"><span class="lineNum">     198 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   ret.track_assignments.resize(m_num_tracks);</span></a>
-<a name="199"><span class="lineNum">     199 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   std::fill(</span></a>
-<a name="200"><span class="lineNum">     200 </span>                :            :     ret.track_assignments.begin(), ret.track_assignments.end(),</a>
-<a name="201"><span class="lineNum">     201 </span>                :            :     AssociatorResult::UNASSIGNED);</a>
-<a name="202"><span class="lineNum">     202 </span>                :            : </a>
-<a name="203"><span class="lineNum">     203 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          5 :   if (m_are_tracks_rows) {</span></a>
-<a name="204"><span class="lineNum">     204 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :     std::vector&lt;common::types::bool8_t&gt; detections_assigned(m_num_detections, false);</span></a>
-<a name="205"><span class="lineNum">     205 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         10 :     for (size_t track_idx = 0U; track_idx &lt; m_num_tracks; track_idx++) {</span></a>
-<a name="206"><span class="lineNum">     206 </span>                :            :       const auto det_idx =</a>
-<a name="207"><span class="lineNum">     207 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :         static_cast&lt;size_t&gt;(m_assigner.get_assignment(static_cast&lt;assigner_idx_t&gt;(track_idx)));</span></a>
-<a name="208"><span class="lineNum">     208 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          6 :       if (det_idx != Assigner::UNASSIGNED) {</span></a>
-<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">          3 :         ret.track_assignments[track_idx] = det_idx;</span></a>
-<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">          3 :         detections_assigned[det_idx] = true;</span></a>
-<a name="211"><span class="lineNum">     211 </span>                :            :       } else {</a>
-<a name="212"><span class="lineNum">     212 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :         ret.unassigned_track_indices.push_back(track_idx);</span></a>
-<a name="213"><span class="lineNum">     213 </span>                :            :       }</a>
-<a name="214"><span class="lineNum">     214 </span>                :            :     }</a>
-<a name="215"><span class="lineNum">     215 </span>                :            : </a>
-<a name="216"><span class="lineNum">     216 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         11 :     for (size_t i = 0U; i &lt; detections_assigned.size(); ++i) {</span></a>
-<a name="217"><span class="lineNum">     217 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          7 :       if (!detections_assigned[i]) {</span></a>
-<a name="218"><span class="lineNum">     218 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :         ret.unassigned_detection_indices.push_back(i);</span></a>
-<a name="219"><span class="lineNum">     219 </span>                :            :       }</a>
-<a name="220"><span class="lineNum">     220 </span>                :            :     }</a>
-<a name="221"><span class="lineNum">     221 </span>                :            :   } else {</a>
-<a name="222"><span class="lineNum">     222 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     std::vector&lt;common::types::bool8_t&gt; tracks_assigned(m_num_tracks, false);</span></a>
-<a name="223"><span class="lineNum">     223 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          6 :     for (size_t det_idx = 0U; det_idx &lt; m_num_detections; det_idx++) {</span></a>
-<a name="224"><span class="lineNum">     224 </span>                :            :       const auto track_idx =</a>
-<a name="225"><span class="lineNum">     225 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :         static_cast&lt;size_t&gt;(m_assigner.get_assignment(static_cast&lt;assigner_idx_t&gt;(det_idx)));</span></a>
-<a name="226"><span class="lineNum">     226 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :       if (track_idx != Assigner::UNASSIGNED) {</span></a>
-<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">          5 :         ret.track_assignments[track_idx] = det_idx;</span></a>
-<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">          5 :         tracks_assigned[track_idx] = true;</span></a>
-<a name="229"><span class="lineNum">     229 </span>                :            :       } else {</a>
-<a name="230"><span class="lineNum">     230 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         ret.unassigned_detection_indices.push_back(det_idx);</span></a>
-<a name="231"><span class="lineNum">     231 </span>                :            :       }</a>
-<a name="232"><span class="lineNum">     232 </span>                :            :     }</a>
-<a name="233"><span class="lineNum">     233 </span>                :            : </a>
-<a name="234"><span class="lineNum">     234 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">         11 :     for (size_t i = 0U; i &lt; tracks_assigned.size(); ++i) {</span></a>
-<a name="235"><span class="lineNum">     235 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :       if (!tracks_assigned[i]) {</span></a>
-<a name="236"><span class="lineNum">     236 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :         ret.unassigned_track_indices.push_back(i);</span></a>
-<a name="237"><span class="lineNum">     237 </span>                :            :       }</a>
-<a name="238"><span class="lineNum">     238 </span>                :            :     }</a>
-<a name="239"><span class="lineNum">     239 </span>                :            :   }</a>
-<a name="240"><span class="lineNum">     240 </span>                :            : </a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">          5 :   return ret;</span></a>
-<a name="242"><span class="lineNum">     242 </span>                :            : }</a>
-<a name="243"><span class="lineNum">     243 </span>                :            : </a>
-<a name="244"><span class="lineNum">     244 </span>                :            : }  // namespace tracking</a>
-<a name="245"><span class="lineNum">     245 </span>                :            : }  // namespace perception</a>
-<a name="246"><span class="lineNum">     246 </span>                :            : }  // namespace autoware</a>
+<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">         41 : void DetectedObjectAssociator::set_weight(</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :            :   const float32_t weight,</a>
+<a name="184"><span class="lineNum">     184 </span>                :            :   const size_t det_idx, const size_t track_idx)</a>
+<a name="185"><span class="lineNum">     185 </span>                :            : {</a>
+<a name="186"><span class="lineNum">     186 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">         41 :   if (m_are_tracks_rows) {</span></a>
+<a name="187"><span class="lineNum">     187 </span>                :<span class="lineCov">         12 :     m_assigner.set_weight(</span></a>
+<a name="188"><span class="lineNum">     188 </span>                :            :       weight, static_cast&lt;assigner_idx_t&gt;(track_idx),</a>
+<a name="189"><span class="lineNum">     189 </span>                :            :       static_cast&lt;assigner_idx_t&gt;(det_idx));</a>
+<a name="190"><span class="lineNum">     190 </span>                :            :   } else {</a>
+<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">         29 :     m_assigner.set_weight(</span></a>
+<a name="192"><span class="lineNum">     192 </span>                :            :       weight, static_cast&lt;assigner_idx_t&gt;(det_idx),</a>
+<a name="193"><span class="lineNum">     193 </span>                :            :       static_cast&lt;assigner_idx_t&gt;(track_idx));</a>
+<a name="194"><span class="lineNum">     194 </span>                :            :   }</a>
+<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">         41 : }</span></a>
+<a name="196"><span class="lineNum">     196 </span>                :            : </a>
+<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">          5 : AssociatorResult DetectedObjectAssociator::extract_result() const</span></a>
+<a name="198"><span class="lineNum">     198 </span>                :            : {</a>
+<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">          5 :   AssociatorResult ret;</span></a>
+<a name="200"><span class="lineNum">     200 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   ret.track_assignments.resize(m_num_tracks);</span></a>
+<a name="201"><span class="lineNum">     201 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   std::fill(</span></a>
+<a name="202"><span class="lineNum">     202 </span>                :            :     ret.track_assignments.begin(), ret.track_assignments.end(),</a>
+<a name="203"><span class="lineNum">     203 </span>                :            :     AssociatorResult::UNASSIGNED);</a>
+<a name="204"><span class="lineNum">     204 </span>                :            : </a>
+<a name="205"><span class="lineNum">     205 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          5 :   if (m_are_tracks_rows) {</span></a>
+<a name="206"><span class="lineNum">     206 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :     std::vector&lt;common::types::bool8_t&gt; detections_assigned(m_num_detections, false);</span></a>
+<a name="207"><span class="lineNum">     207 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         10 :     for (size_t track_idx = 0U; track_idx &lt; m_num_tracks; track_idx++) {</span></a>
+<a name="208"><span class="lineNum">     208 </span>                :            :       const auto det_idx =</a>
+<a name="209"><span class="lineNum">     209 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :         static_cast&lt;size_t&gt;(m_assigner.get_assignment(static_cast&lt;assigner_idx_t&gt;(track_idx)));</span></a>
+<a name="210"><span class="lineNum">     210 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          6 :       if (det_idx != Assigner::UNASSIGNED) {</span></a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">          3 :         ret.track_assignments[track_idx] = det_idx;</span></a>
+<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">          3 :         detections_assigned[det_idx] = true;</span></a>
+<a name="213"><span class="lineNum">     213 </span>                :            :       } else {</a>
+<a name="214"><span class="lineNum">     214 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :         ret.unassigned_track_indices.push_back(track_idx);</span></a>
+<a name="215"><span class="lineNum">     215 </span>                :            :       }</a>
+<a name="216"><span class="lineNum">     216 </span>                :            :     }</a>
+<a name="217"><span class="lineNum">     217 </span>                :            : </a>
+<a name="218"><span class="lineNum">     218 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         11 :     for (size_t i = 0U; i &lt; detections_assigned.size(); ++i) {</span></a>
+<a name="219"><span class="lineNum">     219 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          7 :       if (!detections_assigned[i]) {</span></a>
+<a name="220"><span class="lineNum">     220 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :         ret.unassigned_detection_indices.push_back(i);</span></a>
+<a name="221"><span class="lineNum">     221 </span>                :            :       }</a>
+<a name="222"><span class="lineNum">     222 </span>                :            :     }</a>
+<a name="223"><span class="lineNum">     223 </span>                :            :   } else {</a>
+<a name="224"><span class="lineNum">     224 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     std::vector&lt;common::types::bool8_t&gt; tracks_assigned(m_num_tracks, false);</span></a>
+<a name="225"><span class="lineNum">     225 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          6 :     for (size_t det_idx = 0U; det_idx &lt; m_num_detections; det_idx++) {</span></a>
+<a name="226"><span class="lineNum">     226 </span>                :            :       const auto track_idx =</a>
+<a name="227"><span class="lineNum">     227 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :         static_cast&lt;size_t&gt;(m_assigner.get_assignment(static_cast&lt;assigner_idx_t&gt;(det_idx)));</span></a>
+<a name="228"><span class="lineNum">     228 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :       if (track_idx != Assigner::UNASSIGNED) {</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">          5 :         ret.track_assignments[track_idx] = det_idx;</span></a>
+<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">          5 :         tracks_assigned[track_idx] = true;</span></a>
+<a name="231"><span class="lineNum">     231 </span>                :            :       } else {</a>
+<a name="232"><span class="lineNum">     232 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         ret.unassigned_detection_indices.push_back(det_idx);</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :            :       }</a>
+<a name="234"><span class="lineNum">     234 </span>                :            :     }</a>
+<a name="235"><span class="lineNum">     235 </span>                :            : </a>
+<a name="236"><span class="lineNum">     236 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">         11 :     for (size_t i = 0U; i &lt; tracks_assigned.size(); ++i) {</span></a>
+<a name="237"><span class="lineNum">     237 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         10 :       if (!tracks_assigned[i]) {</span></a>
+<a name="238"><span class="lineNum">     238 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :         ret.unassigned_track_indices.push_back(i);</span></a>
+<a name="239"><span class="lineNum">     239 </span>                :            :       }</a>
+<a name="240"><span class="lineNum">     240 </span>                :            :     }</a>
+<a name="241"><span class="lineNum">     241 </span>                :            :   }</a>
+<a name="242"><span class="lineNum">     242 </span>                :            : </a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">          5 :   return ret;</span></a>
+<a name="244"><span class="lineNum">     244 </span>                :            : }</a>
+<a name="245"><span class="lineNum">     245 </span>                :            : </a>
+<a name="246"><span class="lineNum">     246 </span>                :            : }  // namespace tracking</a>
+<a name="247"><span class="lineNum">     247 </span>                :            : }  // namespace perception</a>
+<a name="248"><span class="lineNum">     248 </span>                :            : }  // namespace autoware</a>
 </pre>
       </td>
     </tr>

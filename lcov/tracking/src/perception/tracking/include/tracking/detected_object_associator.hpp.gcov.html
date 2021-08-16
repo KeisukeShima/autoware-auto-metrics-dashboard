@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - lcov.total.filtered - src/perception/tracking/include/tracking/data_association.hpp</title>
+  <title>LCOV - lcov.total.filtered - src/perception/tracking/include/tracking/detected_object_associator.hpp</title>
   <link rel="stylesheet" type="text/css" href="../../../../../gcov.css">
 </head>
 
@@ -19,7 +19,7 @@
         <table cellpadding=1 border=0 width="100%">
           <tr>
             <td width="10%" class="headerItem">Current view:</td>
-            <td width="35%" class="headerValue"><a href="../../../../../index.html">top level</a> - <a href="index.html">src/perception/tracking/include/tracking</a> - data_association.hpp<span style="font-size: 80%;"> (source / <a href="data_association.hpp.func-sort-c.html">functions</a>)</span></td>
+            <td width="35%" class="headerValue"><a href="../../../../../index.html">top level</a> - <a href="index.html">src/perception/tracking/include/tracking</a> - detected_object_associator.hpp<span style="font-size: 80%;"> (source / <a href="detected_object_associator.hpp.func-sort-c.html">functions</a>)</span></td>
             <td width="5%"></td>
             <td width="15%"></td>
             <td width="10%" class="headerCovTableHead">Hit</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-15 20:12:00</td>
+            <td class="headerValue">2021-08-16 20:18:36</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -89,8 +89,8 @@
 <a name="11"><span class="lineNum">      11 </span>                :            : // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</a>
 <a name="12"><span class="lineNum">      12 </span>                :            : // See the License for the specific language governing permissions and</a>
 <a name="13"><span class="lineNum">      13 </span>                :            : // limitations under the License.</a>
-<a name="14"><span class="lineNum">      14 </span>                :            : #ifndef TRACKING__DATA_ASSOCIATION_HPP_</a>
-<a name="15"><span class="lineNum">      15 </span>                :            : #define TRACKING__DATA_ASSOCIATION_HPP_</a>
+<a name="14"><span class="lineNum">      14 </span>                :            : #ifndef TRACKING__DETECTED_OBJECT_ASSOCIATOR_HPP_</a>
+<a name="15"><span class="lineNum">      15 </span>                :            : #define TRACKING__DETECTED_OBJECT_ASSOCIATOR_HPP_</a>
 <a name="16"><span class="lineNum">      16 </span>                :            : </a>
 <a name="17"><span class="lineNum">      17 </span>                :            : #include &lt;tracking/visibility_control.hpp&gt;</a>
 <a name="18"><span class="lineNum">      18 </span>                :            : </a>
@@ -149,13 +149,13 @@
 <a name="71"><span class="lineNum">      71 </span>                :            : </a>
 <a name="72"><span class="lineNum">      72 </span>                :            : /// \brief Class to perform data association between existing tracks and new detections using</a>
 <a name="73"><span class="lineNum">      73 </span>                :            : ///        mahalanobis distance and hungarian assigner</a>
-<a name="74"><span class="lineNum">      74 </span>                :            : class TRACKING_PUBLIC Associator</a>
+<a name="74"><span class="lineNum">      74 </span>                :            : class TRACKING_PUBLIC DetectedObjectAssociator</a>
 <a name="75"><span class="lineNum">      75 </span>                :            : {</a>
 <a name="76"><span class="lineNum">      76 </span>                :            : public:</a>
 <a name="77"><span class="lineNum">      77 </span>                :            :   using Assigner = autoware::fusion::hungarian_assigner::hungarian_assigner_c&lt;MAX_NUM_TRACKS&gt;;</a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   /// \brief Constructor</a>
 <a name="79"><span class="lineNum">      79 </span>                :            :   /// \param association_cfg Config object containing parameters to be used</a>
-<a name="80"><span class="lineNum">      80 </span>                :            :   explicit Associator(const DataAssociationConfig &amp; association_cfg);</a>
+<a name="80"><span class="lineNum">      80 </span>                :            :   explicit DetectedObjectAssociator(const DataAssociationConfig &amp; association_cfg);</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : </a>
 <a name="82"><span class="lineNum">      82 </span>                :            :   /// \brief Run assigner for the given list of detections and tracks</a>
 <a name="83"><span class="lineNum">      83 </span>                :            :   /// \param detections List of detections</a>
@@ -198,7 +198,7 @@
 <a name="120"><span class="lineNum">     120 </span>                :            : }  // namespace perception</a>
 <a name="121"><span class="lineNum">     121 </span>                :            : }  // namespace autoware</a>
 <a name="122"><span class="lineNum">     122 </span>                :            : </a>
-<a name="123"><span class="lineNum">     123 </span>                :            : #endif  // TRACKING__DATA_ASSOCIATION_HPP_</a>
+<a name="123"><span class="lineNum">     123 </span>                :            : #endif  // TRACKING__DETECTED_OBJECT_ASSOCIATOR_HPP_</a>
 </pre>
       </td>
     </tr>

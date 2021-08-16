@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-15 20:11:46</td>
+            <td class="headerValue">2021-08-16 20:18:21</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -190,22 +190,22 @@
 <a name="112"><span class="lineNum">     112 </span>                :            :   const Eigen::VectorXd &amp; state, const uint8_t gear) const</a>
 <a name="113"><span class="lineNum">     113 </span>                :            : {</a>
 <a name="114"><span class="lineNum">     114 </span>                :            :   using autoware_auto_msgs::msg::VehicleStateCommand;</a>
-<a name="115"><span class="lineNum">     115 </span>  [<span class="branchCov" title="Branch 0 was taken 134 times"> + </span><span class="branchCov" title="Branch 1 was taken 148 times"> + </span><span class="branchCov" title="Branch 2 was taken 134 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        282 :   if (gear == VehicleStateCommand::GEAR_DRIVE ||</span></a>
-<a name="116"><span class="lineNum">     116 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 134 times"> + </span>]:<span class="lineCov">        134 :     gear == VehicleStateCommand::GEAR_LOW ||</span></a>
+<a name="115"><span class="lineNum">     115 </span>  [<span class="branchCov" title="Branch 0 was taken 135 times"> + </span><span class="branchCov" title="Branch 1 was taken 147 times"> + </span><span class="branchCov" title="Branch 2 was taken 135 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        282 :   if (gear == VehicleStateCommand::GEAR_DRIVE ||</span></a>
+<a name="116"><span class="lineNum">     116 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 135 times"> + </span>]:<span class="lineCov">        135 :     gear == VehicleStateCommand::GEAR_LOW ||</span></a>
 <a name="117"><span class="lineNum">     117 </span>                :            :     gear == VehicleStateCommand::GEAR_NEUTRAL)</a>
 <a name="118"><span class="lineNum">     118 </span>                :            :   {</a>
-<a name="119"><span class="lineNum">     119 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchCov" title="Branch 1 was taken 141 times"> + </span>]:<span class="lineCov">        148 :     if (state(IDX::VX) &lt; 0.0) {</span></a>
-<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">          7 :       return 0.0;</span></a>
+<a name="119"><span class="lineNum">     119 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 139 times"> + </span>]:<span class="lineCov">        147 :     if (state(IDX::VX) &lt; 0.0) {</span></a>
+<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">          8 :       return 0.0;</span></a>
 <a name="121"><span class="lineNum">     121 </span>                :            :     }</a>
-<a name="122"><span class="lineNum">     122 </span>        [<span class="branchCov" title="Branch 0 was taken 134 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        134 :   } else if (gear == VehicleStateCommand::GEAR_REVERSE) {</span></a>
-<a name="123"><span class="lineNum">     123 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchCov" title="Branch 1 was taken 120 times"> + </span>]:<span class="lineCov">        134 :     if (state(IDX::VX) &gt; 0.0) {</span></a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         14 :       return 0.0;</span></a>
+<a name="122"><span class="lineNum">     122 </span>        [<span class="branchCov" title="Branch 0 was taken 135 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        135 :   } else if (gear == VehicleStateCommand::GEAR_REVERSE) {</span></a>
+<a name="123"><span class="lineNum">     123 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 119 times"> + </span>]:<span class="lineCov">        135 :     if (state(IDX::VX) &gt; 0.0) {</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         16 :       return 0.0;</span></a>
 <a name="125"><span class="lineNum">     125 </span>                :            :     }</a>
 <a name="126"><span class="lineNum">     126 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   } else if (gear == VehicleStateCommand::GEAR_PARK) {</span></a>
 <a name="127"><span class="lineNum">     127 </span>                :<span class="lineNoCov">          0 :     return 0.0;</span></a>
 <a name="128"><span class="lineNum">     128 </span>                :            :   }</a>
 <a name="129"><span class="lineNum">     129 </span>                :            : </a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">        261 :   return state(IDX::VX);</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">        258 :   return state(IDX::VX);</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            : }</a>
 </pre>
       </td>

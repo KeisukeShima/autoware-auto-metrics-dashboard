@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - lcov.total.filtered - src/perception/tracking/src/data_association.cpp - functions</title>
+  <title>LCOV - lcov.total.filtered - src/perception/tracking/src/detected_object_associator.cpp - functions</title>
   <link rel="stylesheet" type="text/css" href="../../../../gcov.css">
 </head>
 
@@ -19,7 +19,7 @@
         <table cellpadding=1 border=0 width="100%">
           <tr>
             <td width="10%" class="headerItem">Current view:</td>
-            <td width="35%" class="headerValue"><a href="../../../../index.html">top level</a> - <a href="index.html">src/perception/tracking/src</a> - data_association.cpp<span style="font-size: 80%;"> (<a href="data_association.cpp.gcov.html">source</a> / functions)</span></td>
+            <td width="35%" class="headerValue"><a href="../../../../index.html">top level</a> - <a href="index.html">src/perception/tracking/src</a> - detected_object_associator.cpp<span style="font-size: 80%;"> (<a href="detected_object_associator.cpp.gcov.html">source</a> / functions)</span></td>
             <td width="5%"></td>
             <td width="15%"></td>
             <td width="10%" class="headerCovTableHead">Hit</td>
@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-15 20:09:44</td>
+            <td class="headerValue">2021-08-16 20:16:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">10</td>
@@ -73,46 +73,46 @@
     <tr><td><br></td></tr>
     <tr>
       <td width="80%" class="tableHead">Function Name <span class="tableHeadSort"><img src="../../../../glass.png" width=10 height=14 alt="Sort by function name" title="Sort by function name" border=0></span></td>
-      <td width="20%" class="tableHead">Hit count <span class="tableHeadSort"><a href="data_association.cpp.func-sort-c.html"><img src="../../../../updown.png" width=10 height=14 alt="Sort by hit count" title="Sort by hit count" border=0></a></span></td>
+      <td width="20%" class="tableHead">Hit count <span class="tableHeadSort"><a href="detected_object_associator.cpp.func-sort-c.html"><img src="../../../../updown.png" width=10 height=14 alt="Sort by hit count" title="Sort by hit count" border=0></a></span></td>
     </tr>
     <tr>
-              <td class="coverFn"><a href="data_association.cpp.gcov.html#180">autoware::perception::tracking::Associator::set_weight(float, unsigned long, unsigned long)</a></td>
+              <td class="coverFn"><a href="detected_object_associator.cpp.gcov.html#38">autoware::perception::tracking::DataAssociationConfig::DataAssociationConfig(float, float, bool)</a></td>
+              <td class="coverFnHi">6</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="detected_object_associator.cpp.gcov.html#180">autoware::perception::tracking::DetectedObjectAssociator::set_weight(float, unsigned long, unsigned long)</a></td>
               <td class="coverFnHi">41</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="data_association.cpp.gcov.html#84">autoware::perception::tracking::Associator::compute_weights(autoware_auto_msgs::msg::DetectedObjects_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::vector&lt;autoware::perception::tracking::TrackedObject, std::allocator&lt;autoware::perception::tracking::TrackedObject&gt; &gt; const&amp;)</a></td>
+              <td class="coverFn"><a href="detected_object_associator.cpp.gcov.html#84">autoware::perception::tracking::DetectedObjectAssociator::compute_weights(autoware_auto_msgs::msg::DetectedObjects_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::vector&lt;autoware::perception::tracking::TrackedObject, std::allocator&lt;autoware::perception::tracking::TrackedObject&gt; &gt; const&amp;)</a></td>
               <td class="coverFnHi">5</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="data_association.cpp.gcov.html#74">autoware::perception::tracking::Associator::reset()</a></td>
+              <td class="coverFn"><a href="detected_object_associator.cpp.gcov.html#74">autoware::perception::tracking::DetectedObjectAssociator::reset()</a></td>
               <td class="coverFnHi">5</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="data_association.cpp.gcov.html#49">autoware::perception::tracking::Associator::assign(autoware_auto_msgs::msg::DetectedObjects_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::vector&lt;autoware::perception::tracking::TrackedObject, std::allocator&lt;autoware::perception::tracking::TrackedObject&gt; &gt; const&amp;)</a></td>
+              <td class="coverFn"><a href="detected_object_associator.cpp.gcov.html#49">autoware::perception::tracking::DetectedObjectAssociator::assign(autoware_auto_msgs::msg::DetectedObjects_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::vector&lt;autoware::perception::tracking::TrackedObject, std::allocator&lt;autoware::perception::tracking::TrackedObject&gt; &gt; const&amp;)</a></td>
               <td class="coverFnHi">5</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="data_association.cpp.gcov.html#46">autoware::perception::tracking::Associator::Associator(autoware::perception::tracking::DataAssociationConfig const&amp;)</a></td>
+              <td class="coverFn"><a href="detected_object_associator.cpp.gcov.html#46">autoware::perception::tracking::DetectedObjectAssociator::DetectedObjectAssociator(autoware::perception::tracking::DataAssociationConfig const&amp;)</a></td>
               <td class="coverFnHi">6</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="data_association.cpp.gcov.html#38">autoware::perception::tracking::DataAssociationConfig::DataAssociationConfig(float, float, bool)</a></td>
-              <td class="coverFnHi">6</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="data_association.cpp.gcov.html#193">autoware::perception::tracking::Associator::extract_result() const</a></td>
+              <td class="coverFn"><a href="detected_object_associator.cpp.gcov.html#195">autoware::perception::tracking::DetectedObjectAssociator::extract_result() const</a></td>
               <td class="coverFnHi">5</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="data_association.cpp.gcov.html#119">autoware::perception::tracking::Associator::consider_associating(autoware_auto_msgs::msg::DetectedObject_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware::perception::tracking::TrackedObject const&amp;) const</a></td>
+              <td class="coverFn"><a href="detected_object_associator.cpp.gcov.html#119">autoware::perception::tracking::DetectedObjectAssociator::consider_associating(autoware_auto_msgs::msg::DetectedObject_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware::perception::tracking::TrackedObject const&amp;) const</a></td>
               <td class="coverFnHi">77</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="data_association.cpp.gcov.html#155">autoware::perception::tracking::Associator::consider_associating(autoware_auto_msgs::msg::DetectedObject_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware::perception::tracking::TrackedObject const&amp;) const::{lambda()#2}::operator()() const</a></td>
+              <td class="coverFn"><a href="detected_object_associator.cpp.gcov.html#155">autoware::perception::tracking::DetectedObjectAssociator::consider_associating(autoware_auto_msgs::msg::DetectedObject_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware::perception::tracking::TrackedObject const&amp;) const::{lambda()#2}::operator()() const</a></td>
               <td class="coverFnHi">77</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="data_association.cpp.gcov.html#123">autoware::perception::tracking::Associator::consider_associating(autoware_auto_msgs::msg::DetectedObject_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware::perception::tracking::TrackedObject const&amp;) const::{lambda()#1}::operator()() const</a></td>
+              <td class="coverFn"><a href="detected_object_associator.cpp.gcov.html#123">autoware::perception::tracking::DetectedObjectAssociator::consider_associating(autoware_auto_msgs::msg::DetectedObject_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware::perception::tracking::TrackedObject const&amp;) const::{lambda()#1}::operator()() const</a></td>
               <td class="coverFnHi">77</td>
             </tr>
   </table>

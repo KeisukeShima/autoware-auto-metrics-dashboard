@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-15 20:09:44</td>
+            <td class="headerValue">2021-08-16 20:16:08</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -132,22 +132,22 @@
 <a name="54"><span class="lineNum">      54 </span>                :            : using TrackedObjectMsg = autoware_auto_msgs::msg::TrackedObject;</a>
 <a name="55"><span class="lineNum">      55 </span>                :            : using DetectedObjectMsg = autoware_auto_msgs::msg::DetectedObject;</a>
 <a name="56"><span class="lineNum">      56 </span>                :            : </a>
-<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">         29 : EKF init_ekf(</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">         43 : EKF init_ekf(</span></a>
 <a name="58"><span class="lineNum">      58 </span>                :            :   const DetectedObjectMsg &amp; detection, float64_t default_variance,</a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   float64_t noise_variance)</a>
 <a name="60"><span class="lineNum">      60 </span>                :            : {</a>
-<a name="61"><span class="lineNum">      61 </span>  [<span class="branchCov" title="Branch 0 was taken 145 times"> + </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span><span class="branchCov" title="Branch 2 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        174 :   auto state = MotionModel::State {};</span></a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">         29 :   state.at&lt;X&gt;() = detection.kinematics.centroid_position.x;</span></a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">         29 :   state.at&lt;Y&gt;() = detection.kinematics.centroid_position.y;</span></a>
+<a name="61"><span class="lineNum">      61 </span>  [<span class="branchCov" title="Branch 0 was taken 215 times"> + </span><span class="branchCov" title="Branch 1 was taken 43 times"> + </span><span class="branchCov" title="Branch 2 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        258 :   auto state = MotionModel::State {};</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">         43 :   state.at&lt;X&gt;() = detection.kinematics.centroid_position.x;</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">         43 :   state.at&lt;Y&gt;() = detection.kinematics.centroid_position.y;</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            :   // When there is no twist available, velocity will be initialized to 0</a>
-<a name="65"><span class="lineNum">      65 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 27 times"> + </span>]:<span class="lineCov">         29 :   if (detection.kinematics.has_twist) {</span></a>
+<a name="65"><span class="lineNum">      65 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 41 times"> + </span>]:<span class="lineCov">         43 :   if (detection.kinematics.has_twist) {</span></a>
 <a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">          2 :     state.at&lt;X_VELOCITY&gt;() = detection.kinematics.twist.twist.linear.x;</span></a>
 <a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">          2 :     state.at&lt;Y_VELOCITY&gt;() = detection.kinematics.twist.twist.linear.y;</span></a>
 <a name="68"><span class="lineNum">      68 </span>                :            :   }</a>
 <a name="69"><span class="lineNum">      69 </span>                :            :   using CovarianceMatrix = Eigen::Matrix&lt;float64_t, state.size(), state.size()&gt;;</a>
-<a name="70"><span class="lineNum">      70 </span>  [<span class="branchCov" title="Branch 0 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         29 :   CovarianceMatrix cov = default_variance * CovarianceMatrix::Identity();</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="71"><span class="lineNum">      71 </span>        [<span class="branchCov" title="Branch 0 was taken 19 times"> + </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         29 :   if (detection.kinematics.has_position_covariance) {</span></a>
+<a name="70"><span class="lineNum">      70 </span>  [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         43 :   CovarianceMatrix cov = default_variance * CovarianceMatrix::Identity();</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="71"><span class="lineNum">      71 </span>        [<span class="branchCov" title="Branch 0 was taken 19 times"> + </span><span class="branchCov" title="Branch 1 was taken 24 times"> + </span>]:<span class="lineCov">         43 :   if (detection.kinematics.has_position_covariance) {</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :            :     cov(</a>
 <a name="73"><span class="lineNum">      73 </span>                :            :       state.index_of&lt;X&gt;(),</a>
 <a name="74"><span class="lineNum">      74 </span>        [<span class="branchCov" title="Branch 0 was taken 19 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         19 :       state.index_of&lt;X&gt;()) = detection.kinematics.position_covariance[0];</span></a>
@@ -161,7 +161,7 @@
 <a name="82"><span class="lineNum">      82 </span>                :            :       state.index_of&lt;Y&gt;(),</a>
 <a name="83"><span class="lineNum">      83 </span>        [<span class="branchCov" title="Branch 0 was taken 19 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         19 :       state.index_of&lt;Y&gt;()) = detection.kinematics.position_covariance[4];</span></a>
 <a name="84"><span class="lineNum">      84 </span>                :            :   }</a>
-<a name="85"><span class="lineNum">      85 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 28 times"> + </span>]:<span class="lineCov">         29 :   if (detection.kinematics.has_twist_covariance) {</span></a>
+<a name="85"><span class="lineNum">      85 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 42 times"> + </span>]:<span class="lineCov">         43 :   if (detection.kinematics.has_twist_covariance) {</span></a>
 <a name="86"><span class="lineNum">      86 </span>                :            :     cov(</a>
 <a name="87"><span class="lineNum">      87 </span>                :            :       state.index_of&lt;X_VELOCITY&gt;(),</a>
 <a name="88"><span class="lineNum">      88 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :       state.index_of&lt;X_VELOCITY&gt;()) =</span></a>
@@ -180,27 +180,27 @@
 <a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">          1 :       detection.kinematics.twist.covariance[7];</span></a>
 <a name="102"><span class="lineNum">     102 </span>                :            :   }</a>
 <a name="103"><span class="lineNum">     103 </span>                :            :   return make_kalman_filter(</a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         58 :     MotionModel {}, NoiseModel {{noise_variance, noise_variance}},</span></a>
-<a name="105"><span class="lineNum">     105 </span>        [<span class="branchCov" title="Branch 0 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         58 :     state, cov);</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">         86 :     MotionModel {}, NoiseModel {{noise_variance, noise_variance}},</span></a>
+<a name="105"><span class="lineNum">     105 </span>        [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         86 :     state, cov);</span></a>
 <a name="106"><span class="lineNum">     106 </span>                :            : }</a>
 <a name="107"><span class="lineNum">     107 </span>                :            : </a>
 <a name="108"><span class="lineNum">     108 </span>                :            : }  // anonymous namespace</a>
 <a name="109"><span class="lineNum">     109 </span>                :            : </a>
 <a name="110"><span class="lineNum">     110 </span>                :            : /// \relates autoware::perception::tracking::TrackedObject</a>
-<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">         29 : TrackedObject::TrackedObject(</span></a>
+<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">         43 : TrackedObject::TrackedObject(</span></a>
 <a name="112"><span class="lineNum">     112 </span>                :            :   const DetectedObjectMsg &amp; detection, float64_t default_variance,</a>
-<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">         29 :   float64_t noise_variance)</span></a>
+<a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">         43 :   float64_t noise_variance)</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            : : m_msg{},</a>
 <a name="115"><span class="lineNum">     115 </span>                :            :   m_ekf{init_ekf(detection, default_variance, noise_variance)},</a>
-<a name="116"><span class="lineNum">     116 </span>        [<span class="branchCov" title="Branch 0 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         29 :   m_default_variance{default_variance}</span></a>
+<a name="116"><span class="lineNum">     116 </span>        [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         43 :   m_default_variance{default_variance}</span></a>
 <a name="117"><span class="lineNum">     117 </span>                :            : {</a>
 <a name="118"><span class="lineNum">     118 </span>                :            :   static uint64_t object_id = 0;</a>
-<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">         29 :   m_msg.object_id = ++object_id;</span></a>
-<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">         29 :   m_msg.existence_probability = detection.existence_probability;</span></a>
-<a name="121"><span class="lineNum">     121 </span>        [<span class="branchCov" title="Branch 0 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         29 :   m_msg.classification = detection.classification;</span></a>
-<a name="122"><span class="lineNum">     122 </span>        [<span class="branchCov" title="Branch 0 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         29 :   m_msg.shape.push_back(detection.shape);</span></a>
+<a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">         43 :   m_msg.object_id = ++object_id;</span></a>
+<a name="120"><span class="lineNum">     120 </span>                :<span class="lineCov">         43 :   m_msg.existence_probability = detection.existence_probability;</span></a>
+<a name="121"><span class="lineNum">     121 </span>        [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         43 :   m_msg.classification = detection.classification;</span></a>
+<a name="122"><span class="lineNum">     122 </span>        [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         43 :   m_msg.shape.push_back(detection.shape);</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            :   // Kinematics are owned by the EKF and only filled in in the msg() getter</a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         29 : }</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         43 : }</span></a>
 <a name="125"><span class="lineNum">     125 </span>                :            : </a>
 <a name="126"><span class="lineNum">     126 </span>                :<span class="lineCov">          2 : void TrackedObject::predict(std::chrono::nanoseconds dt)</span></a>
 <a name="127"><span class="lineNum">     127 </span>                :            : {</a>
