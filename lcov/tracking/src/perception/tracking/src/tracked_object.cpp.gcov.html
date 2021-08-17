@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">100</td>
-            <td class="headerCovTableEntry">100</td>
+            <td class="headerCovTableEntry">103</td>
+            <td class="headerCovTableEntry">103</td>
             <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-16 20:18:36</td>
+            <td class="headerValue">2021-08-17 20:07:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">40</td>
-            <td class="headerCovTableEntry">68</td>
-            <td class="headerCovTableEntryLo">58.8 %</td>
+            <td class="headerCovTableEntry">43</td>
+            <td class="headerCovTableEntry">74</td>
+            <td class="headerCovTableEntryLo">58.1 %</td>
           </tr>
           <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -192,7 +192,7 @@
 <a name="113"><span class="lineNum">     113 </span>                :<span class="lineCov">         43 :   float64_t noise_variance)</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            : : m_msg{},</a>
 <a name="115"><span class="lineNum">     115 </span>                :            :   m_ekf{init_ekf(detection, default_variance, noise_variance)},</a>
-<a name="116"><span class="lineNum">     116 </span>        [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         43 :   m_default_variance{default_variance}</span></a>
+<a name="116"><span class="lineNum">     116 </span>  [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         43 :   m_default_variance{default_variance}</span></a>
 <a name="117"><span class="lineNum">     117 </span>                :            : {</a>
 <a name="118"><span class="lineNum">     118 </span>                :            :   static uint64_t object_id = 0;</a>
 <a name="119"><span class="lineNum">     119 </span>                :<span class="lineCov">         43 :   m_msg.object_id = ++object_id;</span></a>
@@ -200,104 +200,107 @@
 <a name="121"><span class="lineNum">     121 </span>        [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         43 :   m_msg.classification = detection.classification;</span></a>
 <a name="122"><span class="lineNum">     122 </span>        [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         43 :   m_msg.shape.push_back(detection.shape);</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            :   // Kinematics are owned by the EKF and only filled in in the msg() getter</a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         43 : }</span></a>
-<a name="125"><span class="lineNum">     125 </span>                :            : </a>
-<a name="126"><span class="lineNum">     126 </span>                :<span class="lineCov">          2 : void TrackedObject::predict(std::chrono::nanoseconds dt)</span></a>
-<a name="127"><span class="lineNum">     127 </span>                :            : {</a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">          2 :   m_ekf.predict(dt);</span></a>
-<a name="129"><span class="lineNum">     129 </span>                :<span class="lineCov">          2 :   m_time_since_last_seen += dt;</span></a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">          2 : }</span></a>
-<a name="131"><span class="lineNum">     131 </span>                :            : </a>
-<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">          2 : void TrackedObject::update(const DetectedObjectMsg &amp; detection)</span></a>
-<a name="133"><span class="lineNum">     133 </span>                :            : {</a>
-<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">          2 :   m_time_since_last_seen = std::chrono::nanoseconds::zero();</span></a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">          2 :   m_ticks_alive++;</span></a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">          2 :   m_ticks_since_last_seen = 0;</span></a>
-<a name="137"><span class="lineNum">     137 </span>                :            :   // Update the shape</a>
-<a name="138"><span class="lineNum">     138 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          4 :   m_msg.shape = {detection.shape};</span></a>
+<a name="124"><span class="lineNum">     124 </span>        [<span class="branchCov" title="Branch 0 was taken 43 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         43 :   m_classifier.update(detection.classification);</span></a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         43 : }</span></a>
+<a name="126"><span class="lineNum">     126 </span>                :            : </a>
+<a name="127"><span class="lineNum">     127 </span>                :<span class="lineCov">          2 : void TrackedObject::predict(std::chrono::nanoseconds dt)</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :            : {</a>
+<a name="129"><span class="lineNum">     129 </span>                :<span class="lineCov">          2 :   m_ekf.predict(dt);</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">          2 :   m_time_since_last_seen += dt;</span></a>
+<a name="131"><span class="lineNum">     131 </span>                :<span class="lineCov">          2 : }</span></a>
+<a name="132"><span class="lineNum">     132 </span>                :            : </a>
+<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">          2 : void TrackedObject::update(const DetectedObjectMsg &amp; detection)</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :            : {</a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">          2 :   m_time_since_last_seen = std::chrono::nanoseconds::zero();</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">          2 :   m_ticks_alive++;</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">          2 :   m_ticks_since_last_seen = 0;</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :            :   // Update the shape</a>
+<a name="139"><span class="lineNum">     139 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          4 :   m_msg.shape = {detection.shape};</span></a>
 <span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchCov" title="Branch 5 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
-<a name="139"><span class="lineNum">     139 </span>                :            : </a>
-<a name="140"><span class="lineNum">     140 </span>                :            :   // It needs to be determined which parts of the DetectedObject message are set, and can be used</a>
-<a name="141"><span class="lineNum">     141 </span>                :            :   // to update the state. Also, even if a variable is set, its covariance might not be set.</a>
-<a name="142"><span class="lineNum">     142 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   autoware_auto_msgs::msg::RelativePositionWithCovarianceStamped position;</span></a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">          2 :   position.position.x = detection.kinematics.centroid_position.x;</span></a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">          2 :   position.position.y = detection.kinematics.centroid_position.y;</span></a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">          2 :   position.position.z = detection.kinematics.centroid_position.z;</span></a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">          2 :   position.covariance = detection.kinematics.position_covariance;</span></a>
-<a name="147"><span class="lineNum">     147 </span>                :            :   auto pose_measurement =</a>
-<a name="148"><span class="lineNum">     148 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     convert_to&lt;Stamped&lt;PoseMeasurementXYZ64&gt;&gt;::from(position).measurement;</span></a>
-<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   if (!detection.kinematics.has_position_covariance) {</span></a>
-<a name="150"><span class="lineNum">     150 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :     pose_measurement.covariance() = m_default_variance *</span></a>
-<a name="151"><span class="lineNum">     151 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          4 :       PoseMeasurementXYZ64::State::Matrix::Identity();</span></a>
-<a name="152"><span class="lineNum">     152 </span>                :            :   }</a>
-<a name="153"><span class="lineNum">     153 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   m_ekf.correct(pose_measurement);</span></a>
-<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">          2 : }</span></a>
-<a name="155"><span class="lineNum">     155 </span>                :            : </a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">          5 : void TrackedObject::no_update()</span></a>
-<a name="157"><span class="lineNum">     157 </span>                :            : {</a>
-<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">          5 :   m_ticks_alive++;</span></a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">          5 :   m_ticks_since_last_seen++;</span></a>
-<a name="160"><span class="lineNum">     160 </span>                :<span class="lineCov">          5 : }</span></a>
-<a name="161"><span class="lineNum">     161 </span>                :            : </a>
-<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">         28 : const TrackedObject::TrackedObjectMsg &amp; TrackedObject::msg()</span></a>
-<a name="163"><span class="lineNum">     163 </span>                :            : {</a>
-<a name="164"><span class="lineNum">     164 </span>                :            :   // Fill the message fields from the filter state</a>
-<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">         28 :   m_msg.kinematics.centroid_position.x = m_ekf.state().at&lt;X&gt;();</span></a>
-<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">         28 :   m_msg.kinematics.centroid_position.y = m_ekf.state().at&lt;Y&gt;();</span></a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">         28 :   m_msg.kinematics.twist.twist.linear.x = m_ekf.state().at&lt;X_VELOCITY&gt;();</span></a>
-<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">         28 :   m_msg.kinematics.twist.twist.linear.y = m_ekf.state().at&lt;Y_VELOCITY&gt;();</span></a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">         28 :   m_msg.kinematics.acceleration.accel.linear.x =</span></a>
-<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">         28 :     m_ekf.state().at&lt;X_ACCELERATION&gt;();</span></a>
-<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">         28 :   m_msg.kinematics.acceleration.accel.linear.y =</span></a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">         28 :     m_ekf.state().at&lt;Y_ACCELERATION&gt;();</span></a>
-<a name="173"><span class="lineNum">     173 </span>                :            : </a>
-<a name="174"><span class="lineNum">     174 </span>                :            :   // Set covariances</a>
-<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">         56 :   m_msg.kinematics.position_covariance[0] =</span></a>
-<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">         28 :     m_ekf.covariance()(</span></a>
-<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">         28 :     m_ekf.state().index_of&lt;X&gt;(),</span></a>
-<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">         56 :     m_ekf.state().index_of&lt;X&gt;());</span></a>
-<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">         56 :   m_msg.kinematics.position_covariance[1] =</span></a>
-<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">         28 :     m_ekf.covariance()(</span></a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">         28 :     m_ekf.state().index_of&lt;X&gt;(),</span></a>
-<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">         56 :     m_ekf.state().index_of&lt;Y&gt;());</span></a>
-<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         56 :   m_msg.kinematics.position_covariance[3] =</span></a>
-<a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">         28 :     m_ekf.covariance()(</span></a>
-<a name="185"><span class="lineNum">     185 </span>                :<span class="lineCov">         28 :     m_ekf.state().index_of&lt;Y&gt;(),</span></a>
-<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">         56 :     m_ekf.state().index_of&lt;X&gt;());</span></a>
-<a name="187"><span class="lineNum">     187 </span>                :<span class="lineCov">         56 :   m_msg.kinematics.position_covariance[4] =</span></a>
-<a name="188"><span class="lineNum">     188 </span>                :<span class="lineCov">         28 :     m_ekf.covariance()(</span></a>
-<a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">         28 :     m_ekf.state().index_of&lt;Y&gt;(),</span></a>
-<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">         56 :     m_ekf.state().index_of&lt;Y&gt;());</span></a>
-<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">         56 :   m_msg.kinematics.twist.covariance[0] =</span></a>
-<a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">         28 :     m_ekf.covariance()(</span></a>
-<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">         28 :     m_ekf.state().index_of&lt;X_VELOCITY&gt;(),</span></a>
-<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">         56 :     m_ekf.state().index_of&lt;X_VELOCITY&gt;());</span></a>
-<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">         56 :   m_msg.kinematics.twist.covariance[1] =</span></a>
-<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">         28 :     m_ekf.covariance()(</span></a>
-<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">         28 :     m_ekf.state().index_of&lt;X_VELOCITY&gt;(),</span></a>
-<a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">         56 :     m_ekf.state().index_of&lt;Y_VELOCITY&gt;());</span></a>
-<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">         56 :   m_msg.kinematics.twist.covariance[6] =</span></a>
-<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">         28 :     m_ekf.covariance()(</span></a>
-<a name="201"><span class="lineNum">     201 </span>                :<span class="lineCov">         28 :     m_ekf.state().index_of&lt;Y_VELOCITY&gt;(),</span></a>
-<a name="202"><span class="lineNum">     202 </span>                :<span class="lineCov">         56 :     m_ekf.state().index_of&lt;X_VELOCITY&gt;());</span></a>
-<a name="203"><span class="lineNum">     203 </span>                :<span class="lineCov">         56 :   m_msg.kinematics.twist.covariance[7] =</span></a>
-<a name="204"><span class="lineNum">     204 </span>                :<span class="lineCov">         28 :     m_ekf.covariance()(</span></a>
-<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">         28 :     m_ekf.state().index_of&lt;Y_VELOCITY&gt;(),</span></a>
-<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">         56 :     m_ekf.state().index_of&lt;Y_VELOCITY&gt;());</span></a>
-<a name="207"><span class="lineNum">     207 </span>                :            :   // TODO(nikolai.morin): Set is_stationary, classification etc.</a>
-<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">         28 :   return m_msg;</span></a>
-<a name="209"><span class="lineNum">     209 </span>                :            : }</a>
-<a name="210"><span class="lineNum">     210 </span>                :            : </a>
-<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">          4 : bool TrackedObject::should_be_removed(</span></a>
-<a name="212"><span class="lineNum">     212 </span>                :            :   const std::chrono::nanoseconds time_threshold,</a>
-<a name="213"><span class="lineNum">     213 </span>                :            :   const std::size_t ticks_threshold) const</a>
-<a name="214"><span class="lineNum">     214 </span>                :            : {</a>
-<a name="215"><span class="lineNum">     215 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">          4 :   return m_time_since_last_seen &gt;= time_threshold || m_ticks_since_last_seen &gt;= ticks_threshold;</span></a>
-<a name="216"><span class="lineNum">     216 </span>                :            : }</a>
-<a name="217"><span class="lineNum">     217 </span>                :            : </a>
-<a name="218"><span class="lineNum">     218 </span>                :            : }  // namespace tracking</a>
-<a name="219"><span class="lineNum">     219 </span>                :            : }  // namespace perception</a>
-<a name="220"><span class="lineNum">     220 </span>                :            : }  // namespace autoware</a>
+<a name="140"><span class="lineNum">     140 </span>                :            : </a>
+<a name="141"><span class="lineNum">     141 </span>                :            :   // It needs to be determined which parts of the DetectedObject message are set, and can be used</a>
+<a name="142"><span class="lineNum">     142 </span>                :            :   // to update the state. Also, even if a variable is set, its covariance might not be set.</a>
+<a name="143"><span class="lineNum">     143 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :   autoware_auto_msgs::msg::RelativePositionWithCovarianceStamped position;</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">          2 :   position.position.x = detection.kinematics.centroid_position.x;</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">          2 :   position.position.y = detection.kinematics.centroid_position.y;</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">          2 :   position.position.z = detection.kinematics.centroid_position.z;</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">          2 :   position.covariance = detection.kinematics.position_covariance;</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :            :   auto pose_measurement =</a>
+<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     convert_to&lt;Stamped&lt;PoseMeasurementXYZ64&gt;&gt;::from(position).measurement;</span></a>
+<a name="150"><span class="lineNum">     150 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   if (!detection.kinematics.has_position_covariance) {</span></a>
+<a name="151"><span class="lineNum">     151 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :     pose_measurement.covariance() = m_default_variance *</span></a>
+<a name="152"><span class="lineNum">     152 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          4 :       PoseMeasurementXYZ64::State::Matrix::Identity();</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :            :   }</a>
+<a name="154"><span class="lineNum">     154 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   m_ekf.correct(pose_measurement);</span></a>
+<a name="155"><span class="lineNum">     155 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   m_classifier.update(detection.classification);</span></a>
+<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">          2 : }</span></a>
+<a name="157"><span class="lineNum">     157 </span>                :            : </a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">          5 : void TrackedObject::no_update()</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :            : {</a>
+<a name="160"><span class="lineNum">     160 </span>                :<span class="lineCov">          5 :   m_ticks_alive++;</span></a>
+<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">          5 :   m_ticks_since_last_seen++;</span></a>
+<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">          5 : }</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :            : </a>
+<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">         30 : const TrackedObject::TrackedObjectMsg &amp; TrackedObject::msg()</span></a>
+<a name="165"><span class="lineNum">     165 </span>                :            : {</a>
+<a name="166"><span class="lineNum">     166 </span>                :            :   // Fill the message fields from the filter state</a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">         30 :   m_msg.kinematics.centroid_position.x = m_ekf.state().at&lt;X&gt;();</span></a>
+<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">         30 :   m_msg.kinematics.centroid_position.y = m_ekf.state().at&lt;Y&gt;();</span></a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">         30 :   m_msg.kinematics.twist.twist.linear.x = m_ekf.state().at&lt;X_VELOCITY&gt;();</span></a>
+<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">         30 :   m_msg.kinematics.twist.twist.linear.y = m_ekf.state().at&lt;Y_VELOCITY&gt;();</span></a>
+<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">         30 :   m_msg.kinematics.acceleration.accel.linear.x =</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">         30 :     m_ekf.state().at&lt;X_ACCELERATION&gt;();</span></a>
+<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">         30 :   m_msg.kinematics.acceleration.accel.linear.y =</span></a>
+<a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">         30 :     m_ekf.state().at&lt;Y_ACCELERATION&gt;();</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :            : </a>
+<a name="176"><span class="lineNum">     176 </span>                :            :   // Set covariances</a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">         60 :   m_msg.kinematics.position_covariance[0] =</span></a>
+<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">         30 :     m_ekf.covariance()(</span></a>
+<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">         30 :     m_ekf.state().index_of&lt;X&gt;(),</span></a>
+<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">         60 :     m_ekf.state().index_of&lt;X&gt;());</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">         60 :   m_msg.kinematics.position_covariance[1] =</span></a>
+<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">         30 :     m_ekf.covariance()(</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         30 :     m_ekf.state().index_of&lt;X&gt;(),</span></a>
+<a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">         60 :     m_ekf.state().index_of&lt;Y&gt;());</span></a>
+<a name="185"><span class="lineNum">     185 </span>                :<span class="lineCov">         60 :   m_msg.kinematics.position_covariance[3] =</span></a>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">         30 :     m_ekf.covariance()(</span></a>
+<a name="187"><span class="lineNum">     187 </span>                :<span class="lineCov">         30 :     m_ekf.state().index_of&lt;Y&gt;(),</span></a>
+<a name="188"><span class="lineNum">     188 </span>                :<span class="lineCov">         60 :     m_ekf.state().index_of&lt;X&gt;());</span></a>
+<a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">         60 :   m_msg.kinematics.position_covariance[4] =</span></a>
+<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">         30 :     m_ekf.covariance()(</span></a>
+<a name="191"><span class="lineNum">     191 </span>                :<span class="lineCov">         30 :     m_ekf.state().index_of&lt;Y&gt;(),</span></a>
+<a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">         60 :     m_ekf.state().index_of&lt;Y&gt;());</span></a>
+<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">         60 :   m_msg.kinematics.twist.covariance[0] =</span></a>
+<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">         30 :     m_ekf.covariance()(</span></a>
+<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">         30 :     m_ekf.state().index_of&lt;X_VELOCITY&gt;(),</span></a>
+<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">         60 :     m_ekf.state().index_of&lt;X_VELOCITY&gt;());</span></a>
+<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">         60 :   m_msg.kinematics.twist.covariance[1] =</span></a>
+<a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">         30 :     m_ekf.covariance()(</span></a>
+<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">         30 :     m_ekf.state().index_of&lt;X_VELOCITY&gt;(),</span></a>
+<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">         60 :     m_ekf.state().index_of&lt;Y_VELOCITY&gt;());</span></a>
+<a name="201"><span class="lineNum">     201 </span>                :<span class="lineCov">         60 :   m_msg.kinematics.twist.covariance[6] =</span></a>
+<a name="202"><span class="lineNum">     202 </span>                :<span class="lineCov">         30 :     m_ekf.covariance()(</span></a>
+<a name="203"><span class="lineNum">     203 </span>                :<span class="lineCov">         30 :     m_ekf.state().index_of&lt;Y_VELOCITY&gt;(),</span></a>
+<a name="204"><span class="lineNum">     204 </span>                :<span class="lineCov">         60 :     m_ekf.state().index_of&lt;X_VELOCITY&gt;());</span></a>
+<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">         60 :   m_msg.kinematics.twist.covariance[7] =</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">         30 :     m_ekf.covariance()(</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">         30 :     m_ekf.state().index_of&lt;Y_VELOCITY&gt;(),</span></a>
+<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">         60 :     m_ekf.state().index_of&lt;Y_VELOCITY&gt;());</span></a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">         30 :   m_msg.classification = m_classifier.object_classification_vector();</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :            :   // TODO(nikolai.morin): Set is_stationary etc.</a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">         30 :   return m_msg;</span></a>
+<a name="212"><span class="lineNum">     212 </span>                :            : }</a>
+<a name="213"><span class="lineNum">     213 </span>                :            : </a>
+<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">          4 : bool TrackedObject::should_be_removed(</span></a>
+<a name="215"><span class="lineNum">     215 </span>                :            :   const std::chrono::nanoseconds time_threshold,</a>
+<a name="216"><span class="lineNum">     216 </span>                :            :   const std::size_t ticks_threshold) const</a>
+<a name="217"><span class="lineNum">     217 </span>                :            : {</a>
+<a name="218"><span class="lineNum">     218 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">          4 :   return m_time_since_last_seen &gt;= time_threshold || m_ticks_since_last_seen &gt;= ticks_threshold;</span></a>
+<a name="219"><span class="lineNum">     219 </span>                :            : }</a>
+<a name="220"><span class="lineNum">     220 </span>                :            : </a>
+<a name="221"><span class="lineNum">     221 </span>                :            : }  // namespace tracking</a>
+<a name="222"><span class="lineNum">     222 </span>                :            : }  // namespace perception</a>
+<a name="223"><span class="lineNum">     223 </span>                :            : }  // namespace autoware</a>
 </pre>
       </td>
     </tr>
