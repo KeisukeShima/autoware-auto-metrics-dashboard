@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-17 20:07:21</td>
+            <td class="headerValue">2021-08-18 20:14:19</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -369,13 +369,13 @@
 <a name="260"><span class="lineNum">     260 </span>                :<span class="lineCov">          4 :   m_cycle_time = cycle_time;</span></a>
 <a name="261"><span class="lineNum">     261 </span>                :            :   // Timer</a>
 <a name="262"><span class="lineNum">     262 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :   m_read_timer = create_wall_timer(</span></a>
-<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">         10 :     m_cycle_time, [this]() {</span></a>
+<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">          8 :     m_cycle_time, [this]() {</span></a>
 <a name="264"><span class="lineNum">     264 </span>                :            :       try {</a>
-<a name="265"><span class="lineNum">     265 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          7 :         read_and_publish();</span></a>
-<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">          3 :       } catch (...) {</span></a>
-<a name="267"><span class="lineNum">     267 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :         on_error(std::current_exception());</span></a>
+<a name="265"><span class="lineNum">     265 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          6 :         read_and_publish();</span></a>
+<a name="266"><span class="lineNum">     266 </span>                :<span class="lineCov">          2 :       } catch (...) {</span></a>
+<a name="267"><span class="lineNum">     267 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :         on_error(std::current_exception());</span></a>
 <a name="268"><span class="lineNum">     268 </span>                :            :       }</a>
-<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">         11 :     });</span></a>
+<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">         10 :     });</span></a>
 <a name="270"><span class="lineNum">     270 </span>                :            :   // Make publishers</a>
 <a name="271"><span class="lineNum">     271 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   m_state_pub = create_publisher&lt;autoware_auto_msgs::msg::VehicleStateReport&gt;(</span></a>
 <a name="272"><span class="lineNum">     272 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         12 :     state_report.topic + &quot;_out&quot;, rclcpp::QoS{10U});</span></a>
@@ -518,11 +518,11 @@
 <a name="397"><span class="lineNum">     397 </span>                :<span class="lineCov">         28 : }</span></a>
 <a name="398"><span class="lineNum">     398 </span>                :            : </a>
 <a name="399"><span class="lineNum">     399 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="400"><span class="lineNum">     400 </span>                :<span class="lineCov">          7 : void VehicleInterfaceNode::read_and_publish()</span></a>
+<a name="400"><span class="lineNum">     400 </span>                :<span class="lineCov">          6 : void VehicleInterfaceNode::read_and_publish()</span></a>
 <a name="401"><span class="lineNum">     401 </span>                :            : {</a>
-<a name="402"><span class="lineNum">     402 </span>  [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          7 :   if (!m_interface-&gt;update(m_cycle_time - std::chrono::milliseconds{2LL})) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 3 times"> + </span><span class="branchCov" title="Branch 5 was taken 4 times"> + </span>]
-<a name="403"><span class="lineNum">     403 </span>                :<span class="lineCov">          3 :     on_read_timeout();</span></a>
+<a name="402"><span class="lineNum">     402 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          6 :   if (!m_interface-&gt;update(m_cycle_time - std::chrono::milliseconds{2LL})) {</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchCov" title="Branch 5 was taken 4 times"> + </span>]
+<a name="403"><span class="lineNum">     403 </span>                :<span class="lineCov">          2 :     on_read_timeout();</span></a>
 <a name="404"><span class="lineNum">     404 </span>                :            :   }</a>
 <a name="405"><span class="lineNum">     405 </span>                :            :   // Publish data from interface</a>
 <a name="406"><span class="lineNum">     406 </span>                :<span class="lineCov">          4 :   m_odom_pub-&gt;publish(m_interface-&gt;get_odometry());</span></a>

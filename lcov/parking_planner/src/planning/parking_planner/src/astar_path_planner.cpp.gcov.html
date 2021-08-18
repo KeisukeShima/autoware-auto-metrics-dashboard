@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">93</td>
-            <td class="headerCovTableEntry">93</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-17 20:06:33</td>
+            <td class="headerValue">2021-08-18 20:13:28</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntry">5</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">44</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">64</td>
-            <td class="headerCovTableEntryLo">68.8 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -115,82 +115,82 @@
 <a name="37"><span class="lineNum">      37 </span>                :            : </a>
 <a name="38"><span class="lineNum">      38 </span>                :            : using autoware::common::types::float64_t;</a>
 <a name="39"><span class="lineNum">      39 </span>                :            : </a>
-<a name="40"><span class="lineNum">      40 </span>                :<span class="lineCov">     569820 : static std::vector&lt;VehicleState&lt;float64_t&gt;&gt; expand_state_longitudinal_with_heading(</span></a>
+<a name="40"><span class="lineNum">      40 </span>                :<span class="lineNoCov">          0 : static std::vector&lt;VehicleState&lt;float64_t&gt;&gt; expand_state_longitudinal_with_heading(</span></a>
 <a name="41"><span class="lineNum">      41 </span>                :            :   const VehicleState&lt;float64_t&gt; &amp; from_state)</a>
 <a name="42"><span class="lineNum">      42 </span>                :            : {</a>
-<a name="43"><span class="lineNum">      43 </span>                :<span class="lineCov">     569820 :   const float64_t from_x = from_state.get_x();</span></a>
-<a name="44"><span class="lineNum">      44 </span>                :<span class="lineCov">     569820 :   const float64_t from_y = from_state.get_y();</span></a>
-<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">     569820 :   const float64_t from_heading = from_state.get_heading();</span></a>
-<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">     569820 :   const float64_t delta_x = cos(from_heading) * parking_planner::DELTA_LONGITUDINAL;</span></a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">     569820 :   const float64_t delta_y = sin(from_heading) * parking_planner::DELTA_LONGITUDINAL;</span></a>
-<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">     569820 :   const float64_t heading_minus = remainder(</span></a>
+<a name="43"><span class="lineNum">      43 </span>                :<span class="lineNoCov">          0 :   const float64_t from_x = from_state.get_x();</span></a>
+<a name="44"><span class="lineNum">      44 </span>                :<span class="lineNoCov">          0 :   const float64_t from_y = from_state.get_y();</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :<span class="lineNoCov">          0 :   const float64_t from_heading = from_state.get_heading();</span></a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineNoCov">          0 :   const float64_t delta_x = cos(from_heading) * parking_planner::DELTA_LONGITUDINAL;</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineNoCov">          0 :   const float64_t delta_y = sin(from_heading) * parking_planner::DELTA_LONGITUDINAL;</span></a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineNoCov">          0 :   const float64_t heading_minus = remainder(</span></a>
 <a name="49"><span class="lineNum">      49 </span>                :            :     from_heading - parking_planner::DELTA_HEADING,</a>
 <a name="50"><span class="lineNum">      50 </span>                :            :     MY_PI * 2.0);</a>
-<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">     569820 :   const float64_t heading_plus = remainder(</span></a>
+<a name="51"><span class="lineNum">      51 </span>                :<span class="lineNoCov">          0 :   const float64_t heading_plus = remainder(</span></a>
 <a name="52"><span class="lineNum">      52 </span>                :            :     from_heading + parking_planner::DELTA_HEADING,</a>
 <a name="53"><span class="lineNum">      53 </span>                :            :     MY_PI * 2.0);</a>
-<a name="54"><span class="lineNum">      54 </span>        [<span class="branchCov" title="Branch 0 was taken 569820 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">     569820 :   std::vector&lt;VehicleState&lt;float64_t&gt;&gt; to_states(6, from_state);</span></a>
-<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">     569820 :   to_states[0].set_x(from_x - delta_x);</span></a>
-<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">     569820 :   to_states[0].set_y(from_y - delta_y);</span></a>
-<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">     569820 :   to_states[0].set_heading(heading_minus);</span></a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">     569820 :   to_states[1].set_x(from_x - delta_x);</span></a>
-<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">     569820 :   to_states[1].set_y(from_y - delta_y);</span></a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">     569820 :   to_states[1].set_heading(from_heading);</span></a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">     569820 :   to_states[2].set_x(from_x - delta_x);</span></a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">     569820 :   to_states[2].set_y(from_y - delta_y);</span></a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">     569820 :   to_states[2].set_heading(heading_plus);</span></a>
-<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">     569820 :   to_states[3].set_x(from_x + delta_x);</span></a>
-<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">     569820 :   to_states[3].set_y(from_y + delta_y);</span></a>
-<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">     569820 :   to_states[3].set_heading(heading_minus);</span></a>
-<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">     569820 :   to_states[4].set_x(from_x + delta_x);</span></a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">     569820 :   to_states[4].set_y(from_y + delta_y);</span></a>
-<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">     569820 :   to_states[4].set_heading(from_heading);</span></a>
-<a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">     569820 :   to_states[5].set_x(from_x + delta_x);</span></a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">     569820 :   to_states[5].set_y(from_y + delta_y);</span></a>
-<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">     569820 :   to_states[5].set_heading(heading_plus);</span></a>
-<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">     569820 :   return to_states;</span></a>
+<a name="54"><span class="lineNum">      54 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   std::vector&lt;VehicleState&lt;float64_t&gt;&gt; to_states(6, from_state);</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :<span class="lineNoCov">          0 :   to_states[0].set_x(from_x - delta_x);</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineNoCov">          0 :   to_states[0].set_y(from_y - delta_y);</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineNoCov">          0 :   to_states[0].set_heading(heading_minus);</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineNoCov">          0 :   to_states[1].set_x(from_x - delta_x);</span></a>
+<a name="59"><span class="lineNum">      59 </span>                :<span class="lineNoCov">          0 :   to_states[1].set_y(from_y - delta_y);</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineNoCov">          0 :   to_states[1].set_heading(from_heading);</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineNoCov">          0 :   to_states[2].set_x(from_x - delta_x);</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineNoCov">          0 :   to_states[2].set_y(from_y - delta_y);</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineNoCov">          0 :   to_states[2].set_heading(heading_plus);</span></a>
+<a name="64"><span class="lineNum">      64 </span>                :<span class="lineNoCov">          0 :   to_states[3].set_x(from_x + delta_x);</span></a>
+<a name="65"><span class="lineNum">      65 </span>                :<span class="lineNoCov">          0 :   to_states[3].set_y(from_y + delta_y);</span></a>
+<a name="66"><span class="lineNum">      66 </span>                :<span class="lineNoCov">          0 :   to_states[3].set_heading(heading_minus);</span></a>
+<a name="67"><span class="lineNum">      67 </span>                :<span class="lineNoCov">          0 :   to_states[4].set_x(from_x + delta_x);</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineNoCov">          0 :   to_states[4].set_y(from_y + delta_y);</span></a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineNoCov">          0 :   to_states[4].set_heading(from_heading);</span></a>
+<a name="70"><span class="lineNum">      70 </span>                :<span class="lineNoCov">          0 :   to_states[5].set_x(from_x + delta_x);</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineNoCov">          0 :   to_states[5].set_y(from_y + delta_y);</span></a>
+<a name="72"><span class="lineNum">      72 </span>                :<span class="lineNoCov">          0 :   to_states[5].set_heading(heading_plus);</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineNoCov">          0 :   return to_states;</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :            : }</a>
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">     583802 : static bool check_collision_bounding_box_vs_obstacles(</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineNoCov">          0 : static bool check_collision_bounding_box_vs_obstacles(</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            :   const VehicleState&lt;float64_t&gt; &amp; vehicle_state,</a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   const Polytope2D&lt;float64_t&gt; &amp; bounding_box,</a>
 <a name="79"><span class="lineNum">      79 </span>                :            :   const std::vector&lt;Polytope2D&lt;float64_t&gt;&gt; &amp; obstacles)</a>
 <a name="80"><span class="lineNum">      80 </span>                :            : {</a>
-<a name="81"><span class="lineNum">      81 </span>        [<span class="branchCov" title="Branch 0 was taken 583802 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">    1167600 :   Polytope2D&lt;float64_t&gt; my_box = bounding_box;  // create a copy before shift-and-rotate</span></a>
-<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">     583802 :   my_box.rotate_and_shift(</span></a>
-<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">     583802 :     vehicle_state.get_heading(), Point2D&lt;float64_t&gt;(),</span></a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">     583802 :     Point2D&lt;float64_t&gt;(vehicle_state.get_x(), vehicle_state.get_y()));</span></a>
-<a name="85"><span class="lineNum">      85 </span>        [<span class="branchCov" title="Branch 0 was taken 1764780 times"> + </span><span class="branchCov" title="Branch 1 was taken 569820 times"> + </span>]:<span class="lineCov">    2334600 :   for (const auto &amp; obst : obstacles) {</span></a>
-<a name="86"><span class="lineNum">      86 </span>        [<span class="branchCov" title="Branch 0 was taken 13982 times"> + </span><span class="branchCov" title="Branch 1 was taken 1750800 times"> + </span>]:<span class="lineCov">    1764780 :     if (my_box.intersects_with(obst)) {</span></a>
-<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">      13982 :       return true;</span></a>
+<a name="81"><span class="lineNum">      81 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   Polytope2D&lt;float64_t&gt; my_box = bounding_box;  // create a copy before shift-and-rotate</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineNoCov">          0 :   my_box.rotate_and_shift(</span></a>
+<a name="83"><span class="lineNum">      83 </span>                :<span class="lineNoCov">          0 :     vehicle_state.get_heading(), Point2D&lt;float64_t&gt;(),</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineNoCov">          0 :     Point2D&lt;float64_t&gt;(vehicle_state.get_x(), vehicle_state.get_y()));</span></a>
+<a name="85"><span class="lineNum">      85 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   for (const auto &amp; obst : obstacles) {</span></a>
+<a name="86"><span class="lineNum">      86 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (my_box.intersects_with(obst)) {</span></a>
+<a name="87"><span class="lineNum">      87 </span>                :<span class="lineNoCov">          0 :       return true;</span></a>
 <a name="88"><span class="lineNum">      88 </span>                :            :     }</a>
 <a name="89"><span class="lineNum">      89 </span>                :            :   }</a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">     569820 :   return false;</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineNoCov">          0 :   return false;</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            : }</a>
 <a name="92"><span class="lineNum">      92 </span>                :            : </a>
-<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">    3418940 : static uint64_t map_state_on_discretized_grid(</span></a>
+<a name="93"><span class="lineNum">      93 </span>                :<span class="lineNoCov">          0 : static uint64_t map_state_on_discretized_grid(</span></a>
 <a name="94"><span class="lineNum">      94 </span>                :            :   const VehicleState&lt;float64_t&gt; &amp; state,</a>
 <a name="95"><span class="lineNum">      95 </span>                :            :   const VehicleState&lt;float64_t&gt; &amp; reference)</a>
 <a name="96"><span class="lineNum">      96 </span>                :            : {</a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   static constexpr uint64_t num_position_steps = static_cast&lt;uint64_t&gt;(round(</a>
 <a name="98"><span class="lineNum">      98 </span>                :            :       parking_planner::MAX_EXPLORATION_RADIUS / parking_planner::DELTA_LONGITUDINAL)) * 2 + 1;</a>
 <a name="99"><span class="lineNum">      99 </span>                :            :   uint64_t x_quant =</a>
-<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">    3418940 :     static_cast&lt;uint64_t&gt;(round(</span></a>
-<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">    3418940 :       (state.get_x() - reference.get_x() + parking_planner::MAX_EXPLORATION_RADIUS) /</span></a>
-<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">    3418940 :       parking_planner::DELTA_LONGITUDINAL));</span></a>
+<a name="100"><span class="lineNum">     100 </span>                :<span class="lineNoCov">          0 :     static_cast&lt;uint64_t&gt;(round(</span></a>
+<a name="101"><span class="lineNum">     101 </span>                :<span class="lineNoCov">          0 :       (state.get_x() - reference.get_x() + parking_planner::MAX_EXPLORATION_RADIUS) /</span></a>
+<a name="102"><span class="lineNum">     102 </span>                :<span class="lineNoCov">          0 :       parking_planner::DELTA_LONGITUDINAL));</span></a>
 <a name="103"><span class="lineNum">     103 </span>                :            :   uint64_t y_quant =</a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">    3418940 :     static_cast&lt;uint64_t&gt;(round(</span></a>
-<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">    3418940 :       (state.get_y() - reference.get_y() + parking_planner::MAX_EXPLORATION_RADIUS) /</span></a>
-<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">    3418940 :       parking_planner::DELTA_LONGITUDINAL));</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineNoCov">          0 :     static_cast&lt;uint64_t&gt;(round(</span></a>
+<a name="105"><span class="lineNum">     105 </span>                :<span class="lineNoCov">          0 :       (state.get_y() - reference.get_y() + parking_planner::MAX_EXPLORATION_RADIUS) /</span></a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineNoCov">          0 :       parking_planner::DELTA_LONGITUDINAL));</span></a>
 <a name="107"><span class="lineNum">     107 </span>                :            :   uint64_t h_quant =</a>
-<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">    3418940 :     static_cast&lt;uint64_t&gt;(round(</span></a>
-<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">    3418940 :       (remainder(</span></a>
-<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">    3418940 :         state.get_heading() - reference.get_heading(),</span></a>
-<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">    3418940 :         parking_planner::MY_PI * 2.0) + parking_planner::MY_PI) / parking_planner::DELTA_HEADING));</span></a>
-<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">    3418940 :   return h_quant * num_position_steps * num_position_steps + y_quant * num_position_steps + x_quant;</span></a>
+<a name="108"><span class="lineNum">     108 </span>                :<span class="lineNoCov">          0 :     static_cast&lt;uint64_t&gt;(round(</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineNoCov">          0 :       (remainder(</span></a>
+<a name="110"><span class="lineNum">     110 </span>                :<span class="lineNoCov">          0 :         state.get_heading() - reference.get_heading(),</span></a>
+<a name="111"><span class="lineNum">     111 </span>                :<span class="lineNoCov">          0 :         parking_planner::MY_PI * 2.0) + parking_planner::MY_PI) / parking_planner::DELTA_HEADING));</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineNoCov">          0 :   return h_quant * num_position_steps * num_position_steps + y_quant * num_position_steps + x_quant;</span></a>
 <a name="113"><span class="lineNum">     113 </span>                :            : }</a>
 <a name="114"><span class="lineNum">     114 </span>                :            : </a>
-<a name="115"><span class="lineNum">     115 </span>                :<span class="lineCov">         11 : std::vector&lt;VehicleState&lt;float64_t&gt;&gt; AstarPathPlanner::plan_astar(</span></a>
+<a name="115"><span class="lineNum">     115 </span>                :<span class="lineNoCov">          0 : std::vector&lt;VehicleState&lt;float64_t&gt;&gt; AstarPathPlanner::plan_astar(</span></a>
 <a name="116"><span class="lineNum">     116 </span>                :            :   const VehicleState&lt;float64_t&gt; &amp; current_state,</a>
 <a name="117"><span class="lineNum">     117 </span>                :            :   const VehicleState&lt;float64_t&gt; &amp; goal_state,</a>
 <a name="118"><span class="lineNum">     118 </span>                :            :   const Polytope2D&lt;float64_t&gt; &amp; vehicle_bounding_box,</a>
@@ -203,9 +203,9 @@
 <a name="125"><span class="lineNum">     125 </span>                :            :   using QueueElement = std::pair&lt;CostPair, StateTransition&gt;;</a>
 <a name="126"><span class="lineNum">     126 </span>                :            : </a>
 <a name="127"><span class="lineNum">     127 </span>                :            :   auto my_compare_queue_element =</a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">   23562300 :     [](const QueueElement &amp; e1, const QueueElement &amp; e2)</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineNoCov">          0 :     [](const QueueElement &amp; e1, const QueueElement &amp; e2)</span></a>
 <a name="129"><span class="lineNum">     129 </span>                :            :     {</a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">   23562300 :       return e1.first &gt; e2.first;</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineNoCov">          0 :       return e1.first &gt; e2.first;</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            :     };</a>
 <a name="132"><span class="lineNum">     132 </span>                :            : </a>
 <a name="133"><span class="lineNum">     133 </span>                :            :   using OpenSet = std::priority_queue&lt;QueueElement,</a>
@@ -215,52 +215,52 @@
 <a name="137"><span class="lineNum">     137 </span>                :            :   using ClosedSet = std::unordered_map&lt;uint64_t,</a>
 <a name="138"><span class="lineNum">     138 </span>                :            :       StateTransition&gt;;</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : </a>
-<a name="140"><span class="lineNum">     140 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :   OpenSet open_set(my_compare_queue_element);</span></a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         22 :   ClosedSet closed_set;</span></a>
+<a name="140"><span class="lineNum">     140 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   OpenSet open_set(my_compare_queue_element);</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineNoCov">          0 :   ClosedSet closed_set;</span></a>
 <a name="142"><span class="lineNum">     142 </span>                :            : </a>
 <a name="143"><span class="lineNum">     143 </span>                :            :   // Initialize data structures for the given problem data</a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         11 :   Point2D&lt;float64_t&gt; vect_current_to_goal = Point2D&lt;float64_t&gt;(</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineNoCov">          0 :   Point2D&lt;float64_t&gt; vect_current_to_goal = Point2D&lt;float64_t&gt;(</span></a>
 <a name="145"><span class="lineNum">     145 </span>                :            :     current_state.get_x(),</a>
 <a name="146"><span class="lineNum">     146 </span>                :            :     current_state.get_y()) -</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">         22 :     Point2D&lt;float64_t&gt;(goal_state.get_x(), goal_state.get_y());</span></a>
-<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">         11 :   float64_t dist_current_to_goal = vect_current_to_goal.norm2();</span></a>
-<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">         11 :   uint64_t current_discrete = map_state_on_discretized_grid(current_state, goal_state);</span></a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         11 :   uint64_t goal_discrete = map_state_on_discretized_grid(goal_state, goal_state);</span></a>
-<a name="151"><span class="lineNum">     151 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   open_set.push(</span></a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">         11 :     {{dist_current_to_goal, 0},</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineNoCov">          0 :     Point2D&lt;float64_t&gt;(goal_state.get_x(), goal_state.get_y());</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :<span class="lineNoCov">          0 :   float64_t dist_current_to_goal = vect_current_to_goal.norm2();</span></a>
+<a name="149"><span class="lineNum">     149 </span>                :<span class="lineNoCov">          0 :   uint64_t current_discrete = map_state_on_discretized_grid(current_state, goal_state);</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineNoCov">          0 :   uint64_t goal_discrete = map_state_on_discretized_grid(goal_state, goal_state);</span></a>
+<a name="151"><span class="lineNum">     151 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   open_set.push(</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineNoCov">          0 :     {{dist_current_to_goal, 0},</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            :       {{current_state, current_state},</a>
 <a name="154"><span class="lineNum">     154 </span>                :            :         {current_discrete, current_discrete}}});</a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
 <a name="156"><span class="lineNum">     156 </span>                :            :   // Run the main exploration loop</a>
-<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">         11 :   size_t num_nodes_left = parking_planner::MAX_NUM_EXPLORATION_NODES;</span></a>
-<a name="158"><span class="lineNum">     158 </span>  [<span class="branchCov" title="Branch 0 was taken 1454810 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1454800 times"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span> :<span class="lineCov">    1454810 :   while (!open_set.empty() &amp;&amp; (0 != num_nodes_left--)) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 1454800 times"> + </span><span class="branchCov" title="Branch 5 was taken 1 time"> + </span>]
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">    1454800 :     QueueElement top_element = open_set.top();</span></a>
-<a name="160"><span class="lineNum">     160 </span>        [<span class="branchCov" title="Branch 0 was taken 1454800 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">    1454800 :     open_set.pop();</span></a>
-<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">    1454800 :     const float64_t &amp; f_cost = top_element.first.second;</span></a>
-<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">    1454800 :     const VehicleState&lt;float64_t&gt; &amp; to_state = top_element.second.first.second;</span></a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">    1454800 :     const uint64_t &amp; to_discrete = top_element.second.second.second;</span></a>
+<a name="157"><span class="lineNum">     157 </span>                :<span class="lineNoCov">          0 :   size_t num_nodes_left = parking_planner::MAX_NUM_EXPLORATION_NODES;</span></a>
+<a name="158"><span class="lineNum">     158 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   while (!open_set.empty() &amp;&amp; (0 != num_nodes_left--)) {</span></a>
+<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineNoCov">          0 :     QueueElement top_element = open_set.top();</span></a>
+<a name="160"><span class="lineNum">     160 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     open_set.pop();</span></a>
+<a name="161"><span class="lineNum">     161 </span>                :<span class="lineNoCov">          0 :     const float64_t &amp; f_cost = top_element.first.second;</span></a>
+<a name="162"><span class="lineNum">     162 </span>                :<span class="lineNoCov">          0 :     const VehicleState&lt;float64_t&gt; &amp; to_state = top_element.second.first.second;</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineNoCov">          0 :     const uint64_t &amp; to_discrete = top_element.second.second.second;</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            : </a>
-<a name="165"><span class="lineNum">     165 </span>  [<span class="branchCov" title="Branch 0 was taken 1454800 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 583812 times"> + </span><span class="branchCov" title="Branch 3 was taken 870993 times"> + </span>]:<span class="lineCov">    1454800 :     if (!closed_set.count(to_discrete)) {</span></a>
-<a name="166"><span class="lineNum">     166 </span>  [<span class="branchCov" title="Branch 0 was taken 583812 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 583812 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">     583812 :       closed_set[to_discrete] = top_element.second;</span></a>
-<a name="167"><span class="lineNum">     167 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 583802 times"> + </span>]:<span class="lineCov">     583812 :       if (to_discrete == goal_discrete) {</span></a>
-<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">         10 :         break;</span></a>
+<a name="165"><span class="lineNum">     165 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (!closed_set.count(to_discrete)) {</span></a>
+<a name="166"><span class="lineNum">     166 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       closed_set[to_discrete] = top_element.second;</span></a>
+<a name="167"><span class="lineNum">     167 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (to_discrete == goal_discrete) {</span></a>
+<a name="168"><span class="lineNum">     168 </span>                :<span class="lineNoCov">          0 :         break;</span></a>
 <a name="169"><span class="lineNum">     169 </span>                :            :       }</a>
 <a name="170"><span class="lineNum">     170 </span>                :            : </a>
-<a name="171"><span class="lineNum">     171 </span>  [<span class="branchCov" title="Branch 0 was taken 583802 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 569820 times"> + </span><span class="branchCov" title="Branch 3 was taken 13982 times"> + </span>]:<span class="lineCov">     583802 :       if (!check_collision_bounding_box_vs_obstacles(to_state, vehicle_bounding_box, obstacles)) {</span></a>
+<a name="171"><span class="lineNum">     171 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (!check_collision_bounding_box_vs_obstacles(to_state, vehicle_bounding_box, obstacles)) {</span></a>
 <a name="172"><span class="lineNum">     172 </span>                :            :         const std::vector&lt;VehicleState&lt;float64_t&gt;&gt; expanded_states =</a>
-<a name="173"><span class="lineNum">     173 </span>        [<span class="branchCov" title="Branch 0 was taken 569820 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">    1139640 :           expand_state_longitudinal_with_heading(to_state);</span></a>
-<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 3418920 times"> + </span><span class="branchCov" title="Branch 1 was taken 569820 times"> + </span>]:<span class="lineCov">    3988740 :         for (const VehicleState&lt;float64_t&gt; &amp; next_state : expanded_states) {</span></a>
-<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">    3418920 :           uint64_t next_discrete = map_state_on_discretized_grid(next_state, goal_state);</span></a>
-<a name="176"><span class="lineNum">     176 </span>  [<span class="branchCov" title="Branch 0 was taken 3418920 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1557090 times"> + </span><span class="branchCov" title="Branch 3 was taken 1861830 times"> + </span>]:<span class="lineCov">    3418920 :           if (!closed_set.count(next_discrete)) {</span></a>
-<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">    1557090 :             float64_t next_f_cost = f_cost + parking_planner::DELTA_LONGITUDINAL;</span></a>
-<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">    1557090 :             Point2D&lt;float64_t&gt; vect_to_goal = Point2D&lt;float64_t&gt;(</span></a>
+<a name="173"><span class="lineNum">     173 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           expand_state_longitudinal_with_heading(to_state);</span></a>
+<a name="174"><span class="lineNum">     174 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         for (const VehicleState&lt;float64_t&gt; &amp; next_state : expanded_states) {</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :<span class="lineNoCov">          0 :           uint64_t next_discrete = map_state_on_discretized_grid(next_state, goal_state);</span></a>
+<a name="176"><span class="lineNum">     176 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :           if (!closed_set.count(next_discrete)) {</span></a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineNoCov">          0 :             float64_t next_f_cost = f_cost + parking_planner::DELTA_LONGITUDINAL;</span></a>
+<a name="178"><span class="lineNum">     178 </span>                :<span class="lineNoCov">          0 :             Point2D&lt;float64_t&gt; vect_to_goal = Point2D&lt;float64_t&gt;(</span></a>
 <a name="179"><span class="lineNum">     179 </span>                :            :               next_state.get_x(), next_state.get_y()) -</a>
-<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">    3114190 :               Point2D&lt;float64_t&gt;(goal_state.get_x(), goal_state.get_y());</span></a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">    1557090 :             float64_t dist_to_goal = vect_to_goal.norm2();</span></a>
-<a name="182"><span class="lineNum">     182 </span>        [<span class="branchCov" title="Branch 0 was taken 1557090 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">    1557090 :             if (dist_to_goal &lt; parking_planner::MAX_EXPLORATION_RADIUS) {</span></a>
-<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">    1557090 :               float64_t next_g_cost = f_cost + dist_to_goal;</span></a>
-<a name="184"><span class="lineNum">     184 </span>        [<span class="branchCov" title="Branch 0 was taken 1557090 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">    1557090 :               open_set.push(</span></a>
+<a name="180"><span class="lineNum">     180 </span>                :<span class="lineNoCov">          0 :               Point2D&lt;float64_t&gt;(goal_state.get_x(), goal_state.get_y());</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :<span class="lineNoCov">          0 :             float64_t dist_to_goal = vect_to_goal.norm2();</span></a>
+<a name="182"><span class="lineNum">     182 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :             if (dist_to_goal &lt; parking_planner::MAX_EXPLORATION_RADIUS) {</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineNoCov">          0 :               float64_t next_g_cost = f_cost + dist_to_goal;</span></a>
+<a name="184"><span class="lineNum">     184 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :               open_set.push(</span></a>
 <a name="185"><span class="lineNum">     185 </span>                :            :                 {{next_g_cost, next_f_cost},</a>
 <a name="186"><span class="lineNum">     186 </span>                :            :                   {{to_state, next_state},</a>
 <a name="187"><span class="lineNum">     187 </span>                :            :                     {to_discrete, next_discrete}}});</a>
@@ -272,18 +272,18 @@
 <a name="193"><span class="lineNum">     193 </span>                :            :   }</a>
 <a name="194"><span class="lineNum">     194 </span>                :            : </a>
 <a name="195"><span class="lineNum">     195 </span>                :            :   // Done exploring, assemble the output path from the results</a>
-<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">         11 :   std::vector&lt;VehicleState&lt;float64_t&gt;&gt; result;</span></a>
-<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">         11 :   uint64_t destination_discrete = goal_discrete;</span></a>
-<a name="198"><span class="lineNum">     198 </span>  [<span class="branchCov" title="Branch 0 was taken 586 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 585 times"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span> :<span class="lineCov">       1171 :   while (0 != closed_set.count(destination_discrete) &amp;&amp;</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 575 times"> + </span><span class="branchCov" title="Branch 5 was taken 11 times"> + </span>]
-<a name="199"><span class="lineNum">     199 </span>        [<span class="branchCov" title="Branch 0 was taken 575 times"> + </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">        585 :     (destination_discrete != current_discrete))</span></a>
+<a name="196"><span class="lineNum">     196 </span>                :<span class="lineNoCov">          0 :   std::vector&lt;VehicleState&lt;float64_t&gt;&gt; result;</span></a>
+<a name="197"><span class="lineNum">     197 </span>                :<span class="lineNoCov">          0 :   uint64_t destination_discrete = goal_discrete;</span></a>
+<a name="198"><span class="lineNum">     198 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   while (0 != closed_set.count(destination_discrete) &amp;&amp;</span></a>
+<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
+<a name="199"><span class="lineNum">     199 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     (destination_discrete != current_discrete))</span></a>
 <a name="200"><span class="lineNum">     200 </span>                :            :   {</a>
-<a name="201"><span class="lineNum">     201 </span>  [<span class="branchCov" title="Branch 0 was taken 575 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 575 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        575 :     result.emplace_back(closed_set[destination_discrete].first.first);</span></a>
-<a name="202"><span class="lineNum">     202 </span>        [<span class="branchCov" title="Branch 0 was taken 575 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        575 :     destination_discrete = closed_set[destination_discrete].second.first;</span></a>
+<a name="201"><span class="lineNum">     201 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     result.emplace_back(closed_set[destination_discrete].first.first);</span></a>
+<a name="202"><span class="lineNum">     202 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     destination_discrete = closed_set[destination_discrete].second.first;</span></a>
 <a name="203"><span class="lineNum">     203 </span>                :            :   }</a>
-<a name="204"><span class="lineNum">     204 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   result.push_back(current_state);</span></a>
-<a name="205"><span class="lineNum">     205 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   std::reverse(result.begin(), result.end());</span></a>
-<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">         22 :   return result;</span></a>
+<a name="204"><span class="lineNum">     204 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   result.push_back(current_state);</span></a>
+<a name="205"><span class="lineNum">     205 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   std::reverse(result.begin(), result.end());</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :<span class="lineNoCov">          0 :   return result;</span></a>
 <a name="207"><span class="lineNum">     207 </span>                :            : }</a>
 <a name="208"><span class="lineNum">     208 </span>                :            : </a>
 <a name="209"><span class="lineNum">     209 </span>                :            : }  // namespace parking_planner</a>
