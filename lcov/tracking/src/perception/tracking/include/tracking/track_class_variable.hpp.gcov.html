@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-19 20:14:21</td>
+            <td class="headerValue">2021-08-20 20:07:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -130,21 +130,21 @@
 <a name="52"><span class="lineNum">      52 </span>                :            : /// @tparam     StateT  A state that needs checking.</a>
 <a name="53"><span class="lineNum">      53 </span>                :            : ///</a>
 <a name="54"><span class="lineNum">      54 </span>                :            : template&lt;typename StateT&gt;</a>
-<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">         49 : static inline void assert_indices_match_classification_constants()</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">         53 : static inline void assert_indices_match_classification_constants()</span></a>
 <a name="56"><span class="lineNum">      56 </span>                :            : {</a>
 <a name="57"><span class="lineNum">      57 </span>                :            :   static_assert(</a>
 <a name="58"><span class="lineNum">      58 </span>                :            :     autoware::common::state_vector::is_state&lt;StateT&gt;::value,</a>
 <a name="59"><span class="lineNum">      59 </span>                :            :     &quot;The provided type must represent a GenericState type.&quot;);</a>
 <a name="60"><span class="lineNum">      60 </span>                :            : </a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">        343 :   auto assert_indices_match_classification_constants = [](auto variable) {</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">        371 :   auto assert_indices_match_classification_constants = [](auto variable) {</span></a>
 <a name="62"><span class="lineNum">      62 </span>                :            :       using VariableT = decltype(variable);</a>
 <a name="63"><span class="lineNum">      63 </span>                :            :       static_assert(</a>
 <a name="64"><span class="lineNum">      64 </span>                :            :         StateT::template index_of&lt;VariableT&gt;() == VariableT::value,</a>
 <a name="65"><span class="lineNum">      65 </span>                :            :         &quot;The index of the variable must correspond to the integral constant stored inside of &quot;</a>
 <a name="66"><span class="lineNum">      66 </span>                :            :         &quot;this variable class.&quot;);</a>
 <a name="67"><span class="lineNum">      67 </span>                :            :     };</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">         49 :   common::type_traits::visit(StateT::variables(), assert_indices_match_classification_constants);</span></a>
-<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">         49 : }</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">         53 :   common::type_traits::visit(StateT::variables(), assert_indices_match_classification_constants);</span></a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">         53 : }</span></a>
 <a name="70"><span class="lineNum">      70 </span>                :            : </a>
 <a name="71"><span class="lineNum">      71 </span>                :            : /// A common state used for classification in the tracker.</a>
 <a name="72"><span class="lineNum">      72 </span>                :            : using ObjectClassificationState = common::state_vector::FloatState&lt;</a>

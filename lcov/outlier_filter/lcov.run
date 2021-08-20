@@ -123,8 +123,6 @@ BRDA:63,0,3,0
 DA:66,3
 end_of_record
 TN:
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/outlier_filter/include/outlier_filter/radius_search_2d_filter.hpp
-end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/outlier_filter/test/test_radius_search_2d_filter.cpp
 FN:34,_ZN43RadiusSearch2DFilter_test_single_point_Test8TestBodyEv
 FNDA:1,_ZN43RadiusSearch2DFilter_test_single_point_Test8TestBodyEv
@@ -448,6 +446,8 @@ BRDA:113,0,6,0
 BRDA:113,0,7,0
 BRDA:113,0,8,0
 BRDA:113,0,9,0
+end_of_record
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/outlier_filter/include/outlier_filter/radius_search_2d_filter.hpp
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/outlier_filter/test/outlier_filter_test_utils.hpp
