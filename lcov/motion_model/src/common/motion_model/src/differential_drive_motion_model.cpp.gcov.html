@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-21 20:05:19</td>
+            <td class="headerValue">2021-08-22 20:07:53</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -208,22 +208,22 @@
 <a name="130"><span class="lineNum">     130 </span>                :            : </a>
 <a name="131"><span class="lineNum">     131 </span>                :            : </a>
 <a name="132"><span class="lineNum">     132 </span>                :            : template&lt;typename ScalarT&gt;</a>
-<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">        746 : typename CatrMotionModel&lt;ScalarT&gt;::State catr_predict(</span></a>
+<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">        747 : typename CatrMotionModel&lt;ScalarT&gt;::State catr_predict(</span></a>
 <a name="134"><span class="lineNum">     134 </span>                :            :   const typename CatrMotionModel&lt;ScalarT&gt;::State &amp; state,</a>
 <a name="135"><span class="lineNum">     135 </span>                :            :   const std::chrono::nanoseconds &amp; dt)</a>
 <a name="136"><span class="lineNum">     136 </span>                :            : {</a>
-<a name="137"><span class="lineNum">     137 </span>  [<span class="branchCov" title="Branch 0 was taken 3730 times"> + </span><span class="branchCov" title="Branch 1 was taken 746 times"> + </span><span class="branchCov" title="Branch 2 was taken 746 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       4476 :   typename CatrMotionModel&lt;ScalarT&gt;::State new_state{};</span></a>
-<a name="138"><span class="lineNum">     138 </span>        [<span class="branchCov" title="Branch 0 was taken 746 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        746 :   const auto t = std::chrono::duration&lt;ScalarT&gt;{dt}.count();</span></a>
-<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">        746 :   const auto theta = state.template at&lt;YAW&gt;();</span></a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">        746 :   const auto x = state.template at&lt;X&gt;();</span></a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">        746 :   const auto y = state.template at&lt;Y&gt;();</span></a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">        746 :   const auto v = state.template at&lt;XY_VELOCITY&gt;();</span></a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">        746 :   const auto a = state.template at&lt;XY_ACCELERATION&gt;();</span></a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">        746 :   const auto w = state.template at&lt;YAW_CHANGE_RATE&gt;();</span></a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">        746 :   const auto half_t_squared_a = static_cast&lt;ScalarT&gt;(0.5) * t * t * a;</span></a>
-<a name="146"><span class="lineNum">     146 </span>  [<span class="branchCov" title="Branch 0 was taken 746 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 557 times"> + </span><span class="branchCov" title="Branch 3 was taken 189 times"> + </span>]:<span class="lineCov">        746 :   if (common::helper_functions::comparisons::abs_eq_zero(w, static_cast&lt;ScalarT&gt;(kEpsilon))) {</span></a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">        557 :     new_state.template at&lt;X&gt;() = x + half_t_squared_a * cos(theta) + t * v * cos(theta);</span></a>
-<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">        557 :     new_state.template at&lt;Y&gt;() = y + half_t_squared_a * sin(theta) + t * v * sin(theta);</span></a>
+<a name="137"><span class="lineNum">     137 </span>  [<span class="branchCov" title="Branch 0 was taken 3735 times"> + </span><span class="branchCov" title="Branch 1 was taken 747 times"> + </span><span class="branchCov" title="Branch 2 was taken 747 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       4482 :   typename CatrMotionModel&lt;ScalarT&gt;::State new_state{};</span></a>
+<a name="138"><span class="lineNum">     138 </span>        [<span class="branchCov" title="Branch 0 was taken 747 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        747 :   const auto t = std::chrono::duration&lt;ScalarT&gt;{dt}.count();</span></a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">        747 :   const auto theta = state.template at&lt;YAW&gt;();</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">        747 :   const auto x = state.template at&lt;X&gt;();</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">        747 :   const auto y = state.template at&lt;Y&gt;();</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">        747 :   const auto v = state.template at&lt;XY_VELOCITY&gt;();</span></a>
+<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">        747 :   const auto a = state.template at&lt;XY_ACCELERATION&gt;();</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">        747 :   const auto w = state.template at&lt;YAW_CHANGE_RATE&gt;();</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">        747 :   const auto half_t_squared_a = static_cast&lt;ScalarT&gt;(0.5) * t * t * a;</span></a>
+<a name="146"><span class="lineNum">     146 </span>  [<span class="branchCov" title="Branch 0 was taken 747 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 558 times"> + </span><span class="branchCov" title="Branch 3 was taken 189 times"> + </span>]:<span class="lineCov">        747 :   if (common::helper_functions::comparisons::abs_eq_zero(w, static_cast&lt;ScalarT&gt;(kEpsilon))) {</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">        558 :     new_state.template at&lt;X&gt;() = x + half_t_squared_a * cos(theta) + t * v * cos(theta);</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">        558 :     new_state.template at&lt;Y&gt;() = y + half_t_squared_a * sin(theta) + t * v * sin(theta);</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :            :   } else {</a>
 <a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">        189 :     const auto t_w_plus_theta = t * w + theta;</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        189 :     const auto inv_w = static_cast&lt;ScalarT&gt;(1.0) / w;</span></a>
@@ -239,11 +239,11 @@
 <a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">        378 :       inv_w * v * cos(t_w_plus_theta) +</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">        189 :       inv_w_2 * a * (-sin(theta) + sin(t_w_plus_theta));</span></a>
 <a name="163"><span class="lineNum">     163 </span>                :            :   }</a>
-<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">        746 :   new_state.template at&lt;YAW&gt;() = theta + w * t;</span></a>
-<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">        746 :   new_state.template at&lt;YAW_CHANGE_RATE&gt;() = w;</span></a>
-<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">        746 :   new_state.template at&lt;XY_VELOCITY&gt;() = v + t * a;</span></a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        746 :   new_state.template at&lt;XY_ACCELERATION&gt;() = a;</span></a>
-<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">       1492 :   return new_state;</span></a>
+<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">        747 :   new_state.template at&lt;YAW&gt;() = theta + w * t;</span></a>
+<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">        747 :   new_state.template at&lt;YAW_CHANGE_RATE&gt;() = w;</span></a>
+<a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">        747 :   new_state.template at&lt;XY_VELOCITY&gt;() = v + t * a;</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        747 :   new_state.template at&lt;XY_ACCELERATION&gt;() = a;</span></a>
+<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">       1494 :   return new_state;</span></a>
 <a name="169"><span class="lineNum">     169 </span>                :            : }</a>
 <a name="170"><span class="lineNum">     170 </span>                :            : </a>
 <a name="171"><span class="lineNum">     171 </span>                :            : template&lt;typename ScalarT&gt;</a>
@@ -353,11 +353,11 @@
 <a name="275"><span class="lineNum">     275 </span>                :            : }</a>
 <a name="276"><span class="lineNum">     276 </span>                :            : </a>
 <a name="277"><span class="lineNum">     277 </span>                :            : template&lt;&gt;</a>
-<a name="278"><span class="lineNum">     278 </span>                :<span class="lineCov">        746 : MOTION_MODEL_PUBLIC CatrMotionModel32::State CatrMotionModel32::crtp_predict(</span></a>
+<a name="278"><span class="lineNum">     278 </span>                :<span class="lineCov">        747 : MOTION_MODEL_PUBLIC CatrMotionModel32::State CatrMotionModel32::crtp_predict(</span></a>
 <a name="279"><span class="lineNum">     279 </span>                :            :   const CatrMotionModel32::State &amp; state,</a>
 <a name="280"><span class="lineNum">     280 </span>                :            :   const std::chrono::nanoseconds &amp; dt) const</a>
 <a name="281"><span class="lineNum">     281 </span>                :            : {</a>
-<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">        746 :   return catr_predict&lt;float32_t&gt;(state, dt);</span></a>
+<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">        747 :   return catr_predict&lt;float32_t&gt;(state, dt);</span></a>
 <a name="283"><span class="lineNum">     283 </span>                :            : }</a>
 <a name="284"><span class="lineNum">     284 </span>                :            : </a>
 <a name="285"><span class="lineNum">     285 </span>                :            : template&lt;&gt;</a>

@@ -74,8 +74,6 @@ FNDA:6,_ZN8autoware6common16helper_functions4crtpINS_12localization19localizatio
 DA:40,6
 DA:45,6
 end_of_record
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/localization_common/test/test_initialization.hpp
-end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/localization_common/test/test_initialization.cpp
 FN:29,_ZN44BestEffortInitializationTest_bad_lookup_Test8TestBodyEv
 FNDA:1,_ZN44BestEffortInitializationTest_bad_lookup_Test8TestBodyEv
@@ -544,4 +542,6 @@ BRDA:196,0,0,4
 BRDA:196,0,1,0
 DA:197,4
 DA:198,8
+end_of_record
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/localization_common/test/test_initialization.hpp
 end_of_record

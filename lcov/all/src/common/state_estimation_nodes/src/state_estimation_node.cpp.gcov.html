@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-21 20:04:26</td>
+            <td class="headerValue">2021-08-22 20:06:57</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">12</td>
@@ -261,25 +261,25 @@
 <a name="161"><span class="lineNum">     161 </span>                :            :   }</a>
 <a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">          5 : }</span></a>
 <a name="163"><span class="lineNum">     163 </span>                :            : </a>
-<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">         27 : void StateEstimationNode::pose_callback(const PoseMsgT::SharedPtr msg)</span></a>
+<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">         28 : void StateEstimationNode::pose_callback(const PoseMsgT::SharedPtr msg)</span></a>
 <a name="165"><span class="lineNum">     165 </span>                :            : {</a>
-<a name="166"><span class="lineNum">     166 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 27 times"> + </span>]:<span class="lineCov">         27 :   if (msg-&gt;header.frame_id != m_frame_id) {</span></a>
+<a name="166"><span class="lineNum">     166 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 28 times"> + </span>]:<span class="lineCov">         28 :   if (msg-&gt;header.frame_id != m_frame_id) {</span></a>
 <a name="167"><span class="lineNum">     167 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::runtime_error(&quot;Pose message frames don't match the expected ones.&quot;);</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            :   }</a>
 <a name="169"><span class="lineNum">     169 </span>                :            :   const auto measurement =</a>
-<a name="170"><span class="lineNum">     170 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         27 :     convert_to&lt;Stamped&lt;PoseMeasurementXYZRPY64&gt;&gt;::from(*msg).cast&lt;float32_t&gt;();</span></a>
-<a name="171"><span class="lineNum">     171 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         27 :   if (m_ekf-&gt;is_initialized()) {</span></a>
-<a name="172"><span class="lineNum">     172 </span>  [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 22 times"> + </span>]:<span class="lineCov">         22 :     if (!m_ekf-&gt;add_observation_to_history(measurement)) {</span></a>
+<a name="170"><span class="lineNum">     170 </span>        [<span class="branchCov" title="Branch 0 was taken 28 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         28 :     convert_to&lt;Stamped&lt;PoseMeasurementXYZRPY64&gt;&gt;::from(*msg).cast&lt;float32_t&gt;();</span></a>
+<a name="171"><span class="lineNum">     171 </span>        [<span class="branchCov" title="Branch 0 was taken 23 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         28 :   if (m_ekf-&gt;is_initialized()) {</span></a>
+<a name="172"><span class="lineNum">     172 </span>  [<span class="branchCov" title="Branch 0 was taken 23 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 23 times"> + </span>]:<span class="lineCov">         23 :     if (!m_ekf-&gt;add_observation_to_history(measurement)) {</span></a>
 <a name="173"><span class="lineNum">     173 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       throw std::runtime_error(&quot;Cannot add a pose observation to history.&quot;);</span></a>
 <a name="174"><span class="lineNum">     174 </span>                :            :     }</a>
 <a name="175"><span class="lineNum">     175 </span>                :            :   } else {</a>
 <a name="176"><span class="lineNum">     176 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :     m_ekf-&gt;add_reset_event_to_history(measurement);</span></a>
 <a name="177"><span class="lineNum">     177 </span>                :            :   }</a>
-<a name="178"><span class="lineNum">     178 </span>  [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchCov" title="Branch 2 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         27 :   if (m_publish_data_driven &amp;&amp; m_ekf-&gt;is_initialized()) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 25 times"> + </span><span class="branchCov" title="Branch 5 was taken 2 times"> + </span>]
-<a name="179"><span class="lineNum">     179 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         25 :     publish_current_state();</span></a>
+<a name="178"><span class="lineNum">     178 </span>  [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchCov" title="Branch 2 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         28 :   if (m_publish_data_driven &amp;&amp; m_ekf-&gt;is_initialized()) {</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 26 times"> + </span><span class="branchCov" title="Branch 5 was taken 2 times"> + </span>]
+<a name="179"><span class="lineNum">     179 </span>        [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         26 :     publish_current_state();</span></a>
 <a name="180"><span class="lineNum">     180 </span>                :            :   }</a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">         27 : }</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">         28 : }</span></a>
 <a name="182"><span class="lineNum">     182 </span>                :            : </a>
 <a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         20 : void StateEstimationNode::relative_pos_callback(const RelativePosMsgT::SharedPtr msg)</span></a>
 <a name="184"><span class="lineNum">     184 </span>                :            : {</a>
@@ -310,26 +310,26 @@
 <a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">          5 :   publish_current_state();</span></a>
 <a name="208"><span class="lineNum">     208 </span>                :            : }</a>
 <a name="209"><span class="lineNum">     209 </span>                :            : </a>
-<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">         50 : void StateEstimationNode::publish_current_state()</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">         51 : void StateEstimationNode::publish_current_state()</span></a>
 <a name="211"><span class="lineNum">     211 </span>                :            : {</a>
-<a name="212"><span class="lineNum">     212 </span>  [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         50 :   if (m_ekf-&gt;is_initialized() &amp;&amp; m_publisher) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="213"><span class="lineNum">     213 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        100 :     auto state = m_ekf-&gt;get_state();</span></a>
-<a name="214"><span class="lineNum">     214 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         50 :     m_publisher-&gt;publish(state);</span></a>
-<a name="215"><span class="lineNum">     215 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchCov" title="Branch 1 was taken 28 times"> + </span>]:<span class="lineCov">         50 :     if (m_tf_publisher) {</span></a>
-<a name="216"><span class="lineNum">     216 </span>                :<span class="lineCov">         44 :       TfMsgT tf_msg{};</span></a>
-<a name="217"><span class="lineNum">     217 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :       tf_msg.transforms.emplace_back();</span></a>
-<a name="218"><span class="lineNum">     218 </span>                :<span class="lineCov">         22 :       auto &amp; tf = tf_msg.transforms.back();</span></a>
-<a name="219"><span class="lineNum">     219 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :       tf.header = state.header;</span></a>
-<a name="220"><span class="lineNum">     220 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :       tf.child_frame_id = state.child_frame_id;</span></a>
-<a name="221"><span class="lineNum">     221 </span>                :<span class="lineCov">         22 :       tf.transform.translation.x = state.pose.pose.position.x;</span></a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">         22 :       tf.transform.translation.y = state.pose.pose.position.y;</span></a>
-<a name="223"><span class="lineNum">     223 </span>                :<span class="lineCov">         22 :       tf.transform.translation.z = state.pose.pose.position.z;</span></a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">         22 :       tf.transform.rotation = state.pose.pose.orientation;</span></a>
-<a name="225"><span class="lineNum">     225 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :       m_tf_publisher-&gt;publish(tf_msg);</span></a>
+<a name="212"><span class="lineNum">     212 </span>  [<span class="branchCov" title="Branch 0 was taken 51 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 51 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         51 :   if (m_ekf-&gt;is_initialized() &amp;&amp; m_publisher) {</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 51 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="213"><span class="lineNum">     213 </span>        [<span class="branchCov" title="Branch 0 was taken 51 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        102 :     auto state = m_ekf-&gt;get_state();</span></a>
+<a name="214"><span class="lineNum">     214 </span>        [<span class="branchCov" title="Branch 0 was taken 51 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         51 :     m_publisher-&gt;publish(state);</span></a>
+<a name="215"><span class="lineNum">     215 </span>        [<span class="branchCov" title="Branch 0 was taken 23 times"> + </span><span class="branchCov" title="Branch 1 was taken 28 times"> + </span>]:<span class="lineCov">         51 :     if (m_tf_publisher) {</span></a>
+<a name="216"><span class="lineNum">     216 </span>                :<span class="lineCov">         46 :       TfMsgT tf_msg{};</span></a>
+<a name="217"><span class="lineNum">     217 </span>        [<span class="branchCov" title="Branch 0 was taken 23 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         23 :       tf_msg.transforms.emplace_back();</span></a>
+<a name="218"><span class="lineNum">     218 </span>                :<span class="lineCov">         23 :       auto &amp; tf = tf_msg.transforms.back();</span></a>
+<a name="219"><span class="lineNum">     219 </span>        [<span class="branchCov" title="Branch 0 was taken 23 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         23 :       tf.header = state.header;</span></a>
+<a name="220"><span class="lineNum">     220 </span>        [<span class="branchCov" title="Branch 0 was taken 23 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         23 :       tf.child_frame_id = state.child_frame_id;</span></a>
+<a name="221"><span class="lineNum">     221 </span>                :<span class="lineCov">         23 :       tf.transform.translation.x = state.pose.pose.position.x;</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">         23 :       tf.transform.translation.y = state.pose.pose.position.y;</span></a>
+<a name="223"><span class="lineNum">     223 </span>                :<span class="lineCov">         23 :       tf.transform.translation.z = state.pose.pose.position.z;</span></a>
+<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">         23 :       tf.transform.rotation = state.pose.pose.orientation;</span></a>
+<a name="225"><span class="lineNum">     225 </span>        [<span class="branchCov" title="Branch 0 was taken 23 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         23 :       m_tf_publisher-&gt;publish(tf_msg);</span></a>
 <a name="226"><span class="lineNum">     226 </span>                :            :     }</a>
 <a name="227"><span class="lineNum">     227 </span>                :            :   }</a>
-<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">         50 : }</span></a>
+<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">         51 : }</span></a>
 <a name="229"><span class="lineNum">     229 </span>                :            : </a>
 <a name="230"><span class="lineNum">     230 </span>                :            : template&lt;typename MessageT&gt;</a>
 <a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">         10 : void StateEstimationNode::create_subscriptions(</span></a>
