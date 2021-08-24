@@ -340,6 +340,8 @@ DA:122,0
 DA:123,0
 end_of_record
 TN:
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/polygon_remover_nodes/include/polygon_remover_nodes/polygon_remover_node.hpp
+end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/install/polygon_remover/include/polygon_remover/polygon_remover.hpp
 end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/polygon_remover_nodes/src/polygon_remover_node.cpp
@@ -647,8 +649,6 @@ BRDA:158,0,6,-
 BRDA:158,0,7,-
 BRDA:158,0,8,-
 BRDA:158,0,9,-
-end_of_record
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/polygon_remover_nodes/include/polygon_remover_nodes/polygon_remover_node.hpp
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/build/polygon_remover_nodes/rclcpp_components/node_main_polygon_remover_node_exe.cpp
