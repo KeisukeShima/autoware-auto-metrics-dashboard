@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-24 20:07:56</td>
+            <td class="headerValue">2021-08-25 20:07:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -224,13 +224,13 @@
 <a name="144"><span class="lineNum">     144 </span>                :            :   /// @return     true if the update was successful and false otherwise. In case false is returned,</a>
 <a name="145"><span class="lineNum">     145 </span>                :            :   ///             this update had no effect on the state of the filter.</a>
 <a name="146"><span class="lineNum">     146 </span>                :            :   ///</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">          7 :   inline common::types::bool8_t add_next_temporal_update_to_history()</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">          8 :   inline common::types::bool8_t add_next_temporal_update_to_history()</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            :   {</a>
-<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">          7 :     if (!is_initialized()) {return false;}</span></a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">          6 :     const auto next_prediction_timestamp =</span></a>
+<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">          8 :     if (!is_initialized()) {return false;}</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">          7 :     const auto next_prediction_timestamp =</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            :       m_time_grid.get_next_timestamp_after(m_history.get_last_timestamp());</a>
-<a name="152"><span class="lineNum">     152 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          6 :     m_history.emplace_event(next_prediction_timestamp, PredictionEvent{});</span></a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">          6 :     return true;</span></a>
+<a name="152"><span class="lineNum">     152 </span>  [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          7 :     m_history.emplace_event(next_prediction_timestamp, PredictionEvent{});</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">          7 :     return true;</span></a>
 <a name="154"><span class="lineNum">     154 </span>                :            :   }</a>
 <a name="155"><span class="lineNum">     155 </span>                :            : </a>
 <a name="156"><span class="lineNum">     156 </span>                :            :   ///</a>
@@ -254,9 +254,9 @@
 <a name="174"><span class="lineNum">     174 </span>                :            :   }</a>
 <a name="175"><span class="lineNum">     175 </span>                :            : </a>
 <a name="176"><span class="lineNum">     176 </span>                :            :   /// Check if the filter is is_initialized with a state.</a>
-<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">        321 :   inline common::types::bool8_t is_initialized() const noexcept</span></a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">        325 :   inline common::types::bool8_t is_initialized() const noexcept</span></a>
 <a name="178"><span class="lineNum">     178 </span>                :            :   {</a>
-<a name="179"><span class="lineNum">     179 </span>  [<span class="branchCov" title="Branch 0 was taken 303 times"> + </span><span class="branchCov" title="Branch 1 was taken 18 times"> + </span><span class="branchCov" title="Branch 2 was taken 303 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        321 :     return (!m_history.empty()) &amp;&amp; m_time_grid.is_initialized();</span></a>
+<a name="179"><span class="lineNum">     179 </span>  [<span class="branchCov" title="Branch 0 was taken 307 times"> + </span><span class="branchCov" title="Branch 1 was taken 18 times"> + </span><span class="branchCov" title="Branch 2 was taken 307 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        325 :     return (!m_history.empty()) &amp;&amp; m_time_grid.is_initialized();</span></a>
 <a name="180"><span class="lineNum">     180 </span>                :            :   }</a>
 <a name="181"><span class="lineNum">     181 </span>                :            : </a>
 <a name="182"><span class="lineNum">     182 </span>                :            :   /// Get the current state of the system as an odometry message.</a>

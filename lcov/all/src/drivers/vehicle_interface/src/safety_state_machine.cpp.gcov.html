@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-24 20:05:49</td>
+            <td class="headerValue">2021-08-25 20:05:13</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -130,9 +130,9 @@
 <a name="52"><span class="lineNum">      52 </span>                :            : static_assert(HeadlightsCommand::DISABLE == VSR::HEADLIGHT_OFF, &quot;HEADLIGHT_OFF !=&quot;);</a>
 <a name="53"><span class="lineNum">      53 </span>                :            : static_assert(HeadlightsCommand::ENABLE_LOW == VSR::HEADLIGHT_ON, &quot;HEADLIGHT_ON !=&quot;);</a>
 <a name="54"><span class="lineNum">      54 </span>                :            : static_assert(HeadlightsCommand::ENABLE_HIGH == VSR::HEADLIGHT_HIGH, &quot;HEADLIGHT_HIGH !=&quot;);</a>
-<a name="55"><span class="lineNum">      55 </span>                :            : static_assert(VSC::WIPER_OFF == VSR::WIPER_OFF, &quot;WIPER_OFF !=&quot;);</a>
-<a name="56"><span class="lineNum">      56 </span>                :            : static_assert(VSC::WIPER_LOW == VSR::WIPER_LOW, &quot;WIPER_LOW !=&quot;);</a>
-<a name="57"><span class="lineNum">      57 </span>                :            : static_assert(VSC::WIPER_HIGH == VSR::WIPER_HIGH, &quot;WIPER_HIGH !=&quot;);</a>
+<a name="55"><span class="lineNum">      55 </span>                :            : static_assert(WipersCommand::DISABLE == WipersReport::DISABLE, &quot;DISABLE !=&quot;);</a>
+<a name="56"><span class="lineNum">      56 </span>                :            : static_assert(WipersCommand::ENABLE_LOW == WipersReport::ENABLE_LOW, &quot;ENABLE_LOW !=&quot;);</a>
+<a name="57"><span class="lineNum">      57 </span>                :            : static_assert(WipersCommand::ENABLE_HIGH == WipersReport::ENABLE_HIGH, &quot;ENABLE_HIGH !=&quot;);</a>
 <a name="58"><span class="lineNum">      58 </span>                :            : static_assert(WipersCommand::ENABLE_CLEAN == WipersReport::ENABLE_CLEAN, &quot;ENABLE_CLEAN !=&quot;);</a>
 <a name="59"><span class="lineNum">      59 </span>                :            : static_assert(VSC::GEAR_DRIVE == VSR::GEAR_DRIVE, &quot;GEAR_DRIVE !=&quot;);</a>
 <a name="60"><span class="lineNum">      60 </span>                :            : static_assert(VSC::GEAR_REVERSE == VSR::GEAR_REVERSE, &quot;GEAR_REVERSE !=&quot;);</a>
@@ -315,8 +315,8 @@
 <a name="236"><span class="lineNum">     236 </span>                :            : {</a>
 <a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">        113 :   MaybeEnum ret{};</span></a>
 <a name="238"><span class="lineNum">     238 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchCov" title="Branch 1 was taken 99 times"> + </span>]:<span class="lineCov">        113 :   switch (in.wiper) {</span></a>
-<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">         14 :     case VSC::WIPER_LOW:</span></a>
-<a name="240"><span class="lineNum">     240 </span>                :            :     case VSC::WIPER_HIGH:</a>
+<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">         14 :     case WipersCommand::ENABLE_LOW:</span></a>
+<a name="240"><span class="lineNum">     240 </span>                :            :     case WipersCommand::ENABLE_HIGH:</a>
 <a name="241"><span class="lineNum">     241 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         14 :       switch (in.headlight) {</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">         10 :         case HeadlightsCommand::DISABLE:</span></a>
 <a name="243"><span class="lineNum">     243 </span>                :            :         case HeadlightsCommand::NO_COMMAND:</a>
@@ -328,9 +328,9 @@
 <a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">          4 :           break;</span></a>
 <a name="250"><span class="lineNum">     250 </span>                :            :       }</a>
 <a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">         14 :       break;</span></a>
-<a name="252"><span class="lineNum">     252 </span>                :<span class="lineCov">         99 :     case VSC::WIPER_OFF:</span></a>
-<a name="253"><span class="lineNum">     253 </span>                :            :     case VSC::WIPER_CLEAN:</a>
-<a name="254"><span class="lineNum">     254 </span>                :            :     case VSC::WIPER_NO_COMMAND:</a>
+<a name="252"><span class="lineNum">     252 </span>                :<span class="lineCov">         99 :     case WipersCommand::DISABLE:</span></a>
+<a name="253"><span class="lineNum">     253 </span>                :            :     case WipersCommand::ENABLE_CLEAN:</a>
+<a name="254"><span class="lineNum">     254 </span>                :            :     case WipersCommand::NO_COMMAND:</a>
 <a name="255"><span class="lineNum">     255 </span>                :            :     default:  // Throw on other cases?</a>
 <a name="256"><span class="lineNum">     256 </span>                :<span class="lineCov">         99 :       break;</span></a>
 <a name="257"><span class="lineNum">     257 </span>                :            :   }</a>
@@ -428,7 +428,7 @@
 <a name="348"><span class="lineNum">     348 </span>                :<span class="lineCov">        109 :         request = {command, stamp};</span></a>
 <a name="349"><span class="lineNum">     349 </span>                :            :       }</a>
 <a name="350"><span class="lineNum">     350 </span>                :<span class="lineCov">        678 :     };</span></a>
-<a name="351"><span class="lineNum">     351 </span>                :<span class="lineCov">        113 :   update_request(VSC::WIPER_NO_COMMAND, in.wiper, m_state.wiper, m_requests.wiper);</span></a>
+<a name="351"><span class="lineNum">     351 </span>                :<span class="lineCov">        113 :   update_request(WipersCommand::NO_COMMAND, in.wiper, m_state.wiper, m_requests.wiper);</span></a>
 <a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">        113 :   update_request(VSC::BLINKER_NO_COMMAND, in.blinker, m_state.blinker, m_requests.blinker);</span></a>
 <a name="353"><span class="lineNum">     353 </span>                :<span class="lineCov">        113 :   update_request(VSC::GEAR_NO_COMMAND, in.gear, m_state.gear, m_requests.gear);</span></a>
 <a name="354"><span class="lineNum">     354 </span>                :<span class="lineCov">        113 :   update_request(</span></a>
@@ -464,7 +464,7 @@
 <a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">        151 :     };</span></a>
 <a name="385"><span class="lineNum">     385 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.gear, in.gear, VSC::GEAR_NO_COMMAND);</span></a>
 <a name="386"><span class="lineNum">     386 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.blinker, in.blinker, VSC::BLINKER_NO_COMMAND);</span></a>
-<a name="387"><span class="lineNum">     387 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.wiper, in.wiper, VSC::WIPER_NO_COMMAND);</span></a>
+<a name="387"><span class="lineNum">     387 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.wiper, in.wiper, WipersCommand::NO_COMMAND);</span></a>
 <a name="388"><span class="lineNum">     388 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.headlight, in.headlight, HeadlightsCommand::NO_COMMAND);</span></a>
 <a name="389"><span class="lineNum">     389 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.mode, in.mode, VSC::MODE_NO_COMMAND);</span></a>
 <a name="390"><span class="lineNum">     390 </span>                :            :   // Check flags</a>
@@ -518,15 +518,15 @@
 <a name="438"><span class="lineNum">     438 </span>                :            :   }</a>
 <a name="439"><span class="lineNum">     439 </span>                :            :   // Wipers</a>
 <a name="440"><span class="lineNum">     440 </span>        [<span class="branchCov" title="Branch 0 was taken 111 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">        113 :   switch (msg.wiper) {</span></a>
-<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">        111 :     case VSC::WIPER_LOW:</span></a>
-<a name="442"><span class="lineNum">     442 </span>                :            :     case VSC::WIPER_HIGH:</a>
-<a name="443"><span class="lineNum">     443 </span>                :            :     case VSC::WIPER_OFF:</a>
-<a name="444"><span class="lineNum">     444 </span>                :            :     case VSC::WIPER_CLEAN:</a>
-<a name="445"><span class="lineNum">     445 </span>                :            :     case VSC::WIPER_NO_COMMAND:</a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">        111 :     case WipersCommand::ENABLE_LOW:</span></a>
+<a name="442"><span class="lineNum">     442 </span>                :            :     case WipersCommand::ENABLE_HIGH:</a>
+<a name="443"><span class="lineNum">     443 </span>                :            :     case WipersCommand::DISABLE:</a>
+<a name="444"><span class="lineNum">     444 </span>                :            :     case WipersCommand::ENABLE_CLEAN:</a>
+<a name="445"><span class="lineNum">     445 </span>                :            :     case WipersCommand::NO_COMMAND:</a>
 <a name="446"><span class="lineNum">     446 </span>                :<span class="lineCov">        111 :       break;</span></a>
 <a name="447"><span class="lineNum">     447 </span>                :<span class="lineCov">          2 :     default:</span></a>
 <a name="448"><span class="lineNum">     448 </span>                :<span class="lineCov">          2 :       did_sanitize = true;</span></a>
-<a name="449"><span class="lineNum">     449 </span>                :<span class="lineCov">          2 :       ret.wiper = VSC::WIPER_NO_COMMAND;</span></a>
+<a name="449"><span class="lineNum">     449 </span>                :<span class="lineCov">          2 :       ret.wiper = WipersCommand::NO_COMMAND;</span></a>
 <a name="450"><span class="lineNum">     450 </span>                :<span class="lineCov">          2 :       break;</span></a>
 <a name="451"><span class="lineNum">     451 </span>                :            :   }</a>
 <a name="452"><span class="lineNum">     452 </span>                :            :   // Gear</a>
