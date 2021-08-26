@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-25 20:05:13</td>
+            <td class="headerValue">2021-08-26 20:03:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -369,16 +369,16 @@
 <a name="267"><span class="lineNum">     267 </span>                :            :   // Correcting gears</a>
 <a name="268"><span class="lineNum">     268 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   auto const gear_iter = autoware_to_lgsvl_gear.find(msg.gear);</span></a>
 <a name="269"><span class="lineNum">     269 </span>                :            : </a>
-<a name="270"><span class="lineNum">     270 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          5 :   if (gear_iter != autoware_to_lgsvl_gear.end()) {</span></a>
-<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">          4 :     msg_corrected.gear = gear_iter-&gt;second;</span></a>
+<a name="270"><span class="lineNum">     270 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          5 :   if (gear_iter != autoware_to_lgsvl_gear.end()) {</span></a>
+<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">          3 :     msg_corrected.gear = gear_iter-&gt;second;</span></a>
 <a name="272"><span class="lineNum">     272 </span>                :            :   } else {</a>
-<a name="273"><span class="lineNum">     273 </span>                :<span class="lineCov">          1 :     msg_corrected.gear = static_cast&lt;uint8_t&gt;(VSD::GEAR_DRIVE);</span></a>
-<a name="274"><span class="lineNum">     274 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          1 :     RCLCPP_WARN(m_logger, &quot;Unsupported gear value in state command, defaulting to Drive&quot;);</span></a>
+<a name="273"><span class="lineNum">     273 </span>                :<span class="lineCov">          2 :     msg_corrected.gear = static_cast&lt;uint8_t&gt;(VSD::GEAR_DRIVE);</span></a>
+<a name="274"><span class="lineNum">     274 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          2 :     RCLCPP_WARN(m_logger, &quot;Unsupported gear value in state command, defaulting to Drive&quot;);</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchNoCov" title="Branch 10 was not taken"> - </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchNoCov" title="Branch 12 was not taken"> - </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchNoCov" title="Branch 16 was not taken"> - </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 1 time"> + </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
-<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span><span class="branchCov" title="Branch 26 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 1 time"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchNoCov" title="Branch 16 was not taken"> - </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 2 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span><span class="branchCov" title="Branch 26 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 2 times"> + </span> 
 <span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 29 was not taken"> - </span>]
 <a name="275"><span class="lineNum">     275 </span>                :            :   }</a>
 <a name="276"><span class="lineNum">     276 </span>                :            : </a>
