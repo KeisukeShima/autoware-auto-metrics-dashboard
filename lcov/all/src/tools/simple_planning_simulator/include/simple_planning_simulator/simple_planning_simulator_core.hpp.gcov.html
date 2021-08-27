@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-26 20:03:48</td>
+            <td class="headerValue">2021-08-27 20:06:13</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -146,15 +146,15 @@
 <a name="68"><span class="lineNum">      68 </span>                :            : public:</a>
 <a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">          5 :   DeltaTime()</span></a>
 <a name="70"><span class="lineNum">      70 </span>                :<span class="lineCov">          5 :   : prev_updated_time_ptr_(nullptr) {}</span></a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">       1412 :   float64_t get_dt(const rclcpp::Time &amp; now)</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">       1415 :   float64_t get_dt(const rclcpp::Time &amp; now)</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   {</a>
-<a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 1407 times"> + </span>]:<span class="lineCov">       1412 :     if (prev_updated_time_ptr_ == nullptr) {</span></a>
+<a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 1410 times"> + </span>]:<span class="lineCov">       1415 :     if (prev_updated_time_ptr_ == nullptr) {</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">          5 :       prev_updated_time_ptr_ = std::make_shared&lt;rclcpp::Time&gt;(now);</span></a>
 <a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">          5 :       return 0.0;</span></a>
 <a name="76"><span class="lineNum">      76 </span>                :            :     }</a>
-<a name="77"><span class="lineNum">      77 </span>        [<span class="branchCov" title="Branch 0 was taken 1407 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1407 :     const float64_t dt = (now - *prev_updated_time_ptr_).seconds();</span></a>
-<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">       1407 :     *prev_updated_time_ptr_ = now;</span></a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">       1407 :     return dt;</span></a>
+<a name="77"><span class="lineNum">      77 </span>        [<span class="branchCov" title="Branch 0 was taken 1410 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1410 :     const float64_t dt = (now - *prev_updated_time_ptr_).seconds();</span></a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">       1410 :     *prev_updated_time_ptr_ = now;</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">       1410 :     return dt;</span></a>
 <a name="80"><span class="lineNum">      80 </span>                :            :   }</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : </a>
 <a name="82"><span class="lineNum">      82 </span>                :            : private:</a>

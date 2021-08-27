@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-26 20:04:35</td>
+            <td class="headerValue">2021-08-27 20:07:02</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">21</td>
@@ -212,34 +212,34 @@
 <a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">         16 :   return ret;</span></a>
 <a name="134"><span class="lineNum">     134 </span>                :            : }</a>
 <a name="135"><span class="lineNum">     135 </span>                :            : </a>
-<a name="136"><span class="lineNum">     136 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 : PointCloudIts::PointCloudIts() {m_its.reserve(4);}</span></a>
+<a name="136"><span class="lineNum">     136 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          9 : PointCloudIts::PointCloudIts() {m_its.reserve(4);}</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            : </a>
-<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">       2167 : void PointCloudIts::reset(sensor_msgs::msg::PointCloud2 &amp; cloud, uint32_t idx)</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">       2350 : void PointCloudIts::reset(sensor_msgs::msg::PointCloud2 &amp; cloud, uint32_t idx)</span></a>
 <a name="139"><span class="lineNum">     139 </span>                :            : {</a>
 <a name="140"><span class="lineNum">     140 </span>                :            :   // Destroy the old iterators</a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">       2167 :   m_its.clear();</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">       2350 :   m_its.clear();</span></a>
 <a name="142"><span class="lineNum">     142 </span>                :            : </a>
 <a name="143"><span class="lineNum">     143 </span>                :            :   // Create new iterators</a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">       2167 :   m_its.emplace_back(cloud, &quot;x&quot;);</span></a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">       2167 :   m_its.emplace_back(cloud, &quot;y&quot;);</span></a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">       2167 :   m_its.emplace_back(cloud, &quot;z&quot;);</span></a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">       2167 :   m_its.emplace_back(cloud, &quot;intensity&quot;);</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">       2350 :   m_its.emplace_back(cloud, &quot;x&quot;);</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">       2350 :   m_its.emplace_back(cloud, &quot;y&quot;);</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">       2350 :   m_its.emplace_back(cloud, &quot;z&quot;);</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">       2350 :   m_its.emplace_back(cloud, &quot;intensity&quot;);</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            : </a>
 <a name="149"><span class="lineNum">     149 </span>                :            :   // Advance iterators to given index</a>
 <a name="150"><span class="lineNum">     150 </span>                :            :   // TODO(vrichard) replace explicit check by safe_cast</a>
 <a name="151"><span class="lineNum">     151 </span>                :            :   // See https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto/-/issues/1027</a>
-<a name="152"><span class="lineNum">     152 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2167 times"> + </span>]:<span class="lineCov">       2167 :   if (idx &gt; static_cast&lt;uint32_t&gt;(std::numeric_limits&lt;int&gt;::max())) {</span></a>
+<a name="152"><span class="lineNum">     152 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2350 times"> + </span>]:<span class="lineCov">       2350 :   if (idx &gt; static_cast&lt;uint32_t&gt;(std::numeric_limits&lt;int&gt;::max())) {</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            :     // prevent future access to random memory value or segmentation fault</a>
 <a name="154"><span class="lineNum">     154 </span>                :            :     throw std::runtime_error(</a>
 <a name="155"><span class="lineNum">     155 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :             &quot;converting &quot; + std::to_string(</span></a>
 <a name="156"><span class="lineNum">     156 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :               idx) + &quot; to int would change sign of value&quot;);</span></a>
 <a name="157"><span class="lineNum">     157 </span>                :            :   }</a>
-<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">       2167 :   const int i = static_cast&lt;int&gt;(idx);</span></a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">       2167 :   x_it() += i;</span></a>
-<a name="160"><span class="lineNum">     160 </span>                :<span class="lineCov">       2167 :   y_it() += i;</span></a>
-<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">       2167 :   z_it() += i;</span></a>
-<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">       2167 :   intensity_it() += i;</span></a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">       2167 : }</span></a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">       2350 :   const int i = static_cast&lt;int&gt;(idx);</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">       2350 :   x_it() += i;</span></a>
+<a name="160"><span class="lineNum">     160 </span>                :<span class="lineCov">       2350 :   y_it() += i;</span></a>
+<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">       2350 :   z_it() += i;</span></a>
+<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">       2350 :   intensity_it() += i;</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">       2350 : }</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            : </a>
 <a name="165"><span class="lineNum">     165 </span>                :<span class="lineNoCov">          0 : std::size_t index_after_last_safe_byte_index(const sensor_msgs::msg::PointCloud2 &amp; msg) noexcept</span></a>
 <a name="166"><span class="lineNum">     166 </span>                :            : {</a>
@@ -266,18 +266,18 @@
 <a name="187"><span class="lineNum">     187 </span>                :<span class="lineNoCov">          0 :   return SafeCloudIndices{num_floats * sizeof(float32_t), index_after_last_safe_byte_index(msg)};</span></a>
 <a name="188"><span class="lineNum">     188 </span>                :            : }</a>
 <a name="189"><span class="lineNum">     189 </span>                :            : </a>
-<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">         37 : void init_pcl_msg(</span></a>
+<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">         38 : void init_pcl_msg(</span></a>
 <a name="191"><span class="lineNum">     191 </span>                :            :   sensor_msgs::msg::PointCloud2 &amp; msg,</a>
 <a name="192"><span class="lineNum">     192 </span>                :            :   const std::string &amp; frame_id,</a>
 <a name="193"><span class="lineNum">     193 </span>                :            :   const std::size_t size)</a>
 <a name="194"><span class="lineNum">     194 </span>                :            : {</a>
-<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">         37 :   init_pcl_msg(</span></a>
+<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">         38 :   init_pcl_msg(</span></a>
 <a name="196"><span class="lineNum">     196 </span>                :            :     msg, frame_id, size, 4U,</a>
 <a name="197"><span class="lineNum">     197 </span>                :<span class="lineNoCov">          0 :     &quot;x&quot;, 1U, sensor_msgs::msg::PointField::FLOAT32,</span></a>
 <a name="198"><span class="lineNum">     198 </span>                :<span class="lineNoCov">          0 :     &quot;y&quot;, 1U, sensor_msgs::msg::PointField::FLOAT32,</span></a>
 <a name="199"><span class="lineNum">     199 </span>                :<span class="lineNoCov">          0 :     &quot;z&quot;, 1U, sensor_msgs::msg::PointField::FLOAT32,</span></a>
-<a name="200"><span class="lineNum">     200 </span>        [<span class="branchCov" title="Branch 0 was taken 37 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         37 :     &quot;intensity&quot;, 1U, sensor_msgs::msg::PointField::FLOAT32);</span></a>
-<a name="201"><span class="lineNum">     201 </span>                :<span class="lineCov">         37 : }</span></a>
+<a name="200"><span class="lineNum">     200 </span>        [<span class="branchCov" title="Branch 0 was taken 38 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         38 :     &quot;intensity&quot;, 1U, sensor_msgs::msg::PointField::FLOAT32);</span></a>
+<a name="201"><span class="lineNum">     201 </span>                :<span class="lineCov">         38 : }</span></a>
 <a name="202"><span class="lineNum">     202 </span>                :            : </a>
 <a name="203"><span class="lineNum">     203 </span>                :<span class="lineCov">         20 : bool8_t add_point_to_cloud_raw(</span></a>
 <a name="204"><span class="lineNum">     204 </span>                :            :   sensor_msgs::msg::PointCloud2 &amp; cloud,</a>
@@ -312,17 +312,17 @@
 <a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">         20 :   return ret;</span></a>
 <a name="234"><span class="lineNum">     234 </span>                :            : }</a>
 <a name="235"><span class="lineNum">     235 </span>                :            : </a>
-<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">   14035400 : bool8_t add_point_to_cloud(</span></a>
+<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">   16873300 : bool8_t add_point_to_cloud(</span></a>
 <a name="237"><span class="lineNum">     237 </span>                :            :   PointCloudIts &amp; cloud_its,</a>
 <a name="238"><span class="lineNum">     238 </span>                :            :   const autoware::common::types::PointXYZIF &amp; pt,</a>
 <a name="239"><span class="lineNum">     239 </span>                :            :   uint32_t &amp; point_cloud_idx)</a>
 <a name="240"><span class="lineNum">     240 </span>                :            : {</a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">   14035400 :   bool8_t ret = false;</span></a>
+<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">   16873300 :   bool8_t ret = false;</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :            : </a>
-<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">   14035400 :   auto &amp; x_it = cloud_its.x_it();</span></a>
-<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">   14035400 :   auto &amp; y_it = cloud_its.y_it();</span></a>
-<a name="245"><span class="lineNum">     245 </span>                :<span class="lineCov">   14035400 :   auto &amp; z_it = cloud_its.z_it();</span></a>
-<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">   14035400 :   auto &amp; intensity_it = cloud_its.intensity_it();</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">   16873300 :   auto &amp; x_it = cloud_its.x_it();</span></a>
+<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">   16873300 :   auto &amp; y_it = cloud_its.y_it();</span></a>
+<a name="245"><span class="lineNum">     245 </span>                :<span class="lineCov">   16873300 :   auto &amp; z_it = cloud_its.z_it();</span></a>
+<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">   16873300 :   auto &amp; intensity_it = cloud_its.intensity_it();</span></a>
 <a name="247"><span class="lineNum">     247 </span>                :            : </a>
 <a name="248"><span class="lineNum">     248 </span>                :            :   // Actual size is 20 due to padding by compilers for the memory alignment boundary.</a>
 <a name="249"><span class="lineNum">     249 </span>                :            :   // This check is to make sure that when we do a insert of 16 bytes, we will not stride</a>
@@ -331,54 +331,54 @@
 <a name="252"><span class="lineNum">     252 </span>                :            :     sizeof(autoware::common::types::PointXYZIF) &gt;= ((4U * sizeof(float32_t)) + sizeof(uint16_t)),</a>
 <a name="253"><span class="lineNum">     253 </span>                :            :     &quot;PointXYZF is not expected size: &quot;);</a>
 <a name="254"><span class="lineNum">     254 </span>                :            : </a>
-<a name="255"><span class="lineNum">     255 </span>        [<span class="branchCov" title="Branch 0 was taken 13984600 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">   28020000 :   if (x_it != x_it.end() &amp;&amp;</span></a>
-<a name="256"><span class="lineNum">     256 </span>        [<span class="branchCov" title="Branch 0 was taken 13984600 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">   27969100 :     y_it != y_it.end() &amp;&amp;</span></a>
-<a name="257"><span class="lineNum">     257 </span>  [<span class="branchCov" title="Branch 0 was taken 13984600 times"> + </span><span class="branchCov" title="Branch 1 was taken 50848 times"> + </span><span class="branchCov" title="Branch 2 was taken 13984600 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">   42004600 :     z_it != z_it.end() &amp;&amp;</span></a>
-<a name="258"><span class="lineNum">     258 </span>        [<span class="branchCov" title="Branch 0 was taken 13984600 times"> + </span><span class="branchCov" title="Branch 1 was taken 50848 times"> + </span>]:<span class="lineCov">   28020000 :     intensity_it != intensity_it.end())</span></a>
+<a name="255"><span class="lineNum">     255 </span>        [<span class="branchCov" title="Branch 0 was taken 16822800 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">   33696100 :   if (x_it != x_it.end() &amp;&amp;</span></a>
+<a name="256"><span class="lineNum">     256 </span>        [<span class="branchCov" title="Branch 0 was taken 16822800 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">   33645700 :     y_it != y_it.end() &amp;&amp;</span></a>
+<a name="257"><span class="lineNum">     257 </span>  [<span class="branchCov" title="Branch 0 was taken 16822800 times"> + </span><span class="branchCov" title="Branch 1 was taken 50434 times"> + </span><span class="branchCov" title="Branch 2 was taken 16822800 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">   50518900 :     z_it != z_it.end() &amp;&amp;</span></a>
+<a name="258"><span class="lineNum">     258 </span>        [<span class="branchCov" title="Branch 0 was taken 16822800 times"> + </span><span class="branchCov" title="Branch 1 was taken 50434 times"> + </span>]:<span class="lineCov">   33696100 :     intensity_it != intensity_it.end())</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            :   {</a>
 <a name="260"><span class="lineNum">     260 </span>                :            :     // add the point data</a>
-<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">   13984600 :     *x_it = pt.x;</span></a>
-<a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">   13984600 :     *y_it = pt.y;</span></a>
-<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">   13984600 :     *z_it = pt.z;</span></a>
-<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">   13984600 :     *intensity_it = pt.intensity;</span></a>
+<a name="261"><span class="lineNum">     261 </span>                :<span class="lineCov">   16822800 :     *x_it = pt.x;</span></a>
+<a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">   16822800 :     *y_it = pt.y;</span></a>
+<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">   16822800 :     *z_it = pt.z;</span></a>
+<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">   16822800 :     *intensity_it = pt.intensity;</span></a>
 <a name="265"><span class="lineNum">     265 </span>                :            : </a>
 <a name="266"><span class="lineNum">     266 </span>                :            :     // increment the index to keep track of the pointcloud's size</a>
-<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">   13984600 :     x_it += 1;</span></a>
-<a name="268"><span class="lineNum">     268 </span>                :<span class="lineCov">   13984600 :     y_it += 1;</span></a>
-<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">   13984600 :     z_it += 1;</span></a>
-<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">   13984600 :     intensity_it += 1;</span></a>
-<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">   13984600 :     ++point_cloud_idx;</span></a>
+<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">   16822800 :     x_it += 1;</span></a>
+<a name="268"><span class="lineNum">     268 </span>                :<span class="lineCov">   16822800 :     y_it += 1;</span></a>
+<a name="269"><span class="lineNum">     269 </span>                :<span class="lineCov">   16822800 :     z_it += 1;</span></a>
+<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">   16822800 :     intensity_it += 1;</span></a>
+<a name="271"><span class="lineNum">     271 </span>                :<span class="lineCov">   16822800 :     ++point_cloud_idx;</span></a>
 <a name="272"><span class="lineNum">     272 </span>                :            : </a>
-<a name="273"><span class="lineNum">     273 </span>                :<span class="lineCov">   13984600 :     ret = true;</span></a>
+<a name="273"><span class="lineNum">     273 </span>                :<span class="lineCov">   16822800 :     ret = true;</span></a>
 <a name="274"><span class="lineNum">     274 </span>                :            :   }</a>
-<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">   14035400 :   return ret;</span></a>
+<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">   16873300 :   return ret;</span></a>
 <a name="276"><span class="lineNum">     276 </span>                :            : }</a>
 <a name="277"><span class="lineNum">     277 </span>                :            : </a>
-<a name="278"><span class="lineNum">     278 </span>                :<span class="lineCov">    6987130 : bool8_t add_point_to_cloud(</span></a>
+<a name="278"><span class="lineNum">     278 </span>                :<span class="lineCov">    6908020 : bool8_t add_point_to_cloud(</span></a>
 <a name="279"><span class="lineNum">     279 </span>                :            :   sensor_msgs::msg::PointCloud2 &amp; cloud,</a>
 <a name="280"><span class="lineNum">     280 </span>                :            :   const autoware::common::types::PointXYZIF &amp; pt,</a>
 <a name="281"><span class="lineNum">     281 </span>                :            :   uint32_t &amp; point_cloud_idx)</a>
 <a name="282"><span class="lineNum">     282 </span>                :            : {</a>
-<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">    6987130 :   bool8_t ret = false;</span></a>
+<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">    6908020 :   bool8_t ret = false;</span></a>
 <a name="284"><span class="lineNum">     284 </span>                :            : </a>
-<a name="285"><span class="lineNum">     285 </span>  [<span class="branchCov" title="Branch 0 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">    6987130 :   sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; x_it(cloud, &quot;x&quot;);</span></a>
-<a name="286"><span class="lineNum">     286 </span>  [<span class="branchCov" title="Branch 0 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">    6987130 :   sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; y_it(cloud, &quot;y&quot;);</span></a>
-<a name="287"><span class="lineNum">     287 </span>  [<span class="branchCov" title="Branch 0 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">    6987130 :   sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; z_it(cloud, &quot;z&quot;);</span></a>
-<a name="288"><span class="lineNum">     288 </span>  [<span class="branchCov" title="Branch 0 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">    6987130 :   sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; intensity_it(cloud, &quot;intensity&quot;);</span></a>
+<a name="285"><span class="lineNum">     285 </span>  [<span class="branchCov" title="Branch 0 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">    6908020 :   sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; x_it(cloud, &quot;x&quot;);</span></a>
+<a name="286"><span class="lineNum">     286 </span>  [<span class="branchCov" title="Branch 0 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">    6908020 :   sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; y_it(cloud, &quot;y&quot;);</span></a>
+<a name="287"><span class="lineNum">     287 </span>  [<span class="branchCov" title="Branch 0 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">    6908020 :   sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; z_it(cloud, &quot;z&quot;);</span></a>
+<a name="288"><span class="lineNum">     288 </span>  [<span class="branchCov" title="Branch 0 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">    6908020 :   sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; intensity_it(cloud, &quot;intensity&quot;);</span></a>
 <a name="289"><span class="lineNum">     289 </span>                :            : </a>
 <a name="290"><span class="lineNum">     290 </span>                :            :   // TODO(vrichard) replace explicit check by safe_cast</a>
 <a name="291"><span class="lineNum">     291 </span>                :            :   // See https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto/-/issues/1027</a>
-<a name="292"><span class="lineNum">     292 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 6987130 times"> + </span>]:<span class="lineCov">    6987130 :   if (point_cloud_idx &gt; static_cast&lt;uint32_t&gt;(std::numeric_limits&lt;int&gt;::max())) {</span></a>
+<a name="292"><span class="lineNum">     292 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 6908020 times"> + </span>]:<span class="lineCov">    6908020 :   if (point_cloud_idx &gt; static_cast&lt;uint32_t&gt;(std::numeric_limits&lt;int&gt;::max())) {</span></a>
 <a name="293"><span class="lineNum">     293 </span>                :            :     // prevent future access to random memory value or segmentation fault</a>
 <a name="294"><span class="lineNum">     294 </span>                :            :     throw std::runtime_error(</a>
 <a name="295"><span class="lineNum">     295 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :             &quot;converting &quot; + std::to_string(</span></a>
 <a name="296"><span class="lineNum">     296 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :               point_cloud_idx) + &quot; to int would change sign of value&quot;);</span></a>
 <a name="297"><span class="lineNum">     297 </span>                :            :   }</a>
-<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">    6987130 :   const int idx = static_cast&lt;int&gt;(point_cloud_idx);</span></a>
-<a name="299"><span class="lineNum">     299 </span>                :<span class="lineCov">    6987130 :   x_it += idx;</span></a>
-<a name="300"><span class="lineNum">     300 </span>                :<span class="lineCov">    6987130 :   y_it += idx;</span></a>
-<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">    6987130 :   z_it += idx;</span></a>
-<a name="302"><span class="lineNum">     302 </span>                :<span class="lineCov">    6987130 :   intensity_it += idx;</span></a>
+<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">    6908020 :   const int idx = static_cast&lt;int&gt;(point_cloud_idx);</span></a>
+<a name="299"><span class="lineNum">     299 </span>                :<span class="lineCov">    6908020 :   x_it += idx;</span></a>
+<a name="300"><span class="lineNum">     300 </span>                :<span class="lineCov">    6908020 :   y_it += idx;</span></a>
+<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">    6908020 :   z_it += idx;</span></a>
+<a name="302"><span class="lineNum">     302 </span>                :<span class="lineCov">    6908020 :   intensity_it += idx;</span></a>
 <a name="303"><span class="lineNum">     303 </span>                :            : </a>
 <a name="304"><span class="lineNum">     304 </span>                :            :   // Actual size is 20 due to padding by compilers for the memory alignment boundary.</a>
 <a name="305"><span class="lineNum">     305 </span>                :            :   // This check is to make sure that when we do a insert of 16 bytes, we will not stride</a>
@@ -387,22 +387,22 @@
 <a name="308"><span class="lineNum">     308 </span>                :            :     sizeof(autoware::common::types::PointXYZIF) &gt;= ((4U * sizeof(float32_t)) + sizeof(uint16_t)),</a>
 <a name="309"><span class="lineNum">     309 </span>                :            :     &quot;PointXYZF is not expected size: &quot;);</a>
 <a name="310"><span class="lineNum">     310 </span>                :            : </a>
-<a name="311"><span class="lineNum">     311 </span>        [<span class="branchCov" title="Branch 0 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">   13974300 :   if (x_it != x_it.end() &amp;&amp;</span></a>
-<a name="312"><span class="lineNum">     312 </span>        [<span class="branchCov" title="Branch 0 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">   13974300 :     y_it != y_it.end() &amp;&amp;</span></a>
-<a name="313"><span class="lineNum">     313 </span>  [<span class="branchCov" title="Branch 0 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">   20961400 :     z_it != z_it.end() &amp;&amp;</span></a>
-<a name="314"><span class="lineNum">     314 </span>        [<span class="branchCov" title="Branch 0 was taken 6987130 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">   13974300 :     intensity_it != intensity_it.end())</span></a>
+<a name="311"><span class="lineNum">     311 </span>        [<span class="branchCov" title="Branch 0 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">   13816000 :   if (x_it != x_it.end() &amp;&amp;</span></a>
+<a name="312"><span class="lineNum">     312 </span>        [<span class="branchCov" title="Branch 0 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">   13816000 :     y_it != y_it.end() &amp;&amp;</span></a>
+<a name="313"><span class="lineNum">     313 </span>  [<span class="branchCov" title="Branch 0 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">   20724100 :     z_it != z_it.end() &amp;&amp;</span></a>
+<a name="314"><span class="lineNum">     314 </span>        [<span class="branchCov" title="Branch 0 was taken 6908020 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">   13816000 :     intensity_it != intensity_it.end())</span></a>
 <a name="315"><span class="lineNum">     315 </span>                :            :   {</a>
 <a name="316"><span class="lineNum">     316 </span>                :            :     // add the point data</a>
-<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">    6987130 :     *x_it = pt.x;</span></a>
-<a name="318"><span class="lineNum">     318 </span>                :<span class="lineCov">    6987130 :     *y_it = pt.y;</span></a>
-<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">    6987130 :     *z_it = pt.z;</span></a>
-<a name="320"><span class="lineNum">     320 </span>                :<span class="lineCov">    6987130 :     *intensity_it = pt.intensity;</span></a>
+<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">    6908020 :     *x_it = pt.x;</span></a>
+<a name="318"><span class="lineNum">     318 </span>                :<span class="lineCov">    6908020 :     *y_it = pt.y;</span></a>
+<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">    6908020 :     *z_it = pt.z;</span></a>
+<a name="320"><span class="lineNum">     320 </span>                :<span class="lineCov">    6908020 :     *intensity_it = pt.intensity;</span></a>
 <a name="321"><span class="lineNum">     321 </span>                :            : </a>
 <a name="322"><span class="lineNum">     322 </span>                :            :     // increment the index to keep track of the pointcloud's size</a>
-<a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">    6987130 :     ++point_cloud_idx;</span></a>
-<a name="324"><span class="lineNum">     324 </span>                :<span class="lineCov">    6987130 :     ret = true;</span></a>
+<a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">    6908020 :     ++point_cloud_idx;</span></a>
+<a name="324"><span class="lineNum">     324 </span>                :<span class="lineCov">    6908020 :     ret = true;</span></a>
 <a name="325"><span class="lineNum">     325 </span>                :            :   }</a>
-<a name="326"><span class="lineNum">     326 </span>                :<span class="lineCov">    6987130 :   return ret;</span></a>
+<a name="326"><span class="lineNum">     326 </span>                :<span class="lineCov">    6908020 :   return ret;</span></a>
 <a name="327"><span class="lineNum">     327 </span>                :            : }</a>
 <a name="328"><span class="lineNum">     328 </span>                :            : </a>
 <a name="329"><span class="lineNum">     329 </span>                :<span class="lineCov">         20 : bool8_t add_point_to_cloud(</span></a>
@@ -451,26 +451,26 @@
 <a name="372"><span class="lineNum">     372 </span>                :            : </a>
 <a name="373"><span class="lineNum">     373 </span>                :            : /////////////////////////////////////////////////////////////////////////////////////////</a>
 <a name="374"><span class="lineNum">     374 </span>                :            : </a>
-<a name="375"><span class="lineNum">     375 </span>                :<span class="lineCov">       2064 : void reset_pcl_msg(</span></a>
+<a name="375"><span class="lineNum">     375 </span>                :<span class="lineCov">       2145 : void reset_pcl_msg(</span></a>
 <a name="376"><span class="lineNum">     376 </span>                :            :   sensor_msgs::msg::PointCloud2 &amp; msg,</a>
 <a name="377"><span class="lineNum">     377 </span>                :            :   const std::size_t size,</a>
 <a name="378"><span class="lineNum">     378 </span>                :            :   uint32_t &amp; point_cloud_idx)</a>
 <a name="379"><span class="lineNum">     379 </span>                :            : {</a>
-<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">       2064 :   sensor_msgs::PointCloud2Modifier pc_modifier(msg);</span></a>
-<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">       2064 :   pc_modifier.clear();</span></a>
-<a name="382"><span class="lineNum">     382 </span>                :<span class="lineCov">       2064 :   point_cloud_idx = 0;</span></a>
-<a name="383"><span class="lineNum">     383 </span>        [<span class="branchCov" title="Branch 0 was taken 2064 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2064 :   pc_modifier.resize(size);</span></a>
-<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">       2064 : }</span></a>
+<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">       2145 :   sensor_msgs::PointCloud2Modifier pc_modifier(msg);</span></a>
+<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">       2145 :   pc_modifier.clear();</span></a>
+<a name="382"><span class="lineNum">     382 </span>                :<span class="lineCov">       2145 :   point_cloud_idx = 0;</span></a>
+<a name="383"><span class="lineNum">     383 </span>        [<span class="branchCov" title="Branch 0 was taken 2145 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2145 :   pc_modifier.resize(size);</span></a>
+<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">       2145 : }</span></a>
 <a name="385"><span class="lineNum">     385 </span>                :            : </a>
 <a name="386"><span class="lineNum">     386 </span>                :            : /////////////////////////////////////////////////////////////////////////////////////////</a>
 <a name="387"><span class="lineNum">     387 </span>                :            : </a>
-<a name="388"><span class="lineNum">     388 </span>                :<span class="lineCov">       1904 : void resize_pcl_msg(</span></a>
+<a name="388"><span class="lineNum">     388 </span>                :<span class="lineCov">       1989 : void resize_pcl_msg(</span></a>
 <a name="389"><span class="lineNum">     389 </span>                :            :   sensor_msgs::msg::PointCloud2 &amp; msg,</a>
 <a name="390"><span class="lineNum">     390 </span>                :            :   const std::size_t new_size)</a>
 <a name="391"><span class="lineNum">     391 </span>                :            : {</a>
-<a name="392"><span class="lineNum">     392 </span>                :<span class="lineCov">       1904 :   sensor_msgs::PointCloud2Modifier pc_modifier(msg);</span></a>
-<a name="393"><span class="lineNum">     393 </span>        [<span class="branchCov" title="Branch 0 was taken 1904 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1904 :   pc_modifier.resize(new_size);</span></a>
-<a name="394"><span class="lineNum">     394 </span>                :<span class="lineCov">       1904 : }</span></a>
+<a name="392"><span class="lineNum">     392 </span>                :<span class="lineCov">       1989 :   sensor_msgs::PointCloud2Modifier pc_modifier(msg);</span></a>
+<a name="393"><span class="lineNum">     393 </span>        [<span class="branchCov" title="Branch 0 was taken 1989 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1989 :   pc_modifier.resize(new_size);</span></a>
+<a name="394"><span class="lineNum">     394 </span>                :<span class="lineCov">       1989 : }</span></a>
 <a name="395"><span class="lineNum">     395 </span>                :            : </a>
 <a name="396"><span class="lineNum">     396 </span>                :<span class="lineCov">          6 : DistanceFilter::DistanceFilter(float32_t min_radius, float32_t max_radius)</span></a>
 <a name="397"><span class="lineNum">     397 </span>                :<span class="lineCov">          6 : : m_min_r2(min_radius * min_radius), m_max_r2(max_radius * max_radius)</span></a>
@@ -547,14 +547,14 @@
 <a name="466"><span class="lineNum">     466 </span>                :<span class="lineCov">          6 :   m_threshold2 = thresh * thresh;</span></a>
 <a name="467"><span class="lineNum">     467 </span>                :<span class="lineCov">          6 : }</span></a>
 <a name="468"><span class="lineNum">     468 </span>                :            : </a>
-<a name="469"><span class="lineNum">     469 </span>                :<span class="lineCov">    8766230 : bool8_t IntensityIteratorWrapper::eof()</span></a>
+<a name="469"><span class="lineNum">     469 </span>                :<span class="lineCov">    8678660 : bool8_t IntensityIteratorWrapper::eof()</span></a>
 <a name="470"><span class="lineNum">     470 </span>                :            : {</a>
-<a name="471"><span class="lineNum">     471 </span>     [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8766230 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">    8766230 :   switch (m_intensity_datatype) {</span></a>
+<a name="471"><span class="lineNum">     471 </span>     [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8678660 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">    8678660 :   switch (m_intensity_datatype) {</span></a>
 <a name="472"><span class="lineNum">     472 </span>                :            :     // For some reason, the equality operator (==) does not work with PointCloud2ConstIterator</a>
 <a name="473"><span class="lineNum">     473 </span>                :<span class="lineNoCov">          0 :     case sensor_msgs::msg::PointField::UINT8:</span></a>
 <a name="474"><span class="lineNum">     474 </span>                :<span class="lineNoCov">          0 :       return !(m_intensity_it_uint8 != m_intensity_it_uint8.end());</span></a>
-<a name="475"><span class="lineNum">     475 </span>                :<span class="lineCov">    8766230 :     case sensor_msgs::msg::PointField::FLOAT32:</span></a>
-<a name="476"><span class="lineNum">     476 </span>                :<span class="lineCov">    8766230 :       return !(m_intensity_it_float32 != m_intensity_it_float32.end());</span></a>
+<a name="475"><span class="lineNum">     475 </span>                :<span class="lineCov">    8678660 :     case sensor_msgs::msg::PointField::FLOAT32:</span></a>
+<a name="476"><span class="lineNum">     476 </span>                :<span class="lineCov">    8678660 :       return !(m_intensity_it_float32 != m_intensity_it_float32.end());</span></a>
 <a name="477"><span class="lineNum">     477 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
 <a name="478"><span class="lineNum">     478 </span>                :            :       throw std::runtime_error(</a>
 <a name="479"><span class="lineNum">     479 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :               &quot;Intensity type not supported: &quot; +</span></a>
@@ -562,44 +562,44 @@
 <a name="481"><span class="lineNum">     481 </span>                :            :   }</a>
 <a name="482"><span class="lineNum">     482 </span>                :            : }</a>
 <a name="483"><span class="lineNum">     483 </span>                :            : </a>
-<a name="484"><span class="lineNum">     484 </span>                :<span class="lineCov">    8766230 : void IntensityIteratorWrapper::next()</span></a>
+<a name="484"><span class="lineNum">     484 </span>                :<span class="lineCov">    8678660 : void IntensityIteratorWrapper::next()</span></a>
 <a name="485"><span class="lineNum">     485 </span>                :            : {</a>
-<a name="486"><span class="lineNum">     486 </span>     [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8766230 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">    8766230 :   switch (m_intensity_datatype) {</span></a>
+<a name="486"><span class="lineNum">     486 </span>     [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 8678660 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">    8678660 :   switch (m_intensity_datatype) {</span></a>
 <a name="487"><span class="lineNum">     487 </span>                :<span class="lineNoCov">          0 :     case sensor_msgs::msg::PointField::UINT8:</span></a>
 <a name="488"><span class="lineNum">     488 </span>                :<span class="lineNoCov">          0 :       ++m_intensity_it_uint8;</span></a>
 <a name="489"><span class="lineNum">     489 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
-<a name="490"><span class="lineNum">     490 </span>                :<span class="lineCov">    8766230 :     case sensor_msgs::msg::PointField::FLOAT32:</span></a>
-<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">    8766230 :       ++m_intensity_it_float32;</span></a>
-<a name="492"><span class="lineNum">     492 </span>                :<span class="lineCov">    8766230 :       break;</span></a>
+<a name="490"><span class="lineNum">     490 </span>                :<span class="lineCov">    8678660 :     case sensor_msgs::msg::PointField::FLOAT32:</span></a>
+<a name="491"><span class="lineNum">     491 </span>                :<span class="lineCov">    8678660 :       ++m_intensity_it_float32;</span></a>
+<a name="492"><span class="lineNum">     492 </span>                :<span class="lineCov">    8678660 :       break;</span></a>
 <a name="493"><span class="lineNum">     493 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
 <a name="494"><span class="lineNum">     494 </span>                :            :       throw std::runtime_error(</a>
 <a name="495"><span class="lineNum">     495 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :               &quot;Intensity type not supported: &quot; +</span></a>
 <a name="496"><span class="lineNum">     496 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :               std::to_string(m_intensity_datatype));</span></a>
 <a name="497"><span class="lineNum">     497 </span>                :            :   }</a>
-<a name="498"><span class="lineNum">     498 </span>                :<span class="lineCov">    8766230 : }</span></a>
+<a name="498"><span class="lineNum">     498 </span>                :<span class="lineCov">    8678660 : }</span></a>
 <a name="499"><span class="lineNum">     499 </span>                :            : </a>
-<a name="500"><span class="lineNum">     500 </span>                :<span class="lineCov">        807 : IntensityIteratorWrapper::IntensityIteratorWrapper(</span></a>
-<a name="501"><span class="lineNum">     501 </span>                :<span class="lineCov">        807 :   const PointCloud2 &amp; msg)</span></a>
+<a name="500"><span class="lineNum">     500 </span>                :<span class="lineCov">        801 : IntensityIteratorWrapper::IntensityIteratorWrapper(</span></a>
+<a name="501"><span class="lineNum">     501 </span>                :<span class="lineCov">        801 :   const PointCloud2 &amp; msg)</span></a>
 <a name="502"><span class="lineNum">     502 </span>                :            : : m_intensity_it_uint8(msg, &quot;intensity&quot;),</a>
-<a name="503"><span class="lineNum">     503 </span>  [<span class="branchCov" title="Branch 0 was taken 807 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 807 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        807 :   m_intensity_it_float32(msg, &quot;intensity&quot;)</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 807 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 807 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
+<a name="503"><span class="lineNum">     503 </span>  [<span class="branchCov" title="Branch 0 was taken 801 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 801 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        801 :   m_intensity_it_float32(msg, &quot;intensity&quot;)</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 801 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 801 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
 <a name="504"><span class="lineNum">     504 </span>                :            : {</a>
 <a name="505"><span class="lineNum">     505 </span>                :            :   auto &amp;&amp; intensity_field_it =</a>
 <a name="506"><span class="lineNum">     506 </span>                :            :     std::find_if(</a>
-<a name="507"><span class="lineNum">     507 </span>                :<span class="lineCov">       1614 :     std::cbegin(msg.fields), std::cend(msg.fields),</span></a>
-<a name="508"><span class="lineNum">     508 </span>  [<span class="branchCov" title="Branch 0 was taken 807 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 807 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       4035 :     [](const sensor_msgs::msg::PointField &amp; field) {return field.name == &quot;intensity&quot;;});</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 807 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="509"><span class="lineNum">     509 </span>                :<span class="lineCov">        807 :   m_intensity_datatype = (*intensity_field_it).datatype;</span></a>
-<a name="510"><span class="lineNum">     510 </span>        [<span class="branchCov" title="Branch 0 was taken 807 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        807 :   switch (m_intensity_datatype) {</span></a>
-<a name="511"><span class="lineNum">     511 </span>                :<span class="lineCov">        807 :     case sensor_msgs::msg::PointField::UINT8:</span></a>
+<a name="507"><span class="lineNum">     507 </span>                :<span class="lineCov">       1602 :     std::cbegin(msg.fields), std::cend(msg.fields),</span></a>
+<a name="508"><span class="lineNum">     508 </span>  [<span class="branchCov" title="Branch 0 was taken 801 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 801 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       4005 :     [](const sensor_msgs::msg::PointField &amp; field) {return field.name == &quot;intensity&quot;;});</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 801 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="509"><span class="lineNum">     509 </span>                :<span class="lineCov">        801 :   m_intensity_datatype = (*intensity_field_it).datatype;</span></a>
+<a name="510"><span class="lineNum">     510 </span>        [<span class="branchCov" title="Branch 0 was taken 801 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        801 :   switch (m_intensity_datatype) {</span></a>
+<a name="511"><span class="lineNum">     511 </span>                :<span class="lineCov">        801 :     case sensor_msgs::msg::PointField::UINT8:</span></a>
 <a name="512"><span class="lineNum">     512 </span>                :            :     case sensor_msgs::msg::PointField::FLOAT32:</a>
-<a name="513"><span class="lineNum">     513 </span>                :<span class="lineCov">        807 :       break;</span></a>
+<a name="513"><span class="lineNum">     513 </span>                :<span class="lineCov">        801 :       break;</span></a>
 <a name="514"><span class="lineNum">     514 </span>                :<span class="lineNoCov">          0 :     default:</span></a>
 <a name="515"><span class="lineNum">     515 </span>                :            :       throw std::runtime_error(</a>
 <a name="516"><span class="lineNum">     516 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :               &quot;Intensity type not supported: &quot; +</span></a>
 <a name="517"><span class="lineNum">     517 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :               std::to_string(m_intensity_datatype));</span></a>
 <a name="518"><span class="lineNum">     518 </span>                :            :   }</a>
-<a name="519"><span class="lineNum">     519 </span>                :<span class="lineCov">        807 : }</span></a>
+<a name="519"><span class="lineNum">     519 </span>                :<span class="lineCov">        801 : }</span></a>
 <a name="520"><span class="lineNum">     520 </span>                :            : </a>
 <a name="521"><span class="lineNum">     521 </span>                :            : }  // namespace lidar_utils</a>
 <a name="522"><span class="lineNum">     522 </span>                :            : }  // namespace common</a>

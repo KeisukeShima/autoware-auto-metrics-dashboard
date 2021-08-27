@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-26 20:05:51</td>
+            <td class="headerValue">2021-08-27 20:08:22</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">62</td>
@@ -223,13 +223,13 @@
 <a name="144"><span class="lineNum">     144 </span>                :            :   ///</a>
 <a name="145"><span class="lineNum">     145 </span>                :            :   void emplace_event(const Timestamp &amp; timestamp, const HistoryEntry &amp; entry);</a>
 <a name="146"><span class="lineNum">     146 </span>                :            :   /// @brief      Check if the history is empty.</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">        322 :   inline bool empty() const noexcept {return m_history.empty();}</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">        327 :   inline bool empty() const noexcept {return m_history.empty();}</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            :   /// @brief      Get size of history.</a>
 <a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">          1 :   inline std::size_t size() const noexcept {return m_history.size();}</span></a>
 <a name="150"><span class="lineNum">     150 </span>                :            :   /// @brief      Get last timestamp in history.</a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         75 :   inline const Timestamp &amp; get_last_timestamp() const noexcept {return m_history.rbegin()-&gt;first;}</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         76 :   inline const Timestamp &amp; get_last_timestamp() const noexcept {return m_history.rbegin()-&gt;first;}</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            :   /// @brief      Get last event in history.</a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         74 :   inline const HistoryEntry &amp; get_last_event() const noexcept {return m_history.rbegin()-&gt;second;}</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         75 :   inline const HistoryEntry &amp; get_last_event() const noexcept {return m_history.rbegin()-&gt;second;}</span></a>
 <a name="154"><span class="lineNum">     154 </span>                :            :   /// @brief      Get the filter as a const ref.</a>
 <a name="155"><span class="lineNum">     155 </span>                :            :   const FilterT &amp; get_filter() const noexcept {return m_filter;}</a>
 <a name="156"><span class="lineNum">     156 </span>                :            :   /// @brief      Get the filter.</a>
@@ -239,13 +239,13 @@
 <a name="160"><span class="lineNum">     160 </span>                :            :   ///</a>
 <a name="161"><span class="lineNum">     161 </span>                :            :   /// @brief      If the history is too large, drop the oldest event from it.</a>
 <a name="162"><span class="lineNum">     162 </span>                :            :   ///</a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">        113 :   inline void drop_oldest_event_if_needed()</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">        114 :   inline void drop_oldest_event_if_needed()</span></a>
 <a name="164"><span class="lineNum">     164 </span>                :            :   {</a>
-<a name="165"><span class="lineNum">     165 </span>  [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 105 times"> + </span><span class="branchCov" title="Branch 2 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        113 :     if ((m_history.size() &gt;= m_max_history_size) &amp;&amp; (m_max_history_size &gt; 0U)) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchCov" title="Branch 5 was taken 105 times"> + </span>]
+<a name="165"><span class="lineNum">     165 </span>  [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 106 times"> + </span><span class="branchCov" title="Branch 2 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        114 :     if ((m_history.size() &gt;= m_max_history_size) &amp;&amp; (m_max_history_size &gt; 0U)) {</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchCov" title="Branch 5 was taken 106 times"> + </span>]
 <a name="166"><span class="lineNum">     166 </span>                :<span class="lineCov">          8 :       (void) m_history.erase(m_history.begin());</span></a>
 <a name="167"><span class="lineNum">     167 </span>                :            :     }</a>
-<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">        113 :   }</span></a>
+<a name="168"><span class="lineNum">     168 </span>                :<span class="lineCov">        114 :   }</span></a>
 <a name="169"><span class="lineNum">     169 </span>                :            : </a>
 <a name="170"><span class="lineNum">     170 </span>                :            :   ///</a>
 <a name="171"><span class="lineNum">     171 </span>                :            :   /// @brief      Update all the following events as their state is based on the current one.</a>
@@ -269,7 +269,7 @@
 <a name="189"><span class="lineNum">     189 </span>                :            : </a>
 <a name="190"><span class="lineNum">     190 </span>                :            :   template&lt;typename SingleEventT&gt;</a>
 <a name="191"><span class="lineNum">     191 </span>                :            :   // cppcheck-suppress noExplicitConstructor; Conversion to the variant type takes place.</a>
-<a name="192"><span class="lineNum">     192 </span>  [<span class="branchCov" title="Branch 0 was taken 277 times"> + </span><span class="branchCov" title="Branch 1 was taken 41 times"> + </span><span class="branchCov" title="Branch 2 was taken 41 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        318 :   HistoryEntry(const SingleEventT &amp; event) : m_event {event} {}</span></a>
+<a name="192"><span class="lineNum">     192 </span>  [<span class="branchCov" title="Branch 0 was taken 278 times"> + </span><span class="branchCov" title="Branch 1 was taken 41 times"> + </span><span class="branchCov" title="Branch 2 was taken 41 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        319 :   HistoryEntry(const SingleEventT &amp; event) : m_event {event} {}</span></a>
 <a name="193"><span class="lineNum">     193 </span>                :            : </a>
 <a name="194"><span class="lineNum">     194 </span>                :            :   /// @brief      Update the stored state.</a>
 <a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">        112 :   void update_stored_state(const typename FilterT::State &amp; state) noexcept</span></a>
@@ -277,16 +277,16 @@
 <a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">        112 :     m_stored_state = state;</span></a>
 <a name="198"><span class="lineNum">     198 </span>                :<span class="lineCov">        112 :   }</span></a>
 <a name="199"><span class="lineNum">     199 </span>                :            :   /// @brief      Get the stored state.</a>
-<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">        166 :   const typename FilterT::State &amp; stored_state() const noexcept {return m_stored_state;}</span></a>
+<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">        168 :   const typename FilterT::State &amp; stored_state() const noexcept {return m_stored_state;}</span></a>
 <a name="201"><span class="lineNum">     201 </span>                :            :   /// @brief      Set the stored covariance.</a>
 <a name="202"><span class="lineNum">     202 </span>                :<span class="lineCov">        112 :   void update_stored_covariance(const typename FilterT::State::Matrix &amp; covariance) noexcept</span></a>
 <a name="203"><span class="lineNum">     203 </span>                :            :   {</a>
 <a name="204"><span class="lineNum">     204 </span>                :<span class="lineCov">        112 :     m_stored_covariance = covariance;</span></a>
 <a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">        112 :   }</span></a>
 <a name="206"><span class="lineNum">     206 </span>                :            :   /// @brief      Get the stored covariance.</a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">        166 :   const typename FilterT::State::Matrix &amp; stored_covariance() const noexcept</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">        168 :   const typename FilterT::State::Matrix &amp; stored_covariance() const noexcept</span></a>
 <a name="208"><span class="lineNum">     208 </span>                :            :   {</a>
-<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">        166 :     return m_stored_covariance;</span></a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">        168 :     return m_stored_covariance;</span></a>
 <a name="210"><span class="lineNum">     210 </span>                :            :   }</a>
 <a name="211"><span class="lineNum">     211 </span>                :            :   /// @brief      Get the event stored in this history entry.</a>
 <a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">        130 :   const mpark::variant&lt;EventT...&gt; &amp; event() const {return m_event;}</span></a>
@@ -355,20 +355,20 @@
 <a name="275"><span class="lineNum">     275 </span>                :            : };</a>
 <a name="276"><span class="lineNum">     276 </span>                :            : </a>
 <a name="277"><span class="lineNum">     277 </span>                :            : template&lt;typename FilterT, typename ... EventT&gt;</a>
-<a name="278"><span class="lineNum">     278 </span>                :<span class="lineCov">        113 : void History&lt;FilterT, EventT...&gt;::emplace_event(</span></a>
+<a name="278"><span class="lineNum">     278 </span>                :<span class="lineCov">        114 : void History&lt;FilterT, EventT...&gt;::emplace_event(</span></a>
 <a name="279"><span class="lineNum">     279 </span>                :            :   const Timestamp &amp; timestamp, const HistoryEntry &amp; entry)</a>
 <a name="280"><span class="lineNum">     280 </span>                :            : {</a>
-<a name="281"><span class="lineNum">     281 </span>        [<span class="branchCov" title="Branch 0 was taken 113 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        113 :   drop_oldest_event_if_needed();</span></a>
-<a name="282"><span class="lineNum">     282 </span>        [<span class="branchCov" title="Branch 0 was taken 113 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        113 :   const auto iterator_to_inserted_position = m_history.emplace(timestamp, entry);</span></a>
-<a name="283"><span class="lineNum">     283 </span>        [<span class="branchCov" title="Branch 0 was taken 109 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">        113 :   update_impacted_events(iterator_to_inserted_position);</span></a>
-<a name="284"><span class="lineNum">     284 </span>                :<span class="lineCov">        109 : }</span></a>
+<a name="281"><span class="lineNum">     281 </span>        [<span class="branchCov" title="Branch 0 was taken 114 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        114 :   drop_oldest_event_if_needed();</span></a>
+<a name="282"><span class="lineNum">     282 </span>        [<span class="branchCov" title="Branch 0 was taken 114 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        114 :   const auto iterator_to_inserted_position = m_history.emplace(timestamp, entry);</span></a>
+<a name="283"><span class="lineNum">     283 </span>        [<span class="branchCov" title="Branch 0 was taken 110 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">        114 :   update_impacted_events(iterator_to_inserted_position);</span></a>
+<a name="284"><span class="lineNum">     284 </span>                :<span class="lineCov">        110 : }</span></a>
 <a name="285"><span class="lineNum">     285 </span>                :            : </a>
 <a name="286"><span class="lineNum">     286 </span>                :            : template&lt;typename FilterT, typename ... EventT&gt;</a>
-<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">        113 : void History&lt;FilterT, EventT...&gt;::update_impacted_events(</span></a>
+<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">        114 : void History&lt;FilterT, EventT...&gt;::update_impacted_events(</span></a>
 <a name="288"><span class="lineNum">     288 </span>                :            :   const typename HistoryMap::iterator &amp; start_iter)</a>
 <a name="289"><span class="lineNum">     289 </span>                :            : {</a>
-<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">        113 :   Timestamp previous_timestamp{};</span></a>
-<a name="291"><span class="lineNum">     291 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchCov" title="Branch 1 was taken 95 times"> + </span>]:<span class="lineCov">        113 :   if (start_iter == m_history.begin()) {</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">        114 :   Timestamp previous_timestamp{};</span></a>
+<a name="291"><span class="lineNum">     291 </span>        [<span class="branchCov" title="Branch 0 was taken 18 times"> + </span><span class="branchCov" title="Branch 1 was taken 96 times"> + </span>]:<span class="lineCov">        114 :   if (start_iter == m_history.begin()) {</span></a>
 <a name="292"><span class="lineNum">     292 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         18 :     if (!mpark::holds_alternative&lt;ResetEvent&lt;FilterT&gt;&gt;(start_iter-&gt;second.event())) {</span></a>
 <a name="293"><span class="lineNum">     293 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :       (void) m_history.erase(start_iter);</span></a>
 <a name="294"><span class="lineNum">     294 </span>                :            :       throw std::runtime_error(</a>
@@ -377,15 +377,15 @@
 <a name="297"><span class="lineNum">     297 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :               &quot;increasing the queue size or debug program latencies.&quot;);</span></a>
 <a name="298"><span class="lineNum">     298 </span>                :            :     }</a>
 <a name="299"><span class="lineNum">     299 </span>                :            :   } else {</a>
-<a name="300"><span class="lineNum">     300 </span>        [<span class="branchCov" title="Branch 0 was taken 95 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         95 :     const auto prev_iter = std::prev(start_iter);</span></a>
-<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">         95 :     previous_timestamp = prev_iter-&gt;first;</span></a>
-<a name="302"><span class="lineNum">     302 </span>                :<span class="lineCov">         95 :     const auto &amp; prev_entry = prev_iter-&gt;second;</span></a>
-<a name="303"><span class="lineNum">     303 </span>  [<span class="branchCov" title="Branch 0 was taken 95 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 95 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         95 :     m_filter.reset(</span></a>
+<a name="300"><span class="lineNum">     300 </span>        [<span class="branchCov" title="Branch 0 was taken 96 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         96 :     const auto prev_iter = std::prev(start_iter);</span></a>
+<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">         96 :     previous_timestamp = prev_iter-&gt;first;</span></a>
+<a name="302"><span class="lineNum">     302 </span>                :<span class="lineCov">         96 :     const auto &amp; prev_entry = prev_iter-&gt;second;</span></a>
+<a name="303"><span class="lineNum">     303 </span>  [<span class="branchCov" title="Branch 0 was taken 96 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 96 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         96 :     m_filter.reset(</span></a>
 <span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
 <a name="304"><span class="lineNum">     304 </span>                :            :       typename FilterT::State{prev_entry.stored_state()},</a>
 <a name="305"><span class="lineNum">     305 </span>                :            :       prev_entry.stored_covariance());</a>
 <a name="306"><span class="lineNum">     306 </span>                :            :   }</a>
-<a name="307"><span class="lineNum">     307 </span>        [<span class="branchCov" title="Branch 0 was taken 112 times"> + </span><span class="branchCov" title="Branch 1 was taken 109 times"> + </span>]:<span class="lineCov">        221 :   for (auto iter = start_iter; iter != m_history.end(); ++iter) {</span></a>
+<a name="307"><span class="lineNum">     307 </span>        [<span class="branchCov" title="Branch 0 was taken 112 times"> + </span><span class="branchCov" title="Branch 1 was taken 110 times"> + </span>]:<span class="lineCov">        222 :   for (auto iter = start_iter; iter != m_history.end(); ++iter) {</span></a>
 <a name="308"><span class="lineNum">     308 </span>                :<span class="lineCov">        112 :     const auto current_timestamp = iter-&gt;first;</span></a>
 <a name="309"><span class="lineNum">     309 </span>                :<span class="lineCov">        112 :     auto &amp; entry = iter-&gt;second;</span></a>
 <a name="310"><span class="lineNum">     310 </span>        [<span class="branchCov" title="Branch 0 was taken 112 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        224 :     mpark::visit(</span></a>
@@ -395,7 +395,7 @@
 <a name="314"><span class="lineNum">     314 </span>        [<span class="branchCov" title="Branch 0 was taken 112 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        112 :     entry.update_stored_covariance(m_filter.covariance());</span></a>
 <a name="315"><span class="lineNum">     315 </span>                :<span class="lineCov">        112 :     previous_timestamp = iter-&gt;first;</span></a>
 <a name="316"><span class="lineNum">     316 </span>                :            :   }</a>
-<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">        109 : }</span></a>
+<a name="317"><span class="lineNum">     317 </span>                :<span class="lineCov">        110 : }</span></a>
 <a name="318"><span class="lineNum">     318 </span>                :            : </a>
 <a name="319"><span class="lineNum">     319 </span>                :            : </a>
 <a name="320"><span class="lineNum">     320 </span>                :            : }  // namespace state_estimation</a>
