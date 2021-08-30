@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-29 20:15:15</td>
+            <td class="headerValue">2021-08-30 20:17:13</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">1</td>
@@ -131,92 +131,96 @@
 <a name="53"><span class="lineNum">      53 </span>                :            :   }</a>
 <a name="54"><span class="lineNum">      54 </span>                :            : };</a>
 <a name="55"><span class="lineNum">      55 </span>                :            : </a>
-<a name="56"><span class="lineNum">      56 </span>                :            : /// \brief Class to associate the detections and tracks in euclidean space to ROIs in image space</a>
-<a name="57"><span class="lineNum">      57 </span>                :            : ///        on a first-come-first-serve manner.</a>
-<a name="58"><span class="lineNum">      58 </span>                :            : class TRACKING_PUBLIC GreedyRoiAssociator</a>
-<a name="59"><span class="lineNum">      59 </span>                :            : {</a>
-<a name="60"><span class="lineNum">      60 </span>                :            : public:</a>
-<a name="61"><span class="lineNum">      61 </span>                :            :   using float32_t = autoware::common::types::float32_t;</a>
-<a name="62"><span class="lineNum">      62 </span>                :            : </a>
-<a name="63"><span class="lineNum">      63 </span>                :            :   /// \brief Constructor</a>
-<a name="64"><span class="lineNum">      64 </span>                :            :   /// \param intrinsics Camera intrinsics of the ROI</a>
-<a name="65"><span class="lineNum">      65 </span>                :            :   /// \param iou_threshold Minimum score result for a track and ROI to be considered a match</a>
-<a name="66"><span class="lineNum">      66 </span>                :            :   GreedyRoiAssociator(</a>
-<a name="67"><span class="lineNum">      67 </span>                :            :     const CameraIntrinsics &amp; intrinsics,</a>
-<a name="68"><span class="lineNum">      68 </span>                :            :     float32_t iou_threshold = 0.1F</a>
-<a name="69"><span class="lineNum">      69 </span>                :            :   );</a>
-<a name="70"><span class="lineNum">      70 </span>                :            : </a>
-<a name="71"><span class="lineNum">      71 </span>                :            :   /// \brief Assign the tracks to the ROIs. The assignment is done by first projecting the tracks,</a>
-<a name="72"><span class="lineNum">      72 </span>                :            :   /// Then assigning each track to a detection according to the IoU metric in a greedy fashion.</a>
-<a name="73"><span class="lineNum">      73 </span>                :            :   /// \param rois ROI detections</a>
-<a name="74"><span class="lineNum">      74 </span>                :            :   /// \param tracks Tracks</a>
-<a name="75"><span class="lineNum">      75 </span>                :            :   /// \param tf_camera_from_track Transform from the track frame to the camera frame</a>
-<a name="76"><span class="lineNum">      76 </span>                :            :   /// \return The association between the tracks and the rois</a>
-<a name="77"><span class="lineNum">      77 </span>                :            :   AssociatorResult assign(</a>
-<a name="78"><span class="lineNum">      78 </span>                :            :     const autoware_auto_msgs::msg::ClassifiedRoiArray &amp; rois,</a>
-<a name="79"><span class="lineNum">      79 </span>                :            :     const std::vector&lt;TrackedObject&gt; &amp; tracks,</a>
-<a name="80"><span class="lineNum">      80 </span>                :            :     const geometry_msgs::msg::Transform &amp; tf_camera_from_track</a>
-<a name="81"><span class="lineNum">      81 </span>                :            :   ) const;</a>
-<a name="82"><span class="lineNum">      82 </span>                :            : </a>
-<a name="83"><span class="lineNum">      83 </span>                :            :   /// \brief Assign the objects to the ROIs. The assignment is done by first projecting the</a>
-<a name="84"><span class="lineNum">      84 </span>                :            :   /// detections, then assigning each detection to a ROI according to the IoU metric in a</a>
-<a name="85"><span class="lineNum">      85 </span>                :            :   /// greedy fashion.</a>
-<a name="86"><span class="lineNum">      86 </span>                :            :   /// \param rois Regions of Interest in camera frame from vision subsystem</a>
-<a name="87"><span class="lineNum">      87 </span>                :            :   /// \param objects DetectedObjects from lidar or radar</a>
-<a name="88"><span class="lineNum">      88 </span>                :            :   /// \param tf_camera_from_object Transform from the track frame to the camera frame</a>
-<a name="89"><span class="lineNum">      89 </span>                :            :   /// \return The association between the objects and the rois. In this case, &quot;tracks&quot; in the</a>
-<a name="90"><span class="lineNum">      90 </span>                :            :   ///         return struct refers to the 3D objects and &quot;detections&quot; refer to the ROIs</a>
-<a name="91"><span class="lineNum">      91 </span>                :            :   AssociatorResult assign(</a>
-<a name="92"><span class="lineNum">      92 </span>                :            :     const autoware_auto_msgs::msg::ClassifiedRoiArray &amp; rois,</a>
-<a name="93"><span class="lineNum">      93 </span>                :            :     const autoware_auto_msgs::msg::DetectedObjects &amp; objects,</a>
-<a name="94"><span class="lineNum">      94 </span>                :            :     const geometry_msgs::msg::Transform &amp; tf_camera_from_object</a>
-<a name="95"><span class="lineNum">      95 </span>                :            :   ) const;</a>
-<a name="96"><span class="lineNum">      96 </span>                :            : </a>
-<a name="97"><span class="lineNum">      97 </span>                :            : private:</a>
-<a name="98"><span class="lineNum">      98 </span>                :            :   // Create result struct and initialize data to expected default values</a>
-<a name="99"><span class="lineNum">      99 </span>                :            :   AssociatorResult create_and_init_result(</a>
-<a name="100"><span class="lineNum">     100 </span>                :            :     const std::size_t rois_size,</a>
-<a name="101"><span class="lineNum">     101 </span>                :            :     const std::size_t objects_size) const;</a>
-<a name="102"><span class="lineNum">     102 </span>                :            : </a>
-<a name="103"><span class="lineNum">     103 </span>                :            :   // Scan the ROIs to find the best matching roi for a given shape by projecting it onto image</a>
-<a name="104"><span class="lineNum">     104 </span>                :            :   // frame</a>
-<a name="105"><span class="lineNum">     105 </span>                :            :   std::size_t project_and_match_detection(</a>
-<a name="106"><span class="lineNum">     106 </span>                :            :     const std::vector&lt;geometry_msgs::msg::Point32&gt; &amp; object_shape_in_camera_frame,</a>
-<a name="107"><span class="lineNum">     107 </span>                :            :     const std::unordered_set&lt;std::size_t&gt; &amp; available_roi_indices,</a>
-<a name="108"><span class="lineNum">     108 </span>                :            :     const autoware_auto_msgs::msg::ClassifiedRoiArray &amp; rois) const;</a>
-<a name="109"><span class="lineNum">     109 </span>                :            : </a>
-<a name="110"><span class="lineNum">     110 </span>                :            :   // Uses the given matched_detection_idx to assign to appropriate containers in result</a>
-<a name="111"><span class="lineNum">     111 </span>                :            :   void handle_matching_output(</a>
-<a name="112"><span class="lineNum">     112 </span>                :            :     const std::size_t matched_detection_idx,</a>
-<a name="113"><span class="lineNum">     113 </span>                :            :     const std::size_t object_idx, AssociatorResult &amp; result) const;</a>
-<a name="114"><span class="lineNum">     114 </span>                :            : </a>
-<a name="115"><span class="lineNum">     115 </span>                :            :   CameraModel m_camera;</a>
-<a name="116"><span class="lineNum">     116 </span>                :            :   IOUHeuristic m_iou_func{};</a>
-<a name="117"><span class="lineNum">     117 </span>                :            :   float32_t m_iou_threshold{0.1F};</a>
-<a name="118"><span class="lineNum">     118 </span>                :            : };</a>
-<a name="119"><span class="lineNum">     119 </span>                :            : </a>
-<a name="120"><span class="lineNum">     120 </span>                :            : namespace details</a>
-<a name="121"><span class="lineNum">     121 </span>                :            : {</a>
-<a name="122"><span class="lineNum">     122 </span>                :            : /// \brief Transform a 3D prism shape msg into a transformed vector points.</a>
-<a name="123"><span class="lineNum">     123 </span>                :            : class TRACKING_PUBLIC ShapeTransformer</a>
-<a name="124"><span class="lineNum">     124 </span>                :            : {</a>
-<a name="125"><span class="lineNum">     125 </span>                :            : public:</a>
-<a name="126"><span class="lineNum">     126 </span>                :            :   explicit ShapeTransformer(const geometry_msgs::msg::Transform &amp; tf);</a>
-<a name="127"><span class="lineNum">     127 </span>                :            :   using Point32 = geometry_msgs::msg::Point32;</a>
-<a name="128"><span class="lineNum">     128 </span>                :            :   /// \brief Transform the bottom and top face vertices of the given shape. No order is preserved.</a>
-<a name="129"><span class="lineNum">     129 </span>                :            :   /// \param shape Shape msg.</a>
-<a name="130"><span class="lineNum">     130 </span>                :            :   /// \return Transformed vertices of the bottom and the top face.</a>
-<a name="131"><span class="lineNum">     131 </span>                :            :   std::vector&lt;Point32&gt; operator()(const autoware_auto_msgs::msg::Shape &amp; shape) const;</a>
-<a name="132"><span class="lineNum">     132 </span>                :            : </a>
-<a name="133"><span class="lineNum">     133 </span>                :            : private:</a>
-<a name="134"><span class="lineNum">     134 </span>                :            :   common::lidar_utils::StaticTransformer m_transformer;</a>
-<a name="135"><span class="lineNum">     135 </span>                :            : };</a>
-<a name="136"><span class="lineNum">     136 </span>                :            : }  // namespace details</a>
-<a name="137"><span class="lineNum">     137 </span>                :            : }  // namespace tracking</a>
-<a name="138"><span class="lineNum">     138 </span>                :            : }  // namespace perception</a>
-<a name="139"><span class="lineNum">     139 </span>                :            : }  // namespace autoware</a>
-<a name="140"><span class="lineNum">     140 </span>                :            : </a>
-<a name="141"><span class="lineNum">     141 </span>                :            : #endif  // TRACKING__GREEDY_ROI_ASSOCIATOR_HPP_</a>
+<a name="56"><span class="lineNum">      56 </span>                :            : struct GreedyRoiAssociatorConfig</a>
+<a name="57"><span class="lineNum">      57 </span>                :            : {</a>
+<a name="58"><span class="lineNum">      58 </span>                :            :   CameraIntrinsics intrinsics;</a>
+<a name="59"><span class="lineNum">      59 </span>                :            :   float32_t iou_threshold;</a>
+<a name="60"><span class="lineNum">      60 </span>                :            : };</a>
+<a name="61"><span class="lineNum">      61 </span>                :            : </a>
+<a name="62"><span class="lineNum">      62 </span>                :            : /// \brief Class to associate the detections and tracks in euclidean space to ROIs in image space</a>
+<a name="63"><span class="lineNum">      63 </span>                :            : ///        on a first-come-first-serve manner.</a>
+<a name="64"><span class="lineNum">      64 </span>                :            : class TRACKING_PUBLIC GreedyRoiAssociator</a>
+<a name="65"><span class="lineNum">      65 </span>                :            : {</a>
+<a name="66"><span class="lineNum">      66 </span>                :            : public:</a>
+<a name="67"><span class="lineNum">      67 </span>                :            :   using float32_t = autoware::common::types::float32_t;</a>
+<a name="68"><span class="lineNum">      68 </span>                :            : </a>
+<a name="69"><span class="lineNum">      69 </span>                :            :   /// \brief Constructor</a>
+<a name="70"><span class="lineNum">      70 </span>                :            :   /// \param config Configuration for projection and association</a>
+<a name="71"><span class="lineNum">      71 </span>                :            :   GreedyRoiAssociator(</a>
+<a name="72"><span class="lineNum">      72 </span>                :            :     const GreedyRoiAssociatorConfig &amp; config</a>
+<a name="73"><span class="lineNum">      73 </span>                :            :   );</a>
+<a name="74"><span class="lineNum">      74 </span>                :            : </a>
+<a name="75"><span class="lineNum">      75 </span>                :            :   /// \brief Assign the tracks to the ROIs. The assignment is done by first projecting the tracks,</a>
+<a name="76"><span class="lineNum">      76 </span>                :            :   /// Then assigning each track to a detection according to the IoU metric in a greedy fashion.</a>
+<a name="77"><span class="lineNum">      77 </span>                :            :   /// \param rois ROI detections</a>
+<a name="78"><span class="lineNum">      78 </span>                :            :   /// \param tracks Tracks</a>
+<a name="79"><span class="lineNum">      79 </span>                :            :   /// \param tf_camera_from_track Transform from the track frame to the camera frame</a>
+<a name="80"><span class="lineNum">      80 </span>                :            :   /// \return The association between the tracks and the rois</a>
+<a name="81"><span class="lineNum">      81 </span>                :            :   AssociatorResult assign(</a>
+<a name="82"><span class="lineNum">      82 </span>                :            :     const autoware_auto_msgs::msg::ClassifiedRoiArray &amp; rois,</a>
+<a name="83"><span class="lineNum">      83 </span>                :            :     const std::vector&lt;TrackedObject&gt; &amp; tracks,</a>
+<a name="84"><span class="lineNum">      84 </span>                :            :     const geometry_msgs::msg::Transform &amp; tf_camera_from_track</a>
+<a name="85"><span class="lineNum">      85 </span>                :            :   ) const;</a>
+<a name="86"><span class="lineNum">      86 </span>                :            : </a>
+<a name="87"><span class="lineNum">      87 </span>                :            :   /// \brief Assign the objects to the ROIs. The assignment is done by first projecting the</a>
+<a name="88"><span class="lineNum">      88 </span>                :            :   /// detections, then assigning each detection to a ROI according to the IoU metric in a</a>
+<a name="89"><span class="lineNum">      89 </span>                :            :   /// greedy fashion.</a>
+<a name="90"><span class="lineNum">      90 </span>                :            :   /// \param rois Regions of Interest in camera frame from vision subsystem</a>
+<a name="91"><span class="lineNum">      91 </span>                :            :   /// \param objects DetectedObjects from lidar or radar</a>
+<a name="92"><span class="lineNum">      92 </span>                :            :   /// \param tf_camera_from_object Transform from the track frame to the camera frame</a>
+<a name="93"><span class="lineNum">      93 </span>                :            :   /// \return The association between the objects and the rois. In this case, &quot;tracks&quot; in the</a>
+<a name="94"><span class="lineNum">      94 </span>                :            :   ///         return struct refers to the 3D objects and &quot;detections&quot; refer to the ROIs</a>
+<a name="95"><span class="lineNum">      95 </span>                :            :   AssociatorResult assign(</a>
+<a name="96"><span class="lineNum">      96 </span>                :            :     const autoware_auto_msgs::msg::ClassifiedRoiArray &amp; rois,</a>
+<a name="97"><span class="lineNum">      97 </span>                :            :     const autoware_auto_msgs::msg::DetectedObjects &amp; objects,</a>
+<a name="98"><span class="lineNum">      98 </span>                :            :     const geometry_msgs::msg::Transform &amp; tf_camera_from_object</a>
+<a name="99"><span class="lineNum">      99 </span>                :            :   ) const;</a>
+<a name="100"><span class="lineNum">     100 </span>                :            : </a>
+<a name="101"><span class="lineNum">     101 </span>                :            : private:</a>
+<a name="102"><span class="lineNum">     102 </span>                :            :   // Create result struct and initialize data to expected default values</a>
+<a name="103"><span class="lineNum">     103 </span>                :            :   AssociatorResult create_and_init_result(</a>
+<a name="104"><span class="lineNum">     104 </span>                :            :     const std::size_t rois_size,</a>
+<a name="105"><span class="lineNum">     105 </span>                :            :     const std::size_t objects_size) const;</a>
+<a name="106"><span class="lineNum">     106 </span>                :            : </a>
+<a name="107"><span class="lineNum">     107 </span>                :            :   // Scan the ROIs to find the best matching roi for a given shape by projecting it onto image</a>
+<a name="108"><span class="lineNum">     108 </span>                :            :   // frame</a>
+<a name="109"><span class="lineNum">     109 </span>                :            :   std::size_t project_and_match_detection(</a>
+<a name="110"><span class="lineNum">     110 </span>                :            :     const std::vector&lt;geometry_msgs::msg::Point32&gt; &amp; object_shape_in_camera_frame,</a>
+<a name="111"><span class="lineNum">     111 </span>                :            :     const std::unordered_set&lt;std::size_t&gt; &amp; available_roi_indices,</a>
+<a name="112"><span class="lineNum">     112 </span>                :            :     const autoware_auto_msgs::msg::ClassifiedRoiArray &amp; rois) const;</a>
+<a name="113"><span class="lineNum">     113 </span>                :            : </a>
+<a name="114"><span class="lineNum">     114 </span>                :            :   // Uses the given matched_detection_idx to assign to appropriate containers in result</a>
+<a name="115"><span class="lineNum">     115 </span>                :            :   void handle_matching_output(</a>
+<a name="116"><span class="lineNum">     116 </span>                :            :     const std::size_t matched_detection_idx,</a>
+<a name="117"><span class="lineNum">     117 </span>                :            :     const std::size_t object_idx, AssociatorResult &amp; result) const;</a>
+<a name="118"><span class="lineNum">     118 </span>                :            : </a>
+<a name="119"><span class="lineNum">     119 </span>                :            :   CameraModel m_camera;</a>
+<a name="120"><span class="lineNum">     120 </span>                :            :   IOUHeuristic m_iou_func{};</a>
+<a name="121"><span class="lineNum">     121 </span>                :            :   float32_t m_iou_threshold{0.1F};</a>
+<a name="122"><span class="lineNum">     122 </span>                :            : };</a>
+<a name="123"><span class="lineNum">     123 </span>                :            : </a>
+<a name="124"><span class="lineNum">     124 </span>                :            : namespace details</a>
+<a name="125"><span class="lineNum">     125 </span>                :            : {</a>
+<a name="126"><span class="lineNum">     126 </span>                :            : /// \brief Transform a 3D prism shape msg into a transformed vector points.</a>
+<a name="127"><span class="lineNum">     127 </span>                :            : class TRACKING_PUBLIC ShapeTransformer</a>
+<a name="128"><span class="lineNum">     128 </span>                :            : {</a>
+<a name="129"><span class="lineNum">     129 </span>                :            : public:</a>
+<a name="130"><span class="lineNum">     130 </span>                :            :   explicit ShapeTransformer(const geometry_msgs::msg::Transform &amp; tf);</a>
+<a name="131"><span class="lineNum">     131 </span>                :            :   using Point32 = geometry_msgs::msg::Point32;</a>
+<a name="132"><span class="lineNum">     132 </span>                :            :   /// \brief Transform the bottom and top face vertices of the given shape. No order is preserved.</a>
+<a name="133"><span class="lineNum">     133 </span>                :            :   /// \param shape Shape msg.</a>
+<a name="134"><span class="lineNum">     134 </span>                :            :   /// \return Transformed vertices of the bottom and the top face.</a>
+<a name="135"><span class="lineNum">     135 </span>                :            :   std::vector&lt;Point32&gt; operator()(const autoware_auto_msgs::msg::Shape &amp; shape) const;</a>
+<a name="136"><span class="lineNum">     136 </span>                :            : </a>
+<a name="137"><span class="lineNum">     137 </span>                :            : private:</a>
+<a name="138"><span class="lineNum">     138 </span>                :            :   common::lidar_utils::StaticTransformer m_transformer;</a>
+<a name="139"><span class="lineNum">     139 </span>                :            : };</a>
+<a name="140"><span class="lineNum">     140 </span>                :            : }  // namespace details</a>
+<a name="141"><span class="lineNum">     141 </span>                :            : }  // namespace tracking</a>
+<a name="142"><span class="lineNum">     142 </span>                :            : }  // namespace perception</a>
+<a name="143"><span class="lineNum">     143 </span>                :            : }  // namespace autoware</a>
+<a name="144"><span class="lineNum">     144 </span>                :            : </a>
+<a name="145"><span class="lineNum">     145 </span>                :            : #endif  // TRACKING__GREEDY_ROI_ASSOCIATOR_HPP_</a>
 </pre>
       </td>
     </tr>
