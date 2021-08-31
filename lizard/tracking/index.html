@@ -68,6 +68,46 @@ Cyclomatic complexity
 
   
   <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::create_and_init_result</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">16</td>
+    
+
+    
+       <td class="value">100</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::handle_matching_output</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="value">59</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
     <td style="background-color:LightSteelBlue">autoware::perception::tracking::GreedyRoiAssociator::GreedyRoiAssociator</td>
     <td></td>
     
@@ -128,26 +168,6 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::tracking::GreedyRoiAssociator::create_and_init_result</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">16</td>
-    
-
-    
-       <td class="value">103</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
     <td style="background-color:LightSteelBlue">autoware::perception::tracking::GreedyRoiAssociator::project_and_match_detection</td>
     <td></td>
     
@@ -160,26 +180,6 @@ Cyclomatic complexity
 
     
        <td class="value">144</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::tracking::GreedyRoiAssociator::handle_matching_output</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">12</td>
-    
-
-    
-       <td class="value">62</td>
     
 
     
@@ -416,30 +416,150 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::tracking::TrackCreator::TrackCreator</td>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::CreationPolicyBase::CreationPolicyBase</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">24</td>
+    
+
+    
        <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">16</td>
-    
-
-    
-       <td class="lesser-value">1</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::tracking::TrackCreator::add_unassigned_lidar_clusters</td>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::CreationPolicyBase::populate_unassigned_lidar_detections</td>
     <td></td>
     
        <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">11</td>
+    
+
+    
+       <td class="value">65</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::LidarClusterIfVisionPolicy::add_objects</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">29</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::LidarOnlyPolicy::LidarOnlyPolicy</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="value">21</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::LidarOnlyPolicy::add_objects</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">29</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::LidarOnlyPolicy::create</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">42</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::LidarClusterIfVisionPolicy::add_objects</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="value">84</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::LidarClusterIfVisionPolicy::LidarClusterIfVisionPolicy</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
     
 
     
@@ -447,27 +567,27 @@ Cyclomatic complexity
     
 
     
-       <td class="value">63</td>
+       <td class="value">57</td>
     
 
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">3</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::tracking::TrackCreator::create_tracks_from_all_clusters</td>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::LidarClusterIfVisionPolicy::create</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">5</td>
     
 
     
-       <td class="lesser-value">9</td>
+       <td class="lesser-value">32</td>
     
 
     
-       <td class="value">49</td>
+       <td class="value">228</td>
     
 
     
@@ -476,22 +596,22 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::tracking::TrackCreator::create_tracks</td>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::TrackCreator::TrackCreator</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">4</td>
     
 
     
-       <td class="lesser-value">9</td>
+       <td class="lesser-value">23</td>
     
 
     
-       <td class="value">35</td>
+       <td class="value">110</td>
     
 
     
-       <td class="lesser-value">0</td>
+       <td class="lesser-value">1</td>
     
   </tr>
   
@@ -829,7 +949,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">371</td>
+       <td class="value">375</td>
     
 
     
@@ -1174,6 +1294,75 @@ Cyclomatic complexity
   <tr><td colspan="7" style="background-color:LightBlue;">
   Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/tracking/include/tracking/track_creator.hpp</b></td></tr>
 
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::LidarOnlyPolicy::add_objects</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">24</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::TRACKING_PUBLICTrackCreator::create_tracks</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::tracking::TRACKING_PUBLICTrackCreator::add_objects</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">26</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
@@ -1379,7 +1568,7 @@ Cyclomatic complexity
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2021-08-30 20:19
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-08-31 20:10
     </td></tr>
 </table>
  </body>

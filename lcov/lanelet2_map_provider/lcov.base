@@ -202,6 +202,8 @@ end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/mapping/had_map/lanelet2_map_provider/include/lanelet2_map_provider/lanelet2_map_provider.hpp
 end_of_record
+SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/mapping/had_map/lanelet2_map_provider/include/lanelet2_map_provider/lanelet2_map_provider_node.hpp
+end_of_record
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/install/autoware_auto_msgs/include/autoware_auto_msgs/srv/detail/had_map_service__struct.hpp
 FN:35,_ZN18autoware_auto_msgs3srv22HADMapService_Request_ISaIvEEC2EN18rosidl_runtime_cpp21MessageInitializationE
 FNDA:0,_ZN18autoware_auto_msgs3srv22HADMapService_Request_ISaIvEEC2EN18rosidl_runtime_cpp21MessageInitializationE
@@ -608,8 +610,6 @@ BRDA:52,0,2,-
 BRDA:52,0,3,-
 DA:55,0
 DA:57,0
-end_of_record
-SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/mapping/had_map/lanelet2_map_provider/include/lanelet2_map_provider/lanelet2_map_provider_node.hpp
 end_of_record
 TN:
 SF:/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/mapping/had_map/lanelet2_map_provider/src/lanelet2_map_visualizer.cpp

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-30 20:14:52</td>
+            <td class="headerValue">2021-08-31 20:06:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -115,33 +115,33 @@
 <a name="37"><span class="lineNum">      37 </span>                :            : namespace details</a>
 <a name="38"><span class="lineNum">      38 </span>                :            : {</a>
 <a name="39"><span class="lineNum">      39 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="40"><span class="lineNum">      40 </span>                :<span class="lineCov">       6336 : void size_2d(</span></a>
+<a name="40"><span class="lineNum">      40 </span>                :<span class="lineCov">       7336 : void size_2d(</span></a>
 <a name="41"><span class="lineNum">      41 </span>                :            :   const decltype(BoundingBox::corners) &amp; corners,</a>
 <a name="42"><span class="lineNum">      42 </span>                :            :   geometry_msgs::msg::Point32 &amp; ret)</a>
 <a name="43"><span class="lineNum">      43 </span>                :            : {</a>
-<a name="44"><span class="lineNum">      44 </span>                :<span class="lineCov">       6336 :   ret.x = std::max(</span></a>
-<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">       6336 :     norm_2d(</span></a>
-<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">       6336 :       minus_2d(</span></a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       6336 :         corners[1U],</span></a>
-<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">      19008 :         corners[0U])), std::numeric_limits&lt;float32_t&gt;::epsilon());</span></a>
-<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">       6336 :   ret.y = std::max(</span></a>
-<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">       6336 :     norm_2d(</span></a>
-<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">       6336 :       minus_2d(</span></a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">       6336 :         corners[2U],</span></a>
-<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">      19008 :         corners[1U])), std::numeric_limits&lt;float32_t&gt;::epsilon());</span></a>
-<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">       6336 : }</span></a>
+<a name="44"><span class="lineNum">      44 </span>                :<span class="lineCov">       7336 :   ret.x = std::max(</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">       7336 :     norm_2d(</span></a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">       7336 :       minus_2d(</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       7336 :         corners[1U],</span></a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">      22008 :         corners[0U])), std::numeric_limits&lt;float32_t&gt;::epsilon());</span></a>
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">       7336 :   ret.y = std::max(</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">       7336 :     norm_2d(</span></a>
+<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">       7336 :       minus_2d(</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">       7336 :         corners[2U],</span></a>
+<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">      22008 :         corners[1U])), std::numeric_limits&lt;float32_t&gt;::epsilon());</span></a>
+<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">       7336 : }</span></a>
 <a name="55"><span class="lineNum">      55 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">        883 : void finalize_box(const decltype(BoundingBox::corners) &amp; corners, BoundingBox &amp; box)</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">       1083 : void finalize_box(const decltype(BoundingBox::corners) &amp; corners, BoundingBox &amp; box)</span></a>
 <a name="57"><span class="lineNum">      57 </span>                :            : {</a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">        883 :   (void)std::copy(&amp;corners[0U], &amp;corners[corners.size()], &amp;box.corners[0U]);</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">       1083 :   (void)std::copy(&amp;corners[0U], &amp;corners[corners.size()], &amp;box.corners[0U]);</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   // orientation: this is robust to lines</a>
 <a name="60"><span class="lineNum">      60 </span>                :            :   const float32_t yaw_rad_2 =</a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">        883 :     atan2f(box.corners[2U].y - box.corners[1U].y, box.corners[2U].x - box.corners[1U].x) * 0.5F;</span></a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">        883 :   box.orientation.w = cosf(yaw_rad_2);</span></a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">        883 :   box.orientation.z = sinf(yaw_rad_2);</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">       1083 :     atan2f(box.corners[2U].y - box.corners[1U].y, box.corners[2U].x - box.corners[1U].x) * 0.5F;</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">       1083 :   box.orientation.w = cosf(yaw_rad_2);</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">       1083 :   box.orientation.z = sinf(yaw_rad_2);</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            :   // centroid</a>
-<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">        883 :   box.centroid = times_2d(plus_2d(corners[0U], corners[2U]), 0.5F);</span></a>
-<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">        883 : }</span></a>
+<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">       1083 :   box.centroid = times_2d(plus_2d(corners[0U], corners[2U]), 0.5F);</span></a>
+<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">       1083 : }</span></a>
 <a name="67"><span class="lineNum">      67 </span>                :            : </a>
 <a name="68"><span class="lineNum">      68 </span>                :            : </a>
 <a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">          8 : autoware_auto_msgs::msg::Shape make_shape(const BoundingBox &amp; box)</span></a>
