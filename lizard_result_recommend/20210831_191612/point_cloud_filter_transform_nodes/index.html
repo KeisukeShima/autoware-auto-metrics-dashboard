@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC
+"-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Code complexity report</title>
+  <style>
+    h2
+    {
+          text-align: center;
+    }
+        td.footer
+        {
+          text-align: center;
+          padding-top: 3px;
+          font-family: sans-serif;
+        }
+    td.greater-value
+        {
+          padding-top: 2px;
+          text-align: center;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-family: sans-serif;
+          white-space: nowrap;
+      background-color: LightPink;
+        }
+    td.lesser-value
+        {
+          padding-top: 2px;
+          text-align: center;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-family: sans-serif;
+          white-space: nowrap;
+      background-color: LightGreen;
+        }
+    td.value
+        {
+          padding-top: 2px;
+          text-align: center;
+          padding-left: 10px;
+          padding-right: 10px;
+          font-family: sans-serif;
+          white-space: nowrap;
+        }
+  </style>
+ </head>
+ <body>
+<h2>Code Complexity Report</h2>
+
+<center>
+
+<table>
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/point_cloud_filter_transform_nodes/src/point_cloud_filter_transform_node.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(5)
+</th><th>LOC (1000)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (50)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::point_cloud_filter_transform_nodes::get_transform</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">18</td>
+    
+
+    
+       <td class="value">129</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::point_cloud_filter_transform_nodes::PointCloud2FilterTransformNode::PointCloud2FilterTransformNode</td>
+    <td></td>
+    
+       <td class="greater-value">10</td>
+    
+
+    
+       <td class="lesser-value">79</td>
+    
+
+    
+       <td class="value">637</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::point_cloud_filter_transform_nodes::PointCloud2FilterTransformNode::filter_and_transform</td>
+    <td></td>
+    
+       <td class="greater-value">6</td>
+    
+
+    
+       <td class="lesser-value">41</td>
+    
+
+    
+       <td class="value">264</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::point_cloud_filter_transform_nodes::PointCloud2FilterTransformNode::process_filtered_transformed_message</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">29</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/point_cloud_filter_transform_nodes/include/point_cloud_filter_transform_nodes/point_cloud_filter_transform_node.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(5)
+</th><th>LOC (1000)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (50)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::point_cloud_filter_transform_nodes::POINT_CLOUD_FILTER_TRANSFORM_NODES_PUBLICPointCloud2FilterTransformNode::point_not_filtered</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">21</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::point_cloud_filter_transform_nodes::POINT_CLOUD_FILTER_TRANSFORM_NODES_PUBLICPointCloud2FilterTransformNode::transform_point</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">25</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/point_cloud_filter_transform_nodes/include/point_cloud_filter_transform_nodes/visibility_control.hpp</b></td></tr>
+
+  
+
+</table>
+<center>
+
+<br>
+<table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="footer">Generated by
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-08-31 20:12
+    </td></tr>
+</table>
+ </body>
+</html>
+
