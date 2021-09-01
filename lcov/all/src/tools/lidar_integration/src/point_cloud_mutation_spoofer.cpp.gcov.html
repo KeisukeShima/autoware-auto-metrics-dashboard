@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-31 20:06:18</td>
+            <td class="headerValue">2021-09-01 20:05:53</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -202,34 +202,34 @@
 <a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">        646 :     m_msg.data.clear();</span></a>
 <a name="115"><span class="lineNum">     115 </span>                :<span class="lineCov">        646 :     m_msg.data.reserve(capacity);</span></a>
 <a name="116"><span class="lineNum">     116 </span>                :            : </a>
-<a name="117"><span class="lineNum">     117 </span>        [<span class="branchCov" title="Branch 0 was taken 166972000 times"> + </span><span class="branchCov" title="Branch 1 was taken 646 times"> + </span>]:<span class="lineCov">  166973000 :     for (std::size_t i = 0; i &lt; capacity; ++i) {</span></a>
-<a name="118"><span class="lineNum">     118 </span>        [<span class="branchCov" title="Branch 0 was taken 166972000 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">  166972000 :       m_msg.data.push_back(static_cast&lt;uint8_t&gt;(m_dis_data(m_mt)));</span></a>
+<a name="117"><span class="lineNum">     117 </span>        [<span class="branchCov" title="Branch 0 was taken 169843000 times"> + </span><span class="branchCov" title="Branch 1 was taken 646 times"> + </span>]:<span class="lineCov">  169844000 :     for (std::size_t i = 0; i &lt; capacity; ++i) {</span></a>
+<a name="118"><span class="lineNum">     118 </span>        [<span class="branchCov" title="Branch 0 was taken 169843000 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">  169843000 :       m_msg.data.push_back(static_cast&lt;uint8_t&gt;(m_dis_data(m_mt)));</span></a>
 <a name="119"><span class="lineNum">     119 </span>                :            :     }</a>
 <a name="120"><span class="lineNum">     120 </span>                :            : </a>
-<a name="121"><span class="lineNum">     121 </span>  [<span class="branchCov" title="Branch 0 was taken 47 times"> + </span><span class="branchCov" title="Branch 1 was taken 40 times"> + </span><span class="branchCov" title="Branch 2 was taken 29 times"> + </span><span class="branchCov" title="Branch 3 was taken 33 times"> + </span> :<span class="lineCov">        646 :     switch (m_dice(m_mt)) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 41 times"> + </span><span class="branchCov" title="Branch 5 was taken 456 times"> + </span>]
-<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">         47 :       case 0:</span></a>
+<a name="121"><span class="lineNum">     121 </span>  [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 33 times"> + </span><span class="branchCov" title="Branch 2 was taken 32 times"> + </span><span class="branchCov" title="Branch 3 was taken 51 times"> + </span> :<span class="lineCov">        646 :     switch (m_dice(m_mt)) {</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 38 times"> + </span><span class="branchCov" title="Branch 5 was taken 457 times"> + </span>]
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">         35 :       case 0:</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            :         // Shuffle the data randomly.</a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         47 :         std::random_shuffle(m_msg.data.begin(), m_msg.data.end());</span></a>
-<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         47 :         break;</span></a>
-<a name="126"><span class="lineNum">     126 </span>                :<span class="lineCov">         40 :       case 1:</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         35 :         std::random_shuffle(m_msg.data.begin(), m_msg.data.end());</span></a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         35 :         break;</span></a>
+<a name="126"><span class="lineNum">     126 </span>                :<span class="lineCov">         33 :       case 1:</span></a>
 <a name="127"><span class="lineNum">     127 </span>                :            :         // Data length is not as described. Equation not holds.</a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         40 :         m_msg.row_step = static_cast&lt;uint32_t&gt;(m_dis_row_step(m_mt));</span></a>
-<a name="129"><span class="lineNum">     129 </span>                :<span class="lineCov">         40 :         break;</span></a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         29 :       case 2:</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         33 :         m_msg.row_step = static_cast&lt;uint32_t&gt;(m_dis_row_step(m_mt));</span></a>
+<a name="129"><span class="lineNum">     129 </span>                :<span class="lineCov">         33 :         break;</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         32 :       case 2:</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            :         // change in frequency, or simulate communication delay.</a>
 <a name="132"><span class="lineNum">     132 </span>                :            :         // This will introduce 0~12ms lag.</a>
-<a name="133"><span class="lineNum">     133 </span>        [<span class="branchCov" title="Branch 0 was taken 29 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         29 :         std::this_thread::sleep_for(std::chrono::milliseconds(m_dis_data(m_mt) / 20U));</span></a>
-<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">         29 :         break;</span></a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">         33 :       case 3:</span></a>
+<a name="133"><span class="lineNum">     133 </span>        [<span class="branchCov" title="Branch 0 was taken 32 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         32 :         std::this_thread::sleep_for(std::chrono::milliseconds(m_dis_data(m_mt) / 20U));</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">         32 :         break;</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">         51 :       case 3:</span></a>
 <a name="136"><span class="lineNum">     136 </span>                :            :         // not full scan</a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">         33 :         m_msg.data.resize(m_msg.row_step * 3U / 4U);</span></a>
-<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         33 :         break;</span></a>
-<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         41 :       case 4:</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">         51 :         m_msg.data.resize(m_msg.row_step * 3U / 4U);</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         51 :         break;</span></a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         38 :       case 4:</span></a>
 <a name="140"><span class="lineNum">     140 </span>                :            :         // data from rosbag message in the future?</a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         41 :         break;</span></a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">        456 :       default:</span></a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">        456 :         break;</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         38 :         break;</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">        457 :       default:</span></a>
+<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">        457 :         break;</span></a>
 <a name="144"><span class="lineNum">     144 </span>                :            :     }</a>
 <a name="145"><span class="lineNum">     145 </span>                :            : </a>
 <a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">        646 :     this-&gt;m_pub-&gt;publish(this-&gt;m_msg);</span></a>
