@@ -55,6 +55,340 @@
 <table>
 
   <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/ray_ground_classifier/src/ray_aggregator.cpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::Config</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">26</td>
+    
+
+    
+       <td class="value">171</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::get_min_ray_points</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">13</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::get_num_rays</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">13</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::get_min_angle</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">13</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::get_ray_width</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">13</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::domain_crosses_180</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">13</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::RayAggregator</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">18</td>
+    
+
+    
+       <td class="value">143</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::end_of_scan</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">13</td>
+    
+
+    
+       <td class="value">74</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::insert</td>
+    <td></td>
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="lesser-value">25</td>
+    
+
+    
+       <td class="value">194</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::insert</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">20</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::insert</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">11</td>
+    
+
+    
+       <td class="value">62</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::is_ray_ready</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">13</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::get_ready_ray_count</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">11</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::get_next_ray</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">15</td>
+    
+
+    
+       <td class="value">104</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::reset</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">52</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::bin</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">13</td>
+    
+
+    
+       <td class="value">131</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
   Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/ray_ground_classifier/src/ray_ground_classifier_types.cpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
@@ -557,7 +891,12 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/ray_ground_classifier/src/ray_aggregator.cpp</b></td></tr>
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/ray_ground_classifier/include/ray_ground_classifier/visibility_control.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/ray_ground_classifier/include/ray_ground_classifier/ray_ground_point_classifier.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -570,27 +909,7 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::Config</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">26</td>
-    
-
-    
-       <td class="value">171</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::get_min_ray_points</td>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::angle_distance_rad</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -601,16 +920,16 @@ Cyclomatic complexity
     
 
     
-       <td class="value">13</td>
+       <td class="value">30</td>
     
 
     
-       <td class="lesser-value">0</td>
+       <td class="lesser-value">2</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::get_num_rays</td>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::deg2rad</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -621,103 +940,23 @@ Cyclomatic complexity
     
 
     
-       <td class="value">13</td>
+       <td class="value">25</td>
     
 
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::get_min_angle</td>
-    <td></td>
     
        <td class="lesser-value">1</td>
     
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">13</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::get_ray_width</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">13</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::Config::domain_crosses_180</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">13</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::RayAggregator</td>
+    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::operator <</td>
     <td></td>
     
        <td class="lesser-value">2</td>
     
 
     
-       <td class="lesser-value">18</td>
-    
-
-    
-       <td class="value">143</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::end_of_scan</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">13</td>
+       <td class="lesser-value">7</td>
     
 
     
@@ -725,167 +964,7 @@ Cyclomatic complexity
     
 
     
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::insert</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">25</td>
-    
-
-    
-       <td class="value">194</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::insert</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">20</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::insert</td>
-    <td></td>
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="lesser-value">11</td>
-    
-
-    
-       <td class="value">62</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::is_ray_ready</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">13</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::get_ready_ray_count</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">11</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::get_next_ray</td>
-    <td></td>
-    
        <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">15</td>
-    
-
-    
-       <td class="value">104</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::reset</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">52</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::RayAggregator::bin</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">13</td>
-    
-
-    
-       <td class="value">131</td>
-    
-
-    
-       <td class="lesser-value">1</td>
     
   </tr>
   
@@ -969,92 +1048,13 @@ Cyclomatic complexity
   </tr>
   
 
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/ray_ground_classifier/include/ray_ground_classifier/ray_ground_point_classifier.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::angle_distance_rad</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">30</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::deg2rad</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">25</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::perception::filters::ray_ground_classifier::operator <</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">74</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/__w/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/perception/filters/ray_ground_classifier/include/ray_ground_classifier/visibility_control.hpp</b></td></tr>
-
-  
-
 </table>
 <center>
 
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2021-09-01 20:10
+    <a href="http://www.lizard.ws/">Lizard</a> on 2021-09-02 20:15
     </td></tr>
 </table>
  </body>

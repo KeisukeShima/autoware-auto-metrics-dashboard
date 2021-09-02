@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-01 20:06:41</td>
+            <td class="headerValue">2021-09-02 20:11:37</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -151,27 +151,27 @@
 <a name="73"><span class="lineNum">      73 </span>                :            :   void reset(sensor_msgs::msg::PointCloud2 &amp; cloud, uint32_t idx = 0);</a>
 <a name="74"><span class="lineNum">      74 </span>                :            : </a>
 <a name="75"><span class="lineNum">      75 </span>                :            :   /// \brief Returns iterator for the &quot;x&quot; field</a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">   19803800 :   inline sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; &amp; x_it()</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">   16670900 :   inline sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; &amp; x_it()</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            :   {</a>
-<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">   19803800 :     return m_its[0];</span></a>
+<a name="78"><span class="lineNum">      78 </span>                :<span class="lineCov">   16670900 :     return m_its[0];</span></a>
 <a name="79"><span class="lineNum">      79 </span>                :            :   }</a>
 <a name="80"><span class="lineNum">      80 </span>                :            : </a>
 <a name="81"><span class="lineNum">      81 </span>                :            :   /// \brief Returns iterator for the &quot;y&quot; field</a>
-<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">   19803800 :   inline sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; &amp; y_it()</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">   16670900 :   inline sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; &amp; y_it()</span></a>
 <a name="83"><span class="lineNum">      83 </span>                :            :   {</a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">   19803800 :     return m_its[1];</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">   16670900 :     return m_its[1];</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            :   }</a>
 <a name="86"><span class="lineNum">      86 </span>                :            : </a>
 <a name="87"><span class="lineNum">      87 </span>                :            :   /// \brief Returns iterator for the &quot;z&quot; field</a>
-<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">   19803800 :   inline sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; &amp; z_it()</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">   16670900 :   inline sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; &amp; z_it()</span></a>
 <a name="89"><span class="lineNum">      89 </span>                :            :   {</a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">   19803800 :     return m_its[2];</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">   16670900 :     return m_its[2];</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            :   }</a>
 <a name="92"><span class="lineNum">      92 </span>                :            : </a>
 <a name="93"><span class="lineNum">      93 </span>                :            :   /// \brief Returns iterator for the &quot;intensity&quot; field</a>
-<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">   19803800 :   sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; &amp; intensity_it()</span></a>
+<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">   16670900 :   sensor_msgs::PointCloud2Iterator&lt;float32_t&gt; &amp; intensity_it()</span></a>
 <a name="95"><span class="lineNum">      95 </span>                :            :   {</a>
-<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">   19803800 :     return m_its[3];</span></a>
+<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">   16670900 :     return m_its[3];</span></a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   }</a>
 <a name="98"><span class="lineNum">      98 </span>                :            : </a>
 <a name="99"><span class="lineNum">      99 </span>                :            : private:</a>
@@ -217,7 +217,7 @@
 <a name="139"><span class="lineNum">     139 </span>                :            : /// parameters in strict order: `field_name, count, data_type`. These parameters should</a>
 <a name="140"><span class="lineNum">     140 </span>                :            : /// be provided for each field</a>
 <a name="141"><span class="lineNum">     141 </span>                :            : template&lt;typename ... Fields&gt;</a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">         39 : LIDAR_UTILS_PUBLIC void init_pcl_msg(</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">         38 : LIDAR_UTILS_PUBLIC void init_pcl_msg(</span></a>
 <a name="143"><span class="lineNum">     143 </span>                :            :   sensor_msgs::msg::PointCloud2 &amp; msg,</a>
 <a name="144"><span class="lineNum">     144 </span>                :            :   const std::string &amp; frame_id,</a>
 <a name="145"><span class="lineNum">     145 </span>                :            :   const std::size_t size,</a>
@@ -225,25 +225,25 @@
 <a name="147"><span class="lineNum">     147 </span>                :            :   Fields const &amp; ... fields</a>
 <a name="148"><span class="lineNum">     148 </span>                :            : )</a>
 <a name="149"><span class="lineNum">     149 </span>                :            : {</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         39 :   msg.height = 1U;</span></a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         39 :   msg.is_bigendian = false;</span></a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">         39 :   msg.is_dense = false;</span></a>
-<a name="153"><span class="lineNum">     153 </span>        [<span class="branchCov" title="Branch 0 was taken 39 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         39 :   msg.header.frame_id = frame_id;</span></a>
-<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">         39 :   sensor_msgs::PointCloud2Modifier modifier(msg);</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         38 :   msg.height = 1U;</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">         38 :   msg.is_bigendian = false;</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">         38 :   msg.is_dense = false;</span></a>
+<a name="153"><span class="lineNum">     153 </span>        [<span class="branchCov" title="Branch 0 was taken 38 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         38 :   msg.header.frame_id = frame_id;</span></a>
+<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">         38 :   sensor_msgs::PointCloud2Modifier modifier(msg);</span></a>
 <a name="155"><span class="lineNum">     155 </span>                :            :   // set the fields</a>
 <a name="156"><span class="lineNum">     156 </span>                :            :   // TODO(vrichard) replace explicit check by safe_cast</a>
 <a name="157"><span class="lineNum">     157 </span>                :            :   // See https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto/-/issues/1027</a>
-<a name="158"><span class="lineNum">     158 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 39 times"> + </span>]:<span class="lineCov">         39 :   if (num_fields &gt; static_cast&lt;uint32_t&gt;(std::numeric_limits&lt;int&gt;::max())) {</span></a>
+<a name="158"><span class="lineNum">     158 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 38 times"> + </span>]:<span class="lineCov">         38 :   if (num_fields &gt; static_cast&lt;uint32_t&gt;(std::numeric_limits&lt;int&gt;::max())) {</span></a>
 <a name="159"><span class="lineNum">     159 </span>                :            :     // prevent future access to random memory value or segmentation fault</a>
 <a name="160"><span class="lineNum">     160 </span>                :            :     throw std::runtime_error(</a>
 <a name="161"><span class="lineNum">     161 </span>                :            :             &quot;converting &quot; + std::to_string(</a>
 <a name="162"><span class="lineNum">     162 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :               num_fields) + &quot; to int would change sign of value&quot;);</span></a>
 <span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
 <a name="163"><span class="lineNum">     163 </span>                :            :   }</a>
-<a name="164"><span class="lineNum">     164 </span>        [<span class="branchCov" title="Branch 0 was taken 39 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         39 :   modifier.setPointCloud2Fields(static_cast&lt;int&gt;(num_fields), fields ...);</span></a>
+<a name="164"><span class="lineNum">     164 </span>        [<span class="branchCov" title="Branch 0 was taken 38 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         38 :   modifier.setPointCloud2Fields(static_cast&lt;int&gt;(num_fields), fields ...);</span></a>
 <a name="165"><span class="lineNum">     165 </span>                :            :   // allocate memory so that iterators can be used</a>
-<a name="166"><span class="lineNum">     166 </span>        [<span class="branchCov" title="Branch 0 was taken 39 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         39 :   modifier.resize(size);</span></a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">         39 : }</span></a>
+<a name="166"><span class="lineNum">     166 </span>        [<span class="branchCov" title="Branch 0 was taken 38 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         38 :   modifier.resize(size);</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">         38 : }</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            : </a>
 <a name="169"><span class="lineNum">     169 </span>                :            : /// \brief add a point in the cloud by memcpy instead of using iterators</a>
 <a name="170"><span class="lineNum">     170 </span>                :            : /// This version prioritize speed and ease of parallelisation</a>

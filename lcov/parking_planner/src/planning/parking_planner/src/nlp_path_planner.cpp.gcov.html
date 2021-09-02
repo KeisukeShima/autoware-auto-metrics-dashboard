@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">78</td>
+            <td class="headerCovTableEntry">8</td>
             <td class="headerCovTableEntry">141</td>
-            <td class="headerCovTableEntryLo">55.3 %</td>
+            <td class="headerCovTableEntryLo">5.7 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-01 20:07:28</td>
+            <td class="headerValue">2021-09-02 20:12:28</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">8</td>
+            <td class="headerCovTableEntry">1</td>
             <td class="headerCovTableEntry">14</td>
-            <td class="headerCovTableEntryLo">57.1 %</td>
+            <td class="headerCovTableEntryLo">7.1 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">70</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">250</td>
-            <td class="headerCovTableEntryLo">28.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -143,74 +143,74 @@
 <a name="65"><span class="lineNum">      65 </span>                :            : // This is not in nlp_adapters.hpp because it is only used for constructing concrete</a>
 <a name="66"><span class="lineNum">      66 </span>                :            : // valued objects for the problem instance, but not for generating the solver.</a>
 <a name="67"><span class="lineNum">      67 </span>                :            : static std::vector&lt;NLPObstacleStageVariables&lt;double&gt;&gt;</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">         20 : make_nlpobstacle_stage_variables(const double lambda_guess, const double mu_guess)</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineNoCov">          0 : make_nlpobstacle_stage_variables(const double lambda_guess, const double mu_guess)</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            : {</a>
 <a name="70"><span class="lineNum">      70 </span>                :            :   // First build stage variables</a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">         20 :   std::vector&lt;NLPObstacleStageVariables&lt;double&gt;&gt; stage_variables{};</span></a>
-<a name="72"><span class="lineNum">      72 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :   stage_variables.reserve(HORIZON_LENGTH);</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineNoCov">          0 :   std::vector&lt;NLPObstacleStageVariables&lt;double&gt;&gt; stage_variables{};</span></a>
+<a name="72"><span class="lineNum">      72 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   stage_variables.reserve(HORIZON_LENGTH);</span></a>
 <a name="73"><span class="lineNum">      73 </span>                :            : </a>
-<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">       1200 :   const auto make_guess_vector = [](auto len, auto value) {</span></a>
-<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">       1200 :       std::vector&lt;double&gt; guess{};</span></a>
-<a name="76"><span class="lineNum">      76 </span>        [<span class="branchCov" title="Branch 0 was taken 5400 times"> + </span><span class="branchCov" title="Branch 1 was taken 1200 times"> + </span>]:<span class="lineCov">       6600 :       for (std::size_t j = {}; j &lt; len; ++j) {</span></a>
-<a name="77"><span class="lineNum">      77 </span>        [<span class="branchCov" title="Branch 0 was taken 5400 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5400 :         guess.push_back(value);</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineNoCov">          0 :   const auto make_guess_vector = [](auto len, auto value) {</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :<span class="lineNoCov">          0 :       std::vector&lt;double&gt; guess{};</span></a>
+<a name="76"><span class="lineNum">      76 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       for (std::size_t j = {}; j &lt; len; ++j) {</span></a>
+<a name="77"><span class="lineNum">      77 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         guess.push_back(value);</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            :       }</a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">       1200 :       return guess;</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineNoCov">          0 :       return guess;</span></a>
 <a name="80"><span class="lineNum">      80 </span>                :            :     };</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : </a>
-<a name="82"><span class="lineNum">      82 </span>        [<span class="branchCov" title="Branch 0 was taken 600 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">        620 :   for (std::size_t k = {}; k &lt; HORIZON_LENGTH; ++k) {</span></a>
-<a name="83"><span class="lineNum">      83 </span>        [<span class="branchCov" title="Branch 0 was taken 600 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        600 :     stage_variables.push_back(</span></a>
-<a name="84"><span class="lineNum">      84 </span>        [<span class="branchCov" title="Branch 0 was taken 600 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1200 :       NLPObstacleStageVariables&lt;double&gt;(</span></a>
-<a name="85"><span class="lineNum">      85 </span>        [<span class="branchCov" title="Branch 0 was taken 600 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1200 :         make_guess_vector(NLPObstacleStageVariables&lt;double&gt;::get_lambda_length(), lambda_guess),</span></a>
-<a name="86"><span class="lineNum">      86 </span>        [<span class="branchCov" title="Branch 0 was taken 600 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1200 :         make_guess_vector(NLPObstacleStageVariables&lt;double&gt;::get_mu_length(), mu_guess) )</span></a>
+<a name="82"><span class="lineNum">      82 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   for (std::size_t k = {}; k &lt; HORIZON_LENGTH; ++k) {</span></a>
+<a name="83"><span class="lineNum">      83 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     stage_variables.push_back(</span></a>
+<a name="84"><span class="lineNum">      84 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       NLPObstacleStageVariables&lt;double&gt;(</span></a>
+<a name="85"><span class="lineNum">      85 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         make_guess_vector(NLPObstacleStageVariables&lt;double&gt;::get_lambda_length(), lambda_guess),</span></a>
+<a name="86"><span class="lineNum">      86 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         make_guess_vector(NLPObstacleStageVariables&lt;double&gt;::get_mu_length(), mu_guess) )</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            :     );</a>
 <a name="88"><span class="lineNum">      88 </span>                :            :   }</a>
 <a name="89"><span class="lineNum">      89 </span>                :            : </a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">         40 :   return stage_variables;</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineNoCov">          0 :   return stage_variables;</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            : }</a>
 <a name="92"><span class="lineNum">      92 </span>                :            : </a>
-<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">         20 : static NLPObstacle&lt;double&gt; create_nlpobstacle(</span></a>
+<a name="93"><span class="lineNum">      93 </span>                :<span class="lineNoCov">          0 : static NLPObstacle&lt;double&gt; create_nlpobstacle(</span></a>
 <a name="94"><span class="lineNum">      94 </span>                :            :   const Polytope2D&lt;double&gt; polytope,</a>
 <a name="95"><span class="lineNum">      95 </span>                :            :   const double lambda_guess, const double mu_guess)</a>
 <a name="96"><span class="lineNum">      96 </span>                :            : {</a>
-<a name="97"><span class="lineNum">      97 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         40 :   auto stage_variables = make_nlpobstacle_stage_variables(lambda_guess, mu_guess);</span></a>
+<a name="97"><span class="lineNum">      97 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   auto stage_variables = make_nlpobstacle_stage_variables(lambda_guess, mu_guess);</span></a>
 <a name="98"><span class="lineNum">      98 </span>                :            : </a>
-<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">         20 :   const auto &amp; polytope_halfplanes = polytope.get_halfplanes();</span></a>
-<a name="100"><span class="lineNum">     100 </span>                :<span class="lineCov">         20 :   std::vector&lt;Halfplane2D&lt;double&gt;&gt; halfplanes{};</span></a>
+<a name="99"><span class="lineNum">      99 </span>                :<span class="lineNoCov">          0 :   const auto &amp; polytope_halfplanes = polytope.get_halfplanes();</span></a>
+<a name="100"><span class="lineNum">     100 </span>                :<span class="lineNoCov">          0 :   std::vector&lt;Halfplane2D&lt;double&gt;&gt; halfplanes{};</span></a>
 <a name="101"><span class="lineNum">     101 </span>                :            :   halfplanes.insert(</a>
-<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">         20 :     halfplanes.end(), polytope_halfplanes.begin(),</span></a>
-<a name="103"><span class="lineNum">     103 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         40 :     polytope_halfplanes.end());</span></a>
+<a name="102"><span class="lineNum">     102 </span>                :<span class="lineNoCov">          0 :     halfplanes.end(), polytope_halfplanes.begin(),</span></a>
+<a name="103"><span class="lineNum">     103 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     polytope_halfplanes.end());</span></a>
 <a name="104"><span class="lineNum">     104 </span>                :            : </a>
 <a name="105"><span class="lineNum">     105 </span>                :            :   // Make sure we don't attempt to solve a problem we cannot solve</a>
-<a name="106"><span class="lineNum">     106 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         20 :   if (MAX_HYPERPLANES_PER_OBSTACLE &lt; polytope_halfplanes.size() ) {</span></a>
+<a name="106"><span class="lineNum">     106 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (MAX_HYPERPLANES_PER_OBSTACLE &lt; polytope_halfplanes.size() ) {</span></a>
 <a name="107"><span class="lineNum">     107 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::domain_error{&quot;Cannot handle this many halfplanes&quot;};</span></a>
 <a name="108"><span class="lineNum">     108 </span>                :            :   }</a>
 <a name="109"><span class="lineNum">     109 </span>                :            : </a>
 <a name="110"><span class="lineNum">     110 </span>                :            :   // Fill the remaining halfplanes with copies of the first one</a>
-<a name="111"><span class="lineNum">     111 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span>]:<span class="lineCov">         40 :   for (std::size_t k = {}; k &lt; (MAX_HYPERPLANES_PER_OBSTACLE - polytope_halfplanes.size()); ++k) {</span></a>
-<a name="112"><span class="lineNum">     112 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :     halfplanes.push_back(polytope_halfplanes[0]);</span></a>
+<a name="111"><span class="lineNum">     111 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   for (std::size_t k = {}; k &lt; (MAX_HYPERPLANES_PER_OBSTACLE - polytope_halfplanes.size()); ++k) {</span></a>
+<a name="112"><span class="lineNum">     112 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     halfplanes.push_back(polytope_halfplanes[0]);</span></a>
 <a name="113"><span class="lineNum">     113 </span>                :            :   }</a>
 <a name="114"><span class="lineNum">     114 </span>                :            : </a>
-<a name="115"><span class="lineNum">     115 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         40 :   return NLPObstacle&lt;double&gt;(stage_variables, halfplanes);</span></a>
+<a name="115"><span class="lineNum">     115 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return NLPObstacle&lt;double&gt;(stage_variables, halfplanes);</span></a>
 <a name="116"><span class="lineNum">     116 </span>                :            : }</a>
 <a name="117"><span class="lineNum">     117 </span>                :            : </a>
 <a name="118"><span class="lineNum">     118 </span>                :            : // Create a dummy obstacle for the given initial guesses of lambda and mu, as</a>
 <a name="119"><span class="lineNum">     119 </span>                :            : // well as a vehicle state. The vehicle state is used to ensure that the</a>
 <a name="120"><span class="lineNum">     120 </span>                :            : // dummy obstacle is far enough away from the vehicle to not matter for the</a>
 <a name="121"><span class="lineNum">     121 </span>                :            : // path planning.</a>
-<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">         20 : static NLPObstacle&lt;double&gt; create_dummy_nlpobstacle(</span></a>
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineNoCov">          0 : static NLPObstacle&lt;double&gt; create_dummy_nlpobstacle(</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            :   const double lambda_guess, const double mu_guess,</a>
 <a name="124"><span class="lineNum">     124 </span>                :            :   const VehicleState&lt;double&gt; &amp; current_state</a>
 <a name="125"><span class="lineNum">     125 </span>                :            : )</a>
 <a name="126"><span class="lineNum">     126 </span>                :            : {</a>
-<a name="127"><span class="lineNum">     127 </span>                :<span class="lineCov">         20 :   const auto x_vehicle = current_state.get_x();</span></a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         20 :   const auto y_vehicle = current_state.get_y();</span></a>
-<a name="129"><span class="lineNum">     129 </span>                :<span class="lineCov">         20 :   constexpr auto L = DUMMY_OBSTACLE_DISTANCE;  // shorthand</span></a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         20 :   Point2D&lt;double&gt; p1(x_vehicle + L - 1, y_vehicle + L - 1);</span></a>
-<a name="131"><span class="lineNum">     131 </span>                :<span class="lineCov">         20 :   Point2D&lt;double&gt; p2(x_vehicle + L - 1, y_vehicle + L + 1);</span></a>
-<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">         20 :   Point2D&lt;double&gt; p3(x_vehicle + L + 1, y_vehicle + L + 1);</span></a>
-<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">         20 :   Point2D&lt;double&gt; p4(x_vehicle + L + 1, y_vehicle + L - 1);</span></a>
-<a name="134"><span class="lineNum">     134 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         40 :   Polytope2D&lt;double&gt; dummy_polyhedron({p1, p2, p3, p4});</span></a>
-<a name="135"><span class="lineNum">     135 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         40 :   return create_nlpobstacle(dummy_polyhedron, lambda_guess, mu_guess);</span></a>
+<a name="127"><span class="lineNum">     127 </span>                :<span class="lineNoCov">          0 :   const auto x_vehicle = current_state.get_x();</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineNoCov">          0 :   const auto y_vehicle = current_state.get_y();</span></a>
+<a name="129"><span class="lineNum">     129 </span>                :<span class="lineNoCov">          0 :   constexpr auto L = DUMMY_OBSTACLE_DISTANCE;  // shorthand</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineNoCov">          0 :   Point2D&lt;double&gt; p1(x_vehicle + L - 1, y_vehicle + L - 1);</span></a>
+<a name="131"><span class="lineNum">     131 </span>                :<span class="lineNoCov">          0 :   Point2D&lt;double&gt; p2(x_vehicle + L - 1, y_vehicle + L + 1);</span></a>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineNoCov">          0 :   Point2D&lt;double&gt; p3(x_vehicle + L + 1, y_vehicle + L + 1);</span></a>
+<a name="133"><span class="lineNum">     133 </span>                :<span class="lineNoCov">          0 :   Point2D&lt;double&gt; p4(x_vehicle + L + 1, y_vehicle + L - 1);</span></a>
+<a name="134"><span class="lineNum">     134 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   Polytope2D&lt;double&gt; dummy_polyhedron({p1, p2, p3, p4});</span></a>
+<a name="135"><span class="lineNum">     135 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return create_nlpobstacle(dummy_polyhedron, lambda_guess, mu_guess);</span></a>
 <a name="136"><span class="lineNum">     136 </span>                :            : }</a>
 <a name="137"><span class="lineNum">     137 </span>                :            : </a>
 <a name="138"><span class="lineNum">     138 </span>                :            : </a>
@@ -221,64 +221,64 @@
 <a name="143"><span class="lineNum">     143 </span>                :            :   std::vector&lt;double&gt; upper;</a>
 <a name="144"><span class="lineNum">     144 </span>                :            : };</a>
 <a name="145"><span class="lineNum">     145 </span>                :            : </a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">          2 : ConstraintBounds create_constraint_bounds()</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineNoCov">          0 : ConstraintBounds create_constraint_bounds()</span></a>
 <a name="147"><span class="lineNum">     147 </span>                :            : {</a>
-<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">          4 :   std::vector&lt;double&gt; upper_bounds{};</span></a>
-<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   upper_bounds.reserve(NUMBER_OF_EQUALITIES + NUMBER_OF_INEQUALITIES);</span></a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">          4 :   std::vector&lt;double&gt; lower_bounds{};</span></a>
-<a name="151"><span class="lineNum">     151 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   lower_bounds.reserve(NUMBER_OF_EQUALITIES + NUMBER_OF_INEQUALITIES);</span></a>
-<a name="152"><span class="lineNum">     152 </span>        [<span class="branchCov" title="Branch 0 was taken 1510 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">       1512 :   for (std::size_t k = {}; k &lt; NUMBER_OF_EQUALITIES; k++) {</span></a>
-<a name="153"><span class="lineNum">     153 </span>        [<span class="branchCov" title="Branch 0 was taken 1510 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1510 :     lower_bounds.push_back(0.0);</span></a>
-<a name="154"><span class="lineNum">     154 </span>        [<span class="branchCov" title="Branch 0 was taken 1510 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1510 :     upper_bounds.push_back(0.0);</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :<span class="lineNoCov">          0 :   std::vector&lt;double&gt; upper_bounds{};</span></a>
+<a name="149"><span class="lineNum">     149 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   upper_bounds.reserve(NUMBER_OF_EQUALITIES + NUMBER_OF_INEQUALITIES);</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineNoCov">          0 :   std::vector&lt;double&gt; lower_bounds{};</span></a>
+<a name="151"><span class="lineNum">     151 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   lower_bounds.reserve(NUMBER_OF_EQUALITIES + NUMBER_OF_INEQUALITIES);</span></a>
+<a name="152"><span class="lineNum">     152 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   for (std::size_t k = {}; k &lt; NUMBER_OF_EQUALITIES; k++) {</span></a>
+<a name="153"><span class="lineNum">     153 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     lower_bounds.push_back(0.0);</span></a>
+<a name="154"><span class="lineNum">     154 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     upper_bounds.push_back(0.0);</span></a>
 <a name="155"><span class="lineNum">     155 </span>                :            :   }</a>
-<a name="156"><span class="lineNum">     156 </span>        [<span class="branchCov" title="Branch 0 was taken 1200 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">       1202 :   for (std::size_t k = {}; k &lt; NUMBER_OF_INEQUALITIES; k++) {</span></a>
-<a name="157"><span class="lineNum">     157 </span>        [<span class="branchCov" title="Branch 0 was taken 1200 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1200 :     lower_bounds.push_back(LARGE_NEGATIVE_NUMBER);</span></a>
-<a name="158"><span class="lineNum">     158 </span>        [<span class="branchCov" title="Branch 0 was taken 1200 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1200 :     upper_bounds.push_back(0.0);</span></a>
+<a name="156"><span class="lineNum">     156 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   for (std::size_t k = {}; k &lt; NUMBER_OF_INEQUALITIES; k++) {</span></a>
+<a name="157"><span class="lineNum">     157 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     lower_bounds.push_back(LARGE_NEGATIVE_NUMBER);</span></a>
+<a name="158"><span class="lineNum">     158 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     upper_bounds.push_back(0.0);</span></a>
 <a name="159"><span class="lineNum">     159 </span>                :            :   }</a>
 <a name="160"><span class="lineNum">     160 </span>                :            : </a>
-<a name="161"><span class="lineNum">     161 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          4 :   return ConstraintBounds{lower_bounds, upper_bounds};</span></a>
+<a name="161"><span class="lineNum">     161 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return ConstraintBounds{lower_bounds, upper_bounds};</span></a>
 <a name="162"><span class="lineNum">     162 </span>                :            : }</a>
 <a name="163"><span class="lineNum">     163 </span>                :            : </a>
-<a name="164"><span class="lineNum">     164 </span>                :<span class="lineCov">          2 : std::vector&lt;NLPObstacle&lt;double&gt;&gt; create_obstacles_from_polyhedra(</span></a>
+<a name="164"><span class="lineNum">     164 </span>                :<span class="lineNoCov">          0 : std::vector&lt;NLPObstacle&lt;double&gt;&gt; create_obstacles_from_polyhedra(</span></a>
 <a name="165"><span class="lineNum">     165 </span>                :            :   const std::vector&lt;Polytope2D&lt;double&gt;&gt; &amp; obstacles,</a>
 <a name="166"><span class="lineNum">     166 </span>                :            :   const VehicleState&lt;double&gt; &amp; current_state</a>
 <a name="167"><span class="lineNum">     167 </span>                :            : )</a>
 <a name="168"><span class="lineNum">     168 </span>                :            : {</a>
-<a name="169"><span class="lineNum">     169 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   if (obstacles.size() &gt; MAX_NUMBER_OF_OBSTACLES) {</span></a>
+<a name="169"><span class="lineNum">     169 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (obstacles.size() &gt; MAX_NUMBER_OF_OBSTACLES) {</span></a>
 <a name="170"><span class="lineNum">     170 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::length_error{&quot;Too many obstacles given as input&quot;};</span></a>
 <a name="171"><span class="lineNum">     171 </span>                :            :   }</a>
 <a name="172"><span class="lineNum">     172 </span>                :            : </a>
 <a name="173"><span class="lineNum">     173 </span>                :            :   // First put all the actual obstacles in the list</a>
-<a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">          2 :   std::vector&lt;NLPObstacle&lt;double&gt;&gt; nlp_obstacle_list{};</span></a>
-<a name="175"><span class="lineNum">     175 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   nlp_obstacle_list.reserve(MAX_NUMBER_OF_OBSTACLES);</span></a>
-<a name="176"><span class="lineNum">     176 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :   for (const auto &amp; obstacle : obstacles) {</span></a>
+<a name="174"><span class="lineNum">     174 </span>                :<span class="lineNoCov">          0 :   std::vector&lt;NLPObstacle&lt;double&gt;&gt; nlp_obstacle_list{};</span></a>
+<a name="175"><span class="lineNum">     175 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   nlp_obstacle_list.reserve(MAX_NUMBER_OF_OBSTACLES);</span></a>
+<a name="176"><span class="lineNum">     176 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   for (const auto &amp; obstacle : obstacles) {</span></a>
 <a name="177"><span class="lineNum">     177 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto nlp_obstacle = create_nlpobstacle(obstacle, 0.1, 0.1);</span></a>
 <a name="178"><span class="lineNum">     178 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     nlp_obstacle_list.push_back(nlp_obstacle);</span></a>
 <a name="179"><span class="lineNum">     179 </span>                :            :   }</a>
 <a name="180"><span class="lineNum">     180 </span>                :            : </a>
 <a name="181"><span class="lineNum">     181 </span>                :            :   // Fill the rest of the positions with dummy obstacles</a>
-<a name="182"><span class="lineNum">     182 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">         22 :   for (std::size_t k = {}; k &lt; (MAX_NUMBER_OF_OBSTACLES - obstacles.size() ); k++) {</span></a>
-<a name="183"><span class="lineNum">     183 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         40 :     const auto nlp_obstacle = create_dummy_nlpobstacle(0.1, 0.1, current_state);</span></a>
-<a name="184"><span class="lineNum">     184 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :     nlp_obstacle_list.push_back(nlp_obstacle);</span></a>
+<a name="182"><span class="lineNum">     182 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   for (std::size_t k = {}; k &lt; (MAX_NUMBER_OF_OBSTACLES - obstacles.size() ); k++) {</span></a>
+<a name="183"><span class="lineNum">     183 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto nlp_obstacle = create_dummy_nlpobstacle(0.1, 0.1, current_state);</span></a>
+<a name="184"><span class="lineNum">     184 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     nlp_obstacle_list.push_back(nlp_obstacle);</span></a>
 <a name="185"><span class="lineNum">     185 </span>                :            :   }</a>
 <a name="186"><span class="lineNum">     186 </span>                :            : </a>
-<a name="187"><span class="lineNum">     187 </span>                :<span class="lineCov">          2 :   return nlp_obstacle_list;</span></a>
+<a name="187"><span class="lineNum">     187 </span>                :<span class="lineNoCov">          0 :   return nlp_obstacle_list;</span></a>
 <a name="188"><span class="lineNum">     188 </span>                :            : }</a>
 <a name="189"><span class="lineNum">     189 </span>                :            : </a>
-<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">          2 : NLPPathPlanner::NLPPathPlanner(</span></a>
+<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">          1 : NLPPathPlanner::NLPPathPlanner(</span></a>
 <a name="191"><span class="lineNum">     191 </span>                :            :   const NLPCostWeights&lt;double&gt; &amp; cost_weights,</a>
 <a name="192"><span class="lineNum">     192 </span>                :            :   const VehicleState&lt;double&gt; &amp; lower_state_bounds,</a>
 <a name="193"><span class="lineNum">     193 </span>                :            :   const VehicleState&lt;double&gt; &amp; upper_state_bounds,</a>
 <a name="194"><span class="lineNum">     194 </span>                :            :   const VehicleCommand&lt;double&gt; &amp; lower_command_bounds,</a>
 <a name="195"><span class="lineNum">     195 </span>                :            :   const VehicleCommand&lt;double&gt; &amp; upper_command_bounds</a>
-<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">          2 : )</span></a>
-<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">          2 : : m_cost_weights(cost_weights)</span></a>
+<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">          1 : )</span></a>
+<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">          1 : : m_cost_weights(cost_weights)</span></a>
 <a name="198"><span class="lineNum">     198 </span>                :            : {</a>
-<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">          2 :   m_lower_state_bounds = lower_state_bounds;</span></a>
-<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">          2 :   m_upper_state_bounds = upper_state_bounds;</span></a>
-<a name="201"><span class="lineNum">     201 </span>                :<span class="lineCov">          2 :   m_lower_command_bounds = lower_command_bounds;</span></a>
-<a name="202"><span class="lineNum">     202 </span>                :<span class="lineCov">          2 :   m_upper_command_bounds = upper_command_bounds;</span></a>
-<a name="203"><span class="lineNum">     203 </span>                :<span class="lineCov">          2 : }</span></a>
+<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">          1 :   m_lower_state_bounds = lower_state_bounds;</span></a>
+<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">          1 :   m_upper_state_bounds = upper_state_bounds;</span></a>
+<a name="201"><span class="lineNum">     201 </span>                :<span class="lineCov">          1 :   m_lower_command_bounds = lower_command_bounds;</span></a>
+<a name="202"><span class="lineNum">     202 </span>                :<span class="lineCov">          1 :   m_upper_command_bounds = upper_command_bounds;</span></a>
+<a name="203"><span class="lineNum">     203 </span>                :<span class="lineCov">          1 : }</span></a>
 <a name="204"><span class="lineNum">     204 </span>                :            : </a>
 <a name="205"><span class="lineNum">     205 </span>                :            : template&lt;typename T&gt;</a>
 <a name="206"><span class="lineNum">     206 </span>                :<span class="lineNoCov">          0 : static bool are_vectors_close(std::vector&lt;T&gt; vector1, std::vector&lt;T&gt; vector2, double tolerance)</span></a>
@@ -400,7 +400,7 @@
 <a name="313"><span class="lineNum">     313 </span>                :            : }</a>
 <a name="314"><span class="lineNum">     314 </span>                :            : </a>
 <a name="315"><span class="lineNum">     315 </span>                :            : // --- Actual planning functionality --------------------------------------------------</a>
-<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">          2 : NLPResults NLPPathPlanner::plan_nlp(</span></a>
+<a name="316"><span class="lineNum">     316 </span>                :<span class="lineNoCov">          0 : NLPResults NLPPathPlanner::plan_nlp(</span></a>
 <a name="317"><span class="lineNum">     317 </span>                :            :   const VehicleState&lt;double&gt; &amp; current_state,</a>
 <a name="318"><span class="lineNum">     318 </span>                :            :   const VehicleState&lt;double&gt; &amp; goal_state,</a>
 <a name="319"><span class="lineNum">     319 </span>                :            :   const Trajectory&lt;double&gt; &amp; initial_guess,</a>
@@ -409,54 +409,54 @@
 <a name="322"><span class="lineNum">     322 </span>                :            : ) const</a>
 <a name="323"><span class="lineNum">     323 </span>                :            : {</a>
 <a name="324"><span class="lineNum">     324 </span>                :            :   // Assemble solver inputs</a>
-<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">          4 :   std::vector&lt;NLPObstacle&lt;double&gt;&gt; nlp_obstacles{};</span></a>
+<a name="325"><span class="lineNum">     325 </span>                :<span class="lineNoCov">          0 :   std::vector&lt;NLPObstacle&lt;double&gt;&gt; nlp_obstacles{};</span></a>
 <a name="326"><span class="lineNum">     326 </span>                :            :   try {</a>
-<a name="327"><span class="lineNum">     327 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     nlp_obstacles = create_obstacles_from_polyhedra(obstacles, current_state);</span></a>
+<a name="327"><span class="lineNum">     327 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     nlp_obstacles = create_obstacles_from_polyhedra(obstacles, current_state);</span></a>
 <a name="328"><span class="lineNum">     328 </span>                :<span class="lineNoCov">          0 :   } catch (const std::length_error &amp; e) {</span></a>
 <a name="329"><span class="lineNum">     329 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineNoCov">          0 :     std::cout &lt;&lt; e.what() &lt;&lt; std::endl;</span></a>
 <a name="330"><span class="lineNum">     330 </span>                :<span class="lineNoCov">          0 :     return NLPResults{Trajectory&lt;float64_t&gt;{}, casadi::Dict{}};</span></a>
 <a name="331"><span class="lineNum">     331 </span>                :            :   }</a>
 <a name="332"><span class="lineNum">     332 </span>                :            :   auto p = assemble_parameter_vector(</a>
-<a name="333"><span class="lineNum">     333 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     current_state, goal_state, model_parameters, nlp_obstacles, m_cost_weights);</span></a>
+<a name="333"><span class="lineNum">     333 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     current_state, goal_state, model_parameters, nlp_obstacles, m_cost_weights);</span></a>
 <a name="334"><span class="lineNum">     334 </span>                :            :   auto vars_and_bounds = assemble_variable_vector_and_bounds(</a>
 <a name="335"><span class="lineNum">     335 </span>                :            :     initial_guess, nlp_obstacles,</a>
-<a name="336"><span class="lineNum">     336 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     m_lower_state_bounds, m_upper_state_bounds, m_lower_command_bounds, m_upper_command_bounds);</span></a>
-<a name="337"><span class="lineNum">     337 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :   auto constraint_bounds = create_constraint_bounds();</span></a>
+<a name="336"><span class="lineNum">     336 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_lower_state_bounds, m_upper_state_bounds, m_lower_command_bounds, m_upper_command_bounds);</span></a>
+<a name="337"><span class="lineNum">     337 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   auto constraint_bounds = create_constraint_bounds();</span></a>
 <a name="338"><span class="lineNum">     338 </span>                :            : </a>
 <a name="339"><span class="lineNum">     339 </span>                :            :   // NOTE set print_level to higher for debugging purposes. The hessian approximation has to be</a>
 <a name="340"><span class="lineNum">     340 </span>                :            :   // kept the same as in generate_nlp_planner_solver, because different settings lead to different</a>
 <a name="341"><span class="lineNum">     341 </span>                :            :   // callbacks being created.</a>
 <a name="342"><span class="lineNum">     342 </span>                :<span class="lineNoCov">          0 :   casadi::Dict ipopt_options = {{&quot;hessian_approximation&quot;, &quot;limited-memory&quot;}, {&quot;print_level&quot;, 0},</span></a>
-<a name="343"><span class="lineNum">     343 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         12 :     {&quot;max_iter&quot;, 500}};</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
+<a name="343"><span class="lineNum">     343 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     {&quot;max_iter&quot;, 500}};</span></a>
+<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
 <a name="344"><span class="lineNum">     344 </span>                :            :   casadi::Function solver = casadi::nlpsol(</a>
-<a name="345"><span class="lineNum">     345 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          4 :     &quot;solver&quot;, &quot;ipopt&quot;, SHARED_LIBRARY_DIRECTORY + &quot;/&quot; +</span></a>
-<a name="346"><span class="lineNum">     346 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         12 :     &quot;libparking_planner_callbacks.so&quot;, {{&quot;ipopt&quot;, ipopt_options}});</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 2 times"> + </span> 
-<span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 9 was not taken"> - </span>]
+<a name="345"><span class="lineNum">     345 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     &quot;solver&quot;, &quot;ipopt&quot;, SHARED_LIBRARY_DIRECTORY + &quot;/&quot; +</span></a>
+<a name="346"><span class="lineNum">     346 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     &quot;libparking_planner_callbacks.so&quot;, {{&quot;ipopt&quot;, ipopt_options}});</span></a>
+<span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
+<span class="lineNum">         </span>            <span class="branchNoExec" title="Branch 9 was not executed"> # </span>]
 <a name="347"><span class="lineNum">     347 </span>                :            : </a>
 <a name="348"><span class="lineNum">     348 </span>                :            :   // Call solver with the assembled data</a>
 <a name="349"><span class="lineNum">     349 </span>                :            :   casadi::DMDict res = solver(</a>
-<a name="350"><span class="lineNum">     350 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          4 :     casadi::DMDict{</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 2 times"> + </span> 
-<span class="lineNum">         </span>   <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 2 times"> + </span> 
-<span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 13 was not taken"> - </span>]
+<a name="350"><span class="lineNum">     350 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     casadi::DMDict{</span></a>
+<span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
+<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span> 
+<span class="lineNum">         </span>            <span class="branchNoExec" title="Branch 13 was not executed"> # </span>]
 <a name="351"><span class="lineNum">     351 </span>                :            :             {&quot;x0&quot;, vars_and_bounds.variables},</a>
 <a name="352"><span class="lineNum">     352 </span>                :            :             {&quot;p&quot;, p},</a>
 <a name="353"><span class="lineNum">     353 </span>                :            :             {&quot;ubg&quot;, constraint_bounds.upper},</a>
 <a name="354"><span class="lineNum">     354 </span>                :            :             {&quot;lbg&quot;, constraint_bounds.lower},</a>
 <a name="355"><span class="lineNum">     355 </span>                :            :             {&quot;ubx&quot;, vars_and_bounds.upper_bounds},</a>
 <a name="356"><span class="lineNum">     356 </span>                :            :             {&quot;lbx&quot;, vars_and_bounds.lower_bounds},</a>
-<a name="357"><span class="lineNum">     357 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :           });</span></a>
+<a name="357"><span class="lineNum">     357 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           });</span></a>
 <a name="358"><span class="lineNum">     358 </span>                :            : </a>
 <a name="359"><span class="lineNum">     359 </span>                :            :   // Get some info about the solve</a>
-<a name="360"><span class="lineNum">     360 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :   auto stats = solver.stats();</span></a>
+<a name="360"><span class="lineNum">     360 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   auto stats = solver.stats();</span></a>
 <a name="361"><span class="lineNum">     361 </span>                :            : </a>
 <a name="362"><span class="lineNum">     362 </span>                :            :   // Extract and return results</a>
-<a name="363"><span class="lineNum">     363 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          6 :   std::vector&lt;double&gt; elements = res[&quot;x&quot;].get_elements();</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="364"><span class="lineNum">     364 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :   auto resulting_trajectory = disassemble_variable_vector(elements, HORIZON_LENGTH);</span></a>
-<a name="365"><span class="lineNum">     365 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :   return NLPResults{resulting_trajectory, stats};</span></a>
+<a name="363"><span class="lineNum">     363 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   std::vector&lt;double&gt; elements = res[&quot;x&quot;].get_elements();</span></a>
+<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
+<a name="364"><span class="lineNum">     364 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   auto resulting_trajectory = disassemble_variable_vector(elements, HORIZON_LENGTH);</span></a>
+<a name="365"><span class="lineNum">     365 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return NLPResults{resulting_trajectory, stats};</span></a>
 <a name="366"><span class="lineNum">     366 </span>                :            : }</a>
 <a name="367"><span class="lineNum">     367 </span>                :            : </a>
 <a name="368"><span class="lineNum">     368 </span>                :            : }  // namespace parking_planner</a>

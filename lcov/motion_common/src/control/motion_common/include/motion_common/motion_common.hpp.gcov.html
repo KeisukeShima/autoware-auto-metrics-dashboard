@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-01 20:06:45</td>
+            <td class="headerValue">2021-09-02 20:11:42</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">11</td>
@@ -217,22 +217,22 @@
 <a name="139"><span class="lineNum">     139 </span>                :            : </a>
 <a name="140"><span class="lineNum">     140 </span>                :            : /// Standard clamp implementation</a>
 <a name="141"><span class="lineNum">     141 </span>                :            : template&lt;typename T&gt;</a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">      27654 : T clamp(T val, T min, T max)</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">      27644 : T clamp(T val, T min, T max)</span></a>
 <a name="143"><span class="lineNum">     143 </span>                :            : {</a>
-<a name="144"><span class="lineNum">     144 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 27654 times"> + </span>]:<span class="lineCov">      27654 :   if (max &lt; min) {</span></a>
+<a name="144"><span class="lineNum">     144 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 27644 times"> + </span>]:<span class="lineCov">      27644 :   if (max &lt; min) {</span></a>
 <a name="145"><span class="lineNum">     145 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::domain_error{&quot;max &lt; min&quot;};</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            :   }</a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">      27654 :   return std::min(max, std::max(min, val));</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">      27644 :   return std::min(max, std::max(min, val));</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            : }</a>
 <a name="149"><span class="lineNum">     149 </span>                :            : </a>
 <a name="150"><span class="lineNum">     150 </span>                :            : /// Standard linear interpolation</a>
 <a name="151"><span class="lineNum">     151 </span>                :            : template&lt;typename T, typename RealT = double&gt;</a>
-<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">      27600 : T interpolate(T a, T b, RealT t)</span></a>
+<a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">      27590 : T interpolate(T a, T b, RealT t)</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            : {</a>
 <a name="154"><span class="lineNum">     154 </span>                :            :   static_assert(std::is_floating_point&lt;RealT&gt;::value, &quot;t must be floating point&quot;);</a>
-<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">      27600 :   t = clamp(t, RealT{0.0}, RealT{1.0});</span></a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">      27600 :   const auto del = b - a;</span></a>
-<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">      27600 :   return static_cast&lt;T&gt;(t * static_cast&lt;RealT&gt;(del)) + a;</span></a>
+<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">      27590 :   t = clamp(t, RealT{0.0}, RealT{1.0});</span></a>
+<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">      27590 :   const auto del = b - a;</span></a>
+<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">      27590 :   return static_cast&lt;T&gt;(t * static_cast&lt;RealT&gt;(del)) + a;</span></a>
 <a name="158"><span class="lineNum">     158 </span>                :            : }</a>
 <a name="159"><span class="lineNum">     159 </span>                :            : </a>
 <a name="160"><span class="lineNum">     160 </span>                :            : /// 2D nlerp (linear approximation of slerp):</a>
@@ -242,26 +242,26 @@
 <a name="164"><span class="lineNum">     164 </span>                :            : </a>
 <a name="165"><span class="lineNum">     165 </span>                :            : /// Trajectory point interpolation</a>
 <a name="166"><span class="lineNum">     166 </span>                :            : template&lt;typename SlerpF&gt;</a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">       2753 : Point interpolate(Point a, Point b, Real t, SlerpF slerp_fn)</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">       2752 : Point interpolate(Point a, Point b, Real t, SlerpF slerp_fn)</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            : {</a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">       2753 :   Point ret{rosidl_runtime_cpp::MessageInitialization::ALL};</span></a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">       2752 :   Point ret{rosidl_runtime_cpp::MessageInitialization::ALL};</span></a>
 <a name="170"><span class="lineNum">     170 </span>                :            :   {</a>
-<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">       2753 :     const auto dt0 = time_utils::from_message(a.time_from_start);</span></a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">       2753 :     const auto dt1 = time_utils::from_message(b.time_from_start);</span></a>
-<a name="173"><span class="lineNum">     173 </span>        [<span class="branchCov" title="Branch 0 was taken 2753 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2753 :     ret.time_from_start = time_utils::to_message(time_utils::interpolate(dt0, dt1, t));</span></a>
+<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">       2752 :     const auto dt0 = time_utils::from_message(a.time_from_start);</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">       2752 :     const auto dt1 = time_utils::from_message(b.time_from_start);</span></a>
+<a name="173"><span class="lineNum">     173 </span>        [<span class="branchCov" title="Branch 0 was taken 2752 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2752 :     ret.time_from_start = time_utils::to_message(time_utils::interpolate(dt0, dt1, t));</span></a>
 <a name="174"><span class="lineNum">     174 </span>                :            :   }</a>
-<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">       2753 :   ret.x = interpolate(a.x, b.x, t);</span></a>
-<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">       2753 :   ret.y = interpolate(a.y, b.y, t);</span></a>
-<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">       2753 :   ret.heading = slerp_fn(a.heading, b.heading, t);</span></a>
-<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">       2753 :   ret.longitudinal_velocity_mps =</span></a>
-<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">       2753 :     interpolate(a.longitudinal_velocity_mps, b.longitudinal_velocity_mps, t);</span></a>
-<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">       2753 :   ret.lateral_velocity_mps = interpolate(a.lateral_velocity_mps, b.lateral_velocity_mps, t);</span></a>
-<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">       2753 :   ret.acceleration_mps2 = interpolate(a.acceleration_mps2, b.acceleration_mps2, t);</span></a>
-<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">       2753 :   ret.heading_rate_rps = interpolate(a.heading_rate_rps, b.heading_rate_rps, t);</span></a>
-<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">       2753 :   ret.front_wheel_angle_rad = interpolate(a.front_wheel_angle_rad, b.front_wheel_angle_rad, t);</span></a>
-<a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">       2753 :   ret.rear_wheel_angle_rad = interpolate(a.rear_wheel_angle_rad, b.rear_wheel_angle_rad, t);</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">       2752 :   ret.x = interpolate(a.x, b.x, t);</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">       2752 :   ret.y = interpolate(a.y, b.y, t);</span></a>
+<a name="177"><span class="lineNum">     177 </span>                :<span class="lineCov">       2752 :   ret.heading = slerp_fn(a.heading, b.heading, t);</span></a>
+<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">       2752 :   ret.longitudinal_velocity_mps =</span></a>
+<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">       2752 :     interpolate(a.longitudinal_velocity_mps, b.longitudinal_velocity_mps, t);</span></a>
+<a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">       2752 :   ret.lateral_velocity_mps = interpolate(a.lateral_velocity_mps, b.lateral_velocity_mps, t);</span></a>
+<a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">       2752 :   ret.acceleration_mps2 = interpolate(a.acceleration_mps2, b.acceleration_mps2, t);</span></a>
+<a name="182"><span class="lineNum">     182 </span>                :<span class="lineCov">       2752 :   ret.heading_rate_rps = interpolate(a.heading_rate_rps, b.heading_rate_rps, t);</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">       2752 :   ret.front_wheel_angle_rad = interpolate(a.front_wheel_angle_rad, b.front_wheel_angle_rad, t);</span></a>
+<a name="184"><span class="lineNum">     184 </span>                :<span class="lineCov">       2752 :   ret.rear_wheel_angle_rad = interpolate(a.rear_wheel_angle_rad, b.rear_wheel_angle_rad, t);</span></a>
 <a name="185"><span class="lineNum">     185 </span>                :            : </a>
-<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">       2753 :   return ret;</span></a>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">       2752 :   return ret;</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :            : }</a>
 <a name="188"><span class="lineNum">     188 </span>                :            : </a>
 <a name="189"><span class="lineNum">     189 </span>                :            : /// Default point interpolation, currently uses nlerp</a>

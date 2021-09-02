@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-01 20:08:02</td>
+            <td class="headerValue">2021-09-02 20:13:04</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -142,45 +142,45 @@
 <a name="64"><span class="lineNum">      64 </span>                :            : }  // namespace details</a>
 <a name="65"><span class="lineNum">      65 </span>                :            : </a>
 <a name="66"><span class="lineNum">      66 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">       2017 : builtin_interfaces::msg::Time to_message(const std::chrono::system_clock::time_point t)</span></a>
+<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">       2018 : builtin_interfaces::msg::Time to_message(const std::chrono::system_clock::time_point t)</span></a>
 <a name="68"><span class="lineNum">      68 </span>                :            : {</a>
-<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">       2017 :   const auto dt = t.time_since_epoch();</span></a>
-<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 2017 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       4034 :   return details::duration_to_msg&lt;builtin_interfaces::msg::Time&gt;(dt);</span></a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">       2018 :   const auto dt = t.time_since_epoch();</span></a>
+<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 2018 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       4036 :   return details::duration_to_msg&lt;builtin_interfaces::msg::Time&gt;(dt);</span></a>
 <a name="71"><span class="lineNum">      71 </span>                :            : }</a>
 <a name="72"><span class="lineNum">      72 </span>                :            : </a>
 <a name="73"><span class="lineNum">      73 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">      12729 : builtin_interfaces::msg::Duration to_message(std::chrono::nanoseconds dt)</span></a>
+<a name="74"><span class="lineNum">      74 </span>                :<span class="lineCov">      12728 : builtin_interfaces::msg::Duration to_message(std::chrono::nanoseconds dt)</span></a>
 <a name="75"><span class="lineNum">      75 </span>                :            : {</a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">      12729 :   return details::duration_to_msg&lt;builtin_interfaces::msg::Duration&gt;(dt);</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">      12728 :   return details::duration_to_msg&lt;builtin_interfaces::msg::Duration&gt;(dt);</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            : }</a>
 <a name="78"><span class="lineNum">      78 </span>                :            : </a>
 <a name="79"><span class="lineNum">      79 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">      29216 : std::chrono::system_clock::time_point from_message(builtin_interfaces::msg::Time t) noexcept</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">      29394 : std::chrono::system_clock::time_point from_message(builtin_interfaces::msg::Time t) noexcept</span></a>
 <a name="81"><span class="lineNum">      81 </span>                :            : {</a>
-<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">      29216 :   const auto dt_ns = std::chrono::seconds(t.sec) + std::chrono::nanoseconds(t.nanosec);</span></a>
-<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">      29216 :   const auto dt = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(dt_ns);</span></a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">      29216 :   return std::chrono::system_clock::time_point{} + dt;</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">      29394 :   const auto dt_ns = std::chrono::seconds(t.sec) + std::chrono::nanoseconds(t.nanosec);</span></a>
+<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">      29394 :   const auto dt = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(dt_ns);</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">      29394 :   return std::chrono::system_clock::time_point{} + dt;</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            : }</a>
 <a name="86"><span class="lineNum">      86 </span>                :            : </a>
 <a name="87"><span class="lineNum">      87 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">      35577 : std::chrono::nanoseconds from_message(builtin_interfaces::msg::Duration dt) noexcept</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">      35663 : std::chrono::nanoseconds from_message(builtin_interfaces::msg::Duration dt) noexcept</span></a>
 <a name="89"><span class="lineNum">      89 </span>                :            : {</a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">      35577 :   const auto ns = std::chrono::nanoseconds{dt.nanosec};</span></a>
-<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">      35577 :   const auto us = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(ns);</span></a>
-<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">      35577 :   return std::chrono::seconds{dt.sec} + us;</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">      35663 :   const auto ns = std::chrono::nanoseconds{dt.nanosec};</span></a>
+<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">      35663 :   const auto us = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(ns);</span></a>
+<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">      35663 :   return std::chrono::seconds{dt.sec} + us;</span></a>
 <a name="93"><span class="lineNum">      93 </span>                :            : }</a>
 <a name="94"><span class="lineNum">      94 </span>                :            : </a>
 <a name="95"><span class="lineNum">      95 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">       2753 : std::chrono::nanoseconds interpolate(</span></a>
+<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">       2752 : std::chrono::nanoseconds interpolate(</span></a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   std::chrono::nanoseconds a,</a>
 <a name="98"><span class="lineNum">      98 </span>                :            :   std::chrono::nanoseconds b,</a>
 <a name="99"><span class="lineNum">      99 </span>                :            :   float t) noexcept</a>
 <a name="100"><span class="lineNum">     100 </span>                :            : {</a>
 <a name="101"><span class="lineNum">     101 </span>                :            :   // TODO(c.ho) consider long double</a>
-<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">       2753 :   const auto t_ = static_cast&lt;double&gt;(std::min(std::max(t, 0.0F), 1.0F));</span></a>
-<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">       2753 :   const auto del = std::chrono::duration_cast&lt;std::chrono::duration&lt;double&gt;&gt;(b - a);</span></a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">       2753 :   const auto del_ = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(t_ * del);</span></a>
-<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">       2753 :   return a + del_;</span></a>
+<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">       2752 :   const auto t_ = static_cast&lt;double&gt;(std::min(std::max(t, 0.0F), 1.0F));</span></a>
+<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">       2752 :   const auto del = std::chrono::duration_cast&lt;std::chrono::duration&lt;double&gt;&gt;(b - a);</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">       2752 :   const auto del_ = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(t_ * del);</span></a>
+<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">       2752 :   return a + del_;</span></a>
 <a name="106"><span class="lineNum">     106 </span>                :            : }</a>
 <a name="107"><span class="lineNum">     107 </span>                :            : </a>
 <a name="108"><span class="lineNum">     108 </span>                :            : }  // namespace time_utils</a>

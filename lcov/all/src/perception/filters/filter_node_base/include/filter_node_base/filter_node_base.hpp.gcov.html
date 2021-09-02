@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-01 20:05:53</td>
+            <td class="headerValue">2021-09-02 20:10:46</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -200,10 +200,10 @@
 <a name="122"><span class="lineNum">     122 </span>                :            :    * \param cloud Input sensor_msgs::msg::PointCloud2 to be validated</a>
 <a name="123"><span class="lineNum">     123 </span>                :            :    * \return bool8_t True if the point cloud is valid, false if not</a>
 <a name="124"><span class="lineNum">     124 </span>                :            :    */</a>
-<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">          2 :   FILTER_NODE_BASE_LOCAL inline bool8_t is_valid(</span></a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">          1 :   FILTER_NODE_BASE_LOCAL inline bool8_t is_valid(</span></a>
 <a name="126"><span class="lineNum">     126 </span>                :            :     const sensor_msgs::msg::PointCloud2::ConstSharedPtr &amp; cloud)</a>
 <a name="127"><span class="lineNum">     127 </span>                :            :   {</a>
-<a name="128"><span class="lineNum">     128 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     if (cloud-&gt;width * cloud-&gt;height * cloud-&gt;point_step != cloud-&gt;data.size()) {</span></a>
+<a name="128"><span class="lineNum">     128 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :     if (cloud-&gt;width * cloud-&gt;height * cloud-&gt;point_step != cloud-&gt;data.size()) {</span></a>
 <a name="129"><span class="lineNum">     129 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :       RCLCPP_WARN(</span></a>
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span><span class="branchNoExec" title="Branch 13 was not executed"> # </span> 
@@ -217,7 +217,7 @@
 <a name="134"><span class="lineNum">     134 </span>                :            :         rclcpp::Time(cloud-&gt;header.stamp).seconds(), cloud-&gt;header.frame_id.c_str());</a>
 <a name="135"><span class="lineNum">     135 </span>                :<span class="lineNoCov">          0 :       return false;</span></a>
 <a name="136"><span class="lineNum">     136 </span>                :            :     }</a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">          2 :     return true;</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">          1 :     return true;</span></a>
 <a name="138"><span class="lineNum">     138 </span>                :            :   }</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : </a>
 <a name="140"><span class="lineNum">     140 </span>                :            :   /** \brief Binds the param_callback to the OnSetParametersCallbackHandle object</a>
