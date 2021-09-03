@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">23</td>
-            <td class="headerCovTableEntry">23</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-02 20:10:46</td>
+            <td class="headerValue">2021-09-03 19:39:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">47</td>
-            <td class="headerCovTableEntry">47</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntryLo">53.8 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -139,11 +139,11 @@
 <a name="61"><span class="lineNum">      61 </span>                :            :   /// @param[in]  measurement  The measurement</a>
 <a name="62"><span class="lineNum">      62 </span>                :            :   /// @param[in]  covariance   The covariance</a>
 <a name="63"><span class="lineNum">      63 </span>                :            :   ///</a>
-<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">        279 :   explicit LinearMeasurement(</span></a>
+<a name="64"><span class="lineNum">      64 </span>                :<span class="lineNoCov">          0 :   explicit LinearMeasurement(</span></a>
 <a name="65"><span class="lineNum">      65 </span>                :            :     const typename StateT::Vector &amp; measurement,</a>
 <a name="66"><span class="lineNum">      66 </span>                :            :     const typename StateT::Matrix &amp; covariance)</a>
 <a name="67"><span class="lineNum">      67 </span>                :            :   : m_measurement{measurement},</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">        279 :     m_covariance{covariance} {}</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineNoCov">          0 :     m_covariance{covariance} {}</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            :   ///</a>
 <a name="70"><span class="lineNum">      70 </span>                :            :   /// @brief      Convenience factory function to construct a measurement from a vector of standard</a>
 <a name="71"><span class="lineNum">      71 </span>                :            :   ///             deviations.</a>
@@ -155,14 +155,14 @@
 <a name="77"><span class="lineNum">      77 </span>                :            :   /// @param[in]  measurement         The measurement</a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   /// @param[in]  standard_deviation  The standard deviation for each variable.</a>
 <a name="79"><span class="lineNum">      79 </span>                :            :   ///</a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">        278 :   static LinearMeasurement create_with_stddev(</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineNoCov">          0 :   static LinearMeasurement create_with_stddev(</span></a>
 <a name="81"><span class="lineNum">      81 </span>                :            :     const typename StateT::Vector &amp; measurement,</a>
 <a name="82"><span class="lineNum">      82 </span>                :            :     const typename StateT::Vector &amp; standard_deviation)</a>
 <a name="83"><span class="lineNum">      83 </span>                :            :   {</a>
 <a name="84"><span class="lineNum">      84 </span>                :            :     return LinearMeasurement{measurement,</a>
-<a name="85"><span class="lineNum">      85 </span>  [<span class="branchCov" title="Branch 0 was taken 278 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 278 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        278 :       standard_deviation.array().square().matrix().asDiagonal()};</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 278 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 278 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 278 times"> + </span> 
-<span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 9 was not taken"> - </span>]
+<a name="85"><span class="lineNum">      85 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :       standard_deviation.array().square().matrix().asDiagonal()};</span></a>
+<span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
+<span class="lineNum">         </span>            <span class="branchNoExec" title="Branch 9 was not executed"> # </span>]
 <a name="86"><span class="lineNum">      86 </span>                :            :   }</a>
 <a name="87"><span class="lineNum">      87 </span>                :            : </a>
 <a name="88"><span class="lineNum">      88 </span>                :            :   ///</a>
@@ -185,13 +185,13 @@
 <a name="105"><span class="lineNum">     105 </span>                :            :   friend MeasurementInterface&lt;LinearMeasurement&lt;StateT&gt;&gt;;</a>
 <a name="106"><span class="lineNum">     106 </span>                :            : </a>
 <a name="107"><span class="lineNum">     107 </span>                :            :   /// @brief      Get state vector function that is to be called by the CRTP interface.</a>
-<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">          6 :   inline StateT &amp; crtp_state() noexcept {return m_measurement;}</span></a>
+<a name="108"><span class="lineNum">     108 </span>                :<span class="lineNoCov">          0 :   inline StateT &amp; crtp_state() noexcept {return m_measurement;}</span></a>
 <a name="109"><span class="lineNum">     109 </span>                :            :   /// @brief      Get state vector function that is to be called by the CRTP interface.</a>
-<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">        275 :   inline const StateT &amp; crtp_state() const noexcept {return m_measurement;}</span></a>
+<a name="110"><span class="lineNum">     110 </span>                :<span class="lineNoCov">          0 :   inline const StateT &amp; crtp_state() const noexcept {return m_measurement;}</span></a>
 <a name="111"><span class="lineNum">     111 </span>                :            :   /// @brief      Get covariance function that is to be called by the CRTP interface.</a>
-<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">          2 :   inline typename StateT::Matrix &amp; crtp_covariance() noexcept {return m_covariance;}</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineNoCov">          0 :   inline typename StateT::Matrix &amp; crtp_covariance() noexcept {return m_covariance;}</span></a>
 <a name="113"><span class="lineNum">     113 </span>                :            :   /// @brief      Get covariance function that is to be called by the CRTP interface.</a>
-<a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">        275 :   inline const typename StateT::Matrix &amp; crtp_covariance() const noexcept {return m_covariance;}</span></a>
+<a name="114"><span class="lineNum">     114 </span>                :<span class="lineNoCov">          0 :   inline const typename StateT::Matrix &amp; crtp_covariance() const noexcept {return m_covariance;}</span></a>
 <a name="115"><span class="lineNum">     115 </span>                :            :   ///</a>
 <a name="116"><span class="lineNum">     116 </span>                :            :   /// @brief      Create a new instance of the measurement from another state.</a>
 <a name="117"><span class="lineNum">     117 </span>                :            :   ///</a>
@@ -209,9 +209,9 @@
 <a name="129"><span class="lineNum">     129 </span>                :            :   /// @return     A vector that represents a mapping of another state to this measurement's frame.</a>
 <a name="130"><span class="lineNum">     130 </span>                :            :   ///</a>
 <a name="131"><span class="lineNum">     131 </span>                :            :   template&lt;typename OtherStateT&gt;</a>
-<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">        274 :   StateT crtp_create_new_instance_from(const OtherStateT &amp; other_state) const</span></a>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineNoCov">          0 :   StateT crtp_create_new_instance_from(const OtherStateT &amp; other_state) const</span></a>
 <a name="133"><span class="lineNum">     133 </span>                :            :   {</a>
-<a name="134"><span class="lineNum">     134 </span>        [<span class="branchCov" title="Branch 0 was taken 366 times"> + </span><span class="branchCov" title="Branch 1 was taken 274 times"> + </span>]:<span class="lineCov">        640 :     return other_state.template copy_into&lt;StateT&gt;();</span></a>
+<a name="134"><span class="lineNum">     134 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     return other_state.template copy_into&lt;StateT&gt;();</span></a>
 <a name="135"><span class="lineNum">     135 </span>                :            :   }</a>
 <a name="136"><span class="lineNum">     136 </span>                :            :   ///</a>
 <a name="137"><span class="lineNum">     137 </span>                :            :   /// @brief      Copy this measurement into another state space.</a>
@@ -225,9 +225,9 @@
 <a name="145"><span class="lineNum">     145 </span>                :            :   /// @return     A vector that represents a mapping of another state to this measurement's frame.</a>
 <a name="146"><span class="lineNum">     146 </span>                :            :   ///</a>
 <a name="147"><span class="lineNum">     147 </span>                :            :   template&lt;typename OtherStateT&gt;</a>
-<a name="148"><span class="lineNum">     148 </span>                :<span class="lineCov">          2 :   OtherStateT crtp_map_into(const OtherStateT &amp; other_state) const noexcept</span></a>
+<a name="148"><span class="lineNum">     148 </span>                :<span class="lineNoCov">          0 :   OtherStateT crtp_map_into(const OtherStateT &amp; other_state) const noexcept</span></a>
 <a name="149"><span class="lineNum">     149 </span>                :            :   {</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">          2 :     return m_measurement.copy_into(other_state);</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineNoCov">          0 :     return m_measurement.copy_into(other_state);</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            :   }</a>
 <a name="152"><span class="lineNum">     152 </span>                :            :   ///</a>
 <a name="153"><span class="lineNum">     153 </span>                :            :   /// @brief      Get the mapping matrix between the two states called by the CRTP interface.</a>
@@ -244,27 +244,27 @@
 <a name="164"><span class="lineNum">     164 </span>                :            :   /// @return     A matrix M, such that other_state = M * this_state.</a>
 <a name="165"><span class="lineNum">     165 </span>                :            :   ///</a>
 <a name="166"><span class="lineNum">     166 </span>                :            :   template&lt;typename OtherStateT&gt;</a>
-<a name="167"><span class="lineNum">     167 </span>                :<span class="lineCov">        274 :   MappingMatrixFrom&lt;OtherStateT&gt; crtp_mapping_matrix_from(const OtherStateT &amp;) const</span></a>
+<a name="167"><span class="lineNum">     167 </span>                :<span class="lineNoCov">          0 :   MappingMatrixFrom&lt;OtherStateT&gt; crtp_mapping_matrix_from(const OtherStateT &amp;) const</span></a>
 <a name="168"><span class="lineNum">     168 </span>                :            :   {</a>
-<a name="169"><span class="lineNum">     169 </span>  [<span class="branchCov" title="Branch 0 was taken 274 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 274 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        274 :     MappingMatrixFrom&lt;OtherStateT&gt; m{MappingMatrixFrom&lt;OtherStateT&gt;::Zero()};</span></a>
-<a name="170"><span class="lineNum">     170 </span>                :<span class="lineCov">       1554 :     auto fill_mapping_matrix = [&amp;m, this](auto variable) {</span></a>
+<a name="169"><span class="lineNum">     169 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     MappingMatrixFrom&lt;OtherStateT&gt; m{MappingMatrixFrom&lt;OtherStateT&gt;::Zero()};</span></a>
+<a name="170"><span class="lineNum">     170 </span>                :<span class="lineNoCov">          0 :     auto fill_mapping_matrix = [&amp;m, this](auto variable) {</span></a>
 <a name="171"><span class="lineNum">     171 </span>                :            :         using VariableT = std::decay_t&lt;decltype(variable)&gt;;</a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">        640 :         constexpr auto index_in_this_state = StateT::template index_of&lt;VariableT&gt;();</span></a>
-<a name="173"><span class="lineNum">     173 </span>                :<span class="lineCov">        640 :         constexpr auto index_in_other_state = OtherStateT::template index_of&lt;VariableT&gt;();</span></a>
-<a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">        640 :         m(index_in_this_state, index_in_other_state) = 1;</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineNoCov">          0 :         constexpr auto index_in_this_state = StateT::template index_of&lt;VariableT&gt;();</span></a>
+<a name="173"><span class="lineNum">     173 </span>                :<span class="lineNoCov">          0 :         constexpr auto index_in_other_state = OtherStateT::template index_of&lt;VariableT&gt;();</span></a>
+<a name="174"><span class="lineNum">     174 </span>                :<span class="lineNoCov">          0 :         m(index_in_this_state, index_in_other_state) = 1;</span></a>
 <a name="175"><span class="lineNum">     175 </span>                :            :       };</a>
 <a name="176"><span class="lineNum">     176 </span>                :            :     using CommonVariablesTuple = typename autoware::common::type_traits::intersect&lt;</a>
 <a name="177"><span class="lineNum">     177 </span>                :            :       typename StateT::Variables, typename OtherStateT::Variables&gt;::type;</a>
-<a name="178"><span class="lineNum">     178 </span>        [<span class="branchCov" title="Branch 0 was taken 274 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        274 :     common::type_traits::visit(CommonVariablesTuple{}, fill_mapping_matrix);</span></a>
-<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">        548 :     return m;</span></a>
+<a name="178"><span class="lineNum">     178 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     common::type_traits::visit(CommonVariablesTuple{}, fill_mapping_matrix);</span></a>
+<a name="179"><span class="lineNum">     179 </span>                :<span class="lineNoCov">          0 :     return m;</span></a>
 <a name="180"><span class="lineNum">     180 </span>                :            :   }</a>
 <a name="181"><span class="lineNum">     181 </span>                :            : </a>
 <a name="182"><span class="lineNum">     182 </span>                :            :   /// @brief An equality operator.</a>
-<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">          1 :   friend bool operator==(const LinearMeasurement &amp; lhs, const LinearMeasurement &amp; rhs)</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineNoCov">          0 :   friend bool operator==(const LinearMeasurement &amp; lhs, const LinearMeasurement &amp; rhs)</span></a>
 <a name="184"><span class="lineNum">     184 </span>                :            :   {</a>
-<a name="185"><span class="lineNum">     185 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          2 :     return (lhs.state() == rhs.state()) &amp;&amp;</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
-<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">          2 :            lhs.covariance().isApprox(rhs.covariance());</span></a>
+<a name="185"><span class="lineNum">     185 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     return (lhs.state() == rhs.state()) &amp;&amp;</span></a>
+<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineNoCov">          0 :            lhs.covariance().isApprox(rhs.covariance());</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :            :   }</a>
 <a name="188"><span class="lineNum">     188 </span>                :            : </a>
 <a name="189"><span class="lineNum">     189 </span>                :            : private:</a>

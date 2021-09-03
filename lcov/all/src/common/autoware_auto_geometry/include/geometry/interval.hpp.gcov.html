@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">64</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">68</td>
-            <td class="headerCovTableEntryHi">94.1 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-02 20:10:46</td>
+            <td class="headerValue">2021-09-03 19:39:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntryHi">92.3 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">70</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">114</td>
-            <td class="headerCovTableEntryLo">61.4 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -144,22 +144,22 @@
 <a name="66"><span class="lineNum">      66 </span>                :            :    *</a>
 <a name="67"><span class="lineNum">      67 </span>                :            :    * @return True iff the intervals compare equal.</a>
 <a name="68"><span class="lineNum">      68 </span>                :            :    */</a>
-<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">         12 :   friend bool operator==(const Interval &amp; i1, const Interval &amp; i2)</span></a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineNoCov">          0 :   friend bool operator==(const Interval &amp; i1, const Interval &amp; i2)</span></a>
 <a name="70"><span class="lineNum">      70 </span>                :            :   {</a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">         12 :     const auto min_eq = (Interval::min(i1) == Interval::min(i2));</span></a>
-<a name="72"><span class="lineNum">      72 </span>                :<span class="lineCov">         12 :     const auto max_eq = (Interval::max(i1) == Interval::max(i2));</span></a>
-<a name="73"><span class="lineNum">      73 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">         12 :     const auto bounds_equal = (min_eq &amp;&amp; max_eq);</span></a>
-<a name="74"><span class="lineNum">      74 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         12 :     const auto both_empty = (Interval::empty(i1) &amp;&amp; Interval::empty(i2));</span></a>
-<a name="75"><span class="lineNum">      75 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchCov" title="Branch 3 was taken 8 times"> + </span>]:<span class="lineCov">         12 :     return both_empty || bounds_equal;</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineNoCov">          0 :     const auto min_eq = (Interval::min(i1) == Interval::min(i2));</span></a>
+<a name="72"><span class="lineNum">      72 </span>                :<span class="lineNoCov">          0 :     const auto max_eq = (Interval::max(i1) == Interval::max(i2));</span></a>
+<a name="73"><span class="lineNum">      73 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto bounds_equal = (min_eq &amp;&amp; max_eq);</span></a>
+<a name="74"><span class="lineNum">      74 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto both_empty = (Interval::empty(i1) &amp;&amp; Interval::empty(i2));</span></a>
+<a name="75"><span class="lineNum">      75 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     return both_empty || bounds_equal;</span></a>
 <a name="76"><span class="lineNum">      76 </span>                :            :   }</a>
 <a name="77"><span class="lineNum">      77 </span>                :            : </a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   /**</a>
 <a name="79"><span class="lineNum">      79 </span>                :            :    * @brief Compute inequality and the logical negation of equality.</a>
 <a name="80"><span class="lineNum">      80 </span>                :            :    * @note This is defined inline because the class is templated.</a>
 <a name="81"><span class="lineNum">      81 </span>                :            :    */</a>
-<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">          6 :   friend bool operator!=(const Interval &amp; i1, const Interval &amp; i2)</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineNoCov">          0 :   friend bool operator!=(const Interval &amp; i1, const Interval &amp; i2)</span></a>
 <a name="83"><span class="lineNum">      83 </span>                :            :   {</a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">          6 :     return !(i1 == i2);</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineNoCov">          0 :     return !(i1 == i2);</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            :   }</a>
 <a name="86"><span class="lineNum">      86 </span>                :            : </a>
 <a name="87"><span class="lineNum">      87 </span>                :            :   /**</a>
@@ -171,35 +171,35 @@
 <a name="93"><span class="lineNum">      93 </span>                :            :    * @note The serialization is lossy. It is used for debugging and for</a>
 <a name="94"><span class="lineNum">      94 </span>                :            :    * generating exception strings.</a>
 <a name="95"><span class="lineNum">      95 </span>                :            :    */</a>
-<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">          2 :   friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp; os, const Interval &amp; i)</span></a>
+<a name="96"><span class="lineNum">      96 </span>                :<span class="lineNoCov">          0 :   friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp; os, const Interval &amp; i)</span></a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   {</a>
-<a name="98"><span class="lineNum">      98 </span>                :<span class="lineCov">          2 :     constexpr auto PRECISION = 5;</span></a>
+<a name="98"><span class="lineNum">      98 </span>                :<span class="lineNoCov">          0 :     constexpr auto PRECISION = 5;</span></a>
 <a name="99"><span class="lineNum">      99 </span>                :            : </a>
 <a name="100"><span class="lineNum">     100 </span>                :            :     // Internal helper to format the output.</a>
-<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">          4 :     const auto readable_extremum = [](const T &amp; val) {</span></a>
-<a name="102"><span class="lineNum">     102 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineCov">          4 :         if (val == std::numeric_limits&lt;T&gt;::lowest()) {</span></a>
+<a name="101"><span class="lineNum">     101 </span>                :<span class="lineNoCov">          0 :     const auto readable_extremum = [](const T &amp; val) {</span></a>
+<a name="102"><span class="lineNum">     102 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :         if (val == std::numeric_limits&lt;T&gt;::lowest()) {</span></a>
 <a name="103"><span class="lineNum">     103 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :           return std::string(&quot;REAL_MIN&quot;);</span></a>
 <a name="104"><span class="lineNum">     104 </span>                :            :         }</a>
-<a name="105"><span class="lineNum">     105 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineCov">          4 :         if (val == std::numeric_limits&lt;T&gt;::max()) {</span></a>
+<a name="105"><span class="lineNum">     105 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :         if (val == std::numeric_limits&lt;T&gt;::max()) {</span></a>
 <a name="106"><span class="lineNum">     106 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :           return std::string(&quot;REAL_MAX&quot;);</span></a>
 <a name="107"><span class="lineNum">     107 </span>                :            :         }</a>
 <a name="108"><span class="lineNum">     108 </span>                :            : </a>
-<a name="109"><span class="lineNum">     109 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineCov">          8 :         std::stringstream ss;</span></a>
-<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">          4 :         ss.setf(std::ios::fixed, std::ios::floatfield);</span></a>
-<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">          4 :         ss.precision(PRECISION);</span></a>
-<a name="112"><span class="lineNum">     112 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineCov">          4 :         ss &lt;&lt; val;</span></a>
-<a name="113"><span class="lineNum">     113 </span>  [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineCov">          4 :         return ss.str();</span></a>
+<a name="109"><span class="lineNum">     109 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :         std::stringstream ss;</span></a>
+<a name="110"><span class="lineNum">     110 </span>                :<span class="lineNoCov">          0 :         ss.setf(std::ios::fixed, std::ios::floatfield);</span></a>
+<a name="111"><span class="lineNum">     111 </span>                :<span class="lineNoCov">          0 :         ss.precision(PRECISION);</span></a>
+<a name="112"><span class="lineNum">     112 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :         ss &lt;&lt; val;</span></a>
+<a name="113"><span class="lineNum">     113 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :         return ss.str();</span></a>
 <a name="114"><span class="lineNum">     114 </span>                :            :       };</a>
 <a name="115"><span class="lineNum">     115 </span>                :            : </a>
 <a name="116"><span class="lineNum">     116 </span>                :            :     // Do stream output.</a>
-<a name="117"><span class="lineNum">     117 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          2 :     if (Interval::empty(i)) {</span></a>
+<a name="117"><span class="lineNum">     117 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (Interval::empty(i)) {</span></a>
 <a name="118"><span class="lineNum">     118 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       return os &lt;&lt; &quot;{}&quot;;</span></a>
 <a name="119"><span class="lineNum">     119 </span>                :            :     }</a>
 <a name="120"><span class="lineNum">     120 </span>                :<span class="lineNoCov">          0 :     return os &lt;&lt; &quot;{\&quot;min\&quot;: &quot; &lt;&lt; readable_extremum(Interval::min(i)) &lt;&lt;</span></a>
-<a name="121"><span class="lineNum">     121 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          2 :            &quot;, \&quot;max\&quot;: &quot; &lt;&lt; readable_extremum(Interval::max(i)) &lt;&lt; &quot;}&quot;;</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 2 times"> + </span> 
-<span class="lineNum">         </span>   <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 2 times"> + </span> 
-<span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 13 was not taken"> - </span>]
+<a name="121"><span class="lineNum">     121 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :            &quot;, \&quot;max\&quot;: &quot; &lt;&lt; readable_extremum(Interval::max(i)) &lt;&lt; &quot;}&quot;;</span></a>
+<span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
+<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span> 
+<span class="lineNum">         </span>            <span class="branchNoExec" title="Branch 13 was not executed"> # </span>]
 <a name="122"><span class="lineNum">     122 </span>                :            :   }</a>
 <a name="123"><span class="lineNum">     123 </span>                :            : </a>
 <a name="124"><span class="lineNum">     124 </span>                :            :   /**</a>
@@ -212,10 +212,10 @@
 <a name="131"><span class="lineNum">     131 </span>                :            :   static bool abs_eq(const Interval &amp; i1, const Interval &amp; i2, const T &amp; eps);</a>
 <a name="132"><span class="lineNum">     132 </span>                :            : </a>
 <a name="133"><span class="lineNum">     133 </span>                :            :   /** @brief The minimum bound of the interval. */</a>
-<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">        973 :   static T min(const Interval &amp; i) {return i.min_;}</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineNoCov">          0 :   static T min(const Interval &amp; i) {return i.min_;}</span></a>
 <a name="135"><span class="lineNum">     135 </span>                :            : </a>
 <a name="136"><span class="lineNum">     136 </span>                :            :   /** @brief The maximum bound of the interval. */</a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">        575 :   static T max(const Interval &amp; i) {return i.max_;}</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineNoCov">          0 :   static T max(const Interval &amp; i) {return i.max_;}</span></a>
 <a name="138"><span class="lineNum">     138 </span>                :            : </a>
 <a name="139"><span class="lineNum">     139 </span>                :            :   /**</a>
 <a name="140"><span class="lineNum">     140 </span>                :            :    * @brief Return the measure (length) of the interval.</a>
@@ -314,125 +314,125 @@
 <a name="233"><span class="lineNum">     233 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="234"><span class="lineNum">     234 </span>                :            : </a>
 <a name="235"><span class="lineNum">     235 </span>                :            : template&lt;typename T&gt;</a>
-<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">         16 : Interval&lt;T&gt;::Interval()</span></a>
-<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">         16 : : min_(Interval::NaN), max_(Interval::NaN) {}</span></a>
+<a name="236"><span class="lineNum">     236 </span>                :<span class="lineNoCov">          0 : Interval&lt;T&gt;::Interval()</span></a>
+<a name="237"><span class="lineNum">     237 </span>                :<span class="lineNoCov">          0 : : min_(Interval::NaN), max_(Interval::NaN) {}</span></a>
 <a name="238"><span class="lineNum">     238 </span>                :            : </a>
 <a name="239"><span class="lineNum">     239 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="240"><span class="lineNum">     240 </span>                :            : </a>
 <a name="241"><span class="lineNum">     241 </span>                :            : template&lt;typename T&gt;</a>
-<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">        297 : Interval&lt;T&gt;::Interval(const T &amp; min, const T &amp; max)</span></a>
-<a name="243"><span class="lineNum">     243 </span>                :<span class="lineCov">        297 : : min_(min), max_(max)</span></a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineNoCov">          0 : Interval&lt;T&gt;::Interval(const T &amp; min, const T &amp; max)</span></a>
+<a name="243"><span class="lineNum">     243 </span>                :<span class="lineNoCov">          0 : : min_(min), max_(max)</span></a>
 <a name="244"><span class="lineNum">     244 </span>                :            : {</a>
-<a name="245"><span class="lineNum">     245 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 295 times"> + </span>]:<span class="lineCov">        297 :   if (!Interval::bounds_valid(*this)) {</span></a>
-<a name="246"><span class="lineNum">     246 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     std::stringstream ss;</span></a>
-<a name="247"><span class="lineNum">     247 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :     ss &lt;&lt; &quot;Attempted to construct an invalid interval: &quot; &lt;&lt; *this;</span></a>
-<a name="248"><span class="lineNum">     248 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :     throw std::runtime_error(ss.str());</span></a>
+<a name="245"><span class="lineNum">     245 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (!Interval::bounds_valid(*this)) {</span></a>
+<a name="246"><span class="lineNum">     246 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     std::stringstream ss;</span></a>
+<a name="247"><span class="lineNum">     247 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     ss &lt;&lt; &quot;Attempted to construct an invalid interval: &quot; &lt;&lt; *this;</span></a>
+<a name="248"><span class="lineNum">     248 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::runtime_error(ss.str());</span></a>
 <a name="249"><span class="lineNum">     249 </span>                :            :   }</a>
-<a name="250"><span class="lineNum">     250 </span>                :<span class="lineCov">        295 : }</span></a>
+<a name="250"><span class="lineNum">     250 </span>                :<span class="lineNoCov">          0 : }</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            : </a>
 <a name="252"><span class="lineNum">     252 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="253"><span class="lineNum">     253 </span>                :            : </a>
 <a name="254"><span class="lineNum">     254 </span>                :            : template&lt;typename T&gt;</a>
-<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">          8 : bool Interval&lt;T&gt;::abs_eq(</span></a>
+<a name="255"><span class="lineNum">     255 </span>                :<span class="lineNoCov">          0 : bool Interval&lt;T&gt;::abs_eq(</span></a>
 <a name="256"><span class="lineNum">     256 </span>                :            :   const Interval &amp; i1, const Interval &amp; i2, const T &amp; eps)</a>
 <a name="257"><span class="lineNum">     257 </span>                :            : {</a>
 <a name="258"><span class="lineNum">     258 </span>                :            :   namespace comp = helper_functions::comparisons;</a>
 <a name="259"><span class="lineNum">     259 </span>                :            : </a>
-<a name="260"><span class="lineNum">     260 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">          8 :   const auto both_empty = Interval::empty(i1) &amp;&amp; Interval::empty(i2);</span></a>
-<a name="261"><span class="lineNum">     261 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchCov" title="Branch 2 was taken 5 times"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">          8 :   const auto both_non_empty = !Interval::empty(i1) &amp;&amp; !Interval::empty(i2);</span></a>
+<a name="260"><span class="lineNum">     260 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   const auto both_empty = Interval::empty(i1) &amp;&amp; Interval::empty(i2);</span></a>
+<a name="261"><span class="lineNum">     261 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   const auto both_non_empty = !Interval::empty(i1) &amp;&amp; !Interval::empty(i2);</span></a>
 <a name="262"><span class="lineNum">     262 </span>                :            : </a>
-<a name="263"><span class="lineNum">     263 </span>                :<span class="lineCov">          8 :   const auto mins_equal = comp::abs_eq(Interval::min(i1), Interval::min(i2), eps);</span></a>
-<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">          8 :   const auto maxs_equal = comp::abs_eq(Interval::max(i1), Interval::max(i2), eps);</span></a>
-<a name="265"><span class="lineNum">     265 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span> :<span class="lineCov">          8 :   const auto both_non_empty_equal = both_non_empty &amp;&amp; mins_equal &amp;&amp; maxs_equal;</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="263"><span class="lineNum">     263 </span>                :<span class="lineNoCov">          0 :   const auto mins_equal = comp::abs_eq(Interval::min(i1), Interval::min(i2), eps);</span></a>
+<a name="264"><span class="lineNum">     264 </span>                :<span class="lineNoCov">          0 :   const auto maxs_equal = comp::abs_eq(Interval::max(i1), Interval::max(i2), eps);</span></a>
+<a name="265"><span class="lineNum">     265 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   const auto both_non_empty_equal = both_non_empty &amp;&amp; mins_equal &amp;&amp; maxs_equal;</span></a>
+<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
 <a name="266"><span class="lineNum">     266 </span>                :            : </a>
-<a name="267"><span class="lineNum">     267 </span>  [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchCov" title="Branch 3 was taken 4 times"> + </span>]:<span class="lineCov">          8 :   return both_empty || both_non_empty_equal;</span></a>
+<a name="267"><span class="lineNum">     267 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return both_empty || both_non_empty_equal;</span></a>
 <a name="268"><span class="lineNum">     268 </span>                :            : }</a>
 <a name="269"><span class="lineNum">     269 </span>                :            : </a>
 <a name="270"><span class="lineNum">     270 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="271"><span class="lineNum">     271 </span>                :            : </a>
 <a name="272"><span class="lineNum">     272 </span>                :            : template&lt;typename T&gt;</a>
-<a name="273"><span class="lineNum">     273 </span>                :<span class="lineCov">          3 : bool Interval&lt;T&gt;::zero_measure(const Interval &amp; i)</span></a>
+<a name="273"><span class="lineNum">     273 </span>                :<span class="lineNoCov">          0 : bool Interval&lt;T&gt;::zero_measure(const Interval &amp; i)</span></a>
 <a name="274"><span class="lineNum">     274 </span>                :            : {</a>
 <a name="275"><span class="lineNum">     275 </span>                :            :   // An empty interval will return false because (NaN == NaN) is false.</a>
-<a name="276"><span class="lineNum">     276 </span>                :<span class="lineCov">          3 :   return Interval::min(i) == Interval::max(i);</span></a>
+<a name="276"><span class="lineNum">     276 </span>                :<span class="lineNoCov">          0 :   return Interval::min(i) == Interval::max(i);</span></a>
 <a name="277"><span class="lineNum">     277 </span>                :            : }</a>
 <a name="278"><span class="lineNum">     278 </span>                :            : </a>
 <a name="279"><span class="lineNum">     279 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="280"><span class="lineNum">     280 </span>                :            : </a>
 <a name="281"><span class="lineNum">     281 </span>                :            : template&lt;typename T&gt;</a>
-<a name="282"><span class="lineNum">     282 </span>                :<span class="lineCov">        377 : bool Interval&lt;T&gt;::empty(const Interval &amp; i)</span></a>
+<a name="282"><span class="lineNum">     282 </span>                :<span class="lineNoCov">          0 : bool Interval&lt;T&gt;::empty(const Interval &amp; i)</span></a>
 <a name="283"><span class="lineNum">     283 </span>                :            : {</a>
-<a name="284"><span class="lineNum">     284 </span>  [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 361 times"> + </span><span class="branchCov" title="Branch 2 was taken 16 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        377 :   return std::isnan(Interval::min(i)) &amp;&amp; std::isnan(Interval::max(i));</span></a>
+<a name="284"><span class="lineNum">     284 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return std::isnan(Interval::min(i)) &amp;&amp; std::isnan(Interval::max(i));</span></a>
 <a name="285"><span class="lineNum">     285 </span>                :            : }</a>
 <a name="286"><span class="lineNum">     286 </span>                :            : </a>
 <a name="287"><span class="lineNum">     287 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="288"><span class="lineNum">     288 </span>                :            : </a>
 <a name="289"><span class="lineNum">     289 </span>                :            : template&lt;typename T&gt;</a>
-<a name="290"><span class="lineNum">     290 </span>                :<span class="lineCov">        297 : bool Interval&lt;T&gt;::bounds_valid(const Interval &amp; i)</span></a>
+<a name="290"><span class="lineNum">     290 </span>                :<span class="lineNoCov">          0 : bool Interval&lt;T&gt;::bounds_valid(const Interval &amp; i)</span></a>
 <a name="291"><span class="lineNum">     291 </span>                :            : {</a>
-<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">        297 :   const auto is_ordered = (Interval::min(i) &lt;= Interval::max(i));</span></a>
+<a name="292"><span class="lineNum">     292 </span>                :<span class="lineNoCov">          0 :   const auto is_ordered = (Interval::min(i) &lt;= Interval::max(i));</span></a>
 <a name="293"><span class="lineNum">     293 </span>                :            : </a>
 <a name="294"><span class="lineNum">     294 </span>                :            :   // Check for emptiness expicitly because it requires both bounds to be NaN</a>
-<a name="295"><span class="lineNum">     295 </span>  [<span class="branchCov" title="Branch 0 was taken 297 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 295 times"> + </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">        297 :   return Interval::empty(i) || is_ordered;</span></a>
+<a name="295"><span class="lineNum">     295 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return Interval::empty(i) || is_ordered;</span></a>
 <a name="296"><span class="lineNum">     296 </span>                :            : }</a>
 <a name="297"><span class="lineNum">     297 </span>                :            : </a>
 <a name="298"><span class="lineNum">     298 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="299"><span class="lineNum">     299 </span>                :            : </a>
 <a name="300"><span class="lineNum">     300 </span>                :            : template&lt;typename T&gt;</a>
-<a name="301"><span class="lineNum">     301 </span>                :<span class="lineCov">          5 : bool Interval&lt;T&gt;::is_subset_eq(const Interval &amp; i1, const Interval &amp; i2)</span></a>
+<a name="301"><span class="lineNum">     301 </span>                :<span class="lineNoCov">          0 : bool Interval&lt;T&gt;::is_subset_eq(const Interval &amp; i1, const Interval &amp; i2)</span></a>
 <a name="302"><span class="lineNum">     302 </span>                :            : {</a>
-<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">          5 :   const auto lower_contained = (Interval::min(i1) &gt;= Interval::min(i2));</span></a>
-<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">          5 :   const auto upper_contained = (Interval::max(i1) &lt;= Interval::max(i2));</span></a>
-<a name="305"><span class="lineNum">     305 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          5 :   return lower_contained &amp;&amp; upper_contained;</span></a>
+<a name="303"><span class="lineNum">     303 </span>                :<span class="lineNoCov">          0 :   const auto lower_contained = (Interval::min(i1) &gt;= Interval::min(i2));</span></a>
+<a name="304"><span class="lineNum">     304 </span>                :<span class="lineNoCov">          0 :   const auto upper_contained = (Interval::max(i1) &lt;= Interval::max(i2));</span></a>
+<a name="305"><span class="lineNum">     305 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return lower_contained &amp;&amp; upper_contained;</span></a>
 <a name="306"><span class="lineNum">     306 </span>                :            : }</a>
 <a name="307"><span class="lineNum">     307 </span>                :            : </a>
 <a name="308"><span class="lineNum">     308 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="309"><span class="lineNum">     309 </span>                :            : </a>
 <a name="310"><span class="lineNum">     310 </span>                :            : template&lt;typename T&gt;</a>
-<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">        195 : bool Interval&lt;T&gt;::contains(const Interval &amp; i, const T &amp; value)</span></a>
+<a name="311"><span class="lineNum">     311 </span>                :<span class="lineNoCov">          0 : bool Interval&lt;T&gt;::contains(const Interval &amp; i, const T &amp; value)</span></a>
 <a name="312"><span class="lineNum">     312 </span>                :            : {</a>
-<a name="313"><span class="lineNum">     313 </span>  [<span class="branchCov" title="Branch 0 was taken 158 times"> + </span><span class="branchCov" title="Branch 1 was taken 37 times"> + </span><span class="branchCov" title="Branch 2 was taken 112 times"> + </span><span class="branchCov" title="Branch 3 was taken 46 times"> + </span>]:<span class="lineCov">        195 :   return (value &gt;= Interval::min(i)) &amp;&amp; (value &lt;= Interval::max(i));</span></a>
+<a name="313"><span class="lineNum">     313 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return (value &gt;= Interval::min(i)) &amp;&amp; (value &lt;= Interval::max(i));</span></a>
 <a name="314"><span class="lineNum">     314 </span>                :            : }</a>
 <a name="315"><span class="lineNum">     315 </span>                :            : </a>
 <a name="316"><span class="lineNum">     316 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="317"><span class="lineNum">     317 </span>                :            : </a>
 <a name="318"><span class="lineNum">     318 </span>                :            : template&lt;typename T&gt;</a>
-<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">          5 : T Interval&lt;T&gt;::measure(const Interval &amp; i)</span></a>
+<a name="319"><span class="lineNum">     319 </span>                :<span class="lineNoCov">          0 : T Interval&lt;T&gt;::measure(const Interval &amp; i)</span></a>
 <a name="320"><span class="lineNum">     320 </span>                :            : {</a>
-<a name="321"><span class="lineNum">     321 </span>                :<span class="lineCov">          5 :   return Interval::max(i) - Interval::min(i);</span></a>
+<a name="321"><span class="lineNum">     321 </span>                :<span class="lineNoCov">          0 :   return Interval::max(i) - Interval::min(i);</span></a>
 <a name="322"><span class="lineNum">     322 </span>                :            : }</a>
 <a name="323"><span class="lineNum">     323 </span>                :            : </a>
 <a name="324"><span class="lineNum">     324 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="325"><span class="lineNum">     325 </span>                :            : </a>
 <a name="326"><span class="lineNum">     326 </span>                :            : template&lt;typename T&gt;</a>
-<a name="327"><span class="lineNum">     327 </span>                :<span class="lineCov">          4 : Interval&lt;T&gt; Interval&lt;T&gt;::intersect(const Interval &amp; i1, const Interval &amp; i2)</span></a>
+<a name="327"><span class="lineNum">     327 </span>                :<span class="lineNoCov">          0 : Interval&lt;T&gt; Interval&lt;T&gt;::intersect(const Interval &amp; i1, const Interval &amp; i2)</span></a>
 <a name="328"><span class="lineNum">     328 </span>                :            : {</a>
 <a name="329"><span class="lineNum">     329 </span>                :            :   // Construct intersection assuming an intersection exists.</a>
 <a name="330"><span class="lineNum">     330 </span>                :            :   try {</a>
-<a name="331"><span class="lineNum">     331 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">          4 :     const auto either_empty = Interval::empty(i1) || Interval::empty(i2);</span></a>
-<a name="332"><span class="lineNum">     332 </span>                :<span class="lineCov">          4 :     const auto min = std::max(Interval::min(i1), Interval::min(i2));</span></a>
-<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">          4 :     const auto max = std::min(Interval::max(i1), Interval::max(i2));</span></a>
-<a name="334"><span class="lineNum">     334 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span>]:<span class="lineCov">          4 :     return either_empty ? Interval() : Interval(min, max);</span></a>
-<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">          1 :   } catch (...) {</span></a>
+<a name="331"><span class="lineNum">     331 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto either_empty = Interval::empty(i1) || Interval::empty(i2);</span></a>
+<a name="332"><span class="lineNum">     332 </span>                :<span class="lineNoCov">          0 :     const auto min = std::max(Interval::min(i1), Interval::min(i2));</span></a>
+<a name="333"><span class="lineNum">     333 </span>                :<span class="lineNoCov">          0 :     const auto max = std::min(Interval::max(i1), Interval::max(i2));</span></a>
+<a name="334"><span class="lineNum">     334 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     return either_empty ? Interval() : Interval(min, max);</span></a>
+<a name="335"><span class="lineNum">     335 </span>                :<span class="lineNoCov">          0 :   } catch (...) {</span></a>
 <a name="336"><span class="lineNum">     336 </span>                :            :   }</a>
 <a name="337"><span class="lineNum">     337 </span>                :            : </a>
 <a name="338"><span class="lineNum">     338 </span>                :            :   // Otherwise, the intersection is empty.</a>
-<a name="339"><span class="lineNum">     339 </span>                :<span class="lineCov">          1 :   return Interval();</span></a>
+<a name="339"><span class="lineNum">     339 </span>                :<span class="lineNoCov">          0 :   return Interval();</span></a>
 <a name="340"><span class="lineNum">     340 </span>                :            : }</a>
 <a name="341"><span class="lineNum">     341 </span>                :            : </a>
 <a name="342"><span class="lineNum">     342 </span>                :            : //------------------------------------------------------------------------------</a>
 <a name="343"><span class="lineNum">     343 </span>                :            : </a>
 <a name="344"><span class="lineNum">     344 </span>                :            : template&lt;typename T&gt;</a>
-<a name="345"><span class="lineNum">     345 </span>                :<span class="lineCov">         30 : T Interval&lt;T&gt;::clamp_to(const Interval &amp; i, T val)</span></a>
+<a name="345"><span class="lineNum">     345 </span>                :<span class="lineNoCov">          0 : T Interval&lt;T&gt;::clamp_to(const Interval &amp; i, T val)</span></a>
 <a name="346"><span class="lineNum">     346 </span>                :            : {</a>
 <a name="347"><span class="lineNum">     347 </span>                :            :   // clamp val to min</a>
-<a name="348"><span class="lineNum">     348 </span>                :<span class="lineCov">         30 :   val = std::max(val, Interval::min(i));</span></a>
+<a name="348"><span class="lineNum">     348 </span>                :<span class="lineNoCov">          0 :   val = std::max(val, Interval::min(i));</span></a>
 <a name="349"><span class="lineNum">     349 </span>                :            : </a>
 <a name="350"><span class="lineNum">     350 </span>                :            :   // clamp val to max</a>
-<a name="351"><span class="lineNum">     351 </span>                :<span class="lineCov">         30 :   val = std::min(val, Interval::max(i));</span></a>
+<a name="351"><span class="lineNum">     351 </span>                :<span class="lineNoCov">          0 :   val = std::min(val, Interval::max(i));</span></a>
 <a name="352"><span class="lineNum">     352 </span>                :            : </a>
-<a name="353"><span class="lineNum">     353 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">         30 :   return Interval::empty(i) ? Interval::NaN : val;</span></a>
+<a name="353"><span class="lineNum">     353 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return Interval::empty(i) ? Interval::NaN : val;</span></a>
 <a name="354"><span class="lineNum">     354 </span>                :            : }</a>
 <a name="355"><span class="lineNum">     355 </span>                :            : </a>
 <a name="356"><span class="lineNum">     356 </span>                :            : //------------------------------------------------------------------------------</a>

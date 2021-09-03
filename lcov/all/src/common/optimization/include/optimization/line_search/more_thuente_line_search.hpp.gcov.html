@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">142</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">152</td>
-            <td class="headerCovTableEntryHi">93.4 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-02 20:10:46</td>
+            <td class="headerValue">2021-09-03 19:39:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">23</td>
-            <td class="headerCovTableEntry">23</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">113</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">191</td>
-            <td class="headerCovTableEntryLo">59.2 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -193,29 +193,29 @@
 <a name="115"><span class="lineNum">     115 </span>                :            :   ///             \f$\eta\f$ (eq. 1.2), that forces the curvature condition.</a>
 <a name="116"><span class="lineNum">     116 </span>                :            :   /// @param[in]  max_iterations          Maximum allowed iterations.</a>
 <a name="117"><span class="lineNum">     117 </span>                :            :   ///</a>
-<a name="118"><span class="lineNum">     118 </span>                :<span class="lineCov">         24 :   explicit MoreThuenteLineSearch(</span></a>
+<a name="118"><span class="lineNum">     118 </span>                :<span class="lineNoCov">          0 :   explicit MoreThuenteLineSearch(</span></a>
 <a name="119"><span class="lineNum">     119 </span>                :            :     const StepT max_step,</a>
 <a name="120"><span class="lineNum">     120 </span>                :            :     const StepT min_step,</a>
 <a name="121"><span class="lineNum">     121 </span>                :            :     const OptimizationDirection optimization_direction = OptimizationDirection::kMinimization,</a>
 <a name="122"><span class="lineNum">     122 </span>                :            :     const StepT mu = 1.e-4F,</a>
 <a name="123"><span class="lineNum">     123 </span>                :            :     const StepT eta = 0.1F,  // Default value suggested in Section 5 of the paper.</a>
 <a name="124"><span class="lineNum">     124 </span>                :            :     const std::int32_t max_iterations = 10)</a>
-<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         24 :   : LineSearch{max_step},</span></a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineNoCov">          0 :   : LineSearch{max_step},</span></a>
 <a name="126"><span class="lineNum">     126 </span>                :            :     m_step_min{min_step},</a>
 <a name="127"><span class="lineNum">     127 </span>                :            :     m_optimization_direction{optimization_direction},</a>
 <a name="128"><span class="lineNum">     128 </span>                :            :     m_mu{mu},</a>
 <a name="129"><span class="lineNum">     129 </span>                :            :     m_eta{eta},</a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         24 :     m_max_iterations{max_iterations}</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineNoCov">          0 :     m_max_iterations{max_iterations}</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            :   {</a>
-<a name="132"><span class="lineNum">     132 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 23 times"> + </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         24 :     if (min_step &lt; 0.0F) {throw std::domain_error(&quot;Min step cannot be negative.&quot;);}</span></a>
-<a name="133"><span class="lineNum">     133 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 21 times"> + </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         23 :     if (max_step &lt; min_step) {throw std::domain_error(&quot;Max step cannot be smaller than min step.&quot;);}</span></a>
-<a name="134"><span class="lineNum">     134 </span>  [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchCov" title="Branch 3 was taken 17 times"> + </span> :<span class="lineCov">         21 :     if (mu &lt; 0.0F || mu &gt; 1.0F) {throw std::domain_error(&quot;mu must be in (0, 1).&quot;);}</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="135"><span class="lineNum">     135 </span>  [<span class="branchCov" title="Branch 0 was taken 17 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 17 times"> + </span> :<span class="lineCov">         17 :     if (eta &lt; 0.0F || eta &gt; 1.0F) {throw std::domain_error(&quot;eta must be in (0, 1).&quot;);}</span></a>
-<span class="lineNum">         </span>         <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="136"><span class="lineNum">     136 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 16 times"> + </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         17 :     if (max_iterations &lt; 1) {throw std::domain_error(&quot;Less than 1 iteration is not allowed.&quot;);}</span></a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">         16 :     m_compute_mode.set_score().set_jacobian();</span></a>
-<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         16 :   }</span></a>
+<a name="132"><span class="lineNum">     132 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (min_step &lt; 0.0F) {throw std::domain_error(&quot;Min step cannot be negative.&quot;);}</span></a>
+<a name="133"><span class="lineNum">     133 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (max_step &lt; min_step) {throw std::domain_error(&quot;Max step cannot be smaller than min step.&quot;);}</span></a>
+<a name="134"><span class="lineNum">     134 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     if (mu &lt; 0.0F || mu &gt; 1.0F) {throw std::domain_error(&quot;mu must be in (0, 1).&quot;);}</span></a>
+<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
+<a name="135"><span class="lineNum">     135 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     if (eta &lt; 0.0F || eta &gt; 1.0F) {throw std::domain_error(&quot;eta must be in (0, 1).&quot;);}</span></a>
+<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
+<a name="136"><span class="lineNum">     136 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (max_iterations &lt; 1) {throw std::domain_error(&quot;Less than 1 iteration is not allowed.&quot;);}</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineNoCov">          0 :     m_compute_mode.set_score().set_jacobian();</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :<span class="lineNoCov">          0 :   }</span></a>
 <a name="139"><span class="lineNum">     139 </span>                :            : </a>
 <a name="140"><span class="lineNum">     140 </span>                :            :   ///</a>
 <a name="141"><span class="lineNum">     141 </span>                :            :   /// @brief      Calculates the next step.</a>
@@ -281,95 +281,95 @@
 <a name="201"><span class="lineNum">     201 </span>                :            : };</a>
 <a name="202"><span class="lineNum">     202 </span>                :            : </a>
 <a name="203"><span class="lineNum">     203 </span>                :            : template&lt;typename DomainValueT, typename OptimizationProblemT&gt;</a>
-<a name="204"><span class="lineNum">     204 </span>                :<span class="lineCov">         15 : DomainValueT MoreThuenteLineSearch::compute_next_step_(</span></a>
+<a name="204"><span class="lineNum">     204 </span>                :<span class="lineNoCov">          0 : DomainValueT MoreThuenteLineSearch::compute_next_step_(</span></a>
 <a name="205"><span class="lineNum">     205 </span>                :            :   const DomainValueT &amp; x0, const DomainValueT &amp; initial_step,</a>
 <a name="206"><span class="lineNum">     206 </span>                :            :   OptimizationProblemT &amp; optimization_problem)</a>
 <a name="207"><span class="lineNum">     207 </span>                :            : {</a>
-<a name="208"><span class="lineNum">     208 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         15 :   auto a_t = std::min(static_cast&lt;StepT&gt;(initial_step.norm()), get_step_max());</span></a>
-<a name="209"><span class="lineNum">     209 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         15 :   if (a_t &lt; m_step_min) {</span></a>
+<a name="208"><span class="lineNum">     208 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   auto a_t = std::min(static_cast&lt;StepT&gt;(initial_step.norm()), get_step_max());</span></a>
+<a name="209"><span class="lineNum">     209 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (a_t &lt; m_step_min) {</span></a>
 <a name="210"><span class="lineNum">     210 </span>                :            :     // We don't want to perform the line search as the initial step is out of allowed bounds. We</a>
 <a name="211"><span class="lineNum">     211 </span>                :            :     // assume that the optimizer knows what it is doing and return the initial_step unmodified.</a>
-<a name="212"><span class="lineNum">     212 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     return initial_step;</span></a>
+<a name="212"><span class="lineNum">     212 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     return initial_step;</span></a>
 <a name="213"><span class="lineNum">     213 </span>                :            :   }</a>
 <a name="214"><span class="lineNum">     214 </span>                :            :   // Function phi as defined in eq. 1.3</a>
 <a name="215"><span class="lineNum">     215 </span>                :            :   using FunctionPhi = ObjectiveFunction&lt;OptimizationProblemT&gt;;</a>
 <a name="216"><span class="lineNum">     216 </span>                :            :   // Function phi as defined right before eq. 2.1</a>
 <a name="217"><span class="lineNum">     217 </span>                :            :   using FunctionPsi = AuxiliaryFunction&lt;FunctionPhi&gt;;</a>
-<a name="218"><span class="lineNum">     218 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :   FunctionPhi phi{x0, initial_step, optimization_problem, m_optimization_direction};</span></a>
-<a name="219"><span class="lineNum">     219 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :   FunctionPsi psi{phi, m_mu};</span></a>
+<a name="218"><span class="lineNum">     218 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   FunctionPhi phi{x0, initial_step, optimization_problem, m_optimization_direction};</span></a>
+<a name="219"><span class="lineNum">     219 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   FunctionPsi psi{phi, m_mu};</span></a>
 <a name="220"><span class="lineNum">     220 </span>                :            : </a>
 <a name="221"><span class="lineNum">     221 </span>                :            : </a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">         14 :   Interval interval{m_step_min, get_step_max()};</span></a>
-<a name="223"><span class="lineNum">     223 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :   const auto phi_0 = phi(0.0F);</span></a>
-<a name="224"><span class="lineNum">     224 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :   auto phi_t = phi(a_t);</span></a>
-<a name="225"><span class="lineNum">     225 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :   auto psi_t = psi(a_t);</span></a>
-<a name="226"><span class="lineNum">     226 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :   auto f_l = psi(interval.a_l);</span></a>
-<a name="227"><span class="lineNum">     227 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :   auto f_u = psi(interval.a_u);</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineNoCov">          0 :   Interval interval{m_step_min, get_step_max()};</span></a>
+<a name="223"><span class="lineNum">     223 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   const auto phi_0 = phi(0.0F);</span></a>
+<a name="224"><span class="lineNum">     224 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   auto phi_t = phi(a_t);</span></a>
+<a name="225"><span class="lineNum">     225 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   auto psi_t = psi(a_t);</span></a>
+<a name="226"><span class="lineNum">     226 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   auto f_l = psi(interval.a_l);</span></a>
+<a name="227"><span class="lineNum">     227 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   auto f_u = psi(interval.a_u);</span></a>
 <a name="228"><span class="lineNum">     228 </span>                :            : </a>
 <a name="229"><span class="lineNum">     229 </span>                :            :   using ValueT = typename OptimizationProblemT::Value;</a>
 <a name="230"><span class="lineNum">     230 </span>                :            : </a>
-<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">         14 :   bool use_auxiliary_function = true;</span></a>
+<a name="231"><span class="lineNum">     231 </span>                :<span class="lineNoCov">          0 :   bool use_auxiliary_function = true;</span></a>
 <a name="232"><span class="lineNum">     232 </span>                :            :   // Follows the &quot;Search Algorithm&quot; as presented in the paper.</a>
-<a name="233"><span class="lineNum">     233 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         35 :   for (auto step_iterations = 0; step_iterations &lt; m_max_iterations; ++step_iterations) {</span></a>
-<a name="234"><span class="lineNum">     234 </span>                :<span class="lineCov">         35 :     constexpr decltype(psi_t.value) ZERO{};</span></a>
-<a name="235"><span class="lineNum">     235 </span>  [<span class="branchCov" title="Branch 0 was taken 32 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span><span class="branchCov" title="Branch 2 was taken 8 times"> + </span><span class="branchCov" title="Branch 3 was taken 27 times"> + </span>]:<span class="lineCov">         67 :     if ((psi_t.value &lt;= ZERO) &amp;&amp;</span></a>
-<a name="236"><span class="lineNum">     236 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 24 times"> + </span>]:<span class="lineCov">         32 :       (std::abs(phi_t.derivative) &lt;= static_cast&lt;ValueT&gt;(m_eta) * std::abs(phi_0.derivative)))</span></a>
+<a name="233"><span class="lineNum">     233 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   for (auto step_iterations = 0; step_iterations &lt; m_max_iterations; ++step_iterations) {</span></a>
+<a name="234"><span class="lineNum">     234 </span>                :<span class="lineNoCov">          0 :     constexpr decltype(psi_t.value) ZERO{};</span></a>
+<a name="235"><span class="lineNum">     235 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if ((psi_t.value &lt;= ZERO) &amp;&amp;</span></a>
+<a name="236"><span class="lineNum">     236 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       (std::abs(phi_t.derivative) &lt;= static_cast&lt;ValueT&gt;(m_eta) * std::abs(phi_0.derivative)))</span></a>
 <a name="237"><span class="lineNum">     237 </span>                :            :     {</a>
 <a name="238"><span class="lineNum">     238 </span>                :            :       // We reached the termination condition as the step satisfies the strong Wolfe conditions (the</a>
 <a name="239"><span class="lineNum">     239 </span>                :            :       // ones in the if condition). This means we have converged and are ready to return the found</a>
 <a name="240"><span class="lineNum">     240 </span>                :            :       // step.</a>
-<a name="241"><span class="lineNum">     241 </span>                :<span class="lineCov">         14 :       break;</span></a>
+<a name="241"><span class="lineNum">     241 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
 <a name="242"><span class="lineNum">     242 </span>                :            :     }</a>
 <a name="243"><span class="lineNum">     243 </span>                :            : </a>
 <a name="244"><span class="lineNum">     244 </span>                :            :     // Pick next step size by interpolating either phi or psi depending on which update algorithm is</a>
 <a name="245"><span class="lineNum">     245 </span>                :            :     // currently being used.</a>
-<a name="246"><span class="lineNum">     246 </span>        [<span class="branchCov" title="Branch 0 was taken 24 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">         27 :     if (use_auxiliary_function) {</span></a>
-<a name="247"><span class="lineNum">     247 </span>        [<span class="branchCov" title="Branch 0 was taken 24 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         24 :       a_t = find_next_step_length(psi_t, f_l, f_u);</span></a>
+<a name="246"><span class="lineNum">     246 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (use_auxiliary_function) {</span></a>
+<a name="247"><span class="lineNum">     247 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       a_t = find_next_step_length(psi_t, f_l, f_u);</span></a>
 <a name="248"><span class="lineNum">     248 </span>                :            :     } else {</a>
-<a name="249"><span class="lineNum">     249 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :       a_t = find_next_step_length(phi_t, f_l, f_u);</span></a>
+<a name="249"><span class="lineNum">     249 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       a_t = find_next_step_length(phi_t, f_l, f_u);</span></a>
 <a name="250"><span class="lineNum">     250 </span>                :            :     }</a>
-<a name="251"><span class="lineNum">     251 </span>  [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 25 times"> + </span> :<span class="lineCov">         27 :     if (a_t &lt; m_step_min || std::isnan(a_t)) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchCov" title="Branch 5 was taken 25 times"> + </span>]
+<a name="251"><span class="lineNum">     251 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     if (a_t &lt; m_step_min || std::isnan(a_t)) {</span></a>
+<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
 <a name="252"><span class="lineNum">     252 </span>                :            :       // This can happen if we are closer than the minimum step to the optimum. We don't want to do</a>
 <a name="253"><span class="lineNum">     253 </span>                :            :       // anything in this case.</a>
-<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">          2 :       a_t = 0.0F;</span></a>
-<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">          2 :       break;</span></a>
+<a name="254"><span class="lineNum">     254 </span>                :<span class="lineNoCov">          0 :       a_t = 0.0F;</span></a>
+<a name="255"><span class="lineNum">     255 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
 <a name="256"><span class="lineNum">     256 </span>                :            :     }</a>
-<a name="257"><span class="lineNum">     257 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         25 :     phi_t = phi(a_t);</span></a>
-<a name="258"><span class="lineNum">     258 </span>        [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         25 :     psi_t = psi(a_t);</span></a>
+<a name="257"><span class="lineNum">     257 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     phi_t = phi(a_t);</span></a>
+<a name="258"><span class="lineNum">     258 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     psi_t = psi(a_t);</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            : </a>
 <a name="260"><span class="lineNum">     260 </span>                :            :     // Decide if we want to switch to using a &quot;Modified Updating Algorithm&quot; (shown after theorem 3.2</a>
 <a name="261"><span class="lineNum">     261 </span>                :            :     // in the paper) by switching from using function psi to using function phi. The decision</a>
 <a name="262"><span class="lineNum">     262 </span>                :            :     // follows the logic in the paragraph right before theorem 3.3 in the paper.</a>
-<a name="263"><span class="lineNum">     263 </span>  [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span><span class="branchCov" title="Branch 2 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         25 :     if (use_auxiliary_function &amp;&amp; (psi_t.value &lt;= 0.0 &amp;&amp; psi_t.derivative &gt; 0.0)) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchCov" title="Branch 5 was taken 20 times"> + </span>]
-<a name="264"><span class="lineNum">     264 </span>                :<span class="lineCov">          2 :       use_auxiliary_function = false;</span></a>
+<a name="263"><span class="lineNum">     263 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     if (use_auxiliary_function &amp;&amp; (psi_t.value &lt;= 0.0 &amp;&amp; psi_t.derivative &gt; 0.0)) {</span></a>
+<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
+<a name="264"><span class="lineNum">     264 </span>                :<span class="lineNoCov">          0 :       use_auxiliary_function = false;</span></a>
 <a name="265"><span class="lineNum">     265 </span>                :            :       // We now want to switch to using phi so compute the required values.</a>
-<a name="266"><span class="lineNum">     266 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :       f_l = phi(interval.a_l);</span></a>
-<a name="267"><span class="lineNum">     267 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :       f_u = phi(interval.a_u);</span></a>
+<a name="266"><span class="lineNum">     266 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       f_l = phi(interval.a_l);</span></a>
+<a name="267"><span class="lineNum">     267 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       f_u = phi(interval.a_u);</span></a>
 <a name="268"><span class="lineNum">     268 </span>                :            :     }</a>
 <a name="269"><span class="lineNum">     269 </span>                :            : </a>
-<a name="270"><span class="lineNum">     270 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         25 :     if (use_auxiliary_function) {</span></a>
+<a name="270"><span class="lineNum">     270 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (use_auxiliary_function) {</span></a>
 <a name="271"><span class="lineNum">     271 </span>                :            :       // Update the interval that will be used to generate the next step using the</a>
 <a name="272"><span class="lineNum">     272 </span>                :            :       // &quot;Updating Algorithm&quot; (right after theorem 2.1 in the paper).</a>
-<a name="273"><span class="lineNum">     273 </span>                :<span class="lineCov">         20 :       interval = update_interval(psi_t, f_l, f_u);</span></a>
-<a name="274"><span class="lineNum">     274 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :       f_l = psi(interval.a_l);</span></a>
-<a name="275"><span class="lineNum">     275 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         20 :       f_u = psi(interval.a_u);</span></a>
+<a name="273"><span class="lineNum">     273 </span>                :<span class="lineNoCov">          0 :       interval = update_interval(psi_t, f_l, f_u);</span></a>
+<a name="274"><span class="lineNum">     274 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       f_l = psi(interval.a_l);</span></a>
+<a name="275"><span class="lineNum">     275 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       f_u = psi(interval.a_u);</span></a>
 <a name="276"><span class="lineNum">     276 </span>                :            :     } else {</a>
 <a name="277"><span class="lineNum">     277 </span>                :            :       // Update the interval that will be used to generate the next step using the</a>
 <a name="278"><span class="lineNum">     278 </span>                :            :       // &quot;Modified Updating Algorithm&quot; (right after theorem 3.2 in the paper).</a>
-<a name="279"><span class="lineNum">     279 </span>                :<span class="lineCov">          5 :       interval = update_interval(phi_t, f_l, f_u);</span></a>
-<a name="280"><span class="lineNum">     280 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :       f_l = phi(interval.a_l);</span></a>
-<a name="281"><span class="lineNum">     281 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :       f_u = phi(interval.a_u);</span></a>
+<a name="279"><span class="lineNum">     279 </span>                :<span class="lineNoCov">          0 :       interval = update_interval(phi_t, f_l, f_u);</span></a>
+<a name="280"><span class="lineNum">     280 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       f_l = phi(interval.a_l);</span></a>
+<a name="281"><span class="lineNum">     281 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       f_u = phi(interval.a_u);</span></a>
 <a name="282"><span class="lineNum">     282 </span>                :            :     }</a>
-<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">         25 :     constexpr auto EPS = std::numeric_limits&lt;StepT&gt;::epsilon();</span></a>
-<a name="284"><span class="lineNum">     284 </span>  [<span class="branchCov" title="Branch 0 was taken 25 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 4 times"> + </span><span class="branchCov" title="Branch 3 was taken 21 times"> + </span>]:<span class="lineCov">         25 :     if (comp::approx_eq(interval.a_u, interval.a_l, m_step_min, EPS)) {</span></a>
+<a name="283"><span class="lineNum">     283 </span>                :<span class="lineNoCov">          0 :     constexpr auto EPS = std::numeric_limits&lt;StepT&gt;::epsilon();</span></a>
+<a name="284"><span class="lineNum">     284 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (comp::approx_eq(interval.a_u, interval.a_l, m_step_min, EPS)) {</span></a>
 <a name="285"><span class="lineNum">     285 </span>                :            :       // The interval has converged to a point so we can stop here.</a>
-<a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">          4 :       a_t = interval.a_u;</span></a>
-<a name="287"><span class="lineNum">     287 </span>                :<span class="lineCov">          4 :       break;</span></a>
+<a name="286"><span class="lineNum">     286 </span>                :<span class="lineNoCov">          0 :       a_t = interval.a_u;</span></a>
+<a name="287"><span class="lineNum">     287 </span>                :<span class="lineNoCov">          0 :       break;</span></a>
 <a name="288"><span class="lineNum">     288 </span>                :            :     }</a>
 <a name="289"><span class="lineNum">     289 </span>                :            :   }</a>
-<a name="290"><span class="lineNum">     290 </span>  [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         14 :   return a_t * phi.get_step_direction();</span></a>
+<a name="290"><span class="lineNum">     290 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return a_t * phi.get_step_direction();</span></a>
 <a name="291"><span class="lineNum">     291 </span>                :            : }</a>
 <a name="292"><span class="lineNum">     292 </span>                :            : </a>
 <a name="293"><span class="lineNum">     293 </span>                :            : template&lt;typename OptimizationProblemT&gt;</a>
@@ -388,53 +388,53 @@
 <a name="306"><span class="lineNum">     306 </span>                :            :     ValueT derivative;</a>
 <a name="307"><span class="lineNum">     307 </span>                :            :   };</a>
 <a name="308"><span class="lineNum">     308 </span>                :            : </a>
-<a name="309"><span class="lineNum">     309 </span>                :<span class="lineCov">         14 :   ObjectiveFunction(</span></a>
+<a name="309"><span class="lineNum">     309 </span>                :<span class="lineNoCov">          0 :   ObjectiveFunction(</span></a>
 <a name="310"><span class="lineNum">     310 </span>                :            :     const DomainValueT &amp; starting_state,</a>
 <a name="311"><span class="lineNum">     311 </span>                :            :     const DomainValueT &amp; initial_step,</a>
 <a name="312"><span class="lineNum">     312 </span>                :            :     OptimizationProblemT &amp; underlying_function,</a>
 <a name="313"><span class="lineNum">     313 </span>                :            :     const OptimizationDirection direction)</a>
 <a name="314"><span class="lineNum">     314 </span>                :            :   : m_starting_state{starting_state},</a>
 <a name="315"><span class="lineNum">     315 </span>                :            :     m_step_direction{initial_step.normalized()},</a>
-<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">         14 :     m_underlying_function{underlying_function}</span></a>
+<a name="316"><span class="lineNum">     316 </span>                :<span class="lineNoCov">          0 :     m_underlying_function{underlying_function}</span></a>
 <a name="317"><span class="lineNum">     317 </span>                :            :   {</a>
-<a name="318"><span class="lineNum">     318 </span>                :<span class="lineCov">         14 :     m_compute_mode.set_score().set_jacobian();</span></a>
-<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">         14 :     m_underlying_function.evaluate(m_starting_state, m_compute_mode);</span></a>
-<a name="320"><span class="lineNum">     320 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :     m_underlying_function.jacobian(m_starting_state, m_underlying_function_jacobian);</span></a>
-<a name="321"><span class="lineNum">     321 </span>                :<span class="lineCov">         14 :     const auto derivative = m_underlying_function_jacobian.dot(m_step_direction);</span></a>
-<a name="322"><span class="lineNum">     322 </span>     [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span>]:<span class="lineCov">         14 :     switch (direction) {</span></a>
-<a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">         11 :       case OptimizationDirection::kMinimization:</span></a>
-<a name="324"><span class="lineNum">     324 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         11 :         if (derivative &gt; ValueT{0.0}) {</span></a>
+<a name="318"><span class="lineNum">     318 </span>                :<span class="lineNoCov">          0 :     m_compute_mode.set_score().set_jacobian();</span></a>
+<a name="319"><span class="lineNum">     319 </span>                :<span class="lineNoCov">          0 :     m_underlying_function.evaluate(m_starting_state, m_compute_mode);</span></a>
+<a name="320"><span class="lineNum">     320 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_underlying_function.jacobian(m_starting_state, m_underlying_function_jacobian);</span></a>
+<a name="321"><span class="lineNum">     321 </span>                :<span class="lineNoCov">          0 :     const auto derivative = m_underlying_function_jacobian.dot(m_step_direction);</span></a>
+<a name="322"><span class="lineNum">     322 </span>     [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span>]:<span class="lineNoCov">          0 :     switch (direction) {</span></a>
+<a name="323"><span class="lineNum">     323 </span>                :<span class="lineNoCov">          0 :       case OptimizationDirection::kMinimization:</span></a>
+<a name="324"><span class="lineNum">     324 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         if (derivative &gt; ValueT{0.0}) {</span></a>
 <a name="325"><span class="lineNum">     325 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           m_step_direction *= -1.0;</span></a>
 <a name="326"><span class="lineNum">     326 </span>                :            :         }</a>
-<a name="327"><span class="lineNum">     327 </span>                :<span class="lineCov">         11 :         break;</span></a>
-<a name="328"><span class="lineNum">     328 </span>                :<span class="lineCov">          3 :       case OptimizationDirection::kMaximization:</span></a>
-<a name="329"><span class="lineNum">     329 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          3 :         if (derivative &lt; ValueT{0.0}) {</span></a>
+<a name="327"><span class="lineNum">     327 </span>                :<span class="lineNoCov">          0 :         break;</span></a>
+<a name="328"><span class="lineNum">     328 </span>                :<span class="lineNoCov">          0 :       case OptimizationDirection::kMaximization:</span></a>
+<a name="329"><span class="lineNum">     329 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :         if (derivative &lt; ValueT{0.0}) {</span></a>
 <a name="330"><span class="lineNum">     330 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :           m_step_direction *= -1.0;</span></a>
 <a name="331"><span class="lineNum">     331 </span>                :            :         }</a>
 <a name="332"><span class="lineNum">     332 </span>                :            :         // The function phi must have a derivative &lt; 0 following the introduction of the</a>
 <a name="333"><span class="lineNum">     333 </span>                :            :         // More-Thuente paper. In case we want to solve a maximization problem, the derivative will</a>
 <a name="334"><span class="lineNum">     334 </span>                :            :         // be positive and we need to make a dual problem from it by flipping the values of phi.</a>
-<a name="335"><span class="lineNum">     335 </span>                :<span class="lineCov">          3 :         m_multiplier = ValueT{-1.0};</span></a>
-<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">          3 :         break;</span></a>
+<a name="335"><span class="lineNum">     335 </span>                :<span class="lineNoCov">          0 :         m_multiplier = ValueT{-1.0};</span></a>
+<a name="336"><span class="lineNum">     336 </span>                :<span class="lineNoCov">          0 :         break;</span></a>
 <a name="337"><span class="lineNum">     337 </span>                :            :     }</a>
-<a name="338"><span class="lineNum">     338 </span>                :<span class="lineCov">         14 :   }</span></a>
+<a name="338"><span class="lineNum">     338 </span>                :<span class="lineNoCov">          0 :   }</span></a>
 <a name="339"><span class="lineNum">     339 </span>                :            : </a>
 <a name="340"><span class="lineNum">     340 </span>                :            :   /// Get the value of phi for a given step.</a>
-<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">        188 :   FunctionValue operator()(const StepT &amp; step_size)</span></a>
+<a name="341"><span class="lineNum">     341 </span>                :<span class="lineNoCov">          0 :   FunctionValue operator()(const StepT &amp; step_size)</span></a>
 <a name="342"><span class="lineNum">     342 </span>                :            :   {</a>
-<a name="343"><span class="lineNum">     343 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 188 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        188 :     if (step_size &lt; StepT{0.0}) {throw std::runtime_error(&quot;Step cannot be negative&quot;);}</span></a>
-<a name="344"><span class="lineNum">     344 </span>  [<span class="branchCov" title="Branch 0 was taken 188 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 188 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        188 :     const auto current_state = m_starting_state + step_size * m_step_direction;</span></a>
-<a name="345"><span class="lineNum">     345 </span>        [<span class="branchCov" title="Branch 0 was taken 188 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        188 :     m_underlying_function.evaluate(current_state, m_compute_mode);</span></a>
-<a name="346"><span class="lineNum">     346 </span>  [<span class="branchCov" title="Branch 0 was taken 188 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 188 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        188 :     m_underlying_function.jacobian(current_state, m_underlying_function_jacobian);</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 188 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="343"><span class="lineNum">     343 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (step_size &lt; StepT{0.0}) {throw std::runtime_error(&quot;Step cannot be negative&quot;);}</span></a>
+<a name="344"><span class="lineNum">     344 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto current_state = m_starting_state + step_size * m_step_direction;</span></a>
+<a name="345"><span class="lineNum">     345 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_underlying_function.evaluate(current_state, m_compute_mode);</span></a>
+<a name="346"><span class="lineNum">     346 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     m_underlying_function.jacobian(current_state, m_underlying_function_jacobian);</span></a>
+<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
 <a name="347"><span class="lineNum">     347 </span>                :            :     return {</a>
 <a name="348"><span class="lineNum">     348 </span>                :            :       step_size,</a>
-<a name="349"><span class="lineNum">     349 </span>        [<span class="branchCov" title="Branch 0 was taken 188 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        188 :       m_multiplier * m_underlying_function(current_state),</span></a>
-<a name="350"><span class="lineNum">     350 </span>  [<span class="branchCov" title="Branch 0 was taken 188 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 188 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        376 :       m_multiplier * m_underlying_function_jacobian.dot(m_step_direction)};</span></a>
+<a name="349"><span class="lineNum">     349 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       m_multiplier * m_underlying_function(current_state),</span></a>
+<a name="350"><span class="lineNum">     350 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       m_multiplier * m_underlying_function_jacobian.dot(m_step_direction)};</span></a>
 <a name="351"><span class="lineNum">     351 </span>                :            :   }</a>
 <a name="352"><span class="lineNum">     352 </span>                :            : </a>
 <a name="353"><span class="lineNum">     353 </span>                :            :   /// Get the step direction.</a>
-<a name="354"><span class="lineNum">     354 </span>                :<span class="lineCov">         14 :   const DomainValueT &amp; get_step_direction() const noexcept {return m_step_direction;}</span></a>
+<a name="354"><span class="lineNum">     354 </span>                :<span class="lineNoCov">          0 :   const DomainValueT &amp; get_step_direction() const noexcept {return m_step_direction;}</span></a>
 <a name="355"><span class="lineNum">     355 </span>                :            : </a>
 <a name="356"><span class="lineNum">     356 </span>                :            : private:</a>
 <a name="357"><span class="lineNum">     357 </span>                :            :   DomainValueT m_starting_state;</a>
@@ -454,24 +454,24 @@
 <a name="371"><span class="lineNum">     371 </span>                :            : </a>
 <a name="372"><span class="lineNum">     372 </span>                :            : public:</a>
 <a name="373"><span class="lineNum">     373 </span>                :            :   /// Constructs a new instance of function psi.</a>
-<a name="374"><span class="lineNum">     374 </span>                :<span class="lineCov">         14 :   AuxiliaryFunction(ObjectiveFunctionT &amp; objective_function, const StepT &amp; mu)</span></a>
+<a name="374"><span class="lineNum">     374 </span>                :<span class="lineNoCov">          0 :   AuxiliaryFunction(ObjectiveFunctionT &amp; objective_function, const StepT &amp; mu)</span></a>
 <a name="375"><span class="lineNum">     375 </span>                :            :   : m_objective_function{objective_function},</a>
 <a name="376"><span class="lineNum">     376 </span>                :            :     m_mu{mu},</a>
-<a name="377"><span class="lineNum">     377 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :     m_initial_objective_function_value{objective_function(0.0F)} {}</span></a>
+<a name="377"><span class="lineNum">     377 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_initial_objective_function_value{objective_function(0.0F)} {}</span></a>
 <a name="378"><span class="lineNum">     378 </span>                :            : </a>
 <a name="379"><span class="lineNum">     379 </span>                :            :   /// Get the value of psi for a given step.</a>
-<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">        107 :   FunctionValue operator()(const StepT &amp; step_size)</span></a>
+<a name="380"><span class="lineNum">     380 </span>                :<span class="lineNoCov">          0 :   FunctionValue operator()(const StepT &amp; step_size)</span></a>
 <a name="381"><span class="lineNum">     381 </span>                :            :   {</a>
-<a name="382"><span class="lineNum">     382 </span>        [<span class="branchCov" title="Branch 0 was taken 107 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        107 :     const auto &amp; objective_function_value = m_objective_function(step_size);</span></a>
-<a name="383"><span class="lineNum">     383 </span>                :<span class="lineCov">        107 :     const auto value =</span></a>
-<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">        107 :       objective_function_value.value -</span></a>
-<a name="385"><span class="lineNum">     385 </span>                :<span class="lineCov">        107 :       m_initial_objective_function_value.value -</span></a>
-<a name="386"><span class="lineNum">     386 </span>                :<span class="lineCov">        107 :       static_cast&lt;ValueT&gt;(m_mu) * static_cast&lt;ValueT&gt;(step_size) *</span></a>
-<a name="387"><span class="lineNum">     387 </span>                :<span class="lineCov">        107 :       objective_function_value.derivative;</span></a>
-<a name="388"><span class="lineNum">     388 </span>                :<span class="lineCov">        107 :     const auto derivative =</span></a>
-<a name="389"><span class="lineNum">     389 </span>                :<span class="lineCov">        107 :       objective_function_value.derivative - static_cast&lt;ValueT&gt;(m_mu) *</span></a>
-<a name="390"><span class="lineNum">     390 </span>                :<span class="lineCov">        107 :       m_initial_objective_function_value.derivative;</span></a>
-<a name="391"><span class="lineNum">     391 </span>                :<span class="lineCov">        107 :     return {step_size, value, derivative};</span></a>
+<a name="382"><span class="lineNum">     382 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto &amp; objective_function_value = m_objective_function(step_size);</span></a>
+<a name="383"><span class="lineNum">     383 </span>                :<span class="lineNoCov">          0 :     const auto value =</span></a>
+<a name="384"><span class="lineNum">     384 </span>                :<span class="lineNoCov">          0 :       objective_function_value.value -</span></a>
+<a name="385"><span class="lineNum">     385 </span>                :<span class="lineNoCov">          0 :       m_initial_objective_function_value.value -</span></a>
+<a name="386"><span class="lineNum">     386 </span>                :<span class="lineNoCov">          0 :       static_cast&lt;ValueT&gt;(m_mu) * static_cast&lt;ValueT&gt;(step_size) *</span></a>
+<a name="387"><span class="lineNum">     387 </span>                :<span class="lineNoCov">          0 :       objective_function_value.derivative;</span></a>
+<a name="388"><span class="lineNum">     388 </span>                :<span class="lineNoCov">          0 :     const auto derivative =</span></a>
+<a name="389"><span class="lineNum">     389 </span>                :<span class="lineNoCov">          0 :       objective_function_value.derivative - static_cast&lt;ValueT&gt;(m_mu) *</span></a>
+<a name="390"><span class="lineNum">     390 </span>                :<span class="lineNoCov">          0 :       m_initial_objective_function_value.derivative;</span></a>
+<a name="391"><span class="lineNum">     391 </span>                :<span class="lineNoCov">          0 :     return {step_size, value, derivative};</span></a>
 <a name="392"><span class="lineNum">     392 </span>                :            :   }</a>
 <a name="393"><span class="lineNum">     393 </span>                :            : </a>
 <a name="394"><span class="lineNum">     394 </span>                :            : private:</a>
@@ -482,74 +482,74 @@
 <a name="399"><span class="lineNum">     399 </span>                :            : };</a>
 <a name="400"><span class="lineNum">     400 </span>                :            : </a>
 <a name="401"><span class="lineNum">     401 </span>                :            : template&lt;typename FunctionValueT&gt;</a>
-<a name="402"><span class="lineNum">     402 </span>                :<span class="lineCov">         27 : MoreThuenteLineSearch::StepT MoreThuenteLineSearch::find_next_step_length(</span></a>
+<a name="402"><span class="lineNum">     402 </span>                :<span class="lineNoCov">          0 : MoreThuenteLineSearch::StepT MoreThuenteLineSearch::find_next_step_length(</span></a>
 <a name="403"><span class="lineNum">     403 </span>                :            :   const FunctionValueT &amp; f_t, const FunctionValueT &amp; f_l, const FunctionValueT &amp; f_u)</a>
 <a name="404"><span class="lineNum">     404 </span>                :            : {</a>
 <a name="405"><span class="lineNum">     405 </span>                :            :   using ValueT = decltype(FunctionValueT::value);</a>
 <a name="406"><span class="lineNum">     406 </span>                :            : </a>
-<a name="407"><span class="lineNum">     407 </span>  [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 27 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         27 :   if (std::isnan(f_t.argument) || std::isnan(f_l.argument) || std::isnan(f_u.argument)) {</span></a>
-<span class="lineNum">         </span>   <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 27 times"> + </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 27 times"> + </span>]
+<a name="407"><span class="lineNum">     407 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :   if (std::isnan(f_t.argument) || std::isnan(f_l.argument) || std::isnan(f_u.argument)) {</span></a>
+<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
 <a name="408"><span class="lineNum">     408 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::runtime_error(&quot;Got nan values in the step computation function.&quot;);</span></a>
 <a name="409"><span class="lineNum">     409 </span>                :            :   }</a>
-<a name="410"><span class="lineNum">     410 </span>                :<span class="lineCov">         27 :   constexpr auto kValueEps = 0.00001;</span></a>
-<a name="411"><span class="lineNum">     411 </span>                :<span class="lineCov">         27 :   constexpr auto kStepEps = 0.00001F;</span></a>
+<a name="410"><span class="lineNum">     410 </span>                :<span class="lineNoCov">          0 :   constexpr auto kValueEps = 0.00001;</span></a>
+<a name="411"><span class="lineNum">     411 </span>                :<span class="lineNoCov">          0 :   constexpr auto kStepEps = 0.00001F;</span></a>
 <a name="412"><span class="lineNum">     412 </span>                :            :   // A lambda to calculate the minimizer of the cubic that interpolates f_a, f_a_derivative, f_b and</a>
 <a name="413"><span class="lineNum">     413 </span>                :            :   // f_b_derivative on [a, b]. Equation 2.4.52 [Sun, Yuan 2006]</a>
-<a name="414"><span class="lineNum">     414 </span>                :<span class="lineCov">         54 :   const auto find_cubic_minimizer = [kStepEps](const auto &amp; f_a, const auto &amp; f_b) -&gt; StepT {</span></a>
-<a name="415"><span class="lineNum">     415 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span><span class="branchCov" title="Branch 2 was taken 12 times"> + </span><span class="branchCov" title="Branch 3 was taken 10 times"> + </span>]:<span class="lineCov">         27 :       if (comp::approx_eq(f_a.argument, f_b.argument, kStepEps, kStepEps)) {</span></a>
-<a name="416"><span class="lineNum">     416 </span>                :<span class="lineCov">         14 :         return f_a.argument;</span></a>
+<a name="414"><span class="lineNum">     414 </span>                :<span class="lineNoCov">          0 :   const auto find_cubic_minimizer = [kStepEps](const auto &amp; f_a, const auto &amp; f_b) -&gt; StepT {</span></a>
+<a name="415"><span class="lineNum">     415 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (comp::approx_eq(f_a.argument, f_b.argument, kStepEps, kStepEps)) {</span></a>
+<a name="416"><span class="lineNum">     416 </span>                :<span class="lineNoCov">          0 :         return f_a.argument;</span></a>
 <a name="417"><span class="lineNum">     417 </span>                :            :       }</a>
-<a name="418"><span class="lineNum">     418 </span>                :<span class="lineCov">         13 :       const auto z = static_cast&lt;ValueT&gt;(3.0) * (f_a.value - f_b.value) /</span></a>
-<a name="419"><span class="lineNum">     419 </span>                :<span class="lineCov">         13 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) + f_a.derivative +</span></a>
+<a name="418"><span class="lineNum">     418 </span>                :<span class="lineNoCov">          0 :       const auto z = static_cast&lt;ValueT&gt;(3.0) * (f_a.value - f_b.value) /</span></a>
+<a name="419"><span class="lineNum">     419 </span>                :<span class="lineNoCov">          0 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) + f_a.derivative +</span></a>
 <a name="420"><span class="lineNum">     420 </span>                :            :         f_b.derivative;</a>
-<a name="421"><span class="lineNum">     421 </span>                :<span class="lineCov">         13 :       const auto w = std::sqrt(z * z - f_a.derivative * f_b.derivative);</span></a>
+<a name="421"><span class="lineNum">     421 </span>                :<span class="lineNoCov">          0 :       const auto w = std::sqrt(z * z - f_a.derivative * f_b.derivative);</span></a>
 <a name="422"><span class="lineNum">     422 </span>                :            :       // Equation 2.4.56 [Sun, Yuan 2006]</a>
 <a name="423"><span class="lineNum">     423 </span>                :            :       return static_cast&lt;StepT&gt;(</a>
-<a name="424"><span class="lineNum">     424 </span>                :<span class="lineCov">         13 :         static_cast&lt;ValueT&gt;(f_b.argument) -</span></a>
-<a name="425"><span class="lineNum">     425 </span>                :<span class="lineCov">         13 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) *</span></a>
-<a name="426"><span class="lineNum">     426 </span>                :<span class="lineCov">         13 :         (f_b.derivative + w - z) /</span></a>
-<a name="427"><span class="lineNum">     427 </span>                :<span class="lineCov">         13 :         (f_b.derivative - f_a.derivative + static_cast&lt;ValueT&gt;(2.0) * w));</span></a>
+<a name="424"><span class="lineNum">     424 </span>                :<span class="lineNoCov">          0 :         static_cast&lt;ValueT&gt;(f_b.argument) -</span></a>
+<a name="425"><span class="lineNum">     425 </span>                :<span class="lineNoCov">          0 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) *</span></a>
+<a name="426"><span class="lineNum">     426 </span>                :<span class="lineNoCov">          0 :         (f_b.derivative + w - z) /</span></a>
+<a name="427"><span class="lineNum">     427 </span>                :<span class="lineNoCov">          0 :         (f_b.derivative - f_a.derivative + static_cast&lt;ValueT&gt;(2.0) * w));</span></a>
 <a name="428"><span class="lineNum">     428 </span>                :            :     };</a>
 <a name="429"><span class="lineNum">     429 </span>                :            : </a>
 <a name="430"><span class="lineNum">     430 </span>                :            :   // A lambda to calculate the minimizer of the quadratic that interpolates f_a, f_b and f'_a</a>
-<a name="431"><span class="lineNum">     431 </span>                :<span class="lineCov">         32 :   const auto find_a_q = [kStepEps](</span></a>
+<a name="431"><span class="lineNum">     431 </span>                :<span class="lineNoCov">          0 :   const auto find_a_q = [kStepEps](</span></a>
 <a name="432"><span class="lineNum">     432 </span>                :            :     const FunctionValueT &amp; f_a, const FunctionValueT &amp; f_b) -&gt; StepT {</a>
-<a name="433"><span class="lineNum">     433 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 3 times"> + </span>]:<span class="lineCov">          5 :       if (comp::approx_eq(f_a.argument, f_b.argument, kStepEps, kStepEps)) {</span></a>
+<a name="433"><span class="lineNum">     433 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (comp::approx_eq(f_a.argument, f_b.argument, kStepEps, kStepEps)) {</span></a>
 <a name="434"><span class="lineNum">     434 </span>                :<span class="lineNoCov">          0 :         return f_a.argument;</span></a>
 <a name="435"><span class="lineNum">     435 </span>                :            :       }</a>
 <a name="436"><span class="lineNum">     436 </span>                :            :       return</a>
 <a name="437"><span class="lineNum">     437 </span>                :            :         static_cast&lt;StepT&gt;(</a>
-<a name="438"><span class="lineNum">     438 </span>                :<span class="lineCov">          5 :         static_cast&lt;ValueT&gt;(f_a.argument) + static_cast&lt;ValueT&gt;(0.5) *</span></a>
-<a name="439"><span class="lineNum">     439 </span>                :<span class="lineCov">          5 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) *</span></a>
-<a name="440"><span class="lineNum">     440 </span>                :<span class="lineCov">          5 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) *</span></a>
-<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">          5 :         f_a.derivative /</span></a>
-<a name="442"><span class="lineNum">     442 </span>                :<span class="lineCov">          5 :         (f_a.value - f_b.value +</span></a>
-<a name="443"><span class="lineNum">     443 </span>                :<span class="lineCov">          5 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) *</span></a>
-<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">          5 :         f_a.derivative));</span></a>
+<a name="438"><span class="lineNum">     438 </span>                :<span class="lineNoCov">          0 :         static_cast&lt;ValueT&gt;(f_a.argument) + static_cast&lt;ValueT&gt;(0.5) *</span></a>
+<a name="439"><span class="lineNum">     439 </span>                :<span class="lineNoCov">          0 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) *</span></a>
+<a name="440"><span class="lineNum">     440 </span>                :<span class="lineNoCov">          0 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) *</span></a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineNoCov">          0 :         f_a.derivative /</span></a>
+<a name="442"><span class="lineNum">     442 </span>                :<span class="lineNoCov">          0 :         (f_a.value - f_b.value +</span></a>
+<a name="443"><span class="lineNum">     443 </span>                :<span class="lineNoCov">          0 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) *</span></a>
+<a name="444"><span class="lineNum">     444 </span>                :<span class="lineNoCov">          0 :         f_a.derivative));</span></a>
 <a name="445"><span class="lineNum">     445 </span>                :            :     };</a>
 <a name="446"><span class="lineNum">     446 </span>                :            : </a>
 <a name="447"><span class="lineNum">     447 </span>                :            :   // A lambda to calculate the minimizer of the quadratic that interpolates f'_a, and f'_b</a>
-<a name="448"><span class="lineNum">     448 </span>                :<span class="lineCov">         49 :   const auto find_a_s = [kStepEps](</span></a>
+<a name="448"><span class="lineNum">     448 </span>                :<span class="lineNoCov">          0 :   const auto find_a_s = [kStepEps](</span></a>
 <a name="449"><span class="lineNum">     449 </span>                :            :     const FunctionValueT &amp; f_a, const FunctionValueT &amp; f_b) -&gt; StepT {</a>
-<a name="450"><span class="lineNum">     450 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchCov" title="Branch 2 was taken 12 times"> + </span><span class="branchCov" title="Branch 3 was taken 7 times"> + </span>]:<span class="lineCov">         22 :       if (comp::approx_eq(f_a.argument, f_b.argument, kStepEps, kStepEps)) {</span></a>
-<a name="451"><span class="lineNum">     451 </span>                :<span class="lineCov">         14 :         return f_a.argument;</span></a>
+<a name="450"><span class="lineNum">     450 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (comp::approx_eq(f_a.argument, f_b.argument, kStepEps, kStepEps)) {</span></a>
+<a name="451"><span class="lineNum">     451 </span>                :<span class="lineNoCov">          0 :         return f_a.argument;</span></a>
 <a name="452"><span class="lineNum">     452 </span>                :            :       }</a>
 <a name="453"><span class="lineNum">     453 </span>                :            :       return static_cast&lt;StepT&gt;(</a>
-<a name="454"><span class="lineNum">     454 </span>                :<span class="lineCov">          8 :         static_cast&lt;ValueT&gt;(f_a.argument) +</span></a>
-<a name="455"><span class="lineNum">     455 </span>                :<span class="lineCov">          8 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) * f_a.derivative /</span></a>
-<a name="456"><span class="lineNum">     456 </span>                :<span class="lineCov">          8 :         (f_a.derivative - f_b.derivative));</span></a>
+<a name="454"><span class="lineNum">     454 </span>                :<span class="lineNoCov">          0 :         static_cast&lt;ValueT&gt;(f_a.argument) +</span></a>
+<a name="455"><span class="lineNum">     455 </span>                :<span class="lineNoCov">          0 :         (static_cast&lt;ValueT&gt;(f_b.argument) - static_cast&lt;ValueT&gt;(f_a.argument)) * f_a.derivative /</span></a>
+<a name="456"><span class="lineNum">     456 </span>                :<span class="lineNoCov">          0 :         (f_a.derivative - f_b.derivative));</span></a>
 <a name="457"><span class="lineNum">     457 </span>                :            :     };</a>
 <a name="458"><span class="lineNum">     458 </span>                :            : </a>
 <a name="459"><span class="lineNum">     459 </span>                :            :   // We cover here all the cases presented in the More-Thuente paper in section 4.</a>
-<a name="460"><span class="lineNum">     460 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 22 times"> + </span>]:<span class="lineCov">         27 :   if (f_t.value &gt; f_l.value) {  // Case 1 from section 4.</span></a>
-<a name="461"><span class="lineNum">     461 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :     const auto a_c = find_cubic_minimizer(f_l, f_t);</span></a>
-<a name="462"><span class="lineNum">     462 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :     const auto a_q = find_a_q(f_l, f_t);</span></a>
-<a name="463"><span class="lineNum">     463 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          5 :     if (std::fabs(a_c - f_l.argument) &lt; std::fabs(a_q - f_l.argument)) {</span></a>
-<a name="464"><span class="lineNum">     464 </span>                :<span class="lineCov">          2 :       return a_c;</span></a>
+<a name="460"><span class="lineNum">     460 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (f_t.value &gt; f_l.value) {  // Case 1 from section 4.</span></a>
+<a name="461"><span class="lineNum">     461 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto a_c = find_cubic_minimizer(f_l, f_t);</span></a>
+<a name="462"><span class="lineNum">     462 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto a_q = find_a_q(f_l, f_t);</span></a>
+<a name="463"><span class="lineNum">     463 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (std::fabs(a_c - f_l.argument) &lt; std::fabs(a_q - f_l.argument)) {</span></a>
+<a name="464"><span class="lineNum">     464 </span>                :<span class="lineNoCov">          0 :       return a_c;</span></a>
 <a name="465"><span class="lineNum">     465 </span>                :            :     } else {</a>
-<a name="466"><span class="lineNum">     466 </span>                :<span class="lineCov">          3 :       return 0.5F * (a_q + a_c);</span></a>
+<a name="466"><span class="lineNum">     466 </span>                :<span class="lineNoCov">          0 :       return 0.5F * (a_q + a_c);</span></a>
 <a name="467"><span class="lineNum">     467 </span>                :            :     }</a>
-<a name="468"><span class="lineNum">     468 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 22 times"> + </span>]:<span class="lineCov">         22 :   } else if (f_t.derivative * f_l.derivative &lt; 0) {  // Case 2 from section 4.</span></a>
+<a name="468"><span class="lineNum">     468 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   } else if (f_t.derivative * f_l.derivative &lt; 0) {  // Case 2 from section 4.</span></a>
 <a name="469"><span class="lineNum">     469 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto a_c = find_cubic_minimizer(f_l, f_t);</span></a>
 <a name="470"><span class="lineNum">     470 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto a_s = find_a_s(f_l, f_t);</span></a>
 <a name="471"><span class="lineNum">     471 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (std::fabs(a_c - f_t.argument) &gt;= std::fabs(a_s - f_t.argument)) {</span></a>
@@ -557,18 +557,18 @@
 <a name="473"><span class="lineNum">     473 </span>                :            :     } else {</a>
 <a name="474"><span class="lineNum">     474 </span>                :<span class="lineNoCov">          0 :       return a_s;</span></a>
 <a name="475"><span class="lineNum">     475 </span>                :            :     }</a>
-<a name="476"><span class="lineNum">     476 </span>  [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         22 :   } else if (comp::abs_lte(std::abs(f_t.derivative), std::abs(f_l.derivative), kValueEps)) {</span></a>
+<a name="476"><span class="lineNum">     476 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   } else if (comp::abs_lte(std::abs(f_t.derivative), std::abs(f_l.derivative), kValueEps)) {</span></a>
 <a name="477"><span class="lineNum">     477 </span>                :            :     // Case 3 from section 4.</a>
-<a name="478"><span class="lineNum">     478 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :     const auto a_c = find_cubic_minimizer(f_l, f_t);</span></a>
-<a name="479"><span class="lineNum">     479 </span>        [<span class="branchCov" title="Branch 0 was taken 22 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :     const auto a_s = find_a_s(f_l, f_t);</span></a>
-<a name="480"><span class="lineNum">     480 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         22 :     if (std::fabs(a_c - f_t.argument) &lt; std::fabs(a_s - f_t.argument)) {</span></a>
-<a name="481"><span class="lineNum">     481 </span>                :<span class="lineCov">          8 :       return std::min(</span></a>
-<a name="482"><span class="lineNum">     482 </span>                :<span class="lineCov">         16 :         f_t.argument + detail::kDelta * (f_u.argument - f_t.argument),</span></a>
-<a name="483"><span class="lineNum">     483 </span>                :<span class="lineCov">          8 :         static_cast&lt;StepT&gt;(a_c));</span></a>
+<a name="478"><span class="lineNum">     478 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto a_c = find_cubic_minimizer(f_l, f_t);</span></a>
+<a name="479"><span class="lineNum">     479 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto a_s = find_a_s(f_l, f_t);</span></a>
+<a name="480"><span class="lineNum">     480 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (std::fabs(a_c - f_t.argument) &lt; std::fabs(a_s - f_t.argument)) {</span></a>
+<a name="481"><span class="lineNum">     481 </span>                :<span class="lineNoCov">          0 :       return std::min(</span></a>
+<a name="482"><span class="lineNum">     482 </span>                :<span class="lineNoCov">          0 :         f_t.argument + detail::kDelta * (f_u.argument - f_t.argument),</span></a>
+<a name="483"><span class="lineNum">     483 </span>                :<span class="lineNoCov">          0 :         static_cast&lt;StepT&gt;(a_c));</span></a>
 <a name="484"><span class="lineNum">     484 </span>                :            :     } else {</a>
-<a name="485"><span class="lineNum">     485 </span>                :<span class="lineCov">         14 :       return std::max(</span></a>
-<a name="486"><span class="lineNum">     486 </span>                :<span class="lineCov">         28 :         f_t.argument + detail::kDelta * (f_u.argument - f_t.argument),</span></a>
-<a name="487"><span class="lineNum">     487 </span>                :<span class="lineCov">         14 :         static_cast&lt;StepT&gt;(a_s));</span></a>
+<a name="485"><span class="lineNum">     485 </span>                :<span class="lineNoCov">          0 :       return std::max(</span></a>
+<a name="486"><span class="lineNum">     486 </span>                :<span class="lineNoCov">          0 :         f_t.argument + detail::kDelta * (f_u.argument - f_t.argument),</span></a>
+<a name="487"><span class="lineNum">     487 </span>                :<span class="lineNoCov">          0 :         static_cast&lt;StepT&gt;(a_s));</span></a>
 <a name="488"><span class="lineNum">     488 </span>                :            :     }</a>
 <a name="489"><span class="lineNum">     489 </span>                :            :   } else {  // Case 4 from section 4.</a>
 <a name="490"><span class="lineNum">     490 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     return find_cubic_minimizer(f_t, f_u);</span></a>
@@ -576,22 +576,22 @@
 <a name="492"><span class="lineNum">     492 </span>                :            : }</a>
 <a name="493"><span class="lineNum">     493 </span>                :            : </a>
 <a name="494"><span class="lineNum">     494 </span>                :            : template&lt;typename FunctionValueT&gt;</a>
-<a name="495"><span class="lineNum">     495 </span>                :<span class="lineCov">         25 : MoreThuenteLineSearch::Interval MoreThuenteLineSearch::update_interval(</span></a>
+<a name="495"><span class="lineNum">     495 </span>                :<span class="lineNoCov">          0 : MoreThuenteLineSearch::Interval MoreThuenteLineSearch::update_interval(</span></a>
 <a name="496"><span class="lineNum">     496 </span>                :            :   const FunctionValueT &amp; f_t, const FunctionValueT &amp; f_l, const FunctionValueT &amp; f_u)</a>
 <a name="497"><span class="lineNum">     497 </span>                :            : {</a>
 <a name="498"><span class="lineNum">     498 </span>                :            :   using ValueT = decltype(FunctionValueT::value);</a>
 <a name="499"><span class="lineNum">     499 </span>                :            : </a>
 <a name="500"><span class="lineNum">     500 </span>                :            :   // Following either &quot;Updating Algorithm&quot; or &quot;Modifier Updating Algorithm&quot; depending on the</a>
 <a name="501"><span class="lineNum">     501 </span>                :            :   // provided function f (can be psi or phi).</a>
-<a name="502"><span class="lineNum">     502 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 23 times"> + </span>]:<span class="lineCov">         25 :   if (f_t.value &gt; f_l.value) {</span></a>
-<a name="503"><span class="lineNum">     503 </span>                :<span class="lineCov">          2 :     return {f_l.argument, f_t.argument};  // case a</span></a>
-<a name="504"><span class="lineNum">     504 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">         23 :   } else if (f_t.derivative * static_cast&lt;ValueT&gt;(f_t.argument - f_l.argument) &lt; 0) {</span></a>
-<a name="505"><span class="lineNum">     505 </span>                :<span class="lineCov">         20 :     return {f_t.argument, f_u.argument};  // case b</span></a>
-<a name="506"><span class="lineNum">     506 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          3 :   } else if (f_t.derivative * static_cast&lt;ValueT&gt;(f_t.argument - f_l.argument) &gt; 0) {</span></a>
-<a name="507"><span class="lineNum">     507 </span>                :<span class="lineCov">          2 :     return {f_t.argument, f_l.argument};  // case c</span></a>
+<a name="502"><span class="lineNum">     502 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (f_t.value &gt; f_l.value) {</span></a>
+<a name="503"><span class="lineNum">     503 </span>                :<span class="lineNoCov">          0 :     return {f_l.argument, f_t.argument};  // case a</span></a>
+<a name="504"><span class="lineNum">     504 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   } else if (f_t.derivative * static_cast&lt;ValueT&gt;(f_t.argument - f_l.argument) &lt; 0) {</span></a>
+<a name="505"><span class="lineNum">     505 </span>                :<span class="lineNoCov">          0 :     return {f_t.argument, f_u.argument};  // case b</span></a>
+<a name="506"><span class="lineNum">     506 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   } else if (f_t.derivative * static_cast&lt;ValueT&gt;(f_t.argument - f_l.argument) &gt; 0) {</span></a>
+<a name="507"><span class="lineNum">     507 </span>                :<span class="lineNoCov">          0 :     return {f_t.argument, f_l.argument};  // case c</span></a>
 <a name="508"><span class="lineNum">     508 </span>                :            :   }</a>
 <a name="509"><span class="lineNum">     509 </span>                :            :   // Converged to a point.</a>
-<a name="510"><span class="lineNum">     510 </span>                :<span class="lineCov">          1 :   return {f_t.argument, f_t.argument};</span></a>
+<a name="510"><span class="lineNum">     510 </span>                :<span class="lineNoCov">          0 :   return {f_t.argument, f_t.argument};</span></a>
 <a name="511"><span class="lineNum">     511 </span>                :            : }</a>
 <a name="512"><span class="lineNum">     512 </span>                :            : </a>
 <a name="513"><span class="lineNum">     513 </span>                :            : }  // namespace optimization</a>

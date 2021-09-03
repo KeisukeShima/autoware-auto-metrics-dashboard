@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">21</td>
-            <td class="headerCovTableEntryHi">90.5 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-02 20:10:46</td>
+            <td class="headerValue">2021-09-03 19:39:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntry">6</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">17</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">24</td>
-            <td class="headerCovTableEntryLo">70.8 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -190,42 +190,42 @@
 <a name="112"><span class="lineNum">     112 </span>                :            :   /// \param[in] first Beginning of iterator</a>
 <a name="113"><span class="lineNum">     113 </span>                :            :   /// \param[in] last One past the last element of the iterator</a>
 <a name="114"><span class="lineNum">     114 </span>                :            :   /// \return true if the insertion suceeded and false if an end of scan is detected</a>
-<a name="115"><span class="lineNum">     115 </span>                :<span class="lineCov">          3 :   bool8_t insert(const PointXYZIF * first, const PointXYZIF * last)</span></a>
+<a name="115"><span class="lineNum">     115 </span>                :<span class="lineNoCov">          0 :   bool8_t insert(const PointXYZIF * first, const PointXYZIF * last)</span></a>
 <a name="116"><span class="lineNum">     116 </span>                :            :   {</a>
-<a name="117"><span class="lineNum">     117 </span>                :<span class="lineCov">          3 :     bool8_t ret = true;</span></a>
-<a name="118"><span class="lineNum">     118 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">         10 :     for (const PointXYZIF * it = first; it != last; ++it) {</span></a>
-<a name="119"><span class="lineNum">     119 </span>  [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 7 times"> + </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span>]:<span class="lineCov">          9 :       ret = ret &amp;&amp; insert(it);</span></a>
-<a name="120"><span class="lineNum">     120 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">          9 :       if (!ret) {</span></a>
-<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">          2 :         break;</span></a>
+<a name="117"><span class="lineNum">     117 </span>                :<span class="lineNoCov">          0 :     bool8_t ret = true;</span></a>
+<a name="118"><span class="lineNum">     118 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     for (const PointXYZIF * it = first; it != last; ++it) {</span></a>
+<a name="119"><span class="lineNum">     119 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       ret = ret &amp;&amp; insert(it);</span></a>
+<a name="120"><span class="lineNum">     120 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (!ret) {</span></a>
+<a name="121"><span class="lineNum">     121 </span>                :<span class="lineNoCov">          0 :         break;</span></a>
 <a name="122"><span class="lineNum">     122 </span>                :            :       }</a>
 <a name="123"><span class="lineNum">     123 </span>                :            :     }</a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">          3 :     return ret;</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineNoCov">          0 :     return ret;</span></a>
 <a name="125"><span class="lineNum">     125 </span>                :            :   }</a>
-<a name="126"><span class="lineNum">     126 </span>                :<span class="lineCov">          1 :   bool8_t insert(PointXYZIF * first, PointXYZIF * last)</span></a>
+<a name="126"><span class="lineNum">     126 </span>                :<span class="lineNoCov">          0 :   bool8_t insert(PointXYZIF * first, PointXYZIF * last)</span></a>
 <a name="127"><span class="lineNum">     127 </span>                :            :   {</a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">          1 :     bool8_t ret = true;</span></a>
-<a name="129"><span class="lineNum">     129 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          4 :     for (PointXYZIF * it = first; it != last; ++it) {</span></a>
-<a name="130"><span class="lineNum">     130 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          3 :       ret = ret &amp;&amp; insert(it);</span></a>
-<a name="131"><span class="lineNum">     131 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          3 :       if (!ret) {</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineNoCov">          0 :     bool8_t ret = true;</span></a>
+<a name="129"><span class="lineNum">     129 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     for (PointXYZIF * it = first; it != last; ++it) {</span></a>
+<a name="130"><span class="lineNum">     130 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       ret = ret &amp;&amp; insert(it);</span></a>
+<a name="131"><span class="lineNum">     131 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (!ret) {</span></a>
 <a name="132"><span class="lineNum">     132 </span>                :<span class="lineNoCov">          0 :         break;</span></a>
 <a name="133"><span class="lineNum">     133 </span>                :            :       }</a>
 <a name="134"><span class="lineNum">     134 </span>                :            :     }</a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">          1 :     return ret;</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineNoCov">          0 :     return ret;</span></a>
 <a name="136"><span class="lineNum">     136 </span>                :            :   }</a>
 <a name="137"><span class="lineNum">     137 </span>                :            :   template&lt;typename InputIT&gt;</a>
-<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">          4 :   bool8_t insert(InputIT first, InputIT last)</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :<span class="lineNoCov">          0 :   bool8_t insert(InputIT first, InputIT last)</span></a>
 <a name="139"><span class="lineNum">     139 </span>                :            :   {</a>
 <a name="140"><span class="lineNum">     140 </span>                :            :     static_assert(</a>
 <a name="141"><span class="lineNum">     141 </span>                :            :       std::is_pointer&lt;InputIT&gt;::value,</a>
 <a name="142"><span class="lineNum">     142 </span>                :            :       &quot;insert(first,last) must be called on an iterable pointer&quot;);</a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">          4 :     bool8_t ret = true;</span></a>
-<a name="144"><span class="lineNum">     144 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         14 :     for (InputIT it = first; it != last; ++it) {</span></a>
-<a name="145"><span class="lineNum">     145 </span>  [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 10 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">         10 :       ret = ret &amp;&amp; insert(*it);</span></a>
-<a name="146"><span class="lineNum">     146 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         10 :       if (!ret) {</span></a>
+<a name="143"><span class="lineNum">     143 </span>                :<span class="lineNoCov">          0 :     bool8_t ret = true;</span></a>
+<a name="144"><span class="lineNum">     144 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     for (InputIT it = first; it != last; ++it) {</span></a>
+<a name="145"><span class="lineNum">     145 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       ret = ret &amp;&amp; insert(*it);</span></a>
+<a name="146"><span class="lineNum">     146 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (!ret) {</span></a>
 <a name="147"><span class="lineNum">     147 </span>                :<span class="lineNoCov">          0 :         break;</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            :       }</a>
 <a name="149"><span class="lineNum">     149 </span>                :            :     }</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">          4 :     return ret;</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineNoCov">          0 :     return ret;</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            :   }</a>
 <a name="152"><span class="lineNum">     152 </span>                :            : </a>
 <a name="153"><span class="lineNum">     153 </span>                :            :   /// \brief Whether a ray is ready for processing</a>

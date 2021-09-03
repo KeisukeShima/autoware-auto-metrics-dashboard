@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">38</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">40</td>
-            <td class="headerCovTableEntryHi">95.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-02 20:10:46</td>
+            <td class="headerValue">2021-09-03 19:39:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">19</td>
-            <td class="headerCovTableEntry">19</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">42</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">98</td>
-            <td class="headerCovTableEntryLo">42.9 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -148,7 +148,7 @@
 <a name="70"><span class="lineNum">      70 </span>                :            :   /// @param[in]  initial_state       The initial state of the filter.</a>
 <a name="71"><span class="lineNum">      71 </span>                :            :   /// @param[in]  initial_covariance  The initial state covariance.</a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   ///</a>
-<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">          7 :   explicit KalmanFilter(</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineNoCov">          0 :   explicit KalmanFilter(</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :            :     MotionModelT motion_model,</a>
 <a name="75"><span class="lineNum">      75 </span>                :            :     NoiseModelT noise_model,</a>
 <a name="76"><span class="lineNum">      76 </span>                :            :     const State &amp; initial_state,</a>
@@ -156,7 +156,7 @@
 <a name="78"><span class="lineNum">      78 </span>                :            :   : m_motion_model{motion_model},</a>
 <a name="79"><span class="lineNum">      79 </span>                :            :     m_noise_model{noise_model},</a>
 <a name="80"><span class="lineNum">      80 </span>                :            :     m_state{initial_state},</a>
-<a name="81"><span class="lineNum">      81 </span>                :<span class="lineCov">          7 :     m_covariance{initial_covariance} {}</span></a>
+<a name="81"><span class="lineNum">      81 </span>                :<span class="lineNoCov">          0 :     m_covariance{initial_covariance} {}</span></a>
 <a name="82"><span class="lineNum">      82 </span>                :            : </a>
 <a name="83"><span class="lineNum">      83 </span>                :            :   ///</a>
 <a name="84"><span class="lineNum">      84 </span>                :            :   /// @brief      Predict next state.</a>
@@ -165,14 +165,14 @@
 <a name="87"><span class="lineNum">      87 </span>                :            :   ///</a>
 <a name="88"><span class="lineNum">      88 </span>                :            :   /// @return     Predicted state.</a>
 <a name="89"><span class="lineNum">      89 </span>                :            :   ///</a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">        291 :   State crtp_predict(const std::chrono::nanoseconds &amp; dt)</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineNoCov">          0 :   State crtp_predict(const std::chrono::nanoseconds &amp; dt)</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            :   {</a>
-<a name="92"><span class="lineNum">      92 </span>        [<span class="branchCov" title="Branch 0 was taken 291 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        291 :     m_state = m_motion_model.predict(m_state, dt);</span></a>
-<a name="93"><span class="lineNum">      93 </span>        [<span class="branchCov" title="Branch 0 was taken 291 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        291 :     const auto &amp; motion_jacobian = m_motion_model.jacobian(m_state, dt);</span></a>
-<a name="94"><span class="lineNum">      94 </span>  [<span class="branchCov" title="Branch 0 was taken 291 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 291 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        291 :     m_covariance =</span></a>
-<a name="95"><span class="lineNum">      95 </span>  [<span class="branchCov" title="Branch 0 was taken 291 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 291 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        291 :       motion_jacobian * m_covariance * motion_jacobian.transpose() + m_noise_model.covariance(dt);</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 291 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 291 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
-<a name="96"><span class="lineNum">      96 </span>        [<span class="branchCov" title="Branch 0 was taken 291 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        582 :     return m_state;</span></a>
+<a name="92"><span class="lineNum">      92 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_state = m_motion_model.predict(m_state, dt);</span></a>
+<a name="93"><span class="lineNum">      93 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto &amp; motion_jacobian = m_motion_model.jacobian(m_state, dt);</span></a>
+<a name="94"><span class="lineNum">      94 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_covariance =</span></a>
+<a name="95"><span class="lineNum">      95 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :       motion_jacobian * m_covariance * motion_jacobian.transpose() + m_noise_model.covariance(dt);</span></a>
+<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
+<a name="96"><span class="lineNum">      96 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     return m_state;</span></a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   }</a>
 <a name="98"><span class="lineNum">      98 </span>                :            : </a>
 <a name="99"><span class="lineNum">      99 </span>                :            :   ///</a>
@@ -187,22 +187,22 @@
 <a name="108"><span class="lineNum">     108 </span>                :            :   /// @return     State corrected with the measurement.</a>
 <a name="109"><span class="lineNum">     109 </span>                :            :   ///</a>
 <a name="110"><span class="lineNum">     110 </span>                :            :   template&lt;typename MeasurementT&gt;</a>
-<a name="111"><span class="lineNum">     111 </span>                :<span class="lineCov">        273 :   State crtp_correct(const MeasurementT &amp; measurement)</span></a>
+<a name="111"><span class="lineNum">     111 </span>                :<span class="lineNoCov">          0 :   State crtp_correct(const MeasurementT &amp; measurement)</span></a>
 <a name="112"><span class="lineNum">     112 </span>                :            :   {</a>
-<a name="113"><span class="lineNum">     113 </span>        [<span class="branchCov" title="Branch 0 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        273 :     const auto expected_measurement = measurement.create_new_instance_from(m_state);</span></a>
-<a name="114"><span class="lineNum">     114 </span>  [<span class="branchCov" title="Branch 0 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        273 :     const auto innovation = wrap_all_angles(measurement.state() - expected_measurement);</span></a>
-<a name="115"><span class="lineNum">     115 </span>        [<span class="branchCov" title="Branch 0 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        273 :     const auto mapping_matrix = measurement.mapping_matrix_from(m_state);</span></a>
-<a name="116"><span class="lineNum">     116 </span>        [<span class="branchCov" title="Branch 0 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        273 :     const auto innovation_covariance =</span></a>
-<a name="117"><span class="lineNum">     117 </span>  [<span class="branchCov" title="Branch 0 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        273 :       mapping_matrix * m_covariance * mapping_matrix.transpose() + measurement.covariance();</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
-<a name="118"><span class="lineNum">     118 </span>  [<span class="branchCov" title="Branch 0 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        546 :     const auto kalman_gain =</span></a>
-<a name="119"><span class="lineNum">     119 </span>  [<span class="branchCov" title="Branch 0 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        273 :       m_covariance * mapping_matrix.transpose() * innovation_covariance.inverse();</span></a>
-<a name="120"><span class="lineNum">     120 </span>  [<span class="branchCov" title="Branch 0 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        273 :     m_state += kalman_gain * innovation.vector();</span></a>
-<a name="121"><span class="lineNum">     121 </span>                :<span class="lineCov">        273 :     m_state.wrap_all_angles();</span></a>
-<a name="122"><span class="lineNum">     122 </span>  [<span class="branchCov" title="Branch 0 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        273 :     m_covariance = (State::Matrix::Identity() - kalman_gain * mapping_matrix) * m_covariance;</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 273 times"> + </span> 
-<span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 9 was not taken"> - </span>]
-<a name="123"><span class="lineNum">     123 </span>        [<span class="branchCov" title="Branch 0 was taken 273 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        546 :     return m_state;</span></a>
+<a name="113"><span class="lineNum">     113 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto expected_measurement = measurement.create_new_instance_from(m_state);</span></a>
+<a name="114"><span class="lineNum">     114 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto innovation = wrap_all_angles(measurement.state() - expected_measurement);</span></a>
+<a name="115"><span class="lineNum">     115 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto mapping_matrix = measurement.mapping_matrix_from(m_state);</span></a>
+<a name="116"><span class="lineNum">     116 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto innovation_covariance =</span></a>
+<a name="117"><span class="lineNum">     117 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :       mapping_matrix * m_covariance * mapping_matrix.transpose() + measurement.covariance();</span></a>
+<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span>]
+<a name="118"><span class="lineNum">     118 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     const auto kalman_gain =</span></a>
+<a name="119"><span class="lineNum">     119 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :       m_covariance * mapping_matrix.transpose() * innovation_covariance.inverse();</span></a>
+<a name="120"><span class="lineNum">     120 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     m_state += kalman_gain * innovation.vector();</span></a>
+<a name="121"><span class="lineNum">     121 </span>                :<span class="lineNoCov">          0 :     m_state.wrap_all_angles();</span></a>
+<a name="122"><span class="lineNum">     122 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     m_covariance = (State::Matrix::Identity() - kalman_gain * mapping_matrix) * m_covariance;</span></a>
+<span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
+<span class="lineNum">         </span>            <span class="branchNoExec" title="Branch 9 was not executed"> # </span>]
+<a name="123"><span class="lineNum">     123 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     return m_state;</span></a>
 <a name="124"><span class="lineNum">     124 </span>                :            :   }</a>
 <a name="125"><span class="lineNum">     125 </span>                :            : </a>
 <a name="126"><span class="lineNum">     126 </span>                :            :   ///</a>
@@ -211,19 +211,19 @@
 <a name="129"><span class="lineNum">     129 </span>                :            :   /// @param[in]  state       The new state that overwrites one stored in the filter.</a>
 <a name="130"><span class="lineNum">     130 </span>                :            :   /// @param[in]  covariance  The new covariance that overwrites one stored in the filter.</a>
 <a name="131"><span class="lineNum">     131 </span>                :            :   ///</a>
-<a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">          1 :   void crtp_reset(const State &amp; state, const StateMatrix &amp; covariance)</span></a>
+<a name="132"><span class="lineNum">     132 </span>                :<span class="lineNoCov">          0 :   void crtp_reset(const State &amp; state, const StateMatrix &amp; covariance)</span></a>
 <a name="133"><span class="lineNum">     133 </span>                :            :   {</a>
-<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">          1 :     m_state = state;</span></a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">          1 :     m_covariance = covariance;</span></a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">          1 :   }</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineNoCov">          0 :     m_state = state;</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineNoCov">          0 :     m_covariance = covariance;</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineNoCov">          0 :   }</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            : </a>
 <a name="138"><span class="lineNum">     138 </span>                :            :   /// @brief      Get current state.</a>
-<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         48 :   auto &amp; crtp_state() {return m_state;}</span></a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineNoCov">          0 :   auto &amp; crtp_state() {return m_state;}</span></a>
 <a name="140"><span class="lineNum">     140 </span>                :            :   /// @brief      Get current state.</a>
 <a name="141"><span class="lineNum">     141 </span>                :            :   const auto &amp; crtp_state() const {return m_state;}</a>
 <a name="142"><span class="lineNum">     142 </span>                :            : </a>
 <a name="143"><span class="lineNum">     143 </span>                :            :   /// @brief      Get current covariance.</a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         56 :   auto &amp; crtp_covariance() {return m_covariance;}</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineNoCov">          0 :   auto &amp; crtp_covariance() {return m_covariance;}</span></a>
 <a name="145"><span class="lineNum">     145 </span>                :            :   /// @brief      Get current covariance.</a>
 <a name="146"><span class="lineNum">     146 </span>                :            :   const auto &amp; crtp_covariance() const {return m_covariance;}</a>
 <a name="147"><span class="lineNum">     147 </span>                :            : </a>
@@ -255,14 +255,14 @@
 <a name="173"><span class="lineNum">     173 </span>                :            : /// @return     Returns a valid KalmanFilter instance.</a>
 <a name="174"><span class="lineNum">     174 </span>                :            : ///</a>
 <a name="175"><span class="lineNum">     175 </span>                :            : template&lt;typename MotionModelT, typename NoiseModelT&gt;</a>
-<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">          6 : auto make_kalman_filter(</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineNoCov">          0 : auto make_kalman_filter(</span></a>
 <a name="177"><span class="lineNum">     177 </span>                :            :   const MotionModelT &amp; motion_model,</a>
 <a name="178"><span class="lineNum">     178 </span>                :            :   const NoiseModelT &amp; noise_model,</a>
 <a name="179"><span class="lineNum">     179 </span>                :            :   const typename MotionModelT::State &amp; initial_state,</a>
 <a name="180"><span class="lineNum">     180 </span>                :            :   const typename MotionModelT::State::Matrix &amp; initial_covariance)</a>
 <a name="181"><span class="lineNum">     181 </span>                :            : {</a>
 <a name="182"><span class="lineNum">     182 </span>                :            :   return KalmanFilter&lt;MotionModelT, NoiseModelT&gt;{</a>
-<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">          6 :     motion_model, noise_model, initial_state, initial_covariance};</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineNoCov">          0 :     motion_model, noise_model, initial_state, initial_covariance};</span></a>
 <a name="184"><span class="lineNum">     184 </span>                :            : }</a>
 <a name="185"><span class="lineNum">     185 </span>                :            : </a>
 <a name="186"><span class="lineNum">     186 </span>                :            : ///</a>
@@ -282,7 +282,7 @@
 <a name="200"><span class="lineNum">     200 </span>                :            : /// @return     Returns a valid KalmanFilter instance.</a>
 <a name="201"><span class="lineNum">     201 </span>                :            : ///</a>
 <a name="202"><span class="lineNum">     202 </span>                :            : template&lt;typename StateT&gt;</a>
-<a name="203"><span class="lineNum">     203 </span>                :<span class="lineCov">          1 : auto make_correction_only_kalman_filter(</span></a>
+<a name="203"><span class="lineNum">     203 </span>                :<span class="lineNoCov">          0 : auto make_correction_only_kalman_filter(</span></a>
 <a name="204"><span class="lineNum">     204 </span>                :            :   const StateT &amp; initial_state,</a>
 <a name="205"><span class="lineNum">     205 </span>                :            :   const typename StateT::Matrix &amp; initial_covariance)</a>
 <a name="206"><span class="lineNum">     206 </span>                :            : {</a>
@@ -299,7 +299,7 @@
 <a name="217"><span class="lineNum">     217 </span>                :            :   using MotionModel = common::motion_model::StationaryMotionModel&lt;StateT&gt;;</a>
 <a name="218"><span class="lineNum">     218 </span>                :            : </a>
 <a name="219"><span class="lineNum">     219 </span>                :            :   return make_kalman_filter(</a>
-<a name="220"><span class="lineNum">     220 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     MotionModel{}, DummyNoise{}, initial_state, initial_covariance);</span></a>
+<a name="220"><span class="lineNum">     220 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     MotionModel{}, DummyNoise{}, initial_state, initial_covariance);</span></a>
 <a name="221"><span class="lineNum">     221 </span>                :            : }</a>
 <a name="222"><span class="lineNum">     222 </span>                :            : </a>
 <a name="223"><span class="lineNum">     223 </span>                :            : ///</a>
@@ -319,14 +319,14 @@
 <a name="237"><span class="lineNum">     237 </span>                :            : /// @return     Returns a valid KalmanFilter instance.</a>
 <a name="238"><span class="lineNum">     238 </span>                :            : ///</a>
 <a name="239"><span class="lineNum">     239 </span>                :            : template&lt;typename MotionModelT, typename NoiseModelT&gt;</a>
-<a name="240"><span class="lineNum">     240 </span>                :<span class="lineCov">          1 : auto make_kalman_filter(</span></a>
+<a name="240"><span class="lineNum">     240 </span>                :<span class="lineNoCov">          0 : auto make_kalman_filter(</span></a>
 <a name="241"><span class="lineNum">     241 </span>                :            :   const MotionModelT &amp; motion_model,</a>
 <a name="242"><span class="lineNum">     242 </span>                :            :   const NoiseModelT &amp; noise_model,</a>
 <a name="243"><span class="lineNum">     243 </span>                :            :   const typename MotionModelT::State &amp; initial_state,</a>
 <a name="244"><span class="lineNum">     244 </span>                :            :   const std::vector&lt;typename MotionModelT::State::Scalar&gt; &amp; initial_variances)</a>
 <a name="245"><span class="lineNum">     245 </span>                :            : {</a>
 <a name="246"><span class="lineNum">     246 </span>                :            :   using State = typename MotionModelT::State;</a>
-<a name="247"><span class="lineNum">     247 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          1 :   if (initial_variances.size() != static_cast&lt;std::size_t&gt;(State::size())) {</span></a>
+<a name="247"><span class="lineNum">     247 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   if (initial_variances.size() != static_cast&lt;std::size_t&gt;(State::size())) {</span></a>
 <a name="248"><span class="lineNum">     248 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     std::runtime_error(</span></a>
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
 <span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span> 
@@ -335,18 +335,18 @@
 <a name="250"><span class="lineNum">     250 </span>                :            :       std::to_string(initial_variances.size()) + &quot; variances, but &quot; +</a>
 <a name="251"><span class="lineNum">     251 </span>                :            :       std::to_string(State::size()) + &quot; required.&quot;);</a>
 <a name="252"><span class="lineNum">     252 </span>                :            :   }</a>
-<a name="253"><span class="lineNum">     253 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          1 :   typename State::Vector variances{State::Vector::Zero()};</span></a>
+<a name="253"><span class="lineNum">     253 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :   typename State::Vector variances{State::Vector::Zero()};</span></a>
 <a name="254"><span class="lineNum">     254 </span>                :            :   // A small enough epsilon to compare a floating point variance with zero.</a>
-<a name="255"><span class="lineNum">     255 </span>                :<span class="lineCov">          1 :   const auto epsilon = 5.0F * std::numeric_limits&lt;common::types::float32_t&gt;::epsilon();</span></a>
-<a name="256"><span class="lineNum">     256 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          7 :   for (std::uint32_t i = 0; i &lt; initial_variances.size(); ++i) {</span></a>
-<a name="257"><span class="lineNum">     257 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 6 times"> + </span>]:<span class="lineCov">          6 :     if (common::helper_functions::comparisons::abs_lte(initial_variances[i], 0.0F, epsilon)) {</span></a>
+<a name="255"><span class="lineNum">     255 </span>                :<span class="lineNoCov">          0 :   const auto epsilon = 5.0F * std::numeric_limits&lt;common::types::float32_t&gt;::epsilon();</span></a>
+<a name="256"><span class="lineNum">     256 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   for (std::uint32_t i = 0; i &lt; initial_variances.size(); ++i) {</span></a>
+<a name="257"><span class="lineNum">     257 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span>]:<span class="lineNoCov">          0 :     if (common::helper_functions::comparisons::abs_lte(initial_variances[i], 0.0F, epsilon)) {</span></a>
 <a name="258"><span class="lineNum">     258 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       throw std::domain_error(&quot;Variances must be positive&quot;);</span></a>
 <a name="259"><span class="lineNum">     259 </span>                :            :     }</a>
-<a name="260"><span class="lineNum">     260 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :     variances[static_cast&lt;std::int32_t&gt;(i)] = initial_variances[i] * initial_variances[i];</span></a>
+<a name="260"><span class="lineNum">     260 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     variances[static_cast&lt;std::int32_t&gt;(i)] = initial_variances[i] * initial_variances[i];</span></a>
 <a name="261"><span class="lineNum">     261 </span>                :            :   }</a>
 <a name="262"><span class="lineNum">     262 </span>                :            :   return KalmanFilter&lt;MotionModelT, NoiseModelT&gt;{</a>
-<a name="263"><span class="lineNum">     263 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          1 :     motion_model, noise_model, initial_state, variances.asDiagonal()};</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="263"><span class="lineNum">     263 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     motion_model, noise_model, initial_state, variances.asDiagonal()};</span></a>
+<span class="lineNum">         </span>         <span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span>]
 <a name="264"><span class="lineNum">     264 </span>                :            : }</a>
 <a name="265"><span class="lineNum">     265 </span>                :            : </a>
 <a name="266"><span class="lineNum">     266 </span>                :            : }  // namespace state_estimation</a>

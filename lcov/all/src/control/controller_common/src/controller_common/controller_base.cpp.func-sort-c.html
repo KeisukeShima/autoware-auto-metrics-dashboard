@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">126</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">136</td>
-            <td class="headerCovTableEntryHi">92.6 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-02 20:10:46</td>
+            <td class="headerValue">2021-09-03 19:39:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">24</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">26</td>
-            <td class="headerCovTableEntryHi">92.3 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">40</td>
+            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">60</td>
-            <td class="headerCovTableEntryLo">66.7 %</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -76,7 +76,43 @@
       <td width="20%" class="tableHead">Hit count <span class="tableHeadSort"><img src="../../../../../glass.png" width=10 height=14 alt="Sort by hit count" title="Sort by hit count" border=0></span></td>
     </tr>
     <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#30">motion::control::controller_common::BehaviorConfig::BehaviorConfig(float, std::chrono::duration&lt;long, std::ratio&lt;1l, 1000000000l&gt; &gt;, motion::control::controller_common::ControlReference)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#85">motion::control::controller_common::ControllerBase::set_trajectory(autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#107">motion::control::controller_common::ControllerBase::compute_command(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="controller_base.cpp.gcov.html#158">motion::control::controller_common::ControllerBase::set_base_config(motion::control::controller_common::BehaviorConfig const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#73">motion::control::controller_common::ControllerBase::set_trajectory_impl()</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#134">motion::control::controller_common::ControllerBase::handle_new_trajectory(autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#179">motion::control::controller_common::ControllerBase::update_reference_indices(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#240">motion::control::controller_common::ControllerBase::predict(autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::chrono::duration&lt;long, std::ratio&lt;1l, 1000000000l&gt; &gt;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#61">motion::control::controller_common::ControllerBase::ControllerBase(motion::control::controller_common::BehaviorConfig const&amp;)</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#285">motion::control::controller_common::compute_diagnostic(motion::control::controller_common::ControllerBase const&amp;, autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;, bool, autoware_auto_msgs::msg::ControlDiagnostic_&lt;std::allocator&lt;void&gt; &gt;&amp;)</a></td>
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
@@ -84,100 +120,64 @@
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#30">motion::control::controller_common::BehaviorConfig::BehaviorConfig(float, std::chrono::duration&lt;long, std::ratio&lt;1l, 1000000000l&gt; &gt;, motion::control::controller_common::ControlReference)</a></td>
-              <td class="coverFnHi">62</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#61">motion::control::controller_common::ControllerBase::ControllerBase(motion::control::controller_common::BehaviorConfig const&amp;)</a></td>
-              <td class="coverFnHi">62</td>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#55">motion::control::controller_common::BehaviorConfig::is_temporal_reference() const</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="controller_base.cpp.gcov.html#43">motion::control::controller_common::BehaviorConfig::safe_deceleration_rate() const</a></td>
-              <td class="coverFnHi">209</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#220">motion::control::controller_common::ControllerBase::compute_stop_command(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;) const</a></td>
-              <td class="coverFnHi">209</td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="controller_base.cpp.gcov.html#47">motion::control::controller_common::BehaviorConfig::time_step() const</a></td>
-              <td class="coverFnHi">227</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#279">motion::control::controller_common::ControllerBase::get_compute_iterations() const</a></td>
-              <td class="coverFnHi">230</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#273">motion::control::controller_common::ControllerBase::name[abi:cxx11]() const</a></td>
-              <td class="coverFnHi">230</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#285">motion::control::controller_common::compute_diagnostic(motion::control::controller_common::ControllerBase const&amp;, autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;, bool, autoware_auto_msgs::msg::ControlDiagnostic_&lt;std::allocator&lt;void&gt; &gt;&amp;)</a></td>
-              <td class="coverFnHi">239</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#134">motion::control::controller_common::ControllerBase::handle_new_trajectory(autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">387</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#73">motion::control::controller_common::ControllerBase::set_trajectory_impl()</a></td>
-              <td class="coverFnHi">437</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#55">motion::control::controller_common::BehaviorConfig::is_temporal_reference() const</a></td>
-              <td class="coverFnHi">478</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#164">motion::control::controller_common::ControllerBase::get_base_config() const</a></td>
-              <td class="coverFnHi">478</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#126">motion::control::controller_common::ControllerBase::check_new_trajectory(autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;) const</a></td>
-              <td class="coverFnHi">637</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#140">motion::control::controller_common::ControllerBase::get_current_state_spatial_index() const</a></td>
-              <td class="coverFnHi">666</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#85">motion::control::controller_common::ControllerBase::set_trajectory(autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">697</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#240">motion::control::controller_common::ControllerBase::predict(autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, std::chrono::duration&lt;long, std::ratio&lt;1l, 1000000000l&gt; &gt;)</a></td>
-              <td class="coverFnHi">738</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#179">motion::control::controller_common::ControllerBase::update_reference_indices(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">1095</td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="controller_base.cpp.gcov.html#170">motion::control::controller_common::ControllerBase::is_state_ok(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;) const</a></td>
-              <td class="coverFnHi">1095</td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#164">motion::control::controller_common::ControllerBase::get_base_config() const</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="controller_base.cpp.gcov.html#203">motion::control::controller_common::ControllerBase::is_past_trajectory(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;) const</a></td>
-              <td class="coverFnHi">1095</td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#107">motion::control::controller_common::ControllerBase::compute_command(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">1101</td>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#126">motion::control::controller_common::ControllerBase::check_new_trajectory(autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#149">motion::control::controller_common::ControllerBase::get_current_state_temporal_index() const</a></td>
-              <td class="coverFnHi">1347</td>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#220">motion::control::controller_common::ControllerBase::compute_stop_command(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="controller_base.cpp.gcov.html#183">motion::control::controller_common::ControllerBase::update_reference_indices(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;)::{lambda(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;)#1}::operator()(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;) const</a></td>
-              <td class="coverFnHi">2033</td>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#279">motion::control::controller_common::ControllerBase::get_compute_iterations() const</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="controller_base.cpp.gcov.html#101">motion::control::controller_common::ControllerBase::get_reference_trajectory() const</a></td>
-              <td class="coverFnHi">5459</td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#140">motion::control::controller_common::ControllerBase::get_current_state_spatial_index() const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#149">motion::control::controller_common::ControllerBase::get_current_state_temporal_index() const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#273">motion::control::controller_common::ControllerBase::name[abi:cxx11]() const</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="controller_base.cpp.gcov.html#191">motion::control::controller_common::ControllerBase::update_reference_indices(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;)::{lambda(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;)#2}::operator()(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;) const</a></td>
-              <td class="coverFnHi">11761</td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="controller_base.cpp.gcov.html#183">motion::control::controller_common::ControllerBase::update_reference_indices(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;)::{lambda(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;)#1}::operator()(autoware_auto_msgs::msg::VehicleKinematicState_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::TrajectoryPoint_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware_auto_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
             </tr>
   </table>
   <br>
