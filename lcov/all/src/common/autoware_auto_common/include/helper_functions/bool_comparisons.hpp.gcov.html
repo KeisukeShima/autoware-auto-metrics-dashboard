@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">2</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-05 19:32:53</td>
+            <td class="headerValue">2021-09-06 20:20:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">2</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -115,9 +115,9 @@
 <a name="37"><span class="lineNum">      37 </span>                :            :  * @return True iff exactly one of 'a' and 'b' is true.</a>
 <a name="38"><span class="lineNum">      38 </span>                :            :  */</a>
 <a name="39"><span class="lineNum">      39 </span>                :            : template&lt;typename T&gt;</a>
-<a name="40"><span class="lineNum">      40 </span>                :<span class="lineNoCov">          0 : types::bool8_t exclusive_or(const T &amp; a, const T &amp; b)</span></a>
+<a name="40"><span class="lineNum">      40 </span>                :<span class="lineCov">          8 : types::bool8_t exclusive_or(const T &amp; a, const T &amp; b)</span></a>
 <a name="41"><span class="lineNum">      41 </span>                :            : {</a>
-<a name="42"><span class="lineNum">      42 </span>                :<span class="lineNoCov">          0 :   return static_cast&lt;types::bool8_t&gt;(a) != static_cast&lt;types::bool8_t&gt;(b);</span></a>
+<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">          8 :   return static_cast&lt;types::bool8_t&gt;(a) != static_cast&lt;types::bool8_t&gt;(b);</span></a>
 <a name="43"><span class="lineNum">      43 </span>                :            : }</a>
 <a name="44"><span class="lineNum">      44 </span>                :            : </a>
 <a name="45"><span class="lineNum">      45 </span>                :            : }  // namespace comparisons</a>

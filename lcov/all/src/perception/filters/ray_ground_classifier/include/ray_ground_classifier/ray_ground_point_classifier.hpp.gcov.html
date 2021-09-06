@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">9</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">9</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-05 19:32:53</td>
+            <td class="headerValue">2021-09-06 20:20:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">3</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">3</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">2</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr><td><img src="../../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -133,14 +133,14 @@
 <a name="55"><span class="lineNum">      55 </span>                :            : /// \param[in] th_rad the reference angle</a>
 <a name="56"><span class="lineNum">      56 </span>                :            : /// \param[in] phi_rad the test angle</a>
 <a name="57"><span class="lineNum">      57 </span>                :            : /// \return angle from reference angle to test angle</a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineNoCov">          0 : inline float32_t angle_distance_rad(const float32_t th_rad, const float32_t phi_rad)</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">         82 : inline float32_t angle_distance_rad(const float32_t th_rad, const float32_t phi_rad)</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            : {</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineNoCov">          0 :   return fmodf((th_rad - phi_rad) + PI + TAU, TAU) - PI;</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">         82 :   return fmodf((th_rad - phi_rad) + PI + TAU, TAU) - PI;</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :            : }</a>
 <a name="62"><span class="lineNum">      62 </span>                :            : </a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineNoCov">          0 : inline float64_t deg2rad(float64_t degrees)</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">        123 : inline float64_t deg2rad(float64_t degrees)</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            : {</a>
-<a name="65"><span class="lineNum">      65 </span>                :<span class="lineNoCov">          0 :   return degrees * 4.0 * atan(1.0) / 180.0;</span></a>
+<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">        123 :   return degrees * 4.0 * atan(1.0) / 180.0;</span></a>
 <a name="66"><span class="lineNum">      66 </span>                :            : }</a>
 <a name="67"><span class="lineNum">      67 </span>                :            : </a>
 <a name="68"><span class="lineNum">      68 </span>                :            : /// \brief A struct that holds configuration parameters for the ground filter</a>
@@ -234,12 +234,12 @@
 <a name="156"><span class="lineNum">     156 </span>                :            : /// \param[in] lhs Left hand side of comparison</a>
 <a name="157"><span class="lineNum">     157 </span>                :            : /// \param[in] rhs Right hand side of comparison</a>
 <a name="158"><span class="lineNum">     158 </span>                :            : /// \return True if lhs &lt; rhs: if lhs.r &lt; rhs.r, if nearly same radius then lhs.z &lt; rhs.z</a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineNoCov">          0 : inline bool8_t operator&lt;(const PointXYZIFR &amp; lhs, const PointXYZIFR &amp; rhs) noexcept</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">   27258600 : inline bool8_t operator&lt;(const PointXYZIFR &amp; lhs, const PointXYZIFR &amp; rhs) noexcept</span></a>
 <a name="160"><span class="lineNum">     160 </span>                :            : {</a>
-<a name="161"><span class="lineNum">     161 </span>                :<span class="lineNoCov">          0 :   const auto same_radius = abs_eq(</span></a>
-<a name="162"><span class="lineNum">     162 </span>                :<span class="lineNoCov">          0 :     lhs.m_r_xy, rhs.m_r_xy,</span></a>
-<a name="163"><span class="lineNum">     163 </span>                :<span class="lineNoCov">          0 :     std::numeric_limits&lt;decltype(lhs.m_r_xy)&gt;::epsilon());</span></a>
-<a name="164"><span class="lineNum">     164 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   return same_radius ? (lhs.m_point-&gt;z &lt; rhs.m_point-&gt;z) : (lhs.m_r_xy &lt; rhs.m_r_xy);</span></a>
+<a name="161"><span class="lineNum">     161 </span>                :<span class="lineCov">   27258600 :   const auto same_radius = abs_eq(</span></a>
+<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">   27258600 :     lhs.m_r_xy, rhs.m_r_xy,</span></a>
+<a name="163"><span class="lineNum">     163 </span>                :<span class="lineCov">   27258600 :     std::numeric_limits&lt;decltype(lhs.m_r_xy)&gt;::epsilon());</span></a>
+<a name="164"><span class="lineNum">     164 </span>        [<span class="branchCov" title="Branch 0 was taken 393540 times"> + </span><span class="branchCov" title="Branch 1 was taken 26865100 times"> + </span>]:<span class="lineCov">   27258600 :   return same_radius ? (lhs.m_point-&gt;z &lt; rhs.m_point-&gt;z) : (lhs.m_r_xy &lt; rhs.m_r_xy);</span></a>
 <a name="165"><span class="lineNum">     165 </span>                :            : }</a>
 <a name="166"><span class="lineNum">     166 </span>                :            : </a>
 <a name="167"><span class="lineNum">     167 </span>                :            : using Ray = std::vector&lt;PointXYZIFR&gt;;</a>

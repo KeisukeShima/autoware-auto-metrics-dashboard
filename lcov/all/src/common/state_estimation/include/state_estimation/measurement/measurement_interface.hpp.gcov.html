@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">12</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">12</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-05 19:32:53</td>
+            <td class="headerValue">2021-09-06 20:20:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">22</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">22</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -117,27 +117,27 @@
 <a name="39"><span class="lineNum">      39 </span>                :            : struct STATE_ESTIMATION_PUBLIC MeasurementInterface : public common::helper_functions::crtp&lt;Derived&gt;</a>
 <a name="40"><span class="lineNum">      40 </span>                :            : {</a>
 <a name="41"><span class="lineNum">      41 </span>                :            :   /// @brief      Get measurement as a state vector.</a>
-<a name="42"><span class="lineNum">      42 </span>                :<span class="lineNoCov">          0 :   auto &amp; state()</span></a>
+<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">          6 :   auto &amp; state()</span></a>
 <a name="43"><span class="lineNum">      43 </span>                :            :   {</a>
 <a name="44"><span class="lineNum">      44 </span>                :            :     using ReturnType = std::decay_t&lt;decltype(this-&gt;impl().crtp_state())&gt;;</a>
 <a name="45"><span class="lineNum">      45 </span>                :            :     static_assert(</a>
 <a name="46"><span class="lineNum">      46 </span>                :            :       common::state_vector::is_state&lt;ReturnType&gt;::value,</a>
 <a name="47"><span class="lineNum">      47 </span>                :            :       &quot;\n\nFunction crtp_state must return a state.\n\n&quot;);</a>
-<a name="48"><span class="lineNum">      48 </span>                :<span class="lineNoCov">          0 :     return this-&gt;impl().crtp_state();</span></a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">          6 :     return this-&gt;impl().crtp_state();</span></a>
 <a name="49"><span class="lineNum">      49 </span>                :            :   }</a>
 <a name="50"><span class="lineNum">      50 </span>                :            :   /// @brief      Get measurement as a state vector.</a>
-<a name="51"><span class="lineNum">      51 </span>                :<span class="lineNoCov">          0 :   const auto &amp; state() const</span></a>
+<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">        275 :   const auto &amp; state() const</span></a>
 <a name="52"><span class="lineNum">      52 </span>                :            :   {</a>
 <a name="53"><span class="lineNum">      53 </span>                :            :     using ReturnType = std::decay_t&lt;decltype(this-&gt;impl().crtp_state())&gt;;</a>
 <a name="54"><span class="lineNum">      54 </span>                :            :     static_assert(</a>
 <a name="55"><span class="lineNum">      55 </span>                :            :       common::state_vector::is_state&lt;ReturnType&gt;::value,</a>
 <a name="56"><span class="lineNum">      56 </span>                :            :       &quot;\n\nFunction crtp_state must return a state.\n\n&quot;);</a>
-<a name="57"><span class="lineNum">      57 </span>                :<span class="lineNoCov">          0 :     return this-&gt;impl().crtp_state();</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">        275 :     return this-&gt;impl().crtp_state();</span></a>
 <a name="58"><span class="lineNum">      58 </span>                :            :   }</a>
 <a name="59"><span class="lineNum">      59 </span>                :            : </a>
 <a name="60"><span class="lineNum">      60 </span>                :            :   /// @brief      Get covariance of the measurement as a matrix.</a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineNoCov">          0 :   auto &amp; covariance() {return this-&gt;impl().crtp_covariance();}</span></a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineNoCov">          0 :   const auto &amp; covariance() const {return this-&gt;impl().crtp_covariance();}</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">          2 :   auto &amp; covariance() {return this-&gt;impl().crtp_covariance();}</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">        275 :   const auto &amp; covariance() const {return this-&gt;impl().crtp_covariance();}</span></a>
 <a name="63"><span class="lineNum">      63 </span>                :            : </a>
 <a name="64"><span class="lineNum">      64 </span>                :            :   ///</a>
 <a name="65"><span class="lineNum">      65 </span>                :            :   /// @brief      Create a new instance of the measurement from another state.</a>
@@ -155,7 +155,7 @@
 <a name="77"><span class="lineNum">      77 </span>                :            :   /// @return     Return a state that is a mapping of the OtherStateT to this measurement's state.</a>
 <a name="78"><span class="lineNum">      78 </span>                :            :   ///</a>
 <a name="79"><span class="lineNum">      79 </span>                :            :   template&lt;typename OtherStateT&gt;</a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineNoCov">          0 :   auto create_new_instance_from(const OtherStateT &amp; other_state) const</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">        274 :   auto create_new_instance_from(const OtherStateT &amp; other_state) const</span></a>
 <a name="81"><span class="lineNum">      81 </span>                :            :   {</a>
 <a name="82"><span class="lineNum">      82 </span>                :            :     static_assert(</a>
 <a name="83"><span class="lineNum">      83 </span>                :            :       common::state_vector::is_state&lt;OtherStateT&gt;::value,</a>
@@ -165,7 +165,7 @@
 <a name="87"><span class="lineNum">      87 </span>                :            :     static_assert(</a>
 <a name="88"><span class="lineNum">      88 </span>                :            :       common::state_vector::is_state&lt;ReturnType&gt;::value,</a>
 <a name="89"><span class="lineNum">      89 </span>                :            :       &quot;\n\nFunction crtp_create_new_instance_from must return a state.\n\n&quot;);</a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineNoCov">          0 :     return this-&gt;impl().crtp_create_new_instance_from(other_state);</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">        274 :     return this-&gt;impl().crtp_create_new_instance_from(other_state);</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            :   }</a>
 <a name="92"><span class="lineNum">      92 </span>                :            : </a>
 <a name="93"><span class="lineNum">      93 </span>                :            :   ///</a>
@@ -182,12 +182,12 @@
 <a name="104"><span class="lineNum">     104 </span>                :            :   /// @return     An instance of OtherStateT with updated variables observed by this measurement.</a>
 <a name="105"><span class="lineNum">     105 </span>                :            :   ///</a>
 <a name="106"><span class="lineNum">     106 </span>                :            :   template&lt;typename OtherStateT&gt;</a>
-<a name="107"><span class="lineNum">     107 </span>                :<span class="lineNoCov">          0 :   OtherStateT map_into(const OtherStateT &amp; other_state) const</span></a>
+<a name="107"><span class="lineNum">     107 </span>                :<span class="lineCov">          2 :   OtherStateT map_into(const OtherStateT &amp; other_state) const</span></a>
 <a name="108"><span class="lineNum">     108 </span>                :            :   {</a>
 <a name="109"><span class="lineNum">     109 </span>                :            :     static_assert(</a>
 <a name="110"><span class="lineNum">     110 </span>                :            :       common::state_vector::is_state&lt;OtherStateT&gt;::value,</a>
 <a name="111"><span class="lineNum">     111 </span>                :            :       &quot;\n\nThe other state must be a state.\n\n&quot;);</a>
-<a name="112"><span class="lineNum">     112 </span>                :<span class="lineNoCov">          0 :     return this-&gt;impl().crtp_map_into(other_state);</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">          2 :     return this-&gt;impl().crtp_map_into(other_state);</span></a>
 <a name="113"><span class="lineNum">     113 </span>                :            :   }</a>
 <a name="114"><span class="lineNum">     114 </span>                :            : </a>
 <a name="115"><span class="lineNum">     115 </span>                :            :   ///</a>
@@ -206,12 +206,12 @@
 <a name="128"><span class="lineNum">     128 </span>                :            :   /// @return     Returns a mapping matrix that maps from OtherStateT to this measurement's state.</a>
 <a name="129"><span class="lineNum">     129 </span>                :            :   ///</a>
 <a name="130"><span class="lineNum">     130 </span>                :            :   template&lt;typename OtherStateT&gt;</a>
-<a name="131"><span class="lineNum">     131 </span>                :<span class="lineNoCov">          0 :   auto mapping_matrix_from(const OtherStateT &amp; other_state) const</span></a>
+<a name="131"><span class="lineNum">     131 </span>                :<span class="lineCov">        274 :   auto mapping_matrix_from(const OtherStateT &amp; other_state) const</span></a>
 <a name="132"><span class="lineNum">     132 </span>                :            :   {</a>
 <a name="133"><span class="lineNum">     133 </span>                :            :     static_assert(</a>
 <a name="134"><span class="lineNum">     134 </span>                :            :       common::state_vector::is_state&lt;OtherStateT&gt;::value,</a>
 <a name="135"><span class="lineNum">     135 </span>                :            :       &quot;The other state must be a state.&quot;);</a>
-<a name="136"><span class="lineNum">     136 </span>                :<span class="lineNoCov">          0 :     return this-&gt;impl().crtp_mapping_matrix_from(other_state);</span></a>
+<a name="136"><span class="lineNum">     136 </span>                :<span class="lineCov">        274 :     return this-&gt;impl().crtp_mapping_matrix_from(other_state);</span></a>
 <a name="137"><span class="lineNum">     137 </span>                :            :   }</a>
 <a name="138"><span class="lineNum">     138 </span>                :            : };</a>
 <a name="139"><span class="lineNum">     139 </span>                :            : </a>

@@ -31,18 +31,18 @@
             <td class="headerValue">lcov.total.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">38</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">38</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-05 19:32:53</td>
+            <td class="headerValue">2021-09-06 20:20:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">0</td>
             <td class="headerCovTableEntry">4</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">6</td>
             <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntryLo">0.0 %</td>
+            <td class="headerCovTableEntryLo">60.0 %</td>
           </tr>
           <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -115,64 +115,64 @@
 <a name="37"><span class="lineNum">      37 </span>                :            : namespace details</a>
 <a name="38"><span class="lineNum">      38 </span>                :            : {</a>
 <a name="39"><span class="lineNum">      39 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="40"><span class="lineNum">      40 </span>                :<span class="lineNoCov">          0 : void size_2d(</span></a>
+<a name="40"><span class="lineNum">      40 </span>                :<span class="lineCov">       7336 : void size_2d(</span></a>
 <a name="41"><span class="lineNum">      41 </span>                :            :   const decltype(BoundingBox::corners) &amp; corners,</a>
 <a name="42"><span class="lineNum">      42 </span>                :            :   geometry_msgs::msg::Point32 &amp; ret)</a>
 <a name="43"><span class="lineNum">      43 </span>                :            : {</a>
-<a name="44"><span class="lineNum">      44 </span>                :<span class="lineNoCov">          0 :   ret.x = std::max(</span></a>
-<a name="45"><span class="lineNum">      45 </span>                :<span class="lineNoCov">          0 :     norm_2d(</span></a>
-<a name="46"><span class="lineNum">      46 </span>                :<span class="lineNoCov">          0 :       minus_2d(</span></a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineNoCov">          0 :         corners[1U],</span></a>
-<a name="48"><span class="lineNum">      48 </span>                :<span class="lineNoCov">          0 :         corners[0U])), std::numeric_limits&lt;float32_t&gt;::epsilon());</span></a>
-<a name="49"><span class="lineNum">      49 </span>                :<span class="lineNoCov">          0 :   ret.y = std::max(</span></a>
-<a name="50"><span class="lineNum">      50 </span>                :<span class="lineNoCov">          0 :     norm_2d(</span></a>
-<a name="51"><span class="lineNum">      51 </span>                :<span class="lineNoCov">          0 :       minus_2d(</span></a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineNoCov">          0 :         corners[2U],</span></a>
-<a name="53"><span class="lineNum">      53 </span>                :<span class="lineNoCov">          0 :         corners[1U])), std::numeric_limits&lt;float32_t&gt;::epsilon());</span></a>
-<a name="54"><span class="lineNum">      54 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="44"><span class="lineNum">      44 </span>                :<span class="lineCov">       7336 :   ret.x = std::max(</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">       7336 :     norm_2d(</span></a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">       7336 :       minus_2d(</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       7336 :         corners[1U],</span></a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">      22008 :         corners[0U])), std::numeric_limits&lt;float32_t&gt;::epsilon());</span></a>
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">       7336 :   ret.y = std::max(</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">       7336 :     norm_2d(</span></a>
+<a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">       7336 :       minus_2d(</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">       7336 :         corners[2U],</span></a>
+<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">      22008 :         corners[1U])), std::numeric_limits&lt;float32_t&gt;::epsilon());</span></a>
+<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">       7336 : }</span></a>
 <a name="55"><span class="lineNum">      55 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="56"><span class="lineNum">      56 </span>                :<span class="lineNoCov">          0 : void finalize_box(const decltype(BoundingBox::corners) &amp; corners, BoundingBox &amp; box)</span></a>
+<a name="56"><span class="lineNum">      56 </span>                :<span class="lineCov">       1083 : void finalize_box(const decltype(BoundingBox::corners) &amp; corners, BoundingBox &amp; box)</span></a>
 <a name="57"><span class="lineNum">      57 </span>                :            : {</a>
-<a name="58"><span class="lineNum">      58 </span>                :<span class="lineNoCov">          0 :   (void)std::copy(&amp;corners[0U], &amp;corners[corners.size()], &amp;box.corners[0U]);</span></a>
+<a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">       1083 :   (void)std::copy(&amp;corners[0U], &amp;corners[corners.size()], &amp;box.corners[0U]);</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            :   // orientation: this is robust to lines</a>
 <a name="60"><span class="lineNum">      60 </span>                :            :   const float32_t yaw_rad_2 =</a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineNoCov">          0 :     atan2f(box.corners[2U].y - box.corners[1U].y, box.corners[2U].x - box.corners[1U].x) * 0.5F;</span></a>
-<a name="62"><span class="lineNum">      62 </span>                :<span class="lineNoCov">          0 :   box.orientation.w = cosf(yaw_rad_2);</span></a>
-<a name="63"><span class="lineNum">      63 </span>                :<span class="lineNoCov">          0 :   box.orientation.z = sinf(yaw_rad_2);</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">       1083 :     atan2f(box.corners[2U].y - box.corners[1U].y, box.corners[2U].x - box.corners[1U].x) * 0.5F;</span></a>
+<a name="62"><span class="lineNum">      62 </span>                :<span class="lineCov">       1083 :   box.orientation.w = cosf(yaw_rad_2);</span></a>
+<a name="63"><span class="lineNum">      63 </span>                :<span class="lineCov">       1083 :   box.orientation.z = sinf(yaw_rad_2);</span></a>
 <a name="64"><span class="lineNum">      64 </span>                :            :   // centroid</a>
-<a name="65"><span class="lineNum">      65 </span>                :<span class="lineNoCov">          0 :   box.centroid = times_2d(plus_2d(corners[0U], corners[2U]), 0.5F);</span></a>
-<a name="66"><span class="lineNum">      66 </span>                :<span class="lineNoCov">          0 : }</span></a>
+<a name="65"><span class="lineNum">      65 </span>                :<span class="lineCov">       1083 :   box.centroid = times_2d(plus_2d(corners[0U], corners[2U]), 0.5F);</span></a>
+<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">       1083 : }</span></a>
 <a name="67"><span class="lineNum">      67 </span>                :            : </a>
 <a name="68"><span class="lineNum">      68 </span>                :            : </a>
-<a name="69"><span class="lineNum">      69 </span>                :<span class="lineNoCov">          0 : autoware_auto_msgs::msg::Shape make_shape(const BoundingBox &amp; box)</span></a>
+<a name="69"><span class="lineNum">      69 </span>                :<span class="lineCov">          8 : autoware_auto_msgs::msg::Shape make_shape(const BoundingBox &amp; box)</span></a>
 <a name="70"><span class="lineNum">      70 </span>                :            : {</a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineNoCov">          0 :   autoware_auto_msgs::msg::Shape ret;</span></a>
-<a name="72"><span class="lineNum">      72 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   for (auto corner_pt : box.corners) {</span></a>
-<a name="73"><span class="lineNum">      73 </span>                :<span class="lineNoCov">          0 :     corner_pt.z -= box.size.z;</span></a>
-<a name="74"><span class="lineNum">      74 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     ret.polygon.points.push_back(corner_pt);</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">          8 :   autoware_auto_msgs::msg::Shape ret;</span></a>
+<a name="72"><span class="lineNum">      72 </span>        [<span class="branchCov" title="Branch 0 was taken 32 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         40 :   for (auto corner_pt : box.corners) {</span></a>
+<a name="73"><span class="lineNum">      73 </span>                :<span class="lineCov">         32 :     corner_pt.z -= box.size.z;</span></a>
+<a name="74"><span class="lineNum">      74 </span>        [<span class="branchCov" title="Branch 0 was taken 32 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         32 :     ret.polygon.points.push_back(corner_pt);</span></a>
 <a name="75"><span class="lineNum">      75 </span>                :            :   }</a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineNoCov">          0 :   ret.height = 2.0F * box.size.z;</span></a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineNoCov">          0 :   return ret;</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">          8 :   ret.height = 2.0F * box.size.z;</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">          8 :   return ret;</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            : }</a>
 <a name="79"><span class="lineNum">      79 </span>                :            : </a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineNoCov">          0 : autoware_auto_msgs::msg::DetectedObject make_detected_object(const BoundingBox &amp; box)</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">          8 : autoware_auto_msgs::msg::DetectedObject make_detected_object(const BoundingBox &amp; box)</span></a>
 <a name="81"><span class="lineNum">      81 </span>                :            : {</a>
-<a name="82"><span class="lineNum">      82 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   autoware_auto_msgs::msg::DetectedObject ret;</span></a>
+<a name="82"><span class="lineNum">      82 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :   autoware_auto_msgs::msg::DetectedObject ret;</span></a>
 <a name="83"><span class="lineNum">      83 </span>                :            : </a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineNoCov">          0 :   ret.kinematics.centroid_position.x = static_cast&lt;double&gt;(box.centroid.x);</span></a>
-<a name="85"><span class="lineNum">      85 </span>                :<span class="lineNoCov">          0 :   ret.kinematics.centroid_position.y = static_cast&lt;double&gt;(box.centroid.y);</span></a>
-<a name="86"><span class="lineNum">      86 </span>                :<span class="lineNoCov">          0 :   ret.kinematics.centroid_position.z = static_cast&lt;double&gt;(box.centroid.z);</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">          8 :   ret.kinematics.centroid_position.x = static_cast&lt;double&gt;(box.centroid.x);</span></a>
+<a name="85"><span class="lineNum">      85 </span>                :<span class="lineCov">          8 :   ret.kinematics.centroid_position.y = static_cast&lt;double&gt;(box.centroid.y);</span></a>
+<a name="86"><span class="lineNum">      86 </span>                :<span class="lineCov">          8 :   ret.kinematics.centroid_position.z = static_cast&lt;double&gt;(box.centroid.z);</span></a>
 <a name="87"><span class="lineNum">      87 </span>                :            : </a>
-<a name="88"><span class="lineNum">      88 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   ret.shape = make_shape(box);</span></a>
+<a name="88"><span class="lineNum">      88 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :   ret.shape = make_shape(box);</span></a>
 <a name="89"><span class="lineNum">      89 </span>                :            : </a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineNoCov">          0 :   ret.existence_probability = 1.0F;</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">          8 :   ret.existence_probability = 1.0F;</span></a>
 <a name="91"><span class="lineNum">      91 </span>                :            : </a>
-<a name="92"><span class="lineNum">      92 </span>                :<span class="lineNoCov">          0 :   autoware_auto_msgs::msg::ObjectClassification label;</span></a>
-<a name="93"><span class="lineNum">      93 </span>                :<span class="lineNoCov">          0 :   label.classification = autoware_auto_msgs::msg::ObjectClassification::UNKNOWN;</span></a>
-<a name="94"><span class="lineNum">      94 </span>                :<span class="lineNoCov">          0 :   label.probability = 1.0F;</span></a>
-<a name="95"><span class="lineNum">      95 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :   ret.classification.emplace_back(std::move(label));</span></a>
+<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">          8 :   autoware_auto_msgs::msg::ObjectClassification label;</span></a>
+<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">          8 :   label.classification = autoware_auto_msgs::msg::ObjectClassification::UNKNOWN;</span></a>
+<a name="94"><span class="lineNum">      94 </span>                :<span class="lineCov">          8 :   label.probability = 1.0F;</span></a>
+<a name="95"><span class="lineNum">      95 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          8 :   ret.classification.emplace_back(std::move(label));</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :            : </a>
-<a name="97"><span class="lineNum">      97 </span>                :<span class="lineNoCov">          0 :   return ret;</span></a>
+<a name="97"><span class="lineNum">      97 </span>                :<span class="lineCov">         16 :   return ret;</span></a>
 <a name="98"><span class="lineNum">      98 </span>                :            : }</a>
 <a name="99"><span class="lineNum">      99 </span>                :            : </a>
 <a name="100"><span class="lineNum">     100 </span>                :            : }  // namespace details</a>
