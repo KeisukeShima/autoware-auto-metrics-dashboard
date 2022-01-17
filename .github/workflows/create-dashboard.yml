@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      run: git clone https://gitlab.com/autowarefoundation/autoware.auto/AutowareAuto.git .
+      run: git clone https://gitlab.com/keisuke.shima/AutowareAuto.git .
 
     - uses: actions/checkout@v2
       with:
@@ -29,19 +29,13 @@ jobs:
       with:
         required-ros-distributions: ${{ env.ROS_DISTRO}}
 
-    - name: List packages
-      id: list_packages
-      run: |
-        package_list=$(colcon list --names-only)
-        echo "::set-output name=package_list::$package_list"
-
     - name: Build and test
       uses: ros-tooling/action-ros-ci@v0.2
       id: build_and_test
       with:
-        package-name: ${{ steps.list_packages.outputs.package_list }}
         target-ros2-distro: ${{ env.ROS_DISTRO }}
         vcs-repo-file-url: autoware.auto.foxy.repos
+        skip-tests: true
         extra-cmake-args: -DCMAKE_CXX_FLAGS="-fprofile-arcs -ftest-coverage -DCOVERAGE_RUN=1" -DCMAKE_C_FLAGS="-fprofile-arcs -ftest-coverage -DCOVERAGE_RUN=1" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
         colcon-defaults: |
           {
@@ -52,7 +46,7 @@ jobs:
         colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/1ddb69bedfd1f04c2f000e95452f7c24a4d6176b/index.yaml
 
     - id: metrics-reporter
-      uses: tier4/ros-metrics-reporter@v0.3
+      uses: tier4/ros-metrics-reporter@main
       with:
         artifacts-dir: ${{ env.ARTIFACTS_DIR }}
         target-dir: ${{ steps.build_and_test.outputs.ros-workspace-directory-name }}
@@ -62,6 +56,7 @@ jobs:
         CCN: "20"
         nloc: "200"
         arguments: "6"
+        test-label: "gtest smoke_test launch_test"
 
     - name: Check results
       run: |
