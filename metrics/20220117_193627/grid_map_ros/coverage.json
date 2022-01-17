@@ -1,17 +1,17 @@
 {
-  "package": "all",
+  "package": "grid_map_ros",
   "value": [
     {
       "label": "all",
-      "line": 33.4,
-      "function": 39.1,
-      "branch": 32.4
+      "line": 49.5,
+      "function": 57.1,
+      "branch": 11.8
     },
     {
       "label": "gtest",
-      "line": 33.4,
-      "function": 39.1,
-      "branch": 32.4
+      "line": 49.5,
+      "function": 57.1,
+      "branch": 11.8
     },
     {
       "label": "smoke_test",

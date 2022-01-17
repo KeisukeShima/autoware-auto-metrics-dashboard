@@ -1,17 +1,17 @@
 {
-  "package": "all",
+  "package": "grid_map_pcl",
   "value": [
     {
       "label": "all",
-      "line": 33.4,
-      "function": 39.1,
-      "branch": 32.4
+      "line": 65.6,
+      "function": 69.0,
+      "branch": 25.0
     },
     {
       "label": "gtest",
-      "line": 33.4,
-      "function": 39.1,
-      "branch": 32.4
+      "line": 65.6,
+      "function": 69.0,
+      "branch": 25.0
     },
     {
       "label": "smoke_test",

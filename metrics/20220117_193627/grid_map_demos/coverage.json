@@ -1,17 +1,17 @@
 {
-  "package": "all",
+  "package": "grid_map_demos",
   "value": [
     {
       "label": "all",
-      "line": 33.4,
-      "function": 39.1,
-      "branch": 32.4
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
     },
     {
       "label": "gtest",
-      "line": 33.4,
-      "function": 39.1,
-      "branch": 32.4
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
     },
     {
       "label": "smoke_test",
