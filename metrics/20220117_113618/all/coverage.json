@@ -1,0 +1,29 @@
+{
+  "package": "all",
+  "value": [
+    {
+      "label": "all",
+      "line": 33.4,
+      "function": 39.1,
+      "branch": 32.3
+    },
+    {
+      "label": "gtest",
+      "line": 33.4,
+      "function": 39.1,
+      "branch": 32.3
+    },
+    {
+      "label": "smoke_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    },
+    {
+      "label": "launch_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    }
+  ]
+}
