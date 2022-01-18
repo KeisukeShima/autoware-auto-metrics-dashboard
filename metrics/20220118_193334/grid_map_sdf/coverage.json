@@ -1,17 +1,17 @@
 {
-  "package": "grid_map_core",
+  "package": "grid_map_sdf",
   "value": [
     {
       "label": "all",
-      "line": 75.0,
-      "function": 69.7,
-      "branch": 51.4
+      "line": 99.4,
+      "function": 92.3,
+      "branch": 77.6
     },
     {
       "label": "gtest",
-      "line": 75.0,
-      "function": 69.7,
-      "branch": 51.4
+      "line": 99.4,
+      "function": 92.3,
+      "branch": 77.6
     },
     {
       "label": "smoke_test",

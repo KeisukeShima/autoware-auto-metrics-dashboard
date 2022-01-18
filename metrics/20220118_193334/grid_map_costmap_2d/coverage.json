@@ -1,17 +1,17 @@
 {
-  "package": "grid_map_core",
+  "package": "grid_map_costmap_2d",
   "value": [
     {
       "label": "all",
-      "line": 75.0,
-      "function": 69.7,
-      "branch": 51.4
+      "line": 87.5,
+      "function": 72.2,
+      "branch": 68.1
     },
     {
       "label": "gtest",
-      "line": 75.0,
-      "function": 69.7,
-      "branch": 51.4
+      "line": 87.5,
+      "function": 72.2,
+      "branch": 68.1
     },
     {
       "label": "smoke_test",

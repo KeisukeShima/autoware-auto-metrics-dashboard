@@ -1,17 +1,17 @@
 {
-  "package": "grid_map_core",
+  "package": "grid_map_octomap",
   "value": [
     {
       "label": "all",
-      "line": 75.0,
-      "function": 69.7,
-      "branch": 51.4
+      "line": 82.7,
+      "function": 25.0,
+      "branch": 51.7
     },
     {
       "label": "gtest",
-      "line": 75.0,
-      "function": 69.7,
-      "branch": 51.4
+      "line": 82.7,
+      "function": 25.0,
+      "branch": 51.7
     },
     {
       "label": "smoke_test",
