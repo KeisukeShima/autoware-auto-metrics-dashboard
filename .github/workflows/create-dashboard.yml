@@ -39,7 +39,8 @@ jobs:
       run: |
         git config --local --unset-all http.https://github.com/.extraheader || true
         git config --global url.https://x-access-token:${{ inputs.token }}@github.com.insteadOf 'https://github.com'
-        sudo apt-get update && apt-get -y --no-install-recommends install clang-tidy git git-lfs
+        sudo apt-get -yqq update
+        sudo apt-get -yqq --no-install-recommends install clang-tidy git git-lfs
         git lfs install
         git lfs pull --include="*" --exclude=""
         mkdir dependency_ws
