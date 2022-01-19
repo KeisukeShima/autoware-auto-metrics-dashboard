@@ -7,11 +7,11 @@ FN:41,_ZN15grid_map_loader13GridMapLoader14readParametersEv
 FN:58,_ZN15grid_map_loader13GridMapLoader4loadEv
 FN:64,_ZN15grid_map_loader13GridMapLoader7publishEv
 FNDA:0,_ZN15grid_map_loader13GridMapLoaderC2Ev
-FNDA:0,_ZN15grid_map_loader13GridMapLoader4loadEv
-FNDA:0,_ZN15grid_map_loader13GridMapLoader7publishEv
-FNDA:0,_ZN15grid_map_loader13GridMapLoader14readParametersEv
 FNDA:0,_ZN15grid_map_loader13GridMapLoaderD0Ev
+FNDA:0,_ZN15grid_map_loader13GridMapLoader14readParametersEv
+FNDA:0,_ZN15grid_map_loader13GridMapLoader7publishEv
 FNDA:0,_ZN15grid_map_loader13GridMapLoaderD2Ev
+FNDA:0,_ZN15grid_map_loader13GridMapLoader4loadEv
 FNF:6
 FNH:0
 DA:20,0

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-19 11:49:03</td>
+            <td class="headerValue">2022-01-19 20:16:32</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -121,25 +121,25 @@
 <a name="43"><span class="lineNum">      43 </span>                :            : </a>
 <a name="44"><span class="lineNum">      44 </span>                :<span class="lineCov">         24 : DbwState DbwStateMachine::get_state() const {return m_state;}</span></a>
 <a name="45"><span class="lineNum">      45 </span>                :            : </a>
-<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">         69 : void DbwStateMachine::dbw_feedback(bool8_t enabled)</span></a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">         64 : void DbwStateMachine::dbw_feedback(bool8_t enabled)</span></a>
 <a name="47"><span class="lineNum">      47 </span>                :            : {</a>
-<a name="48"><span class="lineNum">      48 </span>        [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchCov" title="Branch 1 was taken 43 times"> + </span>]:<span class="lineCov">         69 :   if (enabled) {                             // DBW system says enabled</span></a>
+<a name="48"><span class="lineNum">      48 </span>        [<span class="branchCov" title="Branch 0 was taken 26 times"> + </span><span class="branchCov" title="Branch 1 was taken 38 times"> + </span>]:<span class="lineCov">         64 :   if (enabled) {                             // DBW system says enabled</span></a>
 <a name="49"><span class="lineNum">      49 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 23 times"> + </span>]:<span class="lineCov">         26 :     if (m_state == DbwState::ENABLE_SENT) {  // and state is ENABLE_SENT</span></a>
 <a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">          3 :       m_state = DbwState::ENABLED;</span></a>
 <a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">          3 :       m_disabled_feedback_count = 0;</span></a>
 <a name="52"><span class="lineNum">      52 </span>                :            :     }</a>
 <a name="53"><span class="lineNum">      53 </span>                :            :   } else {                                   // DBW system says disabled</a>
-<a name="54"><span class="lineNum">      54 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 39 times"> + </span>]:<span class="lineCov">         43 :     if (m_state == DbwState::ENABLE_SENT) {  // and state is ENABLE_SENT</span></a>
+<a name="54"><span class="lineNum">      54 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 34 times"> + </span>]:<span class="lineCov">         38 :     if (m_state == DbwState::ENABLE_SENT) {  // and state is ENABLE_SENT</span></a>
 <a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">          4 :       m_disabled_feedback_count++;           // Increase debounce count</span></a>
 <a name="56"><span class="lineNum">      56 </span>                :            : </a>
 <a name="57"><span class="lineNum">      57 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          4 :       if (m_disabled_feedback_count &gt; DISABLED_FEEDBACK_THRESH) {  // check debounce</span></a>
 <a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">          1 :         disable_and_reset();</span></a>
 <a name="59"><span class="lineNum">      59 </span>                :            :       }</a>
-<a name="60"><span class="lineNum">      60 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 38 times"> + </span>]:<span class="lineCov">         39 :     } else if (m_state == DbwState::ENABLED) {  // and state is ENABLED</span></a>
+<a name="60"><span class="lineNum">      60 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 33 times"> + </span>]:<span class="lineCov">         34 :     } else if (m_state == DbwState::ENABLED) {  // and state is ENABLED</span></a>
 <a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">          1 :       disable_and_reset();</span></a>
 <a name="62"><span class="lineNum">      62 </span>                :            :     }</a>
 <a name="63"><span class="lineNum">      63 </span>                :            :   }</a>
-<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">         69 : }</span></a>
+<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">         64 : }</span></a>
 <a name="65"><span class="lineNum">      65 </span>                :            : </a>
 <a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">          9 : void DbwStateMachine::control_cmd_sent()</span></a>
 <a name="67"><span class="lineNum">      67 </span>                :            : {</a>
