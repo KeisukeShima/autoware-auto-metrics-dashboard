@@ -1,0 +1,27 @@
+{
+  "package": "controller_common_nodes",
+  "worst_value": {
+    "ccn": 10,
+    "nloc": 56,
+    "parameter": 8,
+    "token": 411
+  },
+  "average_value": {
+    "ccn": 3.2,
+    "nloc": 15.5,
+    "parameter": 1.9,
+    "token": 112.5
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 1,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 2,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
