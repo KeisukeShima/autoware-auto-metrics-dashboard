@@ -17,8 +17,22 @@ jobs:
       ROS_DISTRO: foxy
 
     steps:
+    # https://github.community/t/bug-strange-no-space-left-on-device-ioexceptions-on-github-runners/17616
+    - name: Free disk space
+      run: |
+        sudo apt-get -y --allow-remove-essential purge \
+          aria2 ansible azure-cli shellcheck rpm xorriso zsync clang* dotnet-sdk* esl-erlang firefox g++-8 gfortran* \
+          google* ghc* cabal-install* imagemagick libmagick* ant ant-optional kubectl libnginx* \
+          mercurial mono-complete mysql-client libmysqlclient-dev mysql-server mssql-tools unixodbc-dev \
+          yarn chrpath libxft-dev libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev php*
+        sudo apt-get -y autoremove
+        sudo apt-get -y autoclean
+        sudo rm -rf /usr/local/lib/android
+        docker rmi $(docker image ls -aq)
+        df -h
+
     - name: Checkout repository
-      run: git clone https://gitlab.com/keisuke.shima/AutowareAuto.git .
+      run: git clone https://gitlab.com/keisuke.shima/AutowareAuto.git -b feature/add-test-label .
 
     - uses: actions/checkout@v2
       with:
@@ -29,27 +43,43 @@ jobs:
       with:
         required-ros-distributions: ${{ env.ROS_DISTRO}}
 
-    - name: Build and test
-      uses: ros-tooling/action-ros-ci@v0.2
-      id: build_and_test
-      with:
-        target-ros2-distro: ${{ env.ROS_DISTRO }}
-        vcs-repo-file-url: autoware.auto.foxy.repos
-        skip-tests: true
-        extra-cmake-args: -DCMAKE_CXX_FLAGS="-fprofile-arcs -ftest-coverage -DCOVERAGE_RUN=1" -DCMAKE_C_FLAGS="-fprofile-arcs -ftest-coverage -DCOVERAGE_RUN=1" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-        colcon-defaults: |
-          {
-            "build": {
-              "mixin": ["coverage-gcc"]
-            }
-          }
-        colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/1ddb69bedfd1f04c2f000e95452f7c24a4d6176b/index.yaml
+    - name: Install pip for rosdep
+      run: |
+        sudo apt-get -yqq update
+        sudo apt-get -yqq install python3-pip
+      shell: bash
+
+    - name: Clone dependency packages
+      run: |
+        git config --local --unset-all http.https://github.com/.extraheader || true
+        git config --global url.https://x-access-token:${{ inputs.token }}@github.com.insteadOf 'https://github.com'
+        sudo apt-get -yqq update
+        sudo apt-get -yqq --no-install-recommends install clang-tidy git git-lfs
+        git lfs install
+        git lfs pull --include="*" --exclude=""
+        mkdir dependency_ws
+        vcs import dependency_ws < autoware.auto.foxy.repos
+      shell: bash
+
+    - name: Run rosdep install
+      run: |
+        sudo apt-get -yqq update
+        rosdep update
+        DEBIAN_FRONTEND=noninteractive rosdep install -yqq --from-paths . --ignore-src --rosdistro ${{ env.ROS_DISTRO}}
+      shell: bash
+
+    - name: Build
+      run: |
+        . /opt/ros/${{ env.ROS_DISTRO}}/setup.sh
+        colcon build --event-handlers console_cohesion+ \
+          --cmake-args -DCMAKE_CXX_FLAGS="-fprofile-arcs -ftest-coverage -DCOVERAGE_RUN=1" -DCMAKE_C_FLAGS="-fprofile-arcs -ftest-coverage -DCOVERAGE_RUN=1" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+      shell: bash
 
     - id: metrics-reporter
       uses: tier4/ros-metrics-reporter@main
       with:
         artifacts-dir: ${{ env.ARTIFACTS_DIR }}
-        target-dir: ${{ steps.build_and_test.outputs.ros-workspace-directory-name }}
+        target-dir: ${GITHUB_WORKSPACE}
         base-url: "https://keisukeshima.github.io/autoware-auto-metrics-dashboard/"
         title: "AutowareFoundation/Autoware.Auto"
         ros-distro: ${{ env.ROS_DISTRO }}
