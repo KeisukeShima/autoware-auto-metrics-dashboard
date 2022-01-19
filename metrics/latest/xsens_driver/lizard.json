@@ -1,0 +1,27 @@
+{
+  "package": "xsens_driver",
+  "worst_value": {
+    "ccn": 44,
+    "nloc": 115,
+    "parameter": 4,
+    "token": 718
+  },
+  "average_value": {
+    "ccn": 6.1,
+    "nloc": 24.3,
+    "parameter": 1.8,
+    "token": 126.7
+  },
+  "over_threshold_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 6,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}

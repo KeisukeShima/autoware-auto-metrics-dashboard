@@ -1,0 +1,29 @@
+{
+  "package": "motion_testing",
+  "value": [
+    {
+      "label": "all",
+      "line": 82.5,
+      "function": 71.4,
+      "branch": 41.9
+    },
+    {
+      "label": "gtest",
+      "line": 82.5,
+      "function": 71.4,
+      "branch": 41.9
+    },
+    {
+      "label": "smoke_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    },
+    {
+      "label": "launch_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    }
+  ]
+}

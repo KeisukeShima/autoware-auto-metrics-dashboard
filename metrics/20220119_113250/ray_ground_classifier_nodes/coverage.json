@@ -1,0 +1,29 @@
+{
+  "package": "ray_ground_classifier_nodes",
+  "value": [
+    {
+      "label": "all",
+      "line": 60.8,
+      "function": 100.0,
+      "branch": 23.5
+    },
+    {
+      "label": "gtest",
+      "line": 56.8,
+      "function": 100.0,
+      "branch": 21.3
+    },
+    {
+      "label": "smoke_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    },
+    {
+      "label": "launch_test",
+      "line": 35.2,
+      "function": 100.0,
+      "branch": 19.1
+    }
+  ]
+}

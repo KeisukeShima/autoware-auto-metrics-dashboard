@@ -1,0 +1,27 @@
+{
+  "package": "joystick_vehicle_interface",
+  "worst_value": {
+    "ccn": 22,
+    "nloc": 73,
+    "parameter": 4,
+    "token": 383
+  },
+  "average_value": {
+    "ccn": 3.3,
+    "nloc": 13.7,
+    "parameter": 1.1,
+    "token": 79.1
+  },
+  "over_threshold_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 2,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
