@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-19 20:16:29</td>
+            <td class="headerValue">2022-01-20 20:35:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">18</td>
@@ -113,36 +113,36 @@
 <a name="35"><span class="lineNum">      35 </span>                :            : </a>
 <a name="36"><span class="lineNum">      36 </span>                :            : namespace</a>
 <a name="37"><span class="lineNum">      37 </span>                :            : {</a>
-<a name="38"><span class="lineNum">      38 </span>                :<span class="lineCov">       2834 : autoware_auto_vehicle_msgs::msg::VehicleKinematicState convert_baselink_to_com(</span></a>
+<a name="38"><span class="lineNum">      38 </span>                :<span class="lineCov">       2869 : autoware_auto_vehicle_msgs::msg::VehicleKinematicState convert_baselink_to_com(</span></a>
 <a name="39"><span class="lineNum">      39 </span>                :            :   const autoware_auto_vehicle_msgs::msg::VehicleKinematicState &amp; in,</a>
 <a name="40"><span class="lineNum">      40 </span>                :            :   const float64_t baselink_to_com)</a>
 <a name="41"><span class="lineNum">      41 </span>                :            : {</a>
-<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">       2834 :   autoware_auto_vehicle_msgs::msg::VehicleKinematicState out = in;</span></a>
+<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">       2869 :   autoware_auto_vehicle_msgs::msg::VehicleKinematicState out = in;</span></a>
 <a name="43"><span class="lineNum">      43 </span>                :            : </a>
 <a name="44"><span class="lineNum">      44 </span>                :            :   // TODO(Horibe) convert to CoM for vehicle_kinematic_state msg.</a>
-<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">       2834 :   const auto yaw = motion::motion_common::to_angle(out.state.pose.orientation);</span></a>
-<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">       2834 :   out.state.pose.position.x += std::cos(yaw) * baselink_to_com;</span></a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       2834 :   out.state.pose.position.y += std::sin(yaw) * baselink_to_com;</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">       2869 :   const auto yaw = motion::motion_common::to_angle(out.state.pose.orientation);</span></a>
+<a name="46"><span class="lineNum">      46 </span>                :<span class="lineCov">       2869 :   out.state.pose.position.x += std::cos(yaw) * baselink_to_com;</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       2869 :   out.state.pose.position.y += std::sin(yaw) * baselink_to_com;</span></a>
 <a name="48"><span class="lineNum">      48 </span>                :            : </a>
-<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">       2834 :   return out;</span></a>
+<a name="49"><span class="lineNum">      49 </span>                :<span class="lineCov">       2869 :   return out;</span></a>
 <a name="50"><span class="lineNum">      50 </span>                :            : }</a>
 <a name="51"><span class="lineNum">      51 </span>                :            : </a>
-<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">       2834 : autoware_auto_vehicle_msgs::msg::VehicleKinematicState to_kinematic_state(</span></a>
+<a name="52"><span class="lineNum">      52 </span>                :<span class="lineCov">       2869 : autoware_auto_vehicle_msgs::msg::VehicleKinematicState to_kinematic_state(</span></a>
 <a name="53"><span class="lineNum">      53 </span>                :            :   const std::shared_ptr&lt;SimModelInterface&gt; vehicle_model_ptr)</a>
 <a name="54"><span class="lineNum">      54 </span>                :            : {</a>
-<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">       2834 :   autoware_auto_vehicle_msgs::msg::VehicleKinematicState s;</span></a>
-<a name="56"><span class="lineNum">      56 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   s.state.pose.position.x = vehicle_model_ptr-&gt;getX();</span></a>
-<a name="57"><span class="lineNum">      57 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   s.state.pose.position.y = vehicle_model_ptr-&gt;getY();</span></a>
-<a name="58"><span class="lineNum">      58 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   s.state.pose.orientation = motion::motion_common::from_angle(vehicle_model_ptr-&gt;getYaw());</span></a>
-<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">       2834 :   s.state.longitudinal_velocity_mps =</span></a>
-<a name="60"><span class="lineNum">      60 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :     static_cast&lt;float32_t&gt;(vehicle_model_ptr-&gt;getVx());</span></a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">       2834 :   s.state.lateral_velocity_mps = 0.0;</span></a>
-<a name="62"><span class="lineNum">      62 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   s.state.acceleration_mps2 = static_cast&lt;float32_t&gt;(vehicle_model_ptr-&gt;getAx());</span></a>
-<a name="63"><span class="lineNum">      63 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   s.state.heading_rate_rps = static_cast&lt;float32_t&gt;(vehicle_model_ptr-&gt;getWz());</span></a>
-<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">       2834 :   s.state.front_wheel_angle_rad =</span></a>
-<a name="65"><span class="lineNum">      65 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :     static_cast&lt;float32_t&gt;(vehicle_model_ptr-&gt;getSteer());</span></a>
-<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">       2834 :   s.state.rear_wheel_angle_rad = 0.0;</span></a>
-<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">       2834 :   return s;</span></a>
+<a name="55"><span class="lineNum">      55 </span>                :<span class="lineCov">       2869 :   autoware_auto_vehicle_msgs::msg::VehicleKinematicState s;</span></a>
+<a name="56"><span class="lineNum">      56 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   s.state.pose.position.x = vehicle_model_ptr-&gt;getX();</span></a>
+<a name="57"><span class="lineNum">      57 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   s.state.pose.position.y = vehicle_model_ptr-&gt;getY();</span></a>
+<a name="58"><span class="lineNum">      58 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   s.state.pose.orientation = motion::motion_common::from_angle(vehicle_model_ptr-&gt;getYaw());</span></a>
+<a name="59"><span class="lineNum">      59 </span>                :<span class="lineCov">       2869 :   s.state.longitudinal_velocity_mps =</span></a>
+<a name="60"><span class="lineNum">      60 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :     static_cast&lt;float32_t&gt;(vehicle_model_ptr-&gt;getVx());</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">       2869 :   s.state.lateral_velocity_mps = 0.0;</span></a>
+<a name="62"><span class="lineNum">      62 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   s.state.acceleration_mps2 = static_cast&lt;float32_t&gt;(vehicle_model_ptr-&gt;getAx());</span></a>
+<a name="63"><span class="lineNum">      63 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   s.state.heading_rate_rps = static_cast&lt;float32_t&gt;(vehicle_model_ptr-&gt;getWz());</span></a>
+<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">       2869 :   s.state.front_wheel_angle_rad =</span></a>
+<a name="65"><span class="lineNum">      65 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :     static_cast&lt;float32_t&gt;(vehicle_model_ptr-&gt;getSteer());</span></a>
+<a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">       2869 :   s.state.rear_wheel_angle_rad = 0.0;</span></a>
+<a name="67"><span class="lineNum">      67 </span>                :<span class="lineCov">       2869 :   return s;</span></a>
 <a name="68"><span class="lineNum">      68 </span>                :            : }</a>
 <a name="69"><span class="lineNum">      69 </span>                :            : }  // namespace</a>
 <a name="70"><span class="lineNum">      70 </span>                :            : </a>
@@ -310,9 +310,9 @@
 <a name="186"><span class="lineNum">     186 </span>                :            :   }</a>
 <a name="187"><span class="lineNum">     187 </span>                :<span class="lineCov">         10 : }</span></a>
 <a name="188"><span class="lineNum">     188 </span>                :            : </a>
-<a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">       2834 : void SimplePlanningSimulator::on_timer()</span></a>
+<a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">       2869 : void SimplePlanningSimulator::on_timer()</span></a>
 <a name="190"><span class="lineNum">     190 </span>                :            : {</a>
-<a name="191"><span class="lineNum">     191 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2834 times"> + </span>]:<span class="lineCov">       2834 :   if (!is_initialized_) {</span></a>
+<a name="191"><span class="lineNum">     191 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2869 times"> + </span>]:<span class="lineCov">       2869 :   if (!is_initialized_) {</span></a>
 <a name="192"><span class="lineNum">     192 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     RCLCPP_INFO_THROTTLE(get_logger(), *get_clock(), 5000, &quot;waiting initialization...&quot;);</span></a>
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span><span class="branchNoExec" title="Branch 13 was not executed"> # </span> 
@@ -329,82 +329,82 @@
 <a name="195"><span class="lineNum">     195 </span>                :            : </a>
 <a name="196"><span class="lineNum">     196 </span>                :            :   // update vehicle dynamics</a>
 <a name="197"><span class="lineNum">     197 </span>                :            :   {</a>
-<a name="198"><span class="lineNum">     198 </span>  [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2834 :     const float64_t dt = delta_time_.get_dt(get_clock()-&gt;now());</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="199"><span class="lineNum">     199 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :     vehicle_model_ptr_-&gt;update(dt);</span></a>
+<a name="198"><span class="lineNum">     198 </span>  [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2869 :     const float64_t dt = delta_time_.get_dt(get_clock()-&gt;now());</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="199"><span class="lineNum">     199 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :     vehicle_model_ptr_-&gt;update(dt);</span></a>
 <a name="200"><span class="lineNum">     200 </span>                :            :   }</a>
 <a name="201"><span class="lineNum">     201 </span>                :            : </a>
 <a name="202"><span class="lineNum">     202 </span>                :            :   // set current kinematic state</a>
-<a name="203"><span class="lineNum">     203 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   current_kinematic_state_ = to_kinematic_state(vehicle_model_ptr_);</span></a>
+<a name="203"><span class="lineNum">     203 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   current_kinematic_state_ = to_kinematic_state(vehicle_model_ptr_);</span></a>
 <a name="204"><span class="lineNum">     204 </span>                :            : </a>
-<a name="205"><span class="lineNum">     205 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2834 times"> + </span>]:<span class="lineCov">       2834 :   if (add_measurement_noise_) {</span></a>
+<a name="205"><span class="lineNum">     205 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2869 times"> + </span>]:<span class="lineCov">       2869 :   if (add_measurement_noise_) {</span></a>
 <a name="206"><span class="lineNum">     206 </span>                :<span class="lineNoCov">          0 :     add_measurement_noise(current_kinematic_state_);</span></a>
 <a name="207"><span class="lineNum">     207 </span>                :            :   }</a>
 <a name="208"><span class="lineNum">     208 </span>                :            : </a>
 <a name="209"><span class="lineNum">     209 </span>                :            :   // publish vehicle state</a>
-<a name="210"><span class="lineNum">     210 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   publish_kinematic_state(convert_baselink_to_com(current_kinematic_state_, cg_to_rear_m_));</span></a>
-<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">       2834 :   publish_state_report();</span></a>
-<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">       2834 :   publish_tf(current_kinematic_state_);</span></a>
+<a name="210"><span class="lineNum">     210 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   publish_kinematic_state(convert_baselink_to_com(current_kinematic_state_, cg_to_rear_m_));</span></a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">       2869 :   publish_state_report();</span></a>
+<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">       2869 :   publish_tf(current_kinematic_state_);</span></a>
 <a name="213"><span class="lineNum">     213 </span>                :            : }</a>
 <a name="214"><span class="lineNum">     214 </span>                :            : </a>
-<a name="215"><span class="lineNum">     215 </span>                :<span class="lineCov">        348 : void SimplePlanningSimulator::on_initialpose(</span></a>
+<a name="215"><span class="lineNum">     215 </span>                :<span class="lineCov">        490 : void SimplePlanningSimulator::on_initialpose(</span></a>
 <a name="216"><span class="lineNum">     216 </span>                :            :   const geometry_msgs::msg::PoseWithCovarianceStamped::ConstSharedPtr msg)</a>
 <a name="217"><span class="lineNum">     217 </span>                :            : {</a>
 <a name="218"><span class="lineNum">     218 </span>                :            :   // save initial pose</a>
-<a name="219"><span class="lineNum">     219 </span>        [<span class="branchCov" title="Branch 0 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        348 :   geometry_msgs::msg::Twist initial_twist;</span></a>
-<a name="220"><span class="lineNum">     220 </span>        [<span class="branchCov" title="Branch 0 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        696 :   geometry_msgs::msg::PoseStamped initial_pose;</span></a>
-<a name="221"><span class="lineNum">     221 </span>        [<span class="branchCov" title="Branch 0 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        348 :   initial_pose.header = msg-&gt;header;</span></a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">        348 :   initial_pose.pose = msg-&gt;pose.pose;</span></a>
-<a name="223"><span class="lineNum">     223 </span>        [<span class="branchCov" title="Branch 0 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        348 :   set_initial_state_with_transform(initial_pose, initial_twist);</span></a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">        348 : }</span></a>
+<a name="219"><span class="lineNum">     219 </span>        [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        490 :   geometry_msgs::msg::Twist initial_twist;</span></a>
+<a name="220"><span class="lineNum">     220 </span>        [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        980 :   geometry_msgs::msg::PoseStamped initial_pose;</span></a>
+<a name="221"><span class="lineNum">     221 </span>        [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        490 :   initial_pose.header = msg-&gt;header;</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">        490 :   initial_pose.pose = msg-&gt;pose.pose;</span></a>
+<a name="223"><span class="lineNum">     223 </span>        [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        490 :   set_initial_state_with_transform(initial_pose, initial_twist);</span></a>
+<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">        490 : }</span></a>
 <a name="225"><span class="lineNum">     225 </span>                :            : </a>
-<a name="226"><span class="lineNum">     226 </span>                :<span class="lineCov">       2111 : void SimplePlanningSimulator::on_vehicle_cmd(</span></a>
+<a name="226"><span class="lineNum">     226 </span>                :<span class="lineCov">       2992 : void SimplePlanningSimulator::on_vehicle_cmd(</span></a>
 <a name="227"><span class="lineNum">     227 </span>                :            :   const autoware_auto_vehicle_msgs::msg::VehicleControlCommand::ConstSharedPtr msg)</a>
 <a name="228"><span class="lineNum">     228 </span>                :            : {</a>
-<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">       2111 :   current_vehicle_cmd_ptr_ = msg;</span></a>
-<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">       2111 :   set_input(msg-&gt;front_wheel_angle_rad, msg-&gt;velocity_mps, msg-&gt;long_accel_mps2);</span></a>
-<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">       2111 : }</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">       2992 :   current_vehicle_cmd_ptr_ = msg;</span></a>
+<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">       2992 :   set_input(msg-&gt;front_wheel_angle_rad, msg-&gt;velocity_mps, msg-&gt;long_accel_mps2);</span></a>
+<a name="231"><span class="lineNum">     231 </span>                :<span class="lineCov">       2992 : }</span></a>
 <a name="232"><span class="lineNum">     232 </span>                :            : </a>
-<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">       1856 : void SimplePlanningSimulator::on_ackermann_cmd(</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">       2994 : void SimplePlanningSimulator::on_ackermann_cmd(</span></a>
 <a name="234"><span class="lineNum">     234 </span>                :            :   const autoware_auto_control_msgs::msg::AckermannControlCommand::ConstSharedPtr msg)</a>
 <a name="235"><span class="lineNum">     235 </span>                :            : {</a>
-<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">       1856 :   current_ackermann_cmd_ptr_ = msg;</span></a>
-<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">       1856 :   set_input(</span></a>
-<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">       1856 :     msg-&gt;lateral.steering_tire_angle, msg-&gt;longitudinal.speed,</span></a>
-<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">       1856 :     msg-&gt;longitudinal.acceleration);</span></a>
-<a name="240"><span class="lineNum">     240 </span>                :<span class="lineCov">       1856 : }</span></a>
+<a name="236"><span class="lineNum">     236 </span>                :<span class="lineCov">       2994 :   current_ackermann_cmd_ptr_ = msg;</span></a>
+<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">       2994 :   set_input(</span></a>
+<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">       2994 :     msg-&gt;lateral.steering_tire_angle, msg-&gt;longitudinal.speed,</span></a>
+<a name="239"><span class="lineNum">     239 </span>                :<span class="lineCov">       2994 :     msg-&gt;longitudinal.acceleration);</span></a>
+<a name="240"><span class="lineNum">     240 </span>                :<span class="lineCov">       2994 : }</span></a>
 <a name="241"><span class="lineNum">     241 </span>                :            : </a>
-<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">       3967 : void SimplePlanningSimulator::set_input(const float steer, const float vel, const float accel)</span></a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">       5986 : void SimplePlanningSimulator::set_input(const float steer, const float vel, const float accel)</span></a>
 <a name="243"><span class="lineNum">     243 </span>                :            : {</a>
-<a name="244"><span class="lineNum">     244 </span>        [<span class="branchCov" title="Branch 0 was taken 3967 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       7934 :   Eigen::VectorXd input(vehicle_model_ptr_-&gt;getDimU());</span></a>
+<a name="244"><span class="lineNum">     244 </span>        [<span class="branchCov" title="Branch 0 was taken 5986 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">      11972 :   Eigen::VectorXd input(vehicle_model_ptr_-&gt;getDimU());</span></a>
 <a name="245"><span class="lineNum">     245 </span>                :            : </a>
-<a name="246"><span class="lineNum">     246 </span>        [<span class="branchCov" title="Branch 0 was taken 998 times"> + </span><span class="branchCov" title="Branch 1 was taken 2969 times"> + </span>]:<span class="lineCov">       3967 :   if (vehicle_model_type_ == VehicleModelType::IDEAL_STEER_VEL) {</span></a>
-<a name="247"><span class="lineNum">     247 </span>  [<span class="branchCov" title="Branch 0 was taken 998 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 998 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        998 :     input &lt;&lt; vel, steer;</span></a>
-<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">       2969 :   } else if (  // NOLINT</span></a>
-<a name="249"><span class="lineNum">     249 </span>        [<span class="branchCov" title="Branch 0 was taken 2193 times"> + </span><span class="branchCov" title="Branch 1 was taken 776 times"> + </span>]:<span class="lineCov">       2969 :     vehicle_model_type_ == VehicleModelType::IDEAL_STEER_ACC ||</span></a>
-<a name="250"><span class="lineNum">     250 </span>        [<span class="branchCov" title="Branch 0 was taken 723 times"> + </span><span class="branchCov" title="Branch 1 was taken 1470 times"> + </span>]:<span class="lineCov">       2193 :     vehicle_model_type_ == VehicleModelType::DELAY_STEER_ACC)</span></a>
+<a name="246"><span class="lineNum">     246 </span>        [<span class="branchCov" title="Branch 0 was taken 1197 times"> + </span><span class="branchCov" title="Branch 1 was taken 4789 times"> + </span>]:<span class="lineCov">       5986 :   if (vehicle_model_type_ == VehicleModelType::IDEAL_STEER_VEL) {</span></a>
+<a name="247"><span class="lineNum">     247 </span>  [<span class="branchCov" title="Branch 0 was taken 1197 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1197 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1197 :     input &lt;&lt; vel, steer;</span></a>
+<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">       4789 :   } else if (  // NOLINT</span></a>
+<a name="249"><span class="lineNum">     249 </span>        [<span class="branchCov" title="Branch 0 was taken 3592 times"> + </span><span class="branchCov" title="Branch 1 was taken 1197 times"> + </span>]:<span class="lineCov">       4789 :     vehicle_model_type_ == VehicleModelType::IDEAL_STEER_ACC ||</span></a>
+<a name="250"><span class="lineNum">     250 </span>        [<span class="branchCov" title="Branch 0 was taken 1198 times"> + </span><span class="branchCov" title="Branch 1 was taken 2394 times"> + </span>]:<span class="lineCov">       3592 :     vehicle_model_type_ == VehicleModelType::DELAY_STEER_ACC)</span></a>
 <a name="251"><span class="lineNum">     251 </span>                :            :   {</a>
-<a name="252"><span class="lineNum">     252 </span>  [<span class="branchCov" title="Branch 0 was taken 1499 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1499 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1499 :     input &lt;&lt; accel, steer;</span></a>
-<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">       1470 :   } else if (  // NOLINT</span></a>
-<a name="254"><span class="lineNum">     254 </span>        [<span class="branchCov" title="Branch 0 was taken 725 times"> + </span><span class="branchCov" title="Branch 1 was taken 745 times"> + </span>]:<span class="lineCov">       1470 :     vehicle_model_type_ == VehicleModelType::IDEAL_STEER_ACC_GEARED ||</span></a>
-<a name="255"><span class="lineNum">     255 </span>        [<span class="branchCov" title="Branch 0 was taken 725 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        725 :     vehicle_model_type_ == VehicleModelType::DELAY_STEER_ACC_GEARED)</span></a>
+<a name="252"><span class="lineNum">     252 </span>  [<span class="branchCov" title="Branch 0 was taken 2395 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2395 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       2395 :     input &lt;&lt; accel, steer;</span></a>
+<a name="253"><span class="lineNum">     253 </span>                :<span class="lineCov">       2394 :   } else if (  // NOLINT</span></a>
+<a name="254"><span class="lineNum">     254 </span>        [<span class="branchCov" title="Branch 0 was taken 1196 times"> + </span><span class="branchCov" title="Branch 1 was taken 1198 times"> + </span>]:<span class="lineCov">       2394 :     vehicle_model_type_ == VehicleModelType::IDEAL_STEER_ACC_GEARED ||</span></a>
+<a name="255"><span class="lineNum">     255 </span>        [<span class="branchCov" title="Branch 0 was taken 1196 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1196 :     vehicle_model_type_ == VehicleModelType::DELAY_STEER_ACC_GEARED)</span></a>
 <a name="256"><span class="lineNum">     256 </span>                :            :   {</a>
-<a name="257"><span class="lineNum">     257 </span>  [<span class="branchCov" title="Branch 0 was taken 1470 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1470 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       1470 :     input &lt;&lt; accel, steer;</span></a>
+<a name="257"><span class="lineNum">     257 </span>  [<span class="branchCov" title="Branch 0 was taken 2394 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2394 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">       2394 :     input &lt;&lt; accel, steer;</span></a>
 <a name="258"><span class="lineNum">     258 </span>                :            :   }</a>
-<a name="259"><span class="lineNum">     259 </span>        [<span class="branchCov" title="Branch 0 was taken 3967 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       3967 :   vehicle_model_ptr_-&gt;setInput(input);</span></a>
-<a name="260"><span class="lineNum">     260 </span>                :<span class="lineCov">       3967 : }</span></a>
+<a name="259"><span class="lineNum">     259 </span>        [<span class="branchCov" title="Branch 0 was taken 5986 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5986 :   vehicle_model_ptr_-&gt;setInput(input);</span></a>
+<a name="260"><span class="lineNum">     260 </span>                :<span class="lineCov">       5986 : }</span></a>
 <a name="261"><span class="lineNum">     261 </span>                :            : </a>
-<a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">        277 : void SimplePlanningSimulator::on_state_cmd(</span></a>
+<a name="262"><span class="lineNum">     262 </span>                :<span class="lineCov">        400 : void SimplePlanningSimulator::on_state_cmd(</span></a>
 <a name="263"><span class="lineNum">     263 </span>                :            :   const autoware_auto_vehicle_msgs::msg::VehicleStateCommand::ConstSharedPtr msg)</a>
 <a name="264"><span class="lineNum">     264 </span>                :            : {</a>
-<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">        277 :   current_vehicle_state_cmd_ptr_ = msg;</span></a>
+<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">        400 :   current_vehicle_state_cmd_ptr_ = msg;</span></a>
 <a name="266"><span class="lineNum">     266 </span>                :            : </a>
-<a name="267"><span class="lineNum">     267 </span>        [<span class="branchCov" title="Branch 0 was taken 225 times"> + </span><span class="branchCov" title="Branch 1 was taken 52 times"> + </span>]:<span class="lineCov">        277 :   if (vehicle_model_type_ == VehicleModelType::IDEAL_STEER_ACC_GEARED ||</span></a>
-<a name="268"><span class="lineNum">     268 </span>        [<span class="branchCov" title="Branch 0 was taken 52 times"> + </span><span class="branchCov" title="Branch 1 was taken 173 times"> + </span>]:<span class="lineCov">        225 :     vehicle_model_type_ == VehicleModelType::DELAY_STEER_ACC_GEARED)</span></a>
+<a name="267"><span class="lineNum">     267 </span>        [<span class="branchCov" title="Branch 0 was taken 320 times"> + </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">        400 :   if (vehicle_model_type_ == VehicleModelType::IDEAL_STEER_ACC_GEARED ||</span></a>
+<a name="268"><span class="lineNum">     268 </span>        [<span class="branchCov" title="Branch 0 was taken 80 times"> + </span><span class="branchCov" title="Branch 1 was taken 240 times"> + </span>]:<span class="lineCov">        320 :     vehicle_model_type_ == VehicleModelType::DELAY_STEER_ACC_GEARED)</span></a>
 <a name="269"><span class="lineNum">     269 </span>                :            :   {</a>
-<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">        104 :     vehicle_model_ptr_-&gt;setGear(current_vehicle_state_cmd_ptr_-&gt;gear);</span></a>
+<a name="270"><span class="lineNum">     270 </span>                :<span class="lineCov">        160 :     vehicle_model_ptr_-&gt;setGear(current_vehicle_state_cmd_ptr_-&gt;gear);</span></a>
 <a name="271"><span class="lineNum">     271 </span>                :            :   }</a>
-<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">        277 : }</span></a>
+<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">        400 : }</span></a>
 <a name="273"><span class="lineNum">     273 </span>                :            : </a>
 <a name="274"><span class="lineNum">     274 </span>                :<span class="lineNoCov">          0 : void SimplePlanningSimulator::add_measurement_noise(VehicleKinematicState &amp; state) const</span></a>
 <a name="275"><span class="lineNum">     275 </span>                :            : {</a>
@@ -420,64 +420,64 @@
 <a name="285"><span class="lineNum">     285 </span>                :<span class="lineNoCov">          0 : }</span></a>
 <a name="286"><span class="lineNum">     286 </span>                :            : </a>
 <a name="287"><span class="lineNum">     287 </span>                :            : </a>
-<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">        348 : void SimplePlanningSimulator::set_initial_state_with_transform(</span></a>
+<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">        490 : void SimplePlanningSimulator::set_initial_state_with_transform(</span></a>
 <a name="289"><span class="lineNum">     289 </span>                :            :   const geometry_msgs::msg::PoseStamped &amp; pose_stamped, const geometry_msgs::msg::Twist &amp; twist)</a>
 <a name="290"><span class="lineNum">     290 </span>                :            : {</a>
-<a name="291"><span class="lineNum">     291 </span>  [<span class="branchCov" title="Branch 0 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1044 :   auto transform = get_transform_msg(origin_frame_id_, pose_stamped.header.frame_id);</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="292"><span class="lineNum">     292 </span>        [<span class="branchCov" title="Branch 0 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        348 :   geometry_msgs::msg::Pose pose;</span></a>
-<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">        348 :   pose.position.x = pose_stamped.pose.position.x + transform.transform.translation.x;</span></a>
-<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">        348 :   pose.position.y = pose_stamped.pose.position.y + transform.transform.translation.y;</span></a>
-<a name="295"><span class="lineNum">     295 </span>                :<span class="lineCov">        348 :   pose.position.z = pose_stamped.pose.position.z + transform.transform.translation.z;</span></a>
-<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">        348 :   pose.orientation = pose_stamped.pose.orientation;</span></a>
-<a name="297"><span class="lineNum">     297 </span>        [<span class="branchCov" title="Branch 0 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        348 :   set_initial_state(pose, twist);</span></a>
-<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">        348 : }</span></a>
+<a name="291"><span class="lineNum">     291 </span>  [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       1470 :   auto transform = get_transform_msg(origin_frame_id_, pose_stamped.header.frame_id);</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="292"><span class="lineNum">     292 </span>        [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        490 :   geometry_msgs::msg::Pose pose;</span></a>
+<a name="293"><span class="lineNum">     293 </span>                :<span class="lineCov">        490 :   pose.position.x = pose_stamped.pose.position.x + transform.transform.translation.x;</span></a>
+<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">        490 :   pose.position.y = pose_stamped.pose.position.y + transform.transform.translation.y;</span></a>
+<a name="295"><span class="lineNum">     295 </span>                :<span class="lineCov">        490 :   pose.position.z = pose_stamped.pose.position.z + transform.transform.translation.z;</span></a>
+<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">        490 :   pose.orientation = pose_stamped.pose.orientation;</span></a>
+<a name="297"><span class="lineNum">     297 </span>        [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        490 :   set_initial_state(pose, twist);</span></a>
+<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">        490 : }</span></a>
 <a name="299"><span class="lineNum">     299 </span>                :            : </a>
-<a name="300"><span class="lineNum">     300 </span>                :<span class="lineCov">        348 : void SimplePlanningSimulator::set_initial_state(</span></a>
+<a name="300"><span class="lineNum">     300 </span>                :<span class="lineCov">        490 : void SimplePlanningSimulator::set_initial_state(</span></a>
 <a name="301"><span class="lineNum">     301 </span>                :            :   const geometry_msgs::msg::Pose &amp; pose, const geometry_msgs::msg::Twist &amp; twist)</a>
 <a name="302"><span class="lineNum">     302 </span>                :            : {</a>
-<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">        348 :   const float64_t x = pose.position.x;</span></a>
-<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">        348 :   const float64_t y = pose.position.y;</span></a>
-<a name="305"><span class="lineNum">     305 </span>                :<span class="lineCov">        348 :   const float64_t yaw = ::motion::motion_common::to_angle(pose.orientation);</span></a>
-<a name="306"><span class="lineNum">     306 </span>                :<span class="lineCov">        348 :   const float64_t vx = twist.linear.x;</span></a>
-<a name="307"><span class="lineNum">     307 </span>                :<span class="lineCov">        348 :   const float64_t steer = 0.0;</span></a>
-<a name="308"><span class="lineNum">     308 </span>                :<span class="lineCov">        348 :   const float64_t accx = 0.0;</span></a>
+<a name="303"><span class="lineNum">     303 </span>                :<span class="lineCov">        490 :   const float64_t x = pose.position.x;</span></a>
+<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">        490 :   const float64_t y = pose.position.y;</span></a>
+<a name="305"><span class="lineNum">     305 </span>                :<span class="lineCov">        490 :   const float64_t yaw = ::motion::motion_common::to_angle(pose.orientation);</span></a>
+<a name="306"><span class="lineNum">     306 </span>                :<span class="lineCov">        490 :   const float64_t vx = twist.linear.x;</span></a>
+<a name="307"><span class="lineNum">     307 </span>                :<span class="lineCov">        490 :   const float64_t steer = 0.0;</span></a>
+<a name="308"><span class="lineNum">     308 </span>                :<span class="lineCov">        490 :   const float64_t accx = 0.0;</span></a>
 <a name="309"><span class="lineNum">     309 </span>                :            : </a>
-<a name="310"><span class="lineNum">     310 </span>        [<span class="branchCov" title="Branch 0 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        348 :   Eigen::VectorXd state(vehicle_model_ptr_-&gt;getDimX());</span></a>
+<a name="310"><span class="lineNum">     310 </span>        [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        490 :   Eigen::VectorXd state(vehicle_model_ptr_-&gt;getDimX());</span></a>
 <a name="311"><span class="lineNum">     311 </span>                :            : </a>
-<a name="312"><span class="lineNum">     312 </span>        [<span class="branchCov" title="Branch 0 was taken 82 times"> + </span><span class="branchCov" title="Branch 1 was taken 266 times"> + </span>]:<span class="lineCov">        348 :   if (vehicle_model_type_ == VehicleModelType::IDEAL_STEER_VEL) {</span></a>
-<a name="313"><span class="lineNum">     313 </span>  [<span class="branchCov" title="Branch 0 was taken 82 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 82 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         82 :     state &lt;&lt; x, y, yaw;</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 82 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">        266 :   } else if (  // NOLINT</span></a>
-<a name="315"><span class="lineNum">     315 </span>        [<span class="branchCov" title="Branch 0 was taken 194 times"> + </span><span class="branchCov" title="Branch 1 was taken 72 times"> + </span>]:<span class="lineCov">        266 :     vehicle_model_type_ == VehicleModelType::IDEAL_STEER_ACC ||</span></a>
-<a name="316"><span class="lineNum">     316 </span>        [<span class="branchCov" title="Branch 0 was taken 63 times"> + </span><span class="branchCov" title="Branch 1 was taken 131 times"> + </span>]:<span class="lineCov">        194 :     vehicle_model_type_ == VehicleModelType::IDEAL_STEER_ACC_GEARED)</span></a>
+<a name="312"><span class="lineNum">     312 </span>        [<span class="branchCov" title="Branch 0 was taken 97 times"> + </span><span class="branchCov" title="Branch 1 was taken 393 times"> + </span>]:<span class="lineCov">        490 :   if (vehicle_model_type_ == VehicleModelType::IDEAL_STEER_VEL) {</span></a>
+<a name="313"><span class="lineNum">     313 </span>  [<span class="branchCov" title="Branch 0 was taken 97 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 97 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         97 :     state &lt;&lt; x, y, yaw;</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 97 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">        393 :   } else if (  // NOLINT</span></a>
+<a name="315"><span class="lineNum">     315 </span>        [<span class="branchCov" title="Branch 0 was taken 295 times"> + </span><span class="branchCov" title="Branch 1 was taken 98 times"> + </span>]:<span class="lineCov">        393 :     vehicle_model_type_ == VehicleModelType::IDEAL_STEER_ACC ||</span></a>
+<a name="316"><span class="lineNum">     316 </span>        [<span class="branchCov" title="Branch 0 was taken 98 times"> + </span><span class="branchCov" title="Branch 1 was taken 197 times"> + </span>]:<span class="lineCov">        295 :     vehicle_model_type_ == VehicleModelType::IDEAL_STEER_ACC_GEARED)</span></a>
 <a name="317"><span class="lineNum">     317 </span>                :            :   {</a>
-<a name="318"><span class="lineNum">     318 </span>  [<span class="branchCov" title="Branch 0 was taken 135 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 135 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        135 :     state &lt;&lt; x, y, yaw, vx;</span></a>
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 135 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 135 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
-<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">        131 :   } else if (  // NOLINT</span></a>
-<a name="320"><span class="lineNum">     320 </span>        [<span class="branchCov" title="Branch 0 was taken 66 times"> + </span><span class="branchCov" title="Branch 1 was taken 65 times"> + </span>]:<span class="lineCov">        131 :     vehicle_model_type_ == VehicleModelType::DELAY_STEER_ACC ||</span></a>
-<a name="321"><span class="lineNum">     321 </span>        [<span class="branchCov" title="Branch 0 was taken 66 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         66 :     vehicle_model_type_ == VehicleModelType::DELAY_STEER_ACC_GEARED)</span></a>
+<a name="318"><span class="lineNum">     318 </span>  [<span class="branchCov" title="Branch 0 was taken 196 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 196 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        196 :     state &lt;&lt; x, y, yaw, vx;</span></a>
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 196 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 196 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
+<a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">        197 :   } else if (  // NOLINT</span></a>
+<a name="320"><span class="lineNum">     320 </span>        [<span class="branchCov" title="Branch 0 was taken 98 times"> + </span><span class="branchCov" title="Branch 1 was taken 99 times"> + </span>]:<span class="lineCov">        197 :     vehicle_model_type_ == VehicleModelType::DELAY_STEER_ACC ||</span></a>
+<a name="321"><span class="lineNum">     321 </span>        [<span class="branchCov" title="Branch 0 was taken 98 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         98 :     vehicle_model_type_ == VehicleModelType::DELAY_STEER_ACC_GEARED)</span></a>
 <a name="322"><span class="lineNum">     322 </span>                :            :   {</a>
-<a name="323"><span class="lineNum">     323 </span>  [<span class="branchCov" title="Branch 0 was taken 131 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 131 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        131 :     state &lt;&lt; x, y, yaw, vx, steer, accx;</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 131 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 131 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 131 times"> + </span> 
-<span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 131 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
+<a name="323"><span class="lineNum">     323 </span>  [<span class="branchCov" title="Branch 0 was taken 197 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 197 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        197 :     state &lt;&lt; x, y, yaw, vx, steer, accx;</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 197 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 197 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 197 times"> + </span> 
+<span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 197 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span>]
 <a name="324"><span class="lineNum">     324 </span>                :            :   }</a>
-<a name="325"><span class="lineNum">     325 </span>        [<span class="branchCov" title="Branch 0 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        348 :   vehicle_model_ptr_-&gt;setState(state);</span></a>
+<a name="325"><span class="lineNum">     325 </span>        [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        490 :   vehicle_model_ptr_-&gt;setState(state);</span></a>
 <a name="326"><span class="lineNum">     326 </span>                :            : </a>
-<a name="327"><span class="lineNum">     327 </span>                :<span class="lineCov">        348 :   is_initialized_ = true;</span></a>
-<a name="328"><span class="lineNum">     328 </span>                :<span class="lineCov">        348 : }</span></a>
+<a name="327"><span class="lineNum">     327 </span>                :<span class="lineCov">        490 :   is_initialized_ = true;</span></a>
+<a name="328"><span class="lineNum">     328 </span>                :<span class="lineCov">        490 : }</span></a>
 <a name="329"><span class="lineNum">     329 </span>                :            : </a>
-<a name="330"><span class="lineNum">     330 </span>                :<span class="lineCov">        348 : geometry_msgs::msg::TransformStamped SimplePlanningSimulator::get_transform_msg(</span></a>
+<a name="330"><span class="lineNum">     330 </span>                :<span class="lineCov">        490 : geometry_msgs::msg::TransformStamped SimplePlanningSimulator::get_transform_msg(</span></a>
 <a name="331"><span class="lineNum">     331 </span>                :            :   const std::string parent_frame, const std::string child_frame)</a>
 <a name="332"><span class="lineNum">     332 </span>                :            : {</a>
-<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">        348 :   geometry_msgs::msg::TransformStamped transform;</span></a>
+<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">        490 :   geometry_msgs::msg::TransformStamped transform;</span></a>
 <a name="334"><span class="lineNum">     334 </span>                :            :   while (true) {</a>
 <a name="335"><span class="lineNum">     335 </span>                :            :     try {</a>
-<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">        348 :       const auto time_point = tf2::TimePoint(std::chrono::milliseconds(0));</span></a>
-<a name="337"><span class="lineNum">     337 </span>  [<span class="branchCov" title="Branch 0 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 348 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        696 :       transform = tf_buffer_.lookupTransform(</span></a>
+<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">        490 :       const auto time_point = tf2::TimePoint(std::chrono::milliseconds(0));</span></a>
+<a name="337"><span class="lineNum">     337 </span>  [<span class="branchCov" title="Branch 0 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 490 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        980 :       transform = tf_buffer_.lookupTransform(</span></a>
 <a name="338"><span class="lineNum">     338 </span>                :            :         parent_frame, child_frame, time_point, tf2::durationFromSec(</a>
-<a name="339"><span class="lineNum">     339 </span>                :<span class="lineCov">        348 :           0.0));</span></a>
-<a name="340"><span class="lineNum">     340 </span>                :<span class="lineCov">        348 :       break;</span></a>
+<a name="339"><span class="lineNum">     339 </span>                :<span class="lineCov">        490 :           0.0));</span></a>
+<a name="340"><span class="lineNum">     340 </span>                :<span class="lineCov">        490 :       break;</span></a>
 <a name="341"><span class="lineNum">     341 </span>                :<span class="lineNoCov">          0 :     } catch (tf2::TransformException &amp; ex) {</span></a>
 <a name="342"><span class="lineNum">     342 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineNoCov">          0 :       RCLCPP_ERROR(this-&gt;get_logger(), &quot;%s&quot;, ex.what());</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
@@ -490,48 +490,48 @@
 <a name="343"><span class="lineNum">     343 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineNoCov">          0 :       rclcpp::sleep_for(std::chrono::milliseconds(500));</span></a>
 <a name="344"><span class="lineNum">     344 </span>                :            :     }</a>
 <a name="345"><span class="lineNum">     345 </span>                :<span class="lineNoCov">          0 :   }</span></a>
-<a name="346"><span class="lineNum">     346 </span>                :<span class="lineCov">        348 :   return transform;</span></a>
+<a name="346"><span class="lineNum">     346 </span>                :<span class="lineCov">        490 :   return transform;</span></a>
 <a name="347"><span class="lineNum">     347 </span>                :            : }</a>
 <a name="348"><span class="lineNum">     348 </span>                :            : </a>
-<a name="349"><span class="lineNum">     349 </span>                :<span class="lineCov">       2834 : void SimplePlanningSimulator::publish_kinematic_state(</span></a>
+<a name="349"><span class="lineNum">     349 </span>                :<span class="lineCov">       2869 : void SimplePlanningSimulator::publish_kinematic_state(</span></a>
 <a name="350"><span class="lineNum">     350 </span>                :            :   const VehicleKinematicState &amp; state)</a>
 <a name="351"><span class="lineNum">     351 </span>                :            : {</a>
-<a name="352"><span class="lineNum">     352 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5668 :   VehicleKinematicState msg = state;</span></a>
-<a name="353"><span class="lineNum">     353 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   msg.header.frame_id = origin_frame_id_;</span></a>
-<a name="354"><span class="lineNum">     354 </span>  [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2834 :   msg.header.stamp = get_clock()-&gt;now();</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="352"><span class="lineNum">     352 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5738 :   VehicleKinematicState msg = state;</span></a>
+<a name="353"><span class="lineNum">     353 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   msg.header.frame_id = origin_frame_id_;</span></a>
+<a name="354"><span class="lineNum">     354 </span>  [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2869 :   msg.header.stamp = get_clock()-&gt;now();</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
 <a name="355"><span class="lineNum">     355 </span>                :            : </a>
-<a name="356"><span class="lineNum">     356 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   pub_kinematic_state_-&gt;publish(msg);</span></a>
-<a name="357"><span class="lineNum">     357 </span>                :<span class="lineCov">       2834 : }</span></a>
+<a name="356"><span class="lineNum">     356 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   pub_kinematic_state_-&gt;publish(msg);</span></a>
+<a name="357"><span class="lineNum">     357 </span>                :<span class="lineCov">       2869 : }</span></a>
 <a name="358"><span class="lineNum">     358 </span>                :            : </a>
-<a name="359"><span class="lineNum">     359 </span>                :<span class="lineCov">       2834 : void SimplePlanningSimulator::publish_state_report()</span></a>
+<a name="359"><span class="lineNum">     359 </span>                :<span class="lineCov">       2869 : void SimplePlanningSimulator::publish_state_report()</span></a>
 <a name="360"><span class="lineNum">     360 </span>                :            : {</a>
-<a name="361"><span class="lineNum">     361 </span>                :<span class="lineCov">       2834 :   VehicleStateReport msg;</span></a>
-<a name="362"><span class="lineNum">     362 </span>  [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2834 :   msg.stamp = get_clock()-&gt;now();</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">       2834 :   msg.mode = VehicleStateReport::MODE_AUTONOMOUS;</span></a>
-<a name="364"><span class="lineNum">     364 </span>        [<span class="branchCov" title="Branch 0 was taken 2754 times"> + </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">       2834 :   if (current_vehicle_state_cmd_ptr_) {</span></a>
-<a name="365"><span class="lineNum">     365 </span>                :<span class="lineCov">       2754 :     msg.gear = current_vehicle_state_cmd_ptr_-&gt;gear;</span></a>
+<a name="361"><span class="lineNum">     361 </span>                :<span class="lineCov">       2869 :   VehicleStateReport msg;</span></a>
+<a name="362"><span class="lineNum">     362 </span>  [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2869 :   msg.stamp = get_clock()-&gt;now();</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">       2869 :   msg.mode = VehicleStateReport::MODE_AUTONOMOUS;</span></a>
+<a name="364"><span class="lineNum">     364 </span>        [<span class="branchCov" title="Branch 0 was taken 2789 times"> + </span><span class="branchCov" title="Branch 1 was taken 80 times"> + </span>]:<span class="lineCov">       2869 :   if (current_vehicle_state_cmd_ptr_) {</span></a>
+<a name="365"><span class="lineNum">     365 </span>                :<span class="lineCov">       2789 :     msg.gear = current_vehicle_state_cmd_ptr_-&gt;gear;</span></a>
 <a name="366"><span class="lineNum">     366 </span>                :            :   }</a>
-<a name="367"><span class="lineNum">     367 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   pub_state_report_-&gt;publish(msg);</span></a>
-<a name="368"><span class="lineNum">     368 </span>                :<span class="lineCov">       2834 : }</span></a>
+<a name="367"><span class="lineNum">     367 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   pub_state_report_-&gt;publish(msg);</span></a>
+<a name="368"><span class="lineNum">     368 </span>                :<span class="lineCov">       2869 : }</span></a>
 <a name="369"><span class="lineNum">     369 </span>                :            : </a>
-<a name="370"><span class="lineNum">     370 </span>                :<span class="lineCov">       2834 : void SimplePlanningSimulator::publish_tf(const VehicleKinematicState &amp; state)</span></a>
+<a name="370"><span class="lineNum">     370 </span>                :<span class="lineCov">       2869 : void SimplePlanningSimulator::publish_tf(const VehicleKinematicState &amp; state)</span></a>
 <a name="371"><span class="lineNum">     371 </span>                :            : {</a>
-<a name="372"><span class="lineNum">     372 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5668 :   geometry_msgs::msg::TransformStamped tf;</span></a>
-<a name="373"><span class="lineNum">     373 </span>  [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2834 :   tf.header.stamp = get_clock()-&gt;now();</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
-<a name="374"><span class="lineNum">     374 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   tf.header.frame_id = origin_frame_id_;</span></a>
-<a name="375"><span class="lineNum">     375 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   tf.child_frame_id = simulated_frame_id_;</span></a>
-<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">       2834 :   tf.transform.translation.x = state.state.pose.position.x;</span></a>
-<a name="377"><span class="lineNum">     377 </span>                :<span class="lineCov">       2834 :   tf.transform.translation.y = state.state.pose.position.y;</span></a>
-<a name="378"><span class="lineNum">     378 </span>                :<span class="lineCov">       2834 :   tf.transform.translation.z = 0.0;</span></a>
-<a name="379"><span class="lineNum">     379 </span>                :<span class="lineCov">       2834 :   tf.transform.rotation = state.state.pose.orientation;</span></a>
+<a name="372"><span class="lineNum">     372 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       5738 :   geometry_msgs::msg::TransformStamped tf;</span></a>
+<a name="373"><span class="lineNum">     373 </span>  [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">       2869 :   tf.header.stamp = get_clock()-&gt;now();</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="374"><span class="lineNum">     374 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   tf.header.frame_id = origin_frame_id_;</span></a>
+<a name="375"><span class="lineNum">     375 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   tf.child_frame_id = simulated_frame_id_;</span></a>
+<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">       2869 :   tf.transform.translation.x = state.state.pose.position.x;</span></a>
+<a name="377"><span class="lineNum">     377 </span>                :<span class="lineCov">       2869 :   tf.transform.translation.y = state.state.pose.position.y;</span></a>
+<a name="378"><span class="lineNum">     378 </span>                :<span class="lineCov">       2869 :   tf.transform.translation.z = 0.0;</span></a>
+<a name="379"><span class="lineNum">     379 </span>                :<span class="lineCov">       2869 :   tf.transform.rotation = state.state.pose.orientation;</span></a>
 <a name="380"><span class="lineNum">     380 </span>                :            : </a>
-<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">       5668 :   tf2_msgs::msg::TFMessage tf_msg{};</span></a>
-<a name="382"><span class="lineNum">     382 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   tf_msg.transforms.emplace_back(std::move(tf));</span></a>
-<a name="383"><span class="lineNum">     383 </span>        [<span class="branchCov" title="Branch 0 was taken 2834 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2834 :   pub_tf_-&gt;publish(tf_msg);</span></a>
-<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">       2834 : }</span></a>
+<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">       5738 :   tf2_msgs::msg::TFMessage tf_msg{};</span></a>
+<a name="382"><span class="lineNum">     382 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   tf_msg.transforms.emplace_back(std::move(tf));</span></a>
+<a name="383"><span class="lineNum">     383 </span>        [<span class="branchCov" title="Branch 0 was taken 2869 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       2869 :   pub_tf_-&gt;publish(tf_msg);</span></a>
+<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">       2869 : }</span></a>
 <a name="385"><span class="lineNum">     385 </span>                :            : }  // namespace simple_planning_simulator</a>
 <a name="386"><span class="lineNum">     386 </span>                :            : }  // namespace simulation</a>
 <a name="387"><span class="lineNum">     387 </span>                :            : </a>
