@@ -1,0 +1,27 @@
+{
+  "package": "trajectory_spoofer",
+  "worst_value": {
+    "ccn": 5,
+    "nloc": 40,
+    "parameter": 6,
+    "token": 388
+  },
+  "average_value": {
+    "ccn": 1.8,
+    "nloc": 13.3,
+    "parameter": 1.8,
+    "token": 90.5
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
