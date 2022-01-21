@@ -1,0 +1,27 @@
+{
+  "package": "mpark_variant_vendor",
+  "worst_value": {
+    "ccn": 33,
+    "nloc": 43,
+    "parameter": 2,
+    "token": 491
+  },
+  "average_value": {
+    "ccn": 2.3,
+    "nloc": 5.7,
+    "parameter": 0.1,
+    "token": 52.0
+  },
+  "over_threshold_count": {
+    "ccn": 2,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 11,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}

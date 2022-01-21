@@ -1,0 +1,29 @@
+{
+  "package": "euclidean_cluster_nodes",
+  "value": [
+    {
+      "label": "all",
+      "line": 30.7,
+      "function": 22.2,
+      "branch": 33.8
+    },
+    {
+      "label": "gtest",
+      "line": 30.7,
+      "function": 22.2,
+      "branch": 33.8
+    },
+    {
+      "label": "smoke_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    },
+    {
+      "label": "launch_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    }
+  ]
+}

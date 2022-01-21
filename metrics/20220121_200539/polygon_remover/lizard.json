@@ -1,0 +1,27 @@
+{
+  "package": "polygon_remover",
+  "worst_value": {
+    "ccn": 4,
+    "nloc": 48,
+    "parameter": 2,
+    "token": 447
+  },
+  "average_value": {
+    "ccn": 1.7,
+    "nloc": 14.8,
+    "parameter": 1.0,
+    "token": 104.3
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}

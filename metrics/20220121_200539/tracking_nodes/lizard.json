@@ -1,0 +1,27 @@
+{
+  "package": "tracking_nodes",
+  "worst_value": {
+    "ccn": 10,
+    "nloc": 65,
+    "parameter": 2,
+    "token": 514
+  },
+  "average_value": {
+    "ccn": 3.0,
+    "nloc": 23.2,
+    "parameter": 1.2,
+    "token": 180.2
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 3,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
