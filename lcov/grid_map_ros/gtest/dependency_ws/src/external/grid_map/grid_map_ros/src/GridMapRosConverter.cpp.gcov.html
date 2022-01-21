@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-20 20:35:00</td>
+            <td class="headerValue">2022-01-21 20:20:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">14</td>
@@ -408,7 +408,7 @@
 <a name="302"><span class="lineNum">     302 </span>        [<span class="branchCov" title="Branch 0 was taken 5000 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">       5001 :     iterator != occupancyGrid.data.rend(); ++iterator)</span></a>
 <a name="303"><span class="lineNum">     303 </span>                :            :   {</a>
 <a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">       5000 :     size_t i = std::distance(occupancyGrid.data.rbegin(), iterator);</span></a>
-<a name="305"><span class="lineNum">     305 </span>        [<span class="branchCov" title="Branch 0 was taken 4942 times"> + </span><span class="branchCov" title="Branch 1 was taken 58 times"> + </span>]:<span class="lineCov">       5000 :     data(i) = *iterator != -1 ? *iterator : NAN;</span></a>
+<a name="305"><span class="lineNum">     305 </span>        [<span class="branchCov" title="Branch 0 was taken 4956 times"> + </span><span class="branchCov" title="Branch 1 was taken 44 times"> + </span>]:<span class="lineCov">       5000 :     data(i) = *iterator != -1 ? *iterator : NAN;</span></a>
 <a name="306"><span class="lineNum">     306 </span>                :            :   }</a>
 <a name="307"><span class="lineNum">     307 </span>                :            : </a>
 <a name="308"><span class="lineNum">     308 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :   gridMap.add(layer, data);</span></a>
@@ -445,10 +445,10 @@
 <a name="339"><span class="lineNum">     339 </span>                :            : </a>
 <a name="340"><span class="lineNum">     340 </span>        [<span class="branchCov" title="Branch 0 was taken 5320 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">       5323 :   for (GridMapIterator iterator(gridMap); !iterator.isPastEnd(); ++iterator) {</span></a>
 <a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">       5320 :     float value = (gridMap.at(layer, *iterator) - dataMin) / (dataMax - dataMin);</span></a>
-<a name="342"><span class="lineNum">     342 </span>        [<span class="branchCov" title="Branch 0 was taken 106 times"> + </span><span class="branchCov" title="Branch 1 was taken 5214 times"> + </span>]:<span class="lineCov">       5320 :     if (isnan(value)) {</span></a>
-<a name="343"><span class="lineNum">     343 </span>                :<span class="lineCov">        106 :       value = -1;</span></a>
+<a name="342"><span class="lineNum">     342 </span>        [<span class="branchCov" title="Branch 0 was taken 92 times"> + </span><span class="branchCov" title="Branch 1 was taken 5228 times"> + </span>]:<span class="lineCov">       5320 :     if (isnan(value)) {</span></a>
+<a name="343"><span class="lineNum">     343 </span>                :<span class="lineCov">         92 :       value = -1;</span></a>
 <a name="344"><span class="lineNum">     344 </span>                :            :     } else {</a>
-<a name="345"><span class="lineNum">     345 </span>        [<span class="branchCov" title="Branch 0 was taken 5214 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">      10428 :       value = cellMin + min(max(0.0f, value), 1.0f) * cellRange;</span></a>
+<a name="345"><span class="lineNum">     345 </span>        [<span class="branchCov" title="Branch 0 was taken 5228 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">      10456 :       value = cellMin + min(max(0.0f, value), 1.0f) * cellRange;</span></a>
 <a name="346"><span class="lineNum">     346 </span>                :            :     }</a>
 <a name="347"><span class="lineNum">     347 </span>                :<span class="lineCov">       5320 :     size_t index = getLinearIndexFromIndex(iterator.getUnwrappedIndex(), gridMap.getSize(), false);</span></a>
 <a name="348"><span class="lineNum">     348 </span>                :            :     // Reverse cell order because of different conventions between occupancy grid and grid map.</a>
@@ -525,7 +525,7 @@
 <a name="400"><span class="lineNum">     400 </span>        [<span class="branchCov" title="Branch 0 was taken 5000 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">       5001 :     iterator != costmap.data.rend(); ++iterator)</span></a>
 <a name="401"><span class="lineNum">     401 </span>                :            :   {</a>
 <a name="402"><span class="lineNum">     402 </span>                :<span class="lineCov">       5000 :     size_t i = std::distance(costmap.data.rbegin(), iterator);</span></a>
-<a name="403"><span class="lineNum">     403 </span>        [<span class="branchCov" title="Branch 0 was taken 4982 times"> + </span><span class="branchCov" title="Branch 1 was taken 18 times"> + </span>]:<span class="lineCov">       5000 :     data(i) = *iterator != 255 ? *iterator : NAN;</span></a>
+<a name="403"><span class="lineNum">     403 </span>        [<span class="branchCov" title="Branch 0 was taken 4987 times"> + </span><span class="branchCov" title="Branch 1 was taken 13 times"> + </span>]:<span class="lineCov">       5000 :     data(i) = *iterator != 255 ? *iterator : NAN;</span></a>
 <a name="404"><span class="lineNum">     404 </span>                :            :   }</a>
 <a name="405"><span class="lineNum">     405 </span>                :            : </a>
 <a name="406"><span class="lineNum">     406 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :   gridMap.add(layer, data);</span></a>
@@ -562,10 +562,10 @@
 <a name="437"><span class="lineNum">     437 </span>                :            : </a>
 <a name="438"><span class="lineNum">     438 </span>        [<span class="branchCov" title="Branch 0 was taken 5320 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">       5323 :   for (GridMapIterator iterator(gridMap); !iterator.isPastEnd(); ++iterator) {</span></a>
 <a name="439"><span class="lineNum">     439 </span>                :<span class="lineCov">       5320 :     float value = (gridMap.at(layer, *iterator) - dataMin) / (dataMax - dataMin);</span></a>
-<a name="440"><span class="lineNum">     440 </span>        [<span class="branchCov" title="Branch 0 was taken 66 times"> + </span><span class="branchCov" title="Branch 1 was taken 5254 times"> + </span>]:<span class="lineCov">       5320 :     if (isnan(value)) {</span></a>
-<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">         66 :       value = 255;</span></a>
+<a name="440"><span class="lineNum">     440 </span>        [<span class="branchCov" title="Branch 0 was taken 61 times"> + </span><span class="branchCov" title="Branch 1 was taken 5259 times"> + </span>]:<span class="lineCov">       5320 :     if (isnan(value)) {</span></a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">         61 :       value = 255;</span></a>
 <a name="442"><span class="lineNum">     442 </span>                :            :     } else {</a>
-<a name="443"><span class="lineNum">     443 </span>        [<span class="branchCov" title="Branch 0 was taken 5233 times"> + </span><span class="branchCov" title="Branch 1 was taken 21 times"> + </span>]:<span class="lineCov">      10508 :       value = cellMin + min(max(0.0f, value), 1.0f) * cellRange;</span></a>
+<a name="443"><span class="lineNum">     443 </span>        [<span class="branchCov" title="Branch 0 was taken 5235 times"> + </span><span class="branchCov" title="Branch 1 was taken 24 times"> + </span>]:<span class="lineCov">      10518 :       value = cellMin + min(max(0.0f, value), 1.0f) * cellRange;</span></a>
 <a name="444"><span class="lineNum">     444 </span>                :            :     }</a>
 <a name="445"><span class="lineNum">     445 </span>                :<span class="lineCov">       5320 :     size_t index = getLinearIndexFromIndex(iterator.getUnwrappedIndex(), gridMap.getSize(), false);</span></a>
 <a name="446"><span class="lineNum">     446 </span>                :            :     // Reverse cell order because of different conventions between Costmap and grid map.</a>
