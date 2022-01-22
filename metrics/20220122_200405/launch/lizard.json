@@ -1,0 +1,27 @@
+{
+  "package": "launch",
+  "worst_value": {
+    "ccn": 28,
+    "nloc": 161,
+    "parameter": 12,
+    "token": 531
+  },
+  "average_value": {
+    "ccn": 2.4,
+    "nloc": 10.0,
+    "parameter": 2.0,
+    "token": 52.5
+  },
+  "over_threshold_count": {
+    "ccn": 2,
+    "nloc": 0,
+    "parameter": 14,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 45,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}

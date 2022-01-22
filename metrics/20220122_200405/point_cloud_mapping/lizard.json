@@ -1,0 +1,27 @@
+{
+  "package": "point_cloud_mapping",
+  "worst_value": {
+    "ccn": 7,
+    "nloc": 29,
+    "parameter": 3,
+    "token": 191
+  },
+  "average_value": {
+    "ccn": 1.5,
+    "nloc": 7.2,
+    "parameter": 0.7,
+    "token": 43.5
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
