@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-23 20:22:12</td>
+            <td class="headerValue">2022-01-24 20:21:34</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">21</td>
@@ -151,7 +151,7 @@
 <a name="73"><span class="lineNum">      73 </span>                :            : </a>
 <a name="74"><span class="lineNum">      74 </span>                :            : inline Index transformMapFrameToBufferOrder(const Vector &amp; vector)</a>
 <a name="75"><span class="lineNum">      75 </span>                :            : {</a>
-<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">    3395870 :   return {-vector[0], -vector[1]};</span></a>
+<a name="76"><span class="lineNum">      76 </span>                :<span class="lineCov">    3661810 :   return {-vector[0], -vector[1]};</span></a>
 <a name="77"><span class="lineNum">      77 </span>                :            : }</a>
 <a name="78"><span class="lineNum">      78 </span>                :            : </a>
 <a name="79"><span class="lineNum">      79 </span>                :            : inline Index transformMapFrameToBufferOrder(const Eigen::Vector2i &amp; vector)</a>
@@ -180,7 +180,7 @@
 <a name="102"><span class="lineNum">     102 </span>                :            :   const Index &amp; bufferStartIndex)</a>
 <a name="103"><span class="lineNum">     103 </span>                :            : {</a>
 <a name="104"><span class="lineNum">     104 </span>                :            :   Index index = transformMapFrameToBufferOrder(indexVector);</a>
-<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">    3395870 :   return getBufferIndexFromIndex(index, bufferSize, bufferStartIndex);</span></a>
+<a name="105"><span class="lineNum">     105 </span>                :<span class="lineCov">    3661810 :   return getBufferIndexFromIndex(index, bufferSize, bufferStartIndex);</span></a>
 <a name="106"><span class="lineNum">     106 </span>                :            : }</a>
 <a name="107"><span class="lineNum">     107 </span>                :            : </a>
 <a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">         18 : inline BufferRegion::Quadrant getQuadrant(const Index &amp; index, const Index &amp; bufferStartIndex)</span></a>
@@ -220,7 +220,7 @@
 <a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">     499233 :   return true;</span></a>
 <a name="143"><span class="lineNum">     143 </span>                :            : }</a>
 <a name="144"><span class="lineNum">     144 </span>                :            : </a>
-<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">    3395870 : bool getIndexFromPosition(</span></a>
+<a name="145"><span class="lineNum">     145 </span>                :<span class="lineCov">    3661810 : bool getIndexFromPosition(</span></a>
 <a name="146"><span class="lineNum">     146 </span>                :            :   Index &amp; index,</a>
 <a name="147"><span class="lineNum">     147 </span>                :            :   const Position &amp; position,</a>
 <a name="148"><span class="lineNum">     148 </span>                :            :   const Length &amp; mapLength,</a>
@@ -231,27 +231,27 @@
 <a name="153"><span class="lineNum">     153 </span>                :            : {</a>
 <a name="154"><span class="lineNum">     154 </span>                :            :   Vector offset;</a>
 <a name="155"><span class="lineNum">     155 </span>                :            :   internal::getVectorToOrigin(offset, mapLength);</a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">    3395870 :   Vector indexVector = ((position - offset - mapPosition).array() / resolution).matrix();</span></a>
-<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">    3395870 :   index = internal::getIndexFromIndexVector(indexVector, bufferSize, bufferStartIndex);</span></a>
-<a name="158"><span class="lineNum">     158 </span>        [<span class="branchCov" title="Branch 0 was taken 330 times"> + </span><span class="branchCov" title="Branch 1 was taken 3395540 times"> + </span>]:<span class="lineCov">    3395870 :   if (!checkIfPositionWithinMap(position, mapLength, mapPosition)) {return false;}</span></a>
+<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">    3661810 :   Vector indexVector = ((position - offset - mapPosition).array() / resolution).matrix();</span></a>
+<a name="157"><span class="lineNum">     157 </span>                :<span class="lineCov">    3661810 :   index = internal::getIndexFromIndexVector(indexVector, bufferSize, bufferStartIndex);</span></a>
+<a name="158"><span class="lineNum">     158 </span>        [<span class="branchCov" title="Branch 0 was taken 330 times"> + </span><span class="branchCov" title="Branch 1 was taken 3661480 times"> + </span>]:<span class="lineCov">    3661810 :   if (!checkIfPositionWithinMap(position, mapLength, mapPosition)) {return false;}</span></a>
 <a name="159"><span class="lineNum">     159 </span>                :            :   return true;</a>
 <a name="160"><span class="lineNum">     160 </span>                :            : }</a>
 <a name="161"><span class="lineNum">     161 </span>                :            : </a>
-<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">    3396120 : bool checkIfPositionWithinMap(</span></a>
+<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">    3662060 : bool checkIfPositionWithinMap(</span></a>
 <a name="163"><span class="lineNum">     163 </span>                :            :   const Position &amp; position,</a>
 <a name="164"><span class="lineNum">     164 </span>                :            :   const Length &amp; mapLength,</a>
 <a name="165"><span class="lineNum">     165 </span>                :            :   const Position &amp; mapPosition)</a>
 <a name="166"><span class="lineNum">     166 </span>                :            : {</a>
 <a name="167"><span class="lineNum">     167 </span>                :            :   Vector offset;</a>
 <a name="168"><span class="lineNum">     168 </span>                :            :   internal::getVectorToOrigin(offset, mapLength);</a>
-<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">    3396120 :   Position positionTransformed = internal::getMapFrameToBufferOrderTransformation().cast&lt;double&gt;() *</span></a>
+<a name="169"><span class="lineNum">     169 </span>                :<span class="lineCov">    3662060 :   Position positionTransformed = internal::getMapFrameToBufferOrderTransformation().cast&lt;double&gt;() *</span></a>
 <a name="170"><span class="lineNum">     170 </span>                :            :     (position - mapPosition - offset);</a>
 <a name="171"><span class="lineNum">     171 </span>                :            : </a>
-<a name="172"><span class="lineNum">     172 </span>        [<span class="branchCov" title="Branch 0 was taken 3395890 times"> + </span><span class="branchCov" title="Branch 1 was taken 83 times"> + </span>]:<span class="lineCov">    3395970 :   if (positionTransformed.x() &gt;= 0.0 &amp;&amp; positionTransformed.y() &gt;= 0.0 &amp;&amp;</span></a>
-<a name="173"><span class="lineNum">     173 </span>  [<span class="branchCov" title="Branch 0 was taken 3395970 times"> + </span><span class="branchCov" title="Branch 1 was taken 154 times"> + </span><span class="branchCov" title="Branch 2 was taken 3395720 times"> + </span><span class="branchCov" title="Branch 3 was taken 163 times"> + </span> :<span class="lineCov">    6792010 :     positionTransformed.x() &lt; mapLength(0) &amp;&amp; positionTransformed.y() &lt; mapLength(1))</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 3395640 times"> + </span><span class="branchCov" title="Branch 5 was taken 84 times"> + </span>]
+<a name="172"><span class="lineNum">     172 </span>        [<span class="branchCov" title="Branch 0 was taken 3661820 times"> + </span><span class="branchCov" title="Branch 1 was taken 83 times"> + </span>]:<span class="lineCov">    3661910 :   if (positionTransformed.x() &gt;= 0.0 &amp;&amp; positionTransformed.y() &gt;= 0.0 &amp;&amp;</span></a>
+<a name="173"><span class="lineNum">     173 </span>  [<span class="branchCov" title="Branch 0 was taken 3661910 times"> + </span><span class="branchCov" title="Branch 1 was taken 154 times"> + </span><span class="branchCov" title="Branch 2 was taken 3661660 times"> + </span><span class="branchCov" title="Branch 3 was taken 163 times"> + </span> :<span class="lineCov">    7323880 :     positionTransformed.x() &lt; mapLength(0) &amp;&amp; positionTransformed.y() &lt; mapLength(1))</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 3661580 times"> + </span><span class="branchCov" title="Branch 5 was taken 84 times"> + </span>]
 <a name="174"><span class="lineNum">     174 </span>                :            :   {</a>
-<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">    3395640 :     return true;</span></a>
+<a name="175"><span class="lineNum">     175 </span>                :<span class="lineCov">    3661580 :     return true;</span></a>
 <a name="176"><span class="lineNum">     176 </span>                :            :   }</a>
 <a name="177"><span class="lineNum">     177 </span>                :            :   return false;</a>
 <a name="178"><span class="lineNum">     178 </span>                :            : }</a>
@@ -656,7 +656,7 @@
 <a name="576"><span class="lineNum">     576 </span>                :            :   return index;</a>
 <a name="577"><span class="lineNum">     577 </span>                :            : }</a>
 <a name="578"><span class="lineNum">     578 </span>                :            : </a>
-<a name="579"><span class="lineNum">     579 </span>        [<span class="branchCov" title="Branch 0 was taken 3397640 times"> + </span><span class="branchCov" title="Branch 1 was taken 1822 times"> + </span>]:<span class="lineCov">    3399470 : Index getBufferIndexFromIndex(</span></a>
+<a name="579"><span class="lineNum">     579 </span>        [<span class="branchCov" title="Branch 0 was taken 3663580 times"> + </span><span class="branchCov" title="Branch 1 was taken 1822 times"> + </span>]:<span class="lineCov">    3665400 : Index getBufferIndexFromIndex(</span></a>
 <a name="580"><span class="lineNum">     580 </span>                :            :   const Index &amp; index, const Size &amp; bufferSize,</a>
 <a name="581"><span class="lineNum">     581 </span>                :            :   const Index &amp; bufferStartIndex)</a>
 <a name="582"><span class="lineNum">     582 </span>                :            : {</a>
@@ -673,11 +673,11 @@
 <a name="593"><span class="lineNum">     593 </span>                :<span class="lineNoCov">          0 :   return index(0) * bufferSize(1) + index(1);</span></a>
 <a name="594"><span class="lineNum">     594 </span>                :            : }</a>
 <a name="595"><span class="lineNum">     595 </span>                :            : </a>
-<a name="596"><span class="lineNum">     596 </span>                :<span class="lineCov">    2259760 : Index getIndexFromLinearIndex(</span></a>
+<a name="596"><span class="lineNum">     596 </span>                :<span class="lineCov">    2259750 : Index getIndexFromLinearIndex(</span></a>
 <a name="597"><span class="lineNum">     597 </span>                :            :   const size_t linearIndex, const Size &amp; bufferSize,</a>
 <a name="598"><span class="lineNum">     598 </span>                :            :   const bool rowMajor)</a>
 <a name="599"><span class="lineNum">     599 </span>                :            : {</a>
-<a name="600"><span class="lineNum">     600 </span>        [<span class="branchCov" title="Branch 0 was taken 2259750 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">    2259760 :   if (!rowMajor) {</span></a>
+<a name="600"><span class="lineNum">     600 </span>        [<span class="branchCov" title="Branch 0 was taken 2259750 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">    2259750 :   if (!rowMajor) {</span></a>
 <a name="601"><span class="lineNum">     601 </span>                :            :     return Index(</a>
 <a name="602"><span class="lineNum">     602 </span>                :<span class="lineCov">    2259750 :       static_cast&lt;int&gt;(linearIndex) % bufferSize(</span></a>
 <a name="603"><span class="lineNum">     603 </span>                :<span class="lineCov">    2259750 :         0), static_cast&lt;int&gt;(linearIndex) / bufferSize(0));</span></a>

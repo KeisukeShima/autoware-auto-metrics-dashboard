@@ -55,7 +55,7 @@
 <table>
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/src/ndt_map_publisher.cpp</b></td></tr>
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/src/ndt_voxel.cpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -68,88 +68,14 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::read_from_yaml</td>
-    <td></td>
-    
-       <td class="lesser-value">10</td>
-    
-
-    
-       <td class="lesser-value">35</td>
-    
-
-    
-       <td class="value">277</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::read_from_pcd</td>
-    <td></td>
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="lesser-value">68</td>
-    
-
-    
-       <td class="value">420</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::load_map</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">29</td>
-    
-
-    
-       <td class="value">225</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/src/ndt_voxel_view.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticView::VoxelView</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::DynamicNDTVoxel</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">6</td>
     
 
     
@@ -157,12 +83,52 @@ Cyclomatic complexity
     
 
     
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::add_observation</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">13</td>
+    
+
+    
+       <td class="value">80</td>
+    
+
+    
        <td class="lesser-value">1</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticView::inverse_covariance_</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::try_stabilize</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">10</td>
+    
+
+    
+       <td class="value">39</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::usable</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -173,7 +139,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">19</td>
+       <td class="value">14</td>
     
 
     
@@ -182,18 +148,38 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticView::centroid_</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::covariance</td>
     <td></td>
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">2</td>
     
 
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">29</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::inverse_covariance</td>
+    <td></td>
     
        <td class="lesser-value">4</td>
     
 
     
-       <td class="value">19</td>
+       <td class="lesser-value">19</td>
+    
+
+    
+       <td class="value">73</td>
     
 
     
@@ -202,7 +188,27 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticView::usable_</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::centroid</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">28</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::count</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -222,27 +228,67 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicView::VoxelView</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::StaticNDTVoxel</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">19</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::StaticNDTVoxel</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="value">31</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::covariance</td>
     <td></td>
     
        <td class="lesser-value">3</td>
     
 
     
-       <td class="lesser-value">10</td>
+       <td class="lesser-value">14</td>
     
 
     
-       <td class="value">66</td>
+       <td class="value">63</td>
     
 
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">0</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicView::inverse_covariance_</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::centroid</td>
     <td></td>
     
        <td class="lesser-value">2</td>
@@ -262,18 +308,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicView::centroid_</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::inverse_covariance</td>
     <td></td>
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">2</td>
     
 
     
-       <td class="lesser-value">4</td>
+       <td class="lesser-value">9</td>
     
 
     
-       <td class="value">19</td>
+       <td class="value">27</td>
     
 
     
@@ -282,7 +328,7 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicView::usable_</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::usable</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -300,11 +346,6 @@ Cyclomatic complexity
        <td class="lesser-value">0</td>
     
   </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/src/ndt.cpp</b></td></tr>
-
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
@@ -842,7 +883,7 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/src/ndt_voxel.cpp</b></td></tr>
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/src/ndt_voxel_view.cpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -855,14 +896,14 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::DynamicNDTVoxel</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticView::VoxelView</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">6</td>
+       <td class="lesser-value">1</td>
     
 
     
@@ -870,52 +911,12 @@ Cyclomatic complexity
     
 
     
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::add_observation</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">13</td>
-    
-
-    
-       <td class="value">80</td>
-    
-
-    
        <td class="lesser-value">1</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::try_stabilize</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">10</td>
-    
-
-    
-       <td class="value">39</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::usable</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticView::inverse_covariance_</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -926,7 +927,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">14</td>
+       <td class="value">19</td>
     
 
     
@@ -935,38 +936,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::covariance</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticView::centroid_</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">1</td>
     
 
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">29</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::inverse_covariance</td>
-    <td></td>
     
        <td class="lesser-value">4</td>
     
 
     
-       <td class="lesser-value">19</td>
-    
-
-    
-       <td class="value">73</td>
+       <td class="value">19</td>
     
 
     
@@ -975,27 +956,7 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::centroid</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">28</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicNDTVoxel::count</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticView::usable_</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -1015,67 +976,27 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::StaticNDTVoxel</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">19</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::StaticNDTVoxel</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="value">31</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::covariance</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicView::VoxelView</td>
     <td></td>
     
        <td class="lesser-value">3</td>
     
 
     
-       <td class="lesser-value">14</td>
+       <td class="lesser-value">10</td>
     
 
     
-       <td class="value">63</td>
+       <td class="value">66</td>
     
 
     
-       <td class="lesser-value">0</td>
+       <td class="lesser-value">1</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::centroid</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicView::inverse_covariance_</td>
     <td></td>
     
        <td class="lesser-value">2</td>
@@ -1095,18 +1016,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::inverse_covariance</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicView::centroid_</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">9</td>
+       <td class="lesser-value">4</td>
     
 
     
-       <td class="value">27</td>
+       <td class="value">19</td>
     
 
     
@@ -1115,7 +1036,7 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::StaticNDTVoxel::usable</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::DynamicView::usable_</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -1136,7 +1057,7 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_localizer.hpp</b></td></tr>
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/src/ndt_map_publisher.cpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -1149,198 +1070,58 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::NDTLocalizerBase</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::read_from_yaml</td>
     <td></td>
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">10</td>
     
 
     
-       <td class="lesser-value">9</td>
+       <td class="lesser-value">35</td>
     
 
     
-       <td class="value">51</td>
+       <td class="value">277</td>
     
 
     
-       <td class="lesser-value">4</td>
+       <td class="lesser-value">2</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::register_measurement</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::read_from_pcd</td>
+    <td></td>
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="lesser-value">68</td>
+    
+
+    
+       <td class="value">420</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::load_map</td>
     <td></td>
     
        <td class="lesser-value">3</td>
     
 
     
-       <td class="lesser-value">33</td>
+       <td class="lesser-value">29</td>
     
 
     
-       <td class="value">210</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::scan</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::optimizer</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::config</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::optimization_problem_config</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::set_covariance</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">11</td>
-    
-
-    
-       <td class="value">50</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::validate_msg</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">52</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::validate_guess</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">17</td>
-    
-
-    
-       <td class="value">125</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTLocalizer::P2DNDTLocalizer</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">39</td>
+       <td class="value">225</td>
     
 
     
@@ -1348,178 +1129,9 @@ Cyclomatic complexity
     
   </tr>
   
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTLocalizer::set_covariance</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">30</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-  </tr>
-  
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_config.hpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDTLocalizerConfigBase::NDTLocalizerConfigBase</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="value">16</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDTLocalizerConfigBase::guess_time_tolerance</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTOptimizationConfig::P2DNDTOptimizationConfig</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTOptimizationConfig::outlier_ratio</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTLocalizerConfig::P2DNDTLocalizerConfig</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="value">25</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTLocalizerConfig::scan_capacity</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">10</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_map.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_voxel.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_map_publisher.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/visibility_control.hpp</b></td></tr>
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/src/ndt.cpp</b></td></tr>
 
   
 
@@ -1858,12 +1470,12 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_common.hpp</b></td></tr>
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_voxel.hpp</b></td></tr>
 
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_optimization_problem.hpp</b></td></tr>
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_config.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -1876,18 +1488,18 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::is_valid_probability</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDTLocalizerConfigBase::NDTLocalizerConfigBase</td>
     <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
     
        <td class="lesser-value">3</td>
     
 
     
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">70</td>
+       <td class="value">16</td>
     
 
     
@@ -1896,162 +1508,102 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::P2DNDTObjective</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDTLocalizerConfigBase::guess_time_tolerance</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">37</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::evaluate_</td>
-    <td></td>
-    
-       <td class="greater-value">21</td>
-    
-
-    
-       <td class="lesser-value">81</td>
-    
-
-    
-       <td class="value">605</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::AngleParameters::AngleParameters</td>
-    <td></td>
     
        <td class="lesser-value">4</td>
     
 
     
-       <td class="lesser-value">24</td>
+       <td class="value">10</td>
     
 
     
-       <td class="value">174</td>
-    
-
-    
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">0</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::GradientAngleParameters::GradientAngleParameters</td>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTOptimizationConfig::P2DNDTOptimizationConfig</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
-    
-       <td class="lesser-value">27</td>
-    
-
-    
-       <td class="value">428</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::HessianAngleParameters::HessianAngleParameters</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">48</td>
-    
-
-    
-       <td class="value">770</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::compute_point_gradients</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">14</td>
-    
-
-    
-       <td class="value">146</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::compute_point_hessians</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">24</td>
-    
-
-    
-       <td class="value">339</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::init</td>
-    <td></td>
     
        <td class="lesser-value">2</td>
     
 
     
-       <td class="lesser-value">13</td>
-    
-
-    
-       <td class="value">137</td>
+       <td class="value">12</td>
     
 
     
        <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTOptimizationConfig::outlier_ratio</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTLocalizerConfig::P2DNDTLocalizerConfig</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">25</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTLocalizerConfig::scan_capacity</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
     
   </tr>
   
@@ -2211,11 +1763,6 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/constraints.hpp</b></td></tr>
-
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
   Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_voxel_view.hpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
@@ -2327,6 +1874,26 @@ Cyclomatic complexity
        <td class="lesser-value">0</td>
     
   </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/constraints.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_map.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_common.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/visibility_control.hpp</b></td></tr>
+
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
@@ -2803,13 +2370,446 @@ Cyclomatic complexity
   </tr>
   
 
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_map_publisher.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_optimization_problem.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::is_valid_probability</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">70</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::P2DNDTObjective</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">37</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::evaluate_</td>
+    <td></td>
+    
+       <td class="greater-value">21</td>
+    
+
+    
+       <td class="lesser-value">81</td>
+    
+
+    
+       <td class="value">605</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::AngleParameters::AngleParameters</td>
+    <td></td>
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="lesser-value">24</td>
+    
+
+    
+       <td class="value">174</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::GradientAngleParameters::GradientAngleParameters</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">27</td>
+    
+
+    
+       <td class="value">428</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::HessianAngleParameters::HessianAngleParameters</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">48</td>
+    
+
+    
+       <td class="value">770</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::compute_point_gradients</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="value">146</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::compute_point_hessians</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">24</td>
+    
+
+    
+       <td class="value">339</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::P2DNDTObjective::init</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">13</td>
+    
+
+    
+       <td class="value">137</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/localization/ndt/include/ndt/ndt_localizer.hpp</b></td></tr>
+
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::NDTLocalizerBase</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">51</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::register_measurement</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">33</td>
+    
+
+    
+       <td class="value">210</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::scan</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::optimizer</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::config</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::optimization_problem_config</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">10</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::set_covariance</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">11</td>
+    
+
+    
+       <td class="value">50</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::validate_msg</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">52</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICNDTLocalizerBase::validate_guess</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">17</td>
+    
+
+    
+       <td class="value">125</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTLocalizer::P2DNDTLocalizer</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">39</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::localization::ndt::NDT_PUBLICP2DNDTLocalizer::set_covariance</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">30</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+  </tr>
+  
+
 </table>
 <center>
 
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2022-01-23 20:46
+    <a href="http://www.lizard.ws/">Lizard</a> on 2022-01-24 20:45
     </td></tr>
 </table>
  </body>

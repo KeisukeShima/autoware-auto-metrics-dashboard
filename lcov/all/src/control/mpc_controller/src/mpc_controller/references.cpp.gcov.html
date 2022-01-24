@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-23 20:45:59</td>
+            <td class="headerValue">2022-01-24 20:44:34</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -218,114 +218,114 @@
 <a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">        203 : }</span></a>
 <a name="141"><span class="lineNum">     141 </span>                :            : </a>
 <a name="142"><span class="lineNum">     142 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">        687 : void MpcController::advance_problem(const Index count)</span></a>
+<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">        686 : void MpcController::advance_problem(const Index count)</span></a>
 <a name="144"><span class="lineNum">     144 </span>                :            : {</a>
-<a name="145"><span class="lineNum">     145 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 687 times"> + </span>]:<span class="lineCov">        687 :   if (HORIZON &lt;= count) {</span></a>
+<a name="145"><span class="lineNum">     145 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 686 times"> + </span>]:<span class="lineCov">        686 :   if (HORIZON &lt;= count) {</span></a>
 <a name="146"><span class="lineNum">     146 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::logic_error{&quot;Advancing count too high! Likely indexing bug somewhere&quot;};</span></a>
 <a name="147"><span class="lineNum">     147 </span>                :            :   }</a>
 <a name="148"><span class="lineNum">     148 </span>                :            :   // TODO(c.ho) error checking on count</a>
 <a name="149"><span class="lineNum">     149 </span>                :            :   // TODO(c.ho) x[0] should be x0... double check logic</a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">        687 :   (void)std::copy(</span></a>
-<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        687 :     &amp;acadoVariables.x[NX * (count + 1U)],</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">        686 :   (void)std::copy(</span></a>
+<a name="151"><span class="lineNum">     151 </span>                :<span class="lineCov">        686 :     &amp;acadoVariables.x[NX * (count + 1U)],</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            :     &amp;acadoVariables.x[(HORIZON + 1U) * NX],</a>
 <a name="153"><span class="lineNum">     153 </span>                :            :     &amp;acadoVariables.x[NX]);</a>
-<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">        687 :   (void)std::copy(</span></a>
-<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">        687 :     &amp;acadoVariables.y[NY * count],</span></a>
+<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">        686 :   (void)std::copy(</span></a>
+<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">        686 :     &amp;acadoVariables.y[NY * count],</span></a>
 <a name="156"><span class="lineNum">     156 </span>                :            :     &amp;acadoVariables.y[HORIZON * NY],</a>
 <a name="157"><span class="lineNum">     157 </span>                :            :     &amp;acadoVariables.y[0U]);</a>
-<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        687 :   (void)std::copy(</span></a>
-<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">        687 :     &amp;acadoVariables.u[NU * count],</span></a>
+<a name="158"><span class="lineNum">     158 </span>                :<span class="lineCov">        686 :   (void)std::copy(</span></a>
+<a name="159"><span class="lineNum">     159 </span>                :<span class="lineCov">        686 :     &amp;acadoVariables.u[NU * count],</span></a>
 <a name="160"><span class="lineNum">     160 </span>                :            :     &amp;acadoVariables.u[HORIZON * NU],</a>
 <a name="161"><span class="lineNum">     161 </span>                :            :     &amp;acadoVariables.u[0U]);</a>
-<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">        687 : }</span></a>
+<a name="162"><span class="lineNum">     162 </span>                :<span class="lineCov">        686 : }</span></a>
 <a name="163"><span class="lineNum">     163 </span>                :            : </a>
 <a name="164"><span class="lineNum">     164 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">        505 : void MpcController::backfill_reference(const Index count)</span></a>
+<a name="165"><span class="lineNum">     165 </span>                :<span class="lineCov">        504 : void MpcController::backfill_reference(const Index count)</span></a>
 <a name="166"><span class="lineNum">     166 </span>                :            : {</a>
 <a name="167"><span class="lineNum">     167 </span>                :            :   static_assert(sizeof(std::size_t) &gt;= sizeof(Index), &quot;static cast might truncate&quot;);</a>
-<a name="168"><span class="lineNum">     168 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 505 times"> + </span>]:<span class="lineCov">        505 :   if (HORIZON &lt;= count) {</span></a>
+<a name="168"><span class="lineNum">     168 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 504 times"> + </span>]:<span class="lineCov">        504 :   if (HORIZON &lt;= count) {</span></a>
 <a name="169"><span class="lineNum">     169 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::logic_error{&quot;Backfill count too high! Likely indexing bug somewhere&quot;};</span></a>
 <a name="170"><span class="lineNum">     170 </span>                :            :   }</a>
 <a name="171"><span class="lineNum">     171 </span>                :            :   // Start filling from count before the end</a>
-<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">        505 :   const auto ref_start = HORIZON - count;</span></a>
+<a name="172"><span class="lineNum">     172 </span>                :<span class="lineCov">        504 :   const auto ref_start = HORIZON - count;</span></a>
 <a name="173"><span class="lineNum">     173 </span>                :            :   // start pulling from the trajectory N - count from the current point</a>
-<a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">        505 :   const auto max_pts = static_cast&lt;std::size_t&gt;(get_reference_trajectory().points.size());</span></a>
-<a name="175"><span class="lineNum">     175 </span>        [<span class="branchCov" title="Branch 0 was taken 505 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        505 :   const auto curr_idx = get_current_state_temporal_index();</span></a>
-<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">        505 :   const auto traj_start = std::min(curr_idx + ref_start, max_pts);</span></a>
+<a name="174"><span class="lineNum">     174 </span>                :<span class="lineCov">        504 :   const auto max_pts = static_cast&lt;std::size_t&gt;(get_reference_trajectory().points.size());</span></a>
+<a name="175"><span class="lineNum">     175 </span>        [<span class="branchCov" title="Branch 0 was taken 504 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        504 :   const auto curr_idx = get_current_state_temporal_index();</span></a>
+<a name="176"><span class="lineNum">     176 </span>                :<span class="lineCov">        504 :   const auto traj_start = std::min(curr_idx + ref_start, max_pts);</span></a>
 <a name="177"><span class="lineNum">     177 </span>                :            :   // Try to pull up to count</a>
-<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">        505 :   const auto traj_end = std::min(traj_start + count, max_pts);</span></a>
-<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">        505 :   const auto safe_count = traj_end - traj_start;</span></a>
+<a name="178"><span class="lineNum">     178 </span>                :<span class="lineCov">        504 :   const auto traj_end = std::min(traj_start + count, max_pts);</span></a>
+<a name="179"><span class="lineNum">     179 </span>                :<span class="lineCov">        504 :   const auto safe_count = traj_end - traj_start;</span></a>
 <a name="180"><span class="lineNum">     180 </span>                :            :   // Pull references from trajectory</a>
-<a name="181"><span class="lineNum">     181 </span>        [<span class="branchCov" title="Branch 0 was taken 505 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        505 :   set_reference(get_reference_trajectory(), ref_start, traj_start, safe_count);</span></a>
+<a name="181"><span class="lineNum">     181 </span>        [<span class="branchCov" title="Branch 0 was taken 504 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        504 :   set_reference(get_reference_trajectory(), ref_start, traj_start, safe_count);</span></a>
 <a name="182"><span class="lineNum">     182 </span>                :            :   // Zero out remainder</a>
-<a name="183"><span class="lineNum">     183 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 505 times"> + </span>]:<span class="lineCov">        505 :   if (safe_count &lt; count) {</span></a>
+<a name="183"><span class="lineNum">     183 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 504 times"> + </span>]:<span class="lineCov">        504 :   if (safe_count &lt; count) {</span></a>
 <a name="184"><span class="lineNum">     184 </span>                :<span class="lineNoCov">          0 :     const auto remainder = count - safe_count;</span></a>
 <a name="185"><span class="lineNum">     185 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     zero_nominal_weights(HORIZON - remainder, HORIZON);</span></a>
 <a name="186"><span class="lineNum">     186 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     apply_terminal_weights(HORIZON - (remainder + 1));</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :            :   }</a>
 <a name="188"><span class="lineNum">     188 </span>                :            :   // Set the terminal reference</a>
-<a name="189"><span class="lineNum">     189 </span>        [<span class="branchCov" title="Branch 0 was taken 498 times"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">        505 :   if (traj_start + count &lt; max_pts) {</span></a>
-<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">        498 :     set_terminal_reference(get_reference_trajectory().points[traj_start + count]);</span></a>
+<a name="189"><span class="lineNum">     189 </span>        [<span class="branchCov" title="Branch 0 was taken 497 times"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">        504 :   if (traj_start + count &lt; max_pts) {</span></a>
+<a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">        497 :     set_terminal_reference(get_reference_trajectory().points[traj_start + count]);</span></a>
 <a name="191"><span class="lineNum">     191 </span>                :            :   } else {</a>
 <a name="192"><span class="lineNum">     192 </span>                :<span class="lineCov">          7 :     zero_terminal_weights();</span></a>
 <a name="193"><span class="lineNum">     193 </span>                :            :   }</a>
-<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">        505 : }</span></a>
+<a name="194"><span class="lineNum">     194 </span>                :<span class="lineCov">        504 : }</span></a>
 <a name="195"><span class="lineNum">     195 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">        555 : void MpcController::set_reference(</span></a>
+<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">        554 : void MpcController::set_reference(</span></a>
 <a name="197"><span class="lineNum">     197 </span>                :            :   const Trajectory &amp; traj,</a>
 <a name="198"><span class="lineNum">     198 </span>                :            :   const Index y_start,</a>
 <a name="199"><span class="lineNum">     199 </span>                :            :   const Index traj_start,</a>
 <a name="200"><span class="lineNum">     200 </span>                :            :   const Index count)</a>
 <a name="201"><span class="lineNum">     201 </span>                :            : {</a>
-<a name="202"><span class="lineNum">     202 </span>  [<span class="branchCov" title="Branch 0 was taken 555 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 555 times"> + </span> :<span class="lineCov">        555 :   if ((y_start + count) &gt; HORIZON || (traj_start + count) &gt; traj.points.size()) {</span></a>
-<span class="lineNum">         </span>         <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 555 times"> + </span>]
+<a name="202"><span class="lineNum">     202 </span>  [<span class="branchCov" title="Branch 0 was taken 554 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 554 times"> + </span> :<span class="lineCov">        554 :   if ((y_start + count) &gt; HORIZON || (traj_start + count) &gt; traj.points.size()) {</span></a>
+<span class="lineNum">         </span>         <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 554 times"> + </span>]
 <a name="203"><span class="lineNum">     203 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::logic_error{&quot;set_reference would go out of bounds! Indexing bug likely!&quot;};</span></a>
 <a name="204"><span class="lineNum">     204 </span>                :            :   }</a>
-<a name="205"><span class="lineNum">     205 </span>        [<span class="branchCov" title="Branch 0 was taken 1991 times"> + </span><span class="branchCov" title="Branch 1 was taken 555 times"> + </span>]:<span class="lineCov">       2546 :   for (auto i = Index{}; i &lt; count; ++i) {</span></a>
-<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">       1991 :     const auto &amp; pt = traj.points[traj_start + i];</span></a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">       1991 :     const auto ydx = (y_start + i) * NY;</span></a>
-<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">       1991 :     acadoVariables.y[ydx + IDY_X] = static_cast&lt;AcadoReal&gt;(pt.pose.position.x);</span></a>
-<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">       1991 :     acadoVariables.y[ydx + IDY_Y] = static_cast&lt;AcadoReal&gt;(pt.pose.position.y);</span></a>
-<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">       1991 :     acadoVariables.y[ydx + IDY_VEL_LONG] = static_cast&lt;AcadoReal&gt;(pt.longitudinal_velocity_mps);</span></a>
-<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">       1991 :     acadoVariables.y[ydx + IDY_HEADING] =</span></a>
-<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">       1991 :       static_cast&lt;AcadoReal&gt;(motion_common::to_angle(pt.pose.orientation));</span></a>
+<a name="205"><span class="lineNum">     205 </span>        [<span class="branchCov" title="Branch 0 was taken 1990 times"> + </span><span class="branchCov" title="Branch 1 was taken 554 times"> + </span>]:<span class="lineCov">       2544 :   for (auto i = Index{}; i &lt; count; ++i) {</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">       1990 :     const auto &amp; pt = traj.points[traj_start + i];</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">       1990 :     const auto ydx = (y_start + i) * NY;</span></a>
+<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">       1990 :     acadoVariables.y[ydx + IDY_X] = static_cast&lt;AcadoReal&gt;(pt.pose.position.x);</span></a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">       1990 :     acadoVariables.y[ydx + IDY_Y] = static_cast&lt;AcadoReal&gt;(pt.pose.position.y);</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">       1990 :     acadoVariables.y[ydx + IDY_VEL_LONG] = static_cast&lt;AcadoReal&gt;(pt.longitudinal_velocity_mps);</span></a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">       1990 :     acadoVariables.y[ydx + IDY_HEADING] =</span></a>
+<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">       1990 :       static_cast&lt;AcadoReal&gt;(motion_common::to_angle(pt.pose.orientation));</span></a>
 <a name="213"><span class="lineNum">     213 </span>                :            :   }</a>
-<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">        555 : }</span></a>
+<a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">        554 : }</span></a>
 <a name="215"><span class="lineNum">     215 </span>                :            : </a>
 <a name="216"><span class="lineNum">     216 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">        731 : bool MpcController::ensure_reference_consistency(Index horizon)</span></a>
+<a name="217"><span class="lineNum">     217 </span>                :<span class="lineCov">        730 : bool MpcController::ensure_reference_consistency(Index horizon)</span></a>
 <a name="218"><span class="lineNum">     218 </span>                :            : {</a>
 <a name="219"><span class="lineNum">     219 </span>                :            :   static_assert(sizeof(std::size_t) &gt;= sizeof(Index), &quot;static cast might truncate&quot;);</a>
-<a name="220"><span class="lineNum">     220 </span>                :<span class="lineCov">        731 :   horizon = std::min(static_cast&lt;std::size_t&gt;(horizon), HORIZON);</span></a>
-<a name="221"><span class="lineNum">     221 </span>                :<span class="lineCov">        731 :   auto last_angle = acadoVariables.x0[IDX_HEADING];</span></a>
-<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">        731 :   auto err = AcadoReal{};</span></a>
-<a name="223"><span class="lineNum">     223 </span>                :<span class="lineCov">      20388 :   const auto fn = [&amp;last_angle, &amp;err](auto &amp; ref) {</span></a>
-<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">      20388 :       const auto dth = ref - last_angle;</span></a>
-<a name="225"><span class="lineNum">     225 </span>                :<span class="lineCov">      20388 :       const auto diff = std::atan2(std::sin(dth), std::cos(dth));</span></a>
-<a name="226"><span class="lineNum">     226 </span>                :<span class="lineCov">      20388 :       const auto ref_old = ref;</span></a>
-<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">      20388 :       ref = last_angle + diff;</span></a>
-<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">      20388 :       err += std::fabs(ref - ref_old);</span></a>
-<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">      20388 :       last_angle = ref;</span></a>
-<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">      21119 :     };</span></a>
-<a name="231"><span class="lineNum">     231 </span>        [<span class="branchCov" title="Branch 0 was taken 19657 times"> + </span><span class="branchCov" title="Branch 1 was taken 731 times"> + </span>]:<span class="lineCov">      20388 :   for (auto i = Index{}; i &lt; horizon; ++i) {</span></a>
-<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">      19657 :     const auto idx = NY * i;</span></a>
-<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">      19657 :     fn(acadoVariables.y[idx + IDY_HEADING]);</span></a>
+<a name="220"><span class="lineNum">     220 </span>                :<span class="lineCov">        730 :   horizon = std::min(static_cast&lt;std::size_t&gt;(horizon), HORIZON);</span></a>
+<a name="221"><span class="lineNum">     221 </span>                :<span class="lineCov">        730 :   auto last_angle = acadoVariables.x0[IDX_HEADING];</span></a>
+<a name="222"><span class="lineNum">     222 </span>                :<span class="lineCov">        730 :   auto err = AcadoReal{};</span></a>
+<a name="223"><span class="lineNum">     223 </span>                :<span class="lineCov">      20357 :   const auto fn = [&amp;last_angle, &amp;err](auto &amp; ref) {</span></a>
+<a name="224"><span class="lineNum">     224 </span>                :<span class="lineCov">      20357 :       const auto dth = ref - last_angle;</span></a>
+<a name="225"><span class="lineNum">     225 </span>                :<span class="lineCov">      20357 :       const auto diff = std::atan2(std::sin(dth), std::cos(dth));</span></a>
+<a name="226"><span class="lineNum">     226 </span>                :<span class="lineCov">      20357 :       const auto ref_old = ref;</span></a>
+<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">      20357 :       ref = last_angle + diff;</span></a>
+<a name="228"><span class="lineNum">     228 </span>                :<span class="lineCov">      20357 :       err += std::fabs(ref - ref_old);</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">      20357 :       last_angle = ref;</span></a>
+<a name="230"><span class="lineNum">     230 </span>                :<span class="lineCov">      21087 :     };</span></a>
+<a name="231"><span class="lineNum">     231 </span>        [<span class="branchCov" title="Branch 0 was taken 19627 times"> + </span><span class="branchCov" title="Branch 1 was taken 730 times"> + </span>]:<span class="lineCov">      20357 :   for (auto i = Index{}; i &lt; horizon; ++i) {</span></a>
+<a name="232"><span class="lineNum">     232 </span>                :<span class="lineCov">      19627 :     const auto idx = NY * i;</span></a>
+<a name="233"><span class="lineNum">     233 </span>                :<span class="lineCov">      19627 :     fn(acadoVariables.y[idx + IDY_HEADING]);</span></a>
 <a name="234"><span class="lineNum">     234 </span>                :            :   }</a>
-<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">        731 :   fn(acadoVariables.yN[IDY_HEADING]);</span></a>
+<a name="235"><span class="lineNum">     235 </span>                :<span class="lineCov">        730 :   fn(acadoVariables.yN[IDY_HEADING]);</span></a>
 <a name="236"><span class="lineNum">     236 </span>                :            :   // Semi arbitrary number--maybe make it a config parameter?</a>
-<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">        731 :   constexpr auto PI = AcadoReal{3.14159};</span></a>
-<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">        731 :   return err &gt; PI;</span></a>
+<a name="237"><span class="lineNum">     237 </span>                :<span class="lineCov">        730 :   constexpr auto PI = AcadoReal{3.14159};</span></a>
+<a name="238"><span class="lineNum">     238 </span>                :<span class="lineCov">        730 :   return err &gt; PI;</span></a>
 <a name="239"><span class="lineNum">     239 </span>                :            : }</a>
 <a name="240"><span class="lineNum">     240 </span>                :            : </a>
 <a name="241"><span class="lineNum">     241 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">        527 : void MpcController::set_terminal_reference(const Point &amp; pt) noexcept</span></a>
+<a name="242"><span class="lineNum">     242 </span>                :<span class="lineCov">        526 : void MpcController::set_terminal_reference(const Point &amp; pt) noexcept</span></a>
 <a name="243"><span class="lineNum">     243 </span>                :            : {</a>
-<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">        527 :   acadoVariables.yN[IDYN_X] = static_cast&lt;AcadoReal&gt;(pt.pose.position.x);</span></a>
-<a name="245"><span class="lineNum">     245 </span>                :<span class="lineCov">        527 :   acadoVariables.yN[IDYN_Y] = static_cast&lt;AcadoReal&gt;(pt.pose.position.y);</span></a>
-<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">        527 :   acadoVariables.yN[IDYN_VEL_LONG] = static_cast&lt;AcadoReal&gt;(pt.longitudinal_velocity_mps);</span></a>
-<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">        527 :   acadoVariables.yN[IDYN_HEADING] =</span></a>
-<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">        527 :     static_cast&lt;AcadoReal&gt;(motion_common::to_angle(pt.pose.orientation));</span></a>
-<a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">        527 : }</span></a>
+<a name="244"><span class="lineNum">     244 </span>                :<span class="lineCov">        526 :   acadoVariables.yN[IDYN_X] = static_cast&lt;AcadoReal&gt;(pt.pose.position.x);</span></a>
+<a name="245"><span class="lineNum">     245 </span>                :<span class="lineCov">        526 :   acadoVariables.yN[IDYN_Y] = static_cast&lt;AcadoReal&gt;(pt.pose.position.y);</span></a>
+<a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">        526 :   acadoVariables.yN[IDYN_VEL_LONG] = static_cast&lt;AcadoReal&gt;(pt.longitudinal_velocity_mps);</span></a>
+<a name="247"><span class="lineNum">     247 </span>                :<span class="lineCov">        526 :   acadoVariables.yN[IDYN_HEADING] =</span></a>
+<a name="248"><span class="lineNum">     248 </span>                :<span class="lineCov">        526 :     static_cast&lt;AcadoReal&gt;(motion_common::to_angle(pt.pose.orientation));</span></a>
+<a name="249"><span class="lineNum">     249 </span>                :<span class="lineCov">        526 : }</span></a>
 <a name="250"><span class="lineNum">     250 </span>                :            : </a>
 <a name="251"><span class="lineNum">     251 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
 <a name="252"><span class="lineNum">     252 </span>                :<span class="lineCov">         50 : const Trajectory &amp; MpcController::handle_new_trajectory(const Trajectory &amp; trajectory)</span></a>
