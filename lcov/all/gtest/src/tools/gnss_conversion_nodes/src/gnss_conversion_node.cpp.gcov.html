@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-24 20:21:23</td>
+            <td class="headerValue">2022-01-25 20:33:38</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -132,7 +132,7 @@
 <a name="54"><span class="lineNum">      54 </span>                :            :             &quot;The array representing the covariance matrix does not have enough elements. &quot;</a>
 <a name="55"><span class="lineNum">      55 </span>                :            :             &quot;Expected &quot; + std::to_string(9UL) + &quot; but has &quot; + std::to_string(covariance.size()));</a>
 <a name="56"><span class="lineNum">      56 </span>                :            :   }</a>
-<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">          2 :   return Eigen::Matrix3d{Eigen::Map&lt;const Eigen::Matrix3d&gt;{&amp;covariance[0]}};</span></a>
+<a name="57"><span class="lineNum">      57 </span>                :<span class="lineCov">          1 :   return Eigen::Matrix3d{Eigen::Map&lt;const Eigen::Matrix3d&gt;{&amp;covariance[0]}};</span></a>
 <a name="58"><span class="lineNum">      58 </span>                :            : }</a>
 <a name="59"><span class="lineNum">      59 </span>                :            : </a>
 <a name="60"><span class="lineNum">      60 </span>                :            : template&lt;typename ArrayT&gt;</a>
@@ -143,38 +143,38 @@
 <a name="65"><span class="lineNum">      65 </span>                :            :             &quot;The array representing the covariance matrix does not have enough elements. &quot;</a>
 <a name="66"><span class="lineNum">      66 </span>                :            :             &quot;Expected &quot; + std::to_string(9UL) + &quot; but has &quot; + std::to_string(covariance.size()));</a>
 <a name="67"><span class="lineNum">      67 </span>                :            :   }</a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">          2 :   Eigen::Map&lt;Eigen::Matrix3d&gt;{&amp;covariance[0]} = matrix;</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">          1 :   Eigen::Map&lt;Eigen::Matrix3d&gt;{&amp;covariance[0]} = matrix;</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            : }</a>
 <a name="70"><span class="lineNum">      70 </span>                :            : </a>
-<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">          2 : Eigen::Matrix3d rotate_covariance(</span></a>
+<a name="71"><span class="lineNum">      71 </span>                :<span class="lineCov">          1 : Eigen::Matrix3d rotate_covariance(</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :            :   const Eigen::Isometry3d &amp; tf__new__old,</a>
 <a name="73"><span class="lineNum">      73 </span>                :            :   const Eigen::Matrix3d &amp; covariance)</a>
 <a name="74"><span class="lineNum">      74 </span>                :            : {</a>
-<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">          2 :   return tf__new__old.rotation() * covariance * tf__new__old.rotation().transpose();</span></a>
+<a name="75"><span class="lineNum">      75 </span>                :<span class="lineCov">          1 :   return tf__new__old.rotation() * covariance * tf__new__old.rotation().transpose();</span></a>
 <a name="76"><span class="lineNum">      76 </span>                :            : }</a>
 <a name="77"><span class="lineNum">      77 </span>                :            : </a>
 <a name="78"><span class="lineNum">      78 </span>                :            : geometry_msgs::msg::Point to_point(const Eigen::Vector3d &amp; v)</a>
 <a name="79"><span class="lineNum">      79 </span>                :            : {</a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">          2 :   return geometry_msgs::build&lt;geometry_msgs::msg::Point&gt;().x(v[0]).y(v[1]).z(v[2]);</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">          1 :   return geometry_msgs::build&lt;geometry_msgs::msg::Point&gt;().x(v[0]).y(v[1]).z(v[2]);</span></a>
 <a name="81"><span class="lineNum">      81 </span>                :            : }</a>
 <a name="82"><span class="lineNum">      82 </span>                :            : </a>
 <a name="83"><span class="lineNum">      83 </span>                :            : </a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">         12 : void switch_frames_if_needed(</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">         11 : void switch_frames_if_needed(</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            :   autoware_auto_geometry_msgs::msg::RelativePositionWithCovarianceStamped &amp; msg,</a>
 <a name="86"><span class="lineNum">      86 </span>                :            :   const std_msgs::msg::Header::_frame_id_type &amp; new_frame_id,</a>
 <a name="87"><span class="lineNum">      87 </span>                :            :   const tf2::BufferCore &amp; buffer)</a>
 <a name="88"><span class="lineNum">      88 </span>                :            : {</a>
-<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         12 :   if (new_frame_id == msg.header.frame_id) {return;}</span></a>
+<a name="89"><span class="lineNum">      89 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         11 :   if (new_frame_id == msg.header.frame_id) {return;}</span></a>
 <a name="90"><span class="lineNum">      90 </span>                :            :   const Eigen::Isometry3d tf__new_frame_id__msg_frame_id = tf2::transformToEigen(</a>
-<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">         13 :     buffer.lookupTransform(</span></a>
-<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">         13 :       new_frame_id, msg.header.frame_id, tf2_ros::fromMsg(msg.header.stamp)));</span></a>
+<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">         11 :     buffer.lookupTransform(</span></a>
+<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">         11 :       new_frame_id, msg.header.frame_id, tf2_ros::fromMsg(msg.header.stamp)));</span></a>
 <a name="93"><span class="lineNum">      93 </span>                :            :   Eigen::Vector3d position;</a>
 <a name="94"><span class="lineNum">      94 </span>                :            :   tf2::fromMsg(msg.position, position);</a>
-<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">          2 :   msg.position = to_point(tf__new_frame_id__msg_frame_id * position);</span></a>
+<a name="95"><span class="lineNum">      95 </span>                :<span class="lineCov">          1 :   msg.position = to_point(tf__new_frame_id__msg_frame_id * position);</span></a>
 <a name="96"><span class="lineNum">      96 </span>                :            : </a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   // Update position covariance</a>
 <a name="98"><span class="lineNum">      98 </span>                :            :   fill_covariance_from_eigen(</a>
-<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">          4 :     msg.covariance, rotate_covariance(tf__new_frame_id__msg_frame_id, to_eigen(msg.covariance)));</span></a>
+<a name="99"><span class="lineNum">      99 </span>                :<span class="lineCov">          2 :     msg.covariance, rotate_covariance(tf__new_frame_id__msg_frame_id, to_eigen(msg.covariance)));</span></a>
 <a name="100"><span class="lineNum">     100 </span>                :            :   msg.header.frame_id = new_frame_id;</a>
 <a name="101"><span class="lineNum">     101 </span>                :            : }</a>
 <a name="102"><span class="lineNum">     102 </span>                :            : </a>
@@ -221,10 +221,10 @@
 <a name="132"><span class="lineNum">     132 </span>                :            :   }</a>
 <a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">          4 : }</span></a>
 <a name="134"><span class="lineNum">     134 </span>                :            : </a>
-<a name="135"><span class="lineNum">     135 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchCov" title="Branch 1 was taken 12 times"> + </span>]:<span class="lineCov">         21 : void GnssConversionNode::nav_sat_fix_callback(</span></a>
+<a name="135"><span class="lineNum">     135 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         20 : void GnssConversionNode::nav_sat_fix_callback(</span></a>
 <a name="136"><span class="lineNum">     136 </span>                :            :   const sensor_msgs::msg::NavSatFix::ConstSharedPtr msg) const</a>
 <a name="137"><span class="lineNum">     137 </span>                :            : {</a>
-<a name="138"><span class="lineNum">     138 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchCov" title="Branch 1 was taken 12 times"> + </span>]:<span class="lineCov">         21 :   if (msg-&gt;status.status == msg-&gt;status.STATUS_NO_FIX) {</span></a>
+<a name="138"><span class="lineNum">     138 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchCov" title="Branch 1 was taken 11 times"> + </span>]:<span class="lineCov">         20 :   if (msg-&gt;status.status == msg-&gt;status.STATUS_NO_FIX) {</span></a>
 <a name="139"><span class="lineNum">     139 </span>  [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         38 :     RCLCPP_WARN_THROTTLE(</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
@@ -236,15 +236,15 @@
 <a name="143"><span class="lineNum">     143 </span>                :            :       &quot;GNSS has no fix, so nothing is published.&quot;);</a>
 <a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         18 :     return;</span></a>
 <a name="145"><span class="lineNum">     145 </span>                :            :   }</a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">         15 :   RelativePositionWithCovarianceStamped out_msg{};</span></a>
-<a name="147"><span class="lineNum">     147 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   out_msg.header.stamp = msg-&gt;header.stamp;</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">         13 :   RelativePositionWithCovarianceStamped out_msg{};</span></a>
+<a name="147"><span class="lineNum">     147 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   out_msg.header.stamp = msg-&gt;header.stamp;</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            :   out_msg.header.frame_id = kDefaultFrameId;</a>
-<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   out_msg.child_frame_id = m_child_frame_id;</span></a>
-<a name="150"><span class="lineNum">     150 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   m_wgs84_to_ecef_convertor.Forward(</span></a>
-<a name="151"><span class="lineNum">     151 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :     msg-&gt;latitude, msg-&gt;longitude, msg-&gt;altitude,</span></a>
+<a name="149"><span class="lineNum">     149 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   out_msg.child_frame_id = m_child_frame_id;</span></a>
+<a name="150"><span class="lineNum">     150 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   m_wgs84_to_ecef_convertor.Forward(</span></a>
+<a name="151"><span class="lineNum">     151 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :     msg-&gt;latitude, msg-&gt;longitude, msg-&gt;altitude,</span></a>
 <a name="152"><span class="lineNum">     152 </span>                :            :     out_msg.position.x, out_msg.position.y, out_msg.position.z);</a>
 <a name="153"><span class="lineNum">     153 </span>                :            :   try {</a>
-<a name="154"><span class="lineNum">     154 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 9 times"> + </span>]:<span class="lineCov">         12 :     switch_frames_if_needed(out_msg, m_frame_id, m_tf_buffer);</span></a>
+<a name="154"><span class="lineNum">     154 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 9 times"> + </span>]:<span class="lineCov">         11 :     switch_frames_if_needed(out_msg, m_frame_id, m_tf_buffer);</span></a>
 <a name="155"><span class="lineNum">     155 </span>        [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         18 :   } catch (const tf2::LookupException &amp; exception) {</span></a>
 <a name="156"><span class="lineNum">     156 </span>  [<span class="branchCov" title="Branch 0 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         39 :     RCLCPP_WARN_THROTTLE(</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 9 times"> + </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
@@ -271,15 +271,15 @@
 <a name="163"><span class="lineNum">     163 </span>                :            :       m_frame_id + &quot; with the exception: &quot; + exception.what());</a>
 <a name="164"><span class="lineNum">     164 </span>                :            :     return;</a>
 <a name="165"><span class="lineNum">     165 </span>                :            :   }</a>
-<a name="166"><span class="lineNum">     166 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :   if (!m_override_variances_diagonal.empty()) {</span></a>
+<a name="166"><span class="lineNum">     166 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   if (!m_override_variances_diagonal.empty()) {</span></a>
 <a name="167"><span class="lineNum">     167 </span>                :            :     const Eigen::Vector3d variances_diagonal{</a>
 <a name="168"><span class="lineNum">     168 </span>                :            :       Eigen::Map&lt;const Eigen::Vector3d&gt;{m_override_variances_diagonal.data()}};</a>
 <a name="169"><span class="lineNum">     169 </span>                :            :     const auto override_covariance = variances_diagonal.array().square().matrix().asDiagonal();</a>
 <a name="170"><span class="lineNum">     170 </span>                :            :     auto pose_covariance = Eigen::Map&lt;Eigen::Matrix3d&gt;{&amp;out_msg.covariance.front()};</a>
-<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">          3 :     pose_covariance.topLeftCorner(</span></a>
+<a name="171"><span class="lineNum">     171 </span>                :<span class="lineCov">          2 :     pose_covariance.topLeftCorner(</span></a>
 <a name="172"><span class="lineNum">     172 </span>                :            :       override_covariance.rows(), override_covariance.cols()) = override_covariance;</a>
 <a name="173"><span class="lineNum">     173 </span>                :            :   }</a>
-<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          3 :   m_publisher-&gt;publish(out_msg);</span></a>
+<a name="174"><span class="lineNum">     174 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :   m_publisher-&gt;publish(out_msg);</span></a>
 <a name="175"><span class="lineNum">     175 </span>                :            : }</a>
 <a name="176"><span class="lineNum">     176 </span>                :            : </a>
 <a name="177"><span class="lineNum">     177 </span>                :            : }  // namespace gnss_conversion_nodes</a>
