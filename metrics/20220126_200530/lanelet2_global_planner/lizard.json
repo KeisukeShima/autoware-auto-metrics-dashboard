@@ -1,0 +1,27 @@
+{
+  "package": "lanelet2_global_planner",
+  "worst_value": {
+    "ccn": 22,
+    "nloc": 64,
+    "parameter": 4,
+    "token": 556
+  },
+  "average_value": {
+    "ccn": 5.3,
+    "nloc": 24.3,
+    "parameter": 1.6,
+    "token": 189.6
+  },
+  "over_threshold_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 4,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
