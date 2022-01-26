@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-25 21:01:12</td>
+            <td class="headerValue">2022-01-26 20:43:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -340,57 +340,57 @@
 <a name="262"><span class="lineNum">     262 </span>                :            :   /**</a>
 <a name="263"><span class="lineNum">     263 </span>                :            :    * @brief return true if the given curvature is considered low</a>
 <a name="264"><span class="lineNum">     264 </span>                :            :    */</a>
-<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">       4784 :   inline bool8_t isLowCurvature(const float64_t curvature)</span></a>
+<a name="265"><span class="lineNum">     265 </span>                :<span class="lineCov">       5681 :   inline bool8_t isLowCurvature(const float64_t curvature)</span></a>
 <a name="266"><span class="lineNum">     266 </span>                :            :   {</a>
-<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">       4784 :     return std::fabs(curvature) &lt; m_param.low_curvature_thresh_curvature;</span></a>
+<a name="267"><span class="lineNum">     267 </span>                :<span class="lineCov">       5681 :     return std::fabs(curvature) &lt; m_param.low_curvature_thresh_curvature;</span></a>
 <a name="268"><span class="lineNum">     268 </span>                :            :   }</a>
 <a name="269"><span class="lineNum">     269 </span>                :            :   /**</a>
 <a name="270"><span class="lineNum">     270 </span>                :            :    * @brief return the weight of the lateral error for the given curvature</a>
 <a name="271"><span class="lineNum">     271 </span>                :            :    */</a>
-<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">        800 :   inline float64_t getWeightLatError(const float64_t curvature)</span></a>
+<a name="272"><span class="lineNum">     272 </span>                :<span class="lineCov">        950 :   inline float64_t getWeightLatError(const float64_t curvature)</span></a>
 <a name="273"><span class="lineNum">     273 </span>                :            :   {</a>
-<a name="274"><span class="lineNum">     274 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 800 times"> + </span>]:<span class="lineCov">        800 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_lat_error :</span></a>
-<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">        800 :            m_param.weight_lat_error;</span></a>
+<a name="274"><span class="lineNum">     274 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 950 times"> + </span>]:<span class="lineCov">        950 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_lat_error :</span></a>
+<a name="275"><span class="lineNum">     275 </span>                :<span class="lineCov">        950 :            m_param.weight_lat_error;</span></a>
 <a name="276"><span class="lineNum">     276 </span>                :            :   }</a>
 <a name="277"><span class="lineNum">     277 </span>                :            :   /**</a>
 <a name="278"><span class="lineNum">     278 </span>                :            :    * @brief return the weight of the heading error for the given curvature</a>
 <a name="279"><span class="lineNum">     279 </span>                :            :    */</a>
-<a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">        800 :   inline float64_t getWeightHeadingError(const float64_t curvature)</span></a>
+<a name="280"><span class="lineNum">     280 </span>                :<span class="lineCov">        950 :   inline float64_t getWeightHeadingError(const float64_t curvature)</span></a>
 <a name="281"><span class="lineNum">     281 </span>                :            :   {</a>
-<a name="282"><span class="lineNum">     282 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 800 times"> + </span>]:<span class="lineCov">        800 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_heading_error :</span></a>
-<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">        800 :            m_param.weight_heading_error;</span></a>
+<a name="282"><span class="lineNum">     282 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 950 times"> + </span>]:<span class="lineCov">        950 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_heading_error :</span></a>
+<a name="283"><span class="lineNum">     283 </span>                :<span class="lineCov">        950 :            m_param.weight_heading_error;</span></a>
 <a name="284"><span class="lineNum">     284 </span>                :            :   }</a>
 <a name="285"><span class="lineNum">     285 </span>                :            :   /**</a>
 <a name="286"><span class="lineNum">     286 </span>                :            :    * @brief return the squared velocity weight of the heading error for the given curvature</a>
 <a name="287"><span class="lineNum">     287 </span>                :            :    */</a>
-<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">        800 :   inline float64_t getWeightHeadingErrorSqVel(const float64_t curvature)</span></a>
+<a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">        950 :   inline float64_t getWeightHeadingErrorSqVel(const float64_t curvature)</span></a>
 <a name="289"><span class="lineNum">     289 </span>                :            :   {</a>
-<a name="290"><span class="lineNum">     290 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 800 times"> + </span>]:<span class="lineCov">        800 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_heading_error_squared_vel :</span></a>
-<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">        800 :            m_param.weight_heading_error_squared_vel;</span></a>
+<a name="290"><span class="lineNum">     290 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 950 times"> + </span>]:<span class="lineCov">        950 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_heading_error_squared_vel :</span></a>
+<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">        950 :            m_param.weight_heading_error_squared_vel;</span></a>
 <a name="292"><span class="lineNum">     292 </span>                :            :   }</a>
 <a name="293"><span class="lineNum">     293 </span>                :            :   /**</a>
 <a name="294"><span class="lineNum">     294 </span>                :            :    * @brief return the weight of the steer input for the given curvature</a>
 <a name="295"><span class="lineNum">     295 </span>                :            :    */</a>
-<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">        800 :   inline float64_t getWeightSteerInput(const float64_t curvature)</span></a>
+<a name="296"><span class="lineNum">     296 </span>                :<span class="lineCov">        950 :   inline float64_t getWeightSteerInput(const float64_t curvature)</span></a>
 <a name="297"><span class="lineNum">     297 </span>                :            :   {</a>
-<a name="298"><span class="lineNum">     298 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 800 times"> + </span>]:<span class="lineCov">        800 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_steering_input :</span></a>
-<a name="299"><span class="lineNum">     299 </span>                :<span class="lineCov">        800 :            m_param.weight_steering_input;</span></a>
+<a name="298"><span class="lineNum">     298 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 950 times"> + </span>]:<span class="lineCov">        950 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_steering_input :</span></a>
+<a name="299"><span class="lineNum">     299 </span>                :<span class="lineCov">        950 :            m_param.weight_steering_input;</span></a>
 <a name="300"><span class="lineNum">     300 </span>                :            :   }</a>
 <a name="301"><span class="lineNum">     301 </span>                :            :   /**</a>
 <a name="302"><span class="lineNum">     302 </span>                :            :    * @brief return the squared velocity weight of the steer input for the given curvature</a>
 <a name="303"><span class="lineNum">     303 </span>                :            :    */</a>
-<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">        800 :   inline float64_t getWeightSteerInputSqVel(const float64_t curvature)</span></a>
+<a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">        950 :   inline float64_t getWeightSteerInputSqVel(const float64_t curvature)</span></a>
 <a name="305"><span class="lineNum">     305 </span>                :            :   {</a>
-<a name="306"><span class="lineNum">     306 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 800 times"> + </span>]:<span class="lineCov">        800 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_steering_input_squared_vel :</span></a>
-<a name="307"><span class="lineNum">     307 </span>                :<span class="lineCov">        800 :            m_param.weight_steering_input_squared_vel;</span></a>
+<a name="306"><span class="lineNum">     306 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 950 times"> + </span>]:<span class="lineCov">        950 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_steering_input_squared_vel :</span></a>
+<a name="307"><span class="lineNum">     307 </span>                :<span class="lineCov">        950 :            m_param.weight_steering_input_squared_vel;</span></a>
 <a name="308"><span class="lineNum">     308 </span>                :            :   }</a>
 <a name="309"><span class="lineNum">     309 </span>                :            :   /**</a>
 <a name="310"><span class="lineNum">     310 </span>                :            :    * @brief return the weight of the lateral jerk for the given curvature</a>
 <a name="311"><span class="lineNum">     311 </span>                :            :    */</a>
-<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">        784 :   inline float64_t getWeightLatJerk(const float64_t curvature)</span></a>
+<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">        931 :   inline float64_t getWeightLatJerk(const float64_t curvature)</span></a>
 <a name="313"><span class="lineNum">     313 </span>                :            :   {</a>
-<a name="314"><span class="lineNum">     314 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 784 times"> + </span>]:<span class="lineCov">        784 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_lat_jerk :</span></a>
-<a name="315"><span class="lineNum">     315 </span>                :<span class="lineCov">        784 :            m_param.weight_lat_jerk;</span></a>
+<a name="314"><span class="lineNum">     314 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 931 times"> + </span>]:<span class="lineCov">        931 :     return isLowCurvature(curvature) ? m_param.low_curvature_weight_lat_jerk :</span></a>
+<a name="315"><span class="lineNum">     315 </span>                :<span class="lineCov">        931 :            m_param.weight_lat_jerk;</span></a>
 <a name="316"><span class="lineNum">     316 </span>                :            :   }</a>
 <a name="317"><span class="lineNum">     317 </span>                :            :   /**</a>
 <a name="318"><span class="lineNum">     318 </span>                :            :    * @brief return the weight of the steering rate for the given curvature</a>

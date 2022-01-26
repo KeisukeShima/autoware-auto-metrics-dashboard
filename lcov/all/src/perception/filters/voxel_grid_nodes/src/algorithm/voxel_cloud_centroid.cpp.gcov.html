@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-25 21:01:21</td>
+            <td class="headerValue">2022-01-26 20:43:16</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -122,16 +122,16 @@
 <a name="44"><span class="lineNum">      44 </span>                :<span class="lineCov">          4 : }</span></a>
 <a name="45"><span class="lineNum">      45 </span>                :            : </a>
 <a name="46"><span class="lineNum">      46 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">        454 : void VoxelCloudCentroid::insert(</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">        486 : void VoxelCloudCentroid::insert(</span></a>
 <a name="48"><span class="lineNum">      48 </span>                :            :   const sensor_msgs::msg::PointCloud2 &amp; msg)</a>
 <a name="49"><span class="lineNum">      49 </span>                :            : {</a>
-<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">        454 :   m_cloud.header = msg.header;</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">        486 :   m_cloud.header = msg.header;</span></a>
 <a name="51"><span class="lineNum">      51 </span>                :            : </a>
 <a name="52"><span class="lineNum">      52 </span>                :            :   // Verify the consistency of PointCloud msg</a>
-<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">        454 :   const auto data_length = msg.width * msg.height * msg.point_step;</span></a>
-<a name="54"><span class="lineNum">      54 </span>  [<span class="branchCov" title="Branch 0 was taken 400 times"> + </span><span class="branchCov" title="Branch 1 was taken 54 times"> + </span><span class="branchCov" title="Branch 2 was taken 396 times"> + </span><span class="branchCov" title="Branch 3 was taken 4 times"> + </span> :<span class="lineCov">        454 :   if ((msg.data.size() != msg.row_step) || (data_length != msg.row_step)) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 450 times"> + </span><span class="branchCov" title="Branch 5 was taken 4 times"> + </span>]
-<a name="55"><span class="lineNum">      55 </span>        [<span class="branchCov" title="Branch 0 was taken 450 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        450 :     throw std::runtime_error(&quot;VoxelCloudCentroid: Malformed PointCloud2&quot;);</span></a>
+<a name="53"><span class="lineNum">      53 </span>                :<span class="lineCov">        486 :   const auto data_length = msg.width * msg.height * msg.point_step;</span></a>
+<a name="54"><span class="lineNum">      54 </span>  [<span class="branchCov" title="Branch 0 was taken 438 times"> + </span><span class="branchCov" title="Branch 1 was taken 48 times"> + </span><span class="branchCov" title="Branch 2 was taken 434 times"> + </span><span class="branchCov" title="Branch 3 was taken 4 times"> + </span> :<span class="lineCov">        486 :   if ((msg.data.size() != msg.row_step) || (data_length != msg.row_step)) {</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 482 times"> + </span><span class="branchCov" title="Branch 5 was taken 4 times"> + </span>]
+<a name="55"><span class="lineNum">      55 </span>        [<span class="branchCov" title="Branch 0 was taken 482 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        482 :     throw std::runtime_error(&quot;VoxelCloudCentroid: Malformed PointCloud2&quot;);</span></a>
 <a name="56"><span class="lineNum">      56 </span>                :            :   }</a>
 <a name="57"><span class="lineNum">      57 </span>                :            :   // Verify the point cloud format and assign correct point_step</a>
 <a name="58"><span class="lineNum">      58 </span>                :<span class="lineCov">          4 :   constexpr auto field_size = sizeof(decltype(autoware::common::types::PointXYZIF::x));</span></a>
