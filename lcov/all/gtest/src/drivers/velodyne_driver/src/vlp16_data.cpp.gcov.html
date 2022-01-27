@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-26 20:20:40</td>
+            <td class="headerValue">2022-01-27 20:23:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">8</td>
@@ -110,20 +110,20 @@
 <a name="32"><span class="lineNum">      32 </span>                :<span class="lineCov">          8 :     static_cast&lt;uint16_t&gt;(std::ceil(60.0E6F / (rpm * FIRE_SEQ_OFFSET_US * 2.0F)));</span></a>
 <a name="33"><span class="lineNum">      33 </span>                :<span class="lineCov">          8 : }</span></a>
 <a name="34"><span class="lineNum">      34 </span>                :            : </a>
-<a name="35"><span class="lineNum">      35 </span>                :<span class="lineCov">    8303230 : uint32_t VLP16Data::azimuth_offset(uint16_t, uint32_t, uint32_t pt_id) const</span></a>
+<a name="35"><span class="lineNum">      35 </span>                :<span class="lineCov">    8343170 : uint32_t VLP16Data::azimuth_offset(uint16_t, uint32_t, uint32_t pt_id) const</span></a>
 <a name="36"><span class="lineNum">      36 </span>                :            : {</a>
-<a name="37"><span class="lineNum">      37 </span>                :<span class="lineCov">    8303230 :   return m_azimuth_ind[pt_id];</span></a>
+<a name="37"><span class="lineNum">      37 </span>                :<span class="lineCov">    8343170 :   return m_azimuth_ind[pt_id];</span></a>
 <a name="38"><span class="lineNum">      38 </span>                :            : }</a>
 <a name="39"><span class="lineNum">      39 </span>                :            : </a>
-<a name="40"><span class="lineNum">      40 </span>                :<span class="lineCov">    8303230 : uint32_t VLP16Data::altitude(uint16_t, uint32_t, uint32_t pt_id) const</span></a>
+<a name="40"><span class="lineNum">      40 </span>                :<span class="lineCov">    8343170 : uint32_t VLP16Data::altitude(uint16_t, uint32_t, uint32_t pt_id) const</span></a>
 <a name="41"><span class="lineNum">      41 </span>                :            : {</a>
-<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">    8303230 :   return m_altitude_ind[pt_id % NUM_LASERS];</span></a>
+<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">    8343170 :   return m_altitude_ind[pt_id % NUM_LASERS];</span></a>
 <a name="43"><span class="lineNum">      43 </span>                :            : }</a>
 <a name="44"><span class="lineNum">      44 </span>                :            : </a>
-<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">    8303230 : uint16_t VLP16Data::seq_id(uint16_t num_blocks, uint32_t pt_id) const noexcept</span></a>
+<a name="45"><span class="lineNum">      45 </span>                :<span class="lineCov">    8343170 : uint16_t VLP16Data::seq_id(uint16_t num_blocks, uint32_t pt_id) const noexcept</span></a>
 <a name="46"><span class="lineNum">      46 </span>                :            : {</a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">    8303230 :   const auto num_seqs = static_cast&lt;uint16_t&gt;(NUM_SEQUENCES_PER_BLOCK * num_blocks);</span></a>
-<a name="48"><span class="lineNum">      48 </span>        [<span class="branchCov" title="Branch 0 was taken 4151620 times"> + </span><span class="branchCov" title="Branch 1 was taken 4151620 times"> + </span>]:<span class="lineCov">    8303230 :   return (pt_id &lt; NUM_LASERS) ? num_seqs : static_cast&lt;uint16_t&gt;(num_seqs + uint16_t{1U});</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">    8343170 :   const auto num_seqs = static_cast&lt;uint16_t&gt;(NUM_SEQUENCES_PER_BLOCK * num_blocks);</span></a>
+<a name="48"><span class="lineNum">      48 </span>        [<span class="branchCov" title="Branch 0 was taken 4171580 times"> + </span><span class="branchCov" title="Branch 1 was taken 4171580 times"> + </span>]:<span class="lineCov">    8343170 :   return (pt_id &lt; NUM_LASERS) ? num_seqs : static_cast&lt;uint16_t&gt;(num_seqs + uint16_t{1U});</span></a>
 <a name="49"><span class="lineNum">      49 </span>                :            : }</a>
 <a name="50"><span class="lineNum">      50 </span>                :            : </a>
 <a name="51"><span class="lineNum">      51 </span>                :<span class="lineCov">          8 : void VLP16Data::init_azimuth_table(const float32_t rpm)</span></a>
@@ -143,18 +143,18 @@
 <a name="65"><span class="lineNum">      65 </span>                :            :   }</a>
 <a name="66"><span class="lineNum">      66 </span>                :<span class="lineCov">          8 : }</span></a>
 <a name="67"><span class="lineNum">      67 </span>                :            : </a>
-<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">     259512 : std::pair&lt;bool8_t, uint16_t&gt; VLP16Data::check_flag(const BlockFlag &amp; flag)</span></a>
+<a name="68"><span class="lineNum">      68 </span>                :<span class="lineCov">     260760 : std::pair&lt;bool8_t, uint16_t&gt; VLP16Data::check_flag(const BlockFlag &amp; flag)</span></a>
 <a name="69"><span class="lineNum">      69 </span>                :            : {</a>
-<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 259476 times"> + </span><span class="branchCov" title="Branch 1 was taken 36 times"> + </span>]:<span class="lineCov">     518988 :   const auto valid = (flag[0U] == static_cast&lt;uint8_t&gt;(0xFF)) &amp;&amp;</span></a>
-<a name="71"><span class="lineNum">      71 </span>        [<span class="branchCov" title="Branch 0 was taken 259476 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">     259476 :     (flag[1U] == static_cast&lt;uint8_t&gt;(0xEE));</span></a>
+<a name="70"><span class="lineNum">      70 </span>        [<span class="branchCov" title="Branch 0 was taken 260724 times"> + </span><span class="branchCov" title="Branch 1 was taken 36 times"> + </span>]:<span class="lineCov">     521484 :   const auto valid = (flag[0U] == static_cast&lt;uint8_t&gt;(0xFF)) &amp;&amp;</span></a>
+<a name="71"><span class="lineNum">      71 </span>        [<span class="branchCov" title="Branch 0 was taken 260724 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">     260724 :     (flag[1U] == static_cast&lt;uint8_t&gt;(0xEE));</span></a>
 <a name="72"><span class="lineNum">      72 </span>                :            : </a>
-<a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 259512 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">     259512 :   return std::make_pair(valid, 0U);</span></a>
+<a name="73"><span class="lineNum">      73 </span>        [<span class="branchCov" title="Branch 0 was taken 260760 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">     260760 :   return std::make_pair(valid, 0U);</span></a>
 <a name="74"><span class="lineNum">      74 </span>                :            : }</a>
 <a name="75"><span class="lineNum">      75 </span>                :            : </a>
 <a name="76"><span class="lineNum">      76 </span>                :            : </a>
-<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">     259476 : uint16_t VLP16Data::num_blocks_per_revolution() const noexcept</span></a>
+<a name="77"><span class="lineNum">      77 </span>                :<span class="lineCov">     260724 : uint16_t VLP16Data::num_blocks_per_revolution() const noexcept</span></a>
 <a name="78"><span class="lineNum">      78 </span>                :            : {</a>
-<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">     259476 :   return m_num_blocks_per_revolution;</span></a>
+<a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">     260724 :   return m_num_blocks_per_revolution;</span></a>
 <a name="80"><span class="lineNum">      80 </span>                :            : }</a>
 <a name="81"><span class="lineNum">      81 </span>                :            : </a>
 <a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">          8 : void VLP16Data::init_altitude_table()</span></a>

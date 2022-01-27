@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-26 20:43:16</td>
+            <td class="headerValue">2022-01-27 20:47:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">18</td>
@@ -121,9 +121,9 @@
 <a name="43"><span class="lineNum">      43 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 51 times"> + </span>]:<span class="lineCov">         51 :   if (!a) {</span></a>
 <a name="44"><span class="lineNum">      44 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
 <a name="45"><span class="lineNum">      45 </span>                :            :   }</a>
-<a name="46"><span class="lineNum">      46 </span>        [<span class="branchCov" title="Branch 0 was taken 1358 times"> + </span><span class="branchCov" title="Branch 1 was taken 51 times"> + </span>]:<span class="lineCov">       1409 :   for (uint64_t i = 1; i &lt; a-&gt;size(); ++i) {</span></a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       1358 :     const float64_t da = a-&gt;at(i) - a-&gt;at(i - 1);</span></a>
-<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">       1358 :     a-&gt;at(i) = a-&gt;at(i - 1) + autoware::common::helper_functions::wrap_angle(da);</span></a>
+<a name="46"><span class="lineNum">      46 </span>        [<span class="branchCov" title="Branch 0 was taken 1335 times"> + </span><span class="branchCov" title="Branch 1 was taken 51 times"> + </span>]:<span class="lineCov">       1386 :   for (uint64_t i = 1; i &lt; a-&gt;size(); ++i) {</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       1335 :     const float64_t da = a-&gt;at(i) - a-&gt;at(i - 1);</span></a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">       1335 :     a-&gt;at(i) = a-&gt;at(i - 1) + autoware::common::helper_functions::wrap_angle(da);</span></a>
 <a name="49"><span class="lineNum">      49 </span>                :            :   }</a>
 <a name="50"><span class="lineNum">      50 </span>                :            : }</a>
 <a name="51"><span class="lineNum">      51 </span>                :            : </a>
@@ -370,14 +370,14 @@
 <a name="285"><span class="lineNum">     285 </span>                :<span class="lineCov">         39 :   float64_t t = 0.0;</span></a>
 <a name="286"><span class="lineNum">     286 </span>                :<span class="lineCov">         39 :   traj.relative_time.clear();</span></a>
 <a name="287"><span class="lineNum">     287 </span>        [<span class="branchCov" title="Branch 0 was taken 39 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         39 :   traj.relative_time.push_back(t);</span></a>
-<a name="288"><span class="lineNum">     288 </span>        [<span class="branchCov" title="Branch 0 was taken 864 times"> + </span><span class="branchCov" title="Branch 1 was taken 39 times"> + </span>]:<span class="lineCov">        903 :   for (size_t i = 0; i &lt; traj.x.size() - 1; ++i) {</span></a>
-<a name="289"><span class="lineNum">     289 </span>  [<span class="branchCov" title="Branch 0 was taken 864 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 864 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        864 :     const float64_t dx = traj.x.at(i + 1) - traj.x.at(i);</span></a>
-<a name="290"><span class="lineNum">     290 </span>  [<span class="branchCov" title="Branch 0 was taken 864 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 864 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        864 :     const float64_t dy = traj.y.at(i + 1) - traj.y.at(i);</span></a>
-<a name="291"><span class="lineNum">     291 </span>  [<span class="branchCov" title="Branch 0 was taken 864 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 864 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        864 :     const float64_t dz = traj.z.at(i + 1) - traj.z.at(i);</span></a>
-<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">        864 :     const float64_t dist = std::sqrt(dx * dx + dy * dy + dz * dz);</span></a>
-<a name="293"><span class="lineNum">     293 </span>        [<span class="branchCov" title="Branch 0 was taken 864 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        864 :     const float64_t v = std::max(std::fabs(traj.vx.at(i)), 0.1);</span></a>
-<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">        864 :     t += (dist / v);</span></a>
-<a name="295"><span class="lineNum">     295 </span>        [<span class="branchCov" title="Branch 0 was taken 864 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        864 :     traj.relative_time.push_back(t);</span></a>
+<a name="288"><span class="lineNum">     288 </span>        [<span class="branchCov" title="Branch 0 was taken 841 times"> + </span><span class="branchCov" title="Branch 1 was taken 39 times"> + </span>]:<span class="lineCov">        880 :   for (size_t i = 0; i &lt; traj.x.size() - 1; ++i) {</span></a>
+<a name="289"><span class="lineNum">     289 </span>  [<span class="branchCov" title="Branch 0 was taken 841 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 841 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        841 :     const float64_t dx = traj.x.at(i + 1) - traj.x.at(i);</span></a>
+<a name="290"><span class="lineNum">     290 </span>  [<span class="branchCov" title="Branch 0 was taken 841 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 841 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        841 :     const float64_t dy = traj.y.at(i + 1) - traj.y.at(i);</span></a>
+<a name="291"><span class="lineNum">     291 </span>  [<span class="branchCov" title="Branch 0 was taken 841 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 841 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        841 :     const float64_t dz = traj.z.at(i + 1) - traj.z.at(i);</span></a>
+<a name="292"><span class="lineNum">     292 </span>                :<span class="lineCov">        841 :     const float64_t dist = std::sqrt(dx * dx + dy * dy + dz * dz);</span></a>
+<a name="293"><span class="lineNum">     293 </span>        [<span class="branchCov" title="Branch 0 was taken 841 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        841 :     const float64_t v = std::max(std::fabs(traj.vx.at(i)), 0.1);</span></a>
+<a name="294"><span class="lineNum">     294 </span>                :<span class="lineCov">        841 :     t += (dist / v);</span></a>
+<a name="295"><span class="lineNum">     295 </span>        [<span class="branchCov" title="Branch 0 was taken 841 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        841 :     traj.relative_time.push_back(t);</span></a>
 <a name="296"><span class="lineNum">     296 </span>                :            :   }</a>
 <a name="297"><span class="lineNum">     297 </span>                :<span class="lineCov">         39 :   return true;</span></a>
 <a name="298"><span class="lineNum">     298 </span>                :            : }</a>
@@ -389,16 +389,16 @@
 <a name="304"><span class="lineNum">     304 </span>                :<span class="lineCov">         21 :   float64_t curr_v = start_vel;</span></a>
 <a name="305"><span class="lineNum">     305 </span>                :<span class="lineCov">         21 :   traj.vx.at(start_idx) = start_vel;</span></a>
 <a name="306"><span class="lineNum">     306 </span>                :            : </a>
-<a name="307"><span class="lineNum">     307 </span>        [<span class="branchCov" title="Branch 0 was taken 703 times"> + </span><span class="branchCov" title="Branch 1 was taken 21 times"> + </span>]:<span class="lineCov">        724 :   for (size_t i = start_idx + 1; i &lt; traj.size(); ++i) {</span></a>
+<a name="307"><span class="lineNum">     307 </span>        [<span class="branchCov" title="Branch 0 was taken 694 times"> + </span><span class="branchCov" title="Branch 1 was taken 21 times"> + </span>]:<span class="lineCov">        715 :   for (size_t i = start_idx + 1; i &lt; traj.size(); ++i) {</span></a>
 <a name="308"><span class="lineNum">     308 </span>                :            :     const float64_t ds =</a>
-<a name="309"><span class="lineNum">     309 </span>                :<span class="lineCov">        703 :       std::hypot(traj.x.at(i) - traj.x.at(i - 1), traj.y.at(i) - traj.y.at(i - 1));</span></a>
+<a name="309"><span class="lineNum">     309 </span>                :<span class="lineCov">        694 :       std::hypot(traj.x.at(i) - traj.x.at(i - 1), traj.y.at(i) - traj.y.at(i - 1));</span></a>
 <a name="310"><span class="lineNum">     310 </span>                :            :     const float64_t dt = ds /</a>
-<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">        703 :       std::max(std::fabs(curr_v), std::numeric_limits&lt;float64_t&gt;::epsilon());</span></a>
-<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">        703 :     const float64_t a = tau / std::max(tau + dt, std::numeric_limits&lt;float64_t&gt;::epsilon());</span></a>
-<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">        703 :     const float64_t updated_v = a * curr_v + (1.0 - a) * traj.vx.at(i);</span></a>
-<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">        703 :     const float64_t dv = std::max(-acc_lim * dt, std::min(acc_lim * dt, updated_v - curr_v));</span></a>
-<a name="315"><span class="lineNum">     315 </span>                :<span class="lineCov">        703 :     curr_v = curr_v + dv;</span></a>
-<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">        703 :     traj.vx.at(i) = curr_v;</span></a>
+<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">        694 :       std::max(std::fabs(curr_v), std::numeric_limits&lt;float64_t&gt;::epsilon());</span></a>
+<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">        694 :     const float64_t a = tau / std::max(tau + dt, std::numeric_limits&lt;float64_t&gt;::epsilon());</span></a>
+<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">        694 :     const float64_t updated_v = a * curr_v + (1.0 - a) * traj.vx.at(i);</span></a>
+<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">        694 :     const float64_t dv = std::max(-acc_lim * dt, std::min(acc_lim * dt, updated_v - curr_v));</span></a>
+<a name="315"><span class="lineNum">     315 </span>                :<span class="lineCov">        694 :     curr_v = curr_v + dv;</span></a>
+<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">        694 :     traj.vx.at(i) = curr_v;</span></a>
 <a name="317"><span class="lineNum">     317 </span>                :            :   }</a>
 <a name="318"><span class="lineNum">     318 </span>                :<span class="lineCov">         21 :   calcMPCTrajectoryTime(traj);</span></a>
 <a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">         21 : }</span></a>
@@ -412,19 +412,19 @@
 <a name="327"><span class="lineNum">     327 </span>                :<span class="lineCov">         56 :   const float64_t my_yaw = ::motion::motion_common::to_angle(self_pose.orientation);</span></a>
 <a name="328"><span class="lineNum">     328 </span>                :<span class="lineCov">         56 :   int64_t nearest_idx = -1;</span></a>
 <a name="329"><span class="lineNum">     329 </span>                :<span class="lineCov">         56 :   float64_t min_dist_squared = std::numeric_limits&lt;float64_t&gt;::max();</span></a>
-<a name="330"><span class="lineNum">     330 </span>        [<span class="branchCov" title="Branch 0 was taken 2234 times"> + </span><span class="branchCov" title="Branch 1 was taken 56 times"> + </span>]:<span class="lineCov">       2290 :   for (size_t i = 0; i &lt; traj.size(); ++i) {</span></a>
-<a name="331"><span class="lineNum">     331 </span>                :<span class="lineCov">       2234 :     const float64_t dx = self_pose.position.x - traj.x[i];</span></a>
-<a name="332"><span class="lineNum">     332 </span>                :<span class="lineCov">       2234 :     const float64_t dy = self_pose.position.y - traj.y[i];</span></a>
-<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">       2234 :     const float64_t dist_squared = dx * dx + dy * dy;</span></a>
+<a name="330"><span class="lineNum">     330 </span>        [<span class="branchCov" title="Branch 0 was taken 2188 times"> + </span><span class="branchCov" title="Branch 1 was taken 56 times"> + </span>]:<span class="lineCov">       2244 :   for (size_t i = 0; i &lt; traj.size(); ++i) {</span></a>
+<a name="331"><span class="lineNum">     331 </span>                :<span class="lineCov">       2188 :     const float64_t dx = self_pose.position.x - traj.x[i];</span></a>
+<a name="332"><span class="lineNum">     332 </span>                :<span class="lineCov">       2188 :     const float64_t dy = self_pose.position.y - traj.y[i];</span></a>
+<a name="333"><span class="lineNum">     333 </span>                :<span class="lineCov">       2188 :     const float64_t dist_squared = dx * dx + dy * dy;</span></a>
 <a name="334"><span class="lineNum">     334 </span>                :            : </a>
 <a name="335"><span class="lineNum">     335 </span>                :            :     /* ignore when yaw error is large, for crossing path */</a>
-<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">       2234 :     const float64_t err_yaw = autoware::common::helper_functions::wrap_angle(my_yaw - traj.yaw[i]);</span></a>
-<a name="337"><span class="lineNum">     337 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2234 times"> + </span>]:<span class="lineCov">       2234 :     if (std::fabs(err_yaw) &gt; (M_PI / 3.0)) {</span></a>
+<a name="336"><span class="lineNum">     336 </span>                :<span class="lineCov">       2188 :     const float64_t err_yaw = autoware::common::helper_functions::wrap_angle(my_yaw - traj.yaw[i]);</span></a>
+<a name="337"><span class="lineNum">     337 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2188 times"> + </span>]:<span class="lineCov">       2188 :     if (std::fabs(err_yaw) &gt; (M_PI / 3.0)) {</span></a>
 <a name="338"><span class="lineNum">     338 </span>                :<span class="lineNoCov">          0 :       continue;</span></a>
 <a name="339"><span class="lineNum">     339 </span>                :            :     }</a>
-<a name="340"><span class="lineNum">     340 </span>        [<span class="branchCov" title="Branch 0 was taken 294 times"> + </span><span class="branchCov" title="Branch 1 was taken 1940 times"> + </span>]:<span class="lineCov">       2234 :     if (dist_squared &lt; min_dist_squared) {</span></a>
-<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">        294 :       min_dist_squared = dist_squared;</span></a>
-<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">        294 :       nearest_idx = static_cast&lt;int64_t&gt;(i);</span></a>
+<a name="340"><span class="lineNum">     340 </span>        [<span class="branchCov" title="Branch 0 was taken 266 times"> + </span><span class="branchCov" title="Branch 1 was taken 1922 times"> + </span>]:<span class="lineCov">       2188 :     if (dist_squared &lt; min_dist_squared) {</span></a>
+<a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">        266 :       min_dist_squared = dist_squared;</span></a>
+<a name="342"><span class="lineNum">     342 </span>                :<span class="lineCov">        266 :       nearest_idx = static_cast&lt;int64_t&gt;(i);</span></a>
 <a name="343"><span class="lineNum">     343 </span>                :            :     }</a>
 <a name="344"><span class="lineNum">     344 </span>                :            :   }</a>
 <a name="345"><span class="lineNum">     345 </span>                :<span class="lineCov">         56 :   return nearest_idx;</span></a>
@@ -440,23 +440,23 @@
 <a name="355"><span class="lineNum">     355 </span>                :<span class="lineCov">          8 :   const float64_t my_yaw = ::motion::motion_common::to_angle(self_pose.orientation);</span></a>
 <a name="356"><span class="lineNum">     356 </span>                :<span class="lineCov">          8 :   int64_t nearest_idx = -1;</span></a>
 <a name="357"><span class="lineNum">     357 </span>                :<span class="lineCov">          8 :   float64_t min_dist_squared = std::numeric_limits&lt;float64_t&gt;::max();</span></a>
-<a name="358"><span class="lineNum">     358 </span>        [<span class="branchCov" title="Branch 0 was taken 29 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         37 :   for (size_t i = 0; i &lt; traj.points.size(); ++i) {</span></a>
+<a name="358"><span class="lineNum">     358 </span>        [<span class="branchCov" title="Branch 0 was taken 28 times"> + </span><span class="branchCov" title="Branch 1 was taken 8 times"> + </span>]:<span class="lineCov">         36 :   for (size_t i = 0; i &lt; traj.points.size(); ++i) {</span></a>
 <a name="359"><span class="lineNum">     359 </span>                :            :     const float64_t dx =</a>
-<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">         29 :       self_pose.position.x - static_cast&lt;float64_t&gt;(traj.points.at(i).pose.position.x);</span></a>
+<a name="360"><span class="lineNum">     360 </span>                :<span class="lineCov">         28 :       self_pose.position.x - static_cast&lt;float64_t&gt;(traj.points.at(i).pose.position.x);</span></a>
 <a name="361"><span class="lineNum">     361 </span>                :            :     const float64_t dy =</a>
-<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">         29 :       self_pose.position.y - static_cast&lt;float64_t&gt;(traj.points.at(i).pose.position.y);</span></a>
-<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">         29 :     const float64_t dist_squared = dx * dx + dy * dy;</span></a>
+<a name="362"><span class="lineNum">     362 </span>                :<span class="lineCov">         28 :       self_pose.position.y - static_cast&lt;float64_t&gt;(traj.points.at(i).pose.position.y);</span></a>
+<a name="363"><span class="lineNum">     363 </span>                :<span class="lineCov">         28 :     const float64_t dist_squared = dx * dx + dy * dy;</span></a>
 <a name="364"><span class="lineNum">     364 </span>                :            : </a>
 <a name="365"><span class="lineNum">     365 </span>                :            :     /* ignore when yaw error is large, for crossing path */</a>
 <a name="366"><span class="lineNum">     366 </span>                :            :     const float64_t traj_yaw =</a>
-<a name="367"><span class="lineNum">     367 </span>                :<span class="lineCov">         29 :       ::motion::motion_common::to_angle(traj.points.at(i).pose.orientation);</span></a>
-<a name="368"><span class="lineNum">     368 </span>                :<span class="lineCov">         29 :     const float64_t err_yaw = autoware::common::helper_functions::wrap_angle(my_yaw - traj_yaw);</span></a>
-<a name="369"><span class="lineNum">     369 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">         29 :     if (std::fabs(err_yaw) &gt; (M_PI / 3.0)) {</span></a>
+<a name="367"><span class="lineNum">     367 </span>                :<span class="lineCov">         28 :       ::motion::motion_common::to_angle(traj.points.at(i).pose.orientation);</span></a>
+<a name="368"><span class="lineNum">     368 </span>                :<span class="lineCov">         28 :     const float64_t err_yaw = autoware::common::helper_functions::wrap_angle(my_yaw - traj_yaw);</span></a>
+<a name="369"><span class="lineNum">     369 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 28 times"> + </span>]:<span class="lineCov">         28 :     if (std::fabs(err_yaw) &gt; (M_PI / 3.0)) {</span></a>
 <a name="370"><span class="lineNum">     370 </span>                :<span class="lineNoCov">          0 :       continue;</span></a>
 <a name="371"><span class="lineNum">     371 </span>                :            :     }</a>
-<a name="372"><span class="lineNum">     372 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         29 :     if (dist_squared &lt; min_dist_squared) {</span></a>
-<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">         14 :       min_dist_squared = dist_squared;</span></a>
-<a name="374"><span class="lineNum">     374 </span>                :<span class="lineCov">         14 :       nearest_idx = static_cast&lt;int64_t&gt;(i);</span></a>
+<a name="372"><span class="lineNum">     372 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         28 :     if (dist_squared &lt; min_dist_squared) {</span></a>
+<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">         13 :       min_dist_squared = dist_squared;</span></a>
+<a name="374"><span class="lineNum">     374 </span>                :<span class="lineCov">         13 :       nearest_idx = static_cast&lt;int64_t&gt;(i);</span></a>
 <a name="375"><span class="lineNum">     375 </span>                :            :     }</a>
 <a name="376"><span class="lineNum">     376 </span>                :            :   }</a>
 <a name="377"><span class="lineNum">     377 </span>                :<span class="lineCov">          8 :   return nearest_idx;</span></a>
@@ -513,7 +513,7 @@
 <a name="417"><span class="lineNum">     417 </span>                :<span class="lineCov">         21 :   const size_t prev = static_cast&lt;size_t&gt;(std::max(nearest_idx - 1, int64_t(0)));</span></a>
 <a name="418"><span class="lineNum">     418 </span>                :<span class="lineCov">         21 :   const float64_t dist_to_next = calcSquaredDist(self_pose, traj, next);</span></a>
 <a name="419"><span class="lineNum">     419 </span>                :<span class="lineCov">         21 :   const float64_t dist_to_prev = calcSquaredDist(self_pose, traj, prev);</span></a>
-<a name="420"><span class="lineNum">     420 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchCov" title="Branch 1 was taken 14 times"> + </span>]:<span class="lineCov">         21 :   const size_t second_nearest_index = (dist_to_next &lt; dist_to_prev) ? next : prev;</span></a>
+<a name="420"><span class="lineNum">     420 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchCov" title="Branch 1 was taken 15 times"> + </span>]:<span class="lineCov">         21 :   const size_t second_nearest_index = (dist_to_next &lt; dist_to_prev) ? next : prev;</span></a>
 <a name="421"><span class="lineNum">     421 </span>                :            : </a>
 <a name="422"><span class="lineNum">     422 </span>                :<span class="lineCov">         21 :   const float64_t a_sq = calcSquaredDist(self_pose, traj, *nearest_index);</span></a>
 <a name="423"><span class="lineNum">     423 </span>                :<span class="lineCov">         21 :   const float64_t b_sq = calcSquaredDist(self_pose, traj, second_nearest_index);</span></a>
@@ -522,31 +522,31 @@
 <a name="426"><span class="lineNum">     426 </span>                :<span class="lineCov">         21 :   const float64_t c_sq = dx3 * dx3 + dy3 * dy3;</span></a>
 <a name="427"><span class="lineNum">     427 </span>                :            : </a>
 <a name="428"><span class="lineNum">     428 </span>                :            :   /* if distance between two points are too close */</a>
-<a name="429"><span class="lineNum">     429 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">         21 :   if (c_sq &lt; 1.0E-5) {</span></a>
-<a name="430"><span class="lineNum">     430 </span>                :<span class="lineCov">         14 :     nearest_pose-&gt;position.x = traj.x[*nearest_index];</span></a>
-<a name="431"><span class="lineNum">     431 </span>                :<span class="lineCov">         14 :     nearest_pose-&gt;position.y = traj.y[*nearest_index];</span></a>
-<a name="432"><span class="lineNum">     432 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         14 :     nearest_pose-&gt;orientation = getQuaternionFromYaw(traj.yaw[*nearest_index]);</span></a>
-<a name="433"><span class="lineNum">     433 </span>                :<span class="lineCov">         14 :     *nearest_time = traj.relative_time[*nearest_index];</span></a>
-<a name="434"><span class="lineNum">     434 </span>                :<span class="lineCov">         14 :     return true;</span></a>
+<a name="429"><span class="lineNum">     429 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">         21 :   if (c_sq &lt; 1.0E-5) {</span></a>
+<a name="430"><span class="lineNum">     430 </span>                :<span class="lineCov">         15 :     nearest_pose-&gt;position.x = traj.x[*nearest_index];</span></a>
+<a name="431"><span class="lineNum">     431 </span>                :<span class="lineCov">         15 :     nearest_pose-&gt;position.y = traj.y[*nearest_index];</span></a>
+<a name="432"><span class="lineNum">     432 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         15 :     nearest_pose-&gt;orientation = getQuaternionFromYaw(traj.yaw[*nearest_index]);</span></a>
+<a name="433"><span class="lineNum">     433 </span>                :<span class="lineCov">         15 :     *nearest_time = traj.relative_time[*nearest_index];</span></a>
+<a name="434"><span class="lineNum">     434 </span>                :<span class="lineCov">         15 :     return true;</span></a>
 <a name="435"><span class="lineNum">     435 </span>                :            :   }</a>
 <a name="436"><span class="lineNum">     436 </span>                :            : </a>
 <a name="437"><span class="lineNum">     437 </span>                :            :   /* linear interpolation */</a>
-<a name="438"><span class="lineNum">     438 </span>                :<span class="lineCov">          7 :   const float64_t alpha = std::max(std::min(0.5 * (c_sq - a_sq + b_sq) / c_sq, 1.0), 0.0);</span></a>
-<a name="439"><span class="lineNum">     439 </span>                :<span class="lineCov">          7 :   nearest_pose-&gt;position.x =</span></a>
-<a name="440"><span class="lineNum">     440 </span>                :<span class="lineCov">          7 :     alpha * traj.x[*nearest_index] + (1 - alpha) * traj.x[second_nearest_index];</span></a>
-<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">          7 :   nearest_pose-&gt;position.y =</span></a>
-<a name="442"><span class="lineNum">     442 </span>                :<span class="lineCov">          7 :     alpha * traj.y[*nearest_index] + (1 - alpha) * traj.y[second_nearest_index];</span></a>
+<a name="438"><span class="lineNum">     438 </span>                :<span class="lineCov">          6 :   const float64_t alpha = std::max(std::min(0.5 * (c_sq - a_sq + b_sq) / c_sq, 1.0), 0.0);</span></a>
+<a name="439"><span class="lineNum">     439 </span>                :<span class="lineCov">          6 :   nearest_pose-&gt;position.x =</span></a>
+<a name="440"><span class="lineNum">     440 </span>                :<span class="lineCov">          6 :     alpha * traj.x[*nearest_index] + (1 - alpha) * traj.x[second_nearest_index];</span></a>
+<a name="441"><span class="lineNum">     441 </span>                :<span class="lineCov">          6 :   nearest_pose-&gt;position.y =</span></a>
+<a name="442"><span class="lineNum">     442 </span>                :<span class="lineCov">          6 :     alpha * traj.y[*nearest_index] + (1 - alpha) * traj.y[second_nearest_index];</span></a>
 <a name="443"><span class="lineNum">     443 </span>                :            :   const float64_t tmp_yaw_err =</a>
-<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">          7 :     autoware::common::helper_functions::wrap_angle(</span></a>
-<a name="445"><span class="lineNum">     445 </span>                :<span class="lineCov">          7 :     traj.yaw[*nearest_index] -</span></a>
-<a name="446"><span class="lineNum">     446 </span>                :<span class="lineCov">          7 :     traj.yaw[second_nearest_index]);</span></a>
+<a name="444"><span class="lineNum">     444 </span>                :<span class="lineCov">          6 :     autoware::common::helper_functions::wrap_angle(</span></a>
+<a name="445"><span class="lineNum">     445 </span>                :<span class="lineCov">          6 :     traj.yaw[*nearest_index] -</span></a>
+<a name="446"><span class="lineNum">     446 </span>                :<span class="lineCov">          6 :     traj.yaw[second_nearest_index]);</span></a>
 <a name="447"><span class="lineNum">     447 </span>                :            :   const float64_t nearest_yaw =</a>
-<a name="448"><span class="lineNum">     448 </span>                :<span class="lineCov">          7 :     autoware::common::helper_functions::wrap_angle(</span></a>
-<a name="449"><span class="lineNum">     449 </span>                :<span class="lineCov">          7 :     traj.yaw[second_nearest_index] + alpha * tmp_yaw_err);</span></a>
-<a name="450"><span class="lineNum">     450 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          7 :   nearest_pose-&gt;orientation = getQuaternionFromYaw(nearest_yaw);</span></a>
-<a name="451"><span class="lineNum">     451 </span>                :<span class="lineCov">          7 :   *nearest_time = alpha * traj.relative_time[*nearest_index] +</span></a>
-<a name="452"><span class="lineNum">     452 </span>                :<span class="lineCov">          7 :     (1 - alpha) * traj.relative_time[second_nearest_index];</span></a>
-<a name="453"><span class="lineNum">     453 </span>                :<span class="lineCov">          7 :   return true;</span></a>
+<a name="448"><span class="lineNum">     448 </span>                :<span class="lineCov">          6 :     autoware::common::helper_functions::wrap_angle(</span></a>
+<a name="449"><span class="lineNum">     449 </span>                :<span class="lineCov">          6 :     traj.yaw[second_nearest_index] + alpha * tmp_yaw_err);</span></a>
+<a name="450"><span class="lineNum">     450 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   nearest_pose-&gt;orientation = getQuaternionFromYaw(nearest_yaw);</span></a>
+<a name="451"><span class="lineNum">     451 </span>                :<span class="lineCov">          6 :   *nearest_time = alpha * traj.relative_time[*nearest_index] +</span></a>
+<a name="452"><span class="lineNum">     452 </span>                :<span class="lineCov">          6 :     (1 - alpha) * traj.relative_time[second_nearest_index];</span></a>
+<a name="453"><span class="lineNum">     453 </span>                :<span class="lineCov">          6 :   return true;</span></a>
 <a name="454"><span class="lineNum">     454 </span>                :            : }</a>
 <a name="455"><span class="lineNum">     455 </span>                :            : </a>
 <a name="456"><span class="lineNum">     456 </span>                :<span class="lineCov">         15 : float64_t calcStopDistance(</span></a>
@@ -559,22 +559,22 @@
 <a name="463"><span class="lineNum">     463 </span>                :<span class="lineCov">         15 :   float64_t stop_dist = 0.0;</span></a>
 <a name="464"><span class="lineNum">     464 </span>                :            : </a>
 <a name="465"><span class="lineNum">     465 </span>                :            :   // search forward</a>
-<a name="466"><span class="lineNum">     466 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         15 :   if (std::fabs(origin_velocity) &gt; zero_velocity) {</span></a>
-<a name="467"><span class="lineNum">     467 </span>        [<span class="branchCov" title="Branch 0 was taken 15 times"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">         21 :     for (int64_t i = origin + 1; i &lt; static_cast&lt;int64_t&gt;(current_trajectory.points.size()) - 1;</span></a>
+<a name="466"><span class="lineNum">     466 </span>        [<span class="branchCov" title="Branch 0 was taken 10 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         15 :   if (std::fabs(origin_velocity) &gt; zero_velocity) {</span></a>
+<a name="467"><span class="lineNum">     467 </span>        [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">         19 :     for (int64_t i = origin + 1; i &lt; static_cast&lt;int64_t&gt;(current_trajectory.points.size()) - 1;</span></a>
 <a name="468"><span class="lineNum">     468 </span>                :            :       ++i)</a>
 <a name="469"><span class="lineNum">     469 </span>                :            :     {</a>
-<a name="470"><span class="lineNum">     470 </span>                :<span class="lineCov">         15 :       const auto &amp; p0 = current_trajectory.points.at(static_cast&lt;size_t&gt;(i));</span></a>
-<a name="471"><span class="lineNum">     471 </span>                :<span class="lineCov">         15 :       const auto &amp; p1 = current_trajectory.points.at(static_cast&lt;size_t&gt;(i - 1));</span></a>
-<a name="472"><span class="lineNum">     472 </span>                :<span class="lineCov">         15 :       stop_dist += distance_2d&lt;float64_t&gt;(p0, p1);</span></a>
-<a name="473"><span class="lineNum">     473 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 10 times"> + </span>]:<span class="lineCov">         15 :       if (std::fabs(p0.longitudinal_velocity_mps) &lt; zero_velocity) {</span></a>
+<a name="470"><span class="lineNum">     470 </span>                :<span class="lineCov">         14 :       const auto &amp; p0 = current_trajectory.points.at(static_cast&lt;size_t&gt;(i));</span></a>
+<a name="471"><span class="lineNum">     471 </span>                :<span class="lineCov">         14 :       const auto &amp; p1 = current_trajectory.points.at(static_cast&lt;size_t&gt;(i - 1));</span></a>
+<a name="472"><span class="lineNum">     472 </span>                :<span class="lineCov">         14 :       stop_dist += distance_2d&lt;float64_t&gt;(p0, p1);</span></a>
+<a name="473"><span class="lineNum">     473 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchCov" title="Branch 1 was taken 9 times"> + </span>]:<span class="lineCov">         14 :       if (std::fabs(p0.longitudinal_velocity_mps) &lt; zero_velocity) {</span></a>
 <a name="474"><span class="lineNum">     474 </span>                :<span class="lineCov">          5 :         break;</span></a>
 <a name="475"><span class="lineNum">     475 </span>                :            :       }</a>
 <a name="476"><span class="lineNum">     476 </span>                :            :     }</a>
-<a name="477"><span class="lineNum">     477 </span>                :<span class="lineCov">         11 :     return stop_dist;</span></a>
+<a name="477"><span class="lineNum">     477 </span>                :<span class="lineCov">         10 :     return stop_dist;</span></a>
 <a name="478"><span class="lineNum">     478 </span>                :            :   }</a>
 <a name="479"><span class="lineNum">     479 </span>                :            : </a>
 <a name="480"><span class="lineNum">     480 </span>                :            :   // search backward</a>
-<a name="481"><span class="lineNum">     481 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          5 :   for (int64_t i = origin - 1; 0 &lt; i; --i) {</span></a>
+<a name="481"><span class="lineNum">     481 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          6 :   for (int64_t i = origin - 1; 0 &lt; i; --i) {</span></a>
 <a name="482"><span class="lineNum">     482 </span>                :<span class="lineCov">          4 :     const auto &amp; p0 = current_trajectory.points.at(static_cast&lt;size_t&gt;(i));</span></a>
 <a name="483"><span class="lineNum">     483 </span>                :<span class="lineCov">          4 :     const auto &amp; p1 = current_trajectory.points.at(static_cast&lt;size_t&gt;(i + 1));</span></a>
 <a name="484"><span class="lineNum">     484 </span>        [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          4 :     if (std::fabs(p0.longitudinal_velocity_mps) &gt; zero_velocity) {</span></a>
@@ -582,7 +582,7 @@
 <a name="486"><span class="lineNum">     486 </span>                :            :     }</a>
 <a name="487"><span class="lineNum">     487 </span>                :<span class="lineCov">          1 :     stop_dist -= distance_2d&lt;float64_t&gt;(p0, p1);</span></a>
 <a name="488"><span class="lineNum">     488 </span>                :            :   }</a>
-<a name="489"><span class="lineNum">     489 </span>                :<span class="lineCov">          4 :   return stop_dist;</span></a>
+<a name="489"><span class="lineNum">     489 </span>                :<span class="lineCov">          5 :   return stop_dist;</span></a>
 <a name="490"><span class="lineNum">     490 </span>                :            : }</a>
 <a name="491"><span class="lineNum">     491 </span>                :            : </a>
 <a name="492"><span class="lineNum">     492 </span>                :            : }  // namespace MPCUtils</a>

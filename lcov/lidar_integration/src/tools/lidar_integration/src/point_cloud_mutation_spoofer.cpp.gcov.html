@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-26 20:43:01</td>
+            <td class="headerValue">2022-01-27 20:47:30</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -164,10 +164,10 @@
 <a name="77"><span class="lineNum">      77 </span>                :            :   std::chrono::milliseconds match_timeout)</a>
 <a name="78"><span class="lineNum">      78 </span>                :            : {</a>
 <a name="79"><span class="lineNum">      79 </span>                :<span class="lineCov">          3 :   const auto match_start = std::chrono::steady_clock::now();</span></a>
-<a name="80"><span class="lineNum">      80 </span>  [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchCov" title="Branch 3 was taken 3 times"> + </span>]:<span class="lineCov">          5 :   while (m_pub-&gt;get_subscription_count() &lt; num_expected_subs) {</span></a>
-<a name="81"><span class="lineNum">      81 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          2 :     rclcpp::sleep_for(std::chrono::milliseconds(100));</span></a>
-<a name="82"><span class="lineNum">      82 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          2 :     if (std::chrono::steady_clock::now() - match_start &gt; match_timeout) {</span></a>
-<span class="lineNum">         </span>         <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 2 times"> + </span>]
+<a name="80"><span class="lineNum">      80 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchCov" title="Branch 3 was taken 3 times"> + </span>]:<span class="lineCov">          6 :   while (m_pub-&gt;get_subscription_count() &lt; num_expected_subs) {</span></a>
+<a name="81"><span class="lineNum">      81 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">          3 :     rclcpp::sleep_for(std::chrono::milliseconds(100));</span></a>
+<a name="82"><span class="lineNum">      82 </span>  [<span class="branchCov" title="Branch 0 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 3 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          3 :     if (std::chrono::steady_clock::now() - match_start &gt; match_timeout) {</span></a>
+<span class="lineNum">         </span>         <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 3 times"> + </span>]
 <a name="83"><span class="lineNum">      83 </span>                :            :       throw std::runtime_error(</a>
 <a name="84"><span class="lineNum">      84 </span>                :            :               &quot;PointCloudMutationSpooferNode: couldn't match &quot;</a>
 <a name="85"><span class="lineNum">      85 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :               &quot;any subscriptions within the initialization time budget.&quot;);</span></a>
@@ -189,59 +189,59 @@
 <a name="101"><span class="lineNum">     101 </span>                :            :   }</a>
 <a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">          3 : }</span></a>
 <a name="103"><span class="lineNum">     103 </span>                :            : </a>
-<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">        662 : void PointCloudMutationSpooferNode::task_function()</span></a>
+<a name="104"><span class="lineNum">     104 </span>                :<span class="lineCov">        653 : void PointCloudMutationSpooferNode::task_function()</span></a>
 <a name="105"><span class="lineNum">     105 </span>                :            : {</a>
-<a name="106"><span class="lineNum">     106 </span>        [<span class="branchCov" title="Branch 0 was taken 659 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">        662 :   while (m_running.load(std::memory_order_relaxed)) {</span></a>
-<a name="107"><span class="lineNum">     107 </span>                :<span class="lineCov">        659 :     m_msg.width = static_cast&lt;uint32_t&gt;(m_dis_width(m_mt));</span></a>
+<a name="106"><span class="lineNum">     106 </span>        [<span class="branchCov" title="Branch 0 was taken 650 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">        653 :   while (m_running.load(std::memory_order_relaxed)) {</span></a>
+<a name="107"><span class="lineNum">     107 </span>                :<span class="lineCov">        650 :     m_msg.width = static_cast&lt;uint32_t&gt;(m_dis_width(m_mt));</span></a>
 <a name="108"><span class="lineNum">     108 </span>                :            : </a>
-<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">        659 :     uint32_t data_length = static_cast&lt;uint32_t&gt;(m_dis_row_step(m_mt));</span></a>
-<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">        659 :     m_msg.row_step = data_length;</span></a>
+<a name="109"><span class="lineNum">     109 </span>                :<span class="lineCov">        650 :     uint32_t data_length = static_cast&lt;uint32_t&gt;(m_dis_row_step(m_mt));</span></a>
+<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">        650 :     m_msg.row_step = data_length;</span></a>
 <a name="111"><span class="lineNum">     111 </span>                :            : </a>
-<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">        659 :     uint32_t capacity = m_msg.row_step * m_msg.height;</span></a>
+<a name="112"><span class="lineNum">     112 </span>                :<span class="lineCov">        650 :     uint32_t capacity = m_msg.row_step * m_msg.height;</span></a>
 <a name="113"><span class="lineNum">     113 </span>                :            : </a>
-<a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">        659 :     m_msg.data.clear();</span></a>
-<a name="115"><span class="lineNum">     115 </span>                :<span class="lineCov">        659 :     m_msg.data.reserve(capacity);</span></a>
+<a name="114"><span class="lineNum">     114 </span>                :<span class="lineCov">        650 :     m_msg.data.clear();</span></a>
+<a name="115"><span class="lineNum">     115 </span>                :<span class="lineCov">        650 :     m_msg.data.reserve(capacity);</span></a>
 <a name="116"><span class="lineNum">     116 </span>                :            : </a>
-<a name="117"><span class="lineNum">     117 </span>        [<span class="branchCov" title="Branch 0 was taken 168852000 times"> + </span><span class="branchCov" title="Branch 1 was taken 659 times"> + </span>]:<span class="lineCov">  168852000 :     for (std::size_t i = 0; i &lt; capacity; ++i) {</span></a>
-<a name="118"><span class="lineNum">     118 </span>        [<span class="branchCov" title="Branch 0 was taken 168852000 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">  168852000 :       m_msg.data.push_back(static_cast&lt;uint8_t&gt;(m_dis_data(m_mt)));</span></a>
+<a name="117"><span class="lineNum">     117 </span>        [<span class="branchCov" title="Branch 0 was taken 168992000 times"> + </span><span class="branchCov" title="Branch 1 was taken 650 times"> + </span>]:<span class="lineCov">  168992000 :     for (std::size_t i = 0; i &lt; capacity; ++i) {</span></a>
+<a name="118"><span class="lineNum">     118 </span>        [<span class="branchCov" title="Branch 0 was taken 168992000 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">  168992000 :       m_msg.data.push_back(static_cast&lt;uint8_t&gt;(m_dis_data(m_mt)));</span></a>
 <a name="119"><span class="lineNum">     119 </span>                :            :     }</a>
 <a name="120"><span class="lineNum">     120 </span>                :            : </a>
-<a name="121"><span class="lineNum">     121 </span>  [<span class="branchCov" title="Branch 0 was taken 36 times"> + </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span><span class="branchCov" title="Branch 2 was taken 37 times"> + </span><span class="branchCov" title="Branch 3 was taken 39 times"> + </span> :<span class="lineCov">        659 :     switch (m_dice(m_mt)) {</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 43 times"> + </span><span class="branchCov" title="Branch 5 was taken 475 times"> + </span>]
-<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">         36 :       case 0:</span></a>
+<a name="121"><span class="lineNum">     121 </span>  [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 38 times"> + </span><span class="branchCov" title="Branch 2 was taken 40 times"> + </span><span class="branchCov" title="Branch 3 was taken 38 times"> + </span> :<span class="lineCov">        650 :     switch (m_dice(m_mt)) {</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 37 times"> + </span><span class="branchCov" title="Branch 5 was taken 462 times"> + </span>]
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">         35 :       case 0:</span></a>
 <a name="123"><span class="lineNum">     123 </span>                :            :         // Shuffle the data randomly.</a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         36 :         std::random_shuffle(m_msg.data.begin(), m_msg.data.end());</span></a>
-<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         36 :         break;</span></a>
-<a name="126"><span class="lineNum">     126 </span>                :<span class="lineCov">         29 :       case 1:</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">         35 :         std::random_shuffle(m_msg.data.begin(), m_msg.data.end());</span></a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">         35 :         break;</span></a>
+<a name="126"><span class="lineNum">     126 </span>                :<span class="lineCov">         38 :       case 1:</span></a>
 <a name="127"><span class="lineNum">     127 </span>                :            :         // Data length is not as described. Equation not holds.</a>
-<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         29 :         m_msg.row_step = static_cast&lt;uint32_t&gt;(m_dis_row_step(m_mt));</span></a>
-<a name="129"><span class="lineNum">     129 </span>                :<span class="lineCov">         29 :         break;</span></a>
-<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         37 :       case 2:</span></a>
+<a name="128"><span class="lineNum">     128 </span>                :<span class="lineCov">         38 :         m_msg.row_step = static_cast&lt;uint32_t&gt;(m_dis_row_step(m_mt));</span></a>
+<a name="129"><span class="lineNum">     129 </span>                :<span class="lineCov">         38 :         break;</span></a>
+<a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">         40 :       case 2:</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            :         // change in frequency, or simulate communication delay.</a>
 <a name="132"><span class="lineNum">     132 </span>                :            :         // This will introduce 0~12ms lag.</a>
-<a name="133"><span class="lineNum">     133 </span>        [<span class="branchCov" title="Branch 0 was taken 37 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         37 :         std::this_thread::sleep_for(std::chrono::milliseconds(m_dis_data(m_mt) / 20U));</span></a>
-<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">         37 :         break;</span></a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">         39 :       case 3:</span></a>
+<a name="133"><span class="lineNum">     133 </span>        [<span class="branchCov" title="Branch 0 was taken 40 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         40 :         std::this_thread::sleep_for(std::chrono::milliseconds(m_dis_data(m_mt) / 20U));</span></a>
+<a name="134"><span class="lineNum">     134 </span>                :<span class="lineCov">         40 :         break;</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">         38 :       case 3:</span></a>
 <a name="136"><span class="lineNum">     136 </span>                :            :         // not full scan</a>
-<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">         39 :         m_msg.data.resize(m_msg.row_step * 3U / 4U);</span></a>
-<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         39 :         break;</span></a>
-<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         43 :       case 4:</span></a>
+<a name="137"><span class="lineNum">     137 </span>                :<span class="lineCov">         38 :         m_msg.data.resize(m_msg.row_step * 3U / 4U);</span></a>
+<a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">         38 :         break;</span></a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         37 :       case 4:</span></a>
 <a name="140"><span class="lineNum">     140 </span>                :            :         // data from rosbag message in the future?</a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         43 :         break;</span></a>
-<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">        475 :       default:</span></a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">        475 :         break;</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         37 :         break;</span></a>
+<a name="142"><span class="lineNum">     142 </span>                :<span class="lineCov">        462 :       default:</span></a>
+<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">        462 :         break;</span></a>
 <a name="144"><span class="lineNum">     144 </span>                :            :     }</a>
 <a name="145"><span class="lineNum">     145 </span>                :            : </a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">        659 :     this-&gt;m_pub-&gt;publish(this-&gt;m_msg);</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">        650 :     this-&gt;m_pub-&gt;publish(this-&gt;m_msg);</span></a>
 <a name="147"><span class="lineNum">     147 </span>                :            : </a>
-<a name="148"><span class="lineNum">     148 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 659 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        659 :     LIDAR_INTEGRATION_INFO(&quot;New message is published. m_msg.data.size=%lu&quot;, m_msg.data.size());</span></a>
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 659 times"> + </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 659 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 659 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
-<span class="lineNum">         </span><span class="branchCov" title="Branch 14 was taken 659 times"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchCov" title="Branch 16 was taken 659 times"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 659 times"> + </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 659 times"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 659 times"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 24 was taken 659 times"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span>]
+<a name="148"><span class="lineNum">     148 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 650 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        650 :     LIDAR_INTEGRATION_INFO(&quot;New message is published. m_msg.data.size=%lu&quot;, m_msg.data.size());</span></a>
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 650 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 650 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 650 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 14 was taken 650 times"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchCov" title="Branch 16 was taken 650 times"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 650 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 650 times"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 650 times"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 24 was taken 650 times"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span>]
 <a name="149"><span class="lineNum">     149 </span>                :            : </a>
-<a name="150"><span class="lineNum">     150 </span>        [<span class="branchCov" title="Branch 0 was taken 659 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        659 :     std::this_thread::sleep_for(std::chrono::milliseconds(m_sleep_time));</span></a>
+<a name="150"><span class="lineNum">     150 </span>        [<span class="branchCov" title="Branch 0 was taken 650 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        650 :     std::this_thread::sleep_for(std::chrono::milliseconds(m_sleep_time));</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            :   }</a>
 <a name="152"><span class="lineNum">     152 </span>                :<span class="lineCov">          3 : }</span></a>
 <a name="153"><span class="lineNum">     153 </span>                :            : }  // namespace lidar_integration</a>

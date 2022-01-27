@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-26 20:43:16</td>
+            <td class="headerValue">2022-01-27 20:47:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">21</td>
@@ -833,8 +833,8 @@
 <a name="614"><span class="lineNum">     614 </span>                :            :     /* get reference input (feed-forward) */</a>
 <a name="615"><span class="lineNum">     615 </span>        [<span class="branchCov" title="Branch 0 was taken 950 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        950 :     m_vehicle_model_ptr-&gt;setCurvature(ref_smooth_k);</span></a>
 <a name="616"><span class="lineNum">     616 </span>        [<span class="branchCov" title="Branch 0 was taken 950 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        950 :     m_vehicle_model_ptr-&gt;calculateReferenceInput(Uref);</span></a>
-<a name="617"><span class="lineNum">     617 </span>  [<span class="branchCov" title="Branch 0 was taken 950 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 850 times"> + </span><span class="branchCov" title="Branch 3 was taken 100 times"> + </span>]:<span class="lineCov">        950 :     if (std::fabs(Uref(0, 0)) &lt; DEG2RAD * m_param.zero_ff_steer_deg) {</span></a>
-<a name="618"><span class="lineNum">     618 </span>        [<span class="branchCov" title="Branch 0 was taken 850 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        850 :       Uref(0, 0) = 0.0;  // ignore curvature noise</span></a>
+<a name="617"><span class="lineNum">     617 </span>  [<span class="branchCov" title="Branch 0 was taken 950 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 900 times"> + </span><span class="branchCov" title="Branch 3 was taken 50 times"> + </span>]:<span class="lineCov">        950 :     if (std::fabs(Uref(0, 0)) &lt; DEG2RAD * m_param.zero_ff_steer_deg) {</span></a>
+<a name="618"><span class="lineNum">     618 </span>        [<span class="branchCov" title="Branch 0 was taken 900 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        900 :       Uref(0, 0) = 0.0;  // ignore curvature noise</span></a>
 <a name="619"><span class="lineNum">     619 </span>                :            :     }</a>
 <a name="620"><span class="lineNum">     620 </span>  [<span class="branchCov" title="Branch 0 was taken 950 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 950 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span>]:<span class="lineCov">        950 :     m.Urefex.block(i * DIM_U, 0, DIM_U, 1) = Uref;</span></a>
 <a name="621"><span class="lineNum">     621 </span>                :            :   }</a>
@@ -842,7 +842,7 @@
 <a name="623"><span class="lineNum">     623 </span>                :            :   /* add lateral jerk : weight for (v * {u(i) - u(i-1)} )^2 */</a>
 <a name="624"><span class="lineNum">     624 </span>        [<span class="branchCov" title="Branch 0 was taken 931 times"> + </span><span class="branchCov" title="Branch 1 was taken 19 times"> + </span>]:<span class="lineCov">        950 :   for (int64_t i = 0; i &lt; N - 1; ++i) {</span></a>
 <a name="625"><span class="lineNum">     625 </span>                :<span class="lineCov">        931 :     const float64_t ref_vx = reference_trajectory.vx[static_cast&lt;size_t&gt;(i)];</span></a>
-<a name="626"><span class="lineNum">     626 </span>  [<span class="branchCov" title="Branch 0 was taken 585 times"> + </span><span class="branchCov" title="Branch 1 was taken 346 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 346 times"> + </span>]:<span class="lineCov">        931 :     m_sign_vx = ref_vx &gt; ep ? 1 : (ref_vx &lt; -ep ? -1 : m_sign_vx);</span></a>
+<a name="626"><span class="lineNum">     626 </span>  [<span class="branchCov" title="Branch 0 was taken 559 times"> + </span><span class="branchCov" title="Branch 1 was taken 372 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 372 times"> + </span>]:<span class="lineCov">        931 :     m_sign_vx = ref_vx &gt; ep ? 1 : (ref_vx &lt; -ep ? -1 : m_sign_vx);</span></a>
 <a name="627"><span class="lineNum">     627 </span>                :<span class="lineCov">        931 :     const float64_t ref_k = reference_trajectory.k[static_cast&lt;size_t&gt;(i)] * m_sign_vx;</span></a>
 <a name="628"><span class="lineNum">     628 </span>                :<span class="lineCov">        931 :     const float64_t j = ref_vx * ref_vx * getWeightLatJerk(ref_k) / (DT * DT);</span></a>
 <a name="629"><span class="lineNum">     629 </span>  [<span class="branchCov" title="Branch 0 was taken 931 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 931 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">        931 :     const Eigen::Matrix2d J = (Eigen::Matrix2d() &lt;&lt; j, -j, -j, j).finished();</span></a>
