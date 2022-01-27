@@ -1,17 +1,17 @@
 {
-  "package": "all",
+  "package": "osqp_interface",
   "value": [
     {
       "label": "all",
-      "line": 63.0,
-      "function": 61.7,
-      "branch": 36.0
+      "line": 100.0,
+      "function": 100.0,
+      "branch": 58.5
     },
     {
       "label": "gtest",
-      "line": 59.8,
-      "function": 60.1,
-      "branch": 36.5
+      "line": 100.0,
+      "function": 100.0,
+      "branch": 58.5
     },
     {
       "label": "smoke_test",
@@ -21,9 +21,9 @@
     },
     {
       "label": "launch_test",
-      "line": 8.6,
-      "function": 6.1,
-      "branch": 22.5
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
     }
   ]
 }

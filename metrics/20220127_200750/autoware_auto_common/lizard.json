@@ -1,0 +1,27 @@
+{
+  "package": "autoware_auto_common",
+  "worst_value": {
+    "ccn": 205,
+    "nloc": 1088,
+    "parameter": 7,
+    "token": 7396
+  },
+  "average_value": {
+    "ccn": 3.4,
+    "nloc": 12.2,
+    "parameter": 1.4,
+    "token": 85.6
+  },
+  "over_threshold_count": {
+    "ccn": 4,
+    "nloc": 1,
+    "parameter": 1,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 33,
+    "nloc": 1,
+    "parameter": 0,
+    "token": 0
+  }
+}

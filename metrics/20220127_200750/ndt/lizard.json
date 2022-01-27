@@ -1,0 +1,27 @@
+{
+  "package": "ndt",
+  "worst_value": {
+    "ccn": 21,
+    "nloc": 81,
+    "parameter": 4,
+    "token": 770
+  },
+  "average_value": {
+    "ccn": 1.8,
+    "nloc": 9.2,
+    "parameter": 0.8,
+    "token": 67.5
+  },
+  "over_threshold_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 4,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
