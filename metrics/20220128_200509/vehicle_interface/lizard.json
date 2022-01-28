@@ -1,0 +1,27 @@
+{
+  "package": "vehicle_interface",
+  "worst_value": {
+    "ccn": 25,
+    "nloc": 121,
+    "parameter": 10,
+    "token": 958
+  },
+  "average_value": {
+    "ccn": 3.0,
+    "nloc": 12.4,
+    "parameter": 0.8,
+    "token": 75.6
+  },
+  "over_threshold_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 2,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 13,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}

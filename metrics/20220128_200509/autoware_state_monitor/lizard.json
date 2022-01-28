@@ -1,0 +1,27 @@
+{
+  "package": "autoware_state_monitor",
+  "worst_value": {
+    "ccn": 24,
+    "nloc": 86,
+    "parameter": 3,
+    "token": 531
+  },
+  "average_value": {
+    "ccn": 2.7,
+    "nloc": 13.9,
+    "parameter": 0.8,
+    "token": 77.7
+  },
+  "over_threshold_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 2,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
