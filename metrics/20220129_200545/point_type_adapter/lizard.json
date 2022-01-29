@@ -1,0 +1,27 @@
+{
+  "package": "point_type_adapter",
+  "worst_value": {
+    "ccn": 9,
+    "nloc": 56,
+    "parameter": 1,
+    "token": 382
+  },
+  "average_value": {
+    "ccn": 3.3,
+    "nloc": 22.6,
+    "parameter": 0.5,
+    "token": 125.8
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
