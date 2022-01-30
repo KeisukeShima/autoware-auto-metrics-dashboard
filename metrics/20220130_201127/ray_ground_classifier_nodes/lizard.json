@@ -1,0 +1,27 @@
+{
+  "package": "ray_ground_classifier_nodes",
+  "worst_value": {
+    "ccn": 26,
+    "nloc": 128,
+    "parameter": 1,
+    "token": 836
+  },
+  "average_value": {
+    "ccn": 7.3,
+    "nloc": 49.0,
+    "parameter": 0.5,
+    "token": 349.8
+  },
+  "over_threshold_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}

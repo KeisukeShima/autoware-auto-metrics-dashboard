@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "mpc_controller_nodes",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 5.9,
+      "function": 25.0,
+      "branch": 0.2
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 5.9,
+      "function": 25.0,
+      "branch": 0.2
     },
     {
       "label": "smoke_test",

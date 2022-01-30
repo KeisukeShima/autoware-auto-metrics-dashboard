@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "recordreplay_planner_nodes",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 25.9,
+      "function": 23.8,
+      "branch": 17.3
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 25.9,
+      "function": 23.8,
+      "branch": 17.3
     },
     {
       "label": "smoke_test",

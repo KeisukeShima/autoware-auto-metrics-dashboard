@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "ground_truth_detections",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 98.1,
+      "function": 100.0,
+      "branch": 52.4
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 98.1,
+      "function": 100.0,
+      "branch": 52.4
     },
     {
       "label": "smoke_test",

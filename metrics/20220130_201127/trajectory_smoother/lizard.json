@@ -1,0 +1,27 @@
+{
+  "package": "trajectory_smoother",
+  "worst_value": {
+    "ccn": 8,
+    "nloc": 30,
+    "parameter": 1,
+    "token": 311
+  },
+  "average_value": {
+    "ccn": 5.5,
+    "nloc": 22.0,
+    "parameter": 1.0,
+    "token": 219.5
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}

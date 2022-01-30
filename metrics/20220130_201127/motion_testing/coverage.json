@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "motion_testing",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 82.5,
+      "function": 71.4,
+      "branch": 41.9
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 82.5,
+      "function": 71.4,
+      "branch": 41.9
     },
     {
       "label": "smoke_test",

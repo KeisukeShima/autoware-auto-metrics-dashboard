@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "polygon_remover_nodes",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 57.6,
+      "function": 80.0,
+      "branch": 26.0
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 57.6,
+      "function": 80.0,
+      "branch": 26.0
     },
     {
       "label": "smoke_test",

@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "ssc_interface",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 14.1,
+      "function": 9.5,
+      "branch": 2.4
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 14.1,
+      "function": 9.5,
+      "branch": 2.4
     },
     {
       "label": "smoke_test",

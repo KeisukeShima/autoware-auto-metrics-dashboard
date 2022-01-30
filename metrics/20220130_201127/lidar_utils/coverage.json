@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "lidar_utils",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 80.9,
+      "function": 92.1,
+      "branch": 53.0
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 80.9,
+      "function": 92.1,
+      "branch": 53.0
     },
     {
       "label": "smoke_test",
@@ -21,9 +21,9 @@
     },
     {
       "label": "launch_test",
-      "line": 0.0,
-      "function": 0.0,
-      "branch": 0.0
+      "line": 22.5,
+      "function": 18.4,
+      "branch": 19.4
     }
   ]
 }

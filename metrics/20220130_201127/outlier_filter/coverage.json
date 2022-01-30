@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "outlier_filter",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 100.0,
+      "function": 100.0,
+      "branch": 57.1
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 100.0,
+      "function": 100.0,
+      "branch": 57.1
     },
     {
       "label": "smoke_test",

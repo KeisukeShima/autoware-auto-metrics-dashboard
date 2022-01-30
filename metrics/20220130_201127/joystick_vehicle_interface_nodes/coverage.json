@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "joystick_vehicle_interface_nodes",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 95.7,
+      "function": 100.0,
+      "branch": 49.7
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 95.7,
+      "function": 100.0,
+      "branch": 49.7
     },
     {
       "label": "smoke_test",

@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "grid_map_ros",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 49.5,
+      "function": 57.1,
+      "branch": 11.9
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 49.5,
+      "function": 57.1,
+      "branch": 11.8
     },
     {
       "label": "smoke_test",
@@ -21,9 +21,9 @@
     },
     {
       "label": "launch_test",
-      "line": 0.0,
-      "function": 0.0,
-      "branch": 0.0
+      "line": 5.7,
+      "function": 2.9,
+      "branch": 0.6
     }
   ]
 }

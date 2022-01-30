@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "trajectory_planner_node_base",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 70.0,
+      "function": 83.3,
+      "branch": 18.2
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 70.0,
+      "function": 83.3,
+      "branch": 18.2
     },
     {
       "label": "smoke_test",

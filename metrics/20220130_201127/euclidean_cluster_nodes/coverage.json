@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "euclidean_cluster_nodes",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 30.7,
+      "function": 22.2,
+      "branch": 33.8
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 30.7,
+      "function": 22.2,
+      "branch": 33.8
     },
     {
       "label": "smoke_test",

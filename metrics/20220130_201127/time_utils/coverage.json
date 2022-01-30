@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "time_utils",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 97.4,
+      "function": 100.0,
+      "branch": 54.5
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 97.4,
+      "function": 100.0,
+      "branch": 54.5
     },
     {
       "label": "smoke_test",

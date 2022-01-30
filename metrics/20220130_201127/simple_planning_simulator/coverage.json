@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "simple_planning_simulator",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 92.6,
+      "function": 90.0,
+      "branch": 44.5
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 92.6,
+      "function": 90.0,
+      "branch": 44.5
     },
     {
       "label": "smoke_test",

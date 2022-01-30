@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower_nodes",
+  "package": "trajectory_smoother",
   "value": [
     {
       "label": "all",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 100.0,
+      "function": 100.0,
+      "branch": 90.9
     },
     {
       "label": "gtest",
-      "line": 76.2,
-      "function": 79.0,
-      "branch": 33.4
+      "line": 100.0,
+      "function": 100.0,
+      "branch": 90.9
     },
     {
       "label": "smoke_test",
