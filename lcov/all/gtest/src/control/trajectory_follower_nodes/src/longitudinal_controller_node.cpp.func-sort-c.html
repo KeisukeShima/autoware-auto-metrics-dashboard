@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-29 20:21:31</td>
+            <td class="headerValue">2022-01-30 20:29:22</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">23</td>
@@ -113,7 +113,7 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#216">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::callbackTrajectory(std::shared_ptr&lt;autoware_auto_planning_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&gt;)</a></td>
-              <td class="coverFnHi">9</td>
+              <td class="coverFnHi">8</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#866">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::applyVelocityFeedback(autoware::motion::control::trajectory_follower_nodes::LongitudinalController::Motion, double, double)</a></td>
@@ -125,22 +125,46 @@
             </tr>
     <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#551">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::calcCtrlCmd(autoware::motion::control::trajectory_follower_nodes::LongitudinalController::ControlState const&amp;, geometry_msgs::msg::Pose_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware::motion::control::trajectory_follower_nodes::LongitudinalController::ControlData const&amp;)</a></td>
-              <td class="coverFnHi">12</td>
+              <td class="coverFnHi">11</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#747">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::storeAccelCmd(double)</a></td>
-              <td class="coverFnHi">12</td>
+              <td class="coverFnHi">11</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#724">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::calcFilteredAcc(double, autoware::motion::control::trajectory_follower_nodes::LongitudinalController::ControlData const&amp;)</a></td>
-              <td class="coverFnHi">12</td>
+              <td class="coverFnHi">11</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#906">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::updateDebugVelAcc(autoware::motion::control::trajectory_follower_nodes::LongitudinalController::Motion const&amp;, geometry_msgs::msg::Pose_&lt;std::allocator&lt;void&gt; &gt; const&amp;, autoware::motion::control::trajectory_follower_nodes::LongitudinalController::ControlData const&amp;)</a></td>
-              <td class="coverFnHi">12</td>
+              <td class="coverFnHi">11</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#473">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::updateControlState(autoware::motion::control::trajectory_follower_nodes::LongitudinalController::ControlState, autoware::motion::control::trajectory_follower_nodes::LongitudinalController::ControlData const&amp;)</a></td>
+              <td class="coverFnHi">11</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#892">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::updatePitchDebugValues(double, double, double)</a></td>
+              <td class="coverFnHi">11</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#708">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::getCurrentShift(unsigned long) const</a></td>
+              <td class="coverFnHi">11</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#773">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::applySlopeCompensation(double, double, autoware::motion::control::trajectory_follower_nodes::LongitudinalController::Shift) const</a></td>
+              <td class="coverFnHi">11</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#407">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::getControlData(geometry_msgs::msg::Pose_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
+              <td class="coverFnHi">12</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#627">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::publishCtrlCmd(autoware::motion::control::trajectory_follower_nodes::LongitudinalController::Motion const&amp;, double)</a></td>
+              <td class="coverFnHi">12</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#645">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::publishDebugData(autoware::motion::control::trajectory_follower_nodes::LongitudinalController::Motion const&amp;, autoware::motion::control::trajectory_follower_nodes::LongitudinalController::ControlData const&amp;)</a></td>
               <td class="coverFnHi">12</td>
             </tr>
     <tr>
@@ -148,44 +172,20 @@
               <td class="coverFnHi">12</td>
             </tr>
     <tr>
-              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#892">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::updatePitchDebugValues(double, double, double)</a></td>
-              <td class="coverFnHi">12</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#708">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::getCurrentShift(unsigned long) const</a></td>
-              <td class="coverFnHi">12</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#773">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::applySlopeCompensation(double, double, autoware::motion::control::trajectory_follower_nodes::LongitudinalController::Shift) const</a></td>
-              <td class="coverFnHi">12</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#407">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::getControlData(geometry_msgs::msg::Pose_&lt;std::allocator&lt;void&gt; &gt; const&amp;)</a></td>
-              <td class="coverFnHi">13</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#627">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::publishCtrlCmd(autoware::motion::control::trajectory_follower_nodes::LongitudinalController::Motion const&amp;, double)</a></td>
-              <td class="coverFnHi">13</td>
-            </tr>
-    <tr>
-              <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#645">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::publishDebugData(autoware::motion::control::trajectory_follower_nodes::LongitudinalController::Motion const&amp;, autoware::motion::control::trajectory_follower_nodes::LongitudinalController::ControlData const&amp;)</a></td>
-              <td class="coverFnHi">13</td>
-            </tr>
-    <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#677">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::getDt()</a></td>
-              <td class="coverFnHi">13</td>
+              <td class="coverFnHi">12</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#692">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::getCurrentMotion() const</a></td>
-              <td class="coverFnHi">13</td>
+              <td class="coverFnHi">12</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#358">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::callbackTimerControl()</a></td>
-              <td class="coverFnHi">19</td>
+              <td class="coverFnHi">18</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="longitudinal_controller_node.cpp.gcov.html#787">autoware::motion::control::trajectory_follower_nodes::LongitudinalController::calcInterpolatedTargetValue(autoware_auto_planning_msgs::msg::Trajectory_&lt;std::allocator&lt;void&gt; &gt; const&amp;, geometry_msgs::msg::Point_&lt;std::allocator&lt;void&gt; &gt; const&amp;, unsigned long) const</a></td>
-              <td class="coverFnHi">22</td>
+              <td class="coverFnHi">21</td>
             </tr>
   </table>
   <br>

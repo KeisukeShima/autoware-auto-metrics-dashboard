@@ -31,18 +31,18 @@
             <td class="headerValue">coverage.filtered</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">338</td>
+            <td class="headerCovTableEntry">340</td>
             <td class="headerCovTableEntry">512</td>
-            <td class="headerCovTableEntryLo">66.0 %</td>
+            <td class="headerCovTableEntryLo">66.4 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-29 20:21:48</td>
+            <td class="headerValue">2022-01-30 20:29:43</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">30</td>
+            <td class="headerCovTableEntry">31</td>
             <td class="headerCovTableEntry">46</td>
-            <td class="headerCovTableEntryLo">65.2 %</td>
+            <td class="headerCovTableEntryLo">67.4 %</td>
           </tr>
           <tr>
             <td class="headerItem">Legend:</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">316</td>
+            <td class="headerCovTableEntry">329</td>
             <td class="headerCovTableEntry">1297</td>
-            <td class="headerCovTableEntryLo">24.4 %</td>
+            <td class="headerCovTableEntryLo">25.4 %</td>
           </tr>
           <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -174,7 +174,7 @@
 <a name="82"><span class="lineNum">      82 </span>  [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         32 :     node.create_subscription&lt;MiscReport&gt;(</span></a>
 <span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
 <a name="83"><span class="lineNum">      83 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         16 :     &quot;misc_report&quot;, rclcpp::QoS{2},</span></a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">         58 :     [this](MiscReport::SharedPtr msg) {on_misc_report(msg);});</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">         66 :     [this](MiscReport::SharedPtr msg) {on_misc_report(msg);});</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            :   m_other_acts_rpt_sub =</a>
 <a name="86"><span class="lineNum">      86 </span>  [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         32 :     node.create_subscription&lt;OtherActuatorsReport&gt;(</span></a>
 <span class="lineNum">         </span>   <span class="branchCov" title="Branch 4 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchCov" title="Branch 6 was taken 8 times"> + </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span>]
@@ -830,28 +830,28 @@
 <a name="591"><span class="lineNum">     591 </span>                :<span class="lineCov">         58 :   m_seen_gear_rpt = true;</span></a>
 <a name="592"><span class="lineNum">     592 </span>                :<span class="lineCov">         58 : }</span></a>
 <a name="593"><span class="lineNum">     593 </span>                :            : </a>
-<a name="594"><span class="lineNum">     594 </span>                :<span class="lineCov">         50 : void NERaptorInterface::on_misc_report(const MiscReport::SharedPtr &amp; msg)</span></a>
+<a name="594"><span class="lineNum">     594 </span>                :<span class="lineCov">         58 : void NERaptorInterface::on_misc_report(const MiscReport::SharedPtr &amp; msg)</span></a>
 <a name="595"><span class="lineNum">     595 </span>                :            : {</a>
-<a name="596"><span class="lineNum">     596 </span>                :<span class="lineCov">         50 :   const float32_t speed_mps = msg-&gt;vehicle_speed * KPH_TO_MPS_RATIO * m_travel_direction;</span></a>
-<a name="597"><span class="lineNum">     597 </span>                :<span class="lineCov">         50 :   const float32_t wheelbase = m_rear_axle_to_cog + m_front_axle_to_cog;</span></a>
-<a name="598"><span class="lineNum">     598 </span>                :<span class="lineCov">         50 :   float32_t delta{0.0F};</span></a>
-<a name="599"><span class="lineNum">     599 </span>                :<span class="lineCov">         50 :   float32_t beta{0.0F};</span></a>
-<a name="600"><span class="lineNum">     600 </span>                :<span class="lineCov">         50 :   float32_t prev_speed_mps{0.0F};</span></a>
-<a name="601"><span class="lineNum">     601 </span>                :<span class="lineCov">         50 :   float32_t dT{0.0F};</span></a>
+<a name="596"><span class="lineNum">     596 </span>                :<span class="lineCov">         58 :   const float32_t speed_mps = msg-&gt;vehicle_speed * KPH_TO_MPS_RATIO * m_travel_direction;</span></a>
+<a name="597"><span class="lineNum">     597 </span>                :<span class="lineCov">         58 :   const float32_t wheelbase = m_rear_axle_to_cog + m_front_axle_to_cog;</span></a>
+<a name="598"><span class="lineNum">     598 </span>                :<span class="lineCov">         58 :   float32_t delta{0.0F};</span></a>
+<a name="599"><span class="lineNum">     599 </span>                :<span class="lineCov">         58 :   float32_t beta{0.0F};</span></a>
+<a name="600"><span class="lineNum">     600 </span>                :<span class="lineCov">         58 :   float32_t prev_speed_mps{0.0F};</span></a>
+<a name="601"><span class="lineNum">     601 </span>                :<span class="lineCov">         58 :   float32_t dT{0.0F};</span></a>
 <a name="602"><span class="lineNum">     602 </span>                :            : </a>
-<a name="603"><span class="lineNum">     603 </span>                :<span class="lineCov">         50 :   odometry().velocity_mps = speed_mps;</span></a>
+<a name="603"><span class="lineNum">     603 </span>                :<span class="lineCov">         58 :   odometry().velocity_mps = speed_mps;</span></a>
 <a name="604"><span class="lineNum">     604 </span>                :            : </a>
-<a name="605"><span class="lineNum">     605 </span>                :<span class="lineCov">         50 :   state_report().fuel = static_cast&lt;uint8_t&gt;(msg-&gt;fuel_level);</span></a>
+<a name="605"><span class="lineNum">     605 </span>                :<span class="lineCov">         58 :   state_report().fuel = static_cast&lt;uint8_t&gt;(msg-&gt;fuel_level);</span></a>
 <a name="606"><span class="lineNum">     606 </span>                :            : </a>
-<a name="607"><span class="lineNum">     607 </span>        [<span class="branchCov" title="Branch 0 was taken 21 times"> + </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span>]:<span class="lineCov">         50 :   if (msg-&gt;drive_by_wire_enabled) {</span></a>
+<a name="607"><span class="lineNum">     607 </span>        [<span class="branchCov" title="Branch 0 was taken 21 times"> + </span><span class="branchCov" title="Branch 1 was taken 37 times"> + </span>]:<span class="lineCov">         58 :   if (msg-&gt;drive_by_wire_enabled) {</span></a>
 <a name="608"><span class="lineNum">     608 </span>                :<span class="lineCov">         21 :     state_report().mode = VehicleStateReport::MODE_AUTONOMOUS;</span></a>
 <a name="609"><span class="lineNum">     609 </span>                :            :   } else {</a>
-<a name="610"><span class="lineNum">     610 </span>                :<span class="lineCov">         29 :     state_report().mode = VehicleStateReport::MODE_MANUAL;</span></a>
+<a name="610"><span class="lineNum">     610 </span>                :<span class="lineCov">         37 :     state_report().mode = VehicleStateReport::MODE_MANUAL;</span></a>
 <a name="611"><span class="lineNum">     611 </span>                :            :   }</a>
-<a name="612"><span class="lineNum">     612 </span>  [<span class="branchCov" title="Branch 0 was taken 21 times"> + </span><span class="branchCov" title="Branch 1 was taken 29 times"> + </span><span class="branchCov" title="Branch 2 was taken 21 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         50 :   m_dbw_state_machine-&gt;dbw_feedback(msg-&gt;by_wire_ready &amp;&amp; !msg-&gt;general_driver_activity);</span></a>
-<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
+<a name="612"><span class="lineNum">     612 </span>  [<span class="branchCov" title="Branch 0 was taken 21 times"> + </span><span class="branchCov" title="Branch 1 was taken 37 times"> + </span><span class="branchCov" title="Branch 2 was taken 21 times"> + </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         58 :   m_dbw_state_machine-&gt;dbw_feedback(msg-&gt;by_wire_ready &amp;&amp; !msg-&gt;general_driver_activity);</span></a>
+<span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 58 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span>]
 <a name="613"><span class="lineNum">     613 </span>                :            : </a>
-<a name="614"><span class="lineNum">     614 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         50 :   std::lock_guard&lt;std::mutex&gt; guard_vks(m_vehicle_kin_state_mutex);</span></a>
+<a name="614"><span class="lineNum">     614 </span>        [<span class="branchCov" title="Branch 0 was taken 58 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         58 :   std::lock_guard&lt;std::mutex&gt; guard_vks(m_vehicle_kin_state_mutex);</span></a>
 <a name="615"><span class="lineNum">     615 </span>                :            : </a>
 <a name="616"><span class="lineNum">     616 </span>                :            :   /**</a>
 <a name="617"><span class="lineNum">     617 </span>                :            :    * Input velocity is (assumed to be) measured at the rear axle, but we're</a>
@@ -859,20 +859,20 @@
 <a name="619"><span class="lineNum">     619 </span>                :            :    * Lateral velocity increases linearly from 0 at the rear axle to the maximum</a>
 <a name="620"><span class="lineNum">     620 </span>                :            :    * at the front axle, where it is tan(δ)*v_lon.</a>
 <a name="621"><span class="lineNum">     621 </span>                :            :    */</a>
-<a name="622"><span class="lineNum">     622 </span>                :<span class="lineCov">         50 :   delta = m_vehicle_kin_state.state.front_wheel_angle_rad;</span></a>
-<a name="623"><span class="lineNum">     623 </span>        [<span class="branchCov" title="Branch 0 was taken 46 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         50 :   if (m_seen_misc_rpt &amp;&amp;</span></a>
-<a name="624"><span class="lineNum">     624 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchCov" title="Branch 1 was taken 19 times"> + </span>]:<span class="lineCov">         46 :     m_seen_wheel_spd_rpt)</span></a>
+<a name="622"><span class="lineNum">     622 </span>                :<span class="lineCov">         58 :   delta = m_vehicle_kin_state.state.front_wheel_angle_rad;</span></a>
+<a name="623"><span class="lineNum">     623 </span>        [<span class="branchCov" title="Branch 0 was taken 54 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">         58 :   if (m_seen_misc_rpt &amp;&amp;</span></a>
+<a name="624"><span class="lineNum">     624 </span>        [<span class="branchCov" title="Branch 0 was taken 35 times"> + </span><span class="branchCov" title="Branch 1 was taken 19 times"> + </span>]:<span class="lineCov">         54 :     m_seen_wheel_spd_rpt)</span></a>
 <a name="625"><span class="lineNum">     625 </span>                :            :   {</a>
-<a name="626"><span class="lineNum">     626 </span>                :<span class="lineCov">         27 :     prev_speed_mps = m_vehicle_kin_state.state.longitudinal_velocity_mps;</span></a>
+<a name="626"><span class="lineNum">     626 </span>                :<span class="lineCov">         35 :     prev_speed_mps = m_vehicle_kin_state.state.longitudinal_velocity_mps;</span></a>
 <a name="627"><span class="lineNum">     627 </span>                :            :   }</a>
-<a name="628"><span class="lineNum">     628 </span>                :<span class="lineCov">         50 :   m_vehicle_kin_state.state.longitudinal_velocity_mps = speed_mps;</span></a>
-<a name="629"><span class="lineNum">     629 </span>                :<span class="lineCov">        100 :   m_vehicle_kin_state.state.lateral_velocity_mps = (m_rear_axle_to_cog / wheelbase) * speed_mps *</span></a>
-<a name="630"><span class="lineNum">     630 </span>                :<span class="lineCov">         50 :     std::tan(delta);</span></a>
+<a name="628"><span class="lineNum">     628 </span>                :<span class="lineCov">         58 :   m_vehicle_kin_state.state.longitudinal_velocity_mps = speed_mps;</span></a>
+<a name="629"><span class="lineNum">     629 </span>                :<span class="lineCov">        116 :   m_vehicle_kin_state.state.lateral_velocity_mps = (m_rear_axle_to_cog / wheelbase) * speed_mps *</span></a>
+<a name="630"><span class="lineNum">     630 </span>                :<span class="lineCov">         58 :     std::tan(delta);</span></a>
 <a name="631"><span class="lineNum">     631 </span>                :            : </a>
-<a name="632"><span class="lineNum">     632 </span>        [<span class="branchCov" title="Branch 0 was taken 50 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         50 :   m_vehicle_kin_state.header.frame_id = &quot;odom&quot;;</span></a>
+<a name="632"><span class="lineNum">     632 </span>        [<span class="branchCov" title="Branch 0 was taken 58 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         58 :   m_vehicle_kin_state.header.frame_id = &quot;odom&quot;;</span></a>
 <a name="633"><span class="lineNum">     633 </span>                :            : </a>
 <a name="634"><span class="lineNum">     634 </span>                :            :   // need &gt;1 message in to calculate dT</a>
-<a name="635"><span class="lineNum">     635 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 46 times"> + </span>]:<span class="lineCov">         50 :   if (!m_seen_misc_rpt) {</span></a>
+<a name="635"><span class="lineNum">     635 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 54 times"> + </span>]:<span class="lineCov">         58 :   if (!m_seen_misc_rpt) {</span></a>
 <a name="636"><span class="lineNum">     636 </span>                :<span class="lineCov">          4 :     m_seen_misc_rpt = true;</span></a>
 <a name="637"><span class="lineNum">     637 </span>                :<span class="lineCov">          4 :     m_vehicle_kin_state.header.stamp = msg-&gt;header.stamp;</span></a>
 <a name="638"><span class="lineNum">     638 </span>                :            :     // Position = (0,0) at time = 0</a>
@@ -884,41 +884,41 @@
 <a name="644"><span class="lineNum">     644 </span>                :            :   }</a>
 <a name="645"><span class="lineNum">     645 </span>                :            : </a>
 <a name="646"><span class="lineNum">     646 </span>                :            :   // Calculate dT (seconds)</a>
-<a name="647"><span class="lineNum">     647 </span>                :<span class="lineCov">         46 :   dT = static_cast&lt;float32_t&gt;(msg-&gt;header.stamp.sec - m_vehicle_kin_state.header.stamp.sec);</span></a>
-<a name="648"><span class="lineNum">     648 </span>                :<span class="lineCov">         46 :   dT +=</span></a>
-<a name="649"><span class="lineNum">     649 </span>                :<span class="lineCov">         46 :     static_cast&lt;float32_t&gt;(msg-&gt;header.stamp.nanosec - m_vehicle_kin_state.header.stamp.nanosec) /</span></a>
+<a name="647"><span class="lineNum">     647 </span>                :<span class="lineCov">         54 :   dT = static_cast&lt;float32_t&gt;(msg-&gt;header.stamp.sec - m_vehicle_kin_state.header.stamp.sec);</span></a>
+<a name="648"><span class="lineNum">     648 </span>                :<span class="lineCov">         54 :   dT +=</span></a>
+<a name="649"><span class="lineNum">     649 </span>                :<span class="lineCov">         54 :     static_cast&lt;float32_t&gt;(msg-&gt;header.stamp.nanosec - m_vehicle_kin_state.header.stamp.nanosec) /</span></a>
 <a name="650"><span class="lineNum">     650 </span>                :            :     1000000000.0F;</a>
 <a name="651"><span class="lineNum">     651 </span>                :            : </a>
-<a name="652"><span class="lineNum">     652 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 46 times"> + </span>]:<span class="lineCov">         46 :   if (dT &lt; 0.0F) {</span></a>
-<a name="653"><span class="lineNum">     653 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     RCLCPP_ERROR_THROTTLE(</span></a>
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span><span class="branchNoExec" title="Branch 13 was not executed"> # </span> 
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 14 was not executed"> # </span><span class="branchNoExec" title="Branch 15 was not executed"> # </span><span class="branchNoExec" title="Branch 16 was not executed"> # </span><span class="branchNoExec" title="Branch 17 was not executed"> # </span><span class="branchNoExec" title="Branch 18 was not executed"> # </span> 
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 19 was not executed"> # </span><span class="branchNoExec" title="Branch 20 was not executed"> # </span><span class="branchNoExec" title="Branch 21 was not executed"> # </span><span class="branchNoExec" title="Branch 22 was not executed"> # </span><span class="branchNoExec" title="Branch 23 was not executed"> # </span> 
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 24 was not executed"> # </span><span class="branchNoExec" title="Branch 25 was not executed"> # </span><span class="branchNoExec" title="Branch 26 was not executed"> # </span><span class="branchNoExec" title="Branch 27 was not executed"> # </span><span class="branchNoExec" title="Branch 28 was not executed"> # </span> 
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 29 was not executed"> # </span><span class="branchNoExec" title="Branch 30 was not executed"> # </span><span class="branchNoExec" title="Branch 31 was not executed"> # </span><span class="branchNoExec" title="Branch 32 was not executed"> # </span><span class="branchNoExec" title="Branch 33 was not executed"> # </span> 
-<span class="lineNum">         </span><span class="branchNoExec" title="Branch 34 was not executed"> # </span><span class="branchNoExec" title="Branch 35 was not executed"> # </span><span class="branchNoExec" title="Branch 36 was not executed"> # </span><span class="branchNoExec" title="Branch 37 was not executed"> # </span><span class="branchNoExec" title="Branch 38 was not executed"> # </span> 
-<span class="lineNum">         </span>   <span class="branchNoExec" title="Branch 39 was not executed"> # </span><span class="branchNoExec" title="Branch 40 was not executed"> # </span><span class="branchNoExec" title="Branch 41 was not executed"> # </span><span class="branchNoExec" title="Branch 42 was not executed"> # </span> 
-<span class="lineNum">         </span>            <span class="branchNoExec" title="Branch 43 was not executed"> # </span>]
+<a name="652"><span class="lineNum">     652 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 53 times"> + </span>]:<span class="lineCov">         54 :   if (dT &lt; 0.0F) {</span></a>
+<a name="653"><span class="lineNum">     653 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          2 :     RCLCPP_ERROR_THROTTLE(</span></a>
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchNoCov" title="Branch 10 was not taken"> - </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchNoCov" title="Branch 12 was not taken"> - </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchNoCov" title="Branch 16 was not taken"> - </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchCov" title="Branch 18 was taken 1 time"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span><span class="branchNoCov" title="Branch 26 was not taken"> - </span><span class="branchCov" title="Branch 27 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 28 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 29 was not taken"> - </span><span class="branchCov" title="Branch 30 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 31 was not taken"> - </span><span class="branchCov" title="Branch 32 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 33 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 34 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 35 was not taken"> - </span><span class="branchCov" title="Branch 36 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 37 was not taken"> - </span><span class="branchCov" title="Branch 38 was taken 1 time"> + </span> 
+<span class="lineNum">         </span>   <span class="branchNoCov" title="Branch 39 was not taken"> - </span><span class="branchCov" title="Branch 40 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 41 was not taken"> - </span><span class="branchNoCov" title="Branch 42 was not taken"> - </span> 
+<span class="lineNum">         </span>            <span class="branchNoCov" title="Branch 43 was not taken"> - </span>]
 <a name="654"><span class="lineNum">     654 </span>                :            :       m_logger, m_clock, CLOCK_1_SEC,</a>
 <a name="655"><span class="lineNum">     655 </span>                :            :       &quot;Received inconsistent timestamps.&quot;);</a>
-<a name="656"><span class="lineNum">     656 </span>                :<span class="lineNoCov">          0 :     return;</span></a>
+<a name="656"><span class="lineNum">     656 </span>                :<span class="lineCov">          1 :     return;</span></a>
 <a name="657"><span class="lineNum">     657 </span>                :            :   }</a>
 <a name="658"><span class="lineNum">     658 </span>                :            : </a>
-<a name="659"><span class="lineNum">     659 </span>                :<span class="lineCov">         46 :   m_vehicle_kin_state.header.stamp = msg-&gt;header.stamp;</span></a>
+<a name="659"><span class="lineNum">     659 </span>                :<span class="lineCov">         53 :   m_vehicle_kin_state.header.stamp = msg-&gt;header.stamp;</span></a>
 <a name="660"><span class="lineNum">     660 </span>                :            : </a>
-<a name="661"><span class="lineNum">     661 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchCov" title="Branch 1 was taken 19 times"> + </span>]:<span class="lineCov">         46 :   if (m_seen_steering_rpt &amp;&amp;</span></a>
-<a name="662"><span class="lineNum">     662 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         27 :     m_seen_wheel_spd_rpt)</span></a>
+<a name="661"><span class="lineNum">     661 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchCov" title="Branch 1 was taken 19 times"> + </span>]:<span class="lineCov">         53 :   if (m_seen_steering_rpt &amp;&amp;</span></a>
+<a name="662"><span class="lineNum">     662 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         34 :     m_seen_wheel_spd_rpt)</span></a>
 <a name="663"><span class="lineNum">     663 </span>                :            :   {</a>
-<a name="664"><span class="lineNum">     664 </span>                :<span class="lineCov">         27 :     m_vehicle_kin_state.state.acceleration_mps2 = (speed_mps - prev_speed_mps) / dT;  // m/s^2</span></a>
+<a name="664"><span class="lineNum">     664 </span>                :<span class="lineCov">         34 :     m_vehicle_kin_state.state.acceleration_mps2 = (speed_mps - prev_speed_mps) / dT;  // m/s^2</span></a>
 <a name="665"><span class="lineNum">     665 </span>                :            : </a>
-<a name="666"><span class="lineNum">     666 </span>                :<span class="lineCov">         27 :     beta = std::atan2(m_rear_axle_to_cog * std::tan(delta), wheelbase);</span></a>
-<a name="667"><span class="lineNum">     667 </span>                :<span class="lineCov">         27 :     m_vehicle_kin_state.state.heading_rate_rps = std::cos(beta) * std::tan(delta) / wheelbase;</span></a>
+<a name="666"><span class="lineNum">     666 </span>                :<span class="lineCov">         34 :     beta = std::atan2(m_rear_axle_to_cog * std::tan(delta), wheelbase);</span></a>
+<a name="667"><span class="lineNum">     667 </span>                :<span class="lineCov">         34 :     m_vehicle_kin_state.state.heading_rate_rps = std::cos(beta) * std::tan(delta) / wheelbase;</span></a>
 <a name="668"><span class="lineNum">     668 </span>                :            : </a>
 <a name="669"><span class="lineNum">     669 </span>                :            :     // Update position (x, y), yaw</a>
-<a name="670"><span class="lineNum">     670 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         27 :     kinematic_bicycle_model(dT, &amp;m_vehicle_kin_state);</span></a>
+<a name="670"><span class="lineNum">     670 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         34 :     kinematic_bicycle_model(dT, &amp;m_vehicle_kin_state);</span></a>
 <a name="671"><span class="lineNum">     671 </span>                :            : </a>
-<a name="672"><span class="lineNum">     672 </span>        [<span class="branchCov" title="Branch 0 was taken 27 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         27 :     m_vehicle_kin_state_pub-&gt;publish(m_vehicle_kin_state);</span></a>
+<a name="672"><span class="lineNum">     672 </span>        [<span class="branchCov" title="Branch 0 was taken 34 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         34 :     m_vehicle_kin_state_pub-&gt;publish(m_vehicle_kin_state);</span></a>
 <a name="673"><span class="lineNum">     673 </span>                :            :   }</a>
 <a name="674"><span class="lineNum">     674 </span>                :            : }</a>
 <a name="675"><span class="lineNum">     675 </span>                :            : </a>
@@ -1100,16 +1100,16 @@
 <a name="801"><span class="lineNum">     801 </span>                :<span class="lineCov">         37 : }</span></a>
 <a name="802"><span class="lineNum">     802 </span>                :            : </a>
 <a name="803"><span class="lineNum">     803 </span>                :            : // Update x, y, heading, and heading_rate</a>
-<a name="804"><span class="lineNum">     804 </span>                :<span class="lineCov">       1094 : void NERaptorInterface::kinematic_bicycle_model(</span></a>
+<a name="804"><span class="lineNum">     804 </span>                :<span class="lineCov">       1101 : void NERaptorInterface::kinematic_bicycle_model(</span></a>
 <a name="805"><span class="lineNum">     805 </span>                :            :   float32_t dt, VehicleKinematicState * vks)</a>
 <a name="806"><span class="lineNum">     806 </span>                :            : {</a>
-<a name="807"><span class="lineNum">     807 </span>                :<span class="lineCov">       1094 :   const float32_t wheelbase = m_rear_axle_to_cog + m_front_axle_to_cog;</span></a>
+<a name="807"><span class="lineNum">     807 </span>                :<span class="lineCov">       1101 :   const float32_t wheelbase = m_rear_axle_to_cog + m_front_axle_to_cog;</span></a>
 <a name="808"><span class="lineNum">     808 </span>                :            : </a>
 <a name="809"><span class="lineNum">     809 </span>                :            :   // convert to yaw – copied from trajectory_spoofer.cpp</a>
 <a name="810"><span class="lineNum">     810 </span>                :            :   // The below formula could probably be simplified if it would be derived directly for heading</a>
-<a name="811"><span class="lineNum">     811 </span>                :<span class="lineCov">       1094 :   auto yaw = static_cast&lt;float32_t&gt;(motion::motion_common::to_angle(vks-&gt;state.pose.orientation));</span></a>
-<a name="812"><span class="lineNum">     812 </span>        [<span class="branchCov" title="Branch 0 was taken 526 times"> + </span><span class="branchCov" title="Branch 1 was taken 568 times"> + </span>]:<span class="lineCov">       1094 :   if (yaw &lt; 0) {</span></a>
-<a name="813"><span class="lineNum">     813 </span>                :<span class="lineCov">        526 :     yaw += TAU;</span></a>
+<a name="811"><span class="lineNum">     811 </span>                :<span class="lineCov">       1101 :   auto yaw = static_cast&lt;float32_t&gt;(motion::motion_common::to_angle(vks-&gt;state.pose.orientation));</span></a>
+<a name="812"><span class="lineNum">     812 </span>        [<span class="branchCov" title="Branch 0 was taken 539 times"> + </span><span class="branchCov" title="Branch 1 was taken 562 times"> + </span>]:<span class="lineCov">       1101 :   if (yaw &lt; 0) {</span></a>
+<a name="813"><span class="lineNum">     813 </span>                :<span class="lineCov">        539 :     yaw += TAU;</span></a>
 <a name="814"><span class="lineNum">     814 </span>                :            :   }</a>
 <a name="815"><span class="lineNum">     815 </span>                :            : </a>
 <a name="816"><span class="lineNum">     816 </span>                :            :   /* δ: tire angle (relative to car's main axis)</a>
@@ -1126,49 +1126,49 @@
 <a name="827"><span class="lineNum">     827 </span>                :            :    * β = arctan((m_rear_axle_to_cog*tan(δ))/wheelbase)</a>
 <a name="828"><span class="lineNum">     828 </span>                :            :    */</a>
 <a name="829"><span class="lineNum">     829 </span>                :            : </a>
-<a name="830"><span class="lineNum">     830 </span>                :<span class="lineCov">       1094 :   float32_t v0_lat = vks-&gt;state.lateral_velocity_mps;</span></a>
-<a name="831"><span class="lineNum">     831 </span>                :<span class="lineCov">       1094 :   float32_t v0_lon = vks-&gt;state.longitudinal_velocity_mps;</span></a>
-<a name="832"><span class="lineNum">     832 </span>                :<span class="lineCov">       1094 :   float32_t v0 = std::sqrt(v0_lat * v0_lat + v0_lon * v0_lon);</span></a>
-<a name="833"><span class="lineNum">     833 </span>                :<span class="lineCov">       1094 :   float32_t delta = vks-&gt;state.front_wheel_angle_rad;</span></a>
-<a name="834"><span class="lineNum">     834 </span>                :<span class="lineCov">       1094 :   float32_t a = vks-&gt;state.acceleration_mps2;</span></a>
-<a name="835"><span class="lineNum">     835 </span>                :<span class="lineCov">       1094 :   float32_t beta = std::atan2(m_rear_axle_to_cog * std::tan(delta), wheelbase);</span></a>
+<a name="830"><span class="lineNum">     830 </span>                :<span class="lineCov">       1101 :   float32_t v0_lat = vks-&gt;state.lateral_velocity_mps;</span></a>
+<a name="831"><span class="lineNum">     831 </span>                :<span class="lineCov">       1101 :   float32_t v0_lon = vks-&gt;state.longitudinal_velocity_mps;</span></a>
+<a name="832"><span class="lineNum">     832 </span>                :<span class="lineCov">       1101 :   float32_t v0 = std::sqrt(v0_lat * v0_lat + v0_lon * v0_lon);</span></a>
+<a name="833"><span class="lineNum">     833 </span>                :<span class="lineCov">       1101 :   float32_t delta = vks-&gt;state.front_wheel_angle_rad;</span></a>
+<a name="834"><span class="lineNum">     834 </span>                :<span class="lineCov">       1101 :   float32_t a = vks-&gt;state.acceleration_mps2;</span></a>
+<a name="835"><span class="lineNum">     835 </span>                :<span class="lineCov">       1101 :   float32_t beta = std::atan2(m_rear_axle_to_cog * std::tan(delta), wheelbase);</span></a>
 <a name="836"><span class="lineNum">     836 </span>                :            : </a>
 <a name="837"><span class="lineNum">     837 </span>                :            :   // This is the direction in which the POI is moving at the beginning of the</a>
 <a name="838"><span class="lineNum">     838 </span>                :            :   // integration step. &quot;Course&quot; may not be super accurate, but it's to</a>
 <a name="839"><span class="lineNum">     839 </span>                :            :   // emphasize that the POI doesn't travel in the heading direction.</a>
-<a name="840"><span class="lineNum">     840 </span>                :<span class="lineCov">       1094 :   const float32_t course = yaw + beta;</span></a>
+<a name="840"><span class="lineNum">     840 </span>                :<span class="lineCov">       1101 :   const float32_t course = yaw + beta;</span></a>
 <a name="841"><span class="lineNum">     841 </span>                :            : </a>
 <a name="842"><span class="lineNum">     842 </span>                :            :   // How much the yaw changes per meter traveled (at the reference point)</a>
 <a name="843"><span class="lineNum">     843 </span>                :            :   const float32_t yaw_change =</a>
-<a name="844"><span class="lineNum">     844 </span>                :<span class="lineCov">       1094 :     std::cos(beta) * std::tan(delta) / wheelbase;</span></a>
+<a name="844"><span class="lineNum">     844 </span>                :<span class="lineCov">       1101 :     std::cos(beta) * std::tan(delta) / wheelbase;</span></a>
 <a name="845"><span class="lineNum">     845 </span>                :            : </a>
 <a name="846"><span class="lineNum">     846 </span>                :            :   // How much the yaw rate</a>
-<a name="847"><span class="lineNum">     847 </span>                :<span class="lineCov">       1094 :   const float32_t yaw_rate = yaw_change * v0;</span></a>
+<a name="847"><span class="lineNum">     847 </span>                :<span class="lineCov">       1101 :   const float32_t yaw_rate = yaw_change * v0;</span></a>
 <a name="848"><span class="lineNum">     848 </span>                :            : </a>
 <a name="849"><span class="lineNum">     849 </span>                :            :   // Threshold chosen so as to not result in division by 0</a>
-<a name="850"><span class="lineNum">     850 </span>        [<span class="branchCov" title="Branch 0 was taken 82 times"> + </span><span class="branchCov" title="Branch 1 was taken 1012 times"> + </span>]:<span class="lineCov">       1094 :   if (std::abs(yaw_rate) &lt; 1e-18f) {</span></a>
-<a name="851"><span class="lineNum">     851 </span>                :<span class="lineCov">         82 :     vks-&gt;state.pose.position.x +=</span></a>
-<a name="852"><span class="lineNum">     852 </span>                :<span class="lineCov">         82 :       static_cast&lt;float64_t&gt;(std::cos(course) * (v0 * dt + 0.5f * a * dt * dt));</span></a>
-<a name="853"><span class="lineNum">     853 </span>                :<span class="lineCov">         82 :     vks-&gt;state.pose.position.y +=</span></a>
-<a name="854"><span class="lineNum">     854 </span>                :<span class="lineCov">         82 :       static_cast&lt;float64_t&gt;(std::sin(course) * (v0 * dt + 0.5f * a * dt * dt));</span></a>
+<a name="850"><span class="lineNum">     850 </span>        [<span class="branchCov" title="Branch 0 was taken 83 times"> + </span><span class="branchCov" title="Branch 1 was taken 1018 times"> + </span>]:<span class="lineCov">       1101 :   if (std::abs(yaw_rate) &lt; 1e-18f) {</span></a>
+<a name="851"><span class="lineNum">     851 </span>                :<span class="lineCov">         83 :     vks-&gt;state.pose.position.x +=</span></a>
+<a name="852"><span class="lineNum">     852 </span>                :<span class="lineCov">         83 :       static_cast&lt;float64_t&gt;(std::cos(course) * (v0 * dt + 0.5f * a * dt * dt));</span></a>
+<a name="853"><span class="lineNum">     853 </span>                :<span class="lineCov">         83 :     vks-&gt;state.pose.position.y +=</span></a>
+<a name="854"><span class="lineNum">     854 </span>                :<span class="lineCov">         83 :       static_cast&lt;float64_t&gt;(std::sin(course) * (v0 * dt + 0.5f * a * dt * dt));</span></a>
 <a name="855"><span class="lineNum">     855 </span>                :            :   } else {</a>
-<a name="856"><span class="lineNum">     856 </span>                :<span class="lineCov">       1012 :     vks-&gt;state.pose.position.x += static_cast&lt;float64_t&gt;(</span></a>
-<a name="857"><span class="lineNum">     857 </span>                :<span class="lineCov">       1012 :       (v0 + a * dt) / yaw_rate * std::sin(course + yaw_rate * dt) -</span></a>
-<a name="858"><span class="lineNum">     858 </span>                :<span class="lineCov">       1012 :       v0 / yaw_rate * std::sin(course) +</span></a>
-<a name="859"><span class="lineNum">     859 </span>                :<span class="lineCov">       1012 :       a / (yaw_rate * yaw_rate) * std::cos(course + yaw_rate * dt) -</span></a>
-<a name="860"><span class="lineNum">     860 </span>                :<span class="lineCov">       1012 :       a / (yaw_rate * yaw_rate) * std::cos(course));</span></a>
-<a name="861"><span class="lineNum">     861 </span>                :<span class="lineCov">       1012 :     vks-&gt;state.pose.position.y += static_cast&lt;float64_t&gt;(</span></a>
-<a name="862"><span class="lineNum">     862 </span>                :<span class="lineCov">       1012 :       -(v0 + a * dt) / yaw_rate * std::cos(course + yaw_rate * dt) +</span></a>
-<a name="863"><span class="lineNum">     863 </span>                :<span class="lineCov">       1012 :       v0 / yaw_rate * std::cos(course) +</span></a>
-<a name="864"><span class="lineNum">     864 </span>                :<span class="lineCov">       1012 :       a / (yaw_rate * yaw_rate) * std::sin(course + yaw_rate * dt) -</span></a>
-<a name="865"><span class="lineNum">     865 </span>                :<span class="lineCov">       1012 :       a / (yaw_rate * yaw_rate) * std::sin(course));</span></a>
+<a name="856"><span class="lineNum">     856 </span>                :<span class="lineCov">       1018 :     vks-&gt;state.pose.position.x += static_cast&lt;float64_t&gt;(</span></a>
+<a name="857"><span class="lineNum">     857 </span>                :<span class="lineCov">       1018 :       (v0 + a * dt) / yaw_rate * std::sin(course + yaw_rate * dt) -</span></a>
+<a name="858"><span class="lineNum">     858 </span>                :<span class="lineCov">       1018 :       v0 / yaw_rate * std::sin(course) +</span></a>
+<a name="859"><span class="lineNum">     859 </span>                :<span class="lineCov">       1018 :       a / (yaw_rate * yaw_rate) * std::cos(course + yaw_rate * dt) -</span></a>
+<a name="860"><span class="lineNum">     860 </span>                :<span class="lineCov">       1018 :       a / (yaw_rate * yaw_rate) * std::cos(course));</span></a>
+<a name="861"><span class="lineNum">     861 </span>                :<span class="lineCov">       1018 :     vks-&gt;state.pose.position.y += static_cast&lt;float64_t&gt;(</span></a>
+<a name="862"><span class="lineNum">     862 </span>                :<span class="lineCov">       1018 :       -(v0 + a * dt) / yaw_rate * std::cos(course + yaw_rate * dt) +</span></a>
+<a name="863"><span class="lineNum">     863 </span>                :<span class="lineCov">       1018 :       v0 / yaw_rate * std::cos(course) +</span></a>
+<a name="864"><span class="lineNum">     864 </span>                :<span class="lineCov">       1018 :       a / (yaw_rate * yaw_rate) * std::sin(course + yaw_rate * dt) -</span></a>
+<a name="865"><span class="lineNum">     865 </span>                :<span class="lineCov">       1018 :       a / (yaw_rate * yaw_rate) * std::sin(course));</span></a>
 <a name="866"><span class="lineNum">     866 </span>                :            :   }</a>
-<a name="867"><span class="lineNum">     867 </span>                :<span class="lineCov">       1094 :   yaw += std::cos(beta) * std::tan(delta) / wheelbase * (v0 * dt + 0.5f * a * dt * dt);</span></a>
-<a name="868"><span class="lineNum">     868 </span>                :<span class="lineCov">       1094 :   vks-&gt;state.pose.orientation = motion::motion_common::from_angle(yaw);</span></a>
+<a name="867"><span class="lineNum">     867 </span>                :<span class="lineCov">       1101 :   yaw += std::cos(beta) * std::tan(delta) / wheelbase * (v0 * dt + 0.5f * a * dt * dt);</span></a>
+<a name="868"><span class="lineNum">     868 </span>                :<span class="lineCov">       1101 :   vks-&gt;state.pose.orientation = motion::motion_common::from_angle(yaw);</span></a>
 <a name="869"><span class="lineNum">     869 </span>                :            : </a>
 <a name="870"><span class="lineNum">     870 </span>                :            :   // Rotations per second or rad per second?</a>
-<a name="871"><span class="lineNum">     871 </span>                :<span class="lineCov">       1094 :   vks-&gt;state.heading_rate_rps = yaw_rate;</span></a>
-<a name="872"><span class="lineNum">     872 </span>                :<span class="lineCov">       1094 : }</span></a>
+<a name="871"><span class="lineNum">     871 </span>                :<span class="lineCov">       1101 :   vks-&gt;state.heading_rate_rps = yaw_rate;</span></a>
+<a name="872"><span class="lineNum">     872 </span>                :<span class="lineCov">       1101 : }</span></a>
 <a name="873"><span class="lineNum">     873 </span>                :            : </a>
 <a name="874"><span class="lineNum">     874 </span>                :            : }  // namespace ne_raptor_interface</a>
 <a name="875"><span class="lineNum">     875 </span>                :            : }  // namespace autoware</a>
