@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-30 20:29:22</td>
+            <td class="headerValue">2022-01-31 20:27:01</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -117,29 +117,29 @@
 <a name="39"><span class="lineNum">      39 </span>                :            : }</a>
 <a name="40"><span class="lineNum">      40 </span>                :            : </a>
 <a name="41"><span class="lineNum">      41 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">       1843 : bool is_past_point(</span></a>
+<a name="42"><span class="lineNum">      42 </span>                :<span class="lineCov">       1835 : bool is_past_point(</span></a>
 <a name="43"><span class="lineNum">      43 </span>                :            :   const Point &amp; state,</a>
 <a name="44"><span class="lineNum">      44 </span>                :            :   const Point &amp; current_pt,</a>
 <a name="45"><span class="lineNum">      45 </span>                :            :   const Point &amp; next_pt) noexcept</a>
 <a name="46"><span class="lineNum">      46 </span>                :            : {</a>
-<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       1843 :   const auto nx = next_pt.pose.position.x - current_pt.pose.position.x;</span></a>
-<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">       1843 :   const auto ny = next_pt.pose.position.y - current_pt.pose.position.y;</span></a>
+<a name="47"><span class="lineNum">      47 </span>                :<span class="lineCov">       1835 :   const auto nx = next_pt.pose.position.x - current_pt.pose.position.x;</span></a>
+<a name="48"><span class="lineNum">      48 </span>                :<span class="lineCov">       1835 :   const auto ny = next_pt.pose.position.y - current_pt.pose.position.y;</span></a>
 <a name="49"><span class="lineNum">      49 </span>                :            : </a>
-<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">       1843 :   return is_past_point(state, next_pt, nx, ny);</span></a>
+<a name="50"><span class="lineNum">      50 </span>                :<span class="lineCov">       1835 :   return is_past_point(state, next_pt, nx, ny);</span></a>
 <a name="51"><span class="lineNum">      51 </span>                :            : }</a>
 <a name="52"><span class="lineNum">      52 </span>                :            : </a>
 <a name="53"><span class="lineNum">      53 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">       1847 : bool is_past_point(</span></a>
+<a name="54"><span class="lineNum">      54 </span>                :<span class="lineCov">       1839 : bool is_past_point(</span></a>
 <a name="55"><span class="lineNum">      55 </span>                :            :   const Point &amp; state,</a>
 <a name="56"><span class="lineNum">      56 </span>                :            :   const Point &amp; pt,</a>
 <a name="57"><span class="lineNum">      57 </span>                :            :   const Double nx,</a>
 <a name="58"><span class="lineNum">      58 </span>                :            :   const Double ny) noexcept</a>
 <a name="59"><span class="lineNum">      59 </span>                :            : {</a>
-<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">       1847 :   const auto dx = (state.pose.position.x - pt.pose.position.x);</span></a>
-<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">       1847 :   const auto dy = (state.pose.position.y - pt.pose.position.y);</span></a>
+<a name="60"><span class="lineNum">      60 </span>                :<span class="lineCov">       1839 :   const auto dx = (state.pose.position.x - pt.pose.position.x);</span></a>
+<a name="61"><span class="lineNum">      61 </span>                :<span class="lineCov">       1839 :   const auto dy = (state.pose.position.y - pt.pose.position.y);</span></a>
 <a name="62"><span class="lineNum">      62 </span>                :            : </a>
 <a name="63"><span class="lineNum">      63 </span>                :            :   // Check if state is past last_pt when projected onto the ray defined by heading</a>
-<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">       1847 :   return ((nx * dx) + (ny * dy)) &gt;= -std::numeric_limits&lt;Double&gt;::epsilon();</span></a>
+<a name="64"><span class="lineNum">      64 </span>                :<span class="lineCov">       1839 :   return ((nx * dx) + (ny * dy)) &gt;= -std::numeric_limits&lt;Double&gt;::epsilon();</span></a>
 <a name="65"><span class="lineNum">      65 </span>                :            : }</a>
 <a name="66"><span class="lineNum">      66 </span>                :            : </a>
 <a name="67"><span class="lineNum">      67 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
@@ -157,33 +157,33 @@
 <a name="79"><span class="lineNum">      79 </span>                :            : }</a>
 <a name="80"><span class="lineNum">      80 </span>                :            : </a>
 <a name="81"><span class="lineNum">      81 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">         53 : void doTransform(</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">         55 : void doTransform(</span></a>
 <a name="83"><span class="lineNum">      83 </span>                :            :   const Point &amp; t_in,</a>
 <a name="84"><span class="lineNum">      84 </span>                :            :   Point &amp; t_out,</a>
 <a name="85"><span class="lineNum">      85 </span>                :            :   const geometry_msgs::msg::TransformStamped &amp; transform) noexcept</a>
 <a name="86"><span class="lineNum">      86 </span>                :            : {</a>
-<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">        106 :   geometry_msgs::msg::PoseStamped p_in;</span></a>
-<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">         53 :   p_in.pose = t_in.pose;</span></a>
-<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">         53 :   p_in.header.stamp = transform.header.stamp;</span></a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">         53 :   geometry_msgs::msg::PoseStamped p_out;</span></a>
-<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">         53 :   tf2::doTransform(p_in, p_out, transform);</span></a>
-<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">         53 :   t_out.pose = p_out.pose;</span></a>
-<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">         53 : }</span></a>
+<a name="87"><span class="lineNum">      87 </span>                :<span class="lineCov">        110 :   geometry_msgs::msg::PoseStamped p_in;</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">         55 :   p_in.pose = t_in.pose;</span></a>
+<a name="89"><span class="lineNum">      89 </span>                :<span class="lineCov">         55 :   p_in.header.stamp = transform.header.stamp;</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">         55 :   geometry_msgs::msg::PoseStamped p_out;</span></a>
+<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">         55 :   tf2::doTransform(p_in, p_out, transform);</span></a>
+<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">         55 :   t_out.pose = p_out.pose;</span></a>
+<a name="93"><span class="lineNum">      93 </span>                :<span class="lineCov">         55 : }</span></a>
 <a name="94"><span class="lineNum">      94 </span>                :            : </a>
 <a name="95"><span class="lineNum">      95 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">         41 : void doTransform(</span></a>
+<a name="96"><span class="lineNum">      96 </span>                :<span class="lineCov">         42 : void doTransform(</span></a>
 <a name="97"><span class="lineNum">      97 </span>                :            :   const State &amp; t_in,</a>
 <a name="98"><span class="lineNum">      98 </span>                :            :   State &amp; t_out,</a>
 <a name="99"><span class="lineNum">      99 </span>                :            :   const geometry_msgs::msg::TransformStamped &amp; transform) noexcept</a>
 <a name="100"><span class="lineNum">     100 </span>                :            : {</a>
-<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">         41 :   doTransform(t_in.state, t_out.state, transform);</span></a>
-<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">         41 :   t_out.header.frame_id = transform.header.frame_id;</span></a>
-<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">         41 : }</span></a>
+<a name="101"><span class="lineNum">     101 </span>                :<span class="lineCov">         42 :   doTransform(t_in.state, t_out.state, transform);</span></a>
+<a name="102"><span class="lineNum">     102 </span>                :<span class="lineCov">         42 :   t_out.header.frame_id = transform.header.frame_id;</span></a>
+<a name="103"><span class="lineNum">     103 </span>                :<span class="lineCov">         42 : }</span></a>
 <a name="104"><span class="lineNum">     104 </span>                :            : </a>
 <a name="105"><span class="lineNum">     105 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">      12418 : Double to_angle(Orientation orientation) noexcept</span></a>
+<a name="106"><span class="lineNum">     106 </span>                :<span class="lineCov">      12430 : Double to_angle(Orientation orientation) noexcept</span></a>
 <a name="107"><span class="lineNum">     107 </span>                :            : {</a>
-<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">      12418 :   return tf2::getYaw(orientation);</span></a>
+<a name="108"><span class="lineNum">     108 </span>                :<span class="lineCov">      12430 :   return tf2::getYaw(orientation);</span></a>
 <a name="109"><span class="lineNum">     109 </span>                :            : }</a>
 <a name="110"><span class="lineNum">     110 </span>                :            : </a>
 <a name="111"><span class="lineNum">     111 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
@@ -210,28 +210,28 @@
 <a name="132"><span class="lineNum">     132 </span>                :<span class="lineCov">         44 : }</span></a>
 <a name="133"><span class="lineNum">     133 </span>                :            : </a>
 <a name="134"><span class="lineNum">     134 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">         39 : void error(const Point &amp; state, const Point &amp; ref, Diagnostic &amp; out) noexcept</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">         40 : void error(const Point &amp; state, const Point &amp; ref, Diagnostic &amp; out) noexcept</span></a>
 <a name="136"><span class="lineNum">     136 </span>                :            : {</a>
 <a name="137"><span class="lineNum">     137 </span>                :            :   {</a>
 <a name="138"><span class="lineNum">     138 </span>                :            :     // compute heading normal of reference point</a>
-<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         39 :     const auto &amp; q = ref.pose.orientation;</span></a>
-<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         39 :     const auto nx = (q.w * q.w) - (q.z * q.z);</span></a>
-<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         39 :     const auto ny = decltype(nx) {2.0} *q.w * q.z;</span></a>
+<a name="139"><span class="lineNum">     139 </span>                :<span class="lineCov">         40 :     const auto &amp; q = ref.pose.orientation;</span></a>
+<a name="140"><span class="lineNum">     140 </span>                :<span class="lineCov">         40 :     const auto nx = (q.w * q.w) - (q.z * q.z);</span></a>
+<a name="141"><span class="lineNum">     141 </span>                :<span class="lineCov">         40 :     const auto ny = decltype(nx) {2.0} *q.w * q.z;</span></a>
 <a name="142"><span class="lineNum">     142 </span>                :            :     // project state onto reference basis</a>
-<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         39 :     const auto dx = state.pose.position.x - ref.pose.position.x;</span></a>
-<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         39 :     const auto dy = state.pose.position.y - ref.pose.position.y;</span></a>
+<a name="143"><span class="lineNum">     143 </span>                :<span class="lineCov">         40 :     const auto dx = state.pose.position.x - ref.pose.position.x;</span></a>
+<a name="144"><span class="lineNum">     144 </span>                :<span class="lineCov">         40 :     const auto dy = state.pose.position.y - ref.pose.position.y;</span></a>
 <a name="145"><span class="lineNum">     145 </span>                :            :     // normals rotated +90 deg</a>
-<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">         39 :     out.lateral_error_m = static_cast&lt;Real&gt;((dx * (-ny)) + (dy * nx));</span></a>
-<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">         39 :     out.longitudinal_error_m = static_cast&lt;Real&gt;((dx * nx) + (dy * ny));</span></a>
+<a name="146"><span class="lineNum">     146 </span>                :<span class="lineCov">         40 :     out.lateral_error_m = static_cast&lt;Real&gt;((dx * (-ny)) + (dy * nx));</span></a>
+<a name="147"><span class="lineNum">     147 </span>                :<span class="lineCov">         40 :     out.longitudinal_error_m = static_cast&lt;Real&gt;((dx * nx) + (dy * ny));</span></a>
 <a name="148"><span class="lineNum">     148 </span>                :            :   }</a>
-<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">         39 :   out.velocity_error_mps = state.longitudinal_velocity_mps - ref.longitudinal_velocity_mps;</span></a>
-<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         39 :   out.acceleration_error_mps2 = state.acceleration_mps2 - ref.acceleration_mps2;</span></a>
+<a name="149"><span class="lineNum">     149 </span>                :<span class="lineCov">         40 :   out.velocity_error_mps = state.longitudinal_velocity_mps - ref.longitudinal_velocity_mps;</span></a>
+<a name="150"><span class="lineNum">     150 </span>                :<span class="lineCov">         40 :   out.acceleration_error_mps2 = state.acceleration_mps2 - ref.acceleration_mps2;</span></a>
 <a name="151"><span class="lineNum">     151 </span>                :            : </a>
 <a name="152"><span class="lineNum">     152 </span>                :            :   using autoware::common::helper_functions::wrap_angle;</a>
-<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         39 :   out.yaw_error_rad = static_cast&lt;decltype(out.yaw_error_rad)&gt;(</span></a>
-<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">         39 :     wrap_angle(to_angle(state.pose.orientation) - to_angle(ref.pose.orientation)));</span></a>
-<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">         39 :   out.yaw_rate_error_rps = state.heading_rate_rps - ref.heading_rate_rps;</span></a>
-<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">         39 : }</span></a>
+<a name="153"><span class="lineNum">     153 </span>                :<span class="lineCov">         40 :   out.yaw_error_rad = static_cast&lt;decltype(out.yaw_error_rad)&gt;(</span></a>
+<a name="154"><span class="lineNum">     154 </span>                :<span class="lineCov">         40 :     wrap_angle(to_angle(state.pose.orientation) - to_angle(ref.pose.orientation)));</span></a>
+<a name="155"><span class="lineNum">     155 </span>                :<span class="lineCov">         40 :   out.yaw_rate_error_rps = state.heading_rate_rps - ref.heading_rate_rps;</span></a>
+<a name="156"><span class="lineNum">     156 </span>                :<span class="lineCov">         40 : }</span></a>
 <a name="157"><span class="lineNum">     157 </span>                :            : }  // namespace motion_common</a>
 <a name="158"><span class="lineNum">     158 </span>                :            : }  // namespace motion</a>
 <a name="159"><span class="lineNum">     159 </span>                :            : </a>
