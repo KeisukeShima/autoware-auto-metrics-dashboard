@@ -1,0 +1,29 @@
+{
+  "package": "astar_search",
+  "value": [
+    {
+      "label": "all",
+      "line": 96.5,
+      "function": 94.1,
+      "branch": 61.0
+    },
+    {
+      "label": "gtest",
+      "line": 96.5,
+      "function": 94.1,
+      "branch": 61.0
+    },
+    {
+      "label": "smoke_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    },
+    {
+      "label": "launch_test",
+      "line": 92.9,
+      "function": 91.2,
+      "branch": 56.7
+    }
+  ]
+}

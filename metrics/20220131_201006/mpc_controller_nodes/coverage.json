@@ -1,0 +1,29 @@
+{
+  "package": "mpc_controller_nodes",
+  "value": [
+    {
+      "label": "all",
+      "line": 5.9,
+      "function": 25.0,
+      "branch": 0.2
+    },
+    {
+      "label": "gtest",
+      "line": 5.9,
+      "function": 25.0,
+      "branch": 0.2
+    },
+    {
+      "label": "smoke_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    },
+    {
+      "label": "launch_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    }
+  ]
+}
