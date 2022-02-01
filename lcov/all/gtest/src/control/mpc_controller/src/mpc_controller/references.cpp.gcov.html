@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-01-31 20:27:01</td>
+            <td class="headerValue">2022-02-01 20:22:50</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -281,14 +281,14 @@
 <span class="lineNum">         </span>         <span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchCov" title="Branch 5 was taken 555 times"> + </span>]
 <a name="203"><span class="lineNum">     203 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::logic_error{&quot;set_reference would go out of bounds! Indexing bug likely!&quot;};</span></a>
 <a name="204"><span class="lineNum">     204 </span>                :            :   }</a>
-<a name="205"><span class="lineNum">     205 </span>        [<span class="branchCov" title="Branch 0 was taken 1985 times"> + </span><span class="branchCov" title="Branch 1 was taken 555 times"> + </span>]:<span class="lineCov">       2540 :   for (auto i = Index{}; i &lt; count; ++i) {</span></a>
-<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">       1985 :     const auto &amp; pt = traj.points[traj_start + i];</span></a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">       1985 :     const auto ydx = (y_start + i) * NY;</span></a>
-<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">       1985 :     acadoVariables.y[ydx + IDY_X] = static_cast&lt;AcadoReal&gt;(pt.pose.position.x);</span></a>
-<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">       1985 :     acadoVariables.y[ydx + IDY_Y] = static_cast&lt;AcadoReal&gt;(pt.pose.position.y);</span></a>
-<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">       1985 :     acadoVariables.y[ydx + IDY_VEL_LONG] = static_cast&lt;AcadoReal&gt;(pt.longitudinal_velocity_mps);</span></a>
-<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">       1985 :     acadoVariables.y[ydx + IDY_HEADING] =</span></a>
-<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">       1985 :       static_cast&lt;AcadoReal&gt;(motion_common::to_angle(pt.pose.orientation));</span></a>
+<a name="205"><span class="lineNum">     205 </span>        [<span class="branchCov" title="Branch 0 was taken 1990 times"> + </span><span class="branchCov" title="Branch 1 was taken 555 times"> + </span>]:<span class="lineCov">       2545 :   for (auto i = Index{}; i &lt; count; ++i) {</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">       1990 :     const auto &amp; pt = traj.points[traj_start + i];</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">       1990 :     const auto ydx = (y_start + i) * NY;</span></a>
+<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">       1990 :     acadoVariables.y[ydx + IDY_X] = static_cast&lt;AcadoReal&gt;(pt.pose.position.x);</span></a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">       1990 :     acadoVariables.y[ydx + IDY_Y] = static_cast&lt;AcadoReal&gt;(pt.pose.position.y);</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">       1990 :     acadoVariables.y[ydx + IDY_VEL_LONG] = static_cast&lt;AcadoReal&gt;(pt.longitudinal_velocity_mps);</span></a>
+<a name="211"><span class="lineNum">     211 </span>                :<span class="lineCov">       1990 :     acadoVariables.y[ydx + IDY_HEADING] =</span></a>
+<a name="212"><span class="lineNum">     212 </span>                :<span class="lineCov">       1990 :       static_cast&lt;AcadoReal&gt;(motion_common::to_angle(pt.pose.orientation));</span></a>
 <a name="213"><span class="lineNum">     213 </span>                :            :   }</a>
 <a name="214"><span class="lineNum">     214 </span>                :<span class="lineCov">        555 : }</span></a>
 <a name="215"><span class="lineNum">     215 </span>                :            : </a>
