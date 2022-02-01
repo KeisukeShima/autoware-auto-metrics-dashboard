@@ -1,0 +1,29 @@
+{
+  "package": "point_type_adapter",
+  "value": [
+    {
+      "label": "all",
+      "line": 70.3,
+      "function": 90.9,
+      "branch": 26.6
+    },
+    {
+      "label": "gtest",
+      "line": 70.3,
+      "function": 90.9,
+      "branch": 26.6
+    },
+    {
+      "label": "smoke_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    },
+    {
+      "label": "launch_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    }
+  ]
+}
