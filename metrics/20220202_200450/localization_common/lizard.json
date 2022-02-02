@@ -1,0 +1,27 @@
+{
+  "package": "localization_common",
+  "worst_value": {
+    "ccn": 6,
+    "nloc": 23,
+    "parameter": 4,
+    "token": 153
+  },
+  "average_value": {
+    "ccn": 2.0,
+    "nloc": 8.5,
+    "parameter": 1.7,
+    "token": 52.3
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 1,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}

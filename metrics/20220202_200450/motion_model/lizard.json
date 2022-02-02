@@ -1,0 +1,27 @@
+{
+  "package": "motion_model",
+  "worst_value": {
+    "ccn": 2,
+    "nloc": 65,
+    "parameter": 2,
+    "token": 784
+  },
+  "average_value": {
+    "ccn": 1.2,
+    "nloc": 13.1,
+    "parameter": 1.9,
+    "token": 127.5
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
