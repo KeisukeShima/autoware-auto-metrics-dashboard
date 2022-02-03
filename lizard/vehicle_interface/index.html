@@ -55,7 +55,7 @@
 <table>
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/src/dbw_state_machine.cpp</b></td></tr>
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/src/platform_interface.cpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -68,38 +68,18 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::DbwStateMachine</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_state_report</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">8</td>
+       <td class="lesser-value">4</td>
     
 
     
-       <td class="value">36</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::enabled</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">33</td>
+       <td class="value">12</td>
     
 
     
@@ -108,14 +88,34 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::get_state</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_odometry</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::state_report</td>
+    <td></td>
+    
        <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
     
 
     
@@ -128,221 +128,7 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::dbw_feedback</td>
-    <td></td>
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="lesser-value">18</td>
-    
-
-    
-       <td class="value">78</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::control_cmd_sent</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">12</td>
-    
-
-    
-       <td class="value">41</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::state_cmd_sent</td>
-    <td></td>
-    
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">12</td>
-    
-
-    
-       <td class="value">41</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::user_request</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">10</td>
-    
-
-    
-       <td class="value">38</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::disable_and_reset</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="value">25</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-
-  <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/src/vehicle_interface_node.cpp</b></td></tr>
-
-<tr><th>Function name</th><th></th><th>
-Cyclomatic complexity
-(20)
-</th><th>LOC (200)</th><th>
-    
-       Token count
-    
-</th><th>Parameter count (6)</th></tr>
-
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::VehicleInterfaceNode</td>
-    <td></td>
-    
-       <td class="lesser-value">7</td>
-    
-
-    
-       <td class="lesser-value">78</td>
-    
-
-    
-       <td class="value">637</td>
-    
-
-    
-       <td class="lesser-value">3</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::set_filter</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">24</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::set_reference_tracker</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">24</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::set_interface</td>
-    <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">34</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::logger</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="value">14</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::get_state_machine</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_headlights_report</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -353,7 +139,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">13</td>
+       <td class="value">12</td>
     
 
     
@@ -362,67 +148,167 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_command_message</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_horn_report</td>
     <td></td>
     
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">42</td>
-    
-
-    
        <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_command_message</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_wipers_report</td>
     <td></td>
     
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">14</td>
-    
-
-    
-       <td class="value">87</td>
-    
-
-    
        <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_command_message</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_gear_report</td>
     <td></td>
     
-       <td class="lesser-value">5</td>
-    
-
-    
-       <td class="lesser-value">28</td>
-    
-
-    
-       <td class="value">224</td>
-    
-
-    
        <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">12</td>
+    
+
+    
+       <td class="lesser-value">0</td>
     
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_command_message</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::odometry</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">11</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::headlights_report</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">11</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::horn_report</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">11</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::wipers_report</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">11</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::gear_report</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">11</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::send_headlights_command</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -442,198 +328,18 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_mode_change_request</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::send_horn_command</td>
     <td></td>
-    
-       <td class="lesser-value">2</td>
-    
-
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="value">37</td>
-    
-
-    
-       <td class="lesser-value">2</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::init</td>
-    <td></td>
-    
-       <td class="lesser-value">14</td>
-    
-
-    
-       <td class="lesser-value">121</td>
-    
-
-    
-       <td class="value">958</td>
-    
-
-    
-       <td class="greater-value">10</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::check_invariants</td>
-    <td></td>
-    
-       <td class="lesser-value">9</td>
-    
-
-    
-       <td class="lesser-value">25</td>
-    
-
-    
-       <td class="value">150</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::send_state_command</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">8</td>
-    
-
-    
-       <td class="value">37</td>
-    
-
     
        <td class="lesser-value">1</td>
     
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::read_and_publish</td>
-    <td></td>
+
     
        <td class="lesser-value">6</td>
     
 
     
-       <td class="lesser-value">21</td>
-    
-
-    
-       <td class="value">132</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_control_send_failure</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">15</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_state_send_failure</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">15</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_read_timeout</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">15</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_mode_change_failure</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">15</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_error</td>
-    <td></td>
-    
-       <td class="lesser-value">3</td>
-    
-
-    
-       <td class="lesser-value">10</td>
-    
-
-    
-       <td class="value">60</td>
+       <td class="value">28</td>
     
 
     
@@ -642,22 +348,62 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::state_machine_report</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::send_wipers_command</td>
     <td></td>
     
-       <td class="lesser-value">11</td>
+       <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">48</td>
+       <td class="lesser-value">6</td>
     
 
     
-       <td class="value">213</td>
+       <td class="value">28</td>
     
 
     
-       <td class="lesser-value">0</td>
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::send_hazard_lights_command</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">28</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::send_hand_brake_command</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="value">28</td>
+    
+
+    
+       <td class="lesser-value">1</td>
     
   </tr>
   
@@ -1097,7 +843,7 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/src/platform_interface.cpp</b></td></tr>
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/src/vehicle_interface_node.cpp</b></td></tr>
 
 <tr><th>Function name</th><th></th><th>
 Cyclomatic complexity
@@ -1110,7 +856,107 @@ Cyclomatic complexity
 
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_state_report</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::VehicleInterfaceNode</td>
+    <td></td>
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="lesser-value">78</td>
+    
+
+    
+       <td class="value">637</td>
+    
+
+    
+       <td class="lesser-value">3</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::set_filter</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">24</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::set_reference_tracker</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">24</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::set_interface</td>
+    <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">34</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::logger</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">14</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::get_state_machine</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -1121,7 +967,7 @@ Cyclomatic complexity
     
 
     
-       <td class="value">12</td>
+       <td class="value">13</td>
     
 
     
@@ -1130,227 +976,67 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_odometry</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_command_message</td>
     <td></td>
+    
+       <td class="lesser-value">2</td>
+    
+
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="value">42</td>
+    
+
     
        <td class="lesser-value">1</td>
     
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_command_message</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
 
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="value">87</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_command_message</td>
+    <td></td>
     
        <td class="lesser-value">5</td>
     
 
     
-       <td class="value">12</td>
+       <td class="lesser-value">28</td>
     
 
     
-       <td class="lesser-value">0</td>
+       <td class="value">224</td>
     
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::state_report</td>
-    <td></td>
+
     
        <td class="lesser-value">1</td>
     
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">11</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_headlights_report</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_horn_report</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_wipers_report</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::get_gear_report</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">12</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::odometry</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">11</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::headlights_report</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">11</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::horn_report</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">11</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::wipers_report</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">11</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::gear_report</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">4</td>
-    
-
-    
-       <td class="value">11</td>
-    
-
-    
-       <td class="lesser-value">0</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::send_headlights_command</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_command_message</td>
     <td></td>
     
        <td class="lesser-value">1</td>
@@ -1370,18 +1056,78 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::send_horn_command</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_mode_change_request</td>
     <td></td>
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">2</td>
     
 
     
-       <td class="lesser-value">6</td>
+       <td class="lesser-value">9</td>
     
 
     
-       <td class="value">28</td>
+       <td class="value">37</td>
+    
+
+    
+       <td class="lesser-value">2</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::init</td>
+    <td></td>
+    
+       <td class="lesser-value">14</td>
+    
+
+    
+       <td class="lesser-value">121</td>
+    
+
+    
+       <td class="value">958</td>
+    
+
+    
+       <td class="greater-value">10</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::check_invariants</td>
+    <td></td>
+    
+       <td class="lesser-value">9</td>
+    
+
+    
+       <td class="lesser-value">25</td>
+    
+
+    
+       <td class="value">150</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::send_state_command</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">37</td>
     
 
     
@@ -1390,18 +1136,118 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::send_wipers_command</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::read_and_publish</td>
+    <td></td>
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="lesser-value">21</td>
+    
+
+    
+       <td class="value">132</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_control_send_failure</td>
     <td></td>
     
        <td class="lesser-value">1</td>
     
 
     
-       <td class="lesser-value">6</td>
+       <td class="lesser-value">4</td>
     
 
     
-       <td class="value">28</td>
+       <td class="value">15</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_state_send_failure</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">15</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_read_timeout</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">15</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_mode_change_failure</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">4</td>
+    
+
+    
+       <td class="value">15</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::on_error</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">10</td>
+    
+
+    
+       <td class="value">60</td>
     
 
     
@@ -1410,49 +1256,198 @@ Cyclomatic complexity
   </tr>
   
   <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::send_hazard_lights_command</td>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::VehicleInterfaceNode::state_machine_report</td>
     <td></td>
     
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">11</td>
     
 
     
-       <td class="lesser-value">6</td>
+       <td class="lesser-value">48</td>
     
 
     
-       <td class="value">28</td>
+       <td class="value">213</td>
     
 
     
-       <td class="lesser-value">1</td>
-    
-  </tr>
-  
-  <tr>
-    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::PlatformInterface::send_hand_brake_command</td>
-    <td></td>
-    
-       <td class="lesser-value">1</td>
-    
-
-    
-       <td class="lesser-value">6</td>
-    
-
-    
-       <td class="value">28</td>
-    
-
-    
-       <td class="lesser-value">1</td>
+       <td class="lesser-value">0</td>
     
   </tr>
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/include/vehicle_interface/vehicle_interface_node.hpp</b></td></tr>
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/src/dbw_state_machine.cpp</b></td></tr>
 
+<tr><th>Function name</th><th></th><th>
+Cyclomatic complexity
+(20)
+</th><th>LOC (200)</th><th>
+    
+       Token count
+    
+</th><th>Parameter count (6)</th></tr>
+
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::DbwStateMachine</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">36</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::enabled</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">8</td>
+    
+
+    
+       <td class="value">33</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::get_state</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="value">11</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::dbw_feedback</td>
+    <td></td>
+    
+       <td class="lesser-value">6</td>
+    
+
+    
+       <td class="lesser-value">18</td>
+    
+
+    
+       <td class="value">78</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::control_cmd_sent</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="value">41</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::state_cmd_sent</td>
+    <td></td>
+    
+       <td class="lesser-value">5</td>
+    
+
+    
+       <td class="lesser-value">12</td>
+    
+
+    
+       <td class="value">41</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::user_request</td>
+    <td></td>
+    
+       <td class="lesser-value">3</td>
+    
+
+    
+       <td class="lesser-value">10</td>
+    
+
+    
+       <td class="value">38</td>
+    
+
+    
+       <td class="lesser-value">1</td>
+    
+  </tr>
+  
+  <tr>
+    <td style="background-color:LightSteelBlue">autoware::drivers::vehicle_interface::DbwStateMachine::disable_and_reset</td>
+    <td></td>
+    
+       <td class="lesser-value">1</td>
+    
+
+    
+       <td class="lesser-value">7</td>
+    
+
+    
+       <td class="value">25</td>
+    
+
+    
+       <td class="lesser-value">0</td>
+    
+  </tr>
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
@@ -1630,12 +1625,17 @@ Cyclomatic complexity
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/include/vehicle_interface/platform_interface.hpp</b></td></tr>
+
+  
+
+  <tr><td colspan="7" style="background-color:LightBlue;">
   Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/include/vehicle_interface/dbw_state_machine.hpp</b></td></tr>
 
   
 
   <tr><td colspan="7" style="background-color:LightBlue;">
-  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/include/vehicle_interface/platform_interface.hpp</b></td></tr>
+  Source file: <b>/home/runner/work/autoware-auto-metrics-dashboard/autoware-auto-metrics-dashboard/src/drivers/vehicle_interface/include/vehicle_interface/vehicle_interface_node.hpp</b></td></tr>
 
   
 
@@ -1650,7 +1650,7 @@ Cyclomatic complexity
 <br>
 <table width="100%" border=0 cellspacing=0 cellpadding=0>
     <tr><td class="footer">Generated by
-    <a href="http://www.lizard.ws/">Lizard</a> on 2022-02-02 20:45
+    <a href="http://www.lizard.ws/">Lizard</a> on 2022-02-03 20:46
     </td></tr>
 </table>
  </body>

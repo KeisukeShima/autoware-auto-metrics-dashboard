@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-02-02 20:20:49</td>
+            <td class="headerValue">2022-02-03 20:21:20</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -260,20 +260,20 @@
 <a name="182"><span class="lineNum">     182 </span>                :            : {</a>
 <a name="183"><span class="lineNum">     183 </span>                :            :   // Update spatial index</a>
 <a name="184"><span class="lineNum">     184 </span>                :            :   const auto space_f =</a>
-<a name="185"><span class="lineNum">     185 </span>                :<span class="lineCov">       1844 :     [](const State &amp; state, const Point &amp; pt1, const Point &amp; pt2, const Trajectory &amp;) -&gt; bool {</span></a>
-<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">       1844 :       return motion_common::is_past_point(state.state, pt1, pt2);</span></a>
+<a name="185"><span class="lineNum">     185 </span>                :<span class="lineCov">       1846 :     [](const State &amp; state, const Point &amp; pt1, const Point &amp; pt2, const Trajectory &amp;) -&gt; bool {</span></a>
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">       1846 :       return motion_common::is_past_point(state.state, pt1, pt2);</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :            :     };</a>
 <a name="188"><span class="lineNum">     188 </span>                :            :   using motion_common::update_reference_index;</a>
 <a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">        896 :   m_reference_spatial_index =</span></a>
 <a name="190"><span class="lineNum">     190 </span>                :<span class="lineCov">        896 :     update_reference_index(m_reference_trajectory, new_state, m_reference_spatial_index, space_f);</span></a>
 <a name="191"><span class="lineNum">     191 </span>                :            :   // Update temporal index</a>
 <a name="192"><span class="lineNum">     192 </span>                :            :   const auto time_f =</a>
-<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">       1874 :     [](const State &amp; state, const Point &amp;, const Point &amp; pt, const Trajectory &amp; traj) -&gt; bool {</span></a>
+<a name="193"><span class="lineNum">     193 </span>                :<span class="lineCov">       1876 :     [](const State &amp; state, const Point &amp;, const Point &amp; pt, const Trajectory &amp; traj) -&gt; bool {</span></a>
 <a name="194"><span class="lineNum">     194 </span>                :            :       using time_utils::from_message;</a>
-<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">       1874 :       const auto t_s = from_message(state.header.stamp);</span></a>
-<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">       1874 :       const auto t_t = from_message(traj.header.stamp);</span></a>
-<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">       1874 :       const auto dt = from_message(pt.time_from_start);</span></a>
-<a name="198"><span class="lineNum">     198 </span>        [<span class="branchCov" title="Branch 0 was taken 1874 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1874 :       return t_s &gt;= (t_t + dt);</span></a>
+<a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">       1876 :       const auto t_s = from_message(state.header.stamp);</span></a>
+<a name="196"><span class="lineNum">     196 </span>                :<span class="lineCov">       1876 :       const auto t_t = from_message(traj.header.stamp);</span></a>
+<a name="197"><span class="lineNum">     197 </span>                :<span class="lineCov">       1876 :       const auto dt = from_message(pt.time_from_start);</span></a>
+<a name="198"><span class="lineNum">     198 </span>        [<span class="branchCov" title="Branch 0 was taken 1876 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">       1876 :       return t_s &gt;= (t_t + dt);</span></a>
 <a name="199"><span class="lineNum">     199 </span>                :            :     };</a>
 <a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">        896 :   m_reference_temporal_index =</span></a>
 <a name="201"><span class="lineNum">     201 </span>                :<span class="lineCov">        896 :     update_reference_index(m_reference_trajectory, new_state, m_reference_temporal_index, time_f);</span></a>
