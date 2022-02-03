@@ -1,0 +1,29 @@
+{
+  "package": "point_cloud_filter_transform_nodes",
+  "value": [
+    {
+      "label": "all",
+      "line": 97.3,
+      "function": 100.0,
+      "branch": 45.8
+    },
+    {
+      "label": "gtest",
+      "line": 85.6,
+      "function": 100.0,
+      "branch": 37.9
+    },
+    {
+      "label": "smoke_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    },
+    {
+      "label": "launch_test",
+      "line": 97.3,
+      "function": 100.0,
+      "branch": 45.8
+    }
+  ]
+}
