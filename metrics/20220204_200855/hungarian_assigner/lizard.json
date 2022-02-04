@@ -1,0 +1,27 @@
+{
+  "package": "hungarian_assigner",
+  "worst_value": {
+    "ccn": 14,
+    "nloc": 59,
+    "parameter": 3,
+    "token": 430
+  },
+  "average_value": {
+    "ccn": 4.5,
+    "nloc": 18.8,
+    "parameter": 0.8,
+    "token": 126.1
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 6,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
