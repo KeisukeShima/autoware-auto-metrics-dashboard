@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-02-03 20:45:16</td>
+            <td class="headerValue">2022-02-04 20:49:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">18</td>
@@ -56,9 +56,9 @@
 </td>
             <td></td>
             <td class="headerItem">Branches:</td>
-            <td class="headerCovTableEntry">379</td>
+            <td class="headerCovTableEntry">378</td>
             <td class="headerCovTableEntry">1224</td>
-            <td class="headerCovTableEntryLo">31.0 %</td>
+            <td class="headerCovTableEntryLo">30.9 %</td>
           </tr>
           <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -337,56 +337,56 @@
 <a name="180"><span class="lineNum">     180 </span>                :<span class="lineCov">          6 :   publishCtrlCmd(stop_cmd);</span></a>
 <a name="181"><span class="lineNum">     181 </span>                :<span class="lineCov">          6 : }</span></a>
 <a name="182"><span class="lineNum">     182 </span>                :            : </a>
-<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         48 : void LateralController::onTimer()</span></a>
+<a name="183"><span class="lineNum">     183 </span>                :<span class="lineCov">         47 : void LateralController::onTimer()</span></a>
 <a name="184"><span class="lineNum">     184 </span>                :            : {</a>
-<a name="185"><span class="lineNum">     185 </span>  [<span class="branchCov" title="Branch 0 was taken 48 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 7 times"> + </span><span class="branchCov" title="Branch 3 was taken 41 times"> + </span> :<span class="lineCov">         48 :   if (!checkData() || !updateCurrentPose()) {</span></a>
-<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 7 times"> + </span><span class="branchCov" title="Branch 8 was taken 41 times"> + </span> 
-<span class="lineNum">         </span>            <span class="branchCov" title="Branch 9 was taken 7 times"> + </span>]
-<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">         43 :     return;</span></a>
+<a name="185"><span class="lineNum">     185 </span>  [<span class="branchCov" title="Branch 0 was taken 47 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 6 times"> + </span><span class="branchCov" title="Branch 3 was taken 41 times"> + </span> :<span class="lineCov">         47 :   if (!checkData() || !updateCurrentPose()) {</span></a>
+<span class="lineNum">         </span><span class="branchCov" title="Branch 4 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchCov" title="Branch 7 was taken 6 times"> + </span><span class="branchCov" title="Branch 8 was taken 41 times"> + </span> 
+<span class="lineNum">         </span>            <span class="branchCov" title="Branch 9 was taken 6 times"> + </span>]
+<a name="186"><span class="lineNum">     186 </span>                :<span class="lineCov">         42 :     return;</span></a>
 <a name="187"><span class="lineNum">     187 </span>                :            :   }</a>
 <a name="188"><span class="lineNum">     188 </span>                :            : </a>
-<a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">          7 :   autoware_auto_control_msgs::msg::AckermannLateralCommand ctrl_cmd;</span></a>
-<a name="190"><span class="lineNum">     190 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          7 :   autoware_auto_planning_msgs::msg::Trajectory predicted_traj;</span></a>
-<a name="191"><span class="lineNum">     191 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          7 :   autoware_auto_system_msgs::msg::Float32MultiArrayDiagnostic diagnostic;</span></a>
+<a name="189"><span class="lineNum">     189 </span>                :<span class="lineCov">          6 :   autoware_auto_control_msgs::msg::AckermannLateralCommand ctrl_cmd;</span></a>
+<a name="190"><span class="lineNum">     190 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   autoware_auto_planning_msgs::msg::Trajectory predicted_traj;</span></a>
+<a name="191"><span class="lineNum">     191 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   autoware_auto_system_msgs::msg::Float32MultiArrayDiagnostic diagnostic;</span></a>
 <a name="192"><span class="lineNum">     192 </span>                :            : </a>
-<a name="193"><span class="lineNum">     193 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          7 :   if (!m_is_ctrl_cmd_prev_initialized) {</span></a>
+<a name="193"><span class="lineNum">     193 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">          6 :   if (!m_is_ctrl_cmd_prev_initialized) {</span></a>
 <a name="194"><span class="lineNum">     194 </span>        [<span class="branchCov" title="Branch 0 was taken 4 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          4 :     m_ctrl_cmd_prev = getInitialControlCommand();</span></a>
 <a name="195"><span class="lineNum">     195 </span>                :<span class="lineCov">          4 :     m_is_ctrl_cmd_prev_initialized = true;</span></a>
 <a name="196"><span class="lineNum">     196 </span>                :            :   }</a>
 <a name="197"><span class="lineNum">     197 </span>                :            : </a>
-<a name="198"><span class="lineNum">     198 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          7 :   const bool8_t is_mpc_solved = m_mpc.calculateMPC(</span></a>
-<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">          7 :     *m_current_state_ptr, m_current_state_ptr-&gt;state.longitudinal_velocity_mps,</span></a>
-<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">          7 :     m_current_pose_ptr-&gt;pose, ctrl_cmd, predicted_traj, diagnostic);</span></a>
+<a name="198"><span class="lineNum">     198 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   const bool8_t is_mpc_solved = m_mpc.calculateMPC(</span></a>
+<a name="199"><span class="lineNum">     199 </span>                :<span class="lineCov">          6 :     *m_current_state_ptr, m_current_state_ptr-&gt;state.longitudinal_velocity_mps,</span></a>
+<a name="200"><span class="lineNum">     200 </span>                :<span class="lineCov">          6 :     m_current_pose_ptr-&gt;pose, ctrl_cmd, predicted_traj, diagnostic);</span></a>
 <a name="201"><span class="lineNum">     201 </span>                :            : </a>
-<a name="202"><span class="lineNum">     202 </span>  [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 2 times"> + </span><span class="branchCov" title="Branch 3 was taken 5 times"> + </span>]:<span class="lineCov">          7 :   if (isStoppedState()) {</span></a>
+<a name="202"><span class="lineNum">     202 </span>  [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 5 times"> + </span>]:<span class="lineCov">          6 :   if (isStoppedState()) {</span></a>
 <a name="203"><span class="lineNum">     203 </span>                :            :     // Reset input buffer</a>
-<a name="204"><span class="lineNum">     204 </span>        [<span class="branchCov" title="Branch 0 was taken 16 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span>]:<span class="lineCov">         18 :     for (auto &amp; value : m_mpc.m_input_buffer) {</span></a>
-<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">         16 :       value = m_ctrl_cmd_prev.steering_tire_angle;</span></a>
+<a name="204"><span class="lineNum">     204 </span>        [<span class="branchCov" title="Branch 0 was taken 8 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          9 :     for (auto &amp; value : m_mpc.m_input_buffer) {</span></a>
+<a name="205"><span class="lineNum">     205 </span>                :<span class="lineCov">          8 :       value = m_ctrl_cmd_prev.steering_tire_angle;</span></a>
 <a name="206"><span class="lineNum">     206 </span>                :            :     }</a>
 <a name="207"><span class="lineNum">     207 </span>                :            :     // Use previous command value as previous raw steer command</a>
-<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">          2 :     m_mpc.m_raw_steer_cmd_prev = m_ctrl_cmd_prev.steering_tire_angle;</span></a>
+<a name="208"><span class="lineNum">     208 </span>                :<span class="lineCov">          1 :     m_mpc.m_raw_steer_cmd_prev = m_ctrl_cmd_prev.steering_tire_angle;</span></a>
 <a name="209"><span class="lineNum">     209 </span>                :            : </a>
-<a name="210"><span class="lineNum">     210 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     publishCtrlCmd(m_ctrl_cmd_prev);</span></a>
-<a name="211"><span class="lineNum">     211 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     publishPredictedTraj(predicted_traj);</span></a>
-<a name="212"><span class="lineNum">     212 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     publishDiagnostic(diagnostic);</span></a>
-<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">          2 :     return;</span></a>
+<a name="210"><span class="lineNum">     210 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     publishCtrlCmd(m_ctrl_cmd_prev);</span></a>
+<a name="211"><span class="lineNum">     211 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     publishPredictedTraj(predicted_traj);</span></a>
+<a name="212"><span class="lineNum">     212 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     publishDiagnostic(diagnostic);</span></a>
+<a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">          1 :     return;</span></a>
 <a name="214"><span class="lineNum">     214 </span>                :            :   }</a>
 <a name="215"><span class="lineNum">     215 </span>                :            : </a>
-<a name="216"><span class="lineNum">     216 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 3 times"> + </span>]:<span class="lineCov">          5 :   if (!is_mpc_solved) {</span></a>
-<a name="217"><span class="lineNum">     217 </span>  [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 2 times"> + </span> :<span class="lineCov">          4 :     RCLCPP_WARN_SKIPFIRST_THROTTLE(</span></a>
+<a name="216"><span class="lineNum">     216 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span>]:<span class="lineCov">          5 :   if (!is_mpc_solved) {</span></a>
+<a name="217"><span class="lineNum">     217 </span>  [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span> :<span class="lineCov">          2 :     RCLCPP_WARN_SKIPFIRST_THROTTLE(</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchNoCov" title="Branch 8 was not taken"> - </span> 
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchNoCov" title="Branch 10 was not taken"> - </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchNoCov" title="Branch 12 was not taken"> - </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 14 was not taken"> - </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchNoCov" title="Branch 16 was not taken"> - </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span><span class="branchNoCov" title="Branch 18 was not taken"> - </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
-<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span><span class="branchCov" title="Branch 26 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 2 times"> + </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 29 was not taken"> - </span><span class="branchNoCov" title="Branch 30 was not taken"> - </span><span class="branchCov" title="Branch 31 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 32 was not taken"> - </span><span class="branchNoCov" title="Branch 33 was not taken"> - </span> 
-<span class="lineNum">         </span><span class="branchCov" title="Branch 34 was taken 1 time"> + </span><span class="branchCov" title="Branch 35 was taken 1 time"> + </span><span class="branchCov" title="Branch 36 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 37 was not taken"> - </span><span class="branchNoCov" title="Branch 38 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 19 was not taken"> - </span><span class="branchCov" title="Branch 20 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 21 was not taken"> - </span><span class="branchCov" title="Branch 22 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 23 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 24 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 25 was not taken"> - </span><span class="branchCov" title="Branch 26 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 27 was not taken"> - </span><span class="branchCov" title="Branch 28 was taken 1 time"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 29 was not taken"> - </span><span class="branchNoCov" title="Branch 30 was not taken"> - </span><span class="branchCov" title="Branch 31 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 32 was not taken"> - </span><span class="branchNoCov" title="Branch 33 was not taken"> - </span> 
+<span class="lineNum">         </span><span class="branchCov" title="Branch 34 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 35 was not taken"> - </span><span class="branchCov" title="Branch 36 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 37 was not taken"> - </span><span class="branchNoCov" title="Branch 38 was not taken"> - </span> 
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 39 was not taken"> - </span><span class="branchNoCov" title="Branch 40 was not taken"> - </span><span class="branchNoCov" title="Branch 41 was not taken"> - </span><span class="branchNoCov" title="Branch 42 was not taken"> - </span><span class="branchNoCov" title="Branch 43 was not taken"> - </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 44 was not taken"> - </span><span class="branchNoCov" title="Branch 45 was not taken"> - </span><span class="branchCov" title="Branch 46 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 47 was not taken"> - </span><span class="branchCov" title="Branch 48 was taken 2 times"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 44 was not taken"> - </span><span class="branchNoCov" title="Branch 45 was not taken"> - </span><span class="branchCov" title="Branch 46 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 47 was not taken"> - </span><span class="branchCov" title="Branch 48 was taken 1 time"> + </span> 
 <span class="lineNum">         </span>      <span class="branchNoCov" title="Branch 49 was not taken"> - </span><span class="branchNoCov" title="Branch 50 was not taken"> - </span><span class="branchNoCov" title="Branch 51 was not taken"> - </span>]
 <a name="218"><span class="lineNum">     218 </span>                :            :       get_logger(), *get_clock(), 5000 /*ms*/,</a>
 <a name="219"><span class="lineNum">     219 </span>                :            :       &quot;MPC is not solved. publish 0 velocity.&quot;);</a>
-<a name="220"><span class="lineNum">     220 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     ctrl_cmd = getStopControlCommand();</span></a>
+<a name="220"><span class="lineNum">     220 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          1 :     ctrl_cmd = getStopControlCommand();</span></a>
 <a name="221"><span class="lineNum">     221 </span>                :            :   }</a>
 <a name="222"><span class="lineNum">     222 </span>                :            : </a>
 <a name="223"><span class="lineNum">     223 </span>                :<span class="lineCov">          5 :   m_ctrl_cmd_prev = ctrl_cmd;</span></a>
@@ -395,9 +395,9 @@
 <a name="226"><span class="lineNum">     226 </span>        [<span class="branchCov" title="Branch 0 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          5 :   publishDiagnostic(diagnostic);</span></a>
 <a name="227"><span class="lineNum">     227 </span>                :            : }</a>
 <a name="228"><span class="lineNum">     228 </span>                :            : </a>
-<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">         48 : bool8_t LateralController::checkData() const</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">         47 : bool8_t LateralController::checkData() const</span></a>
 <a name="230"><span class="lineNum">     230 </span>                :            : {</a>
-<a name="231"><span class="lineNum">     231 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 48 times"> + </span>]:<span class="lineCov">         48 :   if (!m_mpc.hasVehicleModel()) {</span></a>
+<a name="231"><span class="lineNum">     231 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 47 times"> + </span>]:<span class="lineCov">         47 :   if (!m_mpc.hasVehicleModel()) {</span></a>
 <a name="232"><span class="lineNum">     232 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     RCLCPP_DEBUG(</span></a>
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span><span class="branchNoExec" title="Branch 13 was not executed"> # </span> 
@@ -405,7 +405,7 @@
 <a name="233"><span class="lineNum">     233 </span>                :            :       get_logger(), &quot;MPC does not have a vehicle model&quot;);</a>
 <a name="234"><span class="lineNum">     234 </span>                :<span class="lineNoCov">          0 :     return false;</span></a>
 <a name="235"><span class="lineNum">     235 </span>                :            :   }</a>
-<a name="236"><span class="lineNum">     236 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 48 times"> + </span>]:<span class="lineCov">         48 :   if (!m_mpc.hasQPSolver()) {</span></a>
+<a name="236"><span class="lineNum">     236 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 47 times"> + </span>]:<span class="lineCov">         47 :   if (!m_mpc.hasQPSolver()) {</span></a>
 <a name="237"><span class="lineNum">     237 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     RCLCPP_DEBUG(</span></a>
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 9 was not executed"> # </span><span class="branchNoExec" title="Branch 10 was not executed"> # </span><span class="branchNoExec" title="Branch 11 was not executed"> # </span><span class="branchNoExec" title="Branch 12 was not executed"> # </span><span class="branchNoExec" title="Branch 13 was not executed"> # </span> 
@@ -414,7 +414,7 @@
 <a name="239"><span class="lineNum">     239 </span>                :<span class="lineNoCov">          0 :     return false;</span></a>
 <a name="240"><span class="lineNum">     240 </span>                :            :   }</a>
 <a name="241"><span class="lineNum">     241 </span>                :            : </a>
-<a name="242"><span class="lineNum">     242 </span>        [<span class="branchCov" title="Branch 0 was taken 21 times"> + </span><span class="branchCov" title="Branch 1 was taken 27 times"> + </span>]:<span class="lineCov">         48 :   if (!m_current_state_ptr) {</span></a>
+<a name="242"><span class="lineNum">     242 </span>        [<span class="branchCov" title="Branch 0 was taken 21 times"> + </span><span class="branchCov" title="Branch 1 was taken 26 times"> + </span>]:<span class="lineCov">         47 :   if (!m_current_state_ptr) {</span></a>
 <a name="243"><span class="lineNum">     243 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 21 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         21 :     RCLCPP_DEBUG(</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 21 times"> + </span> 
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 21 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 21 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
@@ -424,7 +424,7 @@
 <a name="246"><span class="lineNum">     246 </span>                :<span class="lineCov">         21 :     return false;</span></a>
 <a name="247"><span class="lineNum">     247 </span>                :            :   }</a>
 <a name="248"><span class="lineNum">     248 </span>                :            : </a>
-<a name="249"><span class="lineNum">     249 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">         27 :   if (m_mpc.m_ref_traj.size() == 0) {</span></a>
+<a name="249"><span class="lineNum">     249 </span>        [<span class="branchCov" title="Branch 0 was taken 20 times"> + </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">         26 :   if (m_mpc.m_ref_traj.size() == 0) {</span></a>
 <a name="250"><span class="lineNum">     250 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">         20 :     RCLCPP_DEBUG(get_logger(), &quot;trajectory size is zero.&quot;);</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 20 times"> + </span> 
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 20 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
@@ -432,7 +432,7 @@
 <a name="251"><span class="lineNum">     251 </span>                :<span class="lineCov">         20 :     return false;</span></a>
 <a name="252"><span class="lineNum">     252 </span>                :            :   }</a>
 <a name="253"><span class="lineNum">     253 </span>                :            : </a>
-<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">          7 :   return true;</span></a>
+<a name="254"><span class="lineNum">     254 </span>                :<span class="lineCov">          6 :   return true;</span></a>
 <a name="255"><span class="lineNum">     255 </span>                :            : }</a>
 <a name="256"><span class="lineNum">     256 </span>                :            : </a>
 <a name="257"><span class="lineNum">     257 </span>                :<span class="lineCov">          5 : void LateralController::onTrajectory(</span></a>
@@ -479,14 +479,14 @@
 <a name="288"><span class="lineNum">     288 </span>                :<span class="lineCov">          4 :     m_current_pose_ptr);</span></a>
 <a name="289"><span class="lineNum">     289 </span>                :            : }</a>
 <a name="290"><span class="lineNum">     290 </span>                :            : </a>
-<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">         12 : bool8_t LateralController::updateCurrentPose()</span></a>
+<a name="291"><span class="lineNum">     291 </span>                :<span class="lineCov">         11 : bool8_t LateralController::updateCurrentPose()</span></a>
 <a name="292"><span class="lineNum">     292 </span>                :            : {</a>
-<a name="293"><span class="lineNum">     293 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         24 :   geometry_msgs::msg::TransformStamped transform;</span></a>
+<a name="293"><span class="lineNum">     293 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :   geometry_msgs::msg::TransformStamped transform;</span></a>
 <a name="294"><span class="lineNum">     294 </span>                :            :   try {</a>
-<a name="295"><span class="lineNum">     295 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         24 :     transform = m_tf_buffer.lookupTransform(</span></a>
-<a name="296"><span class="lineNum">     296 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :       m_current_trajectory_ptr-&gt;header.frame_id,</span></a>
+<a name="295"><span class="lineNum">     295 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         22 :     transform = m_tf_buffer.lookupTransform(</span></a>
+<a name="296"><span class="lineNum">     296 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :       m_current_trajectory_ptr-&gt;header.frame_id,</span></a>
 <a name="297"><span class="lineNum">     297 </span>                :            :       &quot;base_link&quot;,</a>
-<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">         12 :       tf2::TimePointZero);</span></a>
+<a name="298"><span class="lineNum">     298 </span>                :<span class="lineCov">         11 :       tf2::TimePointZero);</span></a>
 <a name="299"><span class="lineNum">     299 </span>                :<span class="lineNoCov">          0 :   } catch (tf2::TransformException &amp; ex) {</span></a>
 <a name="300"><span class="lineNum">     300 </span>  [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span><span class="branchNoExec" title="Branch 2 was not executed"> # </span><span class="branchNoExec" title="Branch 3 was not executed"> # </span> :<span class="lineNoCov">          0 :     RCLCPP_WARN_THROTTLE(</span></a>
 <span class="lineNum">         </span><span class="branchNoExec" title="Branch 4 was not executed"> # </span><span class="branchNoExec" title="Branch 5 was not executed"> # </span><span class="branchNoExec" title="Branch 6 was not executed"> # </span><span class="branchNoExec" title="Branch 7 was not executed"> # </span><span class="branchNoExec" title="Branch 8 was not executed"> # </span> 
@@ -517,14 +517,14 @@
 <a name="306"><span class="lineNum">     306 </span>                :<span class="lineNoCov">          0 :     return false;</span></a>
 <a name="307"><span class="lineNum">     307 </span>                :            :   }</a>
 <a name="308"><span class="lineNum">     308 </span>                :            : </a>
-<a name="309"><span class="lineNum">     309 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   geometry_msgs::msg::PoseStamped ps;</span></a>
-<a name="310"><span class="lineNum">     310 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   ps.header = transform.header;</span></a>
-<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">         12 :   ps.pose.position.x = transform.transform.translation.x;</span></a>
-<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">         12 :   ps.pose.position.y = transform.transform.translation.y;</span></a>
-<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">         12 :   ps.pose.position.z = transform.transform.translation.z;</span></a>
-<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">         12 :   ps.pose.orientation = transform.transform.rotation;</span></a>
-<a name="315"><span class="lineNum">     315 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   m_current_pose_ptr = std::make_shared&lt;geometry_msgs::msg::PoseStamped&gt;(ps);</span></a>
-<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">         12 :   return true;</span></a>
+<a name="309"><span class="lineNum">     309 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   geometry_msgs::msg::PoseStamped ps;</span></a>
+<a name="310"><span class="lineNum">     310 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   ps.header = transform.header;</span></a>
+<a name="311"><span class="lineNum">     311 </span>                :<span class="lineCov">         11 :   ps.pose.position.x = transform.transform.translation.x;</span></a>
+<a name="312"><span class="lineNum">     312 </span>                :<span class="lineCov">         11 :   ps.pose.position.y = transform.transform.translation.y;</span></a>
+<a name="313"><span class="lineNum">     313 </span>                :<span class="lineCov">         11 :   ps.pose.position.z = transform.transform.translation.z;</span></a>
+<a name="314"><span class="lineNum">     314 </span>                :<span class="lineCov">         11 :   ps.pose.orientation = transform.transform.rotation;</span></a>
+<a name="315"><span class="lineNum">     315 </span>        [<span class="branchCov" title="Branch 0 was taken 11 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         11 :   m_current_pose_ptr = std::make_shared&lt;geometry_msgs::msg::PoseStamped&gt;(ps);</span></a>
+<a name="316"><span class="lineNum">     316 </span>                :<span class="lineCov">         11 :   return true;</span></a>
 <a name="317"><span class="lineNum">     317 </span>                :            : }</a>
 <a name="318"><span class="lineNum">     318 </span>                :            : </a>
 <a name="319"><span class="lineNum">     319 </span>                :<span class="lineCov">          5 : void LateralController::onState(</span></a>
@@ -533,13 +533,13 @@
 <a name="322"><span class="lineNum">     322 </span>                :<span class="lineCov">          5 :   m_current_state_ptr = msg;</span></a>
 <a name="323"><span class="lineNum">     323 </span>                :<span class="lineCov">          5 : }</span></a>
 <a name="324"><span class="lineNum">     324 </span>                :            : </a>
-<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">          8 : autoware_auto_control_msgs::msg::AckermannLateralCommand LateralController::getStopControlCommand()</span></a>
+<a name="325"><span class="lineNum">     325 </span>                :<span class="lineCov">          7 : autoware_auto_control_msgs::msg::AckermannLateralCommand LateralController::getStopControlCommand()</span></a>
 <a name="326"><span class="lineNum">     326 </span>                :            : const</a>
 <a name="327"><span class="lineNum">     327 </span>                :            : {</a>
-<a name="328"><span class="lineNum">     328 </span>                :<span class="lineCov">          8 :   autoware_auto_control_msgs::msg::AckermannLateralCommand cmd;</span></a>
-<a name="329"><span class="lineNum">     329 </span>                :<span class="lineCov">          8 :   cmd.steering_tire_angle = static_cast&lt;decltype(cmd.steering_tire_angle)&gt;(m_steer_cmd_prev);</span></a>
-<a name="330"><span class="lineNum">     330 </span>                :<span class="lineCov">          8 :   cmd.steering_tire_rotation_rate = 0.0;</span></a>
-<a name="331"><span class="lineNum">     331 </span>                :<span class="lineCov">          8 :   return cmd;</span></a>
+<a name="328"><span class="lineNum">     328 </span>                :<span class="lineCov">          7 :   autoware_auto_control_msgs::msg::AckermannLateralCommand cmd;</span></a>
+<a name="329"><span class="lineNum">     329 </span>                :<span class="lineCov">          7 :   cmd.steering_tire_angle = static_cast&lt;decltype(cmd.steering_tire_angle)&gt;(m_steer_cmd_prev);</span></a>
+<a name="330"><span class="lineNum">     330 </span>                :<span class="lineCov">          7 :   cmd.steering_tire_rotation_rate = 0.0;</span></a>
+<a name="331"><span class="lineNum">     331 </span>                :<span class="lineCov">          7 :   return cmd;</span></a>
 <a name="332"><span class="lineNum">     332 </span>                :            : }</a>
 <a name="333"><span class="lineNum">     333 </span>                :            : </a>
 <a name="334"><span class="lineNum">     334 </span>                :            : autoware_auto_control_msgs::msg::AckermannLateralCommand</a>
@@ -552,25 +552,25 @@
 <a name="341"><span class="lineNum">     341 </span>                :<span class="lineCov">          4 :   return cmd;</span></a>
 <a name="342"><span class="lineNum">     342 </span>                :            : }</a>
 <a name="343"><span class="lineNum">     343 </span>                :            : </a>
-<a name="344"><span class="lineNum">     344 </span>                :<span class="lineCov">          7 : bool8_t LateralController::isStoppedState() const</span></a>
+<a name="344"><span class="lineNum">     344 </span>                :<span class="lineCov">          6 : bool8_t LateralController::isStoppedState() const</span></a>
 <a name="345"><span class="lineNum">     345 </span>                :            : {</a>
-<a name="346"><span class="lineNum">     346 </span>                :<span class="lineCov">          7 :   const int64_t nearest = trajectory_follower::MPCUtils::calcNearestIndex(</span></a>
-<a name="347"><span class="lineNum">     347 </span>                :<span class="lineCov">          7 :     *m_current_trajectory_ptr,</span></a>
-<a name="348"><span class="lineNum">     348 </span>                :<span class="lineCov">          7 :     m_current_pose_ptr-&gt;pose);</span></a>
+<a name="346"><span class="lineNum">     346 </span>                :<span class="lineCov">          6 :   const int64_t nearest = trajectory_follower::MPCUtils::calcNearestIndex(</span></a>
+<a name="347"><span class="lineNum">     347 </span>                :<span class="lineCov">          6 :     *m_current_trajectory_ptr,</span></a>
+<a name="348"><span class="lineNum">     348 </span>                :<span class="lineCov">          6 :     m_current_pose_ptr-&gt;pose);</span></a>
 <a name="349"><span class="lineNum">     349 </span>                :            :   // If the nearest index is not found, return false</a>
-<a name="350"><span class="lineNum">     350 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 7 times"> + </span>]:<span class="lineCov">          7 :   if (nearest &lt; 0) {return false;}</span></a>
-<a name="351"><span class="lineNum">     351 </span>                :<span class="lineCov">          7 :   const float64_t dist = trajectory_follower::MPCUtils::calcStopDistance(</span></a>
-<a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">          7 :     *m_current_trajectory_ptr,</span></a>
+<a name="350"><span class="lineNum">     350 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 6 times"> + </span>]:<span class="lineCov">          6 :   if (nearest &lt; 0) {return false;}</span></a>
+<a name="351"><span class="lineNum">     351 </span>                :<span class="lineCov">          6 :   const float64_t dist = trajectory_follower::MPCUtils::calcStopDistance(</span></a>
+<a name="352"><span class="lineNum">     352 </span>                :<span class="lineCov">          6 :     *m_current_trajectory_ptr,</span></a>
 <a name="353"><span class="lineNum">     353 </span>                :            :     nearest);</a>
-<a name="354"><span class="lineNum">     354 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          7 :   if (dist &lt; m_stop_state_keep_stopping_dist) {</span></a>
-<a name="355"><span class="lineNum">     355 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          2 :     RCLCPP_DEBUG(</span></a>
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 2 times"> + </span> 
-<span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
-<span class="lineNum">         </span>   <span class="branchCov" title="Branch 14 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchCov" title="Branch 16 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span>]
+<a name="354"><span class="lineNum">     354 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span>]:<span class="lineCov">          6 :   if (dist &lt; m_stop_state_keep_stopping_dist) {</span></a>
+<a name="355"><span class="lineNum">     355 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          1 :     RCLCPP_DEBUG(</span></a>
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 1 time"> + </span> 
+<span class="lineNum">         </span><span class="branchNoCov" title="Branch 9 was not taken"> - </span><span class="branchCov" title="Branch 10 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 11 was not taken"> - </span><span class="branchCov" title="Branch 12 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 13 was not taken"> - </span> 
+<span class="lineNum">         </span>   <span class="branchCov" title="Branch 14 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 15 was not taken"> - </span><span class="branchCov" title="Branch 16 was taken 1 time"> + </span><span class="branchNoCov" title="Branch 17 was not taken"> - </span>]
 <a name="356"><span class="lineNum">     356 </span>                :            :       get_logger(),</a>
 <a name="357"><span class="lineNum">     357 </span>                :            :       &quot;stop_dist = %f &lt; %f : m_stop_state_keep_stopping_dist. keep stopping.&quot;, dist,</a>
 <a name="358"><span class="lineNum">     358 </span>                :            :       m_stop_state_keep_stopping_dist);</a>
-<a name="359"><span class="lineNum">     359 </span>                :<span class="lineCov">          2 :     return true;</span></a>
+<a name="359"><span class="lineNum">     359 </span>                :<span class="lineCov">          1 :     return true;</span></a>
 <a name="360"><span class="lineNum">     360 </span>                :            :   }</a>
 <a name="361"><span class="lineNum">     361 </span>  [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 5 times"> + </span><span class="branchNoCov" title="Branch 2 was not taken"> - </span><span class="branchNoCov" title="Branch 3 was not taken"> - </span> :<span class="lineCov">          5 :   RCLCPP_DEBUG(get_logger(), &quot;stop_dist = %f release stopping.&quot;, dist);</span></a>
 <span class="lineNum">         </span><span class="branchNoCov" title="Branch 4 was not taken"> - </span><span class="branchNoCov" title="Branch 5 was not taken"> - </span><span class="branchNoCov" title="Branch 6 was not taken"> - </span><span class="branchNoCov" title="Branch 7 was not taken"> - </span><span class="branchCov" title="Branch 8 was taken 5 times"> + </span> 
@@ -590,31 +590,31 @@
 <a name="373"><span class="lineNum">     373 </span>                :            :   }</a>
 <a name="374"><span class="lineNum">     374 </span>                :            : }</a>
 <a name="375"><span class="lineNum">     375 </span>                :            : </a>
-<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">         13 : void LateralController::publishCtrlCmd(</span></a>
+<a name="376"><span class="lineNum">     376 </span>                :<span class="lineCov">         12 : void LateralController::publishCtrlCmd(</span></a>
 <a name="377"><span class="lineNum">     377 </span>                :            :   autoware_auto_control_msgs::msg::AckermannLateralCommand ctrl_cmd)</a>
 <a name="378"><span class="lineNum">     378 </span>                :            : {</a>
-<a name="379"><span class="lineNum">     379 </span>        [<span class="branchCov" title="Branch 0 was taken 13 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         13 :   ctrl_cmd.stamp = this-&gt;now();</span></a>
-<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">         13 :   m_pub_ctrl_cmd-&gt;publish(ctrl_cmd);</span></a>
-<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">         13 :   m_steer_cmd_prev = ctrl_cmd.steering_tire_angle;</span></a>
-<a name="382"><span class="lineNum">     382 </span>                :<span class="lineCov">         13 : }</span></a>
+<a name="379"><span class="lineNum">     379 </span>        [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         12 :   ctrl_cmd.stamp = this-&gt;now();</span></a>
+<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">         12 :   m_pub_ctrl_cmd-&gt;publish(ctrl_cmd);</span></a>
+<a name="381"><span class="lineNum">     381 </span>                :<span class="lineCov">         12 :   m_steer_cmd_prev = ctrl_cmd.steering_tire_angle;</span></a>
+<a name="382"><span class="lineNum">     382 </span>                :<span class="lineCov">         12 : }</span></a>
 <a name="383"><span class="lineNum">     383 </span>                :            : </a>
-<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">          7 : void LateralController::publishPredictedTraj(</span></a>
+<a name="384"><span class="lineNum">     384 </span>                :<span class="lineCov">          6 : void LateralController::publishPredictedTraj(</span></a>
 <a name="385"><span class="lineNum">     385 </span>                :            :   autoware_auto_planning_msgs::msg::Trajectory &amp; predicted_traj)</a>
 <a name="386"><span class="lineNum">     386 </span>                :            : const</a>
 <a name="387"><span class="lineNum">     387 </span>                :            : {</a>
-<a name="388"><span class="lineNum">     388 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          7 :   predicted_traj.header.stamp = this-&gt;now();</span></a>
-<a name="389"><span class="lineNum">     389 </span>                :<span class="lineCov">          7 :   predicted_traj.header.frame_id = m_current_trajectory_ptr-&gt;header.frame_id;</span></a>
-<a name="390"><span class="lineNum">     390 </span>                :<span class="lineCov">          7 :   m_pub_predicted_traj-&gt;publish(predicted_traj);</span></a>
-<a name="391"><span class="lineNum">     391 </span>                :<span class="lineCov">          7 : }</span></a>
+<a name="388"><span class="lineNum">     388 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   predicted_traj.header.stamp = this-&gt;now();</span></a>
+<a name="389"><span class="lineNum">     389 </span>                :<span class="lineCov">          6 :   predicted_traj.header.frame_id = m_current_trajectory_ptr-&gt;header.frame_id;</span></a>
+<a name="390"><span class="lineNum">     390 </span>                :<span class="lineCov">          6 :   m_pub_predicted_traj-&gt;publish(predicted_traj);</span></a>
+<a name="391"><span class="lineNum">     391 </span>                :<span class="lineCov">          6 : }</span></a>
 <a name="392"><span class="lineNum">     392 </span>                :            : </a>
-<a name="393"><span class="lineNum">     393 </span>                :<span class="lineCov">          7 : void LateralController::publishDiagnostic(</span></a>
+<a name="393"><span class="lineNum">     393 </span>                :<span class="lineCov">          6 : void LateralController::publishDiagnostic(</span></a>
 <a name="394"><span class="lineNum">     394 </span>                :            :   autoware_auto_system_msgs::msg::Float32MultiArrayDiagnostic &amp; diagnostic)</a>
 <a name="395"><span class="lineNum">     395 </span>                :            : const</a>
 <a name="396"><span class="lineNum">     396 </span>                :            : {</a>
-<a name="397"><span class="lineNum">     397 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          7 :   diagnostic.diag_header.data_stamp = this-&gt;now();</span></a>
-<a name="398"><span class="lineNum">     398 </span>        [<span class="branchCov" title="Branch 0 was taken 7 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          7 :   diagnostic.diag_header.name = std::string(&quot;linear-MPC lateral controller&quot;);</span></a>
-<a name="399"><span class="lineNum">     399 </span>                :<span class="lineCov">          7 :   m_pub_diagnostic-&gt;publish(diagnostic);</span></a>
-<a name="400"><span class="lineNum">     400 </span>                :<span class="lineCov">          7 : }</span></a>
+<a name="397"><span class="lineNum">     397 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   diagnostic.diag_header.data_stamp = this-&gt;now();</span></a>
+<a name="398"><span class="lineNum">     398 </span>        [<span class="branchCov" title="Branch 0 was taken 6 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          6 :   diagnostic.diag_header.name = std::string(&quot;linear-MPC lateral controller&quot;);</span></a>
+<a name="399"><span class="lineNum">     399 </span>                :<span class="lineCov">          6 :   m_pub_diagnostic-&gt;publish(diagnostic);</span></a>
+<a name="400"><span class="lineNum">     400 </span>                :<span class="lineCov">          6 : }</span></a>
 <a name="401"><span class="lineNum">     401 </span>                :            : </a>
 <a name="402"><span class="lineNum">     402 </span>                :<span class="lineCov">          6 : void LateralController::initTimer(float64_t period_s)</span></a>
 <a name="403"><span class="lineNum">     403 </span>                :            : {</a>
