@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "emergency_handler",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 95.5,
+      "function": 100.0,
+      "branch": 52.3
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 95.5,
+      "function": 100.0,
+      "branch": 52.3
     },
     {
       "label": "smoke_test",

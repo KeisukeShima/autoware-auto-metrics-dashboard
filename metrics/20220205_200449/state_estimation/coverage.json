@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "state_estimation",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 96.6,
+      "function": 74.4,
+      "branch": 47.8
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 96.6,
+      "function": 74.4,
+      "branch": 47.8
     },
     {
       "label": "smoke_test",

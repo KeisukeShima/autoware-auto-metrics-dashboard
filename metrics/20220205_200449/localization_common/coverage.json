@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "localization_common",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 60.9,
+      "function": 60.0,
+      "branch": 32.1
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 60.9,
+      "function": 60.0,
+      "branch": 32.1
     },
     {
       "label": "smoke_test",

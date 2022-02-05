@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "ndt_nodes",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 62.3,
+      "function": 50.0,
+      "branch": 39.2
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 62.3,
+      "function": 50.0,
+      "branch": 39.2
     },
     {
       "label": "smoke_test",

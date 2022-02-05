@@ -1,0 +1,27 @@
+{
+  "package": "state_estimation",
+  "worst_value": {
+    "ccn": 4,
+    "nloc": 24,
+    "parameter": 4,
+    "token": 238
+  },
+  "average_value": {
+    "ccn": 1.1,
+    "nloc": 6.0,
+    "parameter": 1.0,
+    "token": 47.2
+  },
+  "over_threshold_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 0,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}

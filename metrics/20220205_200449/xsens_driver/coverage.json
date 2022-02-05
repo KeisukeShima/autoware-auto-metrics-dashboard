@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "xsens_driver",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 41.3,
+      "function": 53.1,
+      "branch": 14.4
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 41.3,
+      "function": 53.1,
+      "branch": 14.4
     },
     {
       "label": "smoke_test",

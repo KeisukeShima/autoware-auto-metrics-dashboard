@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "hungarian_assigner",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 94.8,
+      "function": 24.0,
+      "branch": 65.7
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 94.8,
+      "function": 24.0,
+      "branch": 65.7
     },
     {
       "label": "smoke_test",

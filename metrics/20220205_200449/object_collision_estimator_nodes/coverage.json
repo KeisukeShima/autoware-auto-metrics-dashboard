@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "object_collision_estimator_nodes",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 82.5,
+      "function": 90.0,
+      "branch": 31.8
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 82.5,
+      "function": 90.0,
+      "branch": 31.8
     },
     {
       "label": "smoke_test",

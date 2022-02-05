@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "grid_map_pcl",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 65.6,
+      "function": 69.0,
+      "branch": 25.0
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 65.6,
+      "function": 69.0,
+      "branch": 25.0
     },
     {
       "label": "smoke_test",

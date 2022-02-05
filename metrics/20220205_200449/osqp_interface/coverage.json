@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "osqp_interface",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 100.0,
+      "function": 100.0,
+      "branch": 58.5
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 100.0,
+      "function": 100.0,
+      "branch": 58.5
     },
     {
       "label": "smoke_test",

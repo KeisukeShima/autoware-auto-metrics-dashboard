@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "voxel_grid_nodes",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 87.7,
+      "function": 92.3,
+      "branch": 45.2
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 78.1,
+      "function": 84.6,
+      "branch": 39.3
     },
     {
       "label": "smoke_test",
@@ -21,9 +21,9 @@
     },
     {
       "label": "launch_test",
-      "line": 0.0,
-      "function": 0.0,
-      "branch": 0.0
+      "line": 48.2,
+      "function": 61.5,
+      "branch": 32.6
     }
   ]
 }

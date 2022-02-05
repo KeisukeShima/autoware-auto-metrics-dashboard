@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "controller_common",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 92.7,
+      "function": 89.3,
+      "branch": 67.2
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 92.7,
+      "function": 89.3,
+      "branch": 67.2
     },
     {
       "label": "smoke_test",

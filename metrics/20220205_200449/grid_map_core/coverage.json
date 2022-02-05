@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "grid_map_core",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 78.1,
+      "function": 73.9,
+      "branch": 53.0
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 78.1,
+      "function": 73.9,
+      "branch": 53.0
     },
     {
       "label": "smoke_test",
@@ -21,9 +21,9 @@
     },
     {
       "label": "launch_test",
-      "line": 0.0,
-      "function": 0.0,
-      "branch": 0.0
+      "line": 14.2,
+      "function": 23.5,
+      "branch": 7.6
     }
   ]
 }

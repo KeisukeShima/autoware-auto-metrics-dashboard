@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "pure_pursuit",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 90.3,
+      "function": 95.0,
+      "branch": 69.8
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 90.3,
+      "function": 95.0,
+      "branch": 69.8
     },
     {
       "label": "smoke_test",

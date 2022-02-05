@@ -1,17 +1,17 @@
 {
-  "package": "trajectory_follower",
+  "package": "trajectory_spoofer",
   "value": [
     {
       "label": "all",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 71.6,
+      "function": 69.2,
+      "branch": 45.9
     },
     {
       "label": "gtest",
-      "line": 92.3,
-      "function": 87.8,
-      "branch": 38.5
+      "line": 71.6,
+      "function": 69.2,
+      "branch": 45.9
     },
     {
       "label": "smoke_test",
