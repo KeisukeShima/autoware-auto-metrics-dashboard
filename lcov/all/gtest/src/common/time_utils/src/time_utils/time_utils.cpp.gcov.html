@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-02-04 20:25:14</td>
+            <td class="headerValue">2022-02-05 20:20:48</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">7</td>
@@ -155,19 +155,19 @@
 <a name="77"><span class="lineNum">      77 </span>                :            : }</a>
 <a name="78"><span class="lineNum">      78 </span>                :            : </a>
 <a name="79"><span class="lineNum">      79 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">       9085 : std::chrono::system_clock::time_point from_message(builtin_interfaces::msg::Time t) noexcept</span></a>
+<a name="80"><span class="lineNum">      80 </span>                :<span class="lineCov">       9092 : std::chrono::system_clock::time_point from_message(builtin_interfaces::msg::Time t) noexcept</span></a>
 <a name="81"><span class="lineNum">      81 </span>                :            : {</a>
-<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">       9085 :   const auto dt_ns = std::chrono::seconds(t.sec) + std::chrono::nanoseconds(t.nanosec);</span></a>
-<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">       9085 :   const auto dt = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(dt_ns);</span></a>
-<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">       9085 :   return std::chrono::system_clock::time_point{} + dt;</span></a>
+<a name="82"><span class="lineNum">      82 </span>                :<span class="lineCov">       9092 :   const auto dt_ns = std::chrono::seconds(t.sec) + std::chrono::nanoseconds(t.nanosec);</span></a>
+<a name="83"><span class="lineNum">      83 </span>                :<span class="lineCov">       9092 :   const auto dt = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(dt_ns);</span></a>
+<a name="84"><span class="lineNum">      84 </span>                :<span class="lineCov">       9092 :   return std::chrono::system_clock::time_point{} + dt;</span></a>
 <a name="85"><span class="lineNum">      85 </span>                :            : }</a>
 <a name="86"><span class="lineNum">      86 </span>                :            : </a>
 <a name="87"><span class="lineNum">      87 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">      25676 : std::chrono::nanoseconds from_message(builtin_interfaces::msg::Duration dt) noexcept</span></a>
+<a name="88"><span class="lineNum">      88 </span>                :<span class="lineCov">      25678 : std::chrono::nanoseconds from_message(builtin_interfaces::msg::Duration dt) noexcept</span></a>
 <a name="89"><span class="lineNum">      89 </span>                :            : {</a>
-<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">      25676 :   const auto ns = std::chrono::nanoseconds{dt.nanosec};</span></a>
-<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">      25676 :   const auto us = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(ns);</span></a>
-<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">      25676 :   return std::chrono::seconds{dt.sec} + us;</span></a>
+<a name="90"><span class="lineNum">      90 </span>                :<span class="lineCov">      25678 :   const auto ns = std::chrono::nanoseconds{dt.nanosec};</span></a>
+<a name="91"><span class="lineNum">      91 </span>                :<span class="lineCov">      25678 :   const auto us = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(ns);</span></a>
+<a name="92"><span class="lineNum">      92 </span>                :<span class="lineCov">      25678 :   return std::chrono::seconds{dt.sec} + us;</span></a>
 <a name="93"><span class="lineNum">      93 </span>                :            : }</a>
 <a name="94"><span class="lineNum">      94 </span>                :            : </a>
 <a name="95"><span class="lineNum">      95 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
