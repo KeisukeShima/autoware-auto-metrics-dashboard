@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-02-05 20:20:48</td>
+            <td class="headerValue">2022-02-06 20:25:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -209,9 +209,9 @@
 <a name="130"><span class="lineNum">     130 </span>                :<span class="lineCov">          5 :   return m_timeout_acceleration;</span></a>
 <a name="131"><span class="lineNum">     131 </span>                :            : }</a>
 <a name="132"><span class="lineNum">     132 </span>                :            : </a>
-<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">        245 : std::chrono::nanoseconds StateMachineConfig::state_transition_timeout() const noexcept</span></a>
+<a name="133"><span class="lineNum">     133 </span>                :<span class="lineCov">        246 : std::chrono::nanoseconds StateMachineConfig::state_transition_timeout() const noexcept</span></a>
 <a name="134"><span class="lineNum">     134 </span>                :            : {</a>
-<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">        245 :   return m_state_transition_timeout;</span></a>
+<a name="135"><span class="lineNum">     135 </span>                :<span class="lineCov">        246 :   return m_state_transition_timeout;</span></a>
 <a name="136"><span class="lineNum">     136 </span>                :            : }</a>
 <a name="137"><span class="lineNum">     137 </span>                :            : </a>
 <a name="138"><span class="lineNum">     138 </span>                :<span class="lineCov">        149 : StateMachineConfig::AccelT StateMachineConfig::auto_gear_shift_accel_deadzone() const noexcept</span></a>
@@ -278,15 +278,15 @@
 <a name="199"><span class="lineNum">     199 </span>                :            : }</a>
 <a name="200"><span class="lineNum">     200 </span>                :            : </a>
 <a name="201"><span class="lineNum">     201 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="202"><span class="lineNum">     202 </span>                :<span class="lineCov">        151 : void SafetyStateMachine::update(const Odometry &amp; odom, const StateReport &amp; state)</span></a>
+<a name="202"><span class="lineNum">     202 </span>                :<span class="lineCov">        152 : void SafetyStateMachine::update(const Odometry &amp; odom, const StateReport &amp; state)</span></a>
 <a name="203"><span class="lineNum">     203 </span>                :            : {</a>
-<a name="204"><span class="lineNum">     204 </span>                :<span class="lineCov">        151 :   m_reports.clear();</span></a>
+<a name="204"><span class="lineNum">     204 </span>                :<span class="lineCov">        152 :   m_reports.clear();</span></a>
 <a name="205"><span class="lineNum">     205 </span>                :            :   // TODO(c.ho) sanitize StateReport</a>
-<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">        151 :   m_odometry = odom;</span></a>
-<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">        151 :   m_state = state;</span></a>
+<a name="206"><span class="lineNum">     206 </span>                :<span class="lineCov">        152 :   m_odometry = odom;</span></a>
+<a name="207"><span class="lineNum">     207 </span>                :<span class="lineCov">        152 :   m_state = state;</span></a>
 <a name="208"><span class="lineNum">     208 </span>                :            :   // Check if state update has been satisfied</a>
-<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">        151 :   check_state_change(state);</span></a>
-<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">        151 : }</span></a>
+<a name="209"><span class="lineNum">     209 </span>                :<span class="lineCov">        152 :   check_state_change(state);</span></a>
+<a name="210"><span class="lineNum">     210 </span>                :<span class="lineCov">        152 : }</span></a>
 <a name="211"><span class="lineNum">     211 </span>                :            : </a>
 <a name="212"><span class="lineNum">     212 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
 <a name="213"><span class="lineNum">     213 </span>                :<span class="lineCov">          5 : Command SafetyStateMachine::timeout_commands() const noexcept</span></a>
@@ -303,9 +303,9 @@
 <a name="224"><span class="lineNum">     224 </span>                :            : }</a>
 <a name="225"><span class="lineNum">     225 </span>                :            : </a>
 <a name="226"><span class="lineNum">     226 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">        121 : const SafetyStateMachine::Reports &amp; SafetyStateMachine::reports() const noexcept</span></a>
+<a name="227"><span class="lineNum">     227 </span>                :<span class="lineCov">        122 : const SafetyStateMachine::Reports &amp; SafetyStateMachine::reports() const noexcept</span></a>
 <a name="228"><span class="lineNum">     228 </span>                :            : {</a>
-<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">        121 :   return m_reports;</span></a>
+<a name="229"><span class="lineNum">     229 </span>                :<span class="lineCov">        122 :   return m_reports;</span></a>
 <a name="230"><span class="lineNum">     230 </span>                :            : }</a>
 <a name="231"><span class="lineNum">     231 </span>                :            : </a>
 <a name="232"><span class="lineNum">     232 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
@@ -450,14 +450,14 @@
 <a name="370"><span class="lineNum">     370 </span>                :<span class="lineCov">        113 : }</span></a>
 <a name="371"><span class="lineNum">     371 </span>                :            : </a>
 <a name="372"><span class="lineNum">     372 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
-<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">        151 : void SafetyStateMachine::check_state_change(const StateReport &amp; in)</span></a>
+<a name="373"><span class="lineNum">     373 </span>                :<span class="lineCov">        152 : void SafetyStateMachine::check_state_change(const StateReport &amp; in)</span></a>
 <a name="374"><span class="lineNum">     374 </span>                :            : {</a>
-<a name="375"><span class="lineNum">     375 </span>                :<span class="lineCov">        151 :   auto timeout = false;</span></a>
-<a name="376"><span class="lineNum">     376 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   const auto stamp = ::time_utils::from_message(in.stamp) - m_config.state_transition_timeout();</span></a>
+<a name="375"><span class="lineNum">     375 </span>                :<span class="lineCov">        152 :   auto timeout = false;</span></a>
+<a name="376"><span class="lineNum">     376 </span>        [<span class="branchCov" title="Branch 0 was taken 152 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        152 :   const auto stamp = ::time_utils::from_message(in.stamp) - m_config.state_transition_timeout();</span></a>
 <a name="377"><span class="lineNum">     377 </span>                :            :   // Check states</a>
-<a name="378"><span class="lineNum">     378 </span>                :<span class="lineCov">        811 :   const auto check_state = [&amp;timeout, stamp](auto &amp; request, auto state, auto no_command) -&gt; void {</span></a>
-<a name="379"><span class="lineNum">     379 </span>        [<span class="branchCov" title="Branch 0 was taken 699 times"> + </span><span class="branchCov" title="Branch 1 was taken 56 times"> + </span>]:<span class="lineCov">        755 :       if (no_command == request.value) {</span></a>
-<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">        699 :         return;</span></a>
+<a name="378"><span class="lineNum">     378 </span>                :<span class="lineCov">        816 :   const auto check_state = [&amp;timeout, stamp](auto &amp; request, auto state, auto no_command) -&gt; void {</span></a>
+<a name="379"><span class="lineNum">     379 </span>        [<span class="branchCov" title="Branch 0 was taken 704 times"> + </span><span class="branchCov" title="Branch 1 was taken 56 times"> + </span>]:<span class="lineCov">        760 :       if (no_command == request.value) {</span></a>
+<a name="380"><span class="lineNum">     380 </span>                :<span class="lineCov">        704 :         return;</span></a>
 <a name="381"><span class="lineNum">     381 </span>                :            :       }</a>
 <a name="382"><span class="lineNum">     382 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 56 times"> + </span>]:<span class="lineCov">         56 :       if (request.value == state) {</span></a>
 <a name="383"><span class="lineNum">     383 </span>                :<span class="lineNoCov">          0 :         request = {no_command, decltype(stamp)::min()};</span></a>
@@ -465,30 +465,30 @@
 <a name="385"><span class="lineNum">     385 </span>        [<span class="branchCov" title="Branch 0 was taken 56 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         56 :       if (stamp &gt; request.stamp) {</span></a>
 <a name="386"><span class="lineNum">     386 </span>                :<span class="lineCov">         56 :         timeout = true;</span></a>
 <a name="387"><span class="lineNum">     387 </span>                :            :       }</a>
-<a name="388"><span class="lineNum">     388 </span>                :<span class="lineCov">        151 :     };</span></a>
-<a name="389"><span class="lineNum">     389 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.gear, in.gear, VSC::GEAR_NO_COMMAND);</span></a>
-<a name="390"><span class="lineNum">     390 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.blinker, in.blinker, VSC::BLINKER_NO_COMMAND);</span></a>
-<a name="391"><span class="lineNum">     391 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.wiper, in.wiper, WipersCommand::NO_COMMAND);</span></a>
-<a name="392"><span class="lineNum">     392 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.headlight, in.headlight, HeadlightsCommand::NO_COMMAND);</span></a>
-<a name="393"><span class="lineNum">     393 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_state(m_requests.mode, in.mode, VSC::MODE_NO_COMMAND);</span></a>
+<a name="388"><span class="lineNum">     388 </span>                :<span class="lineCov">        152 :     };</span></a>
+<a name="389"><span class="lineNum">     389 </span>        [<span class="branchCov" title="Branch 0 was taken 152 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        152 :   check_state(m_requests.gear, in.gear, VSC::GEAR_NO_COMMAND);</span></a>
+<a name="390"><span class="lineNum">     390 </span>        [<span class="branchCov" title="Branch 0 was taken 152 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        152 :   check_state(m_requests.blinker, in.blinker, VSC::BLINKER_NO_COMMAND);</span></a>
+<a name="391"><span class="lineNum">     391 </span>        [<span class="branchCov" title="Branch 0 was taken 152 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        152 :   check_state(m_requests.wiper, in.wiper, WipersCommand::NO_COMMAND);</span></a>
+<a name="392"><span class="lineNum">     392 </span>        [<span class="branchCov" title="Branch 0 was taken 152 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        152 :   check_state(m_requests.headlight, in.headlight, HeadlightsCommand::NO_COMMAND);</span></a>
+<a name="393"><span class="lineNum">     393 </span>        [<span class="branchCov" title="Branch 0 was taken 152 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        152 :   check_state(m_requests.mode, in.mode, VSC::MODE_NO_COMMAND);</span></a>
 <a name="394"><span class="lineNum">     394 </span>                :            :   // Check flags</a>
-<a name="395"><span class="lineNum">     395 </span>                :<span class="lineCov">        302 :   const auto check_flag = [&amp;timeout, stamp](auto request, auto state) -&gt; void {</span></a>
-<a name="396"><span class="lineNum">     396 </span>        [<span class="branchCov" title="Branch 0 was taken 302 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        302 :       if (request.value == state) {</span></a>
-<a name="397"><span class="lineNum">     397 </span>                :<span class="lineCov">        302 :         return;</span></a>
+<a name="395"><span class="lineNum">     395 </span>                :<span class="lineCov">        304 :   const auto check_flag = [&amp;timeout, stamp](auto request, auto state) -&gt; void {</span></a>
+<a name="396"><span class="lineNum">     396 </span>        [<span class="branchCov" title="Branch 0 was taken 304 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        304 :       if (request.value == state) {</span></a>
+<a name="397"><span class="lineNum">     397 </span>                :<span class="lineCov">        304 :         return;</span></a>
 <a name="398"><span class="lineNum">     398 </span>                :            :       }</a>
 <a name="399"><span class="lineNum">     399 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :       if (stamp &gt; request.stamp) {</span></a>
 <a name="400"><span class="lineNum">     400 </span>                :<span class="lineNoCov">          0 :         timeout = true;</span></a>
 <a name="401"><span class="lineNum">     401 </span>                :            :       }</a>
-<a name="402"><span class="lineNum">     402 </span>                :<span class="lineCov">        151 :     };</span></a>
+<a name="402"><span class="lineNum">     402 </span>                :<span class="lineCov">        152 :     };</span></a>
 <a name="403"><span class="lineNum">     403 </span>                :            :   //lint -save -e523 NOLINT false positive: lambda affects timeout which is reference captured</a>
-<a name="404"><span class="lineNum">     404 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_flag(m_requests.horn, in.horn);</span></a>
-<a name="405"><span class="lineNum">     405 </span>        [<span class="branchCov" title="Branch 0 was taken 151 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        151 :   check_flag(m_requests.hand_brake, in.hand_brake);</span></a>
+<a name="404"><span class="lineNum">     404 </span>        [<span class="branchCov" title="Branch 0 was taken 152 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        152 :   check_flag(m_requests.horn, in.horn);</span></a>
+<a name="405"><span class="lineNum">     405 </span>        [<span class="branchCov" title="Branch 0 was taken 152 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">        152 :   check_flag(m_requests.hand_brake, in.hand_brake);</span></a>
 <a name="406"><span class="lineNum">     406 </span>                :            :   //lint -restore NOLINT</a>
 <a name="407"><span class="lineNum">     407 </span>                :            :   // Warn on timeout</a>
-<a name="408"><span class="lineNum">     408 </span>        [<span class="branchCov" title="Branch 0 was taken 47 times"> + </span><span class="branchCov" title="Branch 1 was taken 104 times"> + </span>]:<span class="lineCov">        151 :   if (timeout) {</span></a>
+<a name="408"><span class="lineNum">     408 </span>        [<span class="branchCov" title="Branch 0 was taken 47 times"> + </span><span class="branchCov" title="Branch 1 was taken 105 times"> + </span>]:<span class="lineCov">        152 :   if (timeout) {</span></a>
 <a name="409"><span class="lineNum">     409 </span>        [<span class="branchCov" title="Branch 0 was taken 47 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">         47 :     m_reports.emplace_back(StateMachineReport::STATE_TRANSITION_TIMEOUT);</span></a>
 <a name="410"><span class="lineNum">     410 </span>                :            :   }</a>
-<a name="411"><span class="lineNum">     411 </span>                :<span class="lineCov">        151 : }</span></a>
+<a name="411"><span class="lineNum">     411 </span>                :<span class="lineCov">        152 : }</span></a>
 <a name="412"><span class="lineNum">     412 </span>                :            : </a>
 <a name="413"><span class="lineNum">     413 </span>                :            : ////////////////////////////////////////////////////////////////////////////////</a>
 <a name="414"><span class="lineNum">     414 </span>                :<span class="lineCov">        113 : SafetyStateMachine::VSC SafetyStateMachine::sanitize(const VSC &amp; msg) const</span></a>

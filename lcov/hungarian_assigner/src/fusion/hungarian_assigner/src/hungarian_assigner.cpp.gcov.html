@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-02-05 20:44:52</td>
+            <td class="headerValue">2022-02-06 20:49:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">52</td>
@@ -189,22 +189,22 @@
 <a name="107"><span class="lineNum">     107 </span>                :            : </a>
 <a name="108"><span class="lineNum">     108 </span>                :            : ///</a>
 <a name="109"><span class="lineNum">     109 </span>                :            : template&lt;uint16_t Capacity&gt;</a>
-<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">      65298 : void hungarian_assigner_c&lt;Capacity&gt;::set_weight(</span></a>
+<a name="110"><span class="lineNum">     110 </span>                :<span class="lineCov">      65599 : void hungarian_assigner_c&lt;Capacity&gt;::set_weight(</span></a>
 <a name="111"><span class="lineNum">     111 </span>                :            :   const float32_t weight,</a>
 <a name="112"><span class="lineNum">     112 </span>                :            :   const index_t idx,</a>
 <a name="113"><span class="lineNum">     113 </span>                :            :   const index_t jdx)</a>
 <a name="114"><span class="lineNum">     114 </span>                :            : {</a>
-<a name="115"><span class="lineNum">     115 </span>  [<span class="branchCov" title="Branch 0 was taken 65307 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 65307 times"> + </span>]:<span class="lineCov">      65298 :   if ((idx &gt;= m_num_rows) || (jdx &gt;= m_num_cols)) {</span></a>
+<a name="115"><span class="lineNum">     115 </span>  [<span class="branchCov" title="Branch 0 was taken 65601 times"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span><span class="branchCov" title="Branch 2 was taken 1 time"> + </span><span class="branchCov" title="Branch 3 was taken 65600 times"> + </span>]:<span class="lineCov">      65599 :   if ((idx &gt;= m_num_rows) || (jdx &gt;= m_num_cols)) {</span></a>
 <a name="116"><span class="lineNum">     116 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchNoCov" title="Branch 1 was not taken"> - </span>]:<span class="lineCov">          2 :     throw std::out_of_range(&quot;Cannot set weight outside of range&quot;);</span></a>
 <a name="117"><span class="lineNum">     117 </span>                :            :   }</a>
-<a name="118"><span class="lineNum">     118 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 65307 times"> + </span>]:<span class="lineCov">      65307 :   if (weight &gt;= MAX_WEIGHT) {</span></a>
+<a name="118"><span class="lineNum">     118 </span>        [<span class="branchNoCov" title="Branch 0 was not taken"> - </span><span class="branchCov" title="Branch 1 was taken 65600 times"> + </span>]:<span class="lineCov">      65600 :   if (weight &gt;= MAX_WEIGHT) {</span></a>
 <a name="119"><span class="lineNum">     119 </span>        [<span class="branchNoExec" title="Branch 0 was not executed"> # </span><span class="branchNoExec" title="Branch 1 was not executed"> # </span>]:<span class="lineNoCov">          0 :     throw std::out_of_range(&quot;Cannot set weight greater than or equal to MAX_WEIGHT&quot;);</span></a>
 <a name="120"><span class="lineNum">     120 </span>                :            :   }</a>
 <a name="121"><span class="lineNum">     121 </span>                :            :   // rely on eigen's matrix to throw an error</a>
-<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">      65307 :   m_weight_matrix(idx, jdx) = weight;</span></a>
-<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">      55388 :   m_mark_matrix(idx, jdx) = static_cast&lt;int8_t&gt;(UNMARKED);</span></a>
-<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">      56434 :   m_is_max_matrix(idx, jdx) = false;</span></a>
-<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">      56067 : }</span></a>
+<a name="122"><span class="lineNum">     122 </span>                :<span class="lineCov">      65600 :   m_weight_matrix(idx, jdx) = weight;</span></a>
+<a name="123"><span class="lineNum">     123 </span>                :<span class="lineCov">      60858 :   m_mark_matrix(idx, jdx) = static_cast&lt;int8_t&gt;(UNMARKED);</span></a>
+<a name="124"><span class="lineNum">     124 </span>                :<span class="lineCov">      61124 :   m_is_max_matrix(idx, jdx) = false;</span></a>
+<a name="125"><span class="lineNum">     125 </span>                :<span class="lineCov">      60939 : }</span></a>
 <a name="126"><span class="lineNum">     126 </span>                :            : </a>
 <a name="127"><span class="lineNum">     127 </span>                :            : ///</a>
 <a name="128"><span class="lineNum">     128 </span>                :            : template&lt;uint16_t Capacity&gt;</a>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-02-05 20:20:48</td>
+            <td class="headerValue">2022-02-06 20:25:33</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">31</td>
@@ -481,7 +481,7 @@
 <a name="346"><span class="lineNum">     346 </span>                :            : </a>
 <a name="347"><span class="lineNum">     347 </span>                :            :   // Check for invalid changes in direction</a>
 <a name="348"><span class="lineNum">     348 </span>                :<span class="lineCov">         16 :   if ( ( (state_report().gear == VehicleStateReport::GEAR_DRIVE) &amp;&amp;</span></a>
-<a name="349"><span class="lineNum">     349 </span>  [<span class="branchCov" title="Branch 0 was taken 12 times"> + </span><span class="branchCov" title="Branch 1 was taken 4 times"> + </span><span class="branchCov" title="Branch 2 was taken 11 times"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span> :<span class="lineCov">         31 :     (msg.velocity_mps &lt; 0.0F) ) ||</span></a>
+<a name="349"><span class="lineNum">     349 </span>  [<span class="branchCov" title="Branch 0 was taken 14 times"> + </span><span class="branchCov" title="Branch 1 was taken 2 times"> + </span><span class="branchCov" title="Branch 2 was taken 13 times"> + </span><span class="branchCov" title="Branch 3 was taken 1 time"> + </span> :<span class="lineCov">         31 :     (msg.velocity_mps &lt; 0.0F) ) ||</span></a>
 <span class="lineNum">         </span>         <span class="branchCov" title="Branch 4 was taken 2 times"> + </span><span class="branchCov" title="Branch 5 was taken 14 times"> + </span>]
 <a name="350"><span class="lineNum">     350 </span>        [<span class="branchCov" title="Branch 0 was taken 2 times"> + </span><span class="branchCov" title="Branch 1 was taken 13 times"> + </span>]:<span class="lineCov">         15 :     ( (state_report().gear == VehicleStateReport::GEAR_REVERSE) &amp;&amp;</span></a>
 <a name="351"><span class="lineNum">     351 </span>        [<span class="branchCov" title="Branch 0 was taken 1 time"> + </span><span class="branchCov" title="Branch 1 was taken 1 time"> + </span>]:<span class="lineCov">          2 :     (msg.velocity_mps &gt; 0.0F) ) )</span></a>
