@@ -1,0 +1,27 @@
+{
+  "package": "lidar_integration",
+  "worst_value": {
+    "ccn": 25,
+    "nloc": 150,
+    "parameter": 8,
+    "token": 1081
+  },
+  "average_value": {
+    "ccn": 2.8,
+    "nloc": 16.6,
+    "parameter": 2.1,
+    "token": 112.9
+  },
+  "over_threshold_count": {
+    "ccn": 2,
+    "nloc": 0,
+    "parameter": 3,
+    "token": 0
+  },
+  "over_recommendation_count": {
+    "ccn": 8,
+    "nloc": 0,
+    "parameter": 0,
+    "token": 0
+  }
+}
