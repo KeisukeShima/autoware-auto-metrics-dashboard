@@ -1,0 +1,29 @@
+{
+  "package": "costmap_generator",
+  "value": [
+    {
+      "label": "all",
+      "line": 95.1,
+      "function": 100.0,
+      "branch": 51.4
+    },
+    {
+      "label": "gtest",
+      "line": 95.1,
+      "function": 100.0,
+      "branch": 51.4
+    },
+    {
+      "label": "smoke_test",
+      "line": 0.0,
+      "function": 0.0,
+      "branch": 0.0
+    },
+    {
+      "label": "launch_test",
+      "line": 94.3,
+      "function": 100.0,
+      "branch": 47.5
+    }
+  ]
+}
